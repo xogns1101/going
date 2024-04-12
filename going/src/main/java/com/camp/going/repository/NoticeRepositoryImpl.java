@@ -33,7 +33,7 @@ public class NoticeRepositoryImpl implements NoticeRepository{
 
     @Override
     public void save(Notice notice) {
-        String sql = "INSERT INTO notice_detail (notice_title, notice_content) " +
+        String sql = "INSERT INTO notice (notice_title, notice_content) " +
                 "VALUES (?, ?)";
         template.update(sql, notice.getNoticeTitle(), notice.getNoticeContent());
     }

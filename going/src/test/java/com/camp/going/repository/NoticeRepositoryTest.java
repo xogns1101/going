@@ -20,8 +20,8 @@ class NoticeRepositoryTest {
         // given
         for (int i = 1; i <= 2; i++) {
             Notice notice = new Notice();
-            notice.setNoticeTitle("공지사항" + i + "번 제목 테스트");
-            notice.setNoticeContent("공지사항" + i + "번 내용 테스트");
+            notice.setNoticeTitle("공지사항 " + i + "번 제목 테스트");
+            notice.setNoticeContent("공지사항 " + i + "번 내용 테스트");
             repository.save(notice);
         }
         // when
