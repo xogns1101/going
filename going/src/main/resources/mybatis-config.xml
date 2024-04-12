@@ -22,6 +22,8 @@
     <!-- SQL 을 적어놓은 xml 파일의 위치를 설정 -->
     <mappers>
         <mapper resource="mapper/UserMapper.xml" />
+        <mapper resource="mapper/CampingMapper.xml" />
+        <mapper resource="mapper/ReservationMapper.xml" />
     </mappers>
 
 
