@@ -1,0 +1,41 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.camp.going.mapper.CampingMapper">
+
+    <insert id="campSave">
+    INSERT INTO camping
+        (camp_id
+        , camp_name
+        , camp_address
+        , camp_number
+        , camp_homepage
+        , camp_electric
+        , camp_hot_water
+        , camp_wifi
+        , camp_firewood
+        , camp_mart
+        , camp_bed
+        , camp_ice_box
+        , camp_price
+        , camp_image
+        )
+    VALUES
+        (#{campId}
+        , #{campName}
+        , #{campAddress}
+        , #{campNumber}
+        , #{campHomepage}
+        , #{campElectric}
+        , #{campHotWater}
+        , #{campWifi}
+        , #{campFirewood}
+        , #{campMart}
+        , #{campBed}
+        , #{campIceBox}
+        , #{campPrice}
+        , #{campImage})
+    </insert>
+
+</mapper>
