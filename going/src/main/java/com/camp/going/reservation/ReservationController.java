@@ -12,6 +12,8 @@ public class ReservationController {
     @GetMapping("/eee")
     public String show(){
 
+
+        return null; // 임시 설정, 테스트 때 막혔어요
     }
 
 
