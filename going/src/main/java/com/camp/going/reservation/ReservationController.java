@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/eqq")
 public class ReservationController {
 
-    @GetMapping("/eee")
-    public String show(){
 
-    }
 
 
 

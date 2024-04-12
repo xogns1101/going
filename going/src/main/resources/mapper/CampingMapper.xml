@@ -38,4 +38,13 @@
         , #{campImage})
     </insert>
 
+    <select id="findCamping" resultType="camping">
+        SELECT * FROM camping
+        WHERE camp_id = #{campId}
+    </select>
+
+    <select id="findAllCamping" resultType="camping">
+        SELECT * FROM camping
+    </select>
+
 </mapper>
