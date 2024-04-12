@@ -3,6 +3,8 @@ package com.camp.going.entity;
 import com.camp.going.dto.request.NoticeWriteRequestDTO;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Setter @Getter @ToString
 @EqualsAndHashCode
 @NoArgsConstructor
@@ -13,7 +15,7 @@ public class Notice {
     private int noticeNo; // 글번호
     private String noticeTitle; // 제목
     private String noticeContent; // 내용
-    private String noticeDate; // 작성날짜
+    private LocalDateTime noticeDate; // 작성날짜
     private int noticeCount; // 조회수
 
     public Notice(NoticeWriteRequestDTO dto) {
