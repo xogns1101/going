@@ -12,5 +12,12 @@
 
     </insert>
 
+    <select id="isDuplicate" resultType="boolean">
+    SELECT COUNT(*)
+    FROM User
+    <if test="type == 'email'">
+        WHERE email = #{keyword}
+    </if>
+
 
 </mapper>
