@@ -15,11 +15,14 @@ class NoticeRepositoryTest {
     private NoticeRepository repository;
 
     @Test
-    @DisplayName("공지사항 2개 작성")
+    @DisplayName("공지사항 2개 작성하기")
     void noticeInsertTest() {
         // given
         for (int i = 1; i <= 2; i++) {
             Notice notice = new Notice();
+            notice.setNoticeTitle("공지사항" + i + "번 제목 테스트");
+            notice.setNoticeContent("공지사항" + i + "번 내용 테스트");
+            repository.save(notice);
         }
         // when
 
