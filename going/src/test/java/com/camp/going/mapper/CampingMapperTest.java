@@ -37,6 +37,7 @@ class CampingMapperTest {
         List<Camping> campingList = campingMapper.findAllCamping();
         // then
         assertEquals(1, campingList.size());
+
     }
 
 
