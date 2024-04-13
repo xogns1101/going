@@ -9,7 +9,7 @@ public interface UserMapper {
 
     void save(User user);
 
-    User findMember(String email);
+    User findUser(String email);
     /**
      * 중복 체크(account, email) 기능
      * @param type - 중복을 검사할 내용 (account, email)

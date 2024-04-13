@@ -2,8 +2,10 @@ package com.camp.going.service;
 
 import com.camp.going.dto.request.SignUpRequestDTO;
 import com.camp.going.dto.request.UserLoginRequestDTO;
+import com.camp.going.dto.response.LoginUserResponseDTO;
 import com.camp.going.entity.User;
 import com.camp.going.mapper.UserMapper;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -28,7 +30,7 @@ public class UserService {
     // 로그인 검증 처리 (authenticate = 인증)
     public LoginResult authenticate(UserLoginRequestDTO dto) {
 
-        User foundUser = userMapper.findMember(dto.getEmail());
+        User foundUser = userMapper.findUser(dto.getEmail());
 
         if (foundUser == null) { // 회원가입 안했을떄
             System.out.println(dto.getEmail() + "없는 이메일입니다.");
@@ -49,4 +51,20 @@ public class UserService {
 
     }
 
+    // 로그인 유지시키려고 만든 함수
+    // 혹시 만약에 유저 닉네임도 추가하기로 하면 그거도 추가하기
+    public void maintainLoginState(HttpSession session, String email) {
+
+        // 로그인한 회원정보 조회
+        User foundUser = userMapper.findUser(email);
+
+        LoginUserResponseDTO dto = LoginUserResponseDTO.builder()
+                .email(foundUser.getEmail())
+                .build();
+
+        session.setAttribute("login", dto);
+
+        session.setMaxInactiveInterval(60 * 60); // 우선 세션 수명 1시간으로 설정함
+
+    }
 }
