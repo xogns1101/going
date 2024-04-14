@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url(./common.css);
+
+
+
+
+body {
+  font-size: 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #fff;
+}
+
+/* header style */
+
+header {
+  background: #4BDB73;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+}
+header #wrap {
+    display: flex;
+}
+
+header .logo {
+    font-size: 60px;
+    margin: auto 60px;
+}
+
+header .logo-content {
+    display: flex;
+    
+
+}
+
+header .logo-content li {
+    font-size: 30px;
+    margin: auto 20px;
+}
+
+
+
+
+/*footer style*/
+
+
+
