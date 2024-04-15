@@ -5,16 +5,9 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>yagaja</title>
+    <title>Document</title>
 </head>
 <body>
-
-
-
-
-
-
-
     
 </body>
-</html>
+</html>  
