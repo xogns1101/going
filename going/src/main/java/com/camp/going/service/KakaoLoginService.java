@@ -29,6 +29,7 @@ public class KakaoLoginService {
     public void kakaoLogin(Map<String, String> params, HttpSession session) {
 
         String accessToken = getKakaoAccessToken(params);
+        session.setAttribute("access_token", accessToken);
         log.info("access_token: {}", accessToken);
 
         KakaoUserResponseDTO dto = getKakaoUserInfo(accessToken);

@@ -7,13 +7,25 @@ import com.camp.going.entity.User;
 import com.camp.going.mapper.UserMapper;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.RestTemplate;
+
+
+import java.net.http.HttpHeaders;
+import java.util.Map;
 
 import static com.camp.going.service.LoginResult.*;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class UserService {
 
     private final UserMapper userMapper;
@@ -72,4 +84,33 @@ public class UserService {
         session.setMaxInactiveInterval(60 * 60); // 우선 세션 수명 1시간으로 설정함
 
     }
-}
+
+    public void kakaoLogout(LoginUserResponseDTO dto, HttpSession session) {
+
+        String requestUri = "https://kapi.kakao.com/v1/user/logout";
+
+        String accessToken = (String) session.getAttribute("access_token");
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Authorization", "Bearer " + accessToken);
+
+        MultiValueMap<String, Object> params = new LinkedMultiValueMap<>();
+        params.add("target_id_type", "user_id");
+        params.add("target_email", dto.getEmail());
+        // kakao 라 만약에 오류 뜨면 이메일에서 아이디로 수정해오기 dto에 아이디 추가
+        // 영상에선 이거 회원번호때문에 적는거라 했음
+
+        RestTemplate template = new RestTemplate();
+        ResponseEntity<Map> responseEntity = template.exchange(
+                requestUri,
+                HttpMethod.POST,
+                new HttpEntity<>(params, headers),
+                Map.class
+        );
+
+        Map<String, Object> responseJSON = (Map<String, Object>) responseEntity.getBody();
+        log.info("응답 데이터: {}", responseJSON);
+
+    }
+
+    }

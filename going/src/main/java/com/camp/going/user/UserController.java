@@ -2,6 +2,7 @@ package com.camp.going.user;
 
 import com.camp.going.dto.request.SignUpRequestDTO;
 import com.camp.going.dto.request.UserLoginRequestDTO;
+import com.camp.going.dto.response.LoginUserResponseDTO;
 import com.camp.going.entity.User;
 import com.camp.going.service.LoginResult;
 import com.camp.going.service.UserService;
@@ -10,6 +11,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequiredArgsConstructor
 public class UserController {
 
+    private static final Logger log = LoggerFactory.getLogger(UserController.class);
     private final UserService userService;
 
     @GetMapping("/sign-up")
@@ -93,12 +97,24 @@ public class UserController {
 
     // 로그아웃 처리 부분
     @GetMapping("/sign-out")
-    public String signOut(HttpSession session) {
+    public String signOut(HttpSession session,
+                          HttpServletRequest request,
+                          HttpServletResponse response) {
+        log.info("/user/sign-out: GET!");
+
+
+        LoginUserResponseDTO dto = (LoginUserResponseDTO) session.getAttribute("login");
+        if(dto.getLoginMethod().equals("KAKAO")) {
+            userService.kakaoLogout(dto, session);
+        }
 
         session.removeAttribute("login");
 
         session.invalidate();
         return "redirect:/";
+
+
+
 
     }
 
