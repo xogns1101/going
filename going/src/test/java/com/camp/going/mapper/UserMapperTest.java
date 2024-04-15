@@ -32,5 +32,19 @@ class UserMapperTest {
         // then
     }
 
+    @Test
+    @DisplayName("이메일 중복 확인")
+    void duplicateTest() {
+        // given
+        String email = "abc1234@naver.com";
+
+        // when
+        boolean emailFlag = userMapper.isDuplicate("email", email);
+
+        // then
+        assertTrue(emailFlag);
+    }
+
+
 
 }
