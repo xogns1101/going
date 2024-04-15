@@ -4,6 +4,7 @@ import com.camp.going.common.PageMaker;
 import com.camp.going.common.Search;
 import com.camp.going.dto.response.CampingListResponseDTO;
 import com.camp.going.entity.Camping;
+import com.camp.going.mapper.CampingMapper;
 import com.camp.going.service.CampingService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -42,15 +43,15 @@ public class ReservationContoller {
         return "(jsp 경로)";
     }
 
-//    @GetMapping("/resevation-detail")
-//    public String reservationDetail(Model model){
-//
-//
-//
-//
-//
-//
-//    }
+    @GetMapping("/resevation-detail")
+    public String reservationDetail(Model model){
+
+        service.reservationOne();
+
+
+
+
+    }
 
 
 
