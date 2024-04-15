@@ -13,16 +13,20 @@ public interface NoticeMapper {
     List<Notice> findAll(Search page);
 
     // 상세 조회
-    Notice findOne(int nno);
+    Notice findOne(int noticeNo);
 
     // 저장
     void save(Notice notice);
+    
+    // 수정
+    void modify(Notice notice);
 
     // 조회수
-    void updateViewCount(int nno);
+    void updateViewCount(int noticeNo);
 
     // 삭제
-    void delete(int nno);
+    void delete(int noticeNo);
 
     int getCount(Search page);
+
 }

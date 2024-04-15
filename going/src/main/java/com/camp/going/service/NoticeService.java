@@ -1,6 +1,7 @@
 package com.camp.going.service;
 
 import com.camp.going.common.Search;
+import com.camp.going.dto.request.NoticeModifyRequestDTO;
 import com.camp.going.dto.request.NoticeWriteRequestDTO;
 import com.camp.going.dto.response.NoticeDetailResponseDTO;
 import com.camp.going.dto.response.NoticeListResponseDTO;
@@ -45,6 +46,13 @@ public class NoticeService {
 
         Notice notice = mapper.findOne(nno);
         return new NoticeDetailResponseDTO(notice);
+    }
+
+    public void modify(NoticeModifyRequestDTO dto) {
+
+        Notice notice = dto.toEntity();
+        mapper.modify(notice);
+
     }
 
     // 지우기

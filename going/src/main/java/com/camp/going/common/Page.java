@@ -12,7 +12,7 @@ public class Page {
 
     public Page() {
         this.pageNo = 1;
-        this.amount = 10;
+        this.amount = 8;
     }
 
     public int getPageStart() {
