@@ -2,6 +2,8 @@ package com.camp.going.entity;
 
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter @Setter @ToString
 @EqualsAndHashCode
 @NoArgsConstructor
@@ -17,6 +19,6 @@ public class Review {
     private String reviewImage; // 리뷰 사진
     private int reviewPoint; // 별점
     private int reviewCount; // 리뷰 조회수
-
+    private LocalDateTime reviewDate; // 리뷰 작성 날짜
 
 }
