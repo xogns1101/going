@@ -15,6 +15,6 @@ public class UserLoginRequestDTO {
 
     private boolean autoLogin; // 만약에 자동로그인 체크여부 안하면 지우기
 
-
+ //     풀리퀘스트보내려고 적는 주석
 
 }
