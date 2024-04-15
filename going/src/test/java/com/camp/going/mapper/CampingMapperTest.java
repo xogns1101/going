@@ -34,7 +34,7 @@ class CampingMapperTest {
         // given
 
         // when
-        List<Camping> campingList = campingMapper.findAllCamping();
+        List<Camping> campingList = campingMapper.findAllCamping(page);
         // then
         assertEquals(1, campingList.size());
 
@@ -47,7 +47,7 @@ class CampingMapperTest {
         int campId = 2;
         // when
         campingMapper.deleteCamping(campId);
-        List<Camping> campingList = campingMapper.findAllCamping();
+        List<Camping> campingList = campingMapper.findAllCamping(page);
         // then
         assertEquals(1, campingList.size());
 
