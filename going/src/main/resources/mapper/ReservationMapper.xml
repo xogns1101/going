@@ -4,6 +4,39 @@
 
 <mapper namespace="com.camp.going.mapper.ReservationMapper">
 
+    <insert id="reservationInsert">
+
+
+        INSERT INTO reservation
+        (camp_id
+        , email
+        , camp_price
+        , phone_number
+        )
+        VALUES
+        (#{campId}
+        , #{email}
+        , #{price}
+        , #{phoneNumber}
+        )
+
+
+    </insert>
+
+    <select id="reservationCamping" resultType="reservation">
+
+        SELECT
+            c.camp_id,
+            c.camp_price,
+            u.email,
+            u.phone_number
+        FROM reservation r
+        LEFT JOIN user u
+        ON r.email = u.email
+        LEFT JOIN camping c
+        ON r.camp_id = c.camp_id
+
+    </select>
 
 
 

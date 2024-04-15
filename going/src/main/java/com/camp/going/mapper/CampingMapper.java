@@ -8,13 +8,19 @@ import java.util.List;
 @Mapper
 public interface CampingMapper {
 
+    // 캠핑 등록
     void campSave(Camping camp);
 
     // 단일 정보 조회
     Camping findCamping(int campId);
 
+    // 캠핑 전체 조회
     List<Camping> findAllCamping();
 
+    // 삭제
+    void deleteCamping(int campId);
+
+    void updateCamping(Camping camping);
 
 
 
