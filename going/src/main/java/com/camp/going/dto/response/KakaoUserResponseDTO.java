@@ -28,6 +28,7 @@ public class KakaoUserResponseDTO {
     public static class Properties {
 
 
+
         private String nickname;
         @JsonProperty("profile_image")
         private String profileImage;

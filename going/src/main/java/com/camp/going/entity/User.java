@@ -7,6 +7,7 @@ import lombok.*;
 @Builder
 public class User {
 
+
     private String email;
     private String password;
     private String phoneNumber;

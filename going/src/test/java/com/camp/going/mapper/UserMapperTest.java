@@ -32,6 +32,7 @@ class UserMapperTest {
         // then
     }
 
+
     @Test
     @DisplayName("이메일 중복 확인")
     void duplicateTest() {

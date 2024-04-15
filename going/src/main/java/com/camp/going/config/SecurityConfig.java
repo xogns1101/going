@@ -14,6 +14,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     // 시큐리티 기본 설정
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 

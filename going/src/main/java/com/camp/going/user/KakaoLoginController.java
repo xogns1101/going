@@ -34,6 +34,7 @@ public class KakaoLoginController {
         return "redirect:" + uri;
     }
 
+
     // 인가 코드 받기
     @GetMapping("/auth/kakao")
     public  String snsKaKao(String code, HttpSession session) {

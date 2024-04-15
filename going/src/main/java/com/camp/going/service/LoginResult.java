@@ -6,6 +6,7 @@ public enum LoginResult {
 
     NO_EMAIL,
 
+
     NO_PW
 
 

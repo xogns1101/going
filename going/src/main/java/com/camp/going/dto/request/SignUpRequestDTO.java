@@ -37,6 +37,7 @@ public class SignUpRequestDTO {
                 .password(encoder.encode(password))
                 .phoneNumber(phone_number)
                 .loginMethod(loginMethod)
+
                 .build();
     }
 

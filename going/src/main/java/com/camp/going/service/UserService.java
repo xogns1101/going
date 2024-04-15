@@ -79,6 +79,7 @@ public class UserService {
                 .loginMethod(foundUser.getLoginMethod().toString())
                 .build();
 
+
         session.setAttribute("login", dto);
 
         session.setMaxInactiveInterval(60 * 60); // 우선 세션 수명 1시간으로 설정함
