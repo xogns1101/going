@@ -17,7 +17,11 @@
     <typeAliases>
         <!-- 엔터티 클래스 별칭 붙히기 -->
         <typeAlias type="com.camp.going.entity.Camping" alias="camping" />
+<<<<<<< HEAD
         <typeAlias type="com.camp.going.entity.Reservation" alias="reservation" />
+=======
+        <typeAlias type="com.camp.going.entity.Review" alias="review" />
+>>>>>>> 632b9254558ab1371fa8158bad1680e68853164e
     </typeAliases>
 
     <!-- SQL 을 적어놓은 xml 파일의 위치를 설정 -->
@@ -25,6 +29,7 @@
         <mapper resource="mapper/UserMapper.xml" />
         <mapper resource="mapper/CampingMapper.xml" />
         <mapper resource="mapper/ReservationMapper.xml" />
+        <mapper resource="mapper/ReviewMapper.xml" />
     </mappers>
 
 
