@@ -51,6 +51,10 @@ public class UserService {
 
     }
 
+    public boolean checkDuplicateValue(String type, String keyword) {
+        return userMapper.isDuplicate(type, keyword);
+    }
+
     // 로그인 유지시키려고 만든 함수
     // 혹시 만약에 유저 닉네임도 추가하기로 하면 그거도 추가하기
     public void maintainLoginState(HttpSession session, String email) {
@@ -60,6 +64,7 @@ public class UserService {
 
         LoginUserResponseDTO dto = LoginUserResponseDTO.builder()
                 .email(foundUser.getEmail())
+                .loginMethod(foundUser.getLoginMethod().toString())
                 .build();
 
         session.setAttribute("login", dto);

@@ -11,6 +11,8 @@ import lombok.*;
 public class LoginUserResponseDTO {
 
         private String email;
+        private String auth;
+        private String loginMethod;
 
 
 

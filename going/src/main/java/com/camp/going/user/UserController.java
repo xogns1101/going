@@ -2,6 +2,7 @@ package com.camp.going.user;
 
 import com.camp.going.dto.request.SignUpRequestDTO;
 import com.camp.going.dto.request.UserLoginRequestDTO;
+import com.camp.going.entity.User;
 import com.camp.going.service.LoginResult;
 import com.camp.going.service.UserService;
 import jakarta.servlet.http.Cookie;
@@ -38,6 +39,9 @@ public class UserController {
          System.out.println("dto = " + dto);
 
         userService.join(dto);
+
+        dto.setLoginMethod(User.LoginMethod.COMMON);
+
         return "redirect:/main";
         // 이따가 조원들한테 물어보고 마이페이지로 가면 마이페이지로 수정하기
     }
@@ -75,7 +79,7 @@ public class UserController {
         return "redirect:/user/sign-in";
     }
 
-    // 쿠키 생성
+    // 쿠키 생성 근데 세션으로 처리할꺼 같아서 확정나면 이함수는 그냥 지워도됨
     private void makeLoginCookie(UserLoginRequestDTO dto, HttpServletResponse response) {
 
         Cookie cookie = new Cookie("login", dto.getEmail());

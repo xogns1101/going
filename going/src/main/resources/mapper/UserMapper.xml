@@ -6,9 +6,9 @@
     <insert id="save">
 
         INSERT INTO user
-        (email, password, phone_number)
+        (email, password, phone_number, login_method)
         VALUES
-        (#{email}, #{password}, #{phoneNumber})
+        (#{email}, #{password}, #{phoneNumber}, #{loginMethod})
 
     </insert>
 
@@ -18,6 +18,12 @@
     <if test="type == 'email'">
         WHERE email = #{keyword}
     </if>
+
+    <select id="findUser" resultType="user">
+        SELECT * FROM USER
+        WHERE email = #{email}
+
+    </select>
 
 
 </mapper>

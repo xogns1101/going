@@ -27,6 +27,8 @@ public class SignUpRequestDTO {
     private String phone_number;
 
     // private LocalDate user_date 영섭이한테 물어보기
+    private User.LoginMethod loginMethod;
+
 
     // dto -> entity method
     public User toEntity(PasswordEncoder encoder) {
@@ -34,6 +36,7 @@ public class SignUpRequestDTO {
                 .email(email)
                 .password(encoder.encode(password))
                 .phoneNumber(phone_number)
+                .loginMethod(loginMethod)
                 .build();
     }
 

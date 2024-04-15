@@ -12,8 +12,9 @@ public class User {
     private String phoneNumber;
     private String auth;
     private LoginMethod loginMethod;
+    private String profileImage;
 
-    private enum LoginMethod {
+    public enum LoginMethod {
         COMMON, KAKAO, NAVER
     }
 }
