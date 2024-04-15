@@ -8,7 +8,11 @@ body {
   font-size: 15px;
   font-family: 'Noto Sans KR', sans-serif;
   color: #fff;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
+
 
 /* header style */
 
@@ -22,6 +26,7 @@ header {
 }
 header #wrap {
     display: flex;
+    position: relative;
 }
 
 header .logo {
@@ -31,13 +36,21 @@ header .logo {
 
 header .logo-content {
     display: flex;
+    margin-left: 50px;
     
 
 }
 
 header .logo-content li {
     font-size: 30px;
-    margin: auto 20px;
+    margin: auto 50px;
+
+}
+
+header ul li:last-child {
+  font-size: 25px;
+  position: absolute;
+  right: 0;
 }
 
 
