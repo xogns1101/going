@@ -5,7 +5,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Insert Your Title</title>
+    <title>yagaja</title>
 </head>
 <body>
     
