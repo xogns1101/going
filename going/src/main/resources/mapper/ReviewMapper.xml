@@ -7,16 +7,11 @@
     <insert id="saveReview">
         INSERT INTO review
             (review_title, review_content, email, camp_id, review_image,
-            review_point, review_count)
+            review_point, review_count, review_date)
         VALUES
             (#{reviewTitle}, #{reviewContent}, #{email}, #{campId},
-            #{reviewImage}, #{reviewPoint}, #{reviewCount})
+            #{reviewImage}, #{reviewPoint}, #{reviewCount}, #{reviewDate})
     </insert>
-
-    <select id="findOneReview">
-        SELECT * FROM review
-        WHERE review_title LIKE CONCAT('%', #{keyword}, '%');
-    </select>
 
     <select id="findAllReview" resultType="review">
         SELECT * FROM review
@@ -27,5 +22,28 @@
         DELETE FROM review
         WHERE review_no = #{reviewNo}
     </delete>
+
+    <update id="modifyReview">
+        UPDATE review
+        SET review_title = #{reviewTitle},
+            review_content = #{reviewContent},
+            review_image = #{reviewImage},
+            review_point = #{reviewPoint}
+        WHERE review_no = #{reviewNo}
+    </update>
+
+    <update id="countReview">
+        UPDATE review
+        SET review_count = review_count + 1
+        WHERE review_no = #{reviewNo}
+    </update>
+
+    <select id="bestReview" resultType="review">
+        SELECT
+            email, review_title, review_content, review_image, review_point, review_count
+        FROM review
+        ORDER BY review_count DESC
+        LIMIT 1
+    </select>
 
 </mapper>
