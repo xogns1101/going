@@ -1,0 +1,31 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.camp.going.mapper.ReviewMapper">
+
+    <insert id="saveReview">
+        INSERT INTO review
+            (review_title, review_content, email, camp_id, review_image,
+            review_point, review_count)
+        VALUES
+            (#{reviewTitle}, #{reviewContent}, #{email}, #{campId},
+            #{reviewImage}, #{reviewPoint}, #{reviewCount})
+    </insert>
+
+    <select id="findOneReview">
+        SELECT * FROM review
+        WHERE review_title LIKE CONCAT('%', #{keyword}, '%');
+    </select>
+
+    <select id="findAllReview" resultType="review">
+        SELECT * FROM review
+        ORDER BY review_no DESC;
+    </select>
+
+    <delete id="deleteReview">
+        DELETE FROM review
+        WHERE review_no = #{reviewNo}
+    </delete>
+
+</mapper>
