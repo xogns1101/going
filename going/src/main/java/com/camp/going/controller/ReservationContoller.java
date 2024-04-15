@@ -42,10 +42,15 @@ public class ReservationContoller {
         return "(jsp 경로)";
     }
 
-    @GetMapping("/resevation-detail")
-    public String reservationDetail(Model model){
-
-    }
+//    @GetMapping("/resevation-detail")
+//    public String reservationDetail(Model model){
+//
+//
+//
+//
+//
+//
+//    }
 
 
 
