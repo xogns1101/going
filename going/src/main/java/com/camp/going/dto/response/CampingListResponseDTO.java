@@ -48,6 +48,7 @@ public class CampingListResponseDTO {
 
     }
 
+
     public static String makePrettierDateString(LocalDate regDate) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return dtf.format(regDate);

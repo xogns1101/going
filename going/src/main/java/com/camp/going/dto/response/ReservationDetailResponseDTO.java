@@ -28,6 +28,7 @@ public class ReservationDetailResponseDTO {
     private String regDates; // 퇴실 캠핑장 예약 날짜
 
 
+
     public ReservationDetailResponseDTO(Reservation reservation
                                 , Camping camping) {
 
