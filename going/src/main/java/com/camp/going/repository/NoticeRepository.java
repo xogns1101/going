@@ -15,4 +15,6 @@ public interface NoticeRepository {
     Notice findOne(int noticeNo);
 
     void delete(int noticeNo);
+
+    void modify(Notice notice);
 }
