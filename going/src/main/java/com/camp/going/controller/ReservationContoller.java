@@ -39,7 +39,7 @@ public class ReservationContoller {
         model.addAttribute("camp", dtoList);
         model.addAttribute("maker", pageMaker);
 
-        return "(jsp 경로)";
+        return "index";
     }
 
 //    @GetMapping("/resevation-detail")
