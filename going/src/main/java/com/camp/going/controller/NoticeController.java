@@ -2,6 +2,7 @@ package com.camp.going.controller;
 
 import com.camp.going.common.PageMaker;
 import com.camp.going.common.Search;
+import com.camp.going.dto.request.NoticeModifyRequestDTO;
 import com.camp.going.dto.request.NoticeWriteRequestDTO;
 import com.camp.going.dto.response.NoticeDetailResponseDTO;
 import com.camp.going.dto.response.NoticeListResponseDTO;
@@ -52,6 +53,16 @@ public class NoticeController {
         log.info("/notice/write: POST, dto: {}", dto);
 
         service.register(dto, session);
+        return "redirect:/notice/list";
+    }
+
+
+    // 글 수정 요청
+    @PostMapping("/modify")
+    public String modify(NoticeModifyRequestDTO dto, HttpSession session) {
+        log.info("/notice/modify: POST, dto: {}", dto);
+
+        service.modify(dto, session);
         return "redirect:/notice/list";
     }
 

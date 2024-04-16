@@ -18,10 +18,10 @@ class NoticeRepositoryTest {
     private NoticeRepository repository;
 
     @Test
-    @DisplayName("공지사항 100개 작성하기")
+    @DisplayName("공지사항 200개 작성하기")
     void noticeInsertTest() {
         // given
-        for (int i = 1; i <= 100; i++) {
+        for (int i = 11; i <= 200; i++) {
             Notice notice = new Notice();
             notice.setNoticeTitle("공지사항 " + i + "번 제목 테스트");
             notice.setNoticeContent("공지사항 " + i + "번 내용 테스트");
@@ -33,14 +33,14 @@ class NoticeRepositoryTest {
     }
 
     @Test
-    @DisplayName("공지사항을 전체 조회하면 99개의 글이 조회됨")
+    @DisplayName("공지사항을 전체 조회하면 199개의 글이 조회됨")
     void findAllTest() {
         // given
 
         // when
         List<Notice> noticeList = repository.findAll();
         // then
-        assertEquals(99, noticeList.size());
+        assertEquals(199, noticeList.size());
     }
 
     @Test
@@ -67,21 +67,21 @@ class NoticeRepositoryTest {
     }
 
     @Test
-    @DisplayName("97번 게시글의 내용 수정")
+    @DisplayName("3번 게시글의 내용 수정")
     void modifyTest() {
         // given
-        int noticeNo = 97;
+        int noticeNo = 3;
         Notice modifiedNotice = repository.findOne(noticeNo);
-        modifiedNotice.setNoticeTitle("수정된 제목 97");
-        modifiedNotice.setNoticeContent("수정된 내용 97");
+        modifiedNotice.setNoticeTitle("수정된 제목 3");
+        modifiedNotice.setNoticeContent("수정된 내용 3");
 
         // when
         repository.modify(modifiedNotice);
 
         // then
         Notice retrievedNotice = repository.findOne(noticeNo);
-        Assertions.assertEquals("수정된 제목 97", retrievedNotice.getNoticeTitle());
-        Assertions.assertEquals("수정된 내용 97", retrievedNotice.getNoticeContent());
+        Assertions.assertEquals("수정된 제목 3", retrievedNotice.getNoticeTitle());
+        Assertions.assertEquals("수정된 내용 3", retrievedNotice.getNoticeContent());
     }
 
 }
