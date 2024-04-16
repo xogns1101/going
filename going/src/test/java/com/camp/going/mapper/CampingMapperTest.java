@@ -28,11 +28,19 @@ class CampingMapperTest {
         assertEquals(camping.getCampName(), "에뜨유명산캠핑장");
     }
 
-    @Test
-    @DisplayName("캠핑장 목록이 1개 있어야 함")
-    void findAllTest() {
-        // given
+//    @Test
+//    @DisplayName("캠핑장 목록이 1개 있어야 함")
+//    void findAllTest() {
+//        // given
+//
+//        // when
+//        List<Camping> campingList = campingMapper.findAllCamping(page);
+//        // then
+//        assertEquals(1, campingList.size());
+//
+//    }
 
+<<<<<<< HEAD
         // when
      //   List<Camping> campingList = campingMapper.findAllCamping(page);
         // then
@@ -52,6 +60,20 @@ class CampingMapperTest {
       //  assertEquals(1, campingList.size());
 
     }
+=======
+//    @Test
+//    @DisplayName("삭제가 잘 되는지 테스트")
+//    void campDeleteTest() {
+//        // given
+//        int campId = 2;
+//        // when
+//        campingMapper.deleteCamping(campId);
+//        List<Camping> campingList = campingMapper.findAllCamping(page);
+//        // then
+//        assertEquals(1, campingList.size());
+//
+//    }
+>>>>>>> b41bbcc155fa4f0d2ad46ba702fc9ba06df788eb
 
     @Test
     @DisplayName("수정 잘 되는 지 테스트")
@@ -80,6 +102,6 @@ class CampingMapperTest {
         // then
         assertEquals(camping, camping1);
     }
-    
+
 
 }

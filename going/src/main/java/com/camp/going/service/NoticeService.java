@@ -48,7 +48,8 @@ public class NoticeService {
         return new NoticeDetailResponseDTO(notice);
     }
 
-    public void modify(NoticeModifyRequestDTO dto) {
+    // 수정하기
+    public void modify(NoticeModifyRequestDTO dto, HttpSession session) {
 
         Notice notice = dto.toEntity();
         mapper.modify(notice);
