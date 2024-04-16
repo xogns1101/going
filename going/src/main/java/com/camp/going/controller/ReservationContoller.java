@@ -46,8 +46,8 @@ public class ReservationContoller {
     @GetMapping("/resevation-detail")
     public String reservationDetail(Model model){
 
-        service.reservationOne();
-
+//        service.reservationOne();
+return null;
 
 
 

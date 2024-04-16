@@ -9,6 +9,12 @@
         VALUES (#{noticeTitle}, #{noticeContent})
     </insert>
 
+    <update id="modify">
+        UPDATE notice
+        SET notice_title = #{title}, notice_content = #{content}
+        WHERE notice_no = #{nno}
+    </update>
+
     <delete id="delete">
         DELETE FROM notice
         WHERE notice_no = #{noticeNo}
