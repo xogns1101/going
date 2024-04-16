@@ -21,7 +21,7 @@ class NoticeRepositoryTest {
     @DisplayName("공지사항 200개 작성하기")
     void noticeInsertTest() {
         // given
-        for (int i = 11; i <= 200; i++) {
+        for (int i = 1; i <= 200; i++) {
             Notice notice = new Notice();
             notice.setNoticeTitle("공지사항 " + i + "번 제목 테스트");
             notice.setNoticeContent("공지사항 " + i + "번 내용 테스트");
@@ -82,6 +82,17 @@ class NoticeRepositoryTest {
         Notice retrievedNotice = repository.findOne(noticeNo);
         Assertions.assertEquals("수정된 제목 3", retrievedNotice.getNoticeTitle());
         Assertions.assertEquals("수정된 내용 3", retrievedNotice.getNoticeContent());
+    }
+
+    @Test
+    @DisplayName("3번 게시글을 단일 조회하면 제목에 '수정'이 포함되어 있어야 함")
+    void findOneTest2() {
+        // given
+        int noticeNo = 3;
+        // when
+        Notice notice = repository.findOne(noticeNo);
+        // then
+        assertTrue(notice.getNoticeTitle().contains("수정"));
     }
 
 }
