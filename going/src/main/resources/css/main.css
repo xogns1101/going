@@ -249,6 +249,14 @@ section.main-page2 .main-content .ad .ad-box img{
 
 /*footer style*/
 
+#total-footer-wrap {
+  margin-top: 1000px;
+  width: 133%;
+  position: relative;
+  left: -20%;
+  
+}
+
 footer {
   background: #4BDB73;
   padding: 20px 0;
