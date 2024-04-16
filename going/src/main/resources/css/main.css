@@ -249,7 +249,6 @@ section.main-page2 .main-content .ad .ad-box img{
 
 
 /*footer style*/
-
 #total-footer-wrap {
   margin-top: 1000px;
   width: 133%;
@@ -287,6 +286,7 @@ footer .footer-wrap .footer-content {
 
 footer .footer-wrap .footer-content p {
   text-align: center;
+  
   
 }
 
