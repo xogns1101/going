@@ -10,6 +10,8 @@ import com.camp.going.service.NoticeService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -35,15 +37,21 @@ public class NoticeController {
         model.addAttribute("nList", dtoList);
         model.addAttribute("maker", pageMaker);
 
-        return "(경로 패키지명)/list";
+        return "(경로패키지명)/list";
     }
 
 
     // 글쓰기 화면 요청
     @GetMapping("/write")
     public String write() {
-        System.out.println("/notice/write: GET");
-        return "(경로패키지명)/write";
+        // 사용자 인증 정보 가져오기.
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        // 사용자가 인증되었고, ADMIN 권한을 가지고 있는지 확인함.
+        if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
+                .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
+            System.out.println("/notice/write: GET");
+            return "(경로패키지명)/write";
+        } else return "redirect:/notice/list";
     }
 
 
@@ -70,10 +78,15 @@ public class NoticeController {
     // 글 삭제 요청
     @GetMapping("/delete")
     public String delete(int nno) {
+        // 사용자 인증 정보 가져오기.
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        // 사용자가 인증되었고, ADMIN 권한을 가지고 있는지 확인함.
+        if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
+                .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
         System.out.println("/notice/delete: GET" + nno);
         service.delete(nno);
-
         return "redirect:/notice/list";
+        } else return "redirect:/notice/list";
     }
 
 
