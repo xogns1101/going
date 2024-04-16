@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -43,13 +44,20 @@ public class NoticeController {
 
     // 글쓰기 화면 요청
     @GetMapping("/write")
-    public String write() {
+    public String write(Model model) {
         // 사용자 인증 정보 가져오기.
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         // 사용자가 인증되었고, ADMIN 권한을 가지고 있는지 확인함.
         if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
                 .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
             System.out.println("/notice/write: GET");
+
+            // 카테고리 옵션 설정
+            List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
+            model.addAttribute("categories", categories);
+
+
+
             return "(경로패키지명)/write";
         } else return "redirect:/notice/list";
     }
@@ -67,8 +75,12 @@ public class NoticeController {
 
     // 글 수정 요청
     @PostMapping("/modify")
-    public String modify(NoticeModifyRequestDTO dto, HttpSession session) {
+    public String modify(NoticeModifyRequestDTO dto, HttpSession session, Model model) {
         log.info("/notice/modify: POST, dto: {}", dto);
+
+        // 카테고리 옵션 설정
+        List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
+        model.addAttribute("categories", categories);
 
         service.modify(dto, session);
         return "redirect:/notice/list";

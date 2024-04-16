@@ -25,7 +25,8 @@ public class NoticeRepositoryImpl implements NoticeRepository {
                     rs.getString("notice_title"),
                     rs.getString("notice_content"),
                     rs.getTimestamp("notice_date").toLocalDateTime(),
-                    rs.getInt("notice_count")
+                    rs.getInt("notice_count"),
+                    rs.getString("notice_category")
             );
             return notice;
         }
