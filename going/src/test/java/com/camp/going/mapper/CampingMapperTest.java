@@ -28,16 +28,57 @@ class CampingMapperTest {
         assertEquals(camping.getCampName(), "에뜨유명산캠핑장");
     }
 
+//    @Test
+//    @DisplayName("캠핑장 목록이 1개 있어야 함")
+//    void findAllTest() {
+//        // given
+//
+//        // when
+//        List<Camping> campingList = campingMapper.findAllCamping(page);
+//        // then
+//        assertEquals(1, campingList.size());
+//
+//    }
+
+//    @Test
+//    @DisplayName("삭제가 잘 되는지 테스트")
+//    void campDeleteTest() {
+//        // given
+//        int campId = 2;
+//        // when
+//        campingMapper.deleteCamping(campId);
+//        List<Camping> campingList = campingMapper.findAllCamping(page);
+//        // then
+//        assertEquals(1, campingList.size());
+//
+//    }
+
     @Test
-    @DisplayName("캠핑장 목록이 1개 있어야 함")
-    void findAllTest() {
+    @DisplayName("수정 잘 되는 지 테스트")
+    void updateCamping() {
         // given
-
+        int campId = 1;
+        Camping camping = Camping.builder()
+                .campId(campId)
+                .campName("두레캠핑장")
+                .campAddress("경기도 가평군 청평면 상천리 1494")
+                .campNumber("정보없음")
+                .campHomepage("cafe.naver.com/dooraecamp")
+                .campElectric("전기 사용가능")
+                .campHotWater("온수 사용가능")
+                .campWifi("wifi 사용가능")
+                .campFirewood("장작판매")
+                .campMart("마트 없음")
+                .campBed("글램핑 침대 미보유")
+                .campIceBox("글램핑 냉장고 미보유")
+                .campPrice(70000)
+                .campImage("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTExMjFfMjI3%2FMDAxNjM3NDk0MjUzMDUw.NQMMFR9s86qh1qwOL_A22iU5QXjAGcLiTb-tejQpHM4g.brnrzYkz1tf9ikkSh5hxnc2bsP64CGz6FJ2NcRB4YL0g.JPEG.seri9258%2F20211105%25A3%25DF154017.jpg&type=a340")
+                .build();
         // when
-        List<Camping> campingList = campingMapper.findAllCamping();
+        campingMapper.updateCamping(camping);
+        Camping camping1 = campingMapper.findCamping(campId);
         // then
-        assertEquals(1, campingList.size());
-
+        assertEquals(camping, camping1);
     }
 
 

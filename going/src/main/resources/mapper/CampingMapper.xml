@@ -47,4 +47,34 @@
         SELECT * FROM camping
     </select>
 
+    <delete id="deleteCamping">
+
+        DELETE FROM camping
+        WHERE camp_id = #{campId}
+
+    </delete>
+
+    <update id="updateCamping">
+
+        UPDATE
+            camping
+        SET
+            camp_name = #{campName}
+            , camp_address = #{campAddress}
+            , camp_number = #{campNumber}
+            , camp_homepage = #{campHomepage}
+            , camp_electric = #{campElectric}
+            , camp_hot_water = #{campHotWater}
+            , camp_wifi = #{campWifi}
+            , camp_firewood = #{campFirewood}
+            , camp_mart = #{campMart}
+            , camp_bed = #{campBed}
+            , camp_ice_box = #{campIceBox}
+            , camp_price = #{campPrice}
+            , camp_image = #{campImage}
+        WHERE camp_id = #{campId}
+
+    </update>
+
+
 </mapper>

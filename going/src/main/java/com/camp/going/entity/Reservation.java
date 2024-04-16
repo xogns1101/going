@@ -9,16 +9,11 @@ import java.time.LocalDateTime;
 @AllArgsConstructor @Builder
 public class Reservation {
 
-    private int campId;
-    private String email;
-    private LocalDateTime regDate;
-    private int price;
-    private String phoneNumber;
-
-
-
-
-
+    private int campId; // 캠핑장 고유 번호
+    private String email; // 사용자 이메일 (아이디)
+    private LocalDateTime regDate; // 예약 날짜
+    private int price; // 캠핑장 가격 
+    private String phoneNumber; //  사용자 전화 번호
 
 
 
