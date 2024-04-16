@@ -68,6 +68,7 @@ header .login {
 header .login a {
   font-size: 30px;
   display: block;
+  color: #fff;
 }
 
 header .login a:hover {
