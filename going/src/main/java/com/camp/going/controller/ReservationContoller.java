@@ -29,29 +29,29 @@ public class ReservationContoller {
     @GetMapping("/reservation")
     public String reservationShow(Model model, @ModelAttribute("s") Search page){
 
-        System.out.println("search = " + page);
-        List<CampingListResponseDTO> dtoList = service.getList(page);
+//        System.out.println("search = " + page);
+//        List<CampingListResponseDTO> dtoList = service.getList(page);
+//
+//
+//        // 페이징 버튼 알고리즘 적용 -> 사용자가 요청한 페이지 정보, 총 게시물 개수를 전달.
+//        // 페이징 알고리즘 자동 호출.
+//        PageMaker pageMaker = new PageMaker(page, service.getCount(page));
+//
+//        model.addAttribute("camp", dtoList);
+//        model.addAttribute("maker", pageMaker);
 
-
-        // 페이징 버튼 알고리즘 적용 -> 사용자가 요청한 페이지 정보, 총 게시물 개수를 전달.
-        // 페이징 알고리즘 자동 호출.
-        PageMaker pageMaker = new PageMaker(page, service.getCount(page));
-
-        model.addAttribute("camp", dtoList);
-        model.addAttribute("maker", pageMaker);
-
-        return "(jsp 경로)";
+        return "index";
     }
 
-    @GetMapping("/resevation-detail")
-    public String reservationDetail(Model model){
-
-        service.reservationOne();
-
-
-
-
-    }
+//    @GetMapping("/resevation-detail")
+//    public String reservationDetail(Model model){
+//
+//        service.reservationOne();
+//
+//
+//
+//
+//    }
 
 
 
