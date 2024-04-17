@@ -37,9 +37,9 @@ public class NoticeRepositoryImpl implements NoticeRepository {
 
     @Override
     public void save(Notice notice) {
-        String sql = "INSERT INTO notice (notice_title, notice_content) " +
-                "VALUES (?, ?)";
-        template.update(sql, notice.getNoticeTitle(), notice.getNoticeContent());
+        String sql = "INSERT INTO notice (notice_title, notice_content, notice_category) " +
+                "VALUES (?, ?, ?)";
+        template.update(sql, notice.getNoticeTitle(), notice.getNoticeContent(), notice.getNoticeCategory());
     }
 
     @Override
@@ -67,8 +67,8 @@ public class NoticeRepositoryImpl implements NoticeRepository {
     @Override
     public void modify(Notice notice) {
         String sql = "UPDATE notice " +
-                     "SET notice_title=?, notice_content=? " +
+                     "SET notice_title=?, notice_content=?, notice_category=? " +
                      "WHERE notice_no=?";
-        template.update(sql, notice.getNoticeTitle(), notice.getNoticeContent(), notice.getNoticeNo());
+        template.update(sql, notice.getNoticeTitle(), notice.getNoticeContent(), notice.getNoticeCategory(), notice.getNoticeNo());
     }
 }
