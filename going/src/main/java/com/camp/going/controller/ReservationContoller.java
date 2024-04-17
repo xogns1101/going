@@ -47,7 +47,8 @@ public class ReservationContoller {
     public String reservationDetail(Model model){
 
 //        service.reservationOne();
-return null;
+    return null;
+
 
 
 

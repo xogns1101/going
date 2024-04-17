@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -23,14 +24,20 @@ class ReservationMapperTest {
     @DisplayName("예약이 잘 되는지 확인")
     void reservationInsert() {
         // given
+        String regDate = "2024-04-15";
+        String regDates = "2024-04-16";
+
         Reservation reservation = Reservation.builder()
                 .campId(1)
+                .campName("두레캠핑장")
                 .email("aaa1111@naver.com")
+                .regDate(LocalDate.parse(regDate))
+                .regDates(LocalDate.parse(regDates))
                 .price(70000)
                 .phoneNumber("010-1454-5378")
                 .build();
         // when
-        reservationMapper.reservationInsert(reservation);
+        reservationMapper.reservationSave(reservation);
         // then
     }
     
