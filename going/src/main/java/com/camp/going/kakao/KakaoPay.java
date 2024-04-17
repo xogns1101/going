@@ -49,6 +49,7 @@ public class KakaoPay {
     HttpEntity<String> body =
             new HttpEntity<>(jsonObject.toString(), headers);
 	log.info("body : {}", body);
+
 	try {
         Map<String, Object> responseResult = restTemplate.postForObject(
                 new URI("https://open-api.kakaopay.com/online/v1/payment/ready"),
