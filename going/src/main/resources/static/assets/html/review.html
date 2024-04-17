@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REVIEW</title>
+
+    <link rel="stylesheet" href="../css/review.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Yeon+Sung&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <header>
+        <div id="wrap">
+            <h1 class="logo">Y⛺GAJA</h1>
+            <div class="logo-content">
+                <a href="#">INTRO</a>
+                <a href="#">RESERVATION</a>
+                <a href="#">NOTICE</a>
+                <a href="#">REVIEW</a>
+            </div>
+
+            <div class="login">
+                <a href="#">LOGIN</a><br>
+                <a href="#">MYPAGE</a>
+            </div>
+        </div>
+    </header>
+
+
+    <section>
+
+
+        <div class="title">
+            <h1>REVIEW / <span>리뷰</span></h1>
+
+
+            <button type="button" class="write-button">NEW <br> WRITE</button>
+        </div>
+
+
+
+        <!-- 
+
+private int reviewNo; // 리뷰 글 번호
+    private String reviewTitle; // 리뷰 제목
+    private String reviewContent; // 리뷰 내용
+    private String email; // 회원 아이디
+    private int campId; // 캠핑장 아이디
+    private String reviewImage; // 리뷰 사진
+    private int reviewPoint; // 별점
+    private int reviewCount; // 리뷰 조회수
+    private LocalDateTime reviewDate; // 리뷰 작성 날짜
+
+
+         -->
+        <!-- 리뷰 쓰기 모달창 -->
+
+        <div id="myModal" class="modal">
+
+
+
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+
+                <form action="#" method="get" enctype="multipart/form-data">
+
+                    <h1>리뷰 등록</h1>
+
+                    <div class="modal-detail">
+                        <input type="text" id="review-title" placeholder="캠핑장 이름을 입력하세요."><br>
+                        <input type="text" id="review-content" placeholder="리뷰내용">
+                    </div>
+
+                    <div class="profile">
+
+                        <div class="thumbnail-box">
+                            <img src="../img/camp3.jpg" alt="리뷰사진">
+                        </div>
+                        
+
+                        <input type="file" id="review-image" accept="image/*">
+                    </div>
+
+                    <button type="submit">업로드</button>
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <c:forEach var="b" items="${#}">
+            <div class="review-list">
+
+                
+                <div class="review-box">
+                    <ul class="review">
+                        <li class="camp-name">${b.campName}</li>
+                        <li class="email">${b.email}</li>
+
+                        <img src="../img/camp2.jpg" alt="리뷰">
+                        
+                        <li class="review-content">너무 아늑하고 좋구요 가족들과 함께하니 너무 좋네요 행복한 1박이 되었네요 강추드립니다!</li>
+                        
+                        
+                    </ul>
+
+                   
+                        <button class="review-modify">수정</button>
+                        <button class="review-delete">삭제</button>
+                    
+                    
+                    <div class="good-button">👍🏻</div>
+                    <!-- <div class="good-button">❤️</div> -->
+
+                    <!-- <button type="button" class="good-button">🤍</button> -->
+
+
+                    
+                </div>
+            </div>
+
+        </c:forEach>
+
+
+
+
+    </section>
+
+
+
+    <footer>
+
+        <div class="footer-wrap">
+            <div class="footer-content">
+                <p>
+                    상호 : YAGAJA &#124; 대표자명 : 홍길동 &#124; 사업자등록번호 : 123-12-1234 &#124; 주소 : 서울특별시 마포구 백범로 23, 3층 (신수동,
+                    케이터틀)
+                    &#124; 문의 : 02-123-1234
+                </p>
+                <br>
+
+                <p>이용약관 &#124; 개인정보처리방침</p>
+
+            </div>
+
+
+            <h3 class="footer-logo">Y⛺GAJA</h3>
+        </div>
+
+
+    </footer>
+
+
+
+<script>
+
+    // 하트를 눌렀을때 좋아요 up! 
+    const $goodButton = document.querySelector('.good-button');
+    
+
+    $goodButton.addEventListener('click', e => {
+       
+
+        if ($goodButton.textContent === '👍🏻') {
+        $goodButton.textContent = '👍';
+    } else {
+        $goodButton.textContent = '👍🏻';
+    }
+    })
+
+
+
+
+    // 모달 상세
+    // 모달 열기 버튼
+    const $modalBtn = document.querySelector('.write-button')
+    // 모달 창
+    const $modal = document.getElementById("myModal");
+    // 모달 닫기 버튼
+    const $closeBtn = document.getElementsByClassName("close")[0];
+
+    // 모달 열기 버튼에 클릭 이벤트 추가
+    $modalBtn.onclick = function() {
+    $modal.style.display = "block";
+    }
+
+    // 모달 닫기 버튼에 클릭 이벤트 추가
+    $closeBtn.onclick = function() {
+    $modal.style.display = "none";
+    }
+
+    // 사용자가 모달 외부를 클릭하면 모달이 닫히도록 설정
+    window.onclick = function(event) {
+    if (event.target == $modal) {
+        $modal.style.display = "none";
+    }
+    }
+
+
+
+    // 리뷰 사진 업로드 관련 스크립트
+        const $profile = document.querySelector('.profile');
+        const $fileInput = document.getElementById('review-image');
+
+        // 이미지 영역을 클릭하면 input type=file 을 클릭한 것과 동일한 효과를 내자.
+        $profile.onclick = e => {
+          $fileInput.click();
+        }
+
+        // 프로필 사진 첨부 시 썸네일 보여주기
+        $fileInput.onchange = e => {
+          // 사용자가 첨부한 파일 데이터 읽기
+          const fileData = $fileInput.files[0];
+          console.log(fileData);
+
+          // 첨부파일의 바이트데이터를 읽어들이는 객체 생성
+          const reader = new FileReader();
+
+          // 파일의 바이트데이터를 읽어서 img태그의 src속성에 넣으려면
+          // url형태로 전달해야 하는데, 이걸 처리하는 함수를 사용.
+          reader.readAsDataURL(fileData);
+
+          // 파일 리더 객체가 로딩이 끝났다면 이벤트를 발생시켜서
+          // img 태그에 이미지를 세팅
+          reader.onloadend = e => {
+            const $img = document.querySelector('.thumbnail-box img');
+            $img.setAttribute('src', reader.result);
+          }
+
+        }
+        
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

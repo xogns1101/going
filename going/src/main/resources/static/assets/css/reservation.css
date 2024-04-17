@@ -1,0 +1,121 @@
+
+
+section .title h1 {
+    color: black;
+    margin-top: 250px;
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  section .title h1 span {
+  color: black;
+  font-family: "Yeon Sung", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  }
+  
+  
+  
+  section .camping-list {
+  display: flex;
+  justify-content: space-around;
+  }
+  
+  
+  
+  section .camping-list .camping-box {
+    width: 500px;
+    height: 700px;
+    background: #E4FFAA;
+    margin-top: 50px;
+    border-radius: 3%;
+  
+    position: relative;
+  }
+  
+  section .camping-list .camping-box img {
+    width: 465px;
+    height: 465px;
+  
+    position: absolute;
+    top: 18.5px;
+    left: 18.5px;
+    
+    border-radius: 3%;
+  
+  }
+  
+  section .camping-list .camping-box .camping {
+    color: black;
+    font-family: "Yeon Sung", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    width: 465px;
+    
+    
+  }
+  
+  section .camping-list .camping-box .camping li:first-child {
+    font-size: 30px;
+    text-decoration: underline;
+    position: absolute;
+    
+    left: 18.5px;
+    left: 18.5px;
+    bottom: 140px;
+  
+  }
+  
+  section .camping-list .camping-box .camping li:nth-child(2) {
+    font-size: 20px;
+    position: absolute;
+  
+    left: 18.5px;
+    right: 18.5px;
+    bottom: 50px;
+  }
+  section .camping-list .camping-box .camping li:nth-child(3) {
+    font-size: 20px;
+    position: absolute;
+  
+    left: 18.5px;
+    right: 18.5px;
+    bottom: 30px;
+  }
+  section .camping-list .camping-box .camping li:nth-child(4) {
+    font-size: 20px;
+    position: absolute;
+  
+    left: 18.5px;
+    right: 18.5px;
+    bottom: 10px;
+  }
+  
+  
+  
+  section .camping-list .camping-box .camping li:last-child {
+    font-size: 50px;
+    position: absolute;
+  
+    bottom: 120px;
+    right: 30px;
+  }
+  
+  section .camping-list button.more-button {
+    width: 100px;
+    height: 50px;
+    background: #4BDB73;
+    border-color: #4BDB73;
+    border-radius: 10%;
+    font-size: 25px;
+    color: #fff;
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal; 
+  
+    position: absolute;
+  
+    bottom: 20px;
+    right: 30px;
+  
+  }
