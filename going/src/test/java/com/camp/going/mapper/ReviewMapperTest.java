@@ -73,6 +73,7 @@ class ReviewMapperTest {
 
         // when
         reviewMapper.modifyReview(modReview);
+
         // then
     }
 
@@ -96,7 +97,6 @@ class ReviewMapperTest {
         Review bestReview = reviewMapper.bestReview();
         // then
         assertEquals(15, bestReview.getReviewLike());
-
     }
 
 }

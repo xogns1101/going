@@ -39,7 +39,7 @@ public class LoginUtils {
 
     // 자동 로그인 여부 확인
     public static boolean isAutoLogin(HttpServletRequest request) {
-        // auto라는 이름의 쿠키가 존재한다면 true, 없다면 false
+        // auto 라는 이름의 쿠키가 존재한다면 true, 없다면 false
         return WebUtils.getCookie(request, AUTO_LOGIN_COOKIE) != null;
     }
 

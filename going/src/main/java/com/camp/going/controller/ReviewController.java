@@ -53,7 +53,7 @@ public class ReviewController {
 
         return "redirect:/review/list";
     }
-    
+
     // 리뷰 수정 요청
 
     // 리뷰 삭제 요청 (/review/delete : GET)

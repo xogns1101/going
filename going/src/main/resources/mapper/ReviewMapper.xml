@@ -6,11 +6,11 @@
 
     <insert id="saveReview">
         INSERT INTO review
-            (review_content, email, camp_id, review_image,
-            review_point, review_like, review_date)
+        (review_content, email, camp_id, review_image,
+        review_point, review_like, review_date)
         VALUES
-            (#{reviewContent}, #{email}, #{campId},
-            #{reviewImage}, #{reviewPoint}, #{reviewLike}, #{reviewDate})
+        (#{reviewContent}, #{email}, #{campId},
+        #{reviewImage}, #{reviewPoint}, #{reviewLike}, #{reviewDate})
     </insert>
 
     <select id="findAllReview" resultType="review">
@@ -29,8 +29,8 @@
     <update id="modifyReview">
         UPDATE review
         SET review_content = #{reviewContent},
-            review_image = #{reviewImage},
-            review_point = #{reviewPoint}
+        review_image = #{reviewImage},
+        review_point = #{reviewPoint}
         WHERE review_no = #{reviewNo}
     </update>
 
@@ -42,8 +42,8 @@
 
     <select id="bestReview" resultType="review">
         SELECT
-            R.email, R.review_content, R.review_image, R.review_point, R.review_like,
-            C.camp_name
+        R.email, R.review_content, R.review_image, R.review_point, R.review_like,
+        C.camp_name
         FROM review R
         LEFT JOIN camping C
         ON R.camp_id = C.camp_id
