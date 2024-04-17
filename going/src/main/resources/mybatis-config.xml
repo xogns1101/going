@@ -19,6 +19,7 @@
         <typeAlias type="com.camp.going.entity.Camping" alias="camping" />
         <typeAlias type="com.camp.going.entity.Reservation" alias="reservation" />
         <typeAlias type="com.camp.going.entity.Review" alias="review" />
+        <typeAlias type="com.camp.going.entity.Notice" alias="notice" />
 
     </typeAliases>
 
@@ -28,6 +29,7 @@
         <mapper resource="mapper/CampingMapper.xml" />
         <mapper resource="mapper/ReservationMapper.xml" />
         <mapper resource="mapper/ReviewMapper.xml" />
+        <mapper resource="mapper/NoticeMapper.xml" />
     </mappers>
 
 
