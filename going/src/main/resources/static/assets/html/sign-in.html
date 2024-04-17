@@ -39,44 +39,55 @@
 
     <!-- sign-in -->
     <div class="SignIn" style="width: 1436px; height: 1024px; position: relative; background: white; margin-left: 200px;">
+        
+        <!-- 타이틀 -->
         <div class="Logintitle" style="left: 616px; top: 167px; position: absolute; color: black; font-size: 64px; font-family: Luckiest Guy; font-weight: 400; word-wrap: break-word">log-in</div>
         <div class="Loginbackground" style="width: 986px; height: 588px; left: 255px; top: 256px; position: absolute; background: #D9D9D9"></div>
         
+        <!-- 자동로그인 -->
         <div style="position: absolute; left: 488px; top: 515px;">
             <input type="checkbox" id="autoLogin" style="width: 20px; height: 20px;">
             <label for="autoLogin" style="font-size: 24px; font-family: Yeon Sung; font-weight: 400; color: black;">자동 로그인</label>
         </div>
 
+        <!-- 아이디 또는 비밀번호를 입력해주세요 -->
         <div class="PlzPw" style="width: 205px; height: 28px; left: 367px; top: 401px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">비밀번호를 입력해 주세요.</div>
         <div class="PlzId" style="width: 186px; height: 28px; left: 367px; top: 281px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">아이디를 입력해 주세요.</div>
 
         
-        <div class="Naverloginblank" style="width: 351px; height: 62px; left: 769px; top: 756px; position: absolute; background: #0D790B"></div>
+        <!-- <div class="Naverloginblank" style="width: 351px; height: 62px; left: 769px; top: 756px; position: absolute; background: #0D790B"></div>
         <div style="width: 188px; height: 28px; left: 882px; top: 773px; position: absolute; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">
             <a href="네이버_로그인_링크" style="color: white; text-decoration: none;">네이버 계정으로 로그인</a>
+        </div> -->
+
+        <!-- 카카오로 로그인 -->
+        <div class="Kakaologinblank" style="width: 350px; height: 62px; left: 575px; top: 756px; position: absolute; background: #FAFF02"></div>
+        <div style="width: 185px; height: 28px; left: 680px; top: 773px; position: absolute; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">
+        <a href="카카오_로그인_링크" style="color: #5B5A3F; text-decoration: none;">카카오 계정으로 로그인</a>       
         </div>
-        <div class="Kakaologinblank" style="width: 350px; height: 62px; left: 366px; top: 756px; position: absolute; background: #FAFF02"></div>
-        <div style="width: 185px; height: 28px; left: 484px; top: 773px; position: absolute; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">
-            <a href="카카오_로그인_링크" style="color: #5B5A3F; text-decoration: none;">카카오 계정으로 로그인</a>
-        </div>
+        <div class="Kakaoicon" style="width: 36px; height: 25px; left: 610px; top: 773px; position: absolute; background: #5B5A3F; border-radius: 9999px"></div>
+        
+        <!-- 회원가입 버튼 -->
         <div class="Joinblank" style="width: 492px; height: 61px; left: 502px; top: 658px; position: absolute; background: #535651"></div>
         <button class="Join" style="width: 90px; height: 37px; left: 691px; top: 670px; position: absolute; color: white; font-size: 32px; font-family: Yeon Sung; font-weight: 400; white-space: nowrap; border: none; background: none; cursor: pointer;">회원가입</button>
+        
+        <!-- 로그인 버튼 -->
         <div class="Loginblank" style="width: 492px; height: 61px; left: 502px; top: 559px; position: absolute; background: #0F100F"></div>
         <button class="Login" style="width: 66px; height: 37px; left: 703px; top: 571px; position: absolute; color: white; font-size: 32px; font-family: Yeon Sung; font-weight: 400; white-space: nowrap; border: none; background: none; cursor: pointer;">로그인</button>
+        
+        <!-- 비밀번호 입력란 -->
         <div class="Passwordblank" style="width: 754px; height: 62px; left: 367px; top: 433px; position: absolute; background: #FFFDFD"></div>
         <div class="Writepassword" style="width: 69px; height: 28px; left: 385px; top: 450px; position: absolute; color: #9BB298; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">최소 8자</div>
         <input type="password" placeholder="최소 8자" style="width: 300px; height: 28px; left: 367px; top: 450px; position: absolute; font-size: 24px; font-family: Yeon Sung; font-weight: 400; border: none;">
 
+        <!-- 이메일 입력란 -->
         <div class="Emilblank" style="width: 754px; height: 61px; left: 366px; top: 321px; position: absolute; background: #FFFDFD"></div>
         <div class="Writeemail" style="width: 189px; height: 28px; left: 385px; top: 337px; position: absolute; color: #9BB298; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word;">이메일을 입력해 주세요.</div>
-            <input type="text" placeholder="이메일을 입력해주세요" style="width: 500px; height: 30px; left: 367px; top: 337px; position: absolute; font-size: 24px; font-family: Yeon Sung; font-weight: 400; border: none;">
+        <input type="text" placeholder="이메일을 입력해주세요" style="width: 500px; height: 30px; left: 367px; top: 337px; position: absolute; font-size: 24px; font-family: Yeon Sung; font-weight: 400; border: none;">
 
-
-        <div class="Kakaoicon" style="width: 36px; height: 25px; left: 411px; top: 775px; position: absolute; background: #5B5A3F; border-radius: 9999px"></div>
-        <div class="Navericon" style="width: 29px; height: 38px; left: 819px; top: 767px; position: absolute; color: white; font-size: 32px; font-family: Ultra; font-weight: 400; word-wrap: break-word">N</div>
+        <!-- 헤더 -->
         <div class="Headerbackground" style="width: 1529px; height: 151px; left: 0px; top: 0px; position: absolute">
-          <div class="Header" style="width: 1436px; height: 126px; left: 0px; top: 0px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
-
+        <div class="Header" style="width: 1436px; height: 126px; left: 0px; top: 0px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
         </div>
 
 
