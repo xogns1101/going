@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESERVATION</title>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/reservation.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Yeon+Sung&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <header>
+        <div id="wrap">
+            <h1 class="logo">Y⛺GAJA</h1>
+            <div class="logo-content">
+                <a href="#">INTRO</a>
+                <a href="#">RESERVATION</a>
+                <a href="#">NOTICE</a>
+                <a href="#">REVIEW</a>
+            </div>
+
+            <div class="login">
+                <a href="#">LOGIN</a><br>
+                <a href="#">MYPAGE</a>
+            </div>
+        </div>
+    </header>
+
+
+    <section>
+
+
+        <div class="title">
+            <h1>RESERVATION / <span>예약</span></h1>
+        </div>
+
+
+
+
+
+        <c:forEach var="b" items="${camp}">
+            <div class="camping-list">
+                <div class="camping-box">
+                    <img src="../img/camp4.jpg" alt="캠핑"><br>
+                    <ul class="camping">
+                        <li class="camp-name">${b.campName}</li>
+                        <li class="camp-address">${b.campAddess}</li>
+                        <li class="camp-number">${b.campNumber}</li>
+                        <li class="camp-homepage">${b.campHomepage}</li>
+                        <li class="camp-price">${b.campPrice}</li>
+                    </ul>
+                
+                    <button type="button" class="more-button">MORE</button>
+                </div>
+            </div>
+
+        </c:forEach>
+
+
+
+
+    </section>
+
+
+
+    <footer>
+
+        <div class="footer-wrap">
+            <div class="footer-content">
+                <p>
+                    상호 : YAGAJA &#124; 대표자명 : 홍길동 &#124; 사업자등록번호 : 123-12-1234 &#124; 주소 : 서울특별시 마포구 백범로 23, 3층 (신수동,
+                    케이터틀)
+                    &#124; 문의 : 02-123-1234
+                </p>
+                <br>
+
+                <p>이용약관 &#124; 개인정보처리방침</p>
+
+            </div>
+
+
+            <h3 class="footer-logo">Y⛺GAJA</h3>
+        </div>
+
+
+    </footer>
+
+
+</body>
+
+</html>
