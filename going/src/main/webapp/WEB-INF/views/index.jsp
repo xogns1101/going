@@ -22,10 +22,10 @@
                 url: '/jq/kakaopay',
                 dataType: 'json',
                 success:function(data){
-                    alert(data.tid);
+                    console.log(data.tid);
                 },
                 error:function(error){
-                    alert(error);
+                   console.log(error);
                 }
 
             });
