@@ -7,7 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 import static com.camp.going.entity.Notice.Category.ESSENTIAL;
 import static org.junit.jupiter.api.Assertions.*;
@@ -108,6 +110,27 @@ class NoticeRepositoryTest {
             notice.setNoticeContent("공지사항 " + i + "번 내용 테스트");
             notice.setNoticeCategory("NOTICE");
             repository.save(notice);
+        }
+        // when
+
+        // then
+    }
+
+    @Test
+    @DisplayName("공지사항 번호 200까지의 게시글의 카테고리를 ESSENTAIL, NOTICE, COMMON 셋 중 하나로 무작위로 바꾼다")
+    void noticeCategoryModifyTest() {
+        // given
+        Random random = new Random();
+        List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
+
+        for (int i = 1; i <= 200; i++) {
+            String randomCategory = categories.get(random.nextInt(categories.size()));
+
+            Notice notice = repository.findOne(i);
+            if (notice != null) {
+                notice.setNoticeCategory(randomCategory);
+                repository.modify(notice);
+            }
         }
         // when
 
