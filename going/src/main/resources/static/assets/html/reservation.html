@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
 
 
 </head>
+
 <body>
     <header>
         <div id="wrap">
@@ -43,37 +45,29 @@
 
 
 
-    
-    <div class="camping-list">
-        <div class="camping-box">
-            <img src="../img/camp4.jpg" alt="캠핑"><br>
-            <ul class="camping">
-                <li class="camp-name">홀리데이 캠핑장</li>
-                <li class="camp-address">경기 가평군 설악면 유명로 654-82 (가일리)</li>
-                <li class="camp-number"></li>
-                <li class="camp-homepage"></li>
-                <li class="camp-price">50000원~</li>
-            </ul>
 
-        </div>
-    </div>
+        <c:forEach var="b" items="${camp}">
+            <div class="camping-list">
+                <div class="camping-box">
+                    <img src="../img/camp4.jpg" alt="캠핑"><br>
+                    <ul class="camping">
+                        <li class="camp-name">${b.campName}</li>
+                        <li class="camp-address">${b.campAddess}</li>
+                        <li class="camp-number">${b.campNumber}</li>
+                        <li class="camp-homepage">${b.campHomepage}</li>
+                        <li class="camp-price">${b.campPrice}</li>
+                    </ul>
+                
+                    <button type="button" class="more-button">MORE</button>
+                </div>
+            </div>
 
-
+        </c:forEach>
 
 
 
 
     </section>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -99,6 +93,7 @@
 
     </footer>
 
-    
+
 </body>
+
 </html>

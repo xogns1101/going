@@ -19,12 +19,15 @@ public class NoticeModifyRequestDTO {
     @NotBlank
     private String content; // 수정할 공지 내용
 
+    private String category; // 수정할 카테고리
+
 
     public Notice toEntity() {
         return Notice.builder()
                 .noticeNo(nno)
                 .noticeTitle(title)
                 .noticeContent(content)
+                .noticeCategory(category)
                 .build();
     }
 

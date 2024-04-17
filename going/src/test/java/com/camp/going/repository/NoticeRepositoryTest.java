@@ -7,8 +7,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
+import static com.camp.going.entity.Notice.Category.ESSENTIAL;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -21,7 +24,7 @@ class NoticeRepositoryTest {
     @DisplayName("공지사항 200개 작성하기")
     void noticeInsertTest() {
         // given
-        for (int i = 11; i <= 200; i++) {
+        for (int i = 1; i <= 200; i++) {
             Notice notice = new Notice();
             notice.setNoticeTitle("공지사항 " + i + "번 제목 테스트");
             notice.setNoticeContent("공지사항 " + i + "번 내용 테스트");
@@ -74,6 +77,7 @@ class NoticeRepositoryTest {
         Notice modifiedNotice = repository.findOne(noticeNo);
         modifiedNotice.setNoticeTitle("수정된 제목 3");
         modifiedNotice.setNoticeContent("수정된 내용 3");
+        modifiedNotice.setNoticeCategory("ESSENTIAL");
 
         // when
         repository.modify(modifiedNotice);
@@ -82,6 +86,55 @@ class NoticeRepositoryTest {
         Notice retrievedNotice = repository.findOne(noticeNo);
         Assertions.assertEquals("수정된 제목 3", retrievedNotice.getNoticeTitle());
         Assertions.assertEquals("수정된 내용 3", retrievedNotice.getNoticeContent());
+        Assertions.assertEquals("ESSENTIAL", retrievedNotice.getNoticeCategory());
+    }
+
+    @Test
+    @DisplayName("3번 게시글을 단일 조회하면 제목에 '수정'이 포함되어 있어야 함")
+    void findOneTest2() {
+        // given
+        int noticeNo = 3;
+        // when
+        Notice notice = repository.findOne(noticeNo);
+        // then
+        assertTrue(notice.getNoticeTitle().contains("수정"));
+    }
+
+    @Test
+    @DisplayName("201번 게시글을 카테고리 NOTICE까지 넣어서 작성해본다")
+    void noticeInsertTest2() {
+        // given
+        for (int i = 201; i <= 201; i++) {
+            Notice notice = new Notice();
+            notice.setNoticeTitle("공지사항 " + i + "번 제목 테스트");
+            notice.setNoticeContent("공지사항 " + i + "번 내용 테스트");
+            notice.setNoticeCategory("NOTICE");
+            repository.save(notice);
+        }
+        // when
+
+        // then
+    }
+
+    @Test
+    @DisplayName("공지사항 번호 200까지의 게시글의 카테고리를 ESSENTAIL, NOTICE, COMMON 셋 중 하나로 무작위로 바꾼다")
+    void noticeCategoryModifyTest() {
+        // given
+        Random random = new Random();
+        List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
+
+        for (int i = 1; i <= 200; i++) {
+            String randomCategory = categories.get(random.nextInt(categories.size()));
+
+            Notice notice = repository.findOne(i);
+            if (notice != null) {
+                notice.setNoticeCategory(randomCategory);
+                repository.modify(notice);
+            }
+        }
+        // when
+
+        // then
     }
 
 }

@@ -2,7 +2,11 @@ package com.camp.going.service;
 
 import com.camp.going.common.Search;
 import com.camp.going.dto.response.CampingListResponseDTO;
+import com.camp.going.dto.response.ReservationDetailResponseDTO;
+import com.camp.going.dto.response.ReservationListDTO;
 import com.camp.going.entity.Camping;
+import com.camp.going.entity.Reservation;
+import com.camp.going.entity.User;
 import com.camp.going.mapper.CampingMapper;
 import com.camp.going.mapper.ReservationMapper;
 import lombok.RequiredArgsConstructor;
@@ -18,9 +22,10 @@ import java.util.List;
 public class CampingService {
 
     private final CampingMapper campingMapper;
-
     private final ReservationMapper reservationMapper;
 
+
+    // 캠핑장 목록 서비스
     public List<CampingListResponseDTO> getList(Search page) {
 
         List<CampingListResponseDTO> dtoList = new ArrayList<>();
@@ -36,15 +41,47 @@ public class CampingService {
 
     }
 
-    public int getCount(Search page) {
-        return campingMapper.getCount(page);
-    }
+    // 캠핑장 목록 페이징 작업
+//    public int getCount(Search page) {
+//        return campingMapper.getCount(page);
+//    }
 
-    public void reservationOne(int campId) {
+    // 캠핑장 예약 관련 서비스
+    public ReservationDetailResponseDTO reservationDetail(int campId) {
 
+        Reservation reservation = reservationMapper.findOne(campId);
         Camping camping = campingMapper.findCamping(campId);
 
+        return new ReservationDetailResponseDTO(reservation, camping);
 
 
     }
+
+    // 예약 현황 리스트 목록
+    public List<ReservationListDTO> getReservationList(Camping camping, User user) {
+
+        List<ReservationListDTO> dtoList = new ArrayList<>();
+
+        List<Reservation> reservations = reservationMapper.reservationCamping();
+
+        for (Reservation reservation : reservations) {
+
+            ReservationListDTO dto = new ReservationListDTO(reservation, camping, user);
+
+            dto.setCampId(camping.getCampId());
+            dto.setEmail(user.getEmail());
+            dto.setCampName(camping.getCampName());
+            dto.setRegDate(String.valueOf(reservation.getRegDate()));
+            dto.setPrice(camping.getCampPrice());
+            dto.setPhoneNumber(user.getPhoneNumber());
+
+            dtoList.add(dto);
+
+        }
+
+        return dtoList;
+
+    }
+
+
 }

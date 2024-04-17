@@ -5,7 +5,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @Getter @ToString
@@ -48,8 +48,9 @@ public class CampingListResponseDTO {
 
     }
 
-    public static String makePrettierDateString(LocalDateTime regDate) {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
+    public static String makePrettierDateString(LocalDate regDate) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return dtf.format(regDate);
     }
 

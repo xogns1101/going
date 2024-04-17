@@ -39,6 +39,20 @@ class CampingMapperTest {
 //        assertEquals(1, campingList.size());
 //
 //    }
+    
+    
+    @Test
+    @DisplayName("삭제가 잘 되는지 테스트")
+    void campDeleteTest() {
+        // given
+      //  int campId = 2;
+        // when
+      //  campingMapper.deleteCamping(campId);
+      //  List<Camping> campingList = campingMapper.findAllCamping(page);
+        // then
+      //  assertEquals(1, campingList.size());
+
+    }
 
 //    @Test
 //    @DisplayName("삭제가 잘 되는지 테스트")
@@ -52,6 +66,7 @@ class CampingMapperTest {
 //        assertEquals(1, campingList.size());
 //
 //    }
+
 
     @Test
     @DisplayName("수정 잘 되는 지 테스트")
@@ -80,6 +95,5 @@ class CampingMapperTest {
         // then
         assertEquals(camping, camping1);
     }
-
 
 }

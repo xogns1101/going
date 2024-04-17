@@ -8,6 +8,36 @@
     <title>Document</title>
 </head>
 <body>
-    
+
+   
+    <button type="button" id="kakaopayBtn">KakaoPay</button>
+
+    <script>
+
+        document.getElementById('kakaopayBtn').addEventListener('click', e => {
+
+
+            $.ajax({
+
+                url: '/jq/kakaopay',
+                dataType: 'json',
+                success:function(data){
+                    alert(data.tid);
+                },
+                error:function(error){
+                    alert(error);
+                }
+
+            });
+
+
+
+        })
+
+
+
+    </script>
+
+
 </body>
 </html>  

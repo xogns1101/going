@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user")
 public class UserController {
 
-    @GetMapping("/sign-up")
+    @GetMapping("/test")
     public String signUp(){
-        return "user/signup";
+
+        return "index";
     }
 
 

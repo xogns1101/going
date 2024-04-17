@@ -23,7 +23,7 @@ header {
   width: 100%;
   height: 150px;
   top: 0;
-  z-index: 9999;
+  z-index: 50;
 }
 header #wrap {
     display: flex;
@@ -224,27 +224,9 @@ section.main-page2 .main-content .ad .ad-box img{
   margin-top: 50px;
 
   
-  border-radius: 4%;
+  border-radius: 20px;
  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
