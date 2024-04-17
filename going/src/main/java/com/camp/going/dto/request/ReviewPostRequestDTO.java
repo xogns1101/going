@@ -13,7 +13,7 @@ import lombok.*;
 public class ReviewPostRequestDTO {
 
     @NotBlank
-    @Size(min = 1, max = 300)
+    @Size(min = 1, max = 400)
     private String content; // 리뷰 내용
 
     @NotBlank
