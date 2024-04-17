@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RESERVATION-DETAIL</title>
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
 
     <link rel="stylesheet" href="../css/reservation-detail.css">
 </head>
+
 <body>
-    
+
     <header>
         <div id="wrap">
             <h1 class="logo">Y⛺GAJA</h1>
@@ -19,16 +22,12 @@
                 <a href="#">NOTICE</a>
                 <a href="#">REVIEW</a>
             </div>
-            
+
             <div class="login">
                 <a href="#">LOGIN</a><br>
                 <a href="#">MYPAGE</a>
             </div>
         </div>
-
-
-
-
     </header>
 
 
@@ -36,79 +35,138 @@
 
         <div class="detail">
 
-            <h1>캠핑장 이름</h1>
+            <div class="detail-title">
+                <h1>⛺ 캠핑장 이름</h1>
+                <hr>
+            </div>
+
+            <div class="detail-content1">
+                <img src="../img/camp1.jpg" alt="캠핑장 사진">
+                <ul class="basic-info">
+                    <li>기본정보</li>
+                    <li>주소: <span class="camp-address">경기도 가평군 가평리 404040</span></li>
+                    <li>전화번호: <span class="camp-number">033-3333-3333</span></li>
+                    <li>홈페이지: <span class="camp-homepage">http://yagaja.com</span></li>
+                </ul>
+            </div>
             <hr>
 
-            <img src="../img/camp1.jpg" alt="캠핑장 사진">
-
-            <ul>
-                <h1>기본정보</h1>
-                <li>주소</li>
-                <li>전화번호</li>
-                <li>홈페이지</li>
-            </ul>
-
-            <hr>
-
-            <ul>
+            <div class="detail-content2">
                 <h1>이용안내</h1>
-                <li>온수사용가능</li>
-                <li>와이파이가능</li>
-                <li>장작유무</li>
-                <li>마트유무</li>
-                <li>침대유무</li>
-                <li>냉장고유무</li>
-            </ul>
+                <ul class="use-info">
+                    <li class="camp-hot-water">온수사용가능</li>
+                    <li class="camp-wifi">와이파이가능</li>
+                    <li class="camp_firewood">장작유무</li>
+                    <li class="camp-mart">마트유무</li>
+                    <li class="camp-bed">침대유무</li>
+                    <li class="camp-ice-box">냉장고유무</li>
+                </ul>
+            </div>
+
+
+            <!-- - 캠핑장 전기		VARCHAR(50)			camp_electric
+- 캠핑장 온수		VARCHAR(50)			camp_hot_water
+- 캠핑장 와이파이 	VARCAHR(50)			camp_wifi
+- 캠핑장 장작		VARCHAR(50)			camp_firewood
+- 캠핑장 마트		VARCHAR(50)			camp_mart
+- 캠핑장 침대		VARCHAR(50)			camp_bed
+- 캠핑장 냉장고		VARCHAR(50)			camp_ice_box
+ -->
+
 
             <hr>
 
-            <h1>예약하기</h1>
-
-            <p>달력</p>
-
+            <div class="reserve-info">
+                <h1>예약하기</h1>
 
 
-            <form action="#">
-                <div class="reserve-box">
-                    <div class="check-in">
-                        <div class="">입실</div>
-                        <div class="reg-date">2024-01-11</div>
+                <!-- ------------달력----------- -->
+
+                <div class="wrapper">
+
+                    <div class="nav">
+                        <button class="material-icons"> <span class="lnr lnr-chevron-left"></span> </button>
+                        <p class="current-date">1월</p>
+                        <button class="material-icons"> <span class="lnr lnr-chevron-right"></span></span>
                     </div>
-                
-                    <div class="check-out">
-                        <div class="">퇴실</div>
-                        <div class="reg-dates">2024-01-12 <span>1</span>박</div>
+
+                    <div class="calendar">
+                        <ul class="weeks">
+                            <li>Sun</li>
+                            <li>Mon</li>
+                            <li>Tue</li>
+                            <li>Wed</li>
+                            <li>Thu</li>
+                            <li>Fri</li>
+                            <li>Sat</li>
+                        </ul>
+                        <ul class="days">
+                            <li class="inactive">27</li>
+                            <li class="inactive">28</li>
+                            <li class="inactive">29</li>
+                            <li class="inactive">30</li>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li>31</li>
+                        </ul>
                     </div>
-                
-                    <button type="submit" class="reserve-button">예약하기</button>
                 </div>
-            </form>
+
+
+                <!-- 예약 하기 -->
+
+                <form action="#">
+
+                    <div class="reserve-box">
+                        <div class="check">
+                            <div class="in">입실</div>
+                            <div class="reg-date">2024-01-11</div>
+                            <div class="between">&nbsp; &nbsp; ~</div>
+                        </div>
 
 
 
+                        <div class="check">
+                            <div class="out">퇴실</div>
+                            <div class="reg-dates">2024-01-12 <span class="#">( 1</span>박 )</div>
 
+                        </div>
+                    </div>
 
+                    <button type="submit" class="reserve-button">예약하기</button>
+                </form>
+            </div>
         </div>
 
-
-
-
-
-
-
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <footer>
@@ -117,16 +175,17 @@
         <div class="footer-wrap">
             <div class="footer-content">
                 <p>
-                    상호 : YAGAJA &#124; 대표자명 : 홍길동 &#124; 사업자등록번호 : 123-12-1234 &#124; 주소 : 서울특별시 마포구 백범로 23, 3층 (신수동, 케이터틀)
+                    상호 : YAGAJA &#124; 대표자명 : 홍길동 &#124; 사업자등록번호 : 123-12-1234 &#124; 주소 : 서울특별시 마포구 백범로 23, 3층 (신수동,
+                    케이터틀)
                     &#124; 문의 : 02-123-1234
                 </p>
                 <br>
-            
+
                 <p>이용약관 &#124; 개인정보처리방침</p>
-            
+
             </div>
 
-            
+
             <h3 class="footer-logo">Y⛺GAJA</h3>
         </div>
 
@@ -134,7 +193,43 @@
     </footer>
 
 
+    <script>
+        // 요소 선택
+        const $liList = document.querySelectorAll('ul.days li');
+        let activeCount = 0;
+        let firstClickedIndex = 0; // 처음으로 클릭된 요소의 index를 저장하는 변수
+        let lastClickedIndex = 0; // 마지막으로 클릭된 요소의 index를 저장하는 변수
+
+
+        $liList.forEach($li => {
+            $li.addEventListener('click', e => {
+
+                // console.log('li에 클릭이벤트 발생! ');
+
+                // class 속성이 없으면 추가, 있으면 수정
+                if (!e.target.classList.contains('active')) {
+
+                    if (activeCount < 2) {
+                        e.target.classList.add('active');
+                        activeCount++;
+                    }
+                } else {
+                    e.target.classList.remove('active');
+                    activeCount--;
+                };
+
+               
+            });
+
+        });
+
+            
+
+        
+
+    </script>
 
 
 </body>
+
 </html>
