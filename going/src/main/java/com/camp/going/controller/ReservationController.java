@@ -1,6 +1,10 @@
 package com.camp.going.controller;
 
 import com.camp.going.common.Search;
+import com.camp.going.dto.response.ReservationDetailResponseDTO;
+import com.camp.going.dto.response.ReservationListDTO;
+import com.camp.going.entity.Camping;
+import com.camp.going.entity.User;
 import com.camp.going.service.CampingService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -8,7 +12,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/main")
@@ -40,25 +47,30 @@ public class ReservationController {
 
 
     @GetMapping("/resevation-detail")
-    public String reservationDetail(Model model){
+    public String reservationDetail(Model model
+                    , @PathVariable("campId") int campId){
 
-//        service.reservationOne();
-    return null;
+        ReservationDetailResponseDTO dto = service.reservationDetail(campId);
 
+        model.addAttribute("reservation", dto);
 
-
+        return "(jsp 경로)";
 
     }
 
-//    @GetMapping("/resevation-detail")
-//    public String reservationDetail(Model model){
-//
-//        service.reservationOne();
-//
-//
-//
-//
-//    }
+    @GetMapping("/resevation-list")
+    public String reservationDetail(Model model
+                                , Camping camping
+                                , User user){
+
+        List<ReservationListDTO> reservationList = service.getReservationList(camping, user);
+
+        model.addAttribute("rList", reservationList);
+
+
+        return "(jsp 경로)";
+
+    }
 
 
 
