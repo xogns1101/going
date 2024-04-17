@@ -5,13 +5,13 @@
 <mapper namespace="com.camp.going.mapper.NoticeMapper">
 
     <insert id="save">
-        INSERT INTO notice (notice_title, notice_content)
-        VALUES (#{noticeTitle}, #{noticeContent})
+        INSERT INTO notice (notice_title, notice_content, notice_category)
+        VALUES (#{noticeTitle}, #{noticeContent}, #{noticeCategory})
     </insert>
 
     <update id="modify">
         UPDATE notice
-        SET notice_title = #{title}, notice_content = #{content}
+        SET notice_title = #{title}, notice_content = #{content}, notice_category = #{category}
         WHERE notice_no = #{nno}
     </update>
 
