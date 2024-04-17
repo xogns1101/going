@@ -17,10 +17,17 @@ public class Notice {
     private String noticeContent; // 내용
     private LocalDateTime noticeDate; // 작성날짜
     private int noticeCount; // 조회수
+    private String noticeCategory; // 카테고리
 
     public Notice(NoticeWriteRequestDTO dto) {
         this.noticeTitle = dto.getNoticeTitle();
         this.noticeContent = dto.getNoticeContent();
+        this.noticeCategory = dto.getNoticeCategory();
+    }
+
+    public enum Category {
+        ESSENTIAL, NOTICE, COMMON
+      //  필독,    공지,   일반
     }
 
 }

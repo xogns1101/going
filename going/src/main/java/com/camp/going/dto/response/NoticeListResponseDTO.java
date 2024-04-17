@@ -27,16 +27,16 @@ public class NoticeListResponseDTO {
     }
 
     public static String makePrettierDateString(LocalDateTime regDate) {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return dtf.format(regDate);
     }
 
     private String makeShortContent(String content) {
-        return sliceString(content, 20);
+        return sliceString(content, 30);
     }
 
     private String makeShortTitle(String title) {
-        return sliceString(title, 10);
+        return sliceString(title, 20);
     }
 
 

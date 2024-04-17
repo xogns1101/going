@@ -1,6 +1,309 @@
 @import url(../css/main.css);
 
 
-section #reservation-detail .detail {
+
+
+
+section {
     color: black;
+    font-family: "Yeon Sung", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
+
+section .detail {
+    margin: 0 100px;
+}
+
+
+
+
+section .detail .detail-title {
+    margin-top: 160px;
+    text-align: center;
+    font-size: 40px;
+}
+
+section .detail .detail-content1 {
+    display: flex;
+    margin: 40px 0;
+   
+}
+
+section .detail .detail-content1 img {
+    width: 800px;
+    height: 500px;
+    border-radius: 20px;
+}
+
+section .detail .detail-content1 .basic-info li {
+    margin-top: 25px;
+    margin-left: 50px;
+    font-size: 25px;
+    /* background: red; */
+    width: 800px;
+    height: 100px;
+    align-content: center;
+}
+
+section .detail .detail-content1 .basic-info li:first-child {
+    text-align: center;
+    font-size: 40px;
+    background: #E4FFAA;
+    border-radius: 20px;
+}
+
+section .detail h1 {
+    margin: 50px auto;
+    text-align: center;
+    font-size: 40px;
+    background: #E4FFAA;
+    width: 800px;
+    height: 100px;
+    align-content: center;
+    border-radius: 20px;
+}
+
+
+section .detail .detail-content2 .use-info {
+    display: flex;
+    /* background: orange; */
+    width: 100%;
+    font-size: 25px;
+    justify-content: space-around;
+    margin: 50px 0;
+    
+}
+
+
+
+
+
+section .detail .reserve-info form {
+    background: #E4FFAA;
+    height: 300px;    
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+section .detail .reserve-info form .reserve-box {
+/* 
+    background: orange; */
+    display: flex;
+    justify-content: center;
+}
+
+section .detail .reserve-info form .reserve-box .check {
+    display: flex;
+    margin: 50px 15px 0 15px;
+    font-size: 25px;
+    
+    
+}
+
+
+section .detail .reserve-info form .reserve-box .check .in {
+    margin-right: 20px;
+    width: 100px;
+    background: #4BDB73;
+    align-content: center;
+    border-radius: 20px;
+}
+
+section .detail .reserve-info form .reserve-box .check .out {
+    margin-right: 20px;
+    width: 100px;
+    background: #4BDB73;
+    align-content: center;
+    border-radius: 20px;
+}
+
+
+
+section .detail .reserve-info form .reserve-box .check .reg-date {
+    width: 200px;
+    height: 50px;
+    background: #fff;
+    align-content: center;
+    border-radius: 20px;
+}
+
+section .detail .reserve-info form .reserve-box .check .reg-dates {
+    width: 220px;
+    height: 50px;
+    background: #fff;
+    align-content: center;
+    border-radius: 20px;
+}
+
+
+section .detail .reserve-info form .reserve-box .check .between {
+    align-content: center;
+}
+
+
+section .detail .reserve-info form button {
+    width: 200px;
+    height: 50px;
+    background: #4BDB73;
+    align-content: center;
+    border-radius: 20px;
+    border: #fff;
+    font-family: "Yeon Sung", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin-top: 100px;
+} 
+
+section .detail .reserve-info form button:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+/* 달력 */
+
+
+.wrapper {
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+  }
+   
+  
+  .wrapper .nav {
+    display: flex;
+    /* background-color: orange; */
+    align-items: center;
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+
+  .wrapper .nav .material-icons {
+    margin: 0 200px;
+    cursor: pointer;
+  }
+
+  .wrapper .nav .material-icons:hover {
+    color: #d6d4d4;
+  }
+
+
+  .wrapper .nav .current-date {
+    /* background: orange; */
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+
+  .wrapper .nav button {
+    width: 38px;
+    height: 38px;
+    font-size: 30px;
+    background: #fff;
+    color: black;
+    border: #fff;
+  }
+
+  .calendar {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+
+
+
+
+  .calendar ul.weeks {
+    display: flex;
+    font-size: 20px;
+    font-weight: 500;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+
+
+  .calendar ul.days {
+    display: flex;
+    font-size: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+
+
+  .calendar ul li {
+    /* background: orange; */
+    width: calc(100% / 7);
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+
+
+  .calendar .days li {
+    z-index: 1;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+   
+  
+  .days li.inactive {
+    color: #aaa;
+  }
+
+ 
+
+
+
+  .calendar .days li::before {
+    position: absolute;
+    content: '';
+    height: 60px;
+    width: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    z-index: -1;
+    
+  }
+
+ 
+  .days li:hover::before {
+    background: #4BDB73;
+    
+  }
+
+  .days li:hover {
+    color: #fff;
+  }
+
+
+  /* .days li.active::before {
+    background: #4BDB73;
+  } */
+
+  .calendar .days li.active::before {
+    position: absolute;
+    content: '';
+    height: 60px;
+    width: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    z-index: -1;
+    background: #4BDB73;
+  }
+
+
+
