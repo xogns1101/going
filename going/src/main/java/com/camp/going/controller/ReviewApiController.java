@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/review")
 @RequiredArgsConstructor
 @Slf4j
-public class ReviewApiController {
+public class ReviewApiController { //
 
     private final ReviewService reviewService;
 
