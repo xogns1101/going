@@ -40,6 +40,13 @@
         WHERE review_no = #{reviewNo}
     </update>
 
+    <update id="cancelLikeReview">
+        UPDATE review
+        SET review_like = review_like - 1
+        WHERE review_no = #{reviewNo}
+        AND review_like > 0;
+    </update>
+
     <select id="bestReview" resultType="review">
         SELECT
         R.email, R.review_content, R.review_image, R.review_point, R.review_like,
