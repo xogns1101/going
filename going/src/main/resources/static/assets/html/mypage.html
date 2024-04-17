@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yagaja</title>
+    <link rel="stylesheet" href="../css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Yeon+Sung&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/89a0fea006.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- header -------------------------------- -->
+
+    <header>
+        <div id="wrap">
+            <h1 class="logo">Y⛺GAJA</h1>
+            <div class="logo-content">
+                <a href="#">INTRO</a>
+                <a href="#">RESERVATION</a>
+                <a href="#">NOTICE</a>
+                <a href="#">REVIEW</a>
+            </div>
+            
+            <div class="login">
+                <a href="#">LOGIN</a><br>
+                <a href="#">MYPAGE</a>
+            </div>
+        </div>
+
+
+
+
+    </header>
+
+<!-- my page ---------------------------------->
+<div class="Mypage" style="width: 1436px; height: 1024px; position: relative; background: white;  margin-left: 200px;">
+    
+    <c:input var="b" items="${user}">
+    
+    <!-- 타이틀 -->
+    <div class="Title" style="width: 412px; height: 109px; left: 586px; top: 183px; position: absolute; color: black; font-size: 64px; font-family: Luckiest Guy; font-weight: 400; word-wrap: break-word">my page</div>
+    
+    <!-- 프로필 -->
+    <div class="Profilebackground" style="width: 845px; height: 261px; left: 308px; top: 278px; position: absolute; background: #D9D9D9"></div>
+    <div class="Profile" style="left: 340px; top: 294px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">내 프로필</div>
+
+    <!-- 유저 이메일 -->
+    <div class="Profileblank" style="width: 434px; height: 50px; left: 340px; top: 472px; position: absolute; background: #FFFDFD"></div>
+    <div class="Email" style="left: 419px; top: 482px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.email}</div>
+    <i class="fa-solid fa-envelope fa-2x" style="width: 34px; height: 33px; left: 359px; top: 482px; position: absolute; color: black;"></i>
+    
+    <!-- 유저 폰번호 -->
+    <div class="Profileblank" style="width: 434px; height: 50px; left: 340px; top: 405px; position: absolute; background: #FFFDFD"></div>
+    <div class="PhoneNumber" style="left: 411px; top: 415px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.phoneNumber}</div>
+    <i class="fa-solid fa-phone fa-2x" style="width: 36px; height: 37px; left: 357px; top: 410px; margin-top: 5px; position: absolute; color: black"></i>
+    
+    <!-- 유저 이름 -->
+    <div class="Profileblank" style="width: 434px; height: 50px; left: 340px; top: 337px; position: absolute; background: #FFFDFD"></div>    
+    <i class="fa-solid fa-user fa-2x" style="width: 26px; height: 31px; left: 362px; top: 347px; margin-left: -5px; position: absolute; color: black"></i>    
+    <div class="UserName" style="left: 411px; top: 347px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.userName}</div>
+    
+    <!-- 환영박스  -->
+    <div class="Welcomemsgbox" style="width: 246px; height: 158px; left: 855px; top: 347px; position: absolute; background: white"></div>
+    <div class="Welcomemsg" style="width: 317px; height: 84px; left: 822px; top: 382px; position: absolute; text-align: center; color: black; font-size: 36px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.userName} <br/>♥환영합니다♥</div>
+    </c:input>
+
+    <!-- reservation------------------------------------- -->
+
+    <c:input var="b" items="${camp}">
+    <!-- 예약 내역 -->
+    <div class="Reservationbackground" style="width: 845px; height: 293px; left: 308px; top: 596px; position: absolute; background: #D9D9D9"></div>
+    <div style="left: 340px; top: 612px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">예약내역</div>
+
+    <!-- 업체 정보 -->
+    <div class="Reservationblank" style="width: 434px; height: 80px; left: 340px; top: 790px; position: absolute; background: #FFFDFD"></div>
+    <i class="fa-solid fa-location-dot fa-2x" style="width: 49px; height: 43px; left: 351px; top: 806px; position: absolute; color: black; margin-left: 9px;"></i>
+    <div class="WwwAbcNaverCom0311231234" style="left: 419px; top: 800px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">업체정보 : ${b.campHomepage}<br/>       ${b.campNumber}</div>
+    
+    <!-- 예약 일자 -->
+     <div class="Reservationblank" style="width: 434px; height: 50px; left: 340px; top: 723px; position: absolute; background: #FFFDFD"></div>
+    <i class="fa-solid fa-calendar-days fa-2x" style="width: 39px; height: 29px; left: 358px; top: 734px; position: absolute; color: black; margin-top: -2px;" ></i>
+    <div class="202411202412" style="left: 411px; top: 733px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">예약일자 :  ${b.regDate} ~ ${b.regDates}</div>
+    
+    <!-- 캠핑장명 -->
+    <div class="Reservationblank" style="width: 434px; height: 50px; left: 340px; top: 655px; position: absolute; background: #FFFDFD"></div>   
+    <i class="fa-solid fa-campground fa-2x" style="width: 33px; height: 35px; left: 359px; top: 662px; position: absolute; color: black; margin-top: 3px; margin-left: -3px;"></i>
+    <div style="left: 411px; top: 665px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">캠핑장명 :  ${b.campName}</div>
+    
+    <!-- 캠핑장 사진 -->
+    <img class="Image7" style="width: 249px; height: 215px; left: 855px; top: 655px; position: absolute" src="../img/camping-img.jpg" />
+    
+    <!-- 수정버튼  -->
+    <div class="ModifyButton" style="width: 72px; height: 28px; left: 682px; top: 348px; position: absolute; background: #EA9999; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border: 1px black solid; cursor: pointer;" onclick="handleModifyButtonClick(this)"></div>
+    <div style="width: 50px; height: 15px; left: 704px; top: 350px; position: absolute; color: black; font-size: 20px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word; cursor: pointer;" onclick="handleModifyButtonClick(this)">수정</div>
+    <div class="ModifyButton" style="width: 72px; height: 28px; left: 682px; top: 417px; position: absolute; background: #EA9999; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border: 1px black solid; cursor: pointer;" onclick="handleModifyButtonClick(this)"></div>
+    <div style="width: 50px; height: 15px; left: 704px; top: 419px; position: absolute; color: black; font-size: 20px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word; cursor: pointer;" onclick="handleModifyButtonClick(this)">수정</div>
+    <div class="ModifyButton" style="width: 72px; height: 28px; left: 682px; top: 484px; position: absolute; background: #EA9999; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border: 1px black solid; cursor: pointer;" onclick="handleModifyButtonClick(this)"></div>
+    <div style="width: 50px; height: 15px; left: 704px; top: 486px; position: absolute; color: black; font-size: 20px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word; cursor: pointer;" onclick="handleModifyButtonClick(this)">수정</div>
+    
+    <!-- 상세버튼 -->
+    <div class="DetailButton" style="width: 99px; height: 28px; left: 1029px; top: 606px; position: absolute; background: #EA9999; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border: 1px black solid; cursor: pointer;" onclick="handleDetailButtonClick(this)"></div>
+    <div class="More" style="width: 69px; height: 25px; left: 1051px; top: 607px; position: absolute; color: black; font-size: 20px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word; cursor: pointer;" onclick="handleDetailButtonClick(this)">상세버튼</div>
+   
+  </div>
+</c:input>
+  <!-- footer-------------------- -->
+
+  <footer>
+    <div class="footer-wrap">
+        <div class="footer-content">
+            <p>
+                상호 : YAGAJA &#124; 대표자명 : 홍길동 &#124; 사업자등록번호 : 123-12-1234 &#124; 주소 : 서울특별시 마포구 백범로 23, 3층 (신수동,
+                케이터틀)
+                &#124; 문의 : 02-123-1234
+            </p>
+            <br>
+
+            <p>이용약관 &#124; 개인정보처리방침</p>
+
+        </div>
+
+
+        <h3 class="footer-logo">Y⛺GAJA</h3>
+    </div>
+
+
+</footer>
+
+
+
+
+<script>
+    function handleModifyButtonClick(element) {
+        // 클릭된 버튼의 부모 요소를 찾아 수정 작업을 수행합니다.
+        var parentElement = element.parentElement;
+        
+        // 여기에 원하는 수정 작업을 추가하세요.
+        // 예를 들어, 콘솔에 메시지를 출력하거나 다른 동작을 수행할 수 있습니다.
+        console.log("수정 버튼이 클릭되었습니다.");
+    }
+
+    function handleDetailButtonClick(element) {
+        // 클릭된 버튼의 부모 요소를 찾아 상세 작업을 수행합니다.
+        var parentElement = element.parentElement;
+        
+        // 여기에 원하는 상세 작업을 추가하세요.
+        // 예를 들어, 콘솔에 메시지를 출력하거나 다른 동작을 수행할 수 있습니다.
+        console.log("상세 버튼이 클릭되었습니다.");
+    }
+</script>
+
+
+</body>
+</html>

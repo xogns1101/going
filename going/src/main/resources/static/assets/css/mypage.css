@@ -1,0 +1,67 @@
+@import url(./common.css);
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Yeon+Sung&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Yeon+Sung&display=swap');
+
+.yeon-sung-regular {
+    font-family: "Yeon Sung", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .luckiest-guy-regular {
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+body {
+  font-size: 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #fff;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* header style */
+
+header {
+  background: #4BDB73;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+}
+header #wrap {
+    display: flex;
+    position: relative;
+}
+
+header .logo {
+    font-size: 60px;
+    margin: auto 60px;
+}
+
+header .logo-content {
+    display: flex;
+    margin-left: 50px;
+    
+
+}
+
+header .logo-content li {
+    font-size: 30px;
+    margin: auto 50px;
+
+}
+
+header ul li:last-child {
+  font-size: 25px;
+  position: absolute;
+  right: 0;
+}
+
+/* body--------------------------------------------------- */
