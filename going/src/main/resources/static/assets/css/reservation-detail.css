@@ -19,7 +19,7 @@ section .detail {
 
 
 section .detail .detail-title {
-    margin-top: 250px;
+    margin-top: 160px;
     text-align: center;
     font-size: 40px;
 }
@@ -255,33 +255,55 @@ section .detail .reserve-info form button:hover {
     cursor: pointer;
   }
    
-  /*#11*/
+  
   .days li.inactive {
     color: #aaa;
   }
 
-  .days li.active {
-    color: #fff;
-  }
+ 
+
+
+
   .calendar .days li::before {
     position: absolute;
     content: '';
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 70px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 50%;
+    border-radius: 10px;
     z-index: -1;
+    
   }
+
+ 
   .days li:hover::before {
-    background: #f2f2f2;
+    background: #4BDB73;
+    
   }
-  .days li.active::before {
-    background: #008aff;
+
+  .days li:hover {
+    color: #fff;
   }
 
 
+  /* .days li.active::before {
+    background: #4BDB73;
+  } */
+
+  .calendar .days li.active::before {
+    position: absolute;
+    content: '';
+    height: 60px;
+    width: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    z-index: -1;
+    background: #4BDB73;
+  }
 
 
 
