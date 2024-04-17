@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yagaja</title>
-    <link rel="stylesheet" href="/going/src/main/resources/css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,8 +40,9 @@
 
     <div class="Desktop10" style="width: 1424px; height: 1024px; position: relative; background: white; margin-left: 200px; margin-top: 30px;">
     
-       
-          
+        
+          <!--페이지 번호  -->
+          <c:forEach var="b" items="${notice}">
           <div class="PageNo" style="width: 21px; left: 576px; top: 865px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">2</div>
           <div class="PageNo" style="width: 21px; left: 619px; top: 865px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">3</div>
           <div class="PageNo" style="width: 21px; left: 658px; top: 865px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">4</div>
@@ -51,47 +52,64 @@
           <div class="PageNo" style="width: 21px; left: 815px; top: 865px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">8</div>
           <div class="PageNo" style="width: 21px; left: 856px; top: 865px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">9</div>
           <div class="PageNo" style="width: 21px; left: 539px; top: 865px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">1</div>
+          
           <div class="PageNobox" style="width: 378px; height: 57px; left: 499px; top: 952px; position: absolute; background: rgba(156.13, 238, 142.80, 0); border: 1px rgba(78.15, 208.25, 75.49, 0) solid"></div>
+          
+          
+          <!-- notice table box -->
           <div class="NoticeTablebox" style="width: 1105px; height: 55px; left: 167px; top: 786px; position: absolute; background: #F0EEEE; border: 1px black solid"></div>
           <div class="NoticeTablebox" style="width: 1105px; height: 55px; left: 167px; top: 731px; position: absolute; background: #F0EEEE; border: 1px black solid"></div>
           <div class="NoticeTablebox" style="width: 1105px; height: 55px; left: 167px; top: 676px; position: absolute; background: #F0EEEE; border: 1px black solid"></div>
+          
+          <!-- 공지 등급 분류 -->
           <div class="NotifyButton" style="width: 73px; height: 37px; left: 180px; top: 796px; position: absolute; background: #F6D9D9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border: 1px black solid"></div>
           <div style="width: 90px; height: 20px; left: 202px; top: 803px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">공지</div>
           <div class="MustreadButton" style="width: 73px; height: 37px; left: 180px; top: 740px; position: absolute; background: #EA9999; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border: 1px black solid"></div>
           <div style="width: 90px; height: 20px; left: 202px; top: 747px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">필독</div>
           <div class="MustreadButton" style="width: 73px; height: 37px; left: 180px; top: 686px; position: absolute; background: #EA9999; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border: 1px black solid"></div>
           <div style="width: 90px; height: 20px; left: 202px; top: 693px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">필독</div>
-          <div class="NoticeTitle" style="width: 424px; height: 43px; left: 433px; top: 744px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">캠핑장 불 사용 시 절대 한눈 팔면 안됩니다!!</div>
-          <div class="NoticeTitle" style="width: 436px; height: 43px; left: 433px; top: 803px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">인원수 추가 시 간련 캠핑장에 문의 바랍니다.</div>
-          <div class="NoticeDate" style="width: 137px; height: 43px; left: 976px; top: 697px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">2024.04.06</div>
-          <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 745px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">3</div>
-          <div class="NoticeCount" style="width: 18px; height: 43px; left: 1195px; top: 802px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">3</div>
-          <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 694px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">3</div>
-          <div class="NoticeDate" style="width: 137px; height: 43px; left: 977px; top: 803px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">2024.04.06</div>
-          <div class="NoticeDate" style="width: 137px; height: 43px; left: 977px; top: 749px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">2024.04.06</div>
-          <div class="NoticeNo" style="width: 54px; height: 43px; left: 317px; top: 798px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">4</div>
-          <div class="NoticeNo" style="width: 54px; height: 43px; left: 317px; top: 747px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">3</div>
-          <div class="NoticeNo" style="width: 54px; height: 43px; left: 316px; top: 693px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">2</div>
-          <div class="NoticeTitle" style="width: 451px; height: 43px; left: 433px; top: 691px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">캠핑장에서 전기차 충전은 절대 금지입니다!!</div>
-          <!-- <img class="Image27" style="width: 41px; height: 41px; left: 1227px; top: 174px; position: absolute" src="https://via.placeholder.com/41x41" /> -->
-          <!-- <img class="Image28" style="width: 41px; height: 42px; left: 1174px; top: 172px; position: absolute" src="https://via.placeholder.com/41x42" /> -->
+          
+          <!-- 글제목 -->
+          <div class="NoticeTitle" style="width: 424px; height: 43px; left: 433px; top: 744px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeTitle}</div>
+          <div class="NoticeTitle" style="width: 436px; height: 43px; left: 433px; top: 803px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeTitle}</div>
+          <div class="NoticeTitle" style="width: 451px; height: 43px; left: 433px; top: 691px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeTitle}</div>
+          
+          <!-- 조회수 -->
+          <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 745px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeCount}</div>
+          <div class="NoticeCount" style="width: 18px; height: 43px; left: 1195px; top: 802px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeCount}</div>
+          <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 694px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeCount}</div>
+          
+          <!-- 작성일 -->
+          <div class="NoticeDate" style="width: 137px; height: 43px; left: 977px; top: 803px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeDate}</div>
+          <div class="NoticeDate" style="width: 137px; height: 43px; left: 977px; top: 749px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeDate}</div>
+          <div class="NoticeDate" style="width: 137px; height: 43px; left: 976px; top: 697px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeDate}</div>
+
+          <!-- 글번호 -->
+          <div class="NoticeNo" style="width: 54px; height: 43px; left: 317px; top: 798px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeNo}</div>
+          <div class="NoticeNo" style="width: 54px; height: 43px; left: 317px; top: 747px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeNo}</div>
+          <div class="NoticeNo" style="width: 54px; height: 43px; left: 316px; top: 693px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeNo}</div>
+          
+
+          <!-- 타이틀 -->
           <div class="InNoticeMainTitle" style="width: 468px; height: 75px; left: 561px; top: 154px; position: absolute; color: black; font-size: 48px; font-family: Luckiest Guy; font-weight: 400; word-wrap: break-word; margin-top: 10px; padding-bottom: 10px;">notice / 공지</div>
+          
+          <!-- 페이지 사이즈 n개씩 보기 -->
           <div class="PageSizeBackground" style="width: 149px; height: 32px; left: 1121px; top: 635px; position: absolute; background: white; border: 1px black solid"></div>
           <input type="checkbox" style="width: 30px; height: 15px; background: #5F5555; position: absolute; left: 1224px; top: 640px;" onclick="handlePageSizeClick(this)">
-          
-          <!-- <div class="PageSizeClickbutton" style="width: 24px; height: 13px; left: 1224px; top: 645px; position: absolute; background: #5F5555; border: 1px black solid"></div> -->
           <div class="PageSize" style="width: 60px; height: 32px; left: 1151px; top: 638px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">3개씩</div>
+          
+          <!-- 내용 -->
           <div class="InNoticeContentbox" style="width: 1105px; height: 261px; left: 166px; top: 334px; position: absolute; background: #F0EEEE; border: 1px black solid"></div>
-          <div class="InNoticeContent" style="width: 709px; height: 320px; left: 193px; top: 354px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">매너타임은 오후 11시부터 이지만 그전에도 과도한 소음은 안됩니다.<br/>매너타임은 오후 11시부터입니다.<br/>매너타임은 캠핑장 내 마무리 하는 시간으로<br/>다른 캠퍼에게 피해가 가지 않을 정도로<br/>조용해 주시기 바랍니다.<br/>매너타임 전이라도 과도한 소음 및 고성방가 하는<br/>캠퍼는 1차 경고 후 퇴촌을 권할 수 있습니다.<br/>​</div>
+          <div class="InNoticeContent" style="width: 709px; height: 320px; left: 193px; top: 354px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeContent}​</div>
           <div style="width: 266px; height: 37px; left: 166px; top: 642px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">‘공지사항’ 게시판 글</div>
           <div class="NoticeTablebox" style="width: 1105px; height: 55px; left: 167px; top: 279px; position: absolute; background: #F0EEEE; border: 1px black solid"></div>
           <div class="NoticeTitlebox" style="width: 1105px; height: 55px; left: 167px; top: 224px; position: absolute; background: #F0EEEE; border: 1px black solid"></div>
           <div class="MustreadButton" style="width: 73px; height: 37px; left: 180px; top: 288px; position: absolute; background: #EA9999; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border: 1px black solid"></div>
           <div style="width: 90px; height: 20px; left: 202px; top: 295px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">필독</div>
-          <div class="NoticeTitle" style="width: 436px; height: 43px; left: 433px; top: 291px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">캠핑장 내 기본 수칙</div>
-          <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 288px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">3</div>
-          <div class="NoticeDate" style="width: 137px; height: 43px; left: 975px; top: 291px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">2024.04.06</div>
-          <div class="NoticeNo" style="width: 54px; height: 43px; left: 317px; top: 291px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">1</div>
+          <div class="NoticeTitle" style="width: 436px; height: 43px; left: 433px; top: 291px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeTitle}</div>
+          <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 288px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeCount}</div>
+          <div class="NoticeDate" style="width: 137px; height: 43px; left: 975px; top: 291px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeDate}</div>
+          <div class="NoticeNo" style="width: 54px; height: 43px; left: 317px; top: 291px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeNo}</div>
           <div class="Title" style="width: 140px; height: 60px; left: 617px; top: 231px; position: absolute; color: black; font-size: 32px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">제목</div>
           <div class="Date" style="width: 140px; height: 60px; left: 999px; top: 231px; position: absolute; color: black; font-size: 32px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">작성일</div>
           <div class="See" style="width: 140px; height: 60px; left: 1175px; top: 231px; position: absolute; color: black; font-size: 32px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">조회</div>
@@ -112,7 +130,7 @@
 
 
     </div>
-
+</c:forEach>
   <!-- footer---------------------------- -->
 
 
