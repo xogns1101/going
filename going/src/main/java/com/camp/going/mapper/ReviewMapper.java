@@ -1,8 +1,10 @@
 package com.camp.going.mapper;
 
+import com.camp.going.common.Page;
 import com.camp.going.common.Search;
 import com.camp.going.entity.Review;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,7 +15,7 @@ public interface ReviewMapper {
 
     void deleteReview(int reviewNo); // 리뷰 삭제
 
-    List<Review> findAllReview(Search page); // 모든 리뷰
+    List<Review> findAllReview(@Param("rno") int reviewNo, @Param("p") Page page); // 모든 리뷰
 
     void modifyReview(Review review); // 리뷰 수정
 
@@ -24,6 +26,7 @@ public interface ReviewMapper {
     int updateLikeCount(int rno); // 리뷰 좋아요 처리
 
     // 총 리뷰 수 리턴
-    int getCount(Search page); // 총 리뷰 수 리턴
+    int getCount(int reviewNo); // 총 리뷰 수 리턴
 
+    int cancelLikeReview(int reviewNo); // 리뷰 좋아요 취소 처리
 }

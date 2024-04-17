@@ -99,4 +99,14 @@ class ReviewMapperTest {
         assertEquals(15, bestReview.getReviewLike());
     }
 
+    @Test
+    @DisplayName("리뷰 글 번호 11번 리뷰 좋아요를 취소하면 좋아요 수가 줄어든다.")
+    void dislikeReviewTest() {
+        // given
+        int reviewNo = 2;
+        // when
+        reviewMapper.cancelLikeReview(reviewNo);
+        // then
+    }
+
 }
