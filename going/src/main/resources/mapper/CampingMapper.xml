@@ -1,0 +1,80 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.camp.going.mapper.CampingMapper">
+
+    <insert id="campSave">
+    INSERT INTO camping
+        (camp_id
+        , camp_name
+        , camp_address
+        , camp_number
+        , camp_homepage
+        , camp_electric
+        , camp_hot_water
+        , camp_wifi
+        , camp_firewood
+        , camp_mart
+        , camp_bed
+        , camp_ice_box
+        , camp_price
+        , camp_image
+        )
+    VALUES
+        (#{campId}
+        , #{campName}
+        , #{campAddress}
+        , #{campNumber}
+        , #{campHomepage}
+        , #{campElectric}
+        , #{campHotWater}
+        , #{campWifi}
+        , #{campFirewood}
+        , #{campMart}
+        , #{campBed}
+        , #{campIceBox}
+        , #{campPrice}
+        , #{campImage})
+    </insert>
+
+    <select id="findCamping" resultType="camping">
+        SELECT * FROM camping
+        WHERE camp_id = #{campId}
+    </select>
+
+    <select id="findAllCamping" resultType="camping">
+        SELECT * FROM camping
+    </select>
+
+    <delete id="deleteCamping">
+
+        DELETE FROM camping
+        WHERE camp_id = #{campId}
+
+    </delete>
+
+    <update id="updateCamping">
+
+        UPDATE
+            camping
+        SET
+            camp_name = #{campName}
+            , camp_address = #{campAddress}
+            , camp_number = #{campNumber}
+            , camp_homepage = #{campHomepage}
+            , camp_electric = #{campElectric}
+            , camp_hot_water = #{campHotWater}
+            , camp_wifi = #{campWifi}
+            , camp_firewood = #{campFirewood}
+            , camp_mart = #{campMart}
+            , camp_bed = #{campBed}
+            , camp_ice_box = #{campIceBox}
+            , camp_price = #{campPrice}
+            , camp_image = #{campImage}
+        WHERE camp_id = #{campId}
+
+    </update>
+
+
+</mapper>

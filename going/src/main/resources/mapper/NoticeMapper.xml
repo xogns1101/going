@@ -1,0 +1,46 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.camp.going.mapper.NoticeMapper">
+
+    <insert id="save">
+        INSERT INTO notice (notice_title, notice_content, notice_category)
+        VALUES (#{noticeTitle}, #{noticeContent}, #{noticeCategory})
+    </insert>
+
+    <update id="modify">
+        UPDATE notice
+        SET notice_title = #{title}, notice_content = #{content}, notice_category = #{category}
+        WHERE notice_no = #{nno}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM notice
+        WHERE notice_no = #{noticeNo}
+    </delete>
+
+    <update id="updateViewCount">
+        UPDATE notice
+        SET notice_count = notice_count + 1
+        WHERE notice_no = #{nno}
+    </update>
+
+    <select id="findAll" resultType="notice">
+        SELECT * FROM notice
+        <!--        <include refid="search"/>-->
+        ORDER BY notice_no DESC
+<!--    LIMIT #{pageStart}, #{amount}    -->
+    </select>
+
+    <select id="findOne" resultType="notice">
+        SELECT * FROM notice
+        WHERE notice_no = #{noticeNo}
+    </select>
+
+    <select id="getCount" resultType="int">
+        SELECT COUNT(*) FROM notice
+        <!--        <include refid="search"/>-->
+    </select>
+
+</mapper>

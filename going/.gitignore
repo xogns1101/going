@@ -1,5 +1,3 @@
-application.properties
-
 HELP.md
 .gradle
 build/
@@ -24,7 +22,6 @@ bin/
 *.iws
 *.iml
 *.ipr
-*.xml
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
