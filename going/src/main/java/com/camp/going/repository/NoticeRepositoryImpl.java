@@ -1,5 +1,6 @@
 package com.camp.going.repository;
 
+import com.camp.going.dto.request.NoticeModifyRequestDTO;
 import com.camp.going.entity.Notice;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataAccessException;
@@ -60,5 +61,13 @@ public class NoticeRepositoryImpl implements NoticeRepository {
     public void delete(int noticeNo) {
         String sql = "DELETE FROM notice WHERE notice_no=?";
         template.update(sql, noticeNo);
+    }
+
+    @Override
+    public void modify(Notice notice) {
+        String sql = "UPDATE notice " +
+                     "SET notice_title=?, notice_content=? " +
+                     "WHERE notice_no=?";
+        template.update(sql, notice.getNoticeTitle(), notice.getNoticeContent(), notice.getNoticeNo());
     }
 }

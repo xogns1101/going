@@ -4,6 +4,7 @@ import com.camp.going.common.Search;
 import com.camp.going.dto.response.CampingListResponseDTO;
 import com.camp.going.entity.Camping;
 import com.camp.going.mapper.CampingMapper;
+import com.camp.going.mapper.ReservationMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,8 @@ import java.util.List;
 public class CampingService {
 
     private final CampingMapper campingMapper;
+
+    private final ReservationMapper reservationMapper;
 
     public List<CampingListResponseDTO> getList(Search page) {
 
@@ -35,5 +38,13 @@ public class CampingService {
 
     public int getCount(Search page) {
         return campingMapper.getCount(page);
+    }
+
+    public void reservationOne(int campId) {
+
+        Camping camping = campingMapper.findCamping(campId);
+
+
+
     }
 }
