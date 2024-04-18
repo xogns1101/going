@@ -6,11 +6,27 @@
     <insert id="save">
 
         INSERT INTO user
-        (email, password, phone_number)
+        (email, password, name, phone_number)
         VALUES
-        (#{email}, #{password}, #{phoneNumber})
+        (#{email}, #{password}, #{name}, #{phoneNumber})
 
     </insert>
 
+    <select id="findUser" resultType="user">
+
+        SELECT * FROM user
+        WHERE email = #{email}
+
+    </select>
+
+    <select id="isDuplicate" resultType="boolean">
+
+        SELECT COUNT(*)
+        FROM user
+        <if test="type == 'account'">
+            WHERE account = #{keyword}
+        </if>
+
+    </select>
 
 </mapper>
