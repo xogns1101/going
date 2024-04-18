@@ -35,7 +35,7 @@
                             </ul>
                 
                             <button type="button" class="more-button"
-                            onclick="location.href='/reservation-detail?camp_id=${camp.campId}'">MORE</button>
+                            onclick="location.href='/main/reservation-detail?camp_id=${b.campId}'">MORE</button>
                         </div>
                     </div>
                 </c:forEach>
