@@ -135,15 +135,20 @@ class NoticeRepositoryTest {
 
         // then
 
-//        @Test
-//        @DisplayName("1번 공지사항 조회수 올리기")
-//        void noticeCountTest() {
-//            // given
-//            int noticeNo = 1;
-//            // when
-//
-//            // then
-//        }
+    }
+
+    @Test
+    @DisplayName("1번 공지사항 조회수 올리기")
+    void noticeCountTest() {
+        // given
+        int noticeNo = 1;
+
+        // when
+        repository.updateViewCount(noticeNo);
+        // then
+        Notice updatedNotice = repository.findOne(noticeNo);
+        Assertions.assertNotNull(updatedNotice); // 공지사항이 존재하는지 확인
+        Assertions.assertEquals(1, updatedNotice.getNoticeCount()); // 조회수가 1 증가했는지 확인
     }
 
 }
