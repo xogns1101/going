@@ -25,7 +25,7 @@ public class ReservationInterceptor implements HandlerInterceptor {
 
         if (!isLogin(session)) {
             log.info("권한이 없어서 요청이 거부됐습니다. ({})", request.getRequestURI());
-            response.sendRedirect("/main/reservation");
+            response.sendRedirect("/error/403");
             return false;
         }
 

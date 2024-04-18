@@ -27,7 +27,7 @@ public class NoticeInterceptor implements HandlerInterceptor {
         // 로그인을 안할 시 작동
         if (!isLogin(session)) {
             log.info("권한이 없어서 요청이 거부됐습니다. ({})", request.getRequestURI());
-            response.sendRedirect("/user/sign-in");
+            response.sendRedirect("/error/403");
             return false;
         }
 
