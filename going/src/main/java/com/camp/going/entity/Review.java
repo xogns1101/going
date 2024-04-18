@@ -1,5 +1,6 @@
 package com.camp.going.entity;
 
+import com.camp.going.dto.request.ReviewRequestDTO;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -21,4 +22,9 @@ public class Review {
     private int reviewLike; // 리뷰 좋아요
     private LocalDateTime reviewDate; // 리뷰 작성 날짜
 
+    public Review(ReviewRequestDTO dto) {
+        this.reviewContent = dto.getContent();
+        this.email = dto.getEmail();
+        this.reviewImage = dto.getImage();
+    }
 }

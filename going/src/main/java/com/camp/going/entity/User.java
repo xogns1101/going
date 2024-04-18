@@ -2,6 +2,8 @@ package com.camp.going.entity;
 
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter @Setter @ToString
 @EqualsAndHashCode @NoArgsConstructor @AllArgsConstructor
 @Builder
@@ -14,7 +16,12 @@ public class User {
     private String auth;
     private LoginMethod loginMethod;
 
-    private enum LoginMethod {
+    // 기존 테이블에서 컬럼을 추가했기 때문에
+    // DB 테이블과 1:1로 매칭되는 Entity도 필드가 증가해야 한다.
+    private String sessionId;
+    private LocalDateTime limitTime;
+
+    public enum LoginMethod {
         COMMON, KAKAO, NAVER
     }
 }

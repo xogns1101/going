@@ -2,17 +2,17 @@ package com.camp.going.dto.request;
 
 import lombok.*;
 
-@Getter
+import java.time.LocalDateTime;
+
 @Setter
+@Getter
 @ToString
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class LoginRequestDTO {
-
+public class AutoLoginDTO {
+    private String sessionId;
+    private LocalDateTime limitTime;
     private String email;
-    private String password;
-    private boolean autoLogin; // 자동로그인 체크 여부
-
 }
