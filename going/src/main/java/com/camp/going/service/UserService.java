@@ -3,15 +3,18 @@ package com.camp.going.service;
 import com.camp.going.dto.request.AutoLoginDTO;
 import com.camp.going.dto.request.LoginRequestDTO;
 import com.camp.going.dto.request.SignUpRequestDTO;
+import com.camp.going.dto.response.LoginUserResponseDTO;
 import com.camp.going.entity.User;
 import com.camp.going.mapper.UserMapper;
 import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.util.WebUtils;
 
 import java.time.LocalDateTime;
 
@@ -25,6 +28,7 @@ public class UserService {
 
     private final UserMapper userMapper;
     private final PasswordEncoder encoder;
+
     public LoginResult authenticate(LoginRequestDTO dto,
                                     HttpSession session,
                                     HttpServletResponse response) {
@@ -82,4 +86,57 @@ public class UserService {
         return userMapper.isDuplicate(type, keyword);
     }
 
+    public void maintainLoginState(HttpSession session, String email) {
+
+        // 현재 로그인한 회원의 모든 정보 조회
+        User foundUser = userMapper.findUser(email);
+
+        // DB 데이터를 보여줄 것만 정제
+        LoginUserResponseDTO dto = LoginUserResponseDTO.builder()
+                .email(foundUser.getEmail())
+                .password(foundUser.getPassword())
+                .phoneNumber(foundUser.getPhoneNumber())
+                .name(foundUser.getName())
+                .auth(foundUser.getAuth())
+                .loginMethod(foundUser.getLoginMethod().toString())
+                .build();
+
+        // 세션에 로그인한 회원 정보를 저장
+        session.setAttribute(LOGIN_KEY, dto);
+        // 세션 수명 설정
+        session.setMaxInactiveInterval(60 * 60); // 1시간
+
+
+
+    }
+
+    public void autoLoginClear(HttpServletRequest request, HttpServletResponse response) {
+
+        // 1. 자동 로그인 쿠키를 가져온다.
+        Cookie c = WebUtils.getCookie(request, AUTO_LOGIN_COOKIE);
+
+        // 2. 쿠키를 삭제한다.
+        // -> 쿠키의 수명을 0초로 설정하여 다시 클라이언트에 전송 -> 자동 소멸
+        if (c != null) {
+            c.setMaxAge(0);
+            c.setPath("/");
+            response.addCookie(c);
+
+            // 3. 데이터베이스에서도 세션아이디와 만료시간을 제거하자.
+            userMapper.saveAutoLogin(
+                    AutoLoginDTO.builder()
+                            .sessionId("none") // 세션아이디 지우기
+                            .limitTime(LocalDateTime.now()) // 로그아웃한 현재 날짜
+                            .email(getCurrentLoginMemberAccount(request.getSession())) // 로그인 중이었던 사용자 아이디.
+                            .build()
+            );
+
+        }
+
+
+    }
+
+
+    public void kakaoLogout(LoginUserResponseDTO dto, HttpSession session) {
+    }
 }
