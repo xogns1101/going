@@ -8,7 +8,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 
 import java.io.PrintWriter;
 
-import static com.camp.going.util.LoginUtils.isLogin;
+import static com.camp.going.util.LoginUtils.*;
 
 @Configuration
 public class AfterLoginInterceptor implements HandlerInterceptor {

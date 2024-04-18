@@ -13,7 +13,7 @@ import org.springframework.web.util.WebUtils;
 
 import java.time.LocalDateTime;
 
-import static com.camp.going.util.LoginUtils.AUTO_LOGIN_COOKIE;
+import static com.camp.going.util.LoginUtils.*;
 
 @Configuration
 @Slf4j
