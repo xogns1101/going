@@ -28,4 +28,5 @@ public interface ReviewMapper {
     // 총 리뷰 수 리턴
     int getCount(Search page); // 총 리뷰 수 리턴
 
+    Review findOne(int reviewNo); // 하나의 리뷰 보기
 }

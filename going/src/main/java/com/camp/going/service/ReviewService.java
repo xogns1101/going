@@ -1,6 +1,7 @@
 package com.camp.going.service;
 
 import com.camp.going.common.Search;
+import com.camp.going.dto.request.ReviewModifyRequestDTO;
 import com.camp.going.dto.request.ReviewRequestDTO;
 import com.camp.going.dto.response.ReviewResponseDTO;
 import com.camp.going.entity.Review;
@@ -51,6 +52,11 @@ public class ReviewService {
         Review review = new Review(dto);
         review.setEmail(LoginUtils.getCurrentLoginMemberAccount(session));
         reviewMapper.saveReview(review);
+    }
+
+    public void modify(ReviewModifyRequestDTO dto) {
+        Review review = dto.toEntity();
+        reviewMapper.modifyReview(review);
     }
 
 }
