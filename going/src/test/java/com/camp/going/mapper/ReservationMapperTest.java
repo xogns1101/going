@@ -28,8 +28,8 @@ class ReservationMapperTest {
         String regDates = "2024-04-16";
 
         Reservation reservation = Reservation.builder()
-                .campId(1)
-                .campName("두레캠핑장")
+                .campId(3)
+                .campName("하입보이캠핑장")
                 .email("aaa1111@naver.com")
                 .regDate(LocalDate.parse(regDate))
                 .regDates(LocalDate.parse(regDates))

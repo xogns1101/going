@@ -15,6 +15,7 @@ public class ReservationDetailResponseDTO {
 
 
     private int campId; // 캠핑장 고유 번호
+    private String campName; // 캠핑장 이름
     private String campAddress; // 캠핑장 주소
     private String campNumber; // 캠핑장 전화 번호
     private String campHomepage; // 캠핑장 홈페이지
@@ -33,6 +34,7 @@ public class ReservationDetailResponseDTO {
             , Camping camping) {
 
         this.campId = camping.getCampId();
+        this.campName = camping.getCampName();
         this.campAddress = camping.getCampAddress();
         this.campNumber = camping.getCampNumber();
         this.campHomepage = camping.getCampHomepage();

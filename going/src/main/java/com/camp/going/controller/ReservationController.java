@@ -46,9 +46,12 @@ public class ReservationController {
     }
 
 
-    @GetMapping("/reservation-detail")
+    @GetMapping("/reservation-detail/{campId}")
     public String reservationDetail(Model model
             , @PathVariable("campId") int campId){
+
+        System.out.println("캠핑장아이디!!!" + campId);
+
 
         ReservationDetailResponseDTO dto = service.reservationDetail(campId);
 
