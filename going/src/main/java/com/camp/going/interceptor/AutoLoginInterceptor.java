@@ -2,6 +2,7 @@ package com.camp.going.interceptor;
 
 import com.camp.going.entity.User;
 import com.camp.going.mapper.UserMapper;
+import com.camp.going.service.UserService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -20,7 +21,7 @@ import static com.camp.going.util.LoginUtils.*;
 @RequiredArgsConstructor
 public class AutoLoginInterceptor implements HandlerInterceptor {
     private final UserMapper userMapper;
-//    private final UserService userService;
+    private final UserService userService;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
