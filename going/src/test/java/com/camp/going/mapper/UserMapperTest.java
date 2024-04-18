@@ -21,9 +21,10 @@ class UserMapperTest {
 
         // when
         User user = User.builder()
-                .email("aaa1111@naver.com")
-                .password("aaa1111")
-                .phoneNumber("010-1454-5378")
+                .email("bbb1234@naver.com")
+                .password("bbb1234!")
+                .phoneNumber("010-8954-1342")
+                .name("배라이언")
                 .build();
         userMapper.save(user);
 
@@ -32,5 +33,39 @@ class UserMapperTest {
         // then
     }
 
+    @Test
+    @DisplayName("이메일이 aaa1111@naver.com을 조회 하면 그 이름은 김춘식이여야 한다")
+    void findUserTest() {
+        // given
+        String email = "aaa1111@naver.com";
+        // when
+        User user = userMapper.findUser(email);
+        // then
+        assertEquals(user.getName(), "김춘식");
+    }
+
+    @Test
+    @DisplayName("이메일이 aaa1111@naver.com일 경우 중복확인 결과값이 true여야 한다.")
+    void duplicateTest() {
+        // given
+        String email = "aaa1111@naver.com";
+        // when
+        boolean emailFlag = userMapper.isDuplicate("keyword", email);
+        // then
+        assertTrue(emailFlag);
+    }
+
+    @Test
+    @DisplayName("이메일이 abc@naver.com일 경우 중복확인 결과값이 false여야 한다.")
+    void duplicateEmailTest() {
+        // given
+        String email = "abc@naver.com";
+
+        // when
+        boolean emailFlag = userMapper.isDuplicate("email", email);
+
+        // then
+        assertFalse(emailFlag);
+    }
 
 }
