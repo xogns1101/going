@@ -45,7 +45,7 @@ public class ReservationController {
     }
 
 
-    @GetMapping("/resevation-detail")
+    @GetMapping("/reservation-detail")
     public String reservationDetail(Model model
             , @PathVariable("campId") int campId){
 
@@ -57,7 +57,7 @@ public class ReservationController {
 
     }
 
-    @GetMapping("/resevation-list")
+    @GetMapping("/reservation-list")
     public String reservationDetail(Model model
             , Camping camping
             , User user){
