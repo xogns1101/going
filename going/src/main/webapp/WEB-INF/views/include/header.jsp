@@ -7,11 +7,7 @@
     <meta charset="UTF-8">
     <title>Insert Your Title</title>
 
-    <link rel="stylesheet" href="/assets/css/main.css">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Yeon+Sung&display=swap" rel="stylesheet">
 </head>
 <body>
 
