@@ -27,13 +27,13 @@ public class ReviewController {
 
     // 리뷰 목록
     @GetMapping("/review")
-    public String reviewList(Model model, @ModelAttribute("s") Search page ) {
+    public String reviewList(Model model, @ModelAttribute("s") Search page) {
         System.out.println("search = " + page);
         List<ReviewResponseDTO> dtoList = service.getList(page);
 
         PageMaker pageMaker = new PageMaker(page, service.getCount(page));
 
-        model.addAttribute("review", dtoList);
+        model.addAttribute("rList", dtoList);
         model.addAttribute("marker", pageMaker);
 
         return "review";
