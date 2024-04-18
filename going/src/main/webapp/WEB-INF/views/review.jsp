@@ -4,12 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>REVIEW</title>
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="stylesheet" href="/assets/css/review.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Yeon+Sung&display=swap" rel="stylesheet">
+ <%@ include file="include/static-head.jsp" %>
 
 </head>
 
@@ -31,7 +26,9 @@
 
                 <div class="review-box">
                     <ul class="review">
+
                         <li class="camp-name">${b.campName}</li>
+
                         <li class="email">${b.email}</li>
 
                         <img src="#" alt="리뷰">
