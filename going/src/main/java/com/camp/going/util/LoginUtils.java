@@ -1,5 +1,6 @@
 package com.camp.going.util;
 
+import com.camp.going.dto.response.LoginUserResponseDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.web.util.WebUtils;
@@ -18,24 +19,24 @@ public class LoginUtils {
         return session.getAttribute(LOGIN_KEY) != null;
     }
 
-    // 로그인 한 사람의 계정명을 반환해 주는 메서드
-//    public static String getCurrentLoginMemberAccount(HttpSession session) {
-//        // session.getAttribute의 리턴타입은 Object이기 때문에
-//        // 자식의 고유 기능과 속성을 사용하기 위해 자식 타입으로 형 변환.
-//        LoginUserResponseDTO loginUser = (LoginUserResponseDTO) session.getAttribute(LOGIN_KEY);
-//        return loginUser.getAccount();
-//    }
+  //   로그인 한 사람의 계정명을 반환해 주는 메서드
+       public static String getCurrentLoginMemberAccount(HttpSession session) {
+       // session.getAttribute의 리턴타입은 Object이기 때문에
+       // 자식의 고유 기능과 속성을 사용하기 위해 자식 타입으로 형 변환.
+        LoginUserResponseDTO loginUser = (LoginUserResponseDTO) session.getAttribute(LOGIN_KEY);
+        return loginUser.getEmail();
+    }
 
     // 내가 쓴 게시물인지 확인해 주는 메서드
-//    public static boolean isMine(HttpSession session, String targetAccount) {
-//        return targetAccount.equals(getCurrentLoginMemberAccount(session));
-//    }
+   public static boolean isMine(HttpSession session, String targetAccount) {
+        return targetAccount.equals(getCurrentLoginMemberAccount(session));
+    }
 
     // 관리자인지 확인해주는 메서드
-//    public static boolean isAdmin(HttpSession session) {
-//        LoginUserResponseDTO loginUser = (LoginUserResponseDTO) session.getAttribute(LOGIN_KEY);
-//        return loginUser.getAuth().equals("관리자회원");
-//    }
+    public static boolean isAdmin(HttpSession session) {
+        LoginUserResponseDTO loginUser = (LoginUserResponseDTO) session.getAttribute(LOGIN_KEY);
+        return loginUser.getAuth().equals("관리자회원");
+    }
 
     // 자동 로그인 여부 확인
     public static boolean isAutoLogin(HttpServletRequest request) {
