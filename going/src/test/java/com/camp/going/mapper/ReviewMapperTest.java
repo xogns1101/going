@@ -77,7 +77,7 @@ class ReviewMapperTest {
     }
 
     @Test
-    @DisplayName("리뷰 글 번호 6번인 리뷰 조회수 올리기")
+    @DisplayName("리뷰 글 번호 6번인 리뷰 좋아요 수 올리기")
     void likeReviewTest() {
         // given
         int reviewNo = 14;
