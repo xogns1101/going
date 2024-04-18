@@ -36,11 +36,11 @@
 </head>
 <body>
 <div class="container">
-    <h1>403 Forbidden</h1>
-    <p>현재 접속하시려는 곳을 볼 수 있는 권한이 부족합니다.</p>
+    <h1>500 Internal Server Error</h1>
+    <p>서버에 문제가 생겨 오류가 발생했습니다.</p>
     <br>
     <a href="/main">메인 화면으로 이동하기</a>
-    
+
 </div>
 </body>
 </html>

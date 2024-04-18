@@ -36,11 +36,11 @@
 </head>
 <body>
 <div class="container">
-    <h1>403 Forbidden</h1>
-    <p>현재 접속하시려는 곳을 볼 수 있는 권한이 부족합니다.</p>
+    <h1>404 Not Found</h1>
+    <p>현재 입력하신 링크는 존재하지 않는 경로입니다.</p>
     <br>
     <a href="/main">메인 화면으로 이동하기</a>
-    
+
 </div>
 </body>
 </html>
