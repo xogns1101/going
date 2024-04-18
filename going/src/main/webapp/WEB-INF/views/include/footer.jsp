@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert Your Title</title>
-    <link rel="stylesheet" href="/going/src/main/resources/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
