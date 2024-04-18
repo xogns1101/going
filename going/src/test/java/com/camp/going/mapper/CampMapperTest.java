@@ -20,8 +20,8 @@ class CampMapperTest {
         
         // when
         Camping build = Camping.builder()
-                .campId(2)
-                .campName("홀리데이캠핑장")
+                .campId(8)
+                .campName("빅파이캠핑장")
                 .campAddress("경기도 가평군 설악면 가일리 180-14")
                 .campNumber("0507-1311-8513")
                 .campHomepage("blog.naver.com/holidaycamp1")
