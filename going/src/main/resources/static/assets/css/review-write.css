@@ -1,0 +1,248 @@
+@import url(../css/main.css);
+
+body {
+  
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7; /* 배경색 */
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  color: black; /* 텍스트 색상 */
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+form {
+  max-width: 800px; /* 원하는 폭으로 조절 */
+  height: 1100px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #4BDB73;
+  border-radius: 8px; /* 테두리 둥글게 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  text-align: right; /* 오른쪽 정렬 */
+}
+
+.modal-detail {
+  margin-bottom: 20px;
+}
+
+.modal-detail input {
+  width: 100%; /* 전체 폭 사용 */
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* 요소 간격 */
+}
+
+.thumbnail-box img {
+  width: 550px;
+  height: 350px;
+  object-fit: cover; /* 이미지를 박스에 맞추기 */
+  border-radius: 4px; /* 테두리 둥글게 */
+  display: block;
+}
+
+#review-image {
+  display: block;
+  margin-top: 320px;
+}
+
+
+.button {
+  --text: #C3C8DE;
+  --plane: #4BDB73;
+  --background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 0;
+  padding: 0;
+  width: 140px;
+  height: 60px;
+  background: none;
+  color: var(--text);
+  cursor: pointer;
+  outline: none;
+  margin-top: 25px;
+  margin-left: 620px;
+  border-radius: 20%;
+  
+  
+}
+.button svg.btn-layer {
+  display: block;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 2;
+  pointer-events: none;
+  fill: var(--background);
+}
+.button svg.plane {
+  z-index: 3;
+  position: absolute;
+  left: 32px;
+  display: block;
+  width: 26px;
+  height: 28px;
+  fill: var(--plane);
+  transform: translate3d(0, 0, 0);
+  perspective: 500px;
+}
+.button > ul {
+  list-style: none;
+  padding: 0 5px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.button > ul > li {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  padding-left: 40px;
+  font: 400 16px "Varela Round", sans-serif;
+  transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+}
+.button > ul > li:first-child {
+  opacity: 1;
+}
+.button > ul > li:last-child {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  opacity: 0;
+}
+.button.active svg.plane {
+  -webkit-animation: 1.5s orbit alternate linear;
+          animation: 1.5s orbit alternate linear;
+}
+.button.active > ul > li {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease 1.2s, opacity 0.3s ease 1.2s;
+}
+.button.active > ul > li:first-child {
+  opacity: 0;
+}
+.button.active > ul > li:last-child {
+  opacity: 1;
+}
+
+@-webkit-keyframes orbit {
+  0% {
+    transform: rotate3d(1, 0, 0, 0deg) translateZ(60px) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  10% {
+    z-index: 3;
+    transform: rotate3d(1, 0.6, 0, -10deg) translateZ(60px) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  20% {
+    z-index: 3;
+    transform: rotate3d(1, 0.6, 0, 30deg) translateZ(60px) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  30% {
+    z-index: 3;
+    transform: rotate3d(1, 0.6, 0, 35deg) translateZ(60px) scale3d(1, 1, 1);
+  }
+  40% {
+    z-index: 1;
+    transform: rotate3d(1, 0.6, 0, 120deg) translateZ(60px) scale3d(0.7, 0.7, 1);
+  }
+  70% {
+    z-index: 1;
+    transform: rotate3d(1, 0.6, 0, 240deg) translateZ(60px) scale3d(0.7, 0.7, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  100% {
+    z-index: 3;
+    transform: rotate3d(1, 0, 0, 360deg) translateZ(60px) scale3d(1, 1, 1);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate3d(1, 0, 0, 0deg) translateZ(60px) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  10% {
+    z-index: 3;
+    transform: rotate3d(1, 0.6, 0, -10deg) translateZ(60px) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  20% {
+    z-index: 3;
+    transform: rotate3d(1, 0.6, 0, 30deg) translateZ(60px) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  30% {
+    z-index: 3;
+    transform: rotate3d(1, 0.6, 0, 35deg) translateZ(60px) scale3d(1, 1, 1);
+  }
+  40% {
+    z-index: 1;
+    transform: rotate3d(1, 0.6, 0, 120deg) translateZ(60px) scale3d(0.7, 0.7, 1);
+  }
+  70% {
+    z-index: 1;
+    transform: rotate3d(1, 0.6, 0, 240deg) translateZ(60px) scale3d(0.7, 0.7, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  100% {
+    z-index: 3;
+    transform: rotate3d(1, 0, 0, 360deg) translateZ(60px) scale3d(1, 1, 1);
+  }
+}
+
+#review-content {
+  width: 100%; 
+  height: 427px; 
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; /* 수직으로만 크기 조정 가능 */
+  text-align: left;
+}
+
+#review-title {
+  width: 100%; 
+  height: 70px;
+  padding: 10px; 
+  margin: 10px 0; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  font-size: 16px; 
+  box-sizing: border-box; 
+}
+
+.dribbble{
+  display: none;
+}
+
+.twitter {
+  display: none;
+}
