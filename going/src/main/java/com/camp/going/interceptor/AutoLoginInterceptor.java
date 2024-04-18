@@ -36,12 +36,12 @@ public class AutoLoginInterceptor implements HandlerInterceptor {
             String sessionId = autoLoginCookie.getValue();
 
             // 4. DB에서 쿠키가 가지고 있던 session_id와 동일한 값을 가진 회원을 조회해 오자
-//            User user = userMapper.findMemberByCookie(sessionId);
+            User user = userMapper.findMemberByCookie(sessionId);
 
             // 5. 회원이 정상적으로 조회가 됐다면 and 자동로그인 만료시간 이전이면 로그인을 수행한다
-//            if (user != null && LocalDateTime.now().isBefore(user.getLimitTime())) {
-//                userService.maintainLoginState(request.getSession(), user.getEmail());
-//            }
+            if (user != null && LocalDateTime.now().isBefore(user.getLimitTime())) {
+                userService.maintainLoginState(request.getSession(), user.getEmail());
+            }
 
         }
 

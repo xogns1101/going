@@ -17,6 +17,7 @@ public class ReviewResponseDTO {
     private String reviewImage; // 리뷰 사진
     private int reviewPoint; // 리뷰 별점
     private String email; // 회원 아이디
+    private String campName;
     private int reviewLike; // 리뷰 조회수
     private LocalDateTime reviewDate; // 리뷰 입력 날짜
 
@@ -28,11 +29,12 @@ public class ReviewResponseDTO {
         this.email = makeShortEmail(review.getEmail());
         this.reviewLike = review.getReviewLike();
         this.reviewDate = review.getReviewDate();
+        this.campName = review.getCampName();
     }
 
     private String makeShortEmail(String email) {
         int idx = email.indexOf("@");
-        return email.substring(idx);
+        return email.substring(0, idx);
     }
 
 }

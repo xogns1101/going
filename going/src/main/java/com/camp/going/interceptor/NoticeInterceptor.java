@@ -34,10 +34,10 @@ public class NoticeInterceptor implements HandlerInterceptor {
         // 삭제 요청인지 확인
         if (uri.contains("delete")) {
             // 관리자가 아니면 삭제 요청을 취소한다.
-//            if (!isAdmin(session)) {
-//                log.info("관리자 권한이 없습니다. ({})", request.getRequestURI());
-//                return false;
-//            }
+            if (!isAdmin(session)) {
+                log.info("관리자 권한이 없습니다. ({})", request.getRequestURI());
+                return false;
+            }
 
         }
 

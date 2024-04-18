@@ -37,23 +37,23 @@ public class ReviewInterceptor implements HandlerInterceptor {
         if (uri.contains("delete")) {
 
             // 관리자라면 통과
-//            if (isAdmin(session)) return true;
+            if (isAdmin(session)) return true;
 
             String rno = request.getParameter("rno");
 
-//            String writer = reviewMapper.findOne(Integer.parseInt(rno)).getEmail();
-//
-//            if (!isMine(session, writer)) {
-//                response.setContentType("text/html; charset=UTF-8");
-//                PrintWriter w = response.getWriter();
-//                String htmlCode = "<script>\n" +
-//                        "    alert('본인이 작성한 게시글만 삭제가 가능합니다.');\n" +
-//                        "    location.href='/board/list';\n" +
-//                        "</script>";
-//                w.write(htmlCode);
-//                w.flush();
-//                return false;
-//            }
+            String writer = reviewMapper.findOne(Integer.parseInt(rno)).getEmail();
+
+            if (!isMine(session, writer)) {
+                response.setContentType("text/html; charset=UTF-8");
+                PrintWriter w = response.getWriter();
+               String htmlCode = "<script>\n" +
+                        "    alert('본인이 작성한 게시글만 삭제가 가능합니다.');\n" +
+                        "    location.href='/board/list';\n" +
+                        "</script>";
+                w.write(htmlCode);
+                w.flush();
+                return false;
+            }
 
         }
 
