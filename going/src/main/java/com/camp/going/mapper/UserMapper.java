@@ -1,5 +1,6 @@
 package com.camp.going.mapper;
 
+import com.camp.going.dto.request.AutoLoginDTO;
 import com.camp.going.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -17,4 +18,5 @@ public interface UserMapper {
     // @Param("type") String type (대기)
     boolean isDuplicate( @Param("type") String type ,@Param("keyword") String keyword);
 
+    void saveAutoLogin(AutoLoginDTO build);
 }

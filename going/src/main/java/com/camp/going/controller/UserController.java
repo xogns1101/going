@@ -1,13 +1,17 @@
 package com.camp.going.controller;
 
+import com.camp.going.dto.request.LoginRequestDTO;
 import com.camp.going.dto.request.SignUpRequestDTO;
 import com.camp.going.entity.User;
 import com.camp.going.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
@@ -59,5 +63,24 @@ public class UserController {
     public void signIn() {
         log.info("/user/sign-in: GET!");
     }
+
+    // 로그인 검증 요청
+    @PostMapping("/sign-in")
+    public String signIn(LoginRequestDTO dto,
+                         RedirectAttributes ra,
+                         HttpServletResponse response,
+                         HttpServletRequest request){
+
+        log.info("/members/sign-in: POST!, dto: {}", dto);
+
+        userService.authenticate
+
+
+
+
+
+
+    }
+
 
 }
