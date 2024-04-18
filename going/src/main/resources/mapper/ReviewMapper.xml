@@ -58,4 +58,9 @@
         LIMIT 1
     </select>
 
+    <select id="getCount" resultType="int">
+        SELECT COUNT(*)
+        FROM review
+    </select>
+
 </mapper>

@@ -32,7 +32,6 @@ class ReviewMapperTest {
                 .reviewPoint(5)
                 .reviewDate(LocalDateTime.now())
                 .build();
-
         reviewMapper.saveReview(review);
         // then
     }
