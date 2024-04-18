@@ -2,8 +2,10 @@ package com.camp.going.controller;
 
 import com.camp.going.common.PageMaker;
 import com.camp.going.common.Search;
+import com.camp.going.dto.request.ReviewModifyRequestDTO;
 import com.camp.going.dto.request.ReviewRequestDTO;
 import com.camp.going.dto.response.ReviewResponseDTO;
+import com.camp.going.entity.Review;
 import com.camp.going.service.ReviewService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -56,11 +58,18 @@ public class ReviewController {
     }
 
     // 리뷰 수정 요청
+    @GetMapping("/modify")
+    public String modify(ReviewModifyRequestDTO dto) {
+        service.modify(dto);
+
+        return "redirect:/review-write";
+    }
 
     // 리뷰 삭제 요청 (/review/delete : GET)
     @GetMapping("/review-delete")
     public String deleteReview(int rno) {
         System.out.println("/review/delete : GET! " + rno);
+        service.delete(rno);
 
         return "redirect:/review";
     }
