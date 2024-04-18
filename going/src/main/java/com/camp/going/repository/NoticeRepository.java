@@ -17,4 +17,6 @@ public interface NoticeRepository {
     void delete(int noticeNo);
 
     void modify(Notice notice);
+
+    void updateViewCount(int nno);
 }

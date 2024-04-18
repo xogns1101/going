@@ -71,4 +71,12 @@ public class NoticeRepositoryImpl implements NoticeRepository {
                 "WHERE notice_no=?";
         template.update(sql, notice.getNoticeTitle(), notice.getNoticeContent(), notice.getNoticeCategory(), notice.getNoticeNo());
     }
+
+    @Override
+    public void updateViewCount(int nno) {
+        String sql = "UPDATE notice " +
+                "SET notice_count = notice_count + 1 " +
+                "WHERE notice_no = ?";
+        template.update(sql, nno);
+    }
 }
