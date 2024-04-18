@@ -32,7 +32,7 @@ public class ReviewResponseDTO {
 
     private String makeShortEmail(String email) {
         int idx = email.indexOf("@");
-        return email.substring(idx);
+        return email.substring(0, idx);
     }
 
 }
