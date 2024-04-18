@@ -15,6 +15,6 @@ public interface UserMapper {
     
     // 이메일 (아이디) 중복확인
     // @Param("type") String type (대기)
-    boolean isisDuplicate(@Param("keyword") String keyword, @Param("email") String email);
+    boolean isDuplicate( @Param("type") String type ,@Param("keyword") String keyword);
 
 }

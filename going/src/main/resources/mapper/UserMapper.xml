@@ -23,8 +23,8 @@
 
         SELECT COUNT(*)
         FROM user
-        <if test="type == 'account'">
-            WHERE account = #{keyword}
+        <if test="type == 'email'">
+            WHERE email = #{keyword}
         </if>
 
     </select>
