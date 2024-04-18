@@ -22,6 +22,8 @@ public interface ReviewMapper {
     Review bestReview(); // 베스트 리뷰 (좋아요가 가장 많은 것 -> 좋아요 수가 같을 경우 최신에 작성된 글)
 
     int updateLikeCount(int rno); // 리뷰 좋아요 처리
+    
+    int cancelLikeCount(int rno); // 리뷰 좋아요 취소 처리
 
     // 총 리뷰 수 리턴
     int getCount(Search page); // 총 리뷰 수 리턴

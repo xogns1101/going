@@ -36,14 +36,14 @@ public class ReviewController {
         model.addAttribute("review", dtoList);
         model.addAttribute("marker", pageMaker);
 
-        return "";
+        return "review";
     }
 
     // 리뷰 쓰기 화면 요청 (/review/write : GET)
     @GetMapping("/write")
     public String reviewWrite() {
         System.out.println("/review/write : GET!");
-        return "/write";
+        return "review-write";
     }
 
     // 리뷰 등록 요청 (/review/write : POST)
