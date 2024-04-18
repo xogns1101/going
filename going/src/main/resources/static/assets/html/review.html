@@ -195,15 +195,39 @@ private int reviewNo; // 리뷰 글 번호
 
 
 });
+
+    // 수정 버튼 눌렀을때 수정 페이지로 이동시키기
+    const $modifyButton = document.querySelector('.review-modify');
+
+    $modifyButton.addEventListener('click', function() {
+        window.location.href = './review-modify.html';
+    })
     // 헤더 부분 링크 이동 클릭 이벤트 부분 적용
 
+    
     const $headerLink = document.querySelector('.logo-content');
 
     const $introLink = $headerLink.querySelector('a:first-child');
     $introLink.addEventListener('click', function() {
-    console.log("클릭");
     window.location.href = './introduce.html';
     });
+
+    const $reservationLink = $headerLink.querySelector('a:nth-child(2)');
+    $reservationLink.addEventListener('click', function() {
+    window.location.href = './reservation.html';
+    });
+
+    
+    const $noticeLink = $headerLink.querySelector('a:nth-child(3)');
+    $noticeLink.addEventListener('click', function() {
+    window.location.href = './notice-admin.html';
+    });
+
+    const $reviewLink = $headerLink.querySelector('a:nth-child(4)');
+    $reviewLink.addEventListener('click', function() {
+    window.location.href = './review.html';
+    });
+
 /*
     // 모달 상세
     // 모달 열기 버튼
