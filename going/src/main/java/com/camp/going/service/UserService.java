@@ -1,6 +1,7 @@
 package com.camp.going.service;
 
 import com.camp.going.dto.request.AutoLoginDTO;
+import com.camp.going.dto.request.KakaoSignUpRequestDTO;
 import com.camp.going.dto.request.LoginRequestDTO;
 import com.camp.going.dto.request.SignUpRequestDTO;
 import com.camp.going.dto.response.LoginUserResponseDTO;
@@ -87,6 +88,12 @@ public class UserService {
     public void join(SignUpRequestDTO dto){
 
         userMapper.save(dto.toEntity(encoder));
+
+    }
+
+    public void joins(KakaoSignUpRequestDTO dto, String savePath){
+
+        userMapper.save(dto.toEntity(encoder, savePath));
 
     }
 

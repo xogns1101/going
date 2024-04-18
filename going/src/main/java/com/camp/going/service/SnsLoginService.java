@@ -1,7 +1,9 @@
 package com.camp.going.service;
 
+import com.camp.going.dto.request.KakaoSignUpRequestDTO;
 import com.camp.going.dto.request.SignUpRequestDTO;
 import com.camp.going.dto.response.KakaoUserResponseDTO;
+import com.camp.going.dto.response.NaverUserResponseDTO;
 import com.camp.going.entity.User;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -40,14 +42,15 @@ public class SnsLoginService {
         // 회원 중복확인 (이메일)
         if (!userService.checkDuplicateValue("email", email)) {
             // 한번도 카카오 로그인을 한 적이 없다면 회원가입이 들어간다.
-            userService.join(
-                    SignUpRequestDTO.builder()
+            userService.joins(
+                    KakaoSignUpRequestDTO.builder()
                             .email(String.valueOf(dto.getId()))
                             .password("0000")
                             .name(dto.getProperties().getNickname())
+                            .email(email)
                             .loginMethod(User.LoginMethod.KAKAO)
-                            .build()
-
+                            .build(),
+                    dto.getProperties().getProfileImage()
             );
         }
 
@@ -122,4 +125,100 @@ public class SnsLoginService {
 
         return accessToken;
     }
+
+
+    public void naverLogin(Map<String, String> params, HttpSession session) {
+
+        String accessToken = getNaverAccessToken(params);
+        session.setAttribute("access_token", accessToken);
+        log.info("access_token: {}", accessToken);
+
+        NaverUserResponseDTO dto = getNaverInfo(accessToken);
+
+        // 네이버에서 받은 회원정보로 우리 사이트 회원가입
+        String email = dto.getResponseData().getEmail();
+        log.info("이메일: {}", email);
+
+        // 회원 중복확인 (이메일)
+        if (!userService.checkDuplicateValue("email", email)) {
+            // 한번도 카카오 로그인을 한 적이 없다면 회원가입이 들어간다.
+            userService.join(
+                    SignUpRequestDTO.builder()
+                            .email(email)
+                            .password("0000")
+                            .name(dto.getResponseData().getName())
+                            .phoneNumber(dto.getResponseData().getMobile())
+                            .loginMethod(User.LoginMethod.NAVER)
+                            .build()
+
+            );
+        }
+
+        // 우리 사이트 로그인 처리
+        userService.maintainLoginState(session, email);
+
+
+    }
+
+    private NaverUserResponseDTO getNaverInfo(String accessToken) {
+
+        String requestUri = "https://openapi.naver.com/v1/nid/me";
+
+        // 요청 헤더
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Authorization", "Bearer " + accessToken);
+
+        //  요청 보내기
+        RestTemplate template = new RestTemplate();
+        ResponseEntity<NaverUserResponseDTO> responseEntity = template.exchange(
+                requestUri,
+                HttpMethod.POST,
+                new HttpEntity<>(headers),
+                NaverUserResponseDTO.class
+        );
+
+        NaverUserResponseDTO responseJSON = (NaverUserResponseDTO) responseEntity.getBody();
+        log.info("응답 데이터 결과: {}", responseJSON);
+
+        return responseJSON;
+    }
+
+    private String getNaverAccessToken(Map<String, String> requestParam) {
+
+        // 요청 URI
+        String requestUri = "https://nid.naver.com/oauth2.0/token";
+
+        // 요청 바디에 파라미터 세팅
+        MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+        params.add("grant_type", "authorization_code");
+        params.add("client_id", requestParam.get("clientId"));
+        params.add("client_secret", requestParam.get("clientSecret"));
+        params.add("code", requestParam.get("code"));
+        params.add("state", requestParam.get("state"));
+
+        log.info("params: {}", params);
+
+        // 카카오 인증서버로 POST 요청 날리기
+        RestTemplate template = new RestTemplate();
+
+        HttpHeaders headers = new HttpHeaders();
+
+        // 헤더 정보와 파라미터를 하나로 묶기.
+        HttpEntity<Object> requestEntity = new HttpEntity<>(params, headers);
+
+        ResponseEntity<Map> responseEntity
+                = template.exchange(requestUri, HttpMethod.POST, requestEntity, Map.class);
+
+        // 응답 데이터에서 JSON 추출
+        Map<String, Object> responseJSON = (Map<String, Object>) responseEntity.getBody();
+        log.info("응답 JSON 데이터: {}", responseJSON);
+
+        // access token 추출 (카카오 로그인 중인 사용자의 정보를 요청할 때 필요한 토큰)
+        String accessToken = (String) responseJSON.get("access_token");
+
+        return accessToken;
+
+
+    }
+
 }

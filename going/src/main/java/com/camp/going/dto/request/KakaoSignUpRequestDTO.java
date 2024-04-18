@@ -15,36 +15,39 @@ import org.springframework.web.multipart.MultipartFile;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class SignUpRequestDTO {
+public class KakaoSignUpRequestDTO {
+
 
     @NotBlank
-    @Email
-    private String email;
+    @Size(min = 4, max = 14)
+    private String account;
 
     @NotBlank
     private String password;
 
     @NotBlank
+    @Size(min = 2, max = 6)
     private String name;
 
     @NotBlank
-    private String phoneNumber;
+    @Email
+    private String email;
+
+    // 프로필 사진 파일
+    private MultipartFile profileImage;
 
     private User.LoginMethod loginMethod;
 
-
-
     // dto를 엔터티로 변환하는 유틸메서드
-    public User toEntity(PasswordEncoder encoder) {
+    public User toEntity(PasswordEncoder encoder, String savePath) {
         return User.builder()
-                .email(email)
+                .email(account)
                 .password(encoder.encode(password))
                 .name(name)
-                .phoneNumber(phoneNumber)
+                .email(email)
+                .profileImage(savePath)
                 .loginMethod(loginMethod)
                 .build();
     }
-
-
 
 }
