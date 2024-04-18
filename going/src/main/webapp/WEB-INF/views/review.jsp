@@ -26,7 +26,9 @@
 
                 <div class="review-box">
                     <ul class="review">
-                         <li class="camp-name">${b.campName}</li>
+
+                        <li class="camp-name">${b.campName}</li>
+
                         <li class="email">${b.email}</li>
 
                         <img src="#" alt="리뷰">
