@@ -67,8 +67,8 @@ section .title h1 {
   
   
   section .review-list .review-box {
-    width: 500px;
-    height: 700px;
+    width: 400px;
+    height: 600px;
     background: #E4FFAA;
     margin-top: 40px;
     margin-bottom: 130px;
