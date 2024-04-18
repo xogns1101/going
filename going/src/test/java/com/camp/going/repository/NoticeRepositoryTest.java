@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -27,6 +28,7 @@ class NoticeRepositoryTest {
             Notice notice = new Notice();
             notice.setNoticeTitle("공지사항 " + i + "번 제목 테스트");
             notice.setNoticeContent("공지사항 " + i + "번 내용 테스트");
+            notice.setNoticeDate(LocalDateTime.now());
             repository.save(notice);
         }
         // when

@@ -40,9 +40,9 @@
 
     <div class="Desktop9" style="width: 1436px; height: 1024px; position: relative; background: white; margin-left: 200px;">
     
-        ${b.noticeNo}
+        
         <!--페이지 번호  -->
-        <c:input var="b" items="${notice}">
+        <c:forEach var="b" items="${nlist}">
             <div class="PageNo" style="width: 21px; left: 576px; top: 865px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">2</div>
             <div class="PageNo" style="width: 21px; left: 619px; top: 865px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">3</div>
             <div class="PageNo" style="width: 21px; left: 658px; top: 865px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">4</div>
@@ -200,7 +200,7 @@
            
     
         </div>
-</c:foreach>
+</c:forEach>
   <!-- footer---------------------------- -->
 
 

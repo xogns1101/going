@@ -36,7 +36,7 @@
 
 
     </header>
-
+    <c:forEach var="b" items="${nlist}">
     <!-- sign-in -->
     <div class="SignIn" style="width: 1436px; height: 1024px; position: relative; background: white; margin-left: 200px;">
         
@@ -86,7 +86,7 @@
         <input type="text" placeholder="이메일을 입력해주세요" style="width: 500px; height: 30px; left: 367px; top: 337px; position: absolute; font-size: 24px; font-family: Yeon Sung; font-weight: 400; border: none;">
 
         <!-- 헤더 -->
-        <div class="Headerbackground" style="width: 1529px; height: 151px; left: 0px; top: 0px; position: absolute">
+        <c:forEach class="Headerbackground" style="width: 1529px; height: 151px; left: 0px; top: 0px; position: absolute">
         <div class="Header" style="width: 1436px; height: 126px; left: 0px; top: 0px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
         </div>
 
@@ -113,7 +113,7 @@
             
             </footer>
         </div>
-
+    </c:forEach>
 
        
        

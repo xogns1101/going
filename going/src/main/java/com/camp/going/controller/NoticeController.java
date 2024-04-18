@@ -38,7 +38,8 @@ public class NoticeController {
         model.addAttribute("nList", dtoList);
         model.addAttribute("maker", pageMaker);
 
-        return "(경로패키지명)/list";
+//        return "(경로패키지명)/list";
+        return "notice-admin";
     }
 
 

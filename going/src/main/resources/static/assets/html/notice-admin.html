@@ -44,7 +44,7 @@
     
         
           <!--페이지 번호  -->
-          <c:input var="b" items="${notice}">
+          <c:forEach var="b" items="${nlist}">
             <div class="PageNo" style="width: 21px; left: 576px; top: 865px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">2</div>
             <div class="PageNo" style="width: 21px; left: 619px; top: 865px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">3</div>
             <div class="PageNo" style="width: 21px; left: 658px; top: 865px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">4</div>
@@ -199,7 +199,7 @@
 
 
     </div>
-</c:foreach>
+</c:forEach>
   <!-- footer---------------------------- -->
 
 
@@ -279,14 +279,19 @@
             });
 
     // edit icon click event
-        const editIcons = document.querySelectorAll('.edit-icon');
-            editIcons.forEach(icon => {
-                icon.addEventListener('click', function() {
-                    // 편집 아이콘을 누르면 편집 기능이 실행
-                    alert("편집하시겠습니까?"); 
-                });
-            });
-
+const editIcons = document.querySelectorAll('.edit-icon');
+editIcons.forEach(icon => {
+    icon.addEventListener('click', function() {
+        // 편집 아이콘을 누르면 확인 대화 상자가 표시됨
+        const confirmEdit = confirm("편집하시겠습니까?");
+        
+        // 사용자가 확인을 선택한 경우
+        if (confirmEdit) {
+            // in-notice.html 페이지로 이동
+            window.location.href = 'notice-write.html';
+        }
+    });
+});
 
   </script>
 </body>
