@@ -167,7 +167,7 @@
             reader.readAsDataURL(file);
         } else {
             // 파일이 선택되지 않았을 경우 처리할 수 있습니다
-            console.log('파일이 선택되지 않았습니다.');
+            console.l+og('파일이 선택되지 않았습니다.');
         }
     });
 
