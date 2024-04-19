@@ -222,25 +222,7 @@ public class SnsLoginService {
 
     }
 
-    // 네이버 로그아웃
-    public void  naverLogout(String accessToken){
 
-        // 요청 URI
-        String requestUri = "https://nid.naver.com/oauth2.0/token";
-
-
-
-
-
-
-
-
-
-
-
-
-
-    }
 
 
 }

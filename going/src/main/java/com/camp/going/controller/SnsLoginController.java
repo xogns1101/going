@@ -110,21 +110,7 @@ public class SnsLoginController {
         return "redirect:/jq/kakaopay";
     }
 
-    // 네이버 로그아웃 요청 처리
-    @GetMapping("/naver/sign-out")
-    public String naverSignOut(HttpSession session,
-                               HttpServletRequest request,
-                               HttpServletResponse response){
 
-        log.info("/naver/sign-out: GET!");
-
-
-
-
-
-
-        return null;
-    }
 
 
 }
