@@ -38,7 +38,7 @@ public class NoticeController {
         model.addAttribute("nList", dtoList);
         model.addAttribute("maker", pageMaker);
 
-        return "(경로패키지명)/list";
+        return "/list";
     }
 
 
@@ -58,7 +58,7 @@ public class NoticeController {
 
 
 
-            return "(경로패키지명)/write";
+            return "/write";
         } else return "redirect:/notice/list";
     }
 
@@ -109,7 +109,7 @@ public class NoticeController {
         NoticeDetailResponseDTO dto = service.getDetail(nno);
 
         model.addAttribute("n", dto);
-        return ("경로패키지명/detail");
+        return ("/detail");
     }
 
 
