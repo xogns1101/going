@@ -21,6 +21,7 @@
         <typeAlias type="com.camp.going.entity.Reservation" alias="reservation" />
         <typeAlias type="com.camp.going.entity.Review" alias="review" />
         <typeAlias type="com.camp.going.entity.Notice" alias="notice" />
+        <typeAlias type="com.camp.going.entity.MyPage" alias="mypage" />
 
     </typeAliases>
 
@@ -31,6 +32,7 @@
         <mapper resource="mapper/ReservationMapper.xml" />
         <mapper resource="mapper/ReviewMapper.xml" />
         <mapper resource="mapper/NoticeMapper.xml" />
+        <mapper resource="mapper/MyPageMapper.xml" />
     </mappers>
 
 
