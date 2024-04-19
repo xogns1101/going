@@ -1,34 +1,34 @@
-package com.camp.going.controller;
-
-import com.camp.going.dto.response.UploadResultDTO;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.FileCopyUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
-
+//package com.camp.going.controller;
+//
+//import com.camp.going.dto.response.UploadResultDTO;
+//import lombok.extern.slf4j.Slf4j;
+//import org.springframework.beans.factory.annotation.Value;
+//import org.springframework.http.HttpHeaders;
+//import org.springframework.http.HttpStatus;
+//import org.springframework.http.ResponseEntity;
+//import org.springframework.util.FileCopyUtils;
+//import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.RestController;
+//import org.springframework.web.multipart.MultipartFile;
+//
+//import java.io.File;
+//import java.io.IOException;
+//import java.io.UnsupportedEncodingException;
+//import java.net.URLDecoder;
+//import java.nio.file.Files;
+//import java.nio.file.Path;
+//import java.nio.file.Paths;
+//import java.time.LocalDateTime;
+//import java.time.format.DateTimeFormatter;
+//import java.util.ArrayList;
+//import java.util.List;
+//import java.util.UUID;
+//
 //@RestController
 //@Slf4j
 //public class UploadController {
-
+//
 //    @Value("${com.camp.going.upload.path}")
 //    private String uploadPath;
 //
@@ -146,5 +146,6 @@ import java.util.UUID;
 //        }
 //
 //    }
+//
+//}
 
-// }
