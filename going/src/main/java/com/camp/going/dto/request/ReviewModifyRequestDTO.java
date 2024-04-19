@@ -20,7 +20,7 @@ public class ReviewModifyRequestDTO {
 
     private String image; // 수정할 이미지
     private int point; // 수정할 별점
-
+    // 10 (인풋값) / 10 (고정값)
     public Review toEntity() {
         return Review.builder()
                 .reviewNo(rno)
