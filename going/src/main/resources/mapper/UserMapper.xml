@@ -29,4 +29,11 @@
 
     </select>
 
+    <select id="findUserByCookie" resultType="user">
+        SELECT
+        email, password, phone_number, name, auth, limit_time
+        FROM user
+        WHERE session_id = #{sessionId}
+    </select>
+
 </mapper>
