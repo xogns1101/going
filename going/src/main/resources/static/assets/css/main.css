@@ -103,6 +103,10 @@ header .menu-open {
   margin-right: 40px;
 }
 
+header .menu-open:hover {
+  cursor: pointer;
+}
+
 header .gnb {
   background-color: #81f3a1;
   color: black;
@@ -129,6 +133,10 @@ header .gnb .close {
   color: white;
   font-size: 50px;
   margin-left: 50px;
+}
+
+header .gnb .close:hover {
+  cursor: pointer;
 }
 
 header .gnb ul {
