@@ -54,7 +54,10 @@ public class ReviewController {
         log.info("/review/write : POST, dto : {}", dto);
 
         service.register(dto, session);
-        return "redirect:/review";
+
+
+        return "redirect:/main/review";
+
     }
 
     // 리뷰 수정 요청
