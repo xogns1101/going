@@ -18,22 +18,22 @@
     <h1>Review⛺ / 등록</h1>
 
     <div class="star-rating">
-      <input type="radio" id="5-stars" name="rating" value="5" />
+      <input type="radio" id="5-stars" name="reviewPoint" value="5" />
       <label for="5-stars" class="star">&#9733;</label>
-      <input type="radio" id="4-stars" name="rating" value="4" />
+      <input type="radio" id="4-stars" name="reviewPoint" value="4" />
       <label for="4-stars" class="star">&#9733;</label>
-      <input type="radio" id="3-stars" name="rating" value="3" />
+      <input type="radio" id="3-stars" name="reviewPoint" value="3" />
       <label for="3-stars" class="star">&#9733;</label>
-      <input type="radio" id="2-stars" name="rating" value="2" />
+      <input type="radio" id="2-stars" name="reviewPoint" value="2" />
       <label for="2-stars" class="star">&#9733;</label>
-      <input type="radio" id="1-stars" name="rating" value="1" />
+      <input type="radio" id="1-stars" name="reviewPoint" value="1" />
       <label for="1-star" class="star">&#9733;</label>
     </div>
 
 
 
     <!-- <input type="text" id="review-title" placeholder="캠핑장 이름을 입력하세요."><br> -->
-    <input type="text" id="review-content" placeholder="리뷰내용">
+    <input type="text" id="review-content" name="reviewContent" placeholder="리뷰내용">
     </div>
 
     <div class="profile">
@@ -43,7 +43,7 @@
       </div>
 
 
-      <input type="file" id="review-image" accept="image/*">
+      <input type="file" id="review-image" name="reviewImaige" accept="image/*">
     </div>
 
     <div class="two-Btn">
@@ -218,6 +218,8 @@
     //////////////////// 별점 가져오기
     const starRating = document.querySelector('.star-rating');
 
+    
+
     // 이벤트 핸들러 추가
     $starRating.addEventListener('change', function (event) {
       // 이벤트가 발생한 대상이 라디오 버튼인지 확인
@@ -238,6 +240,9 @@
       }
     });
 
+    const reviewPoint = document.querySelector('.star-rating')
+
+  
     // review-content 요소 노드 취득
     const reviewContent = document.getElementById('review-content');
 

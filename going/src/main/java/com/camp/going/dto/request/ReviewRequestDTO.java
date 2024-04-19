@@ -12,7 +12,8 @@ import lombok.*;
 public class ReviewRequestDTO {
 
     private String reviewContent; // 리뷰 내용
-    private String email; // 리뷰 작성자
+//    private String email; // 리뷰 작성자
     private String reviewImage;
+    private int reviewPoint;
 
 }
