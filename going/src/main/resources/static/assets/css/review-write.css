@@ -58,21 +58,6 @@ form {
   -webkit-text-fill-color: #fff58c;
 }
 
-.score-input {
-  margin-bottom: 10px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100px;
-}
-
-.score-output {
-  font-size: 20px;
-  font-weight: bold;
-  color: #007BFF; /* 파란색 강조 */
-  margin-top: 10px;
-  transition: color 0.3s ease-in-out; /* 색 변경 애니메이션 */
-}
 
 .modal-detail {
   margin-bottom: 20px;
@@ -90,6 +75,7 @@ form {
   display: flex;
   align-items: center;
   gap: 20px; /* 요소 간격 */
+  margin-top: 40px;
 }
 
 .thumbnail-box img {
