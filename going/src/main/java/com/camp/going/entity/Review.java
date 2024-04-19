@@ -24,7 +24,7 @@ public class Review {
 
     public Review(ReviewRequestDTO dto) {
         this.reviewContent = dto.getReviewContent();
-        this.email = dto.getEmail();
+//        this.email = dto.getEmail();
         this.reviewImage = dto.getReviewImage();
     }
 }
