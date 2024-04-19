@@ -15,6 +15,7 @@ public class MyPage {
     private String name;
     private String phoneNumber;
     private String password;
+    private String email;
 
     // 예약 정보
     private String campName;

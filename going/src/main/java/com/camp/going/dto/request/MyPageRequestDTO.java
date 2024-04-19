@@ -17,6 +17,9 @@ public class MyPageRequestDTO {
     private String name;
 
     @NotNull
+    private String email;
+
+    @NotNull
     private String phoneNumber;
 
     @NotNull

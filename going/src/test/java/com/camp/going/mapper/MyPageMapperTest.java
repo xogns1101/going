@@ -25,8 +25,8 @@ class MyPageMapperTest {
         String email = "bbb1234@naver.com";
         // when
         User hong = User.builder()
-                .email(email)
                 .name("홍길동")
+                .email(email)
                 .build();
 
         myPageMapper.modifyName(hong);
