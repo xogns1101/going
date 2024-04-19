@@ -25,7 +25,6 @@ body {
   font-style: normal;
 }
 
-
 /* header style */
 
 header {
@@ -37,45 +36,56 @@ header {
   top: 0;
   z-index: 50;
 }
+
 header #wrap {
-    display: flex;
-    position: relative;
-    margin: 25px;
-    
+  /* border: black solid 1px; */
+  display: flex;
+  position: relative;
+
 }
 
 header .logo {
-    font-size: 50px;
-    margin: auto 70px; 
-   
-    flex-grow: 1;
+  /* border: red solid 1px; */
+  font-size: 49px;
+  margin: 0 0 0 20px;
+  width: 22%;
+
+  flex-grow: 1;
 }
 
 header .logo-content {
-    display: flex;
-    flex-grow: 4;
-    margin-top: 10px;
-    font-size: 25px;
-    
+  /* border: yellow solid 1px; */
+  display: flex;
+  flex-grow: 4;
+  /* margin-top: 10px; */
+  font-size: 25px;
+  width: 64%;
+  justify-content: space-around;
+  align-items: center;
+
 }
 
 
 header .logo-content a {
   color: black;
-  margin-right: 80px;
-  margin-left: 80px;
-} 
+  /* margin-right: 80px;
+  margin-left: 80px; */
+  
+}
 
 header .logo-content a:hover {
   color: #fff;
 }
 
 header .login {
-  position: absolute;
+  /* border: blue solid 1px; */
+  /* position: absolute;
   right: 60px;
-  bottom: 10px;
-  margin: 0 auto;
+  bottom: 10px; */
+  margin: auto 0;
   flex-grow: 1;
+  width: 14%;
+  text-align: center;
 }
 
 header .login a {
@@ -85,6 +95,86 @@ header .login a {
 
 header .login a:hover {
   color: black;
+}
+/* 우측 메뉴 */
+header .menu-open {
+  display: none;
+  font-size: 50px;
+  margin-right: 40px;
+}
+
+header .gnb {
+  background-color: #81f3a1;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 40px;
+  height: 100vh;
+
+  position: fixed;
+  right: -140%;
+  top: 0;
+
+  display: flex;
+  flex-direction: row-reverse;
+
+  transition: 0.8s;
+}
+
+header .gnb.open {
+  right: 0;
+}
+
+header .gnb .close {
+  color: white;
+  font-size: 50px;
+  margin-left: 50px;
+}
+
+header .gnb ul {
+  line-height: 2.6;
+  letter-spacing: 2px;
+  margin-top: 100px;
+}
+
+header .gnb ul li:hover,
+header .gnb ul li.active {
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  header .logo {
+      font-size: 36px;
+      margin-top: 10px;
+  }
+
+  header .logo-content {
+      font-size: 20px;
+  }
+
+  header .login a {
+      font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  header .logo {
+      font-size: 36px;
+  }
+
+  header .logo-content {
+      display: none;
+  }
+
+  header .login {
+      display: none;
+  }
+
+  header .menu-open {
+    display: block;
+  }
+  
 }
 
 
