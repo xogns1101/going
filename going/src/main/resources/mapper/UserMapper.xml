@@ -6,9 +6,9 @@
     <insert id="save">
 
         INSERT INTO user
-        (email, password, name, phone_number)
+        (email, password, name, phone_number, user_update)
         VALUES
-        (#{email}, #{password}, #{name}, #{phoneNumber})
+        (#{email}, #{password}, #{name}, #{phoneNumber}, #{userUpdate})
 
     </insert>
 
@@ -27,6 +27,13 @@
             WHERE email = #{keyword}
         </if>
 
+    </select>
+
+    <select id="findUserByCookie" resultType="user">
+        SELECT
+        email, password, phone_number, name, auth, limit_time
+        FROM user
+        WHERE session_id = #{sessionId}
     </select>
 
 </mapper>

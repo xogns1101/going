@@ -40,6 +40,17 @@ class ReservationMapperTest {
         reservationMapper.reservationSave(reservation);
         // then
     }
+    
+    @Test
+    @DisplayName("상세 회면이 잘보이는지")
+    void findCampTest() {
+        // given
+        int campId= 1;
+        // when
+        Reservation one = reservationMapper.findOne(campId);
+        // then
+        assertEquals(one.getCampName(), "두레캠핑장");
+    }
 
     @Test
     @DisplayName("예약 확인 내역 보기")

@@ -42,7 +42,7 @@ public class UserController {
     @ResponseBody
     public ResponseEntity<?> check(@PathVariable String type,
                                          @PathVariable String keyword){
-        log.info("/members/check: async GET");
+        log.info("/user/check: async GET");
         log.debug("type: {}, keyword: {}", type, keyword);
 
         boolean flag = userService.checkDuplicateValue(type, keyword);
@@ -78,7 +78,7 @@ public class UserController {
                          HttpServletResponse response,
                          HttpServletRequest request){
 
-        log.info("/members/sign-in: POST!, dto: {}", dto);
+        log.info("/user/sign-in: POST!, dto: {}", dto);
 
         LoginResult result = userService.authenticate(dto, request.getSession(), response);
         log.info("result: {}", result);
@@ -113,12 +113,12 @@ public class UserController {
         response.addCookie(cookie);
     }
 
-    // 로그아웃 요청 처리
+    // 카카오 로그아웃 요청 처리
     @GetMapping("/sign-out")
     public String signOut(HttpSession session,
                           HttpServletRequest request,
                           HttpServletResponse response) {
-        log.info("/member/sign-out: GET!");
+        log.info("/kakao/sign-out: GET!");
 
         // 자동 로그인 중인지 확인
         if (isAutoLogin(request)) {
@@ -141,5 +141,7 @@ public class UserController {
         return "redirect:/";
 
     }
+
+
 
 }

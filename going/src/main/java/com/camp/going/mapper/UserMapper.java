@@ -20,5 +20,5 @@ public interface UserMapper {
 
     void saveAutoLogin(AutoLoginDTO build);
 
-    User findMemberByCookie(String sessionId);
+    User findUserByCookie(String sessionId);
 }

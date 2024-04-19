@@ -3,6 +3,7 @@ package com.camp.going.service;
 import com.camp.going.dto.request.KakaoSignUpRequestDTO;
 import com.camp.going.dto.request.SignUpRequestDTO;
 import com.camp.going.dto.response.KakaoUserResponseDTO;
+import com.camp.going.dto.response.LoginUserResponseDTO;
 import com.camp.going.dto.response.NaverUserResponseDTO;
 import com.camp.going.entity.User;
 import jakarta.servlet.http.HttpSession;
@@ -160,7 +161,7 @@ public class SnsLoginService {
 
     }
 
-    private NaverUserResponseDTO getNaverInfo(String accessToken) {
+    public NaverUserResponseDTO getNaverInfo(String accessToken) {
 
         String requestUri = "https://openapi.naver.com/v1/nid/me";
 
@@ -183,7 +184,7 @@ public class SnsLoginService {
         return responseJSON;
     }
 
-    private String getNaverAccessToken(Map<String, String> requestParam) {
+    public String getNaverAccessToken(Map<String, String> requestParam) {
 
         // 요청 URI
         String requestUri = "https://nid.naver.com/oauth2.0/token";
@@ -220,5 +221,8 @@ public class SnsLoginService {
 
 
     }
+
+
+
 
 }
