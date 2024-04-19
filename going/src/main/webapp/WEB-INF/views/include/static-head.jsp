@@ -4,10 +4,11 @@
 
 
     <!-- css -->
-    <link rel="stylesheet" href="/assets/css/review.css">
+    
     <link rel="stylesheet" href="/assets/css/main.css">
      <link rel="stylesheet" href="/assets/css/reservation.css">
      <link rel="stylesheet" href="/assets/css/reservation-detail.css">
+     <link rel="stylesheet" href="/assets/css/review.css">
     
 
 
