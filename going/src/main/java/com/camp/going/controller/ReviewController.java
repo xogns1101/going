@@ -41,28 +41,28 @@ public class ReviewController {
         return "review";
     }
 
-    // 리뷰 쓰기 화면 요청 (/review/write : GET)
+    // 리뷰 쓰기 화면 요청 (/review-write : GET)
     @GetMapping("/review-write")
     public String reviewWrite() {
-        System.out.println("/review/write : GET!");
+        System.out.println("/review-write : GET!");
         return "review-write";
     }
 
-    // 리뷰 등록 요청 (/review/write : POST)
+    // 리뷰 등록 요청 (/review-write : POST)
     @PostMapping("/review-write")
     public String reviewWrite(ReviewRequestDTO dto, HttpSession session) {
         log.info("/review/write : POST, dto : {}", dto);
 
         service.register(dto, session);
-        return "redirect:/review/list";
+        return "redirect:/review";
     }
 
     // 리뷰 수정 요청
-    @GetMapping("/modify")
+    @GetMapping("/review-modify")
     public String modify(ReviewModifyRequestDTO dto) {
         service.modify(dto);
 
-        return "redirect:/review-write";
+        return "review-modify";
     }
 
     // 리뷰 삭제 요청 (/review/delete : GET)
