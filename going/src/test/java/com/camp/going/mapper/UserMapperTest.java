@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDateTime;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -25,6 +27,7 @@ class UserMapperTest {
                 .password("bbb1234!")
                 .phoneNumber("010-8954-1342")
                 .name("배라이언")
+                .userUpdate(LocalDateTime.now())
                 .build();
         userMapper.save(user);
 
