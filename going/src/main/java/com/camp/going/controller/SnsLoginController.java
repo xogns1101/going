@@ -1,6 +1,8 @@
 package com.camp.going.controller;
 
+import com.camp.going.dto.response.LoginUserResponseDTO;
 import com.camp.going.service.SnsLoginService;
+import com.camp.going.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -14,12 +16,16 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.camp.going.util.LoginUtils.LOGIN_KEY;
+import static com.camp.going.util.LoginUtils.isAutoLogin;
+
 @Controller
 @Slf4j
 @RequiredArgsConstructor
 public class SnsLoginController {
 
     private final SnsLoginService snsLoginService;
+    private final UserService userService;
 
     @Value("${sns.kakao.app-key}")
     private String kakaoAppKey;
@@ -102,6 +108,22 @@ public class SnsLoginController {
 
         // 로그인 처리가 모두 완료되면 홈 화면으로 보내줍니다.
         return "redirect:/jq/kakaopay";
+    }
+
+    // 네이버 로그아웃 요청 처리
+    @GetMapping("/naver/sign-out")
+    public String naverSignOut(HttpSession session,
+                               HttpServletRequest request,
+                               HttpServletResponse response){
+
+        log.info("/naver/sign-out: GET!");
+
+
+
+
+
+
+        return null;
     }
 
 

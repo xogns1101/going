@@ -179,4 +179,7 @@ public class UserService {
         Map<String, Object> responseJSON = (Map<String, Object>) responseEntity.getBody();
         log.info("응답 데이터: {}", responseJSON); // 로그아웃하는 사용자의 id
     }
+
+
+
 }
