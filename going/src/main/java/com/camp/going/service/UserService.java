@@ -85,12 +85,15 @@ public class UserService {
         return SUCCESS;
     }
 
+    // 네이버
     public void join(SignUpRequestDTO dto){
 
         userMapper.save(dto.toEntity(encoder));
 
     }
 
+
+    // 카카오
     public void joins(KakaoSignUpRequestDTO dto, String savePath){
 
         userMapper.save(dto.toEntity(encoder, savePath));
