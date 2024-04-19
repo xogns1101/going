@@ -38,8 +38,8 @@
 <div class="container">
     <h1>500 Internal Server Error</h1>
     <p>서버에 문제가 생겨 오류가 발생했습니다.</p>
-    <br>
-    <a href="/main">메인 화면으로 이동하기</a>
+    <p><a href="/main">메인 화면으로 이동하기</a></p>
+    <p><a href="#" onclick="history.back(); return false;">이전 화면으로 돌아가기</a></p>
 
 </div>
 </body>
