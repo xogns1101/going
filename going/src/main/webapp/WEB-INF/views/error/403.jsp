@@ -38,9 +38,8 @@
 <div class="container">
     <h1>403 Forbidden</h1>
     <p>현재 접속하시려는 곳을 볼 수 있는 권한이 부족합니다.</p>
-    <br>
-    <a href="/main">메인 화면으로 이동하기</a>
-    
+    <p><a href="/main">메인 화면으로 이동하기</a></p>
+    <p><a href="#" onclick="history.back(); return false;">이전 화면으로 돌아가기</a></p>
 </div>
 </body>
 </html>

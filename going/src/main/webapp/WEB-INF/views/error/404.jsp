@@ -38,8 +38,8 @@
 <div class="container">
     <h1>404 Not Found</h1>
     <p>현재 입력하신 링크는 존재하지 않는 경로입니다.</p>
-    <br>
-    <a href="/main">메인 화면으로 이동하기</a>
+    <p><a href="/main">메인 화면으로 이동하기</a></p>
+    <p><a href="#" onclick="history.back(); return false;">이전 화면으로 돌아가기</a></p>
 
 </div>
 </body>
