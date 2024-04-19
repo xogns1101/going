@@ -11,8 +11,8 @@ import lombok.*;
 @AllArgsConstructor
 public class ReviewRequestDTO {
 
-    private String content; // 리뷰 내용
+    private String reviewContent; // 리뷰 내용
     private String email; // 리뷰 작성자
-    private String image;
+    private String reviewImage;
 
 }
