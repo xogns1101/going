@@ -23,8 +23,8 @@ public class Review {
     private LocalDateTime reviewDate; // 리뷰 작성 날짜
 
     public Review(ReviewRequestDTO dto) {
-        this.reviewContent = dto.getContent();
+        this.reviewContent = dto.getReviewContent();
         this.email = dto.getEmail();
-        this.reviewImage = dto.getImage();
+        this.reviewImage = dto.getReviewImage();
     }
 }

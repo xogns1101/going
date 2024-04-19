@@ -50,7 +50,7 @@ public class ReviewService {
 
     public void register(ReviewRequestDTO dto, HttpSession session) {
         Review review = new Review(dto);
-        review.setEmail(LoginUtils.getCurrentLoginMemberAccount(session));
+//        review.setEmail(LoginUtils.getCurrentLoginMemberAccount(session));
         reviewMapper.saveReview(review);
     }
 
