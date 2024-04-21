@@ -168,11 +168,10 @@ section .detail .reserve-info form button:hover {
 
 
 .calendar-container {
-    width: 100%;
-    background: #fff;
-    border-radius: 10px;
+    width: 70%;
     padding: 25px;
     font-size: 20px;
+    margin: 80px auto;
   }
    
   
@@ -252,17 +251,33 @@ section .detail .reserve-info form button:hover {
     margin: 10px auto;
     text-align: center;
     align-content: center;
+    
+    position: relative;
   }
   
   .date:hover {
-    background-color: #4BDB73;
+    background-color: #54f381;
+    border-radius: 10px;
+    color: #fff;
     text-decoration: underline;
   }
  
+  .active::before {
+    position: absolute;
+    content: '';
+    height: 70px;
+    width: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    z-index: -1;
+    background: #54f381;
+  }
 
 
 
-  .calendar .calendar-dates::before {
+ /* .calendar-dates::before {
     position: absolute;
     content: '';
     height: 50px;
@@ -273,32 +288,8 @@ section .detail .reserve-info form button:hover {
     border-radius: 10px;
     z-index: -1;
     
-  }
-
- 
-  .days li:hover::before {
-    background: #4BDB73;
-    
-  }
-
-  .days li:hover {
-    color: #fff;
-  }
-
-
-  /* .days li.active::before {
-    background: #4BDB73;
   } */
 
-  .calendar .days li.active::before {
-    position: absolute;
-    content: '';
-    height: 60px;
-    width: 70px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    z-index: -1;
-    background: #4BDB73;
-  }
+ 
+
+ 

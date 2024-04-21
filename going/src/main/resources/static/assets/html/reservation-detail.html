@@ -179,34 +179,15 @@
 
 
     <script>
-        // 요소 선택
-        const $liList = document.querySelectorAll('ul.days li');
+        const $date = document.querySelector('.calendar-dates')
         let activeCount = 0;
-        let firstClickedIndex = 0; // 처음으로 클릭된 요소의 index를 저장하는 변수
-        let lastClickedIndex = 0; // 마지막으로 클릭된 요소의 index를 저장하는 변수
+        let firstClickedDate = ""; // 처음으로 클릭된 요소의 날짜를 저장하는 변수
+        let lastClickedDate = ""; // 마지막으로 클릭된 요소의 날짜를 저장하는 변수
+
+        const $regDate = document.querySelector('.reg-date');
+        const $regDates = document.querySelector('.reg-dates');
 
 
-        $liList.forEach($li => {
-            $li.addEventListener('click', e => {
-
-                // console.log('li에 클릭이벤트 발생! ');
-
-                // class 속성이 없으면 추가, 있으면 수정
-                if (!e.target.classList.contains('active')) {
-
-                    if (activeCount < 2) {
-                        e.target.classList.add('active');
-                        activeCount++;
-                    }
-                } else {
-                    e.target.classList.remove('active');
-                    activeCount--;
-                };
-
-
-            });
-
-        });
 
         document.addEventListener("DOMContentLoaded", function () {
             const prevBtn = document.getElementById("prevBtn");
@@ -228,7 +209,7 @@
 
             function showCalendar(year, monthIndex) {
                 // 달력 헤더에 현재 년도와 월 표시
-                currentMonth.textContent = `${year}년 ${monthIndex + 1}월`;
+                currentMonth.textContent = `${year}년  ${monthIndex + 1}월`;
 
                 // 해당 월의 첫 날과 마지막 날을 가져옴
                 let firstDayOfMonth = new Date(year, monthIndex, 1).getDay();
@@ -257,6 +238,7 @@
                     currentMonthIndex = 11;
                 }
                 showCalendar(currentYear, currentMonthIndex);
+                activeCount = 0;
             }
 
             function showNextMonth() {
@@ -266,8 +248,52 @@
                     currentMonthIndex = 0;
                 }
                 showCalendar(currentYear, currentMonthIndex);
+                activeCount = 0;
             }
         });
+
+
+
+        // 달력일자선택
+
+        
+            $date.addEventListener('click', e => {
+                const clickedDate = e.target.textContent;
+                if (e.target.classList.contains('date')) {
+                    // 클릭된 요소가 date 클래스를 포함하는 경우에만 처리
+                    console.log('클릭한 일자', clickedDate);
+                }
+
+                // class 속성이 없으면 추가, 있으면 수정
+                if (!e.target.classList.contains('active')) {
+
+                   
+                    if (activeCount < 2) {
+                        e.target.classList.add('active');
+                        activeCount++;
+                    } 
+
+                } else {
+                    e.target.classList.remove('active');
+                    activeCount--;
+                };
+
+                // 클릭된 요소의 날짜 추적
+                if (e.target.classList.contains('active')) {
+                    if (firstClickedDate === "") {
+                        firstClickedDate = clickedDate;
+                        console.log('입실날짜', firstClickedDate);
+                        return;
+                    }else {
+                        lastClickedDate = clickedDate;
+                        console.log('퇴실날짜', lastClickedDate);
+                    } 
+                }
+
+
+
+            });
+        
     </script>
 
 
