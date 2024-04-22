@@ -1,21 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@ page import="java.util.Date" %>
-<%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Calendar" %>
-
-<%
-    // 현재 날짜 정보 가져오기
-    Date currentDate = new Date();
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-    String formattedDate = dateFormat.format(currentDate);
-
-    // 현재 년, 월 정보 가져오기
-    Calendar calendar = Calendar.getInstance();
-    int currentYear = calendar.get(Calendar.YEAR);
-    int currentMonth = calendar.get(Calendar.MONTH) + 1;
-%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -23,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>RESERVATION-상세보기</title>
-    
+
     <%@ include file="include/static-head.jsp" %>
 
 </head>
@@ -89,7 +74,7 @@
                 <div class="calendar-container">
                     <div class="calendar-header">
                         <button id="prevBtn" class="btn"><span class="lnr lnr-chevron-left"></span> </button>
-                        <h2 id="currentMonth"><%= currentYear %>년 <%= currentMonth %>월</h2>
+                        <h2 id="currentMonth"></h2>
                         <button id="nextBtn" class="btn"><span class="lnr lnr-chevron-right"></span></button>
                     </div>
                     <div class="calendar-days">
@@ -101,19 +86,7 @@
                         <div class="day">Fri</div>
                         <div class="day">Sat</div>
                     </div>
-                    <div class="calendar-dates" id="calendarDates">
-                        <%
-                        // 달력 날짜 생성 및 출력
-                        int firstDayOfMonth = calendar.get(Calendar.DAY_OF_WEEK) - 1;
-                        int lastDayOfMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
-        
-                        for (int i = 1; i <= firstDayOfMonth; i++) {
-                            out.print("<div class='date prev-date'>" + (lastDayOfMonth - firstDayOfMonth + i) + "</div>");
-                        }
-                        for (int i = 1; i <= lastDayOfMonth; i++) {
-                            out.print("<div class='date'>" + i + "</div>");
-                        }
-                    %></div>
+                    <div class="calendar-dates" id="calendarDates"></div>
                 </div>
 
 
@@ -125,7 +98,11 @@
                     <div class="reserve-box">
                         <div class="check">
                             <div class="in">입실</div>
-                            <div class="reg-date">2024-01-11</div>
+
+                            <div class="reg-date">
+                                <span class="check-in">2024-04-22</span>
+                            </div>
+
                             <div class="between">&nbsp; &nbsp; ~</div>
                         </div>
 
@@ -133,7 +110,9 @@
 
                         <div class="check">
                             <div class="out">퇴실</div>
-                            <div class="reg-dates">2024-01-12 <span class="#">( 1</span>박 )</div>
+                            <div class="reg-dates">
+                                <span class="check-out">2024-04-23</span>
+                            </div>
 
                         </div>
                     </div>
@@ -146,99 +125,187 @@
     </section>
 
     <script>
-        const $date = document.querySelectorAll('.date');
-     
-        // 이전/다음 달 이동 기능 구현
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const currentMonth = document.getElementById("currentMonth");
-        const calendarDates = document.getElementById("calendarDates");
+        const $date = document.querySelector('.calendar-dates')
 
+        let activeCount = 0;
+        let firstClickedDate = ""; // 처음으로 클릭된 요소의 날짜를 저장하는 변수
+        let lastClickedDate = ""; // 마지막으로 클릭된 요소의 날짜를 저장하는 변수
 
-        // 현재 날짜 정보 가져오기
-        let currentDate = new Date();
-        let currentYear = currentDate.getFullYear();
-        let currentMonthIndex = currentDate.getMonth(); // 0부터 시작하는 인덱스
-        let currentDay = currentDate.getDate();
-
-        prevBtn.addEventListener('click', showPrevMonth);
-        nextBtn.addEventListener('click', showNextMonth);
-
-        function showPrevMonth() {
-            currentMonthIndex--;
-        if (currentMonthIndex < 0) {
-            currentYear--;
-            currentMonthIndex = 11; // 12월
-      }
-        showCalendar(currentYear, currentMonthIndex);
-    }
+        const $checkIn = document.querySelector('.check-in');
+        const $checkOut = document.querySelector('.check-out');
         
 
-        function showNextMonth() {
-            currentMonthIndex++;
-        if (currentMonthIndex > 11) {
-            currentYear++;
-            currentMonthIndex = 0; // 1월
-        }
-        showCalendar(currentYear, currentMonthIndex);
-        }
-
-        function showCalendar(year, monthIndex) {
-        // 달력 헤더에 현재 년도와 월 표시
-        currentMonth.textContent = `${year}년 ${monthIndex + 1}월`; // monthIndex는 0부터 시작하므로 +1
-
         
-        showCalendar(year, monthIndex); 
-    }
 
 
 
 
-        // 달력일자선택
+        window.onload = function () {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const currentMonth = document.getElementById('currentMonth');
+            const calendarDates = document.getElementById('calendarDates');
 
 
-        $date.addEventListener('click', e => {
-            const clickedDate = e.target.textContent;
-            if (e.target.classList.contains('date')) {
-                // 클릭된 요소가 date 클래스를 포함하는 경우에만 처리
-                console.log('클릭한 일자', clickedDate);
-            }
+            let today = new Date();
+            let currentMonthIndex = today.getMonth();
+            let currentYear = today.getFullYear();
 
-            // class 속성이 없으면 추가, 있으면 수정
-            if (!e.target.classList.contains('active')) {
+            prevBtn.addEventListener('click', showPrevMonth);
+            nextBtn.addEventListener('click', showNextMonth);
+
+            showCalendar(currentYear, currentMonthIndex);
 
 
-                if (activeCount < 2) {
-                    e.target.classList.add('active');
-                    activeCount++;
+            function showCalendar(year, monthIndex) {
+
+                currentMonth.textContent = `\${year}년  \${monthIndex + 1}월`;
+
+
+                let firstDayOfMonth = new Date(year, monthIndex, 1).getDay();
+                let lastDayOfMonth = new Date(year, monthIndex + 1, 0).getDate();
+
+
+                let lastDayOfPrevMonth = new Date(year, monthIndex, 0).getDate();
+
+
+                let dates = "";
+                for (let i = firstDayOfMonth - 1; i >= 0; i--) {
+                    dates += `<div class="date prev-date">\${lastDayOfPrevMonth - i}</div>`;
+                }
+                for (let i = 1; i <= lastDayOfMonth; i++) {
+                    dates += `<div class="date">\${i}</div>`;
                 }
 
-            } else {
-                e.target.classList.remove('active');
-                activeCount--;
-            };
 
-            // 클릭된 요소의 날짜 추적
-            if (e.target.classList.contains('active')) {
-                if (firstClickedDate === "") {
-                    firstClickedDate = clickedDate;
-                    console.log('입실날짜', firstClickedDate);
-                    return;
-                } else {
-                    lastClickedDate = clickedDate;
-                    console.log('퇴실날짜', lastClickedDate);
-                }
+                calendarDates.innerHTML = dates;
             }
 
 
 
-        });
+            function showPrevMonth() {
+                currentMonthIndex--;
+                if (currentMonthIndex < 0) {
+                    currentYear--;
+                    currentMonthIndex = 11;
+                }
+                showCalendar(currentYear, currentMonthIndex);
+                activeCount = 0;
+            }
+
+            function showNextMonth() {
+                currentMonthIndex++;
+                if (currentMonthIndex > 11) {
+                    currentYear++;
+                    currentMonthIndex = 0;
+                }
+                showCalendar(currentYear, currentMonthIndex);
+                activeCount = 0;
+            }
+
+
+            // 달력일자선택
+
+
+
+            $date.addEventListener('click', e => {
+                const clickedDate = e.target.textContent;
+
+                // 클릭된 요소가 날짜인 경우에만 처리
+                if (e.target.classList.contains('date')) {
+                    console.log('클릭한 일자', clickedDate);
+
+                    // 선택한 날짜가 활성화되어 있지 않은 경우
+                    if (!e.target.classList.contains('active')) {
+                        // 현재 선택한 일자를 활성화
+                        e.target.classList.add('active');
+                        activeCount++;
+
+                        // 활성화된 일자가 2개 이상이면 선택한 일자 초기화
+                        if (activeCount > 2) {
+                            document.querySelectorAll('.date').forEach(date => {
+                                date.classList.remove('active');
+                            });
+                            activeCount = 0;
+                        }
+                    } else {
+                        // 선택한 일자를 비활성화
+                        e.target.classList.remove('active');
+                        activeCount--;
+                    }
+
+                    // 입실일 선택
+                    if (activeCount === 1) {
+                        firstClickedDate = clickedDate;
+                        console.log('입실 날짜:', firstClickedDate);
+                        
+
+                        // 년도와 월 변수 선언
+                        let dayString = firstClickedDate
+                        let monthString = (currentMonthIndex + 1).toString();
+
+                        // 한 자리 숫자인 경우 앞에 0을 붙임
+                        if (dayString.length === 1) {
+                            dayString = '0' + dayString;
+                        }
+                        if (monthString.length === 1) {
+                            monthString = '0' + monthString;
+                        }
+
+                       
+                        $checkIn.textContent = currentYear + '-' + monthString + '-' + dayString; 
+
+                        
+                    }
+
+                    // 퇴실일 선택
+                    if (activeCount === 2) {
+                        lastClickedDate = clickedDate;
+                        console.log('퇴실 날짜:', lastClickedDate);
+
+                        // 년도와 월 변수 선언
+                        let dayString = lastClickedDate
+                        let monthString = (currentMonthIndex + 1).toString();
+
+                        // 한 자리 숫자인 경우 앞에 0을 붙임
+                        if (dayString.length === 1) {
+                            dayString = '0' + dayString;
+                        }
+                        if (monthString.length === 1) {
+                            monthString = '0' + monthString;
+                        }
+
+                       
+                        $checkOut.textContent = currentYear + '-' + monthString + '-' + dayString; 
+
+
+                    }
+
+                }
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        };
     </script>
 
 
 
 
-<%@ include file="include/footer.jsp" %>
+    <%@ include file="include/footer.jsp" %>
 </body>
 
 </html>
