@@ -48,10 +48,9 @@ public class ReviewService {
         return reviewMapper.getCount(page);
     }
 
-    public void register(ReviewRequestDTO dto, HttpSession session) {
-        Review review = new Review(dto);
+    public void register(ReviewRequestDTO dto, String savePath) {
+        reviewMapper.saveReview(dto.toEntity(savePath));
 //        review.setEmail(LoginUtils.getCurrentLoginMemberAccount(session));
-        reviewMapper.saveReview(review);
     }
 
     public void modify(ReviewModifyRequestDTO dto) {

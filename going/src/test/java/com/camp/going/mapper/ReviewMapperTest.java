@@ -29,7 +29,7 @@ class ReviewMapperTest {
                 .reviewContent("OO 캠핑장은 어쩌구 저쩌구")
                 .email("CCCC@naver.com")
                 .campId(99)
-                .reviewPoint(5)
+                .reviewPoint("5")
                 .reviewDate(LocalDateTime.now())
                 .build();
         reviewMapper.saveReview(review);
@@ -67,7 +67,7 @@ class ReviewMapperTest {
         Review modReview = Review.builder()
                 .reviewNo(reviewNo)
                 .reviewContent("수정 날짜 확인해보기")
-                .reviewPoint(3)
+                .reviewPoint("3")
                 .build();
 
         // when
