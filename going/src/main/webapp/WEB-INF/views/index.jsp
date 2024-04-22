@@ -28,7 +28,7 @@
             <div class="logo-content">
                 <a href="/main/introduce">INTRO</a>
                 <a href="/main/reservation">RESERVATION</a>
-                <a href="/main/notice/list">NOTICE</a>
+                <a href="/main/notice">NOTICE</a>
                 <a href="/main/review">REVIEW</a>
             </div>
             <div class="login">
@@ -48,7 +48,7 @@
             <ul>
                 <li><a href="/main/introduce">INTRO</a></li>
                 <li><a href="/main/reservation">RESERVATION</a></li>
-                <li><a href="/main/notice/list">NOTICE</a></li>
+                <li><a href="/main/notice">NOTICE</a></li>
                 <li><a href="/main/review">REVIEW</a></li>
                 <li><a href="/user/sign-in">LOGIN</a></li>
                 <li><a href="/user/mypage">MYPAGE</a></li>

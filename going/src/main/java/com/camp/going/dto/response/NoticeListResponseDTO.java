@@ -23,7 +23,6 @@ public class NoticeListResponseDTO {
 
 
 
-
     public NoticeListResponseDTO(Notice notice) {
         this.noticeNo = notice.getNoticeNo();
         this.noticeTitle = makeShortTitle(notice.getNoticeTitle());
