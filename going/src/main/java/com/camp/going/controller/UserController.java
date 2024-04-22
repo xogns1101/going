@@ -31,9 +31,11 @@ public class UserController {
 
     // 회원가입 처리 서비스
     @GetMapping("/sign-up")
-    public void signUp(){
+    public String signUp(){
 
         log.info("/user/sign-up: GET");
+
+        return "sign-up";
 
     }
 

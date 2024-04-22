@@ -38,7 +38,8 @@ public class NoticeController {
         model.addAttribute("nList", dtoList);
         model.addAttribute("maker", pageMaker);
 
-        return "/list";
+
+          return "notice";
     }
 
 

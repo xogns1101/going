@@ -6,6 +6,8 @@
     <title>yagaja</title>
     <link rel="stylesheet" href="../css/main.css">
 
+    <link rel="stylesheet" href="/static/assets/css/sign-up.css" type="text/css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Yeon+Sung&display=swap" rel="stylesheet">
@@ -38,7 +40,7 @@
     </header>
 
 <!-- sign up -->
-
+<c:forEach var="b" items="${nlist}">
 <div class="SignUp" style="width: 1436px; height: 1024px; position: relative; background: white; margin-left: 200px;">
     
     <!-- title -->
@@ -89,7 +91,7 @@
 
 
   </div>
-
+</c:forEach>
 
 
   <footer>

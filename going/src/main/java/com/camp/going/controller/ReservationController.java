@@ -27,6 +27,7 @@ public class ReservationController {
     private final CampingService service;
 
 
+
     // 캠핑장 목록 보기 요청
     @GetMapping("/reservation")
     public String reservationShow(Model model, @ModelAttribute("s") Search page){
@@ -55,7 +56,10 @@ public class ReservationController {
 
         ReservationDetailResponseDTO dto = service.reservationDetail(campId);
 
+
         model.addAttribute("r", dto);
+
+
 
         return "reservation-detail";
 
@@ -71,7 +75,7 @@ public class ReservationController {
         model.addAttribute("rList", reservationList);
 
 
-        return "(jsp 경로)";
+        return "reservation-admin";
 
     }
 
