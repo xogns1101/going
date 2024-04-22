@@ -32,7 +32,7 @@
                             <li class="rno">${b.reviewNo}</li>
                             <li class="camp-name">${b.campName}</li>
                             <li class="email">${b.email}</li>
-                            <img src="#" alt="리뷰">
+                            <img src="/local${b.reviewImage}" alt="리뷰">
                             <li class="review-content">${b.reviewContent}</li>
                         </ul>
                         <button class="review-modify">수정</button>
@@ -108,12 +108,14 @@
         const $btn = document.querySelector('.bigBox');
 
         $btn.addEventListener('click', e => {
+            
             if (e.target.matches('.review-delete')) {
                 // 리뷰 삭제 버튼을 클릭한 경우에만 실행
                 const isConfirmed = confirm('정말로 삭제하시겠습니까?');
 
                 if (isConfirmed) {
-                    const reviewNo = parseInt(e.target.closest('.bigBox').dataset.bno, 10);
+                    const reviewNo = e.target.closest('.review-box').dataset.bno;
+                    console.log(reviewNo);
                     // 서버에 삭제 요청 보내기
                     location.href = '/main/review-delete?rno=' + reviewNo;
                 }
