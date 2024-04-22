@@ -69,28 +69,28 @@
 
          <script>
 
-function handleLogin() {
-            // 입력된 이메일과 비밀번호 가져오기
-            var email = document.getElementById('emailInput').value;
-            var password = document.getElementById('passwordInput').value;
+  function handleLogin() {
+        // 입력된 이메일과 비밀번호 가져오기
+        const email = document.getElementById('emailInput').value;
+        const password = document.getElementById('passwordInput').value;
 
-            // 로그인 검증 (임의로 예시로 이메일이 'test@test.com', 비밀번호가
-            // 'password'일 때 로그인 성공으로 가정)
-            if (email === 'test@test.com' && password === 'password') {
-                alert('로그인 성공!');
+        // 로그인 검증 (임의로 예시로 이메일이 'test@test.com', 비밀번호가
+        // 'password'일 때 로그인 성공으로 가정)
+        if (email === 'test@test.com' && password === 'password') {
+            alert('로그인 성공!');
 
-                // 자동 로그인 처리
-                if (document.getElementById('autoLogin').checked) {
-                    // 여기에 자동 로그인 관련 처리 추가
-                    alert('자동 로그인 설정됨');
-                }
-
-                // 여기에 로그인 성공 후 이동할 페이지 설정
-                // window.location.href = '로그인 성공 후 이동할 페이지 URL';
-            } else {
-                alert('이메일 또는 비밀번호가 올바르지 않습니다.');
+            // 자동 로그인 처리
+            if (document.getElementById('autoLogin').checked) {
+                // 여기에 자동 로그인 관련 처리 추가
+                alert('자동 로그인 설정됨');
             }
+
+            // 여기에 로그인 성공 후 이동할 페이지 설정
+            // window.location.href = '로그인 성공 후 이동할 페이지 URL';
+        } else {
+            alert('이메일 또는 비밀번호가 올바르지 않습니다.');
         }
+    }
 
              </script>
 

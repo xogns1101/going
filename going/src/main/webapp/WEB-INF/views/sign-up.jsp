@@ -81,91 +81,91 @@
          <%@ include file="include/footer.jsp" %>
 
 
-         <script>
-                 // 회원가입 처리
-                 function handleJoin() {
-                     var email = document.querySelector('.Emailblank input').value;
-                     var password = document.querySelector('.Passwordblank input').value;
-                     var confirmPassword = document.querySelector('.Passwordblank2 input').value;
+         // 회원가입 처리
+         const handleJoin = () => {
+             const email = document.querySelector('.Emailblank input').value;
+             const password = document.querySelector('.Passwordblank input').value;
+             const confirmPassword = document.querySelector('.Passwordblank2 input').value;
 
-                     if (email === '') {
-                         alert('아이디를 입력해주세요.');
-                         return;
-                     }
+             if (email === '') {
+                 alert('아이디를 입력해주세요.');
+                 return;
+             }
 
-                     if (password !== confirmPassword) {
-                         alert('비밀번호가 일치하지 않습니다.');
-                         return;
-                     }
+             if (password !== confirmPassword) {
+                 alert('비밀번호가 일치하지 않습니다.');
+                 return;
+             }
 
-                     // 회원가입 처리 로직...
+             // 회원가입 처리 로직...
 
-                     alert('회원가입이 완료되었습니다!');
-                 }
+             alert('회원가입이 완료되었습니다!');
+         };
 
-                 // 이메일 중복 확인
-                 function handleClick() {
-                     var email = document.querySelector('.Emailblank input').value;
+         // 이메일 중복 확인
+         const handleClick = () => {
+             const email = document.querySelector('.Emailblank input').value;
 
-                     if (email === '') {
-                         alert('아이디를 입력해주세요.');
-                         return;
-                     }
+             if (email === '') {
+                 alert('아이디를 입력해주세요.');
+                 return;
+             }
 
-                     if (email.length > 30) {
-                         alert('아이디는 최대 30자까지 입력 가능합니다.');
-                         return;
-                     }
+             if (email.length > 30) {
+                 alert('아이디는 최대 30자까지 입력 가능합니다.');
+                 return;
+             }
 
-                     if (!validateEmail(email)) {
-                         alert('유효한 이메일 주소를 입력해주세요.');
-                         return;
-                     }
+             if (!validateEmail(email)) {
+                 alert('유효한 이메일 주소를 입력해주세요.');
+                 return;
+             }
 
-                     if (isExistingId(email)) {
-                         alert('이미 존재하는 아이디입니다.');
-                     } else {
-                         alert('사용 가능한 아이디입니다.');
-                     }
+             if (isExistingId(email)) {
+                 alert('이미 존재하는 아이디입니다.');
+             } else {
+                 alert('사용 가능한 아이디입니다.');
+             }
 
-                     var password = document.querySelector('.Passwordblank input').value;
+             const password = document.querySelector('.Passwordblank input').value;
 
-                     if (!validatePassword(password)) {
-                         alert('비밀번호에는 영문과 특수문자를 포함한 최소 8자 이상이 필요합니다.');
-                         return;
-                     }
+             if (!validatePassword(password)) {
+                 alert('비밀번호에는 영문과 특수문자를 포함한 최소 8자 이상이 필요합니다.');
+                 return;
+             }
 
-                     var name = document.querySelector('.UserNameblank input').value;
+             const name = document.querySelector('.UserNameblank input').value;
 
-                     if (name.length > 6) {
-                         alert('이름은 한글로 최대 6글자까지 입력 가능합니다.');
-                         return;
-                     }
-                 }
+             if (name.length > 6) {
+                 alert('이름은 한글로 최대 6글자까지 입력 가능합니다.');
+                 return;
+             }
+         };
 
-                 // 인증번호 받기
-                 function handleVerificationCode() {
-                     alert('인증번호가 전송되었습니다.');
-                 }
+         // 인증번호 받기
+         const handleVerificationCode = () => {
+             alert('인증번호가 전송되었습니다.');
+         };
 
-                 // 이메일 유효성 검사
-                 function validateEmail(email) {
-                     var re = /\S+@\S+\.\S+/;
-                     return re.test(email);
-                 }
+         // 이메일 유효성 검사
+         const validateEmail = (email) => {
+             const re = /\S+@\S+\.\S+/;
+             return re.test(email);
+         };
 
-                 // 비밀번호 유효성 검사
-                 function validatePassword(password) {
-                     var re = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*])(?=.*\d).{8,}$/;
-                     return re.test(password);
-                 }
+         // 비밀번호 유효성 검사
+         const validatePassword = (password) => {
+             const re = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*])(?=.*\d).{8,}$/;
+             return re.test(password);
+         };
 
-                 // 아이디 중복 확인 함수
-                 function isExistingId(email) {
-                     const existingIds = ['user1@example.com', 'user2@example.com', 'user3@example.com'];
-                     return existingIds.includes(email);
-                 }
-             </script>
+         // 아이디 중복 확인 함수
+         const isExistingId = (email) => {
+             const existingIds = ['user1@example.com', 'user2@example.com', 'user3@example.com'];
+             return existingIds.includes(email);
+         };
+         </script>
+
 
 
 </body>

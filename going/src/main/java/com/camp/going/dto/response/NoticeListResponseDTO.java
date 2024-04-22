@@ -17,6 +17,8 @@ public class NoticeListResponseDTO {
     private String noticeContent; // 내용
     private String noticeDate; // 작성날짜 yyyy-MM-dd HH:mm:ss
     private int noticeCount; // 조회수
+    private String noticeCategory; // 공지 등급
+
 
     public NoticeListResponseDTO(Notice notice) {
         this.noticeNo = notice.getNoticeNo();
@@ -24,6 +26,7 @@ public class NoticeListResponseDTO {
         this.noticeContent = makeShortContent(notice.getNoticeContent());
         this.noticeDate = makePrettierDateString(notice.getNoticeDate());
         this.noticeCount = notice.getNoticeCount();
+        this.noticeCategory = notice.getNoticeCategory();
     }
 
     public static String makePrettierDateString(LocalDateTime regDate) {
