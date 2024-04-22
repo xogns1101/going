@@ -13,6 +13,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -26,6 +27,8 @@ import java.util.Map;
 public class SnsLoginService {
 
     private final UserService userService;
+
+
 
     public void kakaoLogin(Map<String, String> params, HttpSession session) {
 
@@ -59,7 +62,7 @@ public class SnsLoginService {
 
         // 우리 사이트 로그인 처리
         // email
-        userService.maintainLoginState(session, String.valueOf(dto.getId()));
+        userService.maintainLoginState(session, email);
 
 
     }
@@ -147,7 +150,7 @@ public class SnsLoginService {
 
         // 회원 중복확인 (이메일)
         if (!userService.checkDuplicateValue("email", email)) {
-            // 한번도 카카오 로그인을 한 적이 없다면 회원가입이 들어간다.
+            // 한번도 네이버 로그인을 한 적이 없다면 회원가입이 들어간다.
             userService.join(
                     SignUpRequestDTO.builder()
                             .email(email)

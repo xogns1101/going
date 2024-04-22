@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.time.LocalDate;
+
 @Getter
 @ToString
 @EqualsAndHashCode
@@ -44,8 +46,8 @@ public class ReservationDetailResponseDTO {
         this.campMart = camping.getCampMart();
         this.campBed = camping.getCampBed();
         this.campIceBox = camping.getCampIceBox();
-        this.regDate = CampingListResponseDTO.makePrettierDateString(reservation.getRegDate());
-        this.regDates = CampingListResponseDTO.makePrettierDateString(reservation.getRegDates());
+        this.regDate = String.valueOf(reservation.getRegDate());
+        this.regDates = String.valueOf(reservation.getRegDates());
 
     }
 }

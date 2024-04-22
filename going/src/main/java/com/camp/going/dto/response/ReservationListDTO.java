@@ -19,7 +19,8 @@ public class ReservationListDTO {
     private int campId;
     private String email;
     private String campName;
-    private String regDate;
+    private String regDate; // 입실
+    private String regDates; // 퇴실
     private int price;
     private String phoneNumber;
 
@@ -30,7 +31,8 @@ public class ReservationListDTO {
         this.campId = camping.getCampId();
         this.email = user.getEmail();
         this.campName = camping.getCampName();
-        this.regDate = CampingListResponseDTO.makePrettierDateString(reservation.getRegDate());
+        this.regDate = String.valueOf(reservation.getRegDate());
+        this.regDates = String.valueOf(reservation.getRegDates());
         this.price = camping.getCampPrice();
         this.phoneNumber = user.getPhoneNumber();
 

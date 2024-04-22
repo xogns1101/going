@@ -18,7 +18,7 @@
 
 
     <select id="findUser" resultType="user">
-        SELECT * FROM USER
+        SELECT * FROM user
 
         WHERE email = #{email}
 
