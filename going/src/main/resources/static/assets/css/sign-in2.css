@@ -189,3 +189,11 @@ section .signin-list .Passwordblank {
     cursor: pointer;
   }
 
+  #custom-login-btn {
+    position: absolute;
+    width: 300px; /* 이미지 너비에 맞게 조절 */
+    left: 435px; /* 회원가입 버튼과 같은 위치로 조정 */
+    top: calc(540px + 50px); /* 회원가입 버튼 아래로 조정 (회원가입 버튼의 top 위치 + 회원가입 버튼의 높이) */
+}
+
+
