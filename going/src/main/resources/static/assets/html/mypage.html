@@ -42,7 +42,7 @@
 <!-- my page ---------------------------------->
 <div class="Mypage" style="width: 1436px; height: 1024px; position: relative; background: white;  margin-left: 200px;">
     
-    <c:input var="b" items="${user}">
+    <c:forEach var="b" items="${nlist}">
     
     <!-- 타이틀 -->
     <div class="Title" style="width: 412px; height: 109px; left: 586px; top: 183px; position: absolute; color: black; font-size: 64px; font-family: Luckiest Guy; font-weight: 400; word-wrap: break-word">my page</div>
@@ -69,7 +69,7 @@
     <!-- 환영박스  -->
     <div class="Welcomemsgbox" style="width: 246px; height: 158px; left: 855px; top: 347px; position: absolute; background: white"></div>
     <div class="Welcomemsg" style="width: 317px; height: 84px; left: 822px; top: 382px; position: absolute; text-align: center; color: black; font-size: 36px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.userName} <br/>♥환영합니다♥</div>
-    </c:input>
+    </c:forEach>
 
     <!-- reservation------------------------------------- -->
 
@@ -109,7 +109,7 @@
     <div class="More" style="width: 69px; height: 25px; left: 1051px; top: 607px; position: absolute; color: black; font-size: 20px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word; cursor: pointer;" onclick="handleDetailButtonClick(this)">상세버튼</div>
    
   </div>
-</c:input>
+</c:forEach>
   <!-- footer-------------------- -->
 
   <footer>

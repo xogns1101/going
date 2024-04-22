@@ -27,9 +27,13 @@ public class NoticeListResponseDTO {
     }
 
     public static String makePrettierDateString(LocalDateTime regDate) {
+        if (regDate == null) {
+            return ""; // 널일 경우 빈 문자열 반환
+        }
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return dtf.format(regDate);
     }
+
 
     private String makeShortContent(String content) {
         return sliceString(content, 30);
