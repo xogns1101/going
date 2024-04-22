@@ -15,7 +15,7 @@ public class ReviewResponseDTO {
     private int reviewNo; // 리뷰 글 번호
     private String reviewContent; // 리뷰 내용
     private String reviewImage; // 리뷰 사진
-    private int reviewPoint; // 리뷰 별점
+    private String reviewPoint; // 리뷰 별점
     private String email; // 회원 아이디
     private String campName;
     private int reviewLike; // 리뷰 조회수
@@ -32,9 +32,10 @@ public class ReviewResponseDTO {
         this.campName = review.getCampName();
     }
 
-//    private String makeShortEmail(String email) {
-//        int idx = email.indexOf("@");
-//        return email.substring(0, idx);
-//    }
+    private String makeShortEmail(String email) {
+        int idx = email.indexOf("@");
+        return email.substring(0, idx);
+    }
+
 
 }

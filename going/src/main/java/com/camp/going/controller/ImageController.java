@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 
 @RestController
-@RequestMapping("/display")
+@RequestMapping("/review")
 @Slf4j
 @RequiredArgsConstructor
 public class ImageController {

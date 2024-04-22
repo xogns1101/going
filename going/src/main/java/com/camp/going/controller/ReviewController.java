@@ -7,9 +7,11 @@ import com.camp.going.dto.request.ReviewRequestDTO;
 import com.camp.going.dto.response.ReviewResponseDTO;
 import com.camp.going.entity.Review;
 import com.camp.going.service.ReviewService;
+import com.camp.going.util.FileUtils;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +26,9 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class ReviewController {
+
+    @Value("${file.upload.root-path}")
+    private String rootPath;
 
     private final ReviewService service;
 
@@ -50,11 +55,15 @@ public class ReviewController {
 
     // 리뷰 등록 요청 (/review-write : POST)
     @PostMapping("/review-write")
-    public String reviewWrite(ReviewRequestDTO dto, HttpSession session) {
-        log.info("/review/write : POST, dto : {}", dto);
+    public String reviewWrite(ReviewRequestDTO dto) {
+        log.info("/review-write : POST, dto : {}", dto);
+//        log.info("날짜시간 : {}", dto.getReviewDate());
+        log.info("file Name : {}", dto.getReviewImage().getOriginalFilename());
 
-        service.register(dto, session);
+        String savePath = FileUtils.uploadFile(dto.getReviewImage(), rootPath);
+        log.info("save-path : {}", savePath);
 
+        service.register(dto, savePath);
 
         return "redirect:/main/review";
 
