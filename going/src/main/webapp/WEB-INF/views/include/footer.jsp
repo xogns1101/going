@@ -31,7 +31,7 @@
             </div>
 
 
-            <h1 class="footer-logo"><a href="main"><span>Y</span>⛺<span>GAJA</span></a></h1>
+            <h1 class="footer-logo"><a href="/main"><span>Y</span>⛺<span>GAJA</span></a></h1>
             <!-- <a href="#" class="go-top"><span class="lnr lnr-arrow-up"></span></a> -->
         </div>
 
