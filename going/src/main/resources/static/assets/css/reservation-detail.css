@@ -172,7 +172,7 @@ section .detail .reserve-info form button:hover {
     width: 70%;
     padding: 25px;
     font-size: 20px;
-    margin: 80px auto;
+    margin: 80px auto 40px auto;
   }
    
   

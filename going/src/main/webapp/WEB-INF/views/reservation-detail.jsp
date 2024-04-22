@@ -93,15 +93,13 @@
 
                 <!-- 예약 하기 -->
 
-                <form action="#">
+                <form action="/main/reservation-list" method="get">
 
                     <div class="reserve-box">
                         <div class="check">
                             <div class="in">입실</div>
 
-                            <div class="reg-date">
-                                <span class="check-in">2024-04-22</span>
-                            </div>
+                            <div class="reg-date">2024-04-22</div>
 
                             <div class="between">&nbsp; &nbsp; ~</div>
                         </div>
@@ -110,11 +108,20 @@
 
                         <div class="check">
                             <div class="out">퇴실</div>
-                            <div class="reg-dates">
-                                <span class="check-out">2024-04-23</span>
-                            </div>
+                            <div class="reg-dates">2024-04-23</div>
 
                         </div>
+
+                        <div>캠프아이디</div>
+                        <div>이메일</div>
+                        <div>캠핑장이름</div>
+                        <div></div>
+                        <div>가격</div>
+                        <div>전화번호</div>
+
+
+
+
                     </div>
 
                     <button type="submit" class="reserve-button">예약하기</button>
@@ -131,8 +138,8 @@
         let firstClickedDate = ""; // 처음으로 클릭된 요소의 날짜를 저장하는 변수
         let lastClickedDate = ""; // 마지막으로 클릭된 요소의 날짜를 저장하는 변수
 
-        const $checkIn = document.querySelector('.check-in');
-        const $checkOut = document.querySelector('.check-out');
+        const $regDate = document.querySelector('.reg-date');
+        const $regDates = document.querySelector('.reg-dates');
         
 
         
@@ -253,7 +260,7 @@
                         }
 
                        
-                        $checkIn.textContent = currentYear + '-' + monthString + '-' + dayString; 
+                        $regDate.textContent = currentYear + '-' + monthString + '-' + dayString; 
 
                         
                     }
@@ -276,7 +283,7 @@
                         }
 
                        
-                        $checkOut.textContent = currentYear + '-' + monthString + '-' + dayString; 
+                        $regDates.textContent = currentYear + '-' + monthString + '-' + dayString; 
 
 
                     }
