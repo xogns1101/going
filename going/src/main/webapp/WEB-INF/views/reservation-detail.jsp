@@ -64,69 +64,28 @@
         
         
                         <!-- ------------달력----------- -->
-        
-                        <div class="wrapper">
-        
-                            <div class="nav">
-                                <button class="material-icons"> <span class="lnr lnr-chevron-left"></span> </button>
-                                <p class="current-date">1월</p>
-                                <button class="material-icons"> <span class="lnr lnr-chevron-right"></span></span>
+         <div class="calendar-container">
+                            <div class="calendar-header">
+                                <button id="prevBtn" class="btn"><span class="lnr lnr-chevron-left"></span> </button>
+                                <h2 id="currentMonth"></h2>
+                                <button id="nextBtn" class="btn"><span class="lnr lnr-chevron-right"></span></button>
                             </div>
-        
-                            <div class="calendar">
-                                <ul class="weeks">
-                                    <li>Sun</li>
-                                    <li>Mon</li>
-                                    <li>Tue</li>
-                                    <li>Wed</li>
-                                    <li>Thu</li>
-                                    <li>Fri</li>
-                                    <li>Sat</li>
-                                </ul>
-                                <ul class="days">
-                                    <li class="inactive">27</li>
-                                    <li class="inactive">28</li>
-                                    <li class="inactive">29</li>
-                                    <li class="inactive">30</li>
-                                    <li>1</li>
-                                    <li>2</li>
-                                    <li>3</li>
-                                    <li>4</li>
-                                    <li>5</li>
-                                    <li>6</li>
-                                    <li>7</li>
-                                    <li>8</li>
-                                    <li>9</li>
-                                    <li>10</li>
-                                    <li>11</li>
-                                    <li>12</li>
-                                    <li>13</li>
-                                    <li>14</li>
-                                    <li>15</li>
-                                    <li>16</li>
-                                    <li>17</li>
-                                    <li>18</li>
-                                    <li>19</li>
-                                    <li>20</li>
-                                    <li>21</li>
-                                    <li>22</li>
-                                    <li>23</li>
-                                    <li>24</li>
-                                    <li>25</li>
-                                    <li>26</li>
-                                    <li>27</li>
-                                    <li>28</li>
-                                    <li>29</li>
-                                    <li>30</li>
-                                    <li>31</li>
-                                </ul>
+                            <div class="calendar-days">
+                                <div class="day">Sun</div>
+                                <div class="day">Mon</div>
+                                <div class="day">Tue</div>
+                                <div class="day">Wed</div>
+                                <div class="day">Thu</div>
+                                <div class="day">Fri</div>
+                                <div class="day">Sat</div>
                             </div>
+                            <div class="calendar-dates" id="calendarDates"></div>
                         </div>
         
         
                         <!-- 예약 하기 -->
         
-                        <form action="#">
+                        <form action="/jq/kakaopay">
         
                             <div class="reserve-box">
                                 <div class="check">
@@ -159,41 +118,122 @@
 
 
 
- <script>
-        // 요소 선택
-        const $liList = document.querySelectorAll('ul.days li');
-        let activeCount = 0;
-        let firstClickedIndex = 0; // 처음으로 클릭된 요소의 index를 저장하는 변수
-        let lastClickedIndex = 0; // 마지막으로 클릭된 요소의 index를 저장하는 변수
+  <script>
+         const $date = document.querySelector('.calendar-dates')
+         let activeCount = 0;
+         let firstClickedDate = ""; // 처음으로 클릭된 요소의 날짜를 저장하는 변수
+         let lastClickedDate = ""; // 마지막으로 클릭된 요소의 날짜를 저장하는 변수
 
-
-        $liList.forEach($li => {
-            $li.addEventListener('click', e => {
-
-                // console.log('li에 클릭이벤트 발생! ');
-
-                // class 속성이 없으면 추가, 있으면 수정
-                if (!e.target.classList.contains('active')) {
-
-                    if (activeCount < 2) {
-                        e.target.classList.add('active');
-                        activeCount++;
-                    }
-                } else {
-                    e.target.classList.remove('active');
-                    activeCount--;
-                };
-
-
-            });
-
-        });
+         const $regDate = document.querySelector('.reg-date');
+         const $regDates = document.querySelector('.reg-dates');
 
 
 
+         document.addEventListener("DOMContentLoaded", function () {
+             const prevBtn = document.getElementById("prevBtn");
+             const nextBtn = document.getElementById("nextBtn");
+             const currentMonth = document.getElementById("currentMonth");
+             const calendarDates = document.getElementById("calendarDates");
+
+             // 현재 날짜와 달
+             let today = new Date();
+             let currentMonthIndex = today.getMonth();
+             let currentYear = today.getFullYear();
+
+             // 이벤트 리스너 추가
+             prevBtn.addEventListener("click", showPrevMonth);
+             nextBtn.addEventListener("click", showNextMonth);
+
+             // 초기 달력 표시
+             showCalendar(currentYear, currentMonthIndex);
+
+             function showCalendar(year, monthIndex) {
+                 // 달력 헤더에 현재 년도와 월 표시
+                 currentMonth.textContent = `${year}년  ${monthIndex + 1}월`;
+
+                 // 해당 월의 첫 날과 마지막 날을 가져옴
+                 let firstDayOfMonth = new Date(year, monthIndex, 1).getDay();
+                 let lastDayOfMonth = new Date(year, monthIndex + 1, 0).getDate();
+
+                 // 이전 달의 마지막 일
+                 let lastDayOfPrevMonth = new Date(year, monthIndex, 0).getDate();
+
+                 // 이전 달의 날짜와 해당 월의 날짜를 표시
+                 let dates = "";
+                 for (let i = firstDayOfMonth - 1; i >= 0; i--) {
+                     dates += `<div class="date prev-date">${lastDayOfPrevMonth - i}</div>`;
+                 }
+                 for (let i = 1; i <= lastDayOfMonth; i++) {
+                     dates += `<div class="date">${i}</div>`;
+                 }
+
+                 // 달력에 날짜 표시
+                 calendarDates.innerHTML = dates;
+             }
+
+             function showPrevMonth() {
+                 currentMonthIndex--;
+                 if (currentMonthIndex < 0) {
+                     currentYear--;
+                     currentMonthIndex = 11;
+                 }
+                 showCalendar(currentYear, currentMonthIndex);
+                 activeCount = 0;
+             }
+
+             function showNextMonth() {
+                 currentMonthIndex++;
+                 if (currentMonthIndex > 11) {
+                     currentYear++;
+                     currentMonthIndex = 0;
+                 }
+                 showCalendar(currentYear, currentMonthIndex);
+                 activeCount = 0;
+             }
+         });
 
 
-    </script>
-    
+
+         // 달력일자선택
+
+
+             $date.addEventListener('click', e => {
+                 const clickedDate = e.target.textContent;
+                 if (e.target.classList.contains('date')) {
+                     // 클릭된 요소가 date 클래스를 포함하는 경우에만 처리
+                     console.log('클릭한 일자', clickedDate);
+                 }
+
+                 // class 속성이 없으면 추가, 있으면 수정
+                 if (!e.target.classList.contains('active')) {
+
+
+                     if (activeCount < 2) {
+                         e.target.classList.add('active');
+                         activeCount++;
+                     }
+
+                 } else {
+                     e.target.classList.remove('active');
+                     activeCount--;
+                 };
+
+                 // 클릭된 요소의 날짜 추적
+                 if (e.target.classList.contains('active')) {
+                     if (firstClickedDate === "") {
+                         firstClickedDate = clickedDate;
+                         console.log('입실날짜', firstClickedDate);
+                         return;
+                     }else {
+                         lastClickedDate = clickedDate;
+                         console.log('퇴실날짜', lastClickedDate);
+                     }
+                 }
+
+
+
+             });
+
+     </script>
 </body>
 </html>
