@@ -45,7 +45,7 @@ class UserMapperTest {
         // when
         User user = userMapper.findUser(email);
         // then
-        assertEquals(user.getName(), "김춘식");
+        assertEquals(user.getEmail(), "aaa1111@naver.com");
     }
 
     @Test

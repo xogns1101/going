@@ -12,7 +12,6 @@ public class LoginUserResponseDTO {
 
 
     private String email;
-    private String password;
     private String auth;
     private String name;
     private String phoneNumber;
