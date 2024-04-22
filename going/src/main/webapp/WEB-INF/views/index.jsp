@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>YAGAJA</title>
     <link rel="stylesheet" href="/assets/css/main.css">
 
     <!-- linear icons -->
@@ -24,7 +24,7 @@
 
     <header>
         <div id="wrap">
-            <h1 class="logo"><a href="main">Y⛺GAJA</a></h1>
+            <h1 class="logo"><a href="/main">Y⛺GAJA</a></h1>
             <div class="logo-content">
                 <a href="/main/introduce">INTRO</a>
                 <a href="/main/reservation">RESERVATION</a>
@@ -191,7 +191,7 @@
             </div>
 
 
-            <h1 class="footer-logo"><a href="main"><span>Y</span>⛺<span>GAJA</span></a></h1>
+            <h1 class="footer-logo"><a href="/main"><span>Y</span>⛺<span>GAJA</span></a></h1>
             <!-- <a href="#" class="go-top"><span class="lnr lnr-arrow-up"></span></a> -->
         </div>
 
