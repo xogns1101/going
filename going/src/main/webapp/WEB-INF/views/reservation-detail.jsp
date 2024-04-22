@@ -148,11 +148,11 @@
     <script>
         const $date = document.querySelectorAll('.date');
      
-        // 이전/다음 달 이동 기능 구현
-        const prevBtn = document.getElementById('prevBtn');
+       // 이전/다음 달 이동 기능 구현
+       const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
-        const currentMonth = document.getElementById("currentMonth");
-        const calendarDates = document.getElementById("calendarDates");
+        const currentMonth = document.getElementById('currentMonth');
+        const calendarDates = document.getElementById('calendarDates');
 
 
         // 현재 날짜 정보 가져오기
@@ -161,35 +161,46 @@
         let currentMonthIndex = currentDate.getMonth(); // 0부터 시작하는 인덱스
         let currentDay = currentDate.getDate();
 
+
+
         prevBtn.addEventListener('click', showPrevMonth);
         nextBtn.addEventListener('click', showNextMonth);
 
         function showPrevMonth() {
+            console.log('이전버튼을 누름');
+         
+            console.log(currentMonthIndex);
             currentMonthIndex--;
         if (currentMonthIndex < 0) {
             currentYear--;
-            currentMonthIndex = 11; // 12월
-      }
-        showCalendar(currentYear, currentMonthIndex);
-    }
+            currentMonthIndex = 11;
+        }
+        updateCalendar();
+        }
+       
+    
         
 
         function showNextMonth() {
+            console.log('다음버튼을 누름');
+
+            console.log(currentMonthIndex);
             currentMonthIndex++;
         if (currentMonthIndex > 11) {
             currentYear++;
-            currentMonthIndex = 0; // 1월
+            currentMonthIndex = 0;
         }
-        showCalendar(currentYear, currentMonthIndex);
+        updateCalendar();
         }
 
-        function showCalendar(year, monthIndex) {
-        // 달력 헤더에 현재 년도와 월 표시
-        currentMonth.textContent = `${year}년 ${monthIndex + 1}월`; // monthIndex는 0부터 시작하므로 +1
+       
+        function updateCalendar() {
+        currentMonth.textContent = currentYear + '년 ' + (currentMonthIndex + 1) + '월';
+
 
         
-        showCalendar(year, monthIndex); 
     }
+    
 
 
 
