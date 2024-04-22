@@ -43,7 +43,7 @@
       </div>
 
 
-      <input type="file" id="review-image" name="reviewImaige" accept="image/*">
+      <input type="file" id="review-image" name="reviewImage" accept="image/*">
     </div>
 
     <div class="two-Btn">
