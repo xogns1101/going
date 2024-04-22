@@ -54,7 +54,21 @@
                     <tbody>
                         <c:forEach var="b" items="${nList}">
                             <tr class="notice-click">
-                                <td class="noticeCategory">${b.noticeCategory}</td>
+                                <td class="noticeCategory">
+                                    <c:set var="categoryName" value=""/>
+                                    <c:choose>
+                                        <c:when test="${b.noticeCategory == 'ESSENTIAL'}">
+                                            <c:set var="categoryName" value="필독"/>
+                                        </c:when>
+                                        <c:when test="${b.noticeCategory == 'NOTICE'}">
+                                            <c:set var="categoryName" value="공지"/>
+                                        </c:when>
+                                        <c:when test="${b.noticeCategory == 'COMMON'}">
+                                            <c:set var="categoryName" value="기본"/>
+                                        </c:when>
+                                    </c:choose>
+                                    ${categoryName}
+                                </td>
                                 <td class="NoticeNo">${b.noticeNo}</td>
                                 <td class="NoticeTitle">${b.noticeTitle}</td>
                                 <td class="NoticeDate">${b.noticeDate}</td>
@@ -63,6 +77,7 @@
                         </c:forEach>
                     </tbody>
                 </table>
+                
 
                 <!-- 전체기간 조회 -->
 

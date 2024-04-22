@@ -73,13 +73,20 @@
                     <tbody>
                         <c:forEach var="b" items="${nList}">
                             <tr class="notice-click">
-                                <td class="noticeCategory">
+                                <td class="noticeCategory ${b.noticeCategory}">
+                                    <c:set var="categoryName" value="" />
                                     <c:choose>
-                                        <c:when test="${b.noticeNo == currentNoticeNo}">
-                                            <strong style="color: #FF0000;">${b.noticeCategory}</strong>
+                                        <c:when test="${b.noticeCategory == 'ESSENTIAL'}">
+                                            <c:set var="categoryName" value="필독" />
                                         </c:when>
-                                        <c:otherwise>${b.noticeCategory}</c:otherwise>
+                                        <c:when test="${b.noticeCategory == 'NOTICE'}">
+                                            <c:set var="categoryName" value="공지" />
+                                        </c:when>
+                                        <c:when test="${b.noticeCategory == 'COMMON'}">
+                                            <c:set var="categoryName" value="기본" />
+                                        </c:when>
                                     </c:choose>
+                                    ${categoryName}
                                 </td>
                                 <td class="NoticeNo">
                                     <c:choose>
@@ -176,7 +183,6 @@
                 // alert('클릭 이벤트 발생: ' + row.innerText); // 예시로 경고창을 띄웁니다.
             });
         });
-
     </script>
 
 
