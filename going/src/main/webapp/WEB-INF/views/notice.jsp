@@ -6,8 +6,10 @@
     <meta charset="UTF-8">
     <title>notice</title>
 
-    <link rel="stylesheet" href="assets/css/notice-basic2.css">
 
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/notice-basic2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Yeon+Sung&display=swap" rel="stylesheet">
@@ -37,10 +39,14 @@
 
                     <div class="notice-list">
                         <div class="notice-box">
-                            <c:forEach var="b" items="${nList}">
+                            <!-- 페이지 사이즈 체크 -->
+                                <div class="page-size-background">
+                                    <span class="page-size">8개씩</span>
+                                    <input type="checkbox" class="page-size-click-button" onclick="handlePageSizeClick(this)">
+                                </div>
                             <table border="1">
                                 <thead>
-                                    <tr class="no-click">
+                                    <tr class="column">
                                         <th class="noticeCategory">공지등급</th>
                                         <th class="NoticeNo">글번호</th>
                                         <th class="NoticeTitle">제목</th>
@@ -50,57 +56,53 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="noticeCategory">${b.noticeCategory}</td>
-                                        <td class="NoticeNo">${b.noticeNo}</td>
-                                        <td class="NoticeTitle">${b.noticeTitle}</td>
-                                        <td class="NoticeDate">${b.noticeDate}</td>
-                                        <td class="NoticeCount">${b.noticeCount}</td>
+                                    <c:forEach var="b" items="${nList}">
+                                        <tr class="notice-click">
+                                            <td class="noticeCategory">${b.noticeCategory}</td>
+                                            <td class="NoticeNo">${b.noticeNo}</td>
+                                            <td class="NoticeTitle">${b.noticeTitle}</td>
+                                            <td class="NoticeDate">${b.noticeDate}</td>
+                                            <td class="NoticeCount">${b.noticeCount}</td>
 
-                                    </tr>
-
+                                            </tr>
+                                    </c:forEach>
                                 </tbody>
                             </table>
-                        </c:forEach>
+
+
 
 
                     <!-- 전체기간 조회 -->
-                                        <div class="total-date-wrapper">
-                                            <div class="total-date-background"></div>
-                                            <input type="checkbox" class="total-date-click-button" onclick="handleTotalDateClick(this)">
-                                            <div class="total-date">전체기간</div>
-                                        </div>
 
-                                        <!-- 제목 조회 -->
-                                        <div class="title-wrapper">
-                                            <div class="only-title-background"></div>
-                                            <input type="checkbox" class="only-title-click-button" onclick="handleOnlyTitleClick(this)">
-                                            <div class="only-title">제목만</div>
-                                        </div>
+                    <div class="total-date-background">
+                       <input type="checkbox" class="total-date-click-button" onclick="handleTotalDateClick(this)">
+                       <span class="total-date">전체기간</div>
+                    </div>
+
+                    <!-- 제목 조회 -->
+
+                    <div class="only-title-background">
+                       <input type="checkbox" class="only-title-click-button" onclick="handleOnlyTitleClick(this)">
+                       <span class="only-title">제목만</div>
+                    </div>
 
 
 
-                                        <!-- 검색어 조회 -->
-                                        <div class="search-wrapper">
-                                            <div class="search-content-background"></div>
-                                            <input type="text" class="search-content" placeholder="검색어를 입력해 주세요">
-                                            <button class="search-click-button" onclick="handleSearchClick()">검색</button>
-                                        </div>
+                    <!-- 검색어 조회 -->
 
-                                        <!-- 페이지 사이즈 체크 -->
-                                        <div class="page-size-wrapper">
-                                            <div class="page-size-background"></div>
-                                            <div class="page-size">8개씩</div>
-                                            <input type="checkbox" class="page-size-click-button" onclick="handlePageSizeClick(this)">
-                                        </div>
+                        <div class="search-content-background">
+                           <input type="text" class="search-content" placeholder="검색어를 입력해 주세요">
+                           <button class="search-click-button" onclick="handleSearchClick()">검색</button>
+                        </div>
+
+                                        
 
                                     </div>
                                 </div>
          </section>
 
 
-         <!-- footer --------------------->
-         <%@ include file="include/footer.jsp" %>
+
 
 
          <script>
@@ -149,22 +151,41 @@
 
                     }
 
-                    // 모든 tr 요소를 선택합니다.
-                    const rows = document.querySelectorAll('tr');
+                      // 모든 tr 요소를 선택합니다.
+                            const rows = document.querySelectorAll('tr.notice-click');
 
-                    // 각각의 tr 요소에 대해 반복합니다.
-                    rows.forEach(row => {
-                        // 클릭 이벤트를 추가합니다.
-                        row.addEventListener('click', function() {
-                            // 클릭된 tr 요소에 대한 처리를 여기에 추가합니다.
-                            alert('클릭 이벤트 발생: ' + row.innerText); // 예시로 경고창을 띄웁니다.
-                        });
+                            // 각각의 tr 요소에 대해 반복합니다.
+                            rows.forEach(row => {
+                                // 클릭 이벤트를 추가합니다.
+                                row.addEventListener('click', function () {
+                                    // 클릭된 tr 요소에 대한 처리를 여기에 추가합니다.
+                                    const noticeNoElement = row.querySelector('.NoticeNo');
+                                    if (noticeNoElement) {
+                                        const noticeNo = noticeNoElement.innerText;
+                                        const detailUrl = '/main/notice-detail/' + noticeNo;
+
+                                        // detailUrl이 정의되었는지 확인 후 이동합니다.
+                                        if (detailUrl) {
+                                            window.location.href = detailUrl;
+                                        } else {
+                                            console.error('Detail URL이 정의되지 않았습니다.');
+                                        }
+                                    } else {
+                                        console.error('NoticeNo X');
+                                    }
+                                    // alert('클릭 이벤트 발생: ' + row.innerText); // 예시로 경고창을 띄웁니다.
+                                });
+
+
                     });
+
 
 
 
              </script>
 
+<!-- footer --------------------->
+         <%@ include file="include/footer.jsp" %>
 
 </body>
 </html>

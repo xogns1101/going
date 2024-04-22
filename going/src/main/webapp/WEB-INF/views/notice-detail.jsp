@@ -68,7 +68,7 @@
                     </c:forEach>
 
                 <!-- 되돌아가기 버튼 -->
-                <button class="back-btn" onclick="goBack()">되돌아가기</button>
+                <button class="back-btn" onclick="history.back(); return false;">되돌아가기</button>
 
 
 

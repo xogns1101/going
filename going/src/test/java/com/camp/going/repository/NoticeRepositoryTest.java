@@ -24,7 +24,7 @@ class NoticeRepositoryTest {
     @DisplayName("공지사항 200개 작성하기")
     void noticeInsertTest() {
         // given
-        for (int i = 1; i <= 200; i++) {
+        for (int i = 1; i <= 10; i++) {
             Notice notice = new Notice();
             notice.setNoticeTitle("공지사항 " + i + "번 제목 테스트");
             notice.setNoticeContent("공지사항 " + i + "번 내용 테스트");

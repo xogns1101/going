@@ -1,4 +1,6 @@
-
+section {
+    margin-bottom: 110px;
+}
 
 section .title h1 {
     color: black;
@@ -26,18 +28,17 @@ section .title h1 {
   
   section .notice-list .notice-box {
     width: 1200px;
-    height: 700px;
     background: #E4FFAA;
     margin-top: 50px;
     border-radius: 3%;
-  
+    margin-left: 340px;
     position: relative;
   }
 
   section .notice-list .notice-box table {
     width: 900px;
     margin-left: 13%;
-    margin-top: 5%;
+    margin-top: 8%;
     background: #F0EEEE;
     
   }
@@ -63,114 +64,151 @@ section .title h1 {
     cursor: pointer; /* 호버 시 커서 모양 변경 */
   }
 
+    section .notice-list tr.column {
+        pointer-events: none;
+    }
 
-  section .notice-list tr th {
+  /* section .notice-list tr th {
     margin-right: 15px;
     margin-left: -10px;    
     width: 100px;
     font-size: 30px;
+    border: 1px solid red;
+  } */
+
+  section .notice-box .notice-list tr .noticeCategory {
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 60px;
+    
+  }
+
+  section .notice-box .notice-list tr .NoticeNo {
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 60px;
+    
+  }
+
+  section .notice-box .notice-list tr .NoticeTitle {
+    margin-right: 5px;
+    margin-left: -15px;
+    width: 60px;
+    
   }
 
 
 /* 전체기간 조회 */
-.total-date-wrapper {
+/* .total-date-wrapper {
     position: relative;
-}
+} */
 
 .total-date-background {
     width: 159px;
     height: 43px;
-    position: absolute;
+    /* position: absolute; */
     left: 220px;
-    top: 20px;
+    top: 50px;
     background: white;
     border: 1px black solid;
+    position: relative;
 }
 
 .total-date-click-button {
     width: 26px;
     height: 18px;
-    position: absolute;
-    left: 330px;
-    top: 30px;
+    /* position: absolute; */
+    right: 30px;
+    top: 10px;
     background: #5F5555;
     border: 1px black solid;
     cursor: pointer;
+    line-height: 43px;
+    
 }
 
 .total-date {
     width: 80px;
     height: 43px;
-    position: absolute;
-    left: 250px;
-    top: 30px;
+    /* position: absolute; */
+    left: 10px;
+    top: 10px;
     color: black;
     font-size: 24px;
     font-family: Yeon Sung;
     font-weight: 400;
     word-wrap: break-word;
+    line-height: 43px;
+    
 }
 
 /* 제목 조회 */
-.title-wrapper {
+/* .title-wrapper {
     position: relative;
-}
+} */
 
 .only-title-background {
     width: 159px;
     height: 43px;
-    position: absolute;
-    left: 450px;
-    top: 20px;
+    /* position: absolute; */
+    left: -855px;
+    top: 806px;
     background: white;
     border: 1px black solid;
+    position: relative;
+    line-height: 43px;
+    
+
 }
 
 .only-title-click-button {
     width: 26px;
     height: 18px;
-    position: absolute;
-    left: 560px;
-    top: 30px;
+    /* position: absolute; */
+    left: 30px;
+    top: 10px;
     background: #5F5555;
     border: 1px black solid;
     cursor: pointer;
+    line-height: 43px;
 }
 
 .only-title {
     width: 64px;
     height: 43px;
-    position: absolute;
-    left: 480px;
+    /* position: absolute; */
+    
     top: 30px;
     color: black;
     font-size: 24px;
     font-family: Yeon Sung;
     font-weight: 400;
     word-wrap: break-word;
+    
 }
 
 
 
 /* 검색어 조회 */
-.search-wrapper {
-    position: relative;
-}
+/* .search-wrapper {
+    /* position: relative; */
+
 
 .search-content-background {
     width: 320px;
     height: 43px;
-    position: absolute;
-    left: 670px;
-    top: 20px;
+    /* position: absolute; */
+    left: 1055px;
+    top: 9px;
     background: white;
     border: 1px black solid;
+    position: relative;
 }
 
 .search-content {
     width: 250px;
     height: 35px;
-    position: absolute;
+    /* position: absolute; */
     left: 700px;
     top: 23px;
     border: none;
@@ -180,12 +218,13 @@ section .title h1 {
     font-family: Yeon Sung;
     font-weight: 400;
     word-wrap: break-word;
+    
 }
 
 .search-click-button {
     width: 63px;
     height: 27px;
-    position: absolute;
+    /* position: absolute; */
     left: 910px;
     top: 28px;
     font-family: Yeon Sung;
@@ -193,6 +232,7 @@ section .title h1 {
     background: #9CEE8F;
     border: 1px black solid;
     cursor: pointer;
+    
 }
 
 /* 페이지 사이즈 체크 */
@@ -203,19 +243,18 @@ section .title h1 {
 .page-size-background {
     width: 140px;
     height: 35px;
-    position: absolute;
-    left: 890px;
-    top: -570px;
-    background: white;
+    background: lightgray;
     border: 1px black solid;
+    text-align: center;
+    line-height: 35px;
+    position: relative;
+    top: 5%;
+    left: 75%;
 }
 
 .page-size {
     width: 64px;
     height: 43px;
-    position: absolute;
-    left: 920px;
-    top: -565px;
     color: black;
     font-size: 24px;
     font-family: Yeon Sung;
@@ -226,9 +265,6 @@ section .title h1 {
 .page-size-click-button {
     width: 26px;
     height: 18px;
-    position: absolute;
-    left: 980px;
-    top: -565px;
     cursor: pointer;
 }
 
