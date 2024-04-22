@@ -1,5 +1,6 @@
 package com.camp.going.dto.request;
 
+
 import com.camp.going.entity.User;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -8,9 +9,8 @@ import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.multipart.MultipartFile;
 
-@Getter
-@Setter
-@ToString
+
+@Getter @Setter @ToString
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,6 +18,8 @@ import org.springframework.web.multipart.MultipartFile;
 public class SignUpRequestDTO {
 
     @NotBlank
+    @Size(min = 10, max = 26)
+
     @Email
     private String email;
 
@@ -34,7 +36,9 @@ public class SignUpRequestDTO {
 
 
 
-    // dto를 엔터티로 변환하는 유틸메서드
+
+    // dto -> entity method
+
     public User toEntity(PasswordEncoder encoder) {
         return User.builder()
                 .email(email)
@@ -44,7 +48,4 @@ public class SignUpRequestDTO {
                 .loginMethod(loginMethod)
                 .build();
     }
-
-
-
 }

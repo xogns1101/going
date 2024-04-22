@@ -1,15 +1,15 @@
 package com.camp.going.dto.response;
 
+
 import lombok.*;
 
-@Getter
-@Setter
-@ToString
+@Getter @Setter @ToString
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class LoginUserResponseDTO {
+
 
     private String email;
     private String password;
@@ -17,5 +17,9 @@ public class LoginUserResponseDTO {
     private String name;
     private String phoneNumber;
     private String loginMethod;
+
+
+
+
 
 }
