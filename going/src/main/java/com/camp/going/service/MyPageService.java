@@ -1,5 +1,8 @@
 package com.camp.going.service;
 
+import com.camp.going.dto.request.MyPageRequestDTO;
+import com.camp.going.entity.MyPage;
+import com.camp.going.entity.User;
 import com.camp.going.mapper.MyPageMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,7 +13,8 @@ public class MyPageService {
 
     private final MyPageMapper myPageMapper;
 
-    public void modifyName(){
+    public void modifyName(MyPageRequestDTO dto){
+
     };
 
 }
