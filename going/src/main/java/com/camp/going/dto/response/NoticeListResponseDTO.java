@@ -17,12 +17,7 @@ public class NoticeListResponseDTO {
     private String noticeContent; // 내용
     private String noticeDate; // 작성날짜 yyyy-MM-dd HH:mm:ss
     private int noticeCount; // 조회수
-<<<<<<< HEAD
     private String noticeCategory; // 공지 등급
-
-=======
-    private String noticeCategory; // 카테고리
->>>>>>> cb9c799861dd7ac8e7f1ed5b6c91805b30f5082d
 
     public NoticeListResponseDTO(Notice notice) {
         this.noticeNo = notice.getNoticeNo();
