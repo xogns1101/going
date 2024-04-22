@@ -1,0 +1,1777 @@
+[33mcommit 2b8aca001b887a4131629e3cbe5d99b93fb8b211[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mjunghwa8870-main[m[33m)[m
+Merge: f7fd3d3 b45ccc3
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Mon Apr 22 11:21:39 2024 +0900
+
+    커밋 취소할 예정
+
+[33mcommit f7fd3d3719a4daaac6cb59d0825608f236825ebd[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Mon Apr 22 10:56:53 2024 +0900
+
+    예약 상세 화면 수정중
+
+[33mcommit 4ee20ed4dc8f49a8899afcfad996612944d0ac3b[m
+Merge: b6c69d1 c5095c2
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Mon Apr 22 09:39:17 2024 +0900
+
+    Merge pull request #54 from Leegayeonn/develop
+    
+    reservation-detail 달력part 진행중
+
+[33mcommit c5095c2e4679c22fdf0c01e5498685c4aa9cd65c[m
+Author: leegayeonn <ini03134@naver.com>
+Date:   Mon Apr 22 01:31:30 2024 +0900
+
+    reservation-detail.html 달력 입실,퇴실설정진행중
+
+[33mcommit f643366a03e2fe3d615b26b88c9f82e59fddf455[m
+Author: leegayeonn <ini03134@naver.com>
+Date:   Mon Apr 22 00:30:12 2024 +0900
+
+    reservation-detail.html 달력진행중
+
+[33mcommit b6c69d18c3b38d9b890be7b5510c6d4653e81584[m
+Merge: 5cdcc69 b0486ad
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 19 18:31:10 2024 +0900
+
+    리뷰관련 페이지 수정
+
+[33mcommit 5cdcc699c86248eab6fe417742aadca710a26ba0[m
+Merge: 74610ca c5d1fdb
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Fri Apr 19 18:21:18 2024 +0900
+
+    Merge pull request #52 from Yeom-SeungBin/develop
+    
+    reviewController, mypage 수정 중
+
+[33mcommit 74610ca6ec0fa79589b5fa52095777f01df5a550[m
+Merge: 4c9c406 cc0b3e3
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Fri Apr 19 18:20:57 2024 +0900
+
+    Merge pull request #51 from SJHlll/develop
+    
+    푸터 수정
+
+[33mcommit 4c9c4061d19383e8687a9c93487caed678282198[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 19 18:20:42 2024 +0900
+
+    프로퍼티스 수정
+
+[33mcommit c5d1fdb8acddcfaca560d536abdcb590cd5c4aa8[m
+Merge: f4e91af 3002d22
+Author: Seungbin <duaqkr2@naver.com>
+Date:   Fri Apr 19 18:16:29 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit f4e91af6e86ff94ad4ad1fd62bf0ef0a61dcb68b[m
+Merge: 132bbed ebea719
+Author: sseung <duaqkr2@naver.com>
+Date:   Fri Apr 19 18:16:02 2024 +0900
+
+    Merge branch 'sseung' into develop
+
+[33mcommit ebea719ea3d79fc7ba805b99cc549f71de06b726[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Fri Apr 19 18:15:38 2024 +0900
+
+    reviewController, mypage 수정 중
+
+[33mcommit b0486ad022b2d925de17e955c4034e2ff5d42f75[m
+Merge: 9d1952f 894c29c
+Author: ilypsj <goodperiodt@gmail.com>
+Date:   Fri Apr 19 18:15:01 2024 +0900
+
+    Merge branch 'develop' of https://github.com/xogns1101/going into develop
+
+[33mcommit 9d1952f276431741f8d5b1af676f2748886041f1[m
+Merge: 30163f6 3b4f07d
+Author: ilypsj <goodperiodt@gmail.com>
+Date:   Fri Apr 19 18:13:52 2024 +0900
+
+    Merge branch 'taehun' into develop
+
+[33mcommit 3b4f07d781a5b6298f036312783d3c72299f4ce1[m
+Author: ilypsj <goodperiodt@gmail.com>
+Date:   Fri Apr 19 18:13:32 2024 +0900
+
+    리뷰 작성페이지 데이터 들어가는거 확인 포인트랑 사진은 안됨 주말에 해결 노력
+
+[33mcommit cc0b3e3eb607744b5c54ca00e6d37ad6c5cf4f7c[m
+Merge: fb29d93 3002d22
+Author: SJHlll <156872474+SJHlll@users.noreply.github.com>
+Date:   Fri Apr 19 18:13:27 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit fb29d93e213921d9a2e3e9630cde02ef745af5e9[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Fri Apr 19 18:11:52 2024 +0900
+
+    푸터 수정
+
+[33mcommit 894c29c2eb8c06bfe4fd1a2dbdbcec3423e1ce52[m
+Merge: 30163f6 3002d22
+Author: xogns1101 <156872457+xogns1101@users.noreply.github.com>
+Date:   Fri Apr 19 17:45:11 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit 30163f6cd606d5859632d901be0cf12ac638b4a9[m
+Merge: 8965349 35b337e
+Author: ilypsj <goodperiodt@gmail.com>
+Date:   Fri Apr 19 17:44:39 2024 +0900
+
+    Merge branch 'taehun' into develop
+
+[33mcommit 35b337e40e34b91d3b23e6907f67ab6bc179a7e0[m
+Author: ilypsj <goodperiodt@gmail.com>
+Date:   Fri Apr 19 17:44:24 2024 +0900
+
+    review.jsp 수정
+
+[33mcommit 3002d223a1499146033e1319e119c3752c053000[m
+Merge: 132bbed 8965349
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Fri Apr 19 17:42:10 2024 +0900
+
+    Merge pull request #49 from xogns1101/develop
+    
+    리뷰 등록 / 수정 별점 추가 제목 삭제 경로 설정 데이터 보내는거 코드 작성했습니다.
+
+[33mcommit 89653494e3c0dd21b53b78f710d3394394876fc5[m
+Merge: fc43e7c 132bbed
+Author: xogns1101 <156872457+xogns1101@users.noreply.github.com>
+Date:   Fri Apr 19 16:06:52 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit fc43e7ceec24dfe8aa3a86841b0f29b50bca593c[m
+Merge: db22e97 d3fa5c1
+Author: ilypsj <goodperiodt@gmail.com>
+Date:   Fri Apr 19 15:50:54 2024 +0900
+
+    Merge branch 'taehun' into develop
+
+[33mcommit 132bbed0b692424bd0f7c848bb00d651c153ec64[m
+Merge: db22e97 3e2ae3d
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Fri Apr 19 15:47:24 2024 +0900
+
+    Merge pull request #48 from Yeom-SeungBin/develop
+    
+    mypage controller, service 추가(완료는 아님)
+
+[33mcommit 3e2ae3d617006627dd84b18deddd733ff7cc4df4[m
+Merge: e2eb53e db22e97
+Author: Seungbin <duaqkr2@naver.com>
+Date:   Fri Apr 19 15:45:52 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit e2eb53eeef5e392dcf376f3f4fc6399050384e4a[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Fri Apr 19 15:45:25 2024 +0900
+
+    mypage controller, service 추가(완료는 아님)
+
+[33mcommit d3fa5c1a7fd8ca8468d334b7bc0daa8404d5e7e6[m
+Author: ilypsj <goodperiodt@gmail.com>
+Date:   Fri Apr 19 15:44:56 2024 +0900
+
+    리뷰 등록/수정 별점 추가, 제목 삭제 이동경로, 데이터 파일에 보낼 별점 숫자, 내용 사진 구현
+
+[33mcommit db22e97dbeacd83c258539683a86164eedd29a90[m
+Merge: 99c411b 4989108
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Fri Apr 19 15:44:40 2024 +0900
+
+    Merge pull request #47 from SJHlll/develop
+    
+    400에러 페이지 추가, NoticeController 경로 수정, header 수정
+
+[33mcommit 4989108b1f02baccfd9167c4ffafcef977e1e1f7[m
+Merge: 756ffa8 99c411b
+Author: SJHlll <156872474+SJHlll@users.noreply.github.com>
+Date:   Fri Apr 19 15:44:07 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit 756ffa83c858e1b5ce9b89bcc4fd86739c8c9230[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Fri Apr 19 15:41:43 2024 +0900
+
+    헤더 수정
+
+[33mcommit 99c411b80e470a68f25ac71d3414258d03e0684c[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 19 15:13:58 2024 +0900
+
+    이그노어 수정
+
+[33mcommit 8149658bb0614ff7b367900d83daa13558ba0794[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 19 15:12:32 2024 +0900
+
+    이그노어 수정
+
+[33mcommit d5cbb28be48daa02797034bc414d3edd87ed931f[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 19 15:03:47 2024 +0900
+
+    인터셉터 수정
+
+[33mcommit da79a3423994f62ba4d140eb9a5a4bc029ce0273[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 19 14:38:11 2024 +0900
+
+    네이버 로그인 연동 완료 , 캠핑 목록, 예약 목록 확인 완료
+
+[33mcommit 89567c945fc78716d1a0c865200e4592b70ef664[m
+Author: ilypsj <goodperiodt@gmail.com>
+Date:   Fri Apr 19 13:00:25 2024 +0900
+
+    리뷰 등록/ 수정부분 별점 추가 버튼 클릭시 이동 구현중
+
+[33mcommit 61c2bf9109166fb794efbb9e8a639f541bc05c5a[m
+Merge: 66a1d31 f43ea0a
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 19 12:25:19 2024 +0900
+
+    myPage 생성 및 user 변경
+
+[33mcommit 66a1d31350432a813120d93d866260544cf0be29[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 19 12:20:35 2024 +0900
+
+    네이버 로그아웃 구현중
+
+[33mcommit f43ea0a6f59273a738f4b7ab3db14ca9136d9974[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Fri Apr 19 12:18:51 2024 +0900
+
+    myPage 생성 및 user 변경
+
+[33mcommit 6cda92691a68c8dd69f82d792e7c7abe0293dbcd[m
+Merge: 9cc2d12 26cfcf0
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Fri Apr 19 10:47:16 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into develop
+
+[33mcommit 9cc2d12cbaf1185046429e93c4ae7afc9de12cf6[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Fri Apr 19 10:46:56 2024 +0900
+
+    400 에러 추가, NoticeController 수정
+
+[33mcommit 26cfcf0717fad728d6977b482ccab975c1cbe135[m
+Merge: 71bdb50 c7c9b44
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Fri Apr 19 10:45:49 2024 +0900
+
+    Merge pull request #45 from SJHlll/develop
+    
+    에러페이지 '이전 화면으로 돌아가기' 링크 추가
+
+[33mcommit 71bdb509e2cec50fb6107604912638dcec6c8def[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 19 10:43:38 2024 +0900
+
+    쓸모없는것 삭제
+
+[33mcommit 47b77b096f550cb26b31373a5e68f86ce9809367[m
+Merge: 01c870a af57a43
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 19 10:35:57 2024 +0900
+
+    Merge branch 'xogns1101-develop' into develop
+
+[33mcommit af57a432e5ec62401cd4143dba3a78bd72134c01[m[33m ([m[1;32mxogns1101-develop[m[33m)[m
+Merge: 01c870a 4d83e91
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 19 10:25:08 2024 +0900
+
+    이그노어 추가및 html 수정
+
+[33mcommit c7c9b44145e01817160fc6c00332b0ffc7a35620[m
+Merge: 5ea7f40 01c870a
+Author: SJHlll <156872474+SJHlll@users.noreply.github.com>
+Date:   Fri Apr 19 10:21:55 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit 5ea7f40f44f89337bf377b80714b79028f0e20d6[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Fri Apr 19 10:20:44 2024 +0900
+
+    에러페이지 '이전 화면으로 돌아가기' 링크 추가
+
+[33mcommit 01c870a9a838a8a1119df2c6ddcdd5690b03f632[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 19 10:16:12 2024 +0900
+
+    네이버 로그아웃 구현중
+
+[33mcommit 4d83e91750a50efbf7e2ce50d5c283176c8f9368[m
+Author: ilypsj <goodperiodt@gmail.com>
+Date:   Fri Apr 19 10:11:06 2024 +0900
+
+    깃 이그노어 수정
+
+[33mcommit f0327d99ba6d6dac635efb99fa0320ce4f7c8855[m
+Merge: 12593bb b72580f
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Thu Apr 18 19:21:48 2024 +0900
+
+    reservation.jsp, reservation-detail.jsp 서버 연동중입니다
+
+[33mcommit 12593bbe0c009a85c60f6acf8add52519a54238e[m
+Merge: ee2342c 45be402
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Thu Apr 18 19:16:25 2024 +0900
+
+    Merge pull request #43 from Yeom-SeungBin/develop
+    
+    이미지 업로드 관련
+
+[33mcommit ee2342c854e3d46ff419206479870cf822fcf6d7[m
+Merge: 810fdce c277eed
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Thu Apr 18 19:13:07 2024 +0900
+
+    Merge pull request #41 from SJHlll/develop
+    
+    공지사항 조회수 테스트 완료 및 403, 404, 500 에러 사이트 간략하게 틀 작성
+
+[33mcommit 810fdce9f0eac0255edf6fea3e9d6516c79a52bf[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Thu Apr 18 19:11:43 2024 +0900
+
+    네이버 로그인 구현 완료 , 카카오 로그인 service, DTO , USER 수정
+
+[33mcommit 45be402905564b15f75f32321eded51eace11bce[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Thu Apr 18 18:29:42 2024 +0900
+
+    이미지 업로드 관련
+
+[33mcommit b72580f21048adb83d2b0a32dfd95961322d0118[m
+Merge: bcaa8c6 d13b5e7
+Author: Leegayeonn <156872496+Leegayeonn@users.noreply.github.com>
+Date:   Thu Apr 18 18:29:30 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit bcaa8c6f1d7b4fa52c9095e409210286d697d839[m
+Author: lgy <ini03134@naver.com>
+Date:   Thu Apr 18 18:28:40 2024 +0900
+
+    reservation-detail.jsp 진행중
+
+[33mcommit 0dbc0ebf31552b5665e43b0bc07ba1a571be953d[m
+Author: lgy <ini03134@naver.com>
+Date:   Thu Apr 18 18:02:52 2024 +0900
+
+    reservation.jsp 진행중
+
+[33mcommit b5e0f804cd5e8662d5310deb26edc6a7c08aed1c[m
+Author: lgy <ini03134@naver.com>
+Date:   Thu Apr 18 15:59:03 2024 +0900
+
+    reservation-detail.jsp camp_id 파라미터
+
+[33mcommit ccd16c34646c726bf6cd4c761017ac170298419e[m
+Author: lgy <ini03134@naver.com>
+Date:   Thu Apr 18 15:38:19 2024 +0900
+
+    reservation.jsp, reservation-detail.jsp서버연동
+
+[33mcommit c277eedd091d09cdfa63fdd9896e5a236427159f[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Thu Apr 18 15:37:54 2024 +0900
+
+    404, 500 타이틀 수정
+
+[33mcommit 3d630fbb4576a5d79c28ff8c0bd71c81c2b7def6[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Thu Apr 18 15:25:06 2024 +0900
+
+    403, 404, 500 에러 사이트 추가 완료
+
+[33mcommit 9f2ffbbb7ee0024095d42571c12c7ee69d4764e1[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Thu Apr 18 15:15:36 2024 +0900
+
+    인터셉터 권한 부족으로 인한 403 에러 사이트
+
+[33mcommit 58ff13382be52035daa805dc62d2a8d8c19b9426[m
+Merge: 40bf9a8 d13b5e7
+Author: SJHlll <156872474+SJHlll@users.noreply.github.com>
+Date:   Thu Apr 18 14:27:06 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit 40bf9a858e4809a0ffef460e3f5b3c026efb2bf4[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Thu Apr 18 14:26:23 2024 +0900
+
+    공지사항 조회수 상승 테스트 완료
+
+[33mcommit d13b5e71eade27427972a40a8b702b7bd8b8b463[m
+Merge: 7cb4e90 b7937a0
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Thu Apr 18 13:24:16 2024 +0900
+
+    Merge pull request #39 from Yeom-SeungBin/develop
+    
+    충돌 해결
+
+[33mcommit b7937a030b84b43abe6dc3e4985c874a8a65a427[m
+Merge: 0631bf5 7cb4e90
+Author: sseung <duaqkr2@naver.com>
+Date:   Thu Apr 18 13:22:38 2024 +0900
+
+    충돌 해결
+
+[33mcommit 7cb4e90ce1624d5fd297a4bb92d56b0859a38169[m
+Merge: 38df785 326addb
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Thu Apr 18 13:09:35 2024 +0900
+
+    Merge pull request #37 from xogns1101/develop
+    
+    풀리퀘스트 요청입니다.
+
+[33mcommit 38df78529360c656bdc2a99998ce2553e36a2cb1[m
+Merge: e1d0b79 5b22644
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Thu Apr 18 13:08:35 2024 +0900
+
+    Merge pull request #36 from Leegayeonn/develop
+    
+    review.jsp수정, static-head.jsp 파일만듦
+
+[33mcommit e1d0b79042a084ffac951a265f658a66f579277f[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Thu Apr 18 13:07:04 2024 +0900
+
+    로그인 관련 api 수정 및
+     ReviewModifyRequestDTO 생성,
+     reviewResponseDTO,ReviewService ,
+     review.jsp 수정
+
+[33mcommit 326addbb15970f5a9e5d05bdf5fda19b2e99cf57[m
+Merge: 46980e8 fa4ba6d
+Author: ilypsj <goodperiodt@gmail.com>
+Date:   Thu Apr 18 12:59:46 2024 +0900
+
+    Merge branch 'taehun' into develop
+
+[33mcommit fa4ba6d57c66d2efee5fa597c8eff7c2bed94e2f[m
+Author: ilypsj <goodperiodt@gmail.com>
+Date:   Thu Apr 18 12:58:36 2024 +0900
+
+    간단하게 경로 바꾸는 거 스크립트 코드랑 리뷰 쪽 수정 했습니다.
+
+[33mcommit 5b2264476041a8a8f2aaf8564947362e96dcf5a1[m
+Merge: 37cb98f 46980e8
+Author: lgy <ini03134@naver.com>
+Date:   Thu Apr 18 12:53:48 2024 +0900
+
+    Merge branch 'develop' of https://github.com/Leegayeonn/going into develop
+
+[33mcommit 37cb98fffd29b1e56331c2dd33f206be305482d1[m
+Author: lgy <ini03134@naver.com>
+Date:   Thu Apr 18 12:51:07 2024 +0900
+
+    review.jsp수정, static-head.jsp 파일만듦
+
+[33mcommit 0631bf584664eb69f5e3d4ca4ce00ddce1d45a7c[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Thu Apr 18 12:43:20 2024 +0900
+
+    reviewModifyRequestDTO, ReviewResponseDTO, reviewService 수정
+
+[33mcommit 46980e86daa6c3cb3f9c7b0c6232b5148d4307b8[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Thu Apr 18 12:40:06 2024 +0900
+
+    로그인 구현 중(일반 로그인 , 카카오 완료)
+
+[33mcommit e9359b267f87fb949eae70ac6d645f41f8ff1d45[m
+Merge: 21e328b 432cb44
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Thu Apr 18 12:07:58 2024 +0900
+
+    Merge pull request #35 from SJHlll/develop
+    
+    인터셉터 기본 틀
+
+[33mcommit 21e328b999f6e3e24ae3bba2bd5b8801c2c47084[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Thu Apr 18 12:04:55 2024 +0900
+
+    로그인 구현 중(컨트롤러, 서비스)
+
+[33mcommit 432cb44e36ea0fcf7f36a149e194a4d75230cf6b[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Thu Apr 18 11:59:12 2024 +0900
+
+    .
+
+[33mcommit f46b4dd0b5854c4c49a89a952740f84c6b02c9fd[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Thu Apr 18 11:58:06 2024 +0900
+
+    .
+
+[33mcommit a978c57c0e0d0fa6bba20eeb5c6264473eec51b5[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Thu Apr 18 11:56:05 2024 +0900
+
+    오토로그인 주석 한줄 해제
+
+[33mcommit df477366df31ad1359921306ea33127564b9fea8[m
+Merge: cb6cce7 156d906
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Thu Apr 18 11:52:33 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into develop
+    
+    # Conflicts:
+    #       going/src/main/java/com/camp/going/entity/User.java
+
+[33mcommit c63d45430d88248606b4fdfe41014e415602a6ba[m
+Author: ilypsj <goodperiodt@gmail.com>
+Date:   Thu Apr 18 11:51:16 2024 +0900
+
+    중간저장 하겠습니다.
+
+[33mcommit 68d242c83ce92e5fa05dc80e7c8333387c5ebcfe[m
+Merge: 10a6cf9 156d906
+Author: Seungbin <duaqkr2@naver.com>
+Date:   Thu Apr 18 11:48:44 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit 156d906c1f59920b7c032c19b3c000564fcc2b63[m
+Merge: 15b49db 7f39001
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Thu Apr 18 11:47:50 2024 +0900
+
+    Merge pull request #33 from Leegayeonn/develop
+    
+    review.jsp 수정(review_like)
+
+[33mcommit 10a6cf9eccc6c64c87e60f20b12d2699ee5b1e6d[m
+Merge: 127a426 15b49db
+Author: Seungbin <duaqkr2@naver.com>
+Date:   Thu Apr 18 11:47:21 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit 127a426bd21c4216766c7f00fa7e2691e1a0d7ce[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Thu Apr 18 11:46:53 2024 +0900
+
+    reviewResponseDTO, LoginUtils 수정
+
+[33mcommit 15b49db07f607f5deddd71e8b07c448786ca15ea[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Thu Apr 18 11:46:16 2024 +0900
+
+    로그인 구현 중(컨트롤러, 서비스)
+
+[33mcommit cb6cce7fe53888b6558aadafb2a75d9a27d17044[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Thu Apr 18 11:46:02 2024 +0900
+
+    예약 인터셉터 추가
+
+[33mcommit 7f390013c521e102c3e80c0f08c3c1e2d2ef6806[m
+Merge: 4e847f2 7cb79d8
+Author: Leegayeonn <156872496+Leegayeonn@users.noreply.github.com>
+Date:   Thu Apr 18 11:42:05 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit 4e847f27e13dedec14c04870adcaabc982799ff7[m
+Author: lgy <ini03134@naver.com>
+Date:   Thu Apr 18 11:41:42 2024 +0900
+
+    review.jsp 수정(review_like)
+
+[33mcommit ec2fcce1a5d29ea8dbe944ef4414b51c0a542867[m
+Author: lgy <ini03134@naver.com>
+Date:   Thu Apr 18 11:32:13 2024 +0900
+
+    review.jsp수정중
+
+[33mcommit 535981b7cb42e074aac6abe0b205ebbd71fb92de[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Thu Apr 18 11:19:14 2024 +0900
+
+    리뷰 인터셉터 추가 (ReviewMapper에 fineOne이 필요)
+
+[33mcommit 7cb79d80322d1938e9a254d034c14be8115cb9e5[m
+Merge: b7be7c3 dc86a18
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Thu Apr 18 11:18:07 2024 +0900
+
+    Merge pull request #32 from Yeom-SeungBin/develop
+    
+    review controller, dto, service 수정
+
+[33mcommit b7be7c38d928627475f3c36a1813fc6f55cf16e7[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Thu Apr 18 11:17:10 2024 +0900
+
+    로그인 구현 중(컨트롤러, 서비스)
+
+[33mcommit dc86a181410a9ac5dd561373fd7b0ccc1134315d[m
+Merge: 2993eee 2b648ec
+Author: Seungbin <duaqkr2@naver.com>
+Date:   Thu Apr 18 11:14:21 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit 2993eee77474c36c5146bb10584eae74f8f6ecee[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Thu Apr 18 11:10:33 2024 +0900
+
+    reviewController / DTO / reviewService 수정 중
+
+[33mcommit 2b648ec5ef33d36ead487177cb1d0a075cd74e7b[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Thu Apr 18 10:57:28 2024 +0900
+
+    로그인 구현 중, 예약 컨트롤러 경로 오타 수정
+
+[33mcommit b0901bd5931adef8170f6388ea995c670019bc96[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Thu Apr 18 10:48:24 2024 +0900
+
+    로그인, 자동로그인, 공지사항 인터셉터 추가 (일부 항목 주석처리됨)
+
+[33mcommit c19e2eff4cbe6ecfea5d4b43dc81f1557cf496df[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Thu Apr 18 10:47:08 2024 +0900
+
+    로그인, 자동로그인, 공지사항 인터셉터 추가 (일부 항목 주석처리됨)
+
+[33mcommit 0fb2a2c71004d5998aa25f82866078c64f7f9b4d[m
+Merge: c92b1eb 053ff74
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Thu Apr 18 10:30:01 2024 +0900
+
+    Merge pull request #31 from Yeom-SeungBin/develop
+    
+    main/review 화면 연결 중
+
+[33mcommit c92b1eb9f06adf98dc06a63fc6970fc12ad8dda7[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Thu Apr 18 10:27:49 2024 +0900
+
+    로그인 기능 구현중
+
+[33mcommit 053ff7477de3adee7674cbb408e5ab663ac11cc7[m
+Merge: 558377e 8a85a8b
+Author: Seungbin <duaqkr2@naver.com>
+Date:   Thu Apr 18 10:26:12 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit 558377ebf4ddd60a5fe1661e0683aa8fc6d9bc39[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Thu Apr 18 10:25:30 2024 +0900
+
+    main/review 화면
+
+[33mcommit 8a85a8bd8d57e7504f3b4e0801de3b24af91f170[m
+Merge: c56ecdf 7c71e35
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Thu Apr 18 10:15:58 2024 +0900
+
+    Merge pull request #30 from xogns1101/develop
+    
+    리뷰 작성/ 수정 페이지 html, css  작성했습니다.
+
+[33mcommit c56ecdfd5f70b32489a3d3fc46cbd294cd724576[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Thu Apr 18 10:15:00 2024 +0900
+
+    로그인 구현 중
+
+[33mcommit 7c71e3536f4532656f1eced3cd68b7b010d2d70b[m
+Merge: 2d4f777 6c1a9ba
+Author: ilypsj <goodperiodt@gmail.com>
+Date:   Thu Apr 18 10:08:41 2024 +0900
+
+    Merge branch 'develop' of https://github.com/xogns1101/going into develop
+
+[33mcommit 2d4f7779257952d5724e03b944c9583cf9f6bd1d[m
+Merge: d99dca3 cc7058c
+Author: ilypsj <goodperiodt@gmail.com>
+Date:   Thu Apr 18 10:04:15 2024 +0900
+
+    Merge branch 'taehun' into develop
+
+[33mcommit cc7058c3bef56edfe125bb25d2d280ac63a4cb87[m
+Author: ilypsj <goodperiodt@gmail.com>
+Date:   Thu Apr 18 10:03:33 2024 +0900
+
+    리뷰 페이지 작성 / 수정 홈페이지, css 만듬
+
+[33mcommit 6c1a9ba0991dfdcc087bee0589ecb98618ecf54d[m
+Merge: e079b78 652254d
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Thu Apr 18 09:40:45 2024 +0900
+
+    Merge pull request #29 from Leegayeonn/develop
+    
+    review.jsp 파일생성, reviewController에 경로작성완료
+
+[33mcommit 652254d94fe2de4918a0983a93116544d9667943[m
+Merge: f60bdaf e079b78
+Author: Leegayeonn <156872496+Leegayeonn@users.noreply.github.com>
+Date:   Wed Apr 17 18:34:07 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit f60bdaf096f588e222f4ba0f6aa594a290ac005d[m
+Author: lgy <ini03134@naver.com>
+Date:   Wed Apr 17 18:33:26 2024 +0900
+
+    review.jsp 파일생성, reviewController에 경로작성완료
+
+[33mcommit e079b783b287ecfea1caf33e49f1177ea7c1bcf9[m
+Merge: d99dca3 30902a3
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Wed Apr 17 18:21:48 2024 +0900
+
+    Merge pull request #28 from Yeom-SeungBin/develop
+    
+    review service 수정
+
+[33mcommit 30902a3efcca59f5dc5b054a9484f7e7e59e5902[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Wed Apr 17 18:18:43 2024 +0900
+
+    review service 수정
+
+[33mcommit f06aa9956cf80f27ab8ff6fe5412b2ebea38d2e8[m
+Author: lgy <ini03134@naver.com>
+Date:   Wed Apr 17 18:00:03 2024 +0900
+
+    review 모달보류, 주석처리
+
+[33mcommit d99dca3f89b4d302371f0b0b88522fd62748a150[m
+Merge: 0080242 d4ad358
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 17:54:37 2024 +0900
+
+    Merge branch 'develop' of https://github.com/dudtjq/going into develop
+
+[33mcommit 008024260be45e9f8096877aea15ce746ee9eda4[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 17:54:26 2024 +0900
+
+    백업완료
+
+[33mcommit d4ad358817f4b1ffe120b212e9bd412420233b8e[m
+Merge: 7ee71e1 f5b9d07
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Wed Apr 17 17:48:16 2024 +0900
+
+    Merge pull request #27 from Leegayeonn/develop
+    
+    review.css 추가
+
+[33mcommit f5b9d07eac932e3cb6534fe587d63359c4991895[m
+Merge: 37ef959 7ee71e1
+Author: lgy <ini03134@naver.com>
+Date:   Wed Apr 17 17:39:21 2024 +0900
+
+    Merge branch 'develop' of https://github.com/Leegayeonn/going into develop
+
+[33mcommit 37ef9599d6e312eef8cb6ed8236c97fb5748c6cb[m
+Author: lgy <ini03134@naver.com>
+Date:   Wed Apr 17 17:36:37 2024 +0900
+
+    review.css 추가
+
+[33mcommit 7ee71e188b9940b06b0bbb86e9cdd8eb37e7a680[m
+Merge: f9eb173 8dea1de
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 17:26:57 2024 +0900
+
+    Merge branch 'develop' of https://github.com/dudtjq/going into develop
+
+[33mcommit f9eb1731df981fe4b45debb32c76fe4dad262e5e[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 17:26:33 2024 +0900
+
+    백업중
+
+[33mcommit 8dea1de1c6aed5b943de94106bbb00b1470d855b[m
+Merge: f1a8018 2cf451b
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Wed Apr 17 17:26:04 2024 +0900
+
+    Merge pull request #26 from Leegayeonn/develop
+    
+    프론트 backup
+
+[33mcommit 2cf451b11cbfc3d4e1aaf9479b527a6222b2ea21[m
+Author: lgy <ini03134@naver.com>
+Date:   Wed Apr 17 17:24:19 2024 +0900
+
+    프론트 backup
+
+[33mcommit f1a80184f177b76b51d26c11ff9ca94a0ad419b4[m
+Merge: fa90d8a 1222b71
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Wed Apr 17 17:01:34 2024 +0900
+
+    Merge pull request #25 from junghwa8870/develop
+    
+    modify code(sign-in, sign-up, notice, my page)
+
+[33mcommit 1222b71fbeff3c9e9b9b83579086aeef7150fc8b[m
+Merge: 8e2a719 6588c2f
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Wed Apr 17 16:55:12 2024 +0900
+
+    modify code sign up, sign in
+
+[33mcommit 8e2a71957ec553d23e4f9048909faf2adfc2ffb7[m
+Merge: 8dbf516 fa90d8a
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Wed Apr 17 16:54:34 2024 +0900
+
+    pull ing
+
+[33mcommit 6588c2f7ba7410f0130d5e779f4f5b65964ea2dc[m
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Wed Apr 17 16:52:15 2024 +0900
+
+    sign code modify
+
+[33mcommit b45ccc34d057133919ccd0de9ea99d7c83736b87[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 16:47:16 2024 +0900
+
+    gitignore 최신 적용
+
+[33mcommit fa90d8a148b119d0cc96ff1b5dfd049a9471a17f[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 16:45:10 2024 +0900
+
+    gitignore 최신 적용 tnwjd
+
+[33mcommit 4f015a570af803bad0ac8edf6a4ae113b5a5cf02[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 16:39:30 2024 +0900
+
+    gitignore 최신 적용
+
+[33mcommit 92d09f6d091f5da0fc3b52c38c9b2c40f2b2a917[m
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Wed Apr 17 16:37:34 2024 +0900
+
+    code modify
+
+[33mcommit 08b6d85eaa941be21e92f1cb2404276d40f56aa0[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 16:30:15 2024 +0900
+
+    깃이그노어 수정
+
+[33mcommit 5871814860ee1a5055ba6b25a6ba89a0c07912c7[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 16:14:57 2024 +0900
+
+    카카오 페이 수정
+
+[33mcommit 02c73b5927e922c092d011f713d4c3b92faeedcc[m
+Merge: aa32d94 1a26450
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 16:14:39 2024 +0900
+
+    Merge branch 'develop' of https://github.com/dudtjq/going into develop
+
+[33mcommit aa32d94744b0e3ae4fc793a35df9dd2e3a71bd64[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 16:13:32 2024 +0900
+
+    카카오 페이 수정
+
+[33mcommit 1a26450c5bbbf60aeefb81dc980f31bd9a6ae85b[m
+Merge: 696b628 24a9985
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Wed Apr 17 16:10:59 2024 +0900
+
+    Merge pull request #24 from Yeom-SeungBin/develop
+    
+    review 수정
+
+[33mcommit 24a99852fc7f9c1015fd3da4b4b33a2d4389c040[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Wed Apr 17 16:08:33 2024 +0900
+
+    풀 받는데 문제가 생김
+
+[33mcommit 2158fe3eff7b6f26e605c31acc4253e60f9e3d36[m
+Merge: 259d9b5 696b628
+Author: sseung <duaqkr2@naver.com>
+Date:   Wed Apr 17 16:05:31 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into develop
+
+[33mcommit 696b628e4613718aaad42a2f2950e9d135ac3cdf[m
+Merge: 5a8a987 c675894
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Wed Apr 17 15:54:50 2024 +0900
+
+    Merge pull request #23 from Leegayeonn/develop
+    
+    reservation-detail 달력 이벤트 구현중,  review 수정, 삭제 버튼 추가
+
+[33mcommit 259d9b5037a6ff456409eede784253c45e3523da[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Wed Apr 17 15:53:04 2024 +0900
+
+    review 파트 수정
+
+[33mcommit c675894f6a24293ce7b01f37b01f6394f650a959[m
+Merge: 49163f9 5a8a987
+Author: Leegayeonn <156872496+Leegayeonn@users.noreply.github.com>
+Date:   Wed Apr 17 15:52:31 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit 49163f90916b24c5b8ba772e0d7e989c57b158d7[m
+Author: lgy <ini03134@naver.com>
+Date:   Wed Apr 17 15:49:59 2024 +0900
+
+    review 수정, 삭제 버튼 추가
+
+[33mcommit 5a8a987eb2203f25df40bca7b50ba321fb053cdd[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 15:35:07 2024 +0900
+
+    야가자 메인 페이지 index 에 저장
+
+[33mcommit 93633dff959035a387b31dd88e384ef68116e1c9[m
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Wed Apr 17 15:24:01 2024 +0900
+
+    modify notice code
+
+[33mcommit cf7c8e4fd68d125d02edc966517933c67f64fa42[m
+Author: lgy <ini03134@naver.com>
+Date:   Wed Apr 17 15:16:57 2024 +0900
+
+    reservation-detail 달력 이벤트 구현
+
+[33mcommit a0dd3cb553417248d63b63cbfa4c5c0f5486f6f0[m
+Merge: bb1f5d2 1e482c1
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 15:09:34 2024 +0900
+
+    카카오 페이 구현 완료
+
+[33mcommit bb1f5d26136dca255fddf2d27a15310ccf462c7c[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 15:07:22 2024 +0900
+
+    카카오 페이 구현 완료
+
+[33mcommit 56be244e84801af0fd40e949b2e5c8190add78c8[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 15:05:59 2024 +0900
+
+    카카오 페이 구현 완료
+
+[33mcommit 448dd14aa135379e7e3e52d6b763686142879d5d[m
+Author: lgy <ini03134@naver.com>
+Date:   Wed Apr 17 12:42:28 2024 +0900
+
+    reservation-detail 달력 틀완성
+
+[33mcommit 1e482c1100b758d15b7692ec7d38141415c5f24e[m
+Merge: 02f0488 b574cd5
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Wed Apr 17 11:55:40 2024 +0900
+
+    Merge pull request #22 from junghwa8870/jjj
+    
+    resolved conflict while merging jjj into develop
+
+[33mcommit a7fea820f7f18d1e08f3cd656de3d3634de69a78[m
+Merge: 9256e49 02f0488
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Wed Apr 17 11:51:51 2024 +0900
+
+    mergin
+
+[33mcommit 83becd1ef1b21ed61510bae79ac1b7f67f9f1b27[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 11:43:37 2024 +0900
+
+    깃이그노어 추가
+
+[33mcommit 8dbf5160f24eebff99dc99fe7e576460f4feced7[m
+Merge: 02f0488 9256e49
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Wed Apr 17 11:42:40 2024 +0900
+
+    resolved conflict while merging jjj into develop
+
+[33mcommit 67b8f0c5772f2e9ee750aa9f740ce2ba07342175[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 11:32:52 2024 +0900
+
+    깃이그노어 추가
+
+[33mcommit c297462beab89b57d3c30a0d8f89a723443ee1cf[m
+Author: lgy <ini03134@naver.com>
+Date:   Wed Apr 17 11:22:05 2024 +0900
+
+    reservation-detail html, css 완료
+
+[33mcommit 9256e49c3c92c95ecd196c30c176285175fe3036[m
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Wed Apr 17 11:21:36 2024 +0900
+
+    footer add and notice html, css little complete
+
+[33mcommit 02f0488909fe50663e584317a38667fb1fd550cf[m
+Merge: 47256a3 e09e56a
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Wed Apr 17 11:21:19 2024 +0900
+
+    Merge pull request #21 from SJHlll/develop
+    
+    공지사항 카테고리 필독(ESSENTIAL), 공지(NOTICE), 일반(COMMON) 추가 및 테스트 완료
+
+[33mcommit 47256a39871201f05d5b4691d5cba7dd4783de14[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 11:19:56 2024 +0900
+
+    카카오 페이 등록 중
+
+[33mcommit e09e56a53353cafc1a2ae61b00f126259952c70c[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Wed Apr 17 10:25:40 2024 +0900
+
+    공지사항 카테고리 테스트 완료
+
+[33mcommit 2097ea50fe5fa16226f820abc92cd8f7c47cd8c1[m
+Merge: f763deb 52d875f
+Author: SJHlll <156872474+SJHlll@users.noreply.github.com>
+Date:   Wed Apr 17 10:10:26 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit 52d875f326da30b5fdf232baaac48750a279147d[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 10:07:43 2024 +0900
+
+    잘못된  reservation 컨트롤러 삭제
+
+[33mcommit f763deb540cd2141533a4875c3eaa1088ae19caa[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Wed Apr 17 10:07:42 2024 +0900
+
+    공지사항 카테고리 테스트 완료
+
+[33mcommit 7abf28ceed636f20ee6bcf231be67d7551f19690[m
+Merge: 06f3765 c1f3a00
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 10:05:56 2024 +0900
+
+    Merge branch 'Yeom-SeungBin-develop' into develop
+
+[33mcommit c1f3a00e298a624a29579e6ca60d7bb2293f65c6[m[33m ([m[1;32mYeom-SeungBin-develop[m[33m)[m
+Merge: 06f3765 455d168
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 10:05:09 2024 +0900
+
+    reservation 컨트롤러, 캠핑 서비스 수정
+
+[33mcommit 06f37659ecf3b6316d40828a75c20c53d327fa1b[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 10:02:18 2024 +0900
+
+    reservation 컨트롤러, 캠핑 서비스 수정
+
+[33mcommit 455d1684c413d81d0d0e2015dd069f55dc89ff91[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Wed Apr 17 09:55:57 2024 +0900
+
+    review controller, service, DTO 추가 및 기존 파일 수정
+
+[33mcommit a61b05d633849b283e002da4207ce2140cd507fe[m
+Merge: 4b3500c 5d5b423
+Author: SJHlll <156872474+SJHlll@users.noreply.github.com>
+Date:   Wed Apr 17 09:47:24 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit 5d5b423f0c8d3a3fd8762bce33807e5fd217ab99[m
+Merge: 546a662 ded32c4
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 09:46:24 2024 +0900
+
+    reservation, review html,css 작성, resources 경로 추가 및 예약 컨트롤러 수정
+
+[33mcommit 4b3500c0b703f1a318dbe11cdf02961b9d238a23[m
+Merge: b5993b8 546a662
+Author: SJHlll <156872474+SJHlll@users.noreply.github.com>
+Date:   Wed Apr 17 09:45:52 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit 35326540f7836174bb70ba171dcbaa1e936a62ae[m
+Merge: 419af07 b41bbcc
+Author: sseung <duaqkr2@naver.com>
+Date:   Wed Apr 17 09:43:17 2024 +0900
+
+    Merge branch 'develop' of https://github.com/Yeom-SeungBin/going into develop
+
+[33mcommit b5993b8939986a34fb932617f447e4591876211f[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Tue Apr 16 17:25:21 2024 +0900
+
+    공지사항 카테고리 추가
+
+[33mcommit 546a662b5103da73294f94150aef56625cef58b1[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Wed Apr 17 09:42:33 2024 +0900
+
+    캠핑장 테스트 복구
+
+[33mcommit 419af071ea0c330798addb6d8f38b092cbb89f06[m
+Merge: 4da9298 f53a5bb
+Author: sseung <duaqkr2@naver.com>
+Date:   Wed Apr 17 09:36:20 2024 +0900
+
+    Merge branch 'feat/sseung' into develop
+
+[33mcommit 4da9298cc26e4b2b08df6ded9bf9e7d1737406c9[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Wed Apr 17 09:35:12 2024 +0900
+
+    이그노어 추가
+
+[33mcommit c6ee778038cc8e1ea166d0c94e1087ec47f8db76[m[33m ([m[1;32mLeegayeonn-develop[m[33m)[m
+Merge: 9e75249 39efe1e
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Tue Apr 16 20:11:55 2024 +0900
+
+    Merge pull request #18 from junghwa8870/develop
+    
+    footer add and main modify
+
+[33mcommit 9e75249fbbc1421801fd56a9c9ad58249422393e[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Tue Apr 16 20:10:39 2024 +0900
+
+    예약 수정 완료 , 카카오 내일하기
+
+[33mcommit dbdc17e1746bd65597e89f0981dbd36a2d81d575[m
+Merge: 4f7e0e0 b41bbcc
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Tue Apr 16 20:08:32 2024 +0900
+
+    공지 사항 관련 커밋
+
+[33mcommit 4f7e0e038af3f72e9599ee331509d359bfa92f2c[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Tue Apr 16 20:06:23 2024 +0900
+
+    로그 파일
+
+[33mcommit 0d03e778ee74f790eba2267d8be180bfef9ec5e6[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Tue Apr 16 20:05:14 2024 +0900
+
+    예약 수정 완료 , 카카오 내일하기
+
+[33mcommit ded32c47977913dd9979ccf3f7367de94daf2e04[m
+Author: lgy <ini03134@naver.com>
+Date:   Tue Apr 16 18:44:59 2024 +0900
+
+    reservation-detail, resources 경로 추가
+
+[33mcommit b9f1928417052b16118df871920eb0c630525c03[m
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Tue Apr 16 18:33:02 2024 +0900
+
+    footer modify
+
+[33mcommit 41f5f8c7d47792dc05a563443aac49deb8205951[m
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Tue Apr 16 18:22:54 2024 +0900
+
+    notice html add
+
+[33mcommit f53a5bb226c979ff8e5c2ede1d297d6612b8b563[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Tue Apr 16 18:16:22 2024 +0900
+
+    review Controller, DTO 추가 및 LoginUtils 추가
+
+[33mcommit 795ffa584962326c9ee26f8e92c253c08cb8c78e[m
+Author: lgy <ini03134@naver.com>
+Date:   Tue Apr 16 18:14:57 2024 +0900
+
+    reservation-detail html 틀 작성
+
+[33mcommit 1c4c227c62b9c8b26aa79efdd90c8e5ac88281de[m
+Author: lgy <ini03134@naver.com>
+Date:   Tue Apr 16 17:53:24 2024 +0900
+
+    reservation, review html,css 작성완료
+
+[33mcommit 71e8786644783daaf82c9ca449de0bfd9fffdf14[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Tue Apr 16 15:48:34 2024 +0900
+
+    공지사항 mybatis-config.xml 추가, 작성날짜 HH:mm:ss 삭제, 테스트 하나 추가
+
+[33mcommit 176b986c403e5cb3cc1f4d0f9695a6dc9340d24c[m
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Tue Apr 16 15:46:55 2024 +0900
+
+    modify sign up, sign in, introduce, my page
+
+[33mcommit f3bdb47098b53650dedb629a4c2aec6478cceac8[m
+Merge: 0e3624d 39efe1e
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Tue Apr 16 14:39:25 2024 +0900
+
+    Merge branch 'jhjh' into jjj
+
+[33mcommit 39efe1e1482734863b80964034fd040856eae9dd[m
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Tue Apr 16 14:31:09 2024 +0900
+
+    footer add and main modify
+
+[33mcommit c44b54cf021447618932f334866e80bd3992ef1f[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Tue Apr 16 13:20:31 2024 +0900
+
+    공지사항 ADMIN 작성, 삭제 권한 부여
+
+[33mcommit 0e3624d686717823e9a6430b66b7714cd1fbcd0a[m
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Tue Apr 16 12:41:32 2024 +0900
+
+    add page
+
+[33mcommit b41bbcc155fa4f0d2ad46ba702fc9ba06df788eb[m
+Merge: 32ac69c a5f066b
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Tue Apr 16 12:10:37 2024 +0900
+
+    Merge pull request #17 from SJHlll/develop
+    
+    공지사항 수정 테스트, 제목 및 내용 수정하기
+
+[33mcommit a5f066bc301935e0a0c67961e120bd76a9c42ddc[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Tue Apr 16 11:30:54 2024 +0900
+
+    공지사항 제목, 내용 수정 완료
+
+[33mcommit 79cd3e5de3ed07feace9cbfdfd35c1ba5f99d34f[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Tue Apr 16 10:57:05 2024 +0900
+
+    공지사항 수정 테스트 완료
+
+[33mcommit 0a437cb20c8f848749e3ff7ae01ed6be487529fd[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Tue Apr 16 10:54:48 2024 +0900
+
+    .gitignore 테스트
+
+[33mcommit 32ac69c58091de44e10c75edcc6c894111cd8209[m
+Merge: 51d8264 680f57d
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Mon Apr 15 18:25:00 2024 +0900
+
+    Merge pull request #16 from SJHlll/develop
+    
+    공지사항 수정 진행중, xml 추가
+
+[33mcommit 51d82647fd602a28924b09f6be62e3f0148bfed6[m
+Merge: 8141cb2 5f5e86d
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Mon Apr 15 18:23:12 2024 +0900
+
+    Merge pull request #15 from Yeom-SeungBin/develop
+    
+    리뷰 수정, 조회수, 베스트 리뷰
+
+[33mcommit 8141cb2450480130f3356a7deacb7b6c77c7e477[m
+Merge: 94d48b9 e97bff1
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Mon Apr 15 18:21:18 2024 +0900
+
+    Merge branch 'develop' of https://github.com/dudtjq/going into develop
+
+[33mcommit 94d48b9eb0da0f43540bcb6de9f47ab50da2bc4d[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Mon Apr 15 18:20:07 2024 +0900
+
+    예약관련 api(컨트롤러 DTO 서비스)
+
+[33mcommit 680f57d4035c6b107dbd3292da35307a562d14f2[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Mon Apr 15 18:19:33 2024 +0900
+
+    공지사항 수정 진행중, xml 추가
+
+[33mcommit 5f5e86d69503af97ba97c632611276741b667001[m
+Merge: 22e5182 e97bff1
+Author: Seungbin <duaqkr2@naver.com>
+Date:   Mon Apr 15 18:19:29 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit e97bff19ded20fcba1ced80b4059470b7fd76be8[m
+Merge: 4ee2fd2 50c9dcc
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Mon Apr 15 18:19:16 2024 +0900
+
+    Merge pull request #14 from Leegayeonn/develop
+    
+    main-page 완료, reservation 진행중
+
+[33mcommit 50c9dccffd6a526c45121b46a48707968f4e93b7[m
+Author: lgy <ini03134@naver.com>
+Date:   Mon Apr 15 18:17:35 2024 +0900
+
+    main-page 완료, reservation 진행중
+
+[33mcommit 22e5182fcf7fecd66cb1ab0010746d757d8f74b0[m
+Merge: 1101a2a e0c78bb
+Author: sseung <duaqkr2@naver.com>
+Date:   Mon Apr 15 18:16:53 2024 +0900
+
+    Merge branch 'feat/sseung' into develop
+
+[33mcommit e0c78bb5f5499829aecb8dc2b3d8a3b85cc8cb05[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Mon Apr 15 18:16:10 2024 +0900
+
+    리뷰 수정, 조회수, 베스트 리뷰 추가
+
+[33mcommit 30d0696ff833bb79183836b4eea9e7b89c1da77f[m
+Merge: 4ee2fd2 6c314ad
+Author: lgy <ini03134@naver.com>
+Date:   Mon Apr 15 18:02:16 2024 +0900
+
+    Merge branch 'gayeon' into develop
+
+[33mcommit 6c314ad74681836a6b675a3c8bdb8822297e7f17[m
+Author: lgy <ini03134@naver.com>
+Date:   Mon Apr 15 17:59:45 2024 +0900
+
+    reservation 기본틀작성
+
+[33mcommit 4ee2fd2aa71eeb7f3ef5a6f101733e2ce85637d6[m
+Merge: 0d10289 4cef7a6
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Mon Apr 15 17:54:48 2024 +0900
+
+    Merge pull request #13 from junghwa8870/develop
+    
+    add css, html
+
+[33mcommit fa39e24ddcbcc5b0508f11493b974782e02fc05c[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Mon Apr 15 17:51:31 2024 +0900
+
+    깃 이그노어 추가
+
+[33mcommit 62a953d45e8b4b294b6195b20c4f76e6362a9c3e[m
+Merge: f712952 a1da350
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Mon Apr 15 17:42:31 2024 +0900
+
+    Merge branch 'main' of https://github.com/dudtjq/going
+
+[33mcommit f7129523969362c2eb3d9e82b1a962e0a1e5d89b[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Mon Apr 15 17:41:35 2024 +0900
+
+    깃 이그노어 추가
+
+[33mcommit 0d102895148e6a6279ede3e467c1756f06733db4[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Mon Apr 15 17:33:10 2024 +0900
+
+    깃 이그노어 추가및 예약 컨트롤러 수정
+
+[33mcommit 3041fa9bf327d6d2ffbf557ccd2faf9bd0d16c65[m
+Merge: b574cd5 4cef7a6
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Mon Apr 15 17:21:46 2024 +0900
+
+    Merge branch 'develop' of https://github.com/junghwa8870/going into jjj
+
+[33mcommit 4cef7a68243e2aa024931cf143a7b6c03474ba4d[m
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Mon Apr 15 17:20:30 2024 +0900
+
+    add index,css design_jh
+
+[33mcommit 6c631c827a85f306db6b9ca732c4078d398c7e49[m
+Author: lgy <ini03134@naver.com>
+Date:   Mon Apr 15 16:56:45 2024 +0900
+
+    main-page 진행중
+
+[33mcommit 7e4f4c1883b4bf37bb84e0abde98d6f1f8e542d3[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Mon Apr 15 16:25:16 2024 +0900
+
+    회원가입, 카카오 로그인 구현, 로그아웃, 암호화 구현, 아이디 중복 체크 구현
+
+[33mcommit a1da350a472192bea84f20f3548e61fb56a84381[m
+Merge: eef87f1 e8f9f28
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Mon Apr 15 16:23:45 2024 +0900
+
+    Merge pull request #10 from xogns1101/exex
+    
+    Exex
+
+[33mcommit e8f9f284b32c864d8ab42cb1a3b977afdb747cd3[m
+Author: th__nks <cocoseasky@naver.com>
+Date:   Mon Apr 15 16:07:36 2024 +0900
+
+    카카오 로그아웃 코드까지 작성완료. 테스트 오류 확인 필요
+
+[33mcommit 695be20fd2f89d994601616c22624f83355bd032[m
+Author: th__nks <cocoseasky@naver.com>
+Date:   Mon Apr 15 15:50:54 2024 +0900
+
+    카카오 로그아웃 코드까지 작성완료. 테스트 오류 확인 필요
+
+[33mcommit e52107825d5876a88f94d032ac6fbee2b2ec2202[m
+Author: th__nks <cocoseasky@naver.com>
+Date:   Mon Apr 15 13:18:43 2024 +0900
+
+    카카오 api 연결 및 코드 작성중 중간저장.
+
+[33mcommit 47b2a21489f8b20056e5cb4a6d82f037dc31d12e[m
+Author: lgy <ini03134@naver.com>
+Date:   Mon Apr 15 12:10:20 2024 +0900
+
+    header,footer 완성
+
+[33mcommit 1101a2afd3768eda3c97b4adf63ea35b84367e76[m
+Merge: a7cbece 632b925
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Mon Apr 15 11:38:20 2024 +0900
+
+    캠핑 리뷰 관련 및 공지사항 및 프론트 작업 커밋
+
+[33mcommit a7cbecefc8d4d4d367ec10518eed412705cb45c2[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Mon Apr 15 11:32:55 2024 +0900
+
+    캠핑장 등록 수정, 삭제
+    캠핑장 예약 테스트 등록
+
+[33mcommit 632b9254558ab1371fa8158bad1680e68853164e[m
+Merge: 3f579c0 79509b0
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Mon Apr 15 11:29:51 2024 +0900
+
+    Merge pull request #9 from Yeom-SeungBin/develop
+    
+    리뷰 등록, 삭제, 전체보기
+
+[33mcommit 79509b0b9f962e6be5db12b8063d215747d8f3ef[m
+Author: sseung <duaqkr2@naver.com>
+Date:   Mon Apr 15 11:25:47 2024 +0900
+
+    리뷰 등록, 삭제, 전체보기
+
+[33mcommit 3f579c023e7b6ac42646d344a26be7b10fde631d[m
+Merge: 9602068 c7f7eb3
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Mon Apr 15 10:56:19 2024 +0900
+
+    Merge pull request #8 from SJHlll/develop
+    
+    Develop 공지사항 dto, 서비스, 컨트롤러, 페이지 등
+
+[33mcommit c7f7eb3faeddf76b4f5175b40d525b5d90f81802[m
+Merge: fef658d 9602068
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Mon Apr 15 10:48:53 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into develop
+
+[33mcommit 613010e7caeaef78b830e3d0d0f2b08c4631426c[m
+Merge: 9ca63ee 9602068
+Author: junghwa8870 <156872773+junghwa8870@users.noreply.github.com>
+Date:   Mon Apr 15 10:46:32 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit fef658dc9da737e70a9f511345f7eaa5d849d3e4[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Mon Apr 15 10:45:01 2024 +0900
+
+    공지사항 Controller
+
+[33mcommit 9602068f8e224b13a4e1c4095e9ec02c7f5fcefd[m
+Merge: 3136560 ed72c95
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Mon Apr 15 10:43:36 2024 +0900
+
+    Merge pull request #7 from Leegayeonn/develop
+    
+    header html, css 파일 만듦
+
+[33mcommit ed72c95e300fbb3008754aad5b7d830ea4305517[m
+Author: lgy <ini03134@naver.com>
+Date:   Mon Apr 15 10:40:01 2024 +0900
+
+    header 기본셋팅
+
+[33mcommit 413082831994c2fb7c854d55e6315f8151420fee[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Mon Apr 15 09:58:26 2024 +0900
+
+    공지사항 Detail / List ResponseDTO, 서비스, 매퍼, 페이지, 페이지메이커, 서치 진행
+
+[33mcommit b574cd55d571a3e89d628c9a12f989ca5caa6baf[m
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Mon Apr 15 09:46:59 2024 +0900
+
+    add design pile
+
+[33mcommit 9ca63eeb6a847fb6fad6f6dbad55cb8904f846c9[m
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Mon Apr 15 09:42:34 2024 +0900
+
+    common.css
+
+[33mcommit c8d9687a6cfed409980b74c215d265a1206c3dc3[m
+Author: leegayeonn <ini03134@naver.com>
+Date:   Mon Apr 15 00:12:56 2024 +0900
+
+    header html,css part1
+
+[33mcommit 7161fc947470f077515ac732eb5aa8464259f48a[m
+Author: th__nks <cocoseasky@naver.com>
+Date:   Sat Apr 13 19:59:12 2024 +0900
+
+    아이디 입력값, 아이디 중복확인 로그인 세션 코드 작성 완료
+
+[33mcommit a64d07ca5d8e24be641749194fd9fd5caf731d8e[m
+Author: th__nks <cocoseasky@naver.com>
+Date:   Fri Apr 12 20:06:55 2024 +0900
+
+    비밀번호 암호화 및 로그인 일치 검증 테스트 코드 작성 완료
+
+[33mcommit 3136560fbb03ba9cab88b1121d339933a1de5fa5[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 12 19:19:41 2024 +0900
+
+    캠핑장 전체조회, 단일조회 완료
+
+[33mcommit 90f37a6f0fba906603b6866315e3322e54d6ed22[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 12 19:19:13 2024 +0900
+
+    캠핑장 전체조회, 단일조회 완료
+
+[33mcommit cbcb4f8f00cf67050d7bb5142b61454dc213ef9f[m
+Merge: 38e650d 556ac3c
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 12 19:17:45 2024 +0900
+
+    공지사항 게시글 전체조회, 단일조회, 삭제 테스트 완료
+
+[33mcommit 38e650d0db7afa7f5a2eab8f08e6ced8672988fc[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 12 19:13:43 2024 +0900
+
+    캠핑 단일조회, 전체조회 완료
+
+[33mcommit 556ac3ce778bbb4906871af9c1bf15263f4b986f[m
+Merge: 5387db6 a1e3e7e
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Fri Apr 12 19:11:13 2024 +0900
+
+    Merge pull request #6 from SJHlll/develop
+    
+    공지사항 게시글 전체조회, 단일조회, 삭제 테스트 완료
+
+[33mcommit a1e3e7e22b7bcc6ed114bb38380c3b996b37fac1[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Fri Apr 12 18:50:18 2024 +0900
+
+    공지사항 게시글 전체조회, 단일조회, 삭제 테스트 완료
+
+[33mcommit 77de9a74b9ba72b2c23b8a13fb4e08b75a457b39[m
+Author: th__nks <cocoseasky@naver.com>
+Date:   Fri Apr 12 18:36:31 2024 +0900
+
+    커밋 확인차 저장
+
+[33mcommit 5387db6bb8c9913e8dc25b996f5f1f311984a74b[m
+Merge: c760405 f92753b
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Fri Apr 12 17:53:57 2024 +0900
+
+    Merge pull request #5 from SJHlll/develop
+    
+    Develop 공지사항 등록 테스트 완료
+
+[33mcommit f92753b9b98a6574533efcdff4d969e969b7a914[m
+Merge: d2dc578 c760405
+Author: SJHlll <156872474+SJHlll@users.noreply.github.com>
+Date:   Fri Apr 12 17:49:41 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit c760405e221ce94164f54db90af08a141f1e0c0b[m
+Merge: 86a411d 2bc1c48
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Fri Apr 12 17:42:57 2024 +0900
+
+    Merge pull request #4 from Leegayeonn/develop
+    
+    views에 jsp 파일 추가
+
+[33mcommit 2bc1c4816ddb4cb9e6084479450fd5d678db97ec[m
+Merge: 76b6bb0 86a411d
+Author: Leegayeonn <156872496+Leegayeonn@users.noreply.github.com>
+Date:   Fri Apr 12 17:37:43 2024 +0900
+
+    Merge branch 'dudtjq:develop' into develop
+
+[33mcommit d2dc5781e5c345155a85629f14098f583acb41b7[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Fri Apr 12 17:21:48 2024 +0900
+
+    공지사항 게시글 등록 테스트 완료
+
+[33mcommit 76b6bb0414cfa8299539562949971ba549882d3f[m
+Author: gayeon <ini03134@naver.com>
+Date:   Fri Apr 12 17:20:52 2024 +0900
+
+    header, footer, index jsp 파일 만듦
+
+[33mcommit 86a411d73e5f933b43f498178df957c5b7677a9d[m
+Merge: 6e74d8b bdc02cf
+Author: 이영섭 <124562976+dudtjq@users.noreply.github.com>
+Date:   Fri Apr 12 16:54:52 2024 +0900
+
+    Merge pull request #2 from junghwa8870/develop
+    
+    pull reguest test-jeonghwa
+
+[33mcommit 6e74d8b475ba1a605b749aebb7dae1b967d22677[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 12 16:52:41 2024 +0900
+
+    캠핑 예약 기능 준비
+
+[33mcommit 273a581c8cf204395d86122d2d969a5c794a6869[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 12 16:44:15 2024 +0900
+
+    캠핑 예약 준비
+
+[33mcommit eef87f15003fa631790b4f9ee194565cb8b2c982[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 12 16:41:11 2024 +0900
+
+    캠핑 등록 완료
+
+[33mcommit 497e694472b5cb7d7c15140ca99c4a7272603b5e[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Fri Apr 12 16:34:49 2024 +0900
+
+    공지사항 테스트 3
+
+[33mcommit a6ec52bf35dbada007d824bb4cc387a4b8de9a35[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Fri Apr 12 16:17:59 2024 +0900
+
+    공지사항 테스트 2
+
+[33mcommit b4ce62d16aaa0ff1968c34a43676cee548562745[m
+Author: SJHlll <ssaadd1212@gmail.com>
+Date:   Fri Apr 12 15:43:44 2024 +0900
+
+    공지사항 테스트 1
+
+[33mcommit bdc02cfe79102e9f856ef25c3073cde261a044e9[m
+Merge: 3c5b6aa 98a99c5
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Fri Apr 12 10:59:50 2024 +0900
+
+    Merge branch 'develop' of https://github.com/junghwa8870/going into develop
+
+[33mcommit 3c5b6aa3edb25a74ca51ae911c4940ab9ba05f47[m
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Fri Apr 12 10:58:44 2024 +0900
+
+    jhjh222
+
+[33mcommit bc5a2dbd494599f53485968f1771601a28f85349[m
+Author: jeonghwa <suejunghwa@gmail.com>
+Date:   Fri Apr 12 10:57:56 2024 +0900
+
+    jhjh
+
+[33mcommit 98a99c5045160155fb34ae5cba2f39c54969ee1e[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 12 09:27:56 2024 +0900
+
+    디벨롭 브렌치 생성 및 유저 로그인 리퀘스트DTO생성
+
+[33mcommit 96bd590082549be9bd120272a3718906e2401924[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Fri Apr 12 09:14:52 2024 +0900
+
+    백작업 설정 커밋
+
+[33mcommit 2eabdf1a6e196c141433dc776b09c2bdd28e4318[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Thu Apr 11 18:24:00 2024 +0900
+
+    회원 가입 추가!
+
+[33mcommit 12775f5622357fcc9dd4f00bf9c62d86f3ffa38e[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Thu Apr 11 17:34:28 2024 +0900
+
+    초기 셋팅 파일 커밋
+
+[33mcommit e08216c8bcd757623df2711b1d973f6b8398d123[m
+Author: dudtjq <dudtjq0415@naver.com>
+Date:   Thu Apr 11 16:54:52 2024 +0900
+
+    Initial commit

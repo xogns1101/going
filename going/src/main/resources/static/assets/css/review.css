@@ -16,6 +16,21 @@
     font-style: normal;
   } */
 
+section .bigBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* 넘치는 요소들을 다음 줄에 배치 */
+
+}
+  
+
+section .review-list {
+  width: 30%;
+  
+}
+
+
 
 
 section .title h1 {

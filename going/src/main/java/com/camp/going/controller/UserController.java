@@ -31,9 +31,11 @@ public class UserController {
 
     // 회원가입 처리 서비스
     @GetMapping("/sign-up")
-    public void signUp(){
+    public String signUp(){
 
         log.info("/user/sign-up: GET");
+
+        return "sign-up";
 
     }
 
@@ -67,9 +69,12 @@ public class UserController {
 
     // 로그인 양식 화면 요청 처리
     @GetMapping("/sign-in")
-    public void signIn() {
+    public String signIn() {
         log.info("/user/sign-in: GET!");
+
+        return "sign-in";
     }
+
 
     // 로그인 검증 요청
     @PostMapping("/sign-in")

@@ -15,6 +15,7 @@ public class User {
     private String name;
     private String auth;
     private LoginMethod loginMethod;
+
     private LocalDateTime userUpdate;
 
     // 기존 테이블에서 컬럼을 추가했기 때문에

@@ -45,8 +45,10 @@ public class SnsLoginService {
             // 한번도 카카오 로그인을 한 적이 없다면 회원가입이 들어간다.
             userService.joins(
                     KakaoSignUpRequestDTO.builder()
+                            //       .account(String.valueOf(dto.getId()))
                             .account(String.valueOf(dto.getId()))
                             .password("0000")
+                            //       .name(dto.getProperties().getNickname())
                             .name(dto.getProperties().getNickname())
                             .email(email)
                             .loginMethod(User.LoginMethod.KAKAO)
@@ -56,6 +58,7 @@ public class SnsLoginService {
         }
 
         // 우리 사이트 로그인 처리
+        // email
         userService.maintainLoginState(session, String.valueOf(dto.getId()));
 
 

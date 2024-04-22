@@ -37,6 +37,7 @@ class UserMapperTest {
     }
 
     @Test
+
     @DisplayName("이메일이 aaa1111@naver.com을 조회 하면 그 이름은 김춘식이여야 한다")
     void findUserTest() {
         // given
@@ -69,6 +70,12 @@ class UserMapperTest {
 
         // then
         assertFalse(emailFlag);
+
+
+        assertTrue(emailFlag);
+     }
     }
 
-}
+
+
+
