@@ -238,6 +238,7 @@ section .detail .reserve-info form button:hover {
     text-align: center;
     color: #aaa8a8;
   }
+
   #calendarDates .prev-date:hover {
     background: #dbdada;
   }
