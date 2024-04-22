@@ -93,7 +93,7 @@
 
                 <!-- 예약 하기 -->
 
-                <form action="/main/reservation-list" method="get">
+                <form action="/jq/kakaopay" method="get">
 
                     <div class="reserve-box">
                         <div class="check">
@@ -111,14 +111,6 @@
                             <div class="reg-dates">2024-04-23</div>
 
                         </div>
-
-                        <div>캠프아이디</div>
-                        <div>이메일</div>
-                        <div>캠핑장이름</div>
-                        <div></div>
-                        <div>가격</div>
-                        <div>전화번호</div>
-
 
 
 
