@@ -59,7 +59,7 @@ public class NoticeController {
 
 
 
-            return "/write";
+            return "notice-detail-write";
         } else return "redirect:/notice/list";
     }
 
