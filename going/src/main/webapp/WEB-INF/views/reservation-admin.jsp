@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>reservation-admin</title>
+    <title>RESERVATION-관리자</title>
 
     <link rel="stylesheet" href="assets/css/reservation-admin2.css">
 
@@ -31,7 +32,7 @@
 
                         <div class="camp-list">
                             <div class="camp-box">
-                                <c:forEach var="b" items="${nList}">
+                                <c:forEach var="b" items="${camp}">
                                 <table border="1">
                                     <thead>
                                         <tr class="column">
