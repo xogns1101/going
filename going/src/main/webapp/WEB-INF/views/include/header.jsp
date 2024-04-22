@@ -8,7 +8,6 @@
     <meta charset="UTF-8">
     <title>Insert Your Title</title>
 
-
 </head>
 
 <body>
