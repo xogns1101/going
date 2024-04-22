@@ -21,14 +21,14 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/main/notice")
+@RequestMapping("/main")
 @Slf4j
 public class NoticeController {
 
     private final NoticeService service;
 
     // 목록 조회 요청
-    @GetMapping("/list")
+    @GetMapping("/notice")
     public String list(Model model, @ModelAttribute("s")Search page) {
         System.out.println("search = " + page);
         List<NoticeListResponseDTO> dtoList = service.getList(page);
@@ -39,19 +39,19 @@ public class NoticeController {
         model.addAttribute("maker", pageMaker);
 
 
-          return "notice";
+        return "notice";
     }
 
 
     // 글쓰기 화면 요청
-    @GetMapping("/write")
+    @GetMapping("notice-write")
     public String write(Model model) {
         // 사용자 인증 정보 가져오기.
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         // 사용자가 인증되었고, ADMIN 권한을 가지고 있는지 확인함.
         if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
                 .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
-            System.out.println("/notice/write: GET");
+            System.out.println("/notice-write: GET");
 
             // 카테고리 옵션 설정
             List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
@@ -59,58 +59,73 @@ public class NoticeController {
 
 
 
-            return "/write";
-        } else return "redirect:/notice/list";
+            return "notice-write";
+        } else return "redirect:/notice";
     }
 
 
     // 글쓰기 등록 요청
-    @PostMapping("/write")
+    @PostMapping("notice-write")
     public String write(NoticeWriteRequestDTO dto, HttpSession session) {
-        log.info("/notice/write: POST, dto: {}", dto);
+        log.info("/notice-write: POST, dto: {}", dto);
 
         service.register(dto, session);
-        return "redirect:/notice/list";
+        return "redirect:/notice";
     }
 
 
     // 글 수정 요청
-    @PostMapping("/modify")
+    @PostMapping("notice-modify")
     public String modify(NoticeModifyRequestDTO dto, HttpSession session, Model model) {
-        log.info("/notice/modify: POST, dto: {}", dto);
+        log.info("/notice-modify: POST, dto: {}", dto);
 
         // 카테고리 옵션 설정
         List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
         model.addAttribute("categories", categories);
 
         service.modify(dto, session);
-        return "redirect:/notice/list";
+        return "redirect:/notice";
     }
 
 
     // 글 삭제 요청
-    @GetMapping("/delete")
+    @GetMapping("notice-delete")
     public String delete(int nno) {
         // 사용자 인증 정보 가져오기.
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         // 사용자가 인증되었고, ADMIN 권한을 가지고 있는지 확인함.
         if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
                 .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
-            System.out.println("/notice/delete: GET" + nno);
+            System.out.println("/notice-delete: GET" + nno);
             service.delete(nno);
-            return "redirect:/notice/list";
-        } else return "redirect:/notice/list";
+            return "redirect:/notice";
+        } else return "redirect:/notice";
     }
 
 
     // 글 상세보기 요청
-    @GetMapping("/detail/{nno}")
-    public String detail(@PathVariable("nno") int nno, @ModelAttribute("s") Search search, Model model) {
-        System.out.println("/notice/detail: GET" + nno);
+    @GetMapping("notice-detail/{nno}")
+    public String detail(@PathVariable("nno") int nno, @ModelAttribute("s") Search page, Model model) {
+        System.out.println("/notice-detail: GET" + nno);
         NoticeDetailResponseDTO dto = service.getDetail(nno);
 
         model.addAttribute("n", dto);
-        return ("/detail");
+
+        // 목록 보여주기
+        List<NoticeListResponseDTO> dtoList = service.getList(page);
+
+        PageMaker pageMaker = new PageMaker(page, service.getCount(page));
+
+        model.addAttribute("nList", dtoList);
+        model.addAttribute("maker", pageMaker);
+
+        // 상세보기와 같은 목록 찾기
+        model.addAttribute("currentNoticeNo", nno);
+        NoticeDetailResponseDTO dto2 = service.getDetail(nno);
+        model.addAttribute("n", dto2);
+
+
+        return ("notice-detail");
     }
 
 
