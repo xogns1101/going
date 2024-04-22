@@ -22,6 +22,7 @@
         <typeAlias type="com.camp.going.entity.Review" alias="review" />
         <typeAlias type="com.camp.going.entity.Notice" alias="notice" />
         <typeAlias type="com.camp.going.entity.MyPage" alias="mypage" />
+         <typeAlias type="com.camp.going.entity.User" alias="user"/>
 
     </typeAliases>
 

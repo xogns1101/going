@@ -4,15 +4,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import java.time.LocalDateTime;
+
 import java.util.Properties;
 
-@Setter
-@Getter
-@ToString
+
+@Setter @Getter @ToString
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 public class KakaoUserResponseDTO {
+
 
     private long id;
 
@@ -22,10 +23,15 @@ public class KakaoUserResponseDTO {
     private Properties properties;
 
     @JsonProperty("kakao_account")
+
     private KakaoAccount account;
+
+
+
 
     @Setter @Getter @ToString
     public static class Properties {
+
 
         /*
         내부(중첩) 클래스는 static으로 선언하는 것을 권장합니다.
@@ -33,11 +39,13 @@ public class KakaoUserResponseDTO {
         GC가 외부 클래스를 수거 대상으로 인식하지 못합니다. -> 메모리에 상주 -> 메모리의 누수를 초래.
          */
 
+
         private String nickname;
         @JsonProperty("profile_image")
         private String profileImage;
         @JsonProperty("thumbnail_image")
         private String thumbnailImage;
+
 
     }
 
@@ -45,5 +53,13 @@ public class KakaoUserResponseDTO {
     public static class KakaoAccount {
         private String email;
     }
+
+
+
+    @Getter @Setter @ToString
+    public static class KakaoAcount {
+        private String email;
+    }
+
 
 }
