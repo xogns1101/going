@@ -36,13 +36,6 @@ public class SignUpRequestDTO {
 
 
 
-    // dto를 엔터티로 변환하는 유틸메서드
-
-    private String phone_number;
-
-    // private LocalDate user_date 영섭이한테 물어보기
-    private User.LoginMethod loginMethod;
-
 
     // dto -> entity method
 
@@ -50,12 +43,8 @@ public class SignUpRequestDTO {
         return User.builder()
                 .email(email)
                 .password(encoder.encode(password))
-
                 .name(name)
                 .phoneNumber(phoneNumber)
-
-                .phoneNumber(phone_number)
-
                 .loginMethod(loginMethod)
                 .build();
     }

@@ -28,7 +28,7 @@
             R.reg_date, R.reg_dates
         FROM reservation R
         LEFT JOIN camping C
-        ON R.camp_id = C.camp_Id
+        ON R.camp_id = C.camp_id
         WHERE email = #{email}
     </select>
 
