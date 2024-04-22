@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <title>mypage</title>
 
-    <link rel="stylesheet" href="assets/css/mypage2.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/mypage2.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
