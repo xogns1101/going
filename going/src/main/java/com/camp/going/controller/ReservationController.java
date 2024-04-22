@@ -71,7 +71,7 @@ public class ReservationController {
         model.addAttribute("rList", reservationList);
 
 
-        return "(jsp 경로)";
+        return "reservation-admin";
 
     }
 
