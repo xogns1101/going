@@ -32,7 +32,7 @@
 
                         <div class="camp-list">
                             <div class="camp-box">
-                                <c:forEach var="b" items="${camp}">
+                                <c:forEach var="b" items="${rList}">
                                 <table border="1">
                                     <thead>
                                         <tr class="column">

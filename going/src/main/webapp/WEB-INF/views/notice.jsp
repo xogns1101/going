@@ -41,11 +41,11 @@
                             <table border="1">
                                 <thead>
                                     <tr class="no-click">
-                                        <th class="yeon-sung-regular">공지등급</th>
-                                        <th class="yeon-sung-regular">글번호</th>
-                                        <th class="yeon-sung-regular">제목</th>
-                                        <th class="yeon-sung-regular">작성일</th>
-                                        <th class="yeon-sung-regular">조회수</th>
+                                        <th class="noticeCategory">공지등급</th>
+                                        <th class="NoticeNo">글번호</th>
+                                        <th class="NoticeTitle">제목</th>
+                                        <th class="NoticeDate">작성일</th>
+                                        <th class="NoticeCount">조회수</th>
 
                                     </tr>
                                 </thead>
