@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modify</title>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/modify-information.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Yeon+Sung&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div id="wrap">
+            <h1 class="logo">Y⛺GAJA</h1>
+            <div class="logo-content">
+                <a href="#">INTRO</a>
+                <a href="#">RESERVATION</a>
+                <a href="#">NOTICE</a>
+                <a href="#">REVIEW</a>
+            </div>
+
+            <div class="login">
+                <a href="#">LOGIN</a><br>
+                <a href="#">MYPAGE</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 섹션 -->
+    <section>
+        <div class="title">
+            <h1>회원정보 수정</h1>
+        </div>
+
+        <div class="signup-list">
+            <div class="signup-box">
+
+                <div class="plzId">이메일은 변경할 수 없습니다.</div>
+                <div class="Emailblank">
+                    <input type="text" placeholder="${b.userName}" disabled>
+                </div>
+
+                <div class="plzPw">변경하실 비밀번호를 입력해 주세요.</div>
+                <div class="Passwordblank">
+                    <input type="password" placeholder="영문과 특수문자를 포함한 최소 8자">
+                </div>
+
+                <div class="plzPw2">비밀번호를 다시 입력해 주세요.</div>
+                <div class="Passwordblank2">
+                    <input type="password" placeholder="비밀번호가 일치해야 합니다.">
+                </div>
+
+                <div class="plzName">이름을 입력해 주세요.</div>
+                <div class="UserNameblank">
+                    <input type="text" placeholder="한글로 최대 6자">
+                </div>
+
+                <div class="plzPhone">변경하실 휴대폰 번호를 입력해 주세요.</div>
+                <div class="PhoneNumberblank">
+                    <input type="phonenumber" placeholder="-을 포함하여 입력해 주세요">
+                </div>
+
+                <!-- 중복확인 -->
+                <div class="IdcheckButton">
+                    <div class="Idcheck" onclick="handleClick()">중복확인</div>
+                </div>
+
+                <!-- 인증번호 받기 -->
+                <div class="ConfirmButton">
+                    <div class="Confirm" onclick="handleVerificationCode()">인증번호 받기</div>
+                </div>
+
+                <!-- 회원정보 수정 버튼 -->
+                <div class="ModifyButton">
+                    <div class="Modify" onclick="handleModify()">수정완료</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-wrap">
+            <div class="footer-content">
+                <p>
+                    상호 : YAGAJA &#124; 대표자명 : 홍길동 &#124; 사업자등록번호 : 123-12-1234 &#124; 주소 : 서울특별시 마포구 백범로 23, 3층 (신수동,
+                    케이터틀)
+                    &#124; 문의 : 02-123-1234
+                </p>
+                <br>
+                <p>이용약관 &#124; 개인정보처리방침</p>
+            </div>
+            <h3 class="footer-logo">Y⛺GAJA</h3>
+        </div>
+    </footer>
+
+    <script>
+        // 회원가입 처리
+        function handleModify() {
+            var password = document.querySelector('.Passwordblank input').value;
+            var confirmPassword = document.querySelector('.Passwordblank2 input').value;
+
+            if (password !== confirmPassword) {
+                alert('비밀번호가 일치하지 않습니다.');
+                return;
+            }
+
+            // 회원정보 수정 처리 로직...
+
+            alert('회원정보가 수정되었습니다!');
+        }
+
+        // 이메일 중복 확인
+        // function handleClick() {
+        //     var password = document.querySelector('.Passwordblank input').value;
+
+        //     if (!validatePassword(password)) {
+        //         alert('비밀번호에는 영문과 특수문자를 포함한 최소 8자 이상이 필요합니다.');
+        //         return;
+        //     }
+
+        //     var name = document.querySelector('.UserNameblank input').value;
+
+        //     if (name.length > 6) {
+        //         alert('이름은 한글로 최대 6글자까지 입력 가능합니다.');
+        //         return;
+        //     }
+        // }
+
+        // 인증번호 발급
+        function handleVerificationCode() {
+            var phoneNumber = document.querySelector('.PhoneNumberblank input').value;
+
+            if (phoneNumber === '') {
+                alert('휴대폰 번호를 입력해주세요.');
+                return;
+            }
+
+            // 여기서 인증번호를 발급하는 로직을 수행합니다.
+            // 이 예시에서는 간단히 알림으로 대체합니다.
+            alert('인증번호가 전송되었습니다.');
+        }
+
+        // 이메일 유효성 검사
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+
+        // 비밀번호 유효성 검사
+        function validatePassword(password) {
+            var re = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*])(?=.*\d).{8,}$/;
+            return re.test(password);
+        }
+    </script>
+</body>
+
+</html>

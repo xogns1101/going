@@ -39,7 +39,7 @@ public class NoticeController {
         model.addAttribute("maker", pageMaker);
 
 //        return "(경로패키지명)/list";
-        return "notice-admin";
+        return "views/notice.jsp";
     }
 
 
