@@ -114,7 +114,6 @@ public class UserService {
         // DB 데이터를 보여줄 것만 정제
         LoginUserResponseDTO dto = LoginUserResponseDTO.builder()
                 .email(foundUser.getEmail())
-                .password(foundUser.getPassword())
                 .phoneNumber(foundUser.getPhoneNumber())
                 .name(foundUser.getName())
                 .auth(foundUser.getAuth())
