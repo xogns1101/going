@@ -1,0 +1,95 @@
+
+
+section .title h1 {
+    color: black;
+    margin-top: 250px;
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  section .title h1 span {
+  color: black;
+  font-family: "Yeon Sung", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  }
+  
+  
+  
+  section .intro-list {
+  display: flex;
+  justify-content: space-around;
+  
+  }
+  
+  
+  
+  section .intro-list .intro-box {
+    width: 1200px;
+    height: 700px;
+    background: #E4FFAA;
+    margin-top: 50px;
+    border-radius: 3%;
+  
+    position: relative;
+  }
+
+  section .intro-list .intro-box table {
+    width: 900px;
+    margin-left: 13%;
+    margin-top: 5%;
+    background: #F0EEEE;
+    
+  }
+  
+
+
+/* Intro text */
+.Introimg {
+    width: 851px;
+    height: 339px;
+    left: 185px;
+    top: 80px;
+    position: absolute;
+}
+
+.Introtext {
+    width: 970px;
+    height: 216px;
+    left: 150px;
+    top: 450px;
+    position: absolute;
+    text-align: center;
+}
+
+.Introtext span {
+    color: black;
+    font-size: 32px;
+    font-family: Luckiest Guy;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+/* 두 번째 span 요소 선택 */
+.intro-box .Introtext span:nth-of-type(2) {
+    color: #777777;
+    font-size: 24px;
+}
+
+/* 세 번째 span 요소 선택 */
+.intro-box .Introtext span:nth-of-type(3) {
+    color: #777777;
+    font-size: 24px;
+}
+
+/* 네 번째 span 요소 선택 */
+.intro-box .Introtext span:nth-of-type(4) {
+    color: #777777;
+    font-size: 24px;
+}
+
+/* .Introtext span:last-child {
+    color: #777777;
+    font-size: 24px;
+} */
+  

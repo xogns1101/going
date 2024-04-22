@@ -40,9 +40,9 @@
 
     <div class="Desktop9" style="width: 1436px; height: 1024px; position: relative; background: white; margin-left: 200px;">
     
-        ${b.noticeNo}
+        
         <!--페이지 번호  -->
-        <c:input var="b" items="${notice}">
+        <c:forEach var="b" items="${nlist}">
             <div class="PageNo" style="width: 21px; left: 576px; top: 865px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">2</div>
             <div class="PageNo" style="width: 21px; left: 619px; top: 865px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">3</div>
             <div class="PageNo" style="width: 21px; left: 658px; top: 865px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">4</div>
@@ -84,52 +84,89 @@
             <div style="width: 90px; height: 20px; left: 210px; top: 415px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">필독</div>
            
            <!-- 공지 제목 -->
-            <div class="NoticeTitle" style="width: 424px; height: 43px; left: 441px; top: 466px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeTitle}</div>
-            <div class="NoticeTitle" style="width: 376px; height: 43px; left: 441px; top: 740px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeTitle}</div>
-            <div class="NoticeTitle" style="width: 376px; height: 43px; left: 441px; top: 689px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeTitle}</div>
-            <div class="NoticeTitle" style="width: 376px; height: 43px; left: 441px; top: 632px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeTitle}</div>
-            <div class="NoticeTitle" style="width: 391px; height: 43px; left: 441px; top: 577px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeTitle}</div>
-            <div class="NoticeTitle" style="width: 436px; height: 43px; left: 441px; top: 525px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeTitle}</div>
-            <div class="NoticeTitle" style="width: 436px; height: 43px; left: 441px; top: 355px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeTitle}</div>
-            <div class="NoticeTitle" style="width: 451px; height: 43px; left: 441px; top: 413px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeTitle}</div>
+            <div class="NoticeTitle" style="width: 424px; height: 43px; left: 441px; top: 466px; position: absolute;">
+                <a href=# style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeTitle}')">${b.noticeTitle}</a></div>
+            <div class="NoticeTitle" style="width: 376px; height: 43px; left: 441px; top: 740px; position: absolute;">
+                <a href=#  style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeTitle}')">${b.noticeTitle}</a></div>
+            <div class="NoticeTitle" style="width: 376px; height: 43px; left: 441px; top: 689px; position: absolute;">
+                <a href=#  style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeTitle}')">${b.noticeTitle}</a></div>
+            <div class="NoticeTitle" style="width: 376px; height: 43px; left: 441px; top: 632px; position: absolute;">
+                <a href=# style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeTitle}')">${b.noticeTitle}</a></div>
+            <div class="NoticeTitle" style="width: 391px; height: 43px; left: 441px; top: 577px; position: absolute;">
+                <a href=# style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeTitle}')">${b.noticeTitle}</a></div>
+            <div class="NoticeTitle" style="width: 436px; height: 43px; left: 441px; top: 525px; position: absolute;">
+                <a href=# style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeTitle}')">${b.noticeTitle}</a></div>
+            <div class="NoticeTitle" style="width: 436px; height: 43px; left: 441px; top: 355px; position: absolute;">
+                <a href=# style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeTitle}')">${b.noticeTitle}</a></div>
+            <div class="NoticeTitle" style="width: 451px; height: 43px; left: 441px; top: 413px; position: absolute;">
+                <a href=# style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeTitle}')">${b.noticeTitle}</a></div>
            
            
            <!-- 작성일 -->
-            <div class="NoticeDate" style="width: 137px; height: 43px; left: 984px; top: 415px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeDate}</div>
-            <div class="NoticeDate" style="width: 137px; height: 43px; left: 985px; top: 691px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeDate}</div>
-            <div class="NoticeDate" style="width: 137px; height: 43px; left: 985px; top: 742px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeDate}</div>
-            <div class="NoticeDate" style="width: 137px; height: 43px; left: 985px; top: 521px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeDate}</div>
-            <div class="NoticeDate" style="width: 137px; height: 43px; left: 985px; top: 633px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeDate}</div>
-            <div class="NoticeDate" style="width: 137px; height: 43px; left: 985px; top: 580px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeDate}</div>
-            <div class="NoticeDate" style="width: 137px; height: 43px; left: 985px; top: 467px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeDate}</div>
-            <div class="NoticeDate" style="width: 137px; height: 43px; left: 983px; top: 355px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeDate}</div>
+            <div class="NoticeDate" style="width: 137px; height: 43px; left: 984px; top: 415px; position: absolute;"> 
+                <a href=# style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeDate}')">${b.noticeDate}</a></div>
+            <div class="NoticeDate" style="width: 137px; height: 43px; left: 985px; top: 691px; position: absolute;"> 
+                <a href=# style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeDate}')">${b.noticeDate}</a></div>
+            <div class="NoticeDate" style="width: 137px; height: 43px; left: 985px; top: 742px; position: absolute;"> 
+                <a href=# style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeDate}')">${b.noticeDate}</a></div>
+            <div class="NoticeDate" style="width: 137px; height: 43px; left: 985px; top: 521px; position: absolute;"> 
+                <a href=# style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeDate}')">${b.noticeDate}</a></div>
+            <div class="NoticeDate" style="width: 137px; height: 43px; left: 985px; top: 633px; position: absolute;"> 
+                <a href=# style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeDate}')">${b.noticeDate}</a></div>
+            <div class="NoticeDate" style="width: 137px; height: 43px; left: 985px; top: 580px; position: absolute;"> 
+                <a href=# style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeDate}')">${b.noticeDate}</a></div>
+            <div class="NoticeDate" style="width: 137px; height: 43px; left: 985px; top: 467px; position: absolute;"> 
+                <a href=# style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeDate}')">${b.noticeDate}</a></div>
+            <div class="NoticeDate" style="width: 137px; height: 43px; left: 983px; top: 355px; position: absolute;"> 
+                <a href=# style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeDate}')">${b.noticeDate}</a></div>
             
 
             <!-- 글번호 -->
             <div class="NoticeNo" style="width: 54px; height: 43px; left: 325px; top: 355px; position: absolute;">
-                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word">${b.noticeNo}</a>
+                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word" onclick="handleClick('${b.noticeNo}')">${b.noticeNo}</a>
             </div>
             <div class="NoticeNo" style="width: 54px; height: 43px; left: 324px; top: 415px; position: absolute;">
-                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word">${b.noticeNo}</a>
+                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word" onclick="handleClick('${b.noticeNo}')">${b.noticeNo}</a>
             </div>
             <div class="NoticeNo" style="width: 54px; height: 43px; left: 325px; top: 469px; position: absolute;">
-                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word">${b.noticeNo}</a>
+                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word" onclick="handleClick('${b.noticeNo}')">${b.noticeNo}</a>
             </div>
             <div class="NoticeNo" style="width: 54px; height: 43px; left: 325px; top: 520px; position: absolute;">
-                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word">${b.noticeNo}</a>
+                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word" onclick="handleClick('${b.noticeNo}')">${b.noticeNo}</a>
             </div>
             <div class="NoticeNo" style="width: 54px; height: 43px; left: 325px; top: 579px; position: absolute;">
-                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word">${b.noticeNo}</a>
+                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word" onclick="handleClick('${b.noticeNo}')">${b.noticeNo}</a>
             </div>
             <div class="NoticeNo" style="width: 54px; height: 43px; left: 325px; top: 634px; position: absolute;">
-                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word">${b.noticeNo}</a>
+                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word" onclick="handleClick('${b.noticeNo}')">${b.noticeNo}</a>
             </div>
             <div class="NoticeNo" style="width: 54px; height: 43px; left: 325px; top: 685px; position: absolute;">
-                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word">${b.noticeNo}</a>
+                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word" onclick="handleClick('${b.noticeNo}')">${b.noticeNo}</a>
             </div>
             <div class="NoticeNo" style="width: 54px; height: 43px; left: 325px; top: 743px; position: absolute;">
-                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word">${b.noticeNo}</a>
+                <a href="#" style="color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; text-decoration: none; word-wrap: break-word" onclick="handleClick('${b.noticeNo}')">${b.noticeNo}</a>
             </div>
+
+
+            <!-- 조회수 -->
+            <div class="See" style="width: 140px; height: 60px; left: 1175px; top: 295px; position: absolute; color: black; font-size: 32px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">조회</div>
+            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 360px; position: absolute;"> 
+                <a href="#" style=" color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeCount}')">${b.noticeCount}</a></div>
+            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 414px; position: absolute;"> 
+                <a href="#" style=" color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeCount}')">${b.noticeCount}</a></div>
+            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 470px; position: absolute;"> 
+                <a href="#" style=" color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeCount}')">${b.noticeCount}</a></div>
+            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 525px; position: absolute;"> 
+                <a href="#" style=" color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeCount}')">${b.noticeCount}</a></div>
+            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 580px; position: absolute;"> 
+                <a href="#" style=" color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeCount}')">${b.noticeCount}</a></div>
+            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 635px; position: absolute;"> 
+                <a href="#" style=" color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeCount}')">${b.noticeCount}</a></div>
+            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 745px; position: absolute;"> 
+                <a href="#" style=" color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeCount}')">${b.noticeCount}</a></div>
+            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 694px; position: absolute;"> 
+                <a href="#" style=" color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word" onclick="handleClick('${b.noticeCount}')">${b.noticeCount}</a></div>
+    
 
             <!-- 표 컬럼 -->           
             <div class="Title" style="width: 140px; height: 60px; left: 625px; top: 295px; position: absolute; color: black; font-size: 32px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">제목</div>
@@ -160,20 +197,10 @@
             <input type="checkbox" class="PageSizeClickbutton" style="width: 26px; height: 18px; left: 1216px; top: 240px; position: absolute; cursor: pointer;" onclick="handlePageSizeClick(this)">
 
 
-            <!-- 조회수 -->
-            <div class="See" style="width: 140px; height: 60px; left: 1175px; top: 295px; position: absolute; color: black; font-size: 32px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">조회</div>
-            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 360px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeCount}</div>
-            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 414px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeCount}</div>
-            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 470px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeCount}</div>
-            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 525px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeCount}</div>
-            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 580px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeCount}</div>
-            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 635px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeCount}</div>
-            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 745px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeCount}</div>
-            <div class="NoticeCount" style="width: 18px; height: 43px; left: 1196px; top: 694px; position: absolute; color: black; font-size: 24px; font-family: Yeon Sung; font-weight: 400; word-wrap: break-word">${b.noticeCount}</div>
-    
+           
     
         </div>
-</c:foreach>
+</c:forEach>
   <!-- footer---------------------------- -->
 
 
@@ -242,6 +269,12 @@
             // 검색 버튼을 클릭했을 때 수행되는 동작을 여기에 추가합니다.
             console.log("검색 버튼이 클릭되었습니다.");
             // 여기에 검색에 관련된 동작을 추가하세요.
+        }
+
+        function handleClick() {
+            // in-notice.html 페이지로 이동
+            window.location.href = 'in-notice.html';
+            
         }
   </script>
 </body>

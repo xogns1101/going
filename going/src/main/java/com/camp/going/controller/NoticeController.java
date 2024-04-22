@@ -38,7 +38,12 @@ public class NoticeController {
         model.addAttribute("nList", dtoList);
         model.addAttribute("maker", pageMaker);
 
+<<<<<<< HEAD
         return "/list";
+=======
+//        return "(경로패키지명)/list";
+        return "views/notice.jsp";
+>>>>>>> jhjhjh
     }
 
 

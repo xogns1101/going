@@ -1,0 +1,260 @@
+
+
+section .title h1 {
+    color: black;
+    margin-top: 250px;
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  section .title h1 span {
+  color: black;
+  font-family: "Yeon Sung", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  }
+  
+  
+  
+  section .notice-list {
+  display: flex;
+  justify-content: space-around;
+  
+  }
+  
+  
+  
+  section .notice-list .notice-box {
+    width: 1200px;
+    height: 700px;
+    background: #E4FFAA;
+    margin-top: 50px;
+    border-radius: 3%;
+  
+    position: relative;
+  }
+
+  section .notice-list .notice-box table {
+    width: 900px;
+    margin-left: 13%;
+    margin-top: 5%;
+    background: #F0EEEE;
+    
+  }
+  
+  
+
+  section .notice-list tr {
+    color: black;
+    font-family: "Yeon Sung", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    border: 2px solid black;
+    
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+  }
+  
+  section .notice-list tr:hover {
+    background-color: lightgray; /* 호버 시 배경색 변경 */
+    cursor: pointer; /* 호버 시 커서 모양 변경 */
+  }
+
+
+  section .notice-list tr th {
+    margin-right: 15px;
+    margin-left: -10px;    
+    width: 100px;
+    font-size: 30px;
+  }
+
+
+/* 전체기간 조회 */
+.total-date-wrapper {
+    position: relative;
+}
+
+.total-date-background {
+    width: 159px;
+    height: 43px;
+    position: absolute;
+    left: 220px;
+    top: 20px;
+    background: white;
+    border: 1px black solid;
+}
+
+.total-date-click-button {
+    width: 26px;
+    height: 18px;
+    position: absolute;
+    left: 330px;
+    top: 30px;
+    background: #5F5555;
+    border: 1px black solid;
+    cursor: pointer;
+}
+
+.total-date {
+    width: 80px;
+    height: 43px;
+    position: absolute;
+    left: 250px;
+    top: 30px;
+    color: black;
+    font-size: 24px;
+    font-family: Yeon Sung;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+/* 제목 조회 */
+.title-wrapper {
+    position: relative;
+}
+
+.only-title-background {
+    width: 159px;
+    height: 43px;
+    position: absolute;
+    left: 450px;
+    top: 20px;
+    background: white;
+    border: 1px black solid;
+}
+
+.only-title-click-button {
+    width: 26px;
+    height: 18px;
+    position: absolute;
+    left: 560px;
+    top: 30px;
+    background: #5F5555;
+    border: 1px black solid;
+    cursor: pointer;
+}
+
+.only-title {
+    width: 64px;
+    height: 43px;
+    position: absolute;
+    left: 480px;
+    top: 30px;
+    color: black;
+    font-size: 24px;
+    font-family: Yeon Sung;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+
+
+/* 검색어 조회 */
+.search-wrapper {
+    position: relative;
+}
+
+.search-content-background {
+    width: 320px;
+    height: 43px;
+    position: absolute;
+    left: 670px;
+    top: 20px;
+    background: white;
+    border: 1px black solid;
+}
+
+.search-content {
+    width: 250px;
+    height: 35px;
+    position: absolute;
+    left: 700px;
+    top: 23px;
+    border: none;
+    outline: none;
+    color: black;
+    font-size: 24px;
+    font-family: Yeon Sung;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.search-click-button {
+    width: 63px;
+    height: 27px;
+    position: absolute;
+    left: 910px;
+    top: 28px;
+    font-family: Yeon Sung;
+    font-size: 20px;
+    background: #9CEE8F;
+    border: 1px black solid;
+    cursor: pointer;
+}
+
+/* 페이지 사이즈 체크 */
+.page-size-wrapper {
+    position: relative;
+}
+
+.page-size-background {
+    width: 140px;
+    height: 35px;
+    position: absolute;
+    left: 890px;
+    top: -570px;
+    background: white;
+    border: 1px black solid;
+}
+
+.page-size {
+    width: 64px;
+    height: 43px;
+    position: absolute;
+    left: 920px;
+    top: -565px;
+    color: black;
+    font-size: 24px;
+    font-family: Yeon Sung;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.page-size-click-button {
+    width: 26px;
+    height: 18px;
+    position: absolute;
+    left: 980px;
+    top: -565px;
+    cursor: pointer;
+}
+
+/* 관리자용 메세지 */
+.admin-msg-wrapper {
+    position: relative;
+}
+
+.admin-msg-background {
+    width: 470px;
+    height: 43px;
+    position: absolute;
+    left: 380px;
+    top: -565px;
+    background: rgb(0, 0, 0);
+    border: 1px black solid;
+    color: black;
+}
+
+.admin-msg {
+    color: red;
+    font-size: 24px;
+    font-family: Yeon Sung;
+    font-weight: 400;
+    word-wrap: break-word;
+    left: 390px;
+    top: -555px;
+    position: absolute;
+}
