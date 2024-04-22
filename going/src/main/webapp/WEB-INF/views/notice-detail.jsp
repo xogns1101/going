@@ -6,8 +6,7 @@
     <meta charset="UTF-8">
     <title>introduce</title>
 
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/in-notice2.css">
+    <link rel="stylesheet" href="assets/css/in-notice2.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
