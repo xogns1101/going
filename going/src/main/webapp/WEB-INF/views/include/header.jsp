@@ -27,15 +27,15 @@
                 <a href="/user/mypage">MYPAGE</a>
             </div>
 
-            <a href="#" class="menu-open">
+            <p class="menu-open">
                 <span class="lnr lnr-menu"></span>
-            </a>
+            </p>
         </div>
 
         <nav class="gnb">
-            <a href="#" class="close">
+            <p class="close">
                 <span class="lnr lnr-cross"></span>
-            </a>
+            </p>
             <ul>
                 <li><a href="/main/introduce">INTRO</a></li>
                 <li><a href="/main/reservation">RESERVATION</a></li>
