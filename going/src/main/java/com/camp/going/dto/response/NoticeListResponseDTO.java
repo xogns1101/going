@@ -21,6 +21,9 @@ public class NoticeListResponseDTO {
     private String noticeCategory; // 공지 등급
 
 
+
+
+
     public NoticeListResponseDTO(Notice notice) {
         this.noticeNo = notice.getNoticeNo();
         this.noticeTitle = makeShortTitle(notice.getNoticeTitle());
