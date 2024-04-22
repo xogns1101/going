@@ -57,14 +57,14 @@
                                 </thead>
                                 <tbody>
                                     <c:forEach var="b" items="${nList}">
-                                        <tr>
+                                        <tr class="notice-click">
                                             <td class="noticeCategory">${b.noticeCategory}</td>
                                             <td class="NoticeNo">${b.noticeNo}</td>
                                             <td class="NoticeTitle">${b.noticeTitle}</td>
                                             <td class="NoticeDate">${b.noticeDate}</td>
                                             <td class="NoticeCount">${b.noticeCount}</td>
 
-                                        </tr>
+                                            </tr>
                                     </c:forEach>
                                 </tbody>
                             </table>
@@ -151,16 +151,32 @@
 
                     }
 
-                    // 모든 tr 요소를 선택합니다.
-                    const rows = document.querySelectorAll('tr');
+                      // 모든 tr 요소를 선택합니다.
+                            const rows = document.querySelectorAll('tr.notice-click');
 
-                    // 각각의 tr 요소에 대해 반복합니다.
-                    rows.forEach(row => {
-                        // 클릭 이벤트를 추가합니다.
-                        row.addEventListener('click', function() {
-                            // 클릭된 tr 요소에 대한 처리를 여기에 추가합니다.
-                            alert('클릭 이벤트 발생: ' + row.innerText); // 예시로 경고창을 띄웁니다.
-                        });
+                            // 각각의 tr 요소에 대해 반복합니다.
+                            rows.forEach(row => {
+                                // 클릭 이벤트를 추가합니다.
+                                row.addEventListener('click', function () {
+                                    // 클릭된 tr 요소에 대한 처리를 여기에 추가합니다.
+                                    const noticeNoElement = row.querySelector('.NoticeNo');
+                                    if (noticeNoElement) {
+                                        const noticeNo = noticeNoElement.innerText;
+                                        const detailUrl = '/main/notice-detail/' + noticeNo;
+
+                                        // detailUrl이 정의되었는지 확인 후 이동합니다.
+                                        if (detailUrl) {
+                                            window.location.href = detailUrl;
+                                        } else {
+                                            console.error('Detail URL이 정의되지 않았습니다.');
+                                        }
+                                    } else {
+                                        console.error('NoticeNo X');
+                                    }
+                                    // alert('클릭 이벤트 발생: ' + row.innerText); // 예시로 경고창을 띄웁니다.
+                                });
+
+
                     });
 
 
