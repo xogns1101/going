@@ -58,6 +58,12 @@
                                  <a href="sign-up2.html" class="Join">회원가입</a>
                              </div>
 
+                                    <a id="custom-login-btn"
+                                        href="/kakao/login">
+                                           <img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg"
+                                            width="300"/>
+                                    </a>
+
                          </div>
                      </div>
          </section>

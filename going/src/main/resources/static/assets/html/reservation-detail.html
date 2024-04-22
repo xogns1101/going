@@ -169,7 +169,7 @@
 
             function showCalendar(year, monthIndex) {
                 // 달력 헤더에 현재 년도와 월 표시
-                currentMonth.textContent = `${year}년  ${monthIndex + 1}월`;
+                currentMonth.textContent = `\${year}년  \${monthIndex + 1}월`;
 
                 // 해당 월의 첫 날과 마지막 날을 가져옴
                 let firstDayOfMonth = new Date(year, monthIndex, 1).getDay();
@@ -181,7 +181,7 @@
                 // 이전 달의 날짜와 해당 월의 날짜를 표시
                 let dates = "";
                 for (let i = firstDayOfMonth - 1; i >= 0; i--) {
-                    dates += `<div class="date prev-date">${lastDayOfPrevMonth - i}</div>`;
+                    dates += `<div class="date prev-date">\${lastDayOfPrevMonth - i}</div>`;
                 }
                 for (let i = 1; i <= lastDayOfMonth; i++) {
                     dates += `<div class="date">${i}</div>`;

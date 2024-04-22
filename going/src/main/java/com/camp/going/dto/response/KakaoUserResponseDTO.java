@@ -56,10 +56,5 @@ public class KakaoUserResponseDTO {
 
 
 
-    @Getter @Setter @ToString
-    public static class KakaoAcount {
-        private String email;
-    }
-
 
 }

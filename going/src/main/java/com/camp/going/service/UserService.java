@@ -42,17 +42,19 @@ public class UserService {
                                     HttpSession session,
                                     HttpServletResponse response) {
 
-        User foundUser = userMapper.findUser(dto.getEmail());
+        User oneUser = userMapper.findUser(dto.getEmail());
+
+        log.info("이메일 확인 : {}", oneUser.getEmail());
 
         // 회원 가입을 안한 상태
-        if(foundUser == null){
+        if(oneUser == null){
             System.out.println(dto.getEmail() + "(은)는 없는 아이디!");
             return NO_ACC;
         }
 
         // 비밀번호 일치 검사
         String inputPassword = dto.getPassword(); // 사용자 입력 패스워드
-        String realPassword = foundUser.getPassword(); // 실제 패스워드
+        String realPassword = oneUser.getPassword(); // 실제 패스워드
 
         if (!encoder.matches(inputPassword, realPassword)) {
             System.out.println("비밀번호가 다르다!");

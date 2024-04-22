@@ -127,6 +127,8 @@ public class SnsLoginService {
         // access token 추출 (카카오 로그인 중인 사용자의 정보를 요청할 때 필요한 토큰)
         String accessToken = (String) responseJSON.get("access_token");
 
+        log.info("토큰 번호 : {}", accessToken);
+
         return accessToken;
     }
 
