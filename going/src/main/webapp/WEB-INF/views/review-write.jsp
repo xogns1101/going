@@ -221,7 +221,7 @@
 
       writeButton.addEventListener('click', function () {
         // 원하는 경로로 이동합니다.
-        window.location.href = 'redirct:/main/review';
+        window.location.href = 'redirect:/main/review';
       });
     }
 
@@ -335,7 +335,6 @@
 
     // reivew-content 요소 노드 취득
     const reviewPoint = document.querySelector('.star-rating');
-
 
 
     // review-content 요소 노드 취득
