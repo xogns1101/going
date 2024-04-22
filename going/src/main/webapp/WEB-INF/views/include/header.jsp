@@ -8,14 +8,13 @@
     <meta charset="UTF-8">
     <title>Insert Your Title</title>
 
-
 </head>
 
 <body>
 
     <header>
         <div id="wrap">
-            <h1 class="logo"><a href="main">Y⛺GAJA</a></h1>
+            <h1 class="logo"><a href="/main">Y⛺GAJA</a></h1>
             <div class="logo-content">
                 <a href="/main/introduce">INTRO</a>
                 <a href="/main/reservation">RESERVATION</a>
