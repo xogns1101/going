@@ -36,11 +36,12 @@
 
         <div class="notice-list">
             <div class="notice-box">
-                <!-- 페이지 사이즈 체크 -->
+                <!-- 페이지 사이즈 체크
                 <div class="page-size-background">
                     <span class="page-size">8개씩</span>
                     <input type="checkbox" class="page-size-click-button" onclick="handlePageSizeClick(this)">
                 </div>
+                -->
                 <table border="1">
                     <thead>
                         <tr class="column">
