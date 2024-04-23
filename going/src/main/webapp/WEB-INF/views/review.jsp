@@ -30,8 +30,8 @@
                     <div class="review-box" data-bno="${b.reviewNo}">
                         <ul class="review">
                             <!-- <li class="rno">${b.reviewNo}</li> -->
-                            <li class="camp-name">${b.campName}</li>
-                            <li class="email">${b.email}</li>
+                            <!-- <li class="camp-name">${b.campName}</li>
+                            <li class="email">${b.email}</li> -->
                             <img src="/local${b.reviewImage}" alt="리뷰">
                             <li class="review-content">${b.reviewContent}</li>
                         </ul>
@@ -45,11 +45,45 @@
                     </div>
                 </div>
 
-
-
             </c:forEach>
         </div>
 
+
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination pagination-lg pagination-custom">
+                <c:if test="${maker.page.pageNo != 1}">
+                    <li class="page-item"><a class="page-link"
+                            href="/main/review?pageNo=1&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
+                    </li>
+                </c:if>
+
+                <c:if test="${maker.prev}">
+                    <li class="page-item"><a class="page-link"
+                            href="/main/review?pageNo=${maker.begin-1}&type=${s.type}&keyword=${s.keyword}">prev</a>
+                    </li>
+                </c:if>
+
+                <c:forEach var="i" begin="${maker.begin}" end="${maker.end}">
+                    <li data-page-num="${i}" class="page-item">
+                        <a class="page-link"
+                            href="/main/review?pageNo=${i}&type=${s.type}&keyword=${s.keyword}">${i}</a>
+                    </li>
+                </c:forEach>
+
+                <c:if test="${maker.next}">
+                    <li class="page-item"><a class="page-link"
+                            href="/main/review?pageNo=${maker.end+1}&type=${s.type}&keyword=${s.keyword}">next</a>
+                    </li>
+                </c:if>
+
+                <c:if test="${maker.page.pageNo != maker.finalPage}">
+                    <li class="page-item"><a class="page-link"
+                            href="/main/review?pageNo=${maker.finalPage}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
+                    </li>
+                </c:if>
+            </ul>
+        </nav>
 
 
 
@@ -93,15 +127,15 @@
         }
 
         // 리뷰 수정 버튼을 눌렀을때 리뷰 수정 페이지로 이동시키기
-        
+
 
         // 삭제 버튼을 눌렀을때 리뷰 삭제 진행시키기
-        
+
 
         const $btn = document.querySelector('.bigBox');
 
         $btn.addEventListener('click', e => {
-            
+
             if (e.target.matches('.review-delete')) {
                 // 리뷰 삭제 버튼을 클릭한 경우에만 실행
                 const isConfirmed = confirm('정말로 삭제하시겠습니까?');
@@ -112,7 +146,8 @@
                     // 서버에 삭제 요청 보내기
                     location.href = '/main/review-delete?rno=' + reviewNo;
                 }
-            } if(e.target.matches('.review-modify')) {
+            }
+            if (e.target.matches('.review-modify')) {
                 const reviewNo = e.target.closest('.review-box').dataset.bno;
                 console.log(reviewNo);
 
