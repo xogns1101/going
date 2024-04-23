@@ -14,13 +14,13 @@ font-family: "Yeon Sung", system-ui;
   
   */
 
-  body {
-    font-size: 15px;
-    color: #fff;
-    font-family: "Luckiest Guy", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
+body {
+  font-size: 15px;
+  color: #fff;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 
 
 
@@ -40,7 +40,7 @@ header #wrap {
   /* border: black solid 1px; */
   display: flex;
   position: relative;
-  
+
 
 }
 
@@ -76,7 +76,7 @@ header .logo-content a {
   color: black;
   /* margin-right: 80px;
   margin-left: 80px; */
-  
+
 }
 
 header .logo-content a:hover {
@@ -159,37 +159,37 @@ header .gnb ul li.active {
 
 @media (max-width: 1024px) {
   header .logo {
-      font-size: 36px;
-      margin-top: 10px;
+    font-size: 36px;
+    margin-top: 10px;
   }
 
   header .logo-content {
-      font-size: 20px;
+    font-size: 20px;
   }
 
   header .login a {
-      font-size: 20px;
+    font-size: 20px;
   }
 }
 
 @media (max-width: 768px) {
 
   header .logo {
-      font-size: 36px;
+    font-size: 36px;
   }
 
   header .logo-content {
-      display: none;
+    display: none;
   }
 
   header .login {
-      display: none;
+    display: none;
   }
 
   header .menu-open {
     display: block;
   }
-  
+
 }
 
 
@@ -213,7 +213,7 @@ section.main-page1 .main-img {
 section.main-page1 .main-img img {
   width: 33%;
   height: 500px;
-  
+
 }
 
 /* page2 */
@@ -224,20 +224,20 @@ section.main-page2 .main-content {
   background: #E4FFAA;
   margin-top: 200px;
   display: flex;
-  
-  
+
+
   padding-top: 160px;
   padding-bottom: 160px;
-  
-  
+
+
 }
 
-section.main-page2 .main-content h1{
+section.main-page2 .main-content h1 {
   color: #a1a1a1;
   text-align: center;
   font-size: 40px;
 
-  
+
 }
 
 
@@ -247,7 +247,7 @@ section.main-page2 .main-content .weather {
 
 }
 
-section.main-page2 .main-content .tomorrow{
+section.main-page2 .main-content .tomorrow {
   width: 500px;
   height: 600px;
   margin-top: 50px;
@@ -259,7 +259,7 @@ section.main-page2 .main-content .tomorrow{
 
 
 
- 
+
 section.main-page2 .main-content .best-review .review-box {
   width: 500px;
   height: 700px;
@@ -277,7 +277,7 @@ section.main-page2 .main-content .best-review .review-box img {
   position: absolute;
   top: 18.5px;
   left: 18.5px;
-  
+
   border-radius: 3%;
 
 }
@@ -288,15 +288,15 @@ section.main-page2 .main-content .best-review .review-box .review {
   font-weight: 400;
   font-style: normal;
   width: 465px;
-  
-  
+
+
 }
 
 section.main-page2 .main-content .best-review .review-box .review li:first-child {
   font-size: 30px;
   text-decoration: underline;
   position: absolute;
-  
+
   left: 18.5px;
   left: 18.5px;
   bottom: 140px;
@@ -329,20 +329,20 @@ section.main-page2 .main-content .ad {
 }
 
 
-section.main-page2 .main-content .ad .ad-box{
+section.main-page2 .main-content .ad .ad-box {
   margin: 0 0 0 150px;
 }
 
 
 
-section.main-page2 .main-content .ad .ad-box img{
+section.main-page2 .main-content .ad .ad-box img {
   width: 500px;
   height: 200px;
   margin-top: 50px;
 
-  
+
   border-radius: 20px;
- 
+
 }
 
 
@@ -354,7 +354,7 @@ section.main-page2 .main-content .ad .ad-box img{
   width: 133%;
   position: relative;
   left: -20%;
-  
+
 }
 
 footer {
@@ -373,13 +373,13 @@ footer .footer-wrap {
 }
 
 footer .footer-wrap .footer-content {
-    color: black;
-    font-family: "Yeon Sung", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 17px;
-    position: absolute;
-    margin: auto 0;
+  color: black;
+  font-family: "Yeon Sung", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  position: absolute;
+  margin: auto 0;
 }
 
 footer .footer-wrap .footer-link span:hover {
@@ -394,7 +394,7 @@ footer .footer-wrap .footer-copyright {
 
 footer .footer-wrap .footer-content p {
   text-align: center;
-  
+
 }
 
 footer .footer-logo {
@@ -418,39 +418,44 @@ footer .footer-logo a {
 
 
 footer .modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 footer .modal-content {
-    color: black;
-    font-family: '맑은 고딕';
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+  color: black;
+  font-family: '맑은 고딕';
+  line-height: 1.2em;
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+footer .modal-content p {
+  width: 97%;
 }
 
 footer .modal-close {
-    color: #aaa;
-    float: right;
-    font-size: 42px;
-    font-weight: bold;
+  color: #aaa;
+  float: right;
+  font-size: 42px;
+  font-weight: bold;
 }
 
 footer .modal-close:hover,
 footer .modal-close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 
@@ -471,7 +476,7 @@ footer .modal-close:focus {
   footer .footer-logo span {
     display: none;
   }
-  
+
   /* footer .go-top {
     display: none;
   } */
