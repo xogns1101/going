@@ -27,7 +27,7 @@
             <%@ include file="include/header.jsp" %>
 
      <!-- sign-up ---------------------------------->
-     <section>
+     <!-- <section>
              <div class="title">
                  <h1>SIGN-UP / <span>회원가입</span></h1>
              </div>
@@ -61,20 +61,22 @@
 
                      <div class="plzPhone">휴대폰 번호를 입력해 주세요.</div>
                      <div class="PhoneNumberblank">
-                         <input type="phonenumber" placeholder="-을 포함하여 입력해 주세요">
+                         <input type="phonenumber" id="phoneNumberInput"  placeholder="-을 포함하여 입력해 주세요">
                      </div>
 
-                     <!-- 중복확인 -->
+                     중복확인 -->
+                     <!--
                      <div class="IdcheckButton">
                          <div class="Idcheck" onclick="handleClick()">중복확인</div>
                      </div>
-
-                     <!-- 인증번호 받기 -->
+                    
+                        인증번호 받기 -->
+                        <!--
                      <div class="ConfirmButton">
                          <div class="Confirm" onclick="handleVerificationCode()">인증번호 받기</div>
                      </div>
-
-                     <!-- 회원가입 버튼 -->
+        -->
+                     <!-- 회원가입 버튼 
                      <div class="JoinButton">
                          <div id="signup-btn" onclick="handleJoin()">회원가입</div>
                      </div>
@@ -82,6 +84,85 @@
                  </div>
              </div>
          </section>
+        -->
+
+        <form action="/user/sign-up" name="signup" id="signUpForm" method="post" style="margin-bottom: 0;">
+
+    <table style="cellpadding: 0; cellspacing: 0; margin: 0 auto; width: 100%">
+        <tr>
+            <td style="text-align: left">
+              <p><strong>이메일을 입력해주세요.</strong>&nbsp;&nbsp;&nbsp;<span id="emailChk"></span>
+              </p>
+            </td>
+          </tr>
+      <tr>
+        <td><input type="text" name="account" id="user_id" class="form-control tooltipstered" maxlength="20"
+            required="required" aria-required="true"
+            style="margin-bottom: 25px; width: 100%; height: 40px; border: 1px solid #d9d9de"
+            placeholder="abc1234@naver.com">
+        </td>
+
+      </tr>
+
+      <tr>
+        <td style="text-align: left">
+          <p><strong>비밀번호를 입력해주세요.</strong>&nbsp;&nbsp;&nbsp;<span id="pwChk"></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="password" size="17" maxlength="20" id="password" name="password"
+            class="form-control tooltipstered" maxlength="20" required="required" aria-required="true"
+            style="ime-mode: inactive; margin-bottom: 25px; height: 40px; border: 1px solid #d9d9de"
+            placeholder="영문과 특수문자를 포함한 최소 8자"></td>
+      </tr>
+      <tr>
+        <td style="text-align: left">
+          <p><strong>비밀번호를 재확인해주세요.</strong>&nbsp;&nbsp;&nbsp;<span id="pwChk2"></span>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="password" size="17" maxlength="20" id="password_check" name="pw_check"
+            class="form-control tooltipstered" maxlength="20" required="required" aria-required="true"
+            style="ime-mode: inactive; margin-bottom: 25px; height: 40px; border: 1px solid #d9d9de"
+            placeholder="비밀번호가 일치해야합니다."></td>
+      </tr>
+
+      <tr>
+        <td style="text-align: left">
+          <p><strong>이름을 입력해주세요.</strong>&nbsp;&nbsp;&nbsp;<span id="nameChk"></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="text" name="name" id="user_name" class="form-control tooltipstered" maxlength="6"
+            required="required" aria-required="true"
+            style="margin-bottom: 25px; width: 100%; height: 40px; border: 1px solid #d9d9de"
+            placeholder="한글로 최대 6자"></td>
+      </tr>
+
+      <tr>
+        <td style="text-align: left">
+          <p><strong>휴대폰 번호를 입력해주세요.</strong>&nbsp;&nbsp;&nbsp;<span id="phoneNumberChk"></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="email" name="email" id="user_email" class="form-control tooltipstered"
+            required="required" aria-required="true"
+            style="margin-bottom: 25px; width: 100%; height: 40px; border: 1px solid #d9d9de"
+            placeholder="ex) abc@mvc.com"></td>
+      </tr>
+
+
+      <tr>
+        <td style="width: 100%; text-align: center; colspan: 2;">
+          <input type="button" value="회원가입" class="btn form-control tooltipstered" id="signup-btn"
+            style="background: gray; margin-top: 0; height: 40px; color: white; border: 0px solid #388E3C; opacity: 0.8">
+        </td>
+      </tr>
+
+    </table>
+  </form>
+
 
 
          <!-- footer --------------------->
@@ -93,10 +174,47 @@
             const checkResultList = [false, false, false, false, false];
 
             // 이메일 검사 정규표현식
-            const re = /\S+@\S+\.\S+/;
+            const emailPattern = /\S+@\S+\.\S+/;
 
             // 아이디 입력값 검증
             const $emailInput = document.getElementById('emailInput');
+
+            // 키를 눌렀다 떼는 순간 이벤트 발생
+            $emailInput.onkeyup = e => {
+
+            const emailInput = $emailInput.value;
+            // console.log(idValue);
+
+            if (emailInput.trim() === '') {
+            $emailInput.style.borderColor = 'red';
+            document.getElementById('idChk').innerHTML = '<b style="color: red;">[이메일은 필수값입니다!]</b>';
+            checkResultList[0] = false;
+
+            } else if (!emailPattern.test(emailInput)) {
+            // 정규표현식의 함수 test를 통해서 입력값이 패턴에 유효한지를 검증.
+            // 패턴과 일치하는 입력값이면 true, 하나라도 어긋난다면 false.
+            $emailInput.style.borderColor = 'red';
+            document.getElementById('emailChk').innerHTML = '<b style="color: red;">[아이디는 4~14글자의 영문,숫자로 입력하세요!]</b>';
+            checkResultList[0] = false;
+
+            } else {
+            // 비동기 요청으로 아이디 중복 확인 진행
+            fetch('/user/check/email/' + emailInput)
+                .then(res => res.json())
+                .then(flag => {
+                if (flag) { // 중복
+                    $emailInput.style.borderColor = 'red';
+                    document.getElementById('emailChk').innerHTML = '<b style="color: red;">[이메일이 중복되었습니다.]</b>';
+                    checkResultList[0] = false;
+                
+                } else {
+                    $emailInput.style.borderColor = 'skyblue';
+                    document.getElementById('emailChk').innerHTML = '<b style="color: skyblue;">[사용 가능한 이메일입니다.]</b>';
+                    checkResultList[0] = true;
+                }
+                });
+            }
+}
 
             
             document.getElementById('signup-btn').addEventListener('click', e => {
@@ -196,10 +314,32 @@
                 }
             });
 
-            // 휴대폰 번호 검증
-            const $phoneNumberInput = /^(01[016789]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
+             // 휴대폰 검사 정규표현식
+            const phoneNumberPattern = /^(01[016789]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
 
-            document.getElementById('signup-btn').addEventListener('click', e => {})
+            // 휴대폰 번호 검증
+            const $phoneNumberInput = document.getElementById('phoneNumberInput');
+
+            document.getElementById('signup-btn').addEventListener('click', e => {
+
+                const phoneNumberInput = $phoneNumberInput.value;
+
+                if (phoneNumberInput.trim() === '') {
+                    alert('휴대폰 번호는 작성은 필수 입니다.')
+                    checkResultList[4] = false;
+
+                } else if (!phoneNumberPattern.test(phoneNumberInput)) {
+                    alert('제대로된 번호를 입력해주세요');
+                    checkResultList[4] = false;
+
+                } else {
+                    alert('올바른 휴대폰 번호 입니다.');
+                    checkResultList[4] = true;
+                }
+
+
+
+            });
 
 
 
