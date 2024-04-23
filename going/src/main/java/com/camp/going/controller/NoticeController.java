@@ -49,19 +49,12 @@ public class NoticeController {
         // 사용자 인증 정보 가져오기.
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         // 사용자가 인증되었고, ADMIN 권한을 가지고 있는지 확인함.
-        if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
-                .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
-            System.out.println("/notice-detail-write: GET");
-
-            // 카테고리 옵션 설정
-            // List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
-            // model.addAttribute("categories", categories);
-
-
+//        if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
+//                .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
+//            System.out.println("/notice-detail-write: GET");
 
             return "notice-detail-write";
-        } else return // "redirect:/main/notice"; -> 어드민 로그인 전까지 주석처리
-        "notice-detail-write";
+//        } else return "redirect:/main/notice"; -> 어드민 로그인 전까지 주석처리
     }
 
 
@@ -89,10 +82,6 @@ public class NoticeController {
     @PostMapping("notice-modify")
     public String modify(NoticeModifyRequestDTO dto, HttpSession session, Model model) {
         log.info("/notice-modify: POST, dto: {}", dto);
-
-         // 카테고리 옵션 설정
-         // List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
-         // model.addAttribute("categories", categories);
 
         service.modify(dto, session);
         return "redirect:/main/notice";
