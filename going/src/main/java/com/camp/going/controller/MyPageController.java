@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MyPageController {
 
     @GetMapping("/mypage")
-    public void myPage() {
+    public String myPage() {
         log.info("/user/mypage : GET!");
+        return "mypage";
     }
 
 }
