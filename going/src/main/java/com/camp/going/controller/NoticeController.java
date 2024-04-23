@@ -133,8 +133,6 @@ public class NoticeController {
 
         // 상세보기와 같은 목록 찾기
         model.addAttribute("currentNoticeNo", nno);
-        NoticeDetailResponseDTO dto2 = service.getDetail(nno);
-        model.addAttribute("n", dto2);
 
 
         return ("notice-detail");
