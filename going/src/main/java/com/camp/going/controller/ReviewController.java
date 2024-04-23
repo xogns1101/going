@@ -83,7 +83,7 @@ public class ReviewController {
         System.out.println("/review/delete : GET! " + rno);
         service.delete(rno);
 
-        return "redirect:/review";
+        return "redirect:/main/review";
     }
 
 }

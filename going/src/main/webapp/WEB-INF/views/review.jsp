@@ -93,14 +93,7 @@
         }
 
         // 리뷰 수정 버튼을 눌렀을때 리뷰 수정 페이지로 이동시키기
-        const modifyButtons = document.querySelectorAll('.bigBox .review-modify');
-
-        modifyButtons.forEach(function (button) {
-            button.addEventListener('click', function () {
-                // 원하는 경로로 이동합니다.
-                window.location.href = '/main/review-modify';
-            });
-        });
+        
 
         // 삭제 버튼을 눌렀을때 리뷰 삭제 진행시키기
         
@@ -119,6 +112,13 @@
                     // 서버에 삭제 요청 보내기
                     location.href = '/main/review-delete?rno=' + reviewNo;
                 }
+            } if(e.target.matches('.review-modify')) {
+                const reviewNo = e.target.closest('.review-box').dataset.bno;
+                console.log(reviewNo);
+
+                location.href = '/main/review-modify?rno=' + reviewNo;
+
+
             }
         });
     </script>
