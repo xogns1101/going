@@ -32,18 +32,11 @@
         <h1>NOTICE / <span>공지사항</span></h1>
     </div>
 
-    <div id="wrap" class="form-container">
-        <p>${n.noticeNo}번 공지사항 <span style="font-size: 0.7em;">${n.noticeDate}</span></p>
-        <div id="title">${n.noticeTitle}</div>
-        <div id="content">${n.noticeContent}</div>
-        <div class="buttons">
-            <button class="list-btn" type="button" onclick="location.href='/main/notice'">목록</button>
-        </div>
-    </div>
+
 
     <div class="notice-list">
         <div class="notice-box">
-            <div class="NoticeBoardType">‘공지사항’ 게시판 글</div>
+            <div class="NoticeBoardType"><< ${n.noticeNo}번 공지사항 >></div>
             <table border="1">
                 <thead>
                     <tr class="column">
@@ -69,6 +62,10 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="buttons">
+                        <button class="list-btn" type="button" onclick="location.href='/main/notice'">목록</button>
+                    </div>
         </div>
     </div>
 </section>
