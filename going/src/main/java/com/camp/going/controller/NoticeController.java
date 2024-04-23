@@ -78,7 +78,7 @@ public class NoticeController {
     // 글 수정 화면 요청
     @GetMapping("/notice-modify/{nno}")
     public String modifyScreen(@PathVariable("nno") int nno, Model model) {
-        log.info("/notice-modify: GET");
+        log.info("/notice-modify: GET " + nno);
         NoticeDetailResponseDTO dto = service.getDetail(nno);
         model.addAttribute("notice", dto);
         return "notice-modify"; // 수정 폼으로 이동
@@ -105,19 +105,20 @@ public class NoticeController {
         // 사용자 인증 정보 가져오기.
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         // 사용자가 인증되었고, ADMIN 권한을 가지고 있는지 확인함.
-        if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
-                .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
-            System.out.println("/notice-delete: GET" + nno);
+//        if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
+//                .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
+//            System.out.println("/notice-delete: GET" + nno);
+        log.info("/notice-delete: GET " + nno);
             service.delete(nno);
             return "redirect:/main/notice";
-        } else return "redirect:/main/notice";
+//        } else return "redirect:/main/notice";
     }
 
 
     // 글 상세보기 요청
     @GetMapping("notice-detail/{nno}")
     public String detail(@PathVariable("nno") int nno, @ModelAttribute("s") Search page, Model model) {
-        System.out.println("/notice-detail: GET" + nno);
+        System.out.println("/notice-detail: GET " + nno);
         NoticeDetailResponseDTO dto = service.getDetail(nno);
 
         model.addAttribute("n", dto);

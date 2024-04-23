@@ -49,6 +49,10 @@
                 <button class="modify-btn" type="button" onclick="location.href='/main/notice-modify/${n.noticeNo}'">
                     수정
                 </button>
+                <form id="deleteForm" action="/main/notice-delete" method="get">
+                    <input type="hidden" name="nno" value="${n.noticeNo}">
+                    <button type="button" onclick="confirmDelete()">삭제</button>
+                </form>
             </div>
 
 
@@ -192,6 +196,12 @@
             });
         });
 
+        function confirmDelete() {
+            if (confirm("정말로 삭제하시겠습니까?")) {
+                document.getElementById("deleteForm").submit();
+                alert("삭제가 완료되었습니다.");
+            }
+        }
     </script>
 
 
