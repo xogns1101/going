@@ -31,7 +31,12 @@
     <section>
 
         <div class="title">
-            <h1>NOTICE / <span>공지사항</span></h1>
+            <h1>NOTICE / <span>공지사항
+                <a href="/main/notice-detail-write" class="add-btn">등록</a>
+            </span></h1>
+            <!-- <c:if test="${login.auth == 'ADMIN'}"> -->
+                <!-- <span><a href="/main/notice-write" class="add-btn">등록</a></span> -->
+            <!-- </c:if> -->
         </div>
 
         <div class="notice-list">

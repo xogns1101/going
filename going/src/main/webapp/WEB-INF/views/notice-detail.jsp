@@ -74,11 +74,23 @@
                         <c:forEach var="b" items="${nList}">
                             <tr class="notice-click">
                                 <td class="noticeCategory">
+                                    <c:set var="categoryName" value="" />
+                                    <c:choose>
+                                        <c:when test="${b.noticeCategory == 'ESSENTIAL'}">
+                                            <c:set var="categoryName" value="필독" />
+                                        </c:when>
+                                        <c:when test="${b.noticeCategory == 'NOTICE'}">
+                                            <c:set var="categoryName" value="공지" />
+                                        </c:when>
+                                        <c:when test="${b.noticeCategory == 'COMMON'}">
+                                            <c:set var="categoryName" value="기본" />
+                                        </c:when>
+                                    </c:choose>
                                     <c:choose>
                                         <c:when test="${b.noticeNo == currentNoticeNo}">
-                                            <strong style="color: #FF0000;">${b.noticeCategory}</strong>
+                                            <strong style="color: #FF0000;">${categoryName}</strong>
                                         </c:when>
-                                        <c:otherwise>${b.noticeCategory}</c:otherwise>
+                                        <c:otherwise>${categoryName}</c:otherwise>
                                     </c:choose>
                                 </td>
                                 <td class="NoticeNo">
