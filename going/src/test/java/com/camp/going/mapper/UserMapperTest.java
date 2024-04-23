@@ -27,7 +27,6 @@ class UserMapperTest {
                 .password("bbb1234!")
                 .phoneNumber("010-8954-1342")
                 .name("배라이언")
-                .userUpdate(LocalDateTime.now())
                 .build();
         userMapper.save(user);
 

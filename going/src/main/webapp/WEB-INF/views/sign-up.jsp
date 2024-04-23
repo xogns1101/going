@@ -36,18 +36,19 @@
                  <div class="signup-box">
 
                      <div class="plzId">아이디(이메일)을 입력해 주세요.</div>
+                     <span id="idChk"></span></p>
                      <div class="Emailblank">
-                         <input type="text" placeholder="최대 30자">
+                         <input type="text" id="emailInput" placeholder="최대 30자">
                      </div>
 
                      <div class="plzPw">비밀번호를 입력해 주세요.</div>
                      <div class="Passwordblank">
-                         <input type="password" placeholder="영문과 특수문자를 포함한 최소 8자">
+                         <input type="password" id="passwordInput" placeholder="영문과 특수문자를 포함한 최소 8자">
                      </div>
 
                      <div class="plzPw2">비밀번호를 다시 입력해 주세요.</div>
                      <div class="Passwordblank2">
-                         <input type="password" placeholder="비밀번호가 일치해야 합니다.">
+                         <input type="password" class="passwordInput2" placeholder="비밀번호가 일치해야 합니다.">
                      </div>
 
                      <div class="plzName">이름을 입력해 주세요.</div>
@@ -84,11 +85,67 @@
          <%@ include file="include/footer.jsp" %>
 
         <script>
+
+            // 입력값 검증 통과 여부 배열
+            const checkResultList = [false, false, false, false, false];
+
+            // 이메일 검사 정규표현식
+            const re = /\S+@\S+\.\S+/;
+
+            // 아이디 입력값 검증
+            const $emailInput = document.getElementById('emailInput');
+
+            // 키를 눌렀다 떼는 순간 이벤트 발생
+            $emailInput.onkeyup = e => {
+
+            const idValue = $emailInput.value;
+            // console.log(idValue);
+
+            if (idValue.trim() === '') {
+                alert('아이디를 입력해주세요.');
+                checkResultList[0] = false;
+
+            } else if (!re.test(idValue)) {
+            // 정규표현식의 함수 test를 통해서 입력값이 패턴에 유효한지를 검증.
+            // 패턴과 일치하는 입력값이면 true, 하나라도 어긋난다면 false.
+                alert('이메일 형태로 입력해주세요.');
+                checkResultList[0] = false;
+
+            } else {
+                    alert('올바른 아이디 입니다.');
+                };
+            }
+
+            // 패스워드 검사 정규표현식
+            const passwordPattern = /([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/;
+
+            // 패스워드 입력값 검증
+            const $pwInput = document.getElementById('passwordInput');
+
+            $pwInput.onkeyup = e => {
+            const pwValue = $pwInput.value;
+            if (pwValue.trim() === '') {
+                alert('비밀번호는 필수 값 입니다.');
+                checkResultList[1] = false;
+
+            } else if (!passwordPattern.test(pwValue)) {
+                alert('비밀번호는 특수 문자 포함 8자 이상입니다.');
+                checkResultList[1] = false;
+
+            } else {
+                alert('사용 가능한 비밀번호 입니다.');
+                checkResultList[1] = true;
+            }
+            };
+
+
+                
+
          // 회원가입 처리
          const handleJoin = () => {
-             const email = document.querySelector('.Emailblank input').value;
-             const password = document.querySelector('.Passwordblank input').value;
-             const confirmPassword = document.querySelector('.Passwordblank2 input').value;
+             const email = document.querySelector('emailInput').value;
+             const password = document.querySelector('.passwordInput').value;
+             const confirmPassword = document.querySelector('.passwordInput2').value;
 
              if (email === '') {
                  alert('아이디를 입력해주세요.');
