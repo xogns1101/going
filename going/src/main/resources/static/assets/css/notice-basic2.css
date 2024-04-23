@@ -31,14 +31,14 @@ section .title h1 {
     background: #E4FFAA;
     margin-top: 50px;
     border-radius: 3%;
-    margin-left: 340px;
+    height: auto;
     position: relative;
   }
 
   section .notice-list .notice-box table {
     width: 900px;
     margin-left: 13%;
-    margin-top: 8%;
+    margin-top: 7%;
     background: #F0EEEE;
     
   }
@@ -103,6 +103,7 @@ section .title h1 {
     position: relative;
 } */
 
+
 .total-date-background {
     width: 159px;
     height: 43px;
@@ -141,6 +142,7 @@ section .title h1 {
     line-height: 43px;
     
 }
+
 
 /* 제목 조회 */
 /* .title-wrapper {
@@ -198,8 +200,8 @@ section .title h1 {
     width: 320px;
     height: 43px;
     /* position: absolute; */
-    left: 1055px;
-    top: 9px;
+    left: 445px;
+    top: 65px;
     background: white;
     border: 1px black solid;
     position: relative;

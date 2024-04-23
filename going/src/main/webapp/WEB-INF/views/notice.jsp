@@ -36,6 +36,14 @@
 
         <div class="notice-list">
             <div class="notice-box">
+
+                <!-- 검색어 조회 -->
+
+                <div class="search-content-background">
+                    <input type="text" class="search-content" placeholder="검색어를 입력해 주세요">
+                    <button class="search-click-button" onclick="handleSearchClick()">검색</button>
+                    </div>
+
                 <!-- 페이지 사이즈 체크 -->
                 <div class="page-size-background">
                     <span class="page-size">8개씩</span>
@@ -79,28 +87,24 @@
                 </table>
                 
 
-                <!-- 전체기간 조회 -->
+                <!-- 전체기간 조회
 
                 <div class="total-date-background">
                     <input type="checkbox" class="total-date-click-button" onclick="handleTotalDateClick(this)">
                     <span class="total-date">전체기간</span>
                 </div>
+                -->
 
                 <!-- 제목 조회 -->
-
+                <!--
                 <div class="only-title-background">
                     <input type="checkbox" class="only-title-click-button" onclick="handleOnlyTitleClick(this)">
                     <span class="only-title">제목만</span>
                 </div>
+                -->
 
 
 
-                <!-- 검색어 조회 -->
-
-                <div class="search-content-background">
-                    <input type="text" class="search-content" placeholder="검색어를 입력해 주세요">
-                    <button class="search-click-button" onclick="handleSearchClick()">검색</button>
-                </div>
 
 
     </section>
