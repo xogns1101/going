@@ -84,7 +84,9 @@ public class NoticeController {
         log.info("/notice-modify: POST, dto: {}", dto);
 
         service.modify(dto, session);
-        return "redirect:/main/notice";
+
+        int noticeNo = dto.getNoticeNo(); // 수정된 공지사항 번호
+        return "redirect:/main/notice-detail/" + noticeNo;
     }
 
 
