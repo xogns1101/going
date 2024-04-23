@@ -37,9 +37,9 @@
           <form action="/main/notice-modify" method="post">
             <label for="category">카테고리</label>
             <select id="category" name="noticeCategory" required>
-              <option value="COMMON">기본</option>
-              <option value="NOTICE">공지</option>
-              <option value="ESSENTIAL">필독</option>
+              <option value="COMMON" ${notice.noticeCategory eq 'COMMON' ? 'selected' : ''}>기본</option>
+              <option value="NOTICE" ${notice.noticeCategory eq 'NOTICE' ? 'selected' : ''}>공지</option>
+              <option value="ESSENTIAL" ${notice.noticeCategory eq 'ESSENTIAL' ? 'selected' : ''}>필독</option>
             </select>
             <input type="hidden" name="noticeNo" value="${notice.noticeNo}">
             <label for="title">제목</label>
