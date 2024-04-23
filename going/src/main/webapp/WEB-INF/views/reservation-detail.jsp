@@ -64,7 +64,7 @@
 
             <hr>
 
-            <div class="reserve-info">
+            <div class="reserve-info" data-campId="${r.campId}" data->
                 <h1>예약하기</h1>
 
 
@@ -116,7 +116,8 @@
 
                     </div>
 
-                    <button type="submit" class="reserve-button">예약하기</button>
+                    <button type="submit" class="reserve-button"
+                    data-href="/main/reservation-detail?camp_id=${b.campId}">예약하기</button>
                 </form>
             </div>
         </div>
@@ -252,6 +253,7 @@
 
                         $regDate.textContent = currentYear + '-' + monthString + '-' + dayString;
 
+                       
 
                     }
 
@@ -277,8 +279,32 @@
 
 
                     }
-
                 }
+
+
+                // private int campId;
+                // private String email;
+                // private String campName;
+                // private String regDate; // 입실
+                // private String regDates; // 퇴실
+                // private int price;
+                // private String phoneNumber; 
+
+
+                // 예약하기 눌렀을때 값 전달하기
+                const $reserveBtn = document.querySelector('.reserve-button');
+
+                $reserveBtn.addEventListener('click', e => {
+
+                    const campId = e.target.dataset.campId;
+                    console.log('camp_id: ' + campId);
+
+                // 서버에 요청 보내기
+                location.href='/main/reservation-list/' + campId;
+
+
+                })
+
             });
 
 

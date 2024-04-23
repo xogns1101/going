@@ -29,7 +29,7 @@
                 <div class="review-list">
                     <div class="review-box" data-bno="${b.reviewNo}">
                         <ul class="review">
-                            <li class="rno">${b.reviewNo}</li>
+                            <!-- <li class="rno">${b.reviewNo}</li> -->
                             <li class="camp-name">${b.campName}</li>
                             <li class="email">${b.email}</li>
                             <img src="/local${b.reviewImage}" alt="리뷰">

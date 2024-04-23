@@ -34,7 +34,7 @@ public class ImageController {
                                       @PathVariable String m,
                                       @PathVariable String d,
                                       @PathVariable String fileName) {
-        log.info("/display/{}/{}/{}/{} : GET", y, m, d, fileName);
+        log.info("/review/{}/{}/{}/{} : GET", y, m, d, fileName);
 
         String fullPath = String.format("%s/%s/%s/%s/%s", rootPath, y, m, d, fileName);
         log.info("fullPath : {}", fullPath);

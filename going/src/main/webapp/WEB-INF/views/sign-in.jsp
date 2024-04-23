@@ -32,32 +32,37 @@
 
                      <div class="signin-list">
                          <div class="signin-box">
+                                <form action="/user/sign-in" name="sign-in" method="post" id="signInForm" style="margin-bottom: 0;">
 
-                             <div class="plzId">아이디를 입력해 주세요.</div>
-                             <div class="Emailblank">
-                                 <input type="text" id="emailInput" placeholder="이메일을 입력해 주세요.">
-                             </div>
+                                <div class="plzId">아이디를 입력해 주세요.</div>
+                                <div class="Emailblank">
+                                    <input type="text" id="emailInput" name="email" placeholder="이메일을 입력해 주세요.">
+                                </div>
 
-                             <div class="plzPw">비밀번호를 입력해 주세요.</div>
-                             <div class="Passwordblank">
-                                 <input type="password" id="passwordInput" placeholder="최소 8자">
-                             </div>
+                                <div class="plzPw">비밀번호를 입력해 주세요.</div>
+                                <div class="Passwordblank">
+                                    <input type="password" id="passwordInput" placeholder="최소 8자" name="password">
+                                </div>
 
-                             <!-- 자동로그인 -->
-                             <div class="auto-login">
-                                 <input type="checkbox" id="autoLogin">
-                                 <label for="autoLogin">자동 로그인</label>
-                             </div>
-
-                             <!-- 로그인 버튼 -->
-                             <div class="LoginButton">
-                                 <div class="Login" onclick="handleLogin()">로그인</div>
-                             </div>
+                                <!-- 자동로그인 -->
+                                <div class="auto-login">
+                                    <input type="checkbox" id="autoLogin" name="autoLogin">
+                                    <label for="autoLogin">자동 로그인</label>
+                                </div>
+                                LoginButton
+                                Login
+                                <!-- 로그인 버튼 -->
+                                <div class="LoginButton">
+                                    <input
+                                    type="submit" value="로그인" class="Login LoginButton" id="signIn-btn" style="margin-top: 0; height: 40px; color: white; border: 0px solid #f78f24; ">
+                                </div>
+                            </form>
 
                              <!-- 회원가입 버튼 -->
                              <div class="JoinButton">
                                  <a href="/user/sign-up" class="Join">회원가입</a>
                              </div>
+                             </form>
 
                                     <a id="custom-login-btn"
                                         href="/kakao/login">
@@ -77,32 +82,21 @@
          <%@ include file="include/footer.jsp" %>
 
 
-         <script>
 
-  function handleLogin() {
-        // 입력된 이메일과 비밀번호 가져오기
-        const email = document.getElementById('emailInput').value;
-        const password = document.getElementById('passwordInput').value;
 
-        // 로그인 검증 (임의로 예시로 이메일이 'test@test.com', 비밀번호가
-        // 'password'일 때 로그인 성공으로 가정)
-        if (email === 'test@test.com' && password === 'password') {
-            alert('로그인 성공!');
+            <script>
 
-            // 자동 로그인 처리
-            if (document.getElementById('autoLogin').checked) {
-                // 여기에 자동 로그인 관련 처리 추가
-                alert('자동 로그인 설정됨');
+            const serverResult = '${result}';
+            console.log(serverResult);
+
+            if (serverResult === 'NO_EMAIL') {
+                alert('회원가입이 필요합니다.');
+            } else if (serverResult === 'NO_PW') {
+                alert('비밀번호가 틀립니다.');
             }
 
-            // 여기에 로그인 성공 후 이동할 페이지 설정
-            // window.location.href = '로그인 성공 후 이동할 페이지 URL';
-        } else {
-            alert('이메일 또는 비밀번호가 올바르지 않습니다.');
-        }
-    }
+            </script>
 
-             </script>
 
 
 </body>

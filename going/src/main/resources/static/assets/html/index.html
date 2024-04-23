@@ -19,18 +19,40 @@
 
     <header>
         <div id="wrap">
-            <h1 class="logo">Y⛺GAJA</h1>
+            <h1 class="logo"><a href="/main">Y⛺GAJA</a></h1>
             <div class="logo-content">
-                <a href="#">INTRO</a>
-                <a href="#">RESERVATION</a>
-                <a href="#">NOTICE</a>
-                <a href="#">REVIEW</a>
+                <a href="/main/introduce">INTRO</a>
+                <a href="/main/reservation">RESERVATION</a>
+                <a href="/main/notice">NOTICE</a>
+                <a href="/main/review">REVIEW</a>
+            </div>
+            <div class="login">
+                <a href="/user/sign-in">
+                    <p>LOGIN</p>
+                </a><br>
+            </div>
+            <div class="logout">
+                <a href="/user/sign-out">LOGOUT</a><br>
+                <a href="/user/mypage">MYPAGE</a>
             </div>
 
-            <div class="login">
-                <a href="#">LOGIN</a><br>
-                <a href="#">MYPAGE</a>
-            </div>
+
+
+            <!-- 로그인이 되어있으면 로그아웃이랑 마이페이지만 뜰수있도록
+
+                <div class="login">
+                <c:if test="${login == null}">
+                    <a href="/user/sign-in">LOGIN</a><br>
+                </c:if>
+
+
+                <c:if test="${sessionScope.login != null}">
+                    <a href="/user/sign-out">LOGOUT</a><br>
+                    <a href="/user/mypage">MYPAGE</a>
+                </c:if>
+            </div> 
+
+        -->
         </div>
     </header>
 
@@ -82,24 +104,46 @@
                 </div>
             </div>
 
-            <div class="ad">
+            <div class="ad"> ad
                 <div class="ad-box">
-
-                    <img src="../img/ad2.png" alt="광고">
-                    <img src="../img/ad3.png" alt="광고">
-                    <img src="../img/ad4.png" alt="광고"></div>
+                    <img src="../img/ad4.jpg" alt="광고">
+                    <img src="../img/ad5.jpg" alt="광고">
+                    <img src="../img/ad3.jpg" alt="광고">
+                    
+                </div>
             </div>
 
 
+                <!-- <div class="ad2">
+                    <div class="ad-box">
+                        <img src="../img/ad4.jpg" alt="광고">
+                        <img src="../img/ad5.jpg" alt="광고">
+                        <img src="../img/ad3.jpg" alt="광고">
+                        <img src="../img/ad1.jpg" alt="광고">
+                        <img src="../img/ad2.jpg" alt="광고">
+                    </div>
+                </div>
+
+                <div class="ad3">
+                    <div class="ad-box">
+                        <img src="../img/ad2.jpg" alt="광고">
+                        <img src="../img/ad4.jpg" alt="광고">
+                        <img src="../img/ad1.jpg" alt="광고">
+                        <img src="../img/ad5.jpg" alt="광고">
+                        <img src="../img/ad3.jpg" alt="광고">
+                    </div>
+                </div> -->
+
+
+
+
+           
 
         </div>
-
-
     </section>
 
-
-    <!-- 날씨 시작 -->
     <script>
+        // 날씨
         (function (d, s, id) {
             if (d.getElementById(id)) {
                 if (window.__TOMORROW__) {
@@ -114,10 +158,13 @@
 
             fjs.parentNode.insertBefore(js, fjs);
         })(document, 'script', 'tomorrow-sdk');
+
+
+      
     </script>
 
 
-    <!-- 날씨 끝 -->
+
 
 
 

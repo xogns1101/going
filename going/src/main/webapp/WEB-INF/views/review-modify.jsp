@@ -13,9 +13,11 @@
 
 <body>
 
-  <form id="reviewForm" action="/main/review-modify" method="get" enctype="multipart/form-data">
+  <form id="reviewForm" action="/main/review-modify" method="post" enctype="multipart/form-data">
 
     <h1>Review⛺ / 수정</h1>
+
+    <input type="hidden" name="rno" value="${r.reviewNo}">
 
     <div class="star-rating">
       <input type="radio" id="5-stars" name="reviewPoint" value="5" />
@@ -30,21 +32,21 @@
       <label for="1-star" class="star">&#9733;</label>
     </div>
 
-    <input type="hidden" name="starPoint" id="starPoint">
+    <input type="hidden" name="starPoint" id="starPoint" value="${r.reviewPoint}">
 
 
     <!-- <input type="text" id="review-title" placeholder="캠핑장 이름을 입력하세요."><br> -->
-    <input type="text" id="review-content" name="reviewContent" placeholder="리뷰내용">
+    <input type="text" id="review-content" name="reviewContent" placeholder="리뷰내용" value="${r.reviewContent}">
     </div>
 
     <div class="profile">
 
       <div class="thumbnail-box">
-        <img src="/assets/img/camp3.jpg" alt="리뷰사진">
+        <img src="/review${r.reviewImage}" alt="리뷰사진">
       </div>
 
 
-      <input type="file" class="review-image" name="reviewImage" accept="image/*">
+      <input type="file" class="review-image" name="reviewImage" accept="image/*" value="${r.reviewImage}">
     </div>
 
     <div class="two-Btn">
@@ -155,7 +157,12 @@
           }
         })
       })
-    })
+    });
+
+    const reviewPoint = '${r.reviewPoint}';
+    document.getElementById(reviewPoint + '-stars').click();
+
+
 
     // 입력창 막는 부분
     document.querySelector('.write-button').addEventListener('click', function (event) {

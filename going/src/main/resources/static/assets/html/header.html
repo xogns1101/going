@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yagaja</title>
-    <link rel="stylesheet" href="/going/src/main/resources/css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,24 +17,42 @@
 
     <header>
         <div id="wrap">
-            <h1 class="logo">Y⛺GAJA</h1>
+            <h1 class="logo"><a href="/main">Y⛺GAJA</a></h1>
             <div class="logo-content">
-                <a href="#">INTRO</a>
-                <a href="#">RESERVATION</a>
-                <a href="#">NOTICE</a>
-                <a href="#">REVIEW</a>
+                <a href="/main/introduce">INTRO</a>
+                <a href="/main/reservation">RESERVATION</a>
+                <a href="/main/notice">NOTICE</a>
+                <a href="/main/review">REVIEW</a>
             </div>
-            
             <div class="login">
-                <a href="#">LOGIN</a><br>
-                <a href="#">MYPAGE</a>
+                <a href="/user/sign-in"><p>LOGIN</p></a><br>
             </div>
+            <div class="logout">
+                <a href="/user/sign-out">LOGOUT</a><br>
+                <a href="/user/mypage">MYPAGE</a>
+            </div>
+
+
+
+            <!-- 로그인이 되어있으면 로그아웃이랑 마이페이지만 뜰수있도록
+
+                <div class="login">
+                <c:if test="${login == null}">
+                    <a href="/user/sign-in">LOGIN</a><br>
+                </c:if>
+
+
+                <c:if test="${sessionScope.login != null}">
+                    <a href="/user/sign-out">LOGOUT</a><br>
+                    <a href="/user/mypage">MYPAGE</a>
+                </c:if>
+            </div> 
+
+        -->
         </div>
+    </header>    
 
 
-
-
-    </header>
     
 </body>
 </html>

@@ -49,7 +49,7 @@ public class UserService {
         // 회원 가입을 안한 상태
         if(oneUser == null){
             System.out.println(dto.getEmail() + "(은)는 없는 아이디!");
-            return NO_ACC;
+            return NO_EMAIL;
         }
 
         // 비밀번호 일치 검사
