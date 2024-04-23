@@ -3,37 +3,37 @@
 
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Review-modify</title>
-
-    <%@ include file="include/static-head.jsp" %>
-
+  <meta charset="UTF-8">
+  <title>Review-Write</title>
+  <%@ include file="include/static-head.jsp" %>
 
 </head>
+
 <body>
 
-  <form action="/review/modify" method="get" enctype="multipart/form-data">
+  <form action="/main/review-modify" method="post" enctype="multipart/form-data">
 
     <h1>Review⛺ / 수정</h1>
 
     <div class="star-rating">
-      <input type="radio" id="5-stars" name="rating" value="5" />
+      <input type="radio" id="5-stars" name="reviewPoint" value="5" />
       <label for="5-stars" class="star">&#9733;</label>
-      <input type="radio" id="4-stars" name="rating" value="4" />
+      <input type="radio" id="4-stars" name="reviewPoint" value="4" />
       <label for="4-stars" class="star">&#9733;</label>
-      <input type="radio" id="3-stars" name="rating" value="3" />
+      <input type="radio" id="3-stars" name="reviewPoint" value="3" />
       <label for="3-stars" class="star">&#9733;</label>
-      <input type="radio" id="2-stars" name="rating" value="2" />
+      <input type="radio" id="2-stars" name="reviewPoint" value="2" />
       <label for="2-stars" class="star">&#9733;</label>
-      <input type="radio" id="1-stars" name="rating" value="1" />
+      <input type="radio" id="1-stars" name="reviewPoint" value="1" />
       <label for="1-star" class="star">&#9733;</label>
     </div>
 
 
 
     <!-- <input type="text" id="review-title" placeholder="캠핑장 이름을 입력하세요."><br> -->
-    <input type="text" id="review-content" placeholder="리뷰내용">
+    <input type="text" id="review-content" name="reviewContent" placeholder="리뷰내용">${b.reviewContent}
     </div>
 
     <div class="profile">
@@ -43,7 +43,7 @@
       </div>
 
 
-      <input type="file" id="review-image" accept="image/*">
+      <input type="file" id="review-image" name="reviewImage" accept="image/*">
     </div>
 
     <div class="two-Btn">
@@ -77,6 +77,7 @@
     </div>
 
 
+
     <!-- SVG -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 100" id="btn-layer" preserveAspectRatio="none">
@@ -90,156 +91,272 @@
       </symbol>
     </svg>
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin3.min.js"></script>
-    <script>
-      // 버튼 애니메이션 효과 부분
-
-      gsap.registerPlugin(MorphSVGPlugin);
-
-      document.querySelectorAll('.button').forEach(element => {
-
-        let path = element.querySelector('.btn-layer path'),
-          tl = gsap.timeline();
-
-        element.addEventListener('click', e => {
-          e.preventDefault();
-          if (element.classList.contains('active')) {
-            return;
-          }
-          element.classList.add('active');
-
-          tl.to(path, {
-            morphSVG: 'M136,77.5h-1H4.8H4c-2.2,0-4-1.8-4-4v-47c0-2.2,1.8-4,4-4c0,0,0.6,0,0.9,0C44,22.5,66,10,66,10  s3,12.5,69.1,12.5c0.2,0,0.9,0,0.9,0c2.2,0,4,1.8,4,4v47C140,75.7,138.2,77.5,136,77.5z',
-            duration: .3,
-            delay: .3
-          }).
-          to(path, {
-            morphSVG: 'M136,77.5c0,0-11.7,0-12,0c-90,0-94.2,0-94.2,0s-10.8,0-25.1,0c-0.2,0-0.8,0-0.8,0c-2.2,0-4-1.8-4-4v-47  c0-2.2,1.8-4,4-4c0,0,0.6,0,0.9,0c39.1,0,61.1,0,61.1,0s3,0,69.1,0c0.2,0,0.9,0,0.9,0c2.2,0,4,1.8,4,4v47  C140,75.7,138.2,77.5,136,77.5z',
-            duration: 1.7,
-            ease: 'elastic.out(1, .15)',
-            onComplete() {
-              element.classList.remove('active');
-            }
-          })
-        })
-      })
-
-      document.querySelectorAll('.list-button').forEach(element => {
-
-        let path = element.querySelector('.btn-layer path'),
-          tl = gsap.timeline();
-
-        element.addEventListener('click', e => {
-          e.preventDefault();
-          if (element.classList.contains('active')) {
-            return;
-          }
-          element.classList.add('active');
-
-          tl.to(path, {
-            morphSVG: 'M136,77.5h-1H4.8H4c-2.2,0-4-1.8-4-4v-47c0-2.2,1.8-4,4-4c0,0,0.6,0,0.9,0C44,22.5,66,10,66,10  s3,12.5,69.1,12.5c0.2,0,0.9,0,0.9,0c2.2,0,4,1.8,4,4v47C140,75.7,138.2,77.5,136,77.5z',
-            duration: .3,
-            delay: .3
-          }).
-          to(path, {
-            morphSVG: 'M136,77.5c0,0-11.7,0-12,0c-90,0-94.2,0-94.2,0s-10.8,0-25.1,0c-0.2,0-0.8,0-0.8,0c-2.2,0-4-1.8-4-4v-47  c0-2.2,1.8-4,4-4c0,0,0.6,0,0.9,0c39.1,0,61.1,0,61.1,0s3,0,69.1,0c0.2,0,0.9,0,0.9,0c2.2,0,4,1.8,4,4v47  C140,75.7,138.2,77.5,136,77.5z',
-            duration: 1.7,
-            ease: 'elastic.out(1, .15)',
-            onComplete() {
-              element.classList.remove('active');
-            }
-          })
-        })
-      })
-
-
-      // 파일 선택 부분
-
-
-      // 'thumbnail-box' 요소에서 'img' 요소를 선택합니다
-      const imgElement = document.querySelector('.thumbnail-box img');
-
-      // 파일 선택 입력 요소를 선택합니다
-      const fileInput = document.getElementById('review-image');
-
-      // 파일 선택 이벤트 리스너를 추가합니다
-      fileInput.addEventListener('change', function (event) {
-        // 선택한 파일을 가져옵니다
-        const file = event.target.files[0];
-
-        // 파일이 존재할 경우
-        if (file) {
-          // FileReader 객체를 생성합니다
-          const reader = new FileReader();
-
-          // 파일을 읽을 때 발생하는 'load' 이벤트 리스너
-          reader.onload = function (e) {
-            // 읽은 파일의 데이터 URL을 가져옵니다
-            const imageUrl = e.target.result;
-
-            // 'thumbnail-box'의 'img' 요소의 'src' 속성을 읽은 이미지로 설정합니다
-            imgElement.src = imageUrl;
-          };
-
-          // 파일을 데이터 URL 형식으로 읽습니다
-          reader.readAsDataURL(file);
-        } else {
-          // 파일이 선택되지 않았을 경우 처리할 수 있습니다
-          console.log('파일이 선택되지 않았습니다.');
-        }
-      });
-
-      // 리스트 버튼 클릭 후 다른 목록 페이지 이동
-      const listButton = document.querySelector('.list-button');
-
-      if (listButton) {
-
-        listButton.addEventListener('click', function () {
-          // 원하는 경로로 이동합니다.
-          window.location.href = 'http://localhost:8181/main/review';
-        });
-      }
-
-      const writeButton = document.querySelector('.write-button');
-
-      if (writeButton) {
-
-        writeButton.addEventListener('click', function () {
-          // 원하는 경로로 이동합니다.
-          window.location.href = 'redirct:/main/review';
-        });
-      }
-
-     
-    const starRating = document.querySelector('.star-rating');
-
-    // 이벤트 핸들러 추가
-    starRating.addEventListener('change', function(event) {
-        // 이벤트가 발생한 대상이 라디오 버튼인지 확인
-        const selectedInput = event.target;
-        console.log('selectedInput: ', selectedInput);
-        
-        // 선택된 입력 요소의 타입을 확인
-        if (selectedInput.type === 'radio' && selectedInput.name === 'rating') {
-            // 선택된 라디오 버튼의 value 값을 가져옵니다.
-            const ratingValue = selectedInput.value; // 데이터로 보낼 값 *별점 숫자*
-            console.log('ratingValue: ', ratingValue);
-
-            // 선택된 별점의 value 값을 alert로 띄웁니다.
-            alert(`선택된 점수: \${ratingValue}`);
-        }
-    });
-;
-
-    </script>
-
-
   </form>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin3.min.js"></script>
+  <script>
+    // 버튼 애니메이션 효과 부분
+
+    gsap.registerPlugin(MorphSVGPlugin);
+
+    document.querySelectorAll('.button').forEach(element => {
+
+      let path = element.querySelector('.btn-layer path'),
+        tl = gsap.timeline();
+
+      element.addEventListener('mouseover', e => {
+        e.preventDefault();
+        if (element.classList.contains('active')) {
+          return;
+        }
+        element.classList.add('active');
+
+        tl.to(path, {
+          morphSVG: 'M136,77.5h-1H4.8H4c-2.2,0-4-1.8-4-4v-47c0-2.2,1.8-4,4-4c0,0,0.6,0,0.9,0C44,22.5,66,10,66,10  s3,12.5,69.1,12.5c0.2,0,0.9,0,0.9,0c2.2,0,4,1.8,4,4v47C140,75.7,138.2,77.5,136,77.5z',
+          duration: .3,
+          delay: .3
+        }).
+        to(path, {
+          morphSVG: 'M136,77.5c0,0-11.7,0-12,0c-90,0-94.2,0-94.2,0s-10.8,0-25.1,0c-0.2,0-0.8,0-0.8,0c-2.2,0-4-1.8-4-4v-47  c0-2.2,1.8-4,4-4c0,0,0.6,0,0.9,0c39.1,0,61.1,0,61.1,0s3,0,69.1,0c0.2,0,0.9,0,0.9,0c2.2,0,4,1.8,4,4v47  C140,75.7,138.2,77.5,136,77.5z',
+          duration: 1.7,
+          ease: 'elastic.out(1, .15)',
+          onComplete() {
+            element.classList.remove('active');
+          }
+        })
+      })
+    })
+
+    document.querySelectorAll('.list-button').forEach(element => {
+
+      let path = element.querySelector('.btn-layer path'),
+        tl = gsap.timeline();
+
+      element.addEventListener('mouseover', e => {
+        e.preventDefault();
+        if (element.classList.contains('active')) {
+          return;
+        }
+        element.classList.add('active');
+
+        tl.to(path, {
+          morphSVG: 'M136,77.5h-1H4.8H4c-2.2,0-4-1.8-4-4v-47c0-2.2,1.8-4,4-4c0,0,0.6,0,0.9,0C44,22.5,66,10,66,10  s3,12.5,69.1,12.5c0.2,0,0.9,0,0.9,0c2.2,0,4,1.8,4,4v47C140,75.7,138.2,77.5,136,77.5z',
+          duration: .3,
+          delay: .3
+        }).
+        to(path, {
+          morphSVG: 'M136,77.5c0,0-11.7,0-12,0c-90,0-94.2,0-94.2,0s-10.8,0-25.1,0c-0.2,0-0.8,0-0.8,0c-2.2,0-4-1.8-4-4v-47  c0-2.2,1.8-4,4-4c0,0,0.6,0,0.9,0c39.1,0,61.1,0,61.1,0s3,0,69.1,0c0.2,0,0.9,0,0.9,0c2.2,0,4,1.8,4,4v47  C140,75.7,138.2,77.5,136,77.5z',
+          duration: 1.7,
+          ease: 'elastic.out(1, .15)',
+          onComplete() {
+            element.classList.remove('active');
+          }
+        })
+      })
+    })
+
+    // 입력창 막는 부분
+    document.querySelector('.write-button').addEventListener('click', function(event) {
+    var reviewContent = document.getElementById('review-content').value.trim();
+    var reviewImage = document.getElementById('review-image').files.length;
+    var reviewPoint = document.querySelector('input[name="reviewPoint"]:checked');
+
+    while (!reviewContent || !reviewImage || !reviewPoint) {
+        alert('모든 항목을 입력해주세요.');
+        event.preventDefault(); // 제출을 막습니다.
+        break;
+    } 
+});
+
+
+    // 파일 선택 부분
+
+
+    // 'thumbnail-box' 요소에서 'img' 요소를 선택합니다
+    const imgElement = document.querySelector('.thumbnail-box img');
+
+
+    // 파일 선택 이벤트 리스너를 추가합니다
+    fileInput.addEventListener('change', function (event) {
+      // 선택한 파일을 가져옵니다
+      const file = event.target.files[0];
+
+      // 파일이 존재할 경우
+      if (file) {
+        // FileReader 객체를 생성합니다
+        const reader = new FileReader();
+
+        // 파일을 읽을 때 발생하는 'load' 이벤트 리스너
+        reader.onload = function (e) {
+          // 읽은 파일의 데이터 URL을 가져옵니다
+          const imageUrl = e.target.result;
+
+          // 'thumbnail-box'의 'img' 요소의 'src' 속성을 읽은 이미지로 설정합니다
+          imgElement.src = imageUrl;
+        };
+
+        // 파일을 데이터 URL 형식으로 읽습니다
+        reader.readAsDataURL(file);
+      } else {
+        // 파일이 선택되지 않았을 경우 처리할 수 있습니다
+        console.log('파일이 선택되지 않았습니다.');
+      }
+    });
+
+    // 리스트 버튼 클릭 후 다른 목록 페이지 이동
+    const listButton = document.querySelector('.list-button');
+
+    if (listButton) {
+
+      listButton.addEventListener('click', function () {
+        // 원하는 경로로 이동합니다.
+        window.location.href = 'http://localhost:8181/main/review';
+      });
+    }
+
+    const writeButton = document.querySelector('.write-button');
+
+    if (writeButton) {
+
+      writeButton.addEventListener('click', function () {
+        // 원하는 경로로 이동합니다.
+        window.location.href = 'redirct:/main/review';
+      });
+    }
+
+
+
+
+
+    // 파일 입력 요소
+    const fileInput = document.getElementById('reviewImage');
+
+    // 파일 입력 요소에 change 이벤트 리스너 추가
+    fileInput.addEventListener('change', function (event) {
+      // 파일이 선택되었을 때
+      const file = event.target.files[0];
+
+      if (file) {
+
+        console.log(file);
+
+
+      } else {
+        console.error('파일이 선택되지 않았습니다.');
+      }
+
+      // FormData 객체 생성
+      const formData = new FormData();
+
+      // FormData에 파일 추가
+      formData.append('reviewImage', file);
+
+      // XMLHttpRequest 객체 생성
+      const xhr = new XMLHttpRequest();
+
+      // POST 요청 설정
+      xhr.open('POST', '/review-write', true);
+
+      // 파일 전송
+      xhr.send(formData);
+
+      // 서버의 응답 처리
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            console.log('이미지 업로드 성공!');
+          } else {
+            console.error('이미지 업로드 실패:', xhr.status);
+          }
+        }
+      };
+    });
+
+    // HTML 폼에서 리뷰 포인트 값을 가져오는 함수
+    function getReviewPoint() {
+      const reviewPointInputs = document.getElementsByName("reviewPoint");
+      let selectedValue = null;
+      for (const input of reviewPointInputs) {
+        if (input.checked) {
+          selectedValue = input.value; // 선택된 값을 정수로 변환 == 우선 문자열로 바꾸는 내용 때문에 ParseInt 뗏습니다. 오류 나면 이쪽부분 보기
+          break;
+        }
+      }
+      return selectedValue;
+    }
+
+    // POST 요청을 보내는 함수
+    function postData() {
+      const reviewPoint = getReviewPoint(); // 리뷰 포인트 값을 가져옴
+      if (reviewPoint === null) {
+        console.error("리뷰 포인트를 선택하세요.");
+        return;
+      }
+
+      // POST 요청을 보낼 엔드포인트 URL
+      const url = "redirect:/main/review";
+
+      // POST 요청 설정
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          reviewPoint: reviewPoint
+        })
+      };
+
+      // POST 요청 보내기
+      fetch(url, requestOptions)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("서버 응답 실패");
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log("POST 요청 성공:", data);
+          // 성공한 경우 추가 작업을 수행할 수 있음
+        })
+        .catch(error => {
+          console.error("POST 요청 실패:", error);
+        });
+    }
+
+    // 폼 제출을 가로채고 POST 요청을 보내는 함수 호출
+    document.querySelector("form").addEventListener("submit", function (event) {
+      event.preventDefault(); // 기본 제출 동작 막기
+      postData(); // POST 요청 보내기
+    });
+
+
+
+    // reivew-content 요소 노드 취득
+    const reviewPoint = document.querySelector('.star-rating');
+
+
+
+    // review-content 요소 노드 취득
+    const reviewContent = document.getElementById('review-content');
+
+    // review-image 요소 노드 취득
+    const reviewImage = document.getElementById('review-image');
+
+ 
+
+
+
+    
+    
+  </script>
+
+
 
 
 
 
 </body>
+
 </html>
