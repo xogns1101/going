@@ -152,9 +152,9 @@
             <div class="ad">
                 <div class="ad-box">
 
-                    <img src="/assets/img/ad2.png" alt="광고">
-                    <img src="/assets/img/ad3.png" alt="광고">
-                    <img src="/assets/img/ad4.png" alt="광고"></div>
+                    <img src="/assets/img/ad2.jpg" alt="광고1">
+                    <img src="/assets/img/ad3.jpg" alt="광고2">
+                    <img src="/assets/img/ad4.jpg" alt="광고3"></div>
             </div>
 
 

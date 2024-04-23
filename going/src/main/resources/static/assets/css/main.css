@@ -73,7 +73,7 @@ header .logo-content {
 
 header .logo-content a {
   color: black;
-  margin-right: 70px;
+  margin-right: 50px;
   margin-left: 0px;
   
 }
@@ -366,19 +366,21 @@ section.main-page2 .main-content .best-review .review-box .review li:last-child 
 
 section.main-page2 .main-content .ad {
   /* background: red; */
-  margin-bottom: 50px;
+  width: 450px;
+
   height: 700px;
 }
 
 
 section.main-page2 .main-content .ad .ad-box{
   margin: 0 0 0 150px;
+  width: 100%;
 }
 
 
 
 section.main-page2 .main-content .ad .ad-box img{
-  width: 500px;
+  width: 100%;
   height: 200px;
   margin-top: 50px;
 
