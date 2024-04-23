@@ -75,14 +75,24 @@ public class NoticeController {
     }
 
 
+    // 글 수정 화면 요청
+    @GetMapping("/notice-modify/{nno}")
+    public String modifyScreen(@PathVariable("nno") int nno, Model model) {
+        log.info("/notice-modify: GET");
+        NoticeDetailResponseDTO dto = service.getDetail(nno);
+        model.addAttribute("notice", dto);
+        return "notice-modify"; // 수정 폼으로 이동
+    }
+
+
     // 글 수정 요청
     @PostMapping("notice-modify")
     public String modify(NoticeModifyRequestDTO dto, HttpSession session, Model model) {
         log.info("/notice-modify: POST, dto: {}", dto);
 
-        // 카테고리 옵션 설정
-        // List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
-        // model.addAttribute("categories", categories);
+         // 카테고리 옵션 설정
+         // List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
+         // model.addAttribute("categories", categories);
 
         service.modify(dto, session);
         return "redirect:/main/notice";

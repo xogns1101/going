@@ -46,6 +46,9 @@
                 <button class="list-btn" type="button" onclick="location.href='/main/notice'">
                     목록
                 </button>
+                <button class="modify-btn" type="button" onclick="location.href='/main/notice-modify/${n.noticeNo}'">
+                    수정
+                </button>
             </div>
 
 
