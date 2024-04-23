@@ -23,8 +23,4 @@ public class Review {
     private int reviewLike; // 리뷰 좋아요
     private LocalDateTime reviewDate; // 리뷰 작성 날짜
 
-
-    private LocalDateTime currentTime(LocalDateTime reviewDate) {
-        return LocalDateTime.now();
-    }
 }

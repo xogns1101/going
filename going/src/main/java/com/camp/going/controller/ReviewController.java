@@ -14,10 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -71,10 +68,22 @@ public class ReviewController {
 
     // 리뷰 수정 요청
     @GetMapping("/review-modify")
-    public String modify(ReviewModifyRequestDTO dto) {
-        service.modify(dto);
+    public String modify(int rno, Model model) {
+        ReviewResponseDTO dto = service.getDetail(rno);
+        model.addAttribute("r", dto);
 
         return "review-modify";
+    }
+
+    @PostMapping("/review-modify")
+    public String modify(ReviewModifyRequestDTO dto) {
+        log.info("/main/review-modify : POST, dto : {}", dto);
+        String savePath = FileUtils.uploadFile(dto.getReviewImage(), rootPath);
+        log.info("rootPath : {}", rootPath);
+
+        service.modify(dto, savePath);
+
+        return "redirect:/main/review";
     }
 
     // 리뷰 삭제 요청 (/review/delete : GET)

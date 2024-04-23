@@ -53,9 +53,14 @@ public class ReviewService {
 //        review.setEmail(LoginUtils.getCurrentLoginMemberAccount(session));
     }
 
-    public void modify(ReviewModifyRequestDTO dto) {
-        Review review = dto.toEntity();
+    public void modify(ReviewModifyRequestDTO dto, String savePath) {
+        Review review = dto.toEntity(savePath);
         reviewMapper.modifyReview(review);
+    }
+
+    public ReviewResponseDTO getDetail(int rno) {
+        return new ReviewResponseDTO(reviewMapper.findOne(rno));
+
     }
 
 }
