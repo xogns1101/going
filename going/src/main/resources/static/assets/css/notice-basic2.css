@@ -201,7 +201,7 @@ section .title h1 {
     height: 43px;
     /* position: absolute; */
     left: 445px;
-    top: 65px;
+    top: -455px;
     background: white;
     border: 1px black solid;
     position: relative;
@@ -250,7 +250,7 @@ section .title h1 {
     text-align: center;
     line-height: 35px;
     position: relative;
-    top: 5%;
+    top: 7%;
     left: 75%;
 }
 

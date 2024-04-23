@@ -36,14 +36,6 @@
 
         <div class="notice-list">
             <div class="notice-box">
-
-                <!-- 검색어 조회 -->
-
-                <div class="search-content-background">
-                    <input type="text" class="search-content" placeholder="검색어를 입력해 주세요">
-                    <button class="search-click-button" onclick="handleSearchClick()">검색</button>
-                    </div>
-
                 <!-- 페이지 사이즈 체크 -->
                 <div class="page-size-background">
                     <span class="page-size">8개씩</span>
@@ -61,24 +53,31 @@
                     </thead>
                     <tbody>
                         <c:forEach var="b" items="${nList}">
-                            <tr>
-                                <td class="noticeCategory">${b.noticeCategory}</td>
+                            <tr class="notice-click">
+                                <td class="noticeCategory">
+                                    <c:set var="categoryName" value=""/>
+                                    <c:choose>
+                                        <c:when test="${b.noticeCategory == 'ESSENTIAL'}">
+                                            <c:set var="categoryName" value="필독"/>
+                                        </c:when>
+                                        <c:when test="${b.noticeCategory == 'NOTICE'}">
+                                            <c:set var="categoryName" value="공지"/>
+                                        </c:when>
+                                        <c:when test="${b.noticeCategory == 'COMMON'}">
+                                            <c:set var="categoryName" value="기본"/>
+                                        </c:when>
+                                    </c:choose>
+                                    ${categoryName}
+                                </td>
                                 <td class="NoticeNo">${b.noticeNo}</td>
                                 <td class="NoticeTitle">${b.noticeTitle}</td>
                                 <td class="NoticeDate">${b.noticeDate}</td>
                                 <td class="NoticeCount">${b.noticeCount}</td>
                             </tr>
-                            <tr>
-                                <td colspan="5" class="InNoticeContentbox">
-                                    <div class="InNoticeContent">${b.noticeContent}</div>
-                                    <div class="NoticeBoardType">‘공지사항’ 게시판 글</div>
-                                </td>
-                            </tr>
                         </c:forEach>
                     </tbody>
                 </table>
 
-                
 
                 <!-- 전체기간 조회
 
@@ -88,8 +87,8 @@
                 </div>
                 -->
 
-                <!-- 제목 조회 -->
-                <!--
+                <!-- 제목 조회
+
                 <div class="only-title-background">
                     <input type="checkbox" class="only-title-click-button" onclick="handleOnlyTitleClick(this)">
                     <span class="only-title">제목만</span>
@@ -97,7 +96,12 @@
                 -->
 
 
+                <!-- 검색어 조회 -->
 
+                <div class="search-content-background">
+                    <input type="text" class="search-content" placeholder="검색어를 입력해 주세요">
+                    <button class="search-click-button" onclick="handleSearchClick()">검색</button>
+                </div>
 
 
     </section>
