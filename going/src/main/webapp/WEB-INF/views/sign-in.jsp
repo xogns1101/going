@@ -56,7 +56,7 @@
 
                              <!-- 회원가입 버튼 -->
                              <div class="JoinButton">
-                                 <a href="sign-up2.html" class="Join">회원가입</a>
+                                 <a href="/user/sign-up" class="Join">회원가입</a>
                              </div>
 
                                     <a id="custom-login-btn"
@@ -64,6 +64,9 @@
                                            <img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg"
                                             width="300"/>
                                     </a>
+
+                                    <a href="/naver/login" class="naverlogobackground"><img id="naverlogo" src="/assets/img/naverlogo.png"
+                                                    alt="네이버로그인로고"></a>
 
                          </div>
                      </div>

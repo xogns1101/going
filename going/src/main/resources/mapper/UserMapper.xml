@@ -7,15 +7,11 @@
     <insert id="save">
 
         INSERT INTO user
-
-        (email, password, name, phone_number, user_update)
+        (email, password, name, phone_number)
         VALUES
-        (#{email}, #{password}, #{name}, #{phoneNumber}, #{userUpdate})
+        (#{email}, #{password}, #{name}, #{phoneNumber})
 
     </insert>
-
-
-
 
     <select id="findUser" resultType="user">
         SELECT * FROM user

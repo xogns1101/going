@@ -7,8 +7,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.time.LocalDate;
-
 @Getter
 @ToString
 @EqualsAndHashCode
@@ -29,7 +27,7 @@ public class ReservationDetailResponseDTO {
     private String campIceBox; // 캠핑장 냉장고 유무
     private String regDate; // 최초 캠핑장 예약 날짜
     private String regDates; // 퇴실 캠핑장 예약 날짜
-
+    private String image;
 
 
     public ReservationDetailResponseDTO(Reservation reservation
@@ -48,6 +46,7 @@ public class ReservationDetailResponseDTO {
         this.campIceBox = camping.getCampIceBox();
         this.regDate = String.valueOf(reservation.getRegDate());
         this.regDates = String.valueOf(reservation.getRegDates());
+        this.image = camping.getCampImage();
 
     }
 }

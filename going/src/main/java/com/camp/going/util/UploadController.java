@@ -14,7 +14,7 @@ import java.util.UUID;
 @Controller
 public class UploadController {
 
-    private String rootPath = "C:/MyWorkspace/going/going/upload";
+    private String rootPath = "C:/MyWorkspace/upload";
 
     @PostMapping("/review-write")
     public String uploadForm(@RequestParam("thumbnail") MultipartFile file) {

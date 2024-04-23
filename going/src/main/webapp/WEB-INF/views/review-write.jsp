@@ -13,7 +13,7 @@
 
 <body>
 
-  <form action="/main/review-write" method="post" enctype="multipart/form-data">
+  <form id="reviewForm" action="/main/review-write" method="post" enctype="multipart/form-data">
 
     <h1>Review⛺ / 등록</h1>
 
@@ -30,6 +30,7 @@
       <label for="1-star" class="star">&#9733;</label>
     </div>
 
+    <input type="hidden" name="starPoint" id="starPoint">
 
 
     <!-- <input type="text" id="review-title" placeholder="캠핑장 이름을 입력하세요."><br> -->
@@ -43,7 +44,7 @@
       </div>
 
 
-      <input type="file" id="review-image" name="reviewImaige" accept="image/*">
+      <input type="file" class="review-image" name="reviewImage" accept="image/*">
     </div>
 
     <div class="two-Btn">
@@ -157,28 +158,28 @@
     })
 
     // 입력창 막는 부분
-    document.querySelector('.write-button').addEventListener('click', function(event) {
-    var reviewContent = document.getElementById('review-content').value.trim();
-    var reviewImage = document.getElementById('review-image').files.length;
-    var reviewPoint = document.querySelector('input[name="reviewPoint"]:checked');
+    document.querySelector('.write-button').addEventListener('click', function (event) {
+      var reviewContent = document.getElementById('review-content').value.trim();
+      var reviewImage = document.querySelector('.review-image').files.length;
+      var reviewPoint = document.querySelector('input[name="reviewPoint"]:checked');
 
-    while (!reviewContent || !reviewImage || !reviewPoint) {
+      while (!reviewContent || !reviewImage || !reviewPoint) {
         alert('모든 항목을 입력해주세요.');
         event.preventDefault(); // 제출을 막습니다.
         break;
-    } 
-});
+      }
+    });
 
 
     // 파일 선택 부분
-
+    const $fileInput = document.querySelector('.review-image');
 
     // 'thumbnail-box' 요소에서 'img' 요소를 선택합니다
-    const imgElement = document.querySelector('.thumbnail-box img');
+    const $imgElement = document.querySelector('.thumbnail-box img');
 
 
     // 파일 선택 이벤트 리스너를 추가합니다
-    fileInput.addEventListener('change', function (event) {
+    $fileInput.addEventListener('change', function (event) {
       // 선택한 파일을 가져옵니다
       const file = event.target.files[0];
 
@@ -192,16 +193,46 @@
           // 읽은 파일의 데이터 URL을 가져옵니다
           const imageUrl = e.target.result;
 
+          console.log(imageUrl);
+
           // 'thumbnail-box'의 'img' 요소의 'src' 속성을 읽은 이미지로 설정합니다
-          imgElement.src = imageUrl;
+          $imgElement.setAttribute('src', imageUrl);
         };
 
         // 파일을 데이터 URL 형식으로 읽습니다
         reader.readAsDataURL(file);
+
       } else {
         // 파일이 선택되지 않았을 경우 처리할 수 있습니다
         console.log('파일이 선택되지 않았습니다.');
       }
+
+      // // FormData 객체 생성
+      // const formData = new FormData();
+
+      // // FormData에 파일 추가
+      // formData.append('reviewImage', file);
+
+      // // XMLHttpRequest 객체 생성
+      // const xhr = new XMLHttpRequest();
+
+      // // POST 요청 설정
+      // xhr.open('POST', '/main/review-write', true);
+
+      // // 파일 전송
+      // xhr.send(formData);
+
+      // // 서버의 응답 처리
+      // xhr.onreadystatechange = function () {
+      //   if (xhr.readyState === XMLHttpRequest.DONE) {
+      //     if (xhr.status === 200) {
+      //       console.log('이미지 업로드 성공!');
+      //     } else {
+      //       console.error('이미지 업로드 실패:', xhr.status);
+      //     }
+      //   }
+      // };
+
     });
 
     // 리스트 버튼 클릭 후 다른 목록 페이지 이동
@@ -221,7 +252,7 @@
 
       writeButton.addEventListener('click', function () {
         // 원하는 경로로 이동합니다.
-        window.location.href = 'redirct:/main/review';
+        window.location.href = 'redirect:/main/review';
       });
     }
 
@@ -229,49 +260,33 @@
 
 
 
-    // 파일 입력 요소
-    const fileInput = document.getElementById('reviewImage');
 
-    // 파일 입력 요소에 change 이벤트 리스너 추가
-    fileInput.addEventListener('change', function (event) {
-      // 파일이 선택되었을 때
-      const file = event.target.files[0];
+    // // 파일 입력 요소
+    // const fileInput = document.getElementById('review-image');
 
-      if (file) {
-
-        console.log(file);
+    // // 파일 입력 요소에 change 이벤트 리스너 추가
+    // fileInput.onchange = e => {
+    //   // 파일이 선택되었을 때
+    //   const file = fileInput.files[0];
 
 
-      } else {
-        console.error('파일이 선택되지 않았습니다.');
-      }
+    //   if (file) {
+    //     const reader = new FileReader();
+    //     console.log(file);
+    //     reader.readAsDataURL(file);
+    //     console.log(reader);
 
-      // FormData 객체 생성
-      const formData = new FormData();
+    //     console.log(reader.result);
+    //     const img = document.querySelector('.thumbnail-image');
+    //     img.setAttribute('src', reader.result);
 
-      // FormData에 파일 추가
-      formData.append('reviewImage', file);
 
-      // XMLHttpRequest 객체 생성
-      const xhr = new XMLHttpRequest();
+    //   } else {
+    //     console.error('파일이 선택되지 않았습니다.');
+    //   }
 
-      // POST 요청 설정
-      xhr.open('POST', '/review-write', true);
 
-      // 파일 전송
-      xhr.send(formData);
-
-      // 서버의 응답 처리
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-          if (xhr.status === 200) {
-            console.log('이미지 업로드 성공!');
-          } else {
-            console.error('이미지 업로드 실패:', xhr.status);
-          }
-        }
-      };
-    });
+    // };
 
     // HTML 폼에서 리뷰 포인트 값을 가져오는 함수
     function getReviewPoint() {
@@ -286,70 +301,78 @@
       return selectedValue;
     }
 
-    // POST 요청을 보내는 함수
-    function postData() {
-      const reviewPoint = getReviewPoint(); // 리뷰 포인트 값을 가져옴
-      if (reviewPoint === null) {
+
+    document.getElementById('reviewForm').onsubmit = e => {
+      e.preventDefault(); // submit 중지
+      const reviewPoint = getReviewPoint();
+      if (!reviewPoint) {
         console.error("리뷰 포인트를 선택하세요.");
         return;
       }
 
-      // POST 요청을 보낼 엔드포인트 URL
-      const url = "redirect:/main/review";
+      document.getElementById('starPoint').value = reviewPoint;
 
-      // POST 요청 설정
-      const requestOptions = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          reviewPoint: reviewPoint
-        })
-      };
+      e.target.submit();
 
-      // POST 요청 보내기
-      fetch(url, requestOptions)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error("서버 응답 실패");
-          }
-          return response.json();
-        })
-        .then(data => {
-          console.log("POST 요청 성공:", data);
-          // 성공한 경우 추가 작업을 수행할 수 있음
-        })
-        .catch(error => {
-          console.error("POST 요청 실패:", error);
-        });
     }
 
+
+    // POST 요청을 보내는 함수
+    // function postData() {
+    //   const reviewPoint = getReviewPoint(); // 리뷰 포인트 값을 가져옴
+    //   if (reviewPoint === null) {
+    //     console.error("리뷰 포인트를 선택하세요.");
+    //     return;
+    //   }
+
+    //   // POST 요청을 보낼 엔드포인트 URL
+    //   const url = "redirect:/main/review";
+
+    //   // POST 요청 설정
+    //   const requestOptions = {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify({
+    //       reviewPoint: reviewPoint
+    //     })
+    //   };
+
+    //   // POST 요청 보내기
+    //   fetch(url, requestOptions)
+    //     .then(response => {
+    //       if (!response.ok) {
+    //         throw new Error("서버 응답 실패");
+    //       }
+    //       return response.json();
+    //     })
+    //     .then(data => {
+    //       console.log("POST 요청 성공:", data);
+    //       // 성공한 경우 추가 작업을 수행할 수 있음
+    //     })
+    //     .catch(error => {
+    //       console.error("POST 요청 실패:", error);
+    //     });
+    // }
+
     // 폼 제출을 가로채고 POST 요청을 보내는 함수 호출
-    document.querySelector("form").addEventListener("submit", function (event) {
-      event.preventDefault(); // 기본 제출 동작 막기
-      postData(); // POST 요청 보내기
-    });
+    // document.querySelector("form").addEventListener("submit", function (event) {
+    //   event.preventDefault(); // 기본 제출 동작 막기
+    //   postData(); // POST 요청 보내기
+    // });
 
 
 
-    // reivew-content 요소 노드 취득
-    const reviewPoint = document.querySelector('.star-rating');
+    // // reivew-content 요소 노드 취득
+    // const reviewPoint = document.querySelector('.star-rating');
 
 
+    // // review-content 요소 노드 취득
+    // const reviewContent = document.getElementById('review-content');
 
-    // review-content 요소 노드 취득
-    const reviewContent = document.getElementById('review-content');
-
-    // review-image 요소 노드 취득
-    const reviewImage = document.getElementById('review-image');
-
- 
-
-
-
-    
-    
+    // // review-image 요소 노드 취득
+    // const reviewImage = document.querySelector('.review-image');
   </script>
 
 

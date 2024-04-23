@@ -11,8 +11,8 @@
 
     <update id="modify">
         UPDATE notice
-        SET notice_title = #{title}, notice_content = #{content}, notice_category = #{category}
-        WHERE notice_no = #{nno}
+        SET notice_no = #{noticeNo}, notice_title = #{noticeTitle}, notice_content = #{noticeContent}, notice_category = #{noticeCategory}
+        WHERE notice_no = #{noticeNo}
     </update>
 
     <delete id="delete">

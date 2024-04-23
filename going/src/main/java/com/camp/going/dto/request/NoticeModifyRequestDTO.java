@@ -13,21 +13,21 @@ import lombok.*;
 public class NoticeModifyRequestDTO {
 
     @NotNull
-    private int nno; // 수정할 공지 글 번호
+    private int noticeNo; // 수정할 공지 글 번호
     @NotBlank
-    private String title; // 수정할 공지 제목
+    private String noticeTitle; // 수정할 공지 제목
     @NotBlank
-    private String content; // 수정할 공지 내용
-
-    private String category; // 수정할 카테고리
+    private String noticeContent; // 수정할 공지 내용
+    @NotBlank
+    private String noticeCategory; // 수정할 카테고리
 
 
     public Notice toEntity() {
         return Notice.builder()
-                .noticeNo(nno)
-                .noticeTitle(title)
-                .noticeContent(content)
-                .noticeCategory(category)
+                .noticeNo(noticeNo)
+                .noticeTitle(noticeTitle)
+                .noticeContent(noticeContent)
+                .noticeCategory(noticeCategory)
                 .build();
     }
 

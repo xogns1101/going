@@ -34,7 +34,7 @@
 
         <div class="intro-list">
             <div class="intro-box">
-                <img class="Introimg" src="../img/introduce-img.png" />
+                <img class="Introimg" src="/assets/img/introduce-img.png" />
                 <div class="Introtext">
                     <span>저희 yagaja 업체를 이용해주셔서 감사합니다.</span><br />
                     <br>
