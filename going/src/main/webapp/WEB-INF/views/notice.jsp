@@ -31,7 +31,12 @@
     <section>
 
         <div class="title">
-            <h1>NOTICE / <span>공지사항</span></h1>
+            <h1>NOTICE / <span>공지사항
+                <a href="/main/notice-detail-write" class="add-btn">등록</a>
+            </span></h1>
+            <!-- <c:if test="${login.auth == 'ADMIN'}"> -->
+                <!-- <span><a href="/main/notice-write" class="add-btn">등록</a></span> -->
+            <!-- </c:if> -->
         </div>
 
         <div class="notice-list">
@@ -55,16 +60,16 @@
                         <c:forEach var="b" items="${nList}">
                             <tr class="notice-click">
                                 <td class="noticeCategory">
-                                    <c:set var="categoryName" value=""/>
+                                    <c:set var="categoryName" value="" />
                                     <c:choose>
                                         <c:when test="${b.noticeCategory == 'ESSENTIAL'}">
-                                            <c:set var="categoryName" value="필독"/>
+                                            <c:set var="categoryName" value="필독" />
                                         </c:when>
                                         <c:when test="${b.noticeCategory == 'NOTICE'}">
-                                            <c:set var="categoryName" value="공지"/>
+                                            <c:set var="categoryName" value="공지" />
                                         </c:when>
                                         <c:when test="${b.noticeCategory == 'COMMON'}">
-                                            <c:set var="categoryName" value="기본"/>
+                                            <c:set var="categoryName" value="기본" />
                                         </c:when>
                                     </c:choose>
                                     ${categoryName}
@@ -77,30 +82,34 @@
                         </c:forEach>
                     </tbody>
                 </table>
-                
-
-                <!-- 전체기간 조회 -->
-
-                <div class="total-date-background">
-                    <input type="checkbox" class="total-date-click-button" onclick="handleTotalDateClick(this)">
-                    <span class="total-date">전체기간</span>
-                </div>
-
-                <!-- 제목 조회 -->
-
-                <div class="only-title-background">
-                    <input type="checkbox" class="only-title-click-button" onclick="handleOnlyTitleClick(this)">
-                    <span class="only-title">제목만</span>
-                </div>
+            </div>
 
 
+            <!-- 전체기간 조회 -->
 
-                <!-- 검색어 조회 -->
+            <div class="total-date-background">
+                <input type="checkbox" class="total-date-click-button" onclick="handleTotalDateClick(this)">
+                <span class="total-date">전체기간</span>
+            </div>
 
-                <div class="search-content-background">
-                    <input type="text" class="search-content" placeholder="검색어를 입력해 주세요">
-                    <button class="search-click-button" onclick="handleSearchClick()">검색</button>
-                </div>
+            <!-- 제목 조회 -->
+
+            <div class="only-title-background">
+                <input type="checkbox" class="only-title-click-button" onclick="handleOnlyTitleClick(this)">
+                <span class="only-title">제목만</span>
+            </div>
+
+
+
+            <!-- 검색어 조회 -->
+
+            <div class="search-content-background">
+                <input type="text" class="search-content" placeholder="검색어를 입력해 주세요">
+                <button class="search-click-button" onclick="handleSearchClick()">검색</button>
+            </div>
+
+
+        </div>
 
 
     </section>

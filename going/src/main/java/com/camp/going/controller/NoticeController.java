@@ -44,33 +44,34 @@ public class NoticeController {
 
 
     // 글쓰기 화면 요청
-    @GetMapping("notice-write")
+    @GetMapping("notice-detail-write")
     public String write(Model model) {
         // 사용자 인증 정보 가져오기.
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         // 사용자가 인증되었고, ADMIN 권한을 가지고 있는지 확인함.
         if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
                 .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
-            System.out.println("/notice-write: GET");
+            System.out.println("/notice-detail-write: GET");
 
             // 카테고리 옵션 설정
-            List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
-            model.addAttribute("categories", categories);
+            // List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
+            // model.addAttribute("categories", categories);
 
 
 
-            return "notice-write";
-        } else return "redirect:/notice";
+            return "notice-detail-write";
+        } else return // "redirect:/main/notice"; -> 어드민 로그인 전까지 주석처리
+        "notice-detail-write";
     }
 
 
     // 글쓰기 등록 요청
-    @PostMapping("notice-write")
+    @PostMapping("notice-detail-write")
     public String write(NoticeWriteRequestDTO dto, HttpSession session) {
-        log.info("/notice-write: POST, dto: {}", dto);
+        log.info("/notice-detail-write: POST, dto: {}", dto);
 
         service.register(dto, session);
-        return "redirect:/notice";
+        return "redirect:/main/notice";
     }
 
 
@@ -80,11 +81,11 @@ public class NoticeController {
         log.info("/notice-modify: POST, dto: {}", dto);
 
         // 카테고리 옵션 설정
-        List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
-        model.addAttribute("categories", categories);
+        // List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
+        // model.addAttribute("categories", categories);
 
         service.modify(dto, session);
-        return "redirect:/notice";
+        return "redirect:/main/notice";
     }
 
 
@@ -98,8 +99,8 @@ public class NoticeController {
                 .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
             System.out.println("/notice-delete: GET" + nno);
             service.delete(nno);
-            return "redirect:/notice";
-        } else return "redirect:/notice";
+            return "redirect:/main/notice";
+        } else return "redirect:/main/notice";
     }
 
 
