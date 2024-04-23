@@ -41,11 +41,12 @@
 
         <div class="notice-list">
             <div class="notice-box">
-                <!-- 페이지 사이즈 체크 -->
+                <!-- 페이지 사이즈 체크
                 <div class="page-size-background">
                     <span class="page-size">8개씩</span>
                     <input type="checkbox" class="page-size-click-button" onclick="handlePageSizeClick(this)">
                 </div>
+                -->
                 <table border="1">
                     <thead>
                         <tr class="column">
@@ -82,6 +83,7 @@
                         </c:forEach>
                     </tbody>
                 </table>
+<<<<<<< HEAD
             </div>
 
 
@@ -99,6 +101,25 @@
                 <span class="only-title">제목만</span>
             </div>
 
+=======
+
+
+                <!-- 전체기간 조회
+
+                <div class="total-date-background">
+                    <input type="checkbox" class="total-date-click-button" onclick="handleTotalDateClick(this)">
+                    <span class="total-date">전체기간</span>
+                </div>
+                -->
+
+                <!-- 제목 조회
+
+                <div class="only-title-background">
+                    <input type="checkbox" class="only-title-click-button" onclick="handleOnlyTitleClick(this)">
+                    <span class="only-title">제목만</span>
+                </div>
+                -->
+>>>>>>> jhjhjh2
 
 
             <!-- 검색어 조회 -->

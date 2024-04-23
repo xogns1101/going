@@ -8,8 +8,8 @@
     <title>introduce</title>
 
 
-    <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
-    <!-- <link rel="stylesheet" href="/assets/css/in-notice2.css"> -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/in-notice2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Yeon+Sung&display=swap" rel="stylesheet">
@@ -27,22 +27,44 @@
     <%@ include file="include/header.jsp" %>
 
     <!-- notice-detail ---------------------------------->
-    <section>
-
-        <div class="title">
-            <h1>NOTICE / <span>공지사항</span></h1>
-        </div>
-
-        <div id="wrap" class="form-container">
-            <p>${n.noticeNo}번 공지사항 <span style="font-size: 0.7em;">${n.noticeDate}</span></p>
-
-            <div id="title">${n.noticeTitle}</div>
+<section>
+    <div class="title">
+        <h1>NOTICE / <span>공지사항</span></h1>
+    </div>
 
 
-            <div id="content">${n.noticeContent}</div>
 
+    <div class="notice-list">
+        <div class="notice-box">
+            <div class="NoticeBoardType"><< ${n.noticeNo}번 공지사항 >></div>
+            <table border="1">
+                <thead>
+                    <tr class="column">
+                        <th class="noticeCategory">공지등급</th>
+                        <th class="NoticeNo">글번호</th>
+                        <th class="NoticeTitle">제목</th>
+                        <th class="NoticeDate">작성일</th>
+                        <th class="NoticeCount">조회수</th>
+                    </tr>
+                    <tr class="Item">
+                        <td class="noticeCategory"></td>
+                        <td class="NoticeNo">${n.noticeNo}</td>
+                        <td class="NoticeTitle">${n.noticeTitle}</td>
+                        <td class="NoticeDate">${n.noticeDate}</td>
+                        <td class="NoticeCount">${n.noticeCount}</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" class="InNoticeContentbox">
+                            <div class="InNoticeContent">${n.noticeContent}</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
             <div class="buttons">
+<<<<<<< HEAD
                 <button class="list-btn" type="button" onclick="location.href='/main/notice'">
                     목록
                 </button>
@@ -52,10 +74,19 @@
             </div>
 
 
+=======
+                        <button class="list-btn" type="button" onclick="location.href='/main/notice'">목록</button>
+                    </div>
+>>>>>>> jhjhjh2
         </div>
+    </div>
+</section>
 
 
+		 <!-- footer --------------------->
+    		<%@ include file="include/footer.jsp" %>
 
+<<<<<<< HEAD
         <div class="notice-list">
             <div class="notice-box">
                 <!-- 페이지 사이즈 체크 -->
@@ -198,3 +229,5 @@
 </body>
 
 </html>
+=======
+>>>>>>> jhjhjh2
