@@ -127,5 +127,20 @@ public class NoticeController {
         return ("notice-detail");
     }
 
+    // 페이지 번호와 검색 관련 매개변수를 받아서 공지사항 목록을 가져오는 메서드
+    @GetMapping("/notice-detail")
+    public String detailList(@ModelAttribute("s") Search page, Model model) {
+        // 공지사항 목록을 가져오는 비즈니스 로직 호출
+        List<NoticeListResponseDTO> dtoList = service.getList(page);
+        // 페이지 메이커 생성
+        PageMaker pageMaker = new PageMaker(page, service.getCount(page));
+        // 모델에 공지사항 목록과 페이지 메이커 추가
+        model.addAttribute("nList", dtoList);
+        model.addAttribute("maker", pageMaker);
+        // 뷰로 이동
+        return "notice-detail";
+    }
+
+
 
 }

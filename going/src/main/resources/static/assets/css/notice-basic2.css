@@ -269,4 +269,26 @@ section .title h1 {
 }
 
 
- 
+
+/* 페이지 버튼 */
+
+.bottom-section {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.bottom-section nav {
+  flex: 1;
+  justify-content: center;
+}
+
+.pagination-custom a {
+  color: #444 !important;
+}
+
+.pagination-custom li.active a,
+.pagination-custom li:hover a {
+  background: #333 !important;
+  color: #fff !important;
+}
