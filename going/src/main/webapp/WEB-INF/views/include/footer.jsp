@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert Your Title</title>
-
+    <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
 
@@ -22,10 +22,10 @@
                 <br>
 
                 <p class="footer-link"><a href="">이용약관</a> &#124; <a href="">개인정보처리방침</a></p>
-
+                
                 <br>
-
                 <p class="footer-copyright">Copyright ⓒ 2024~ YAGAJA All Rights Reserved.</p>
+
 
             </div>
 
