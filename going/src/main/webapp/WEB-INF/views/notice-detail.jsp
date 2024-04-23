@@ -49,6 +49,10 @@
                 <button class="modify-btn" type="button" onclick="location.href='/main/notice-modify/${n.noticeNo}'">
                     수정
                 </button>
+                <form id="deleteForm" action="/main/notice-delete" method="get">
+                    <input type="hidden" name="nno" value="${n.noticeNo}">
+                    <button type="button" onclick="confirmDelete()">삭제</button>
+                </form>
             </div>
 
 
@@ -134,6 +138,53 @@
                     </tbody>
                 </table>
 
+                <!-- 게시글 목록 하단 영역 -->
+                <div class="bottom-section">
+
+                    <!-- 페이지 버튼 영역 -->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination pagination-lg pagination-custom">
+                            <!-- 이전 페이지 버튼 -->
+                            <c:if test="${maker.page.pageNo != 1}">
+                                <li class="page-item"><a class="page-link"
+                                        href="/main/notice-detail/${n.noticeNo}?pageNo=1&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
+                                </li>
+                            </c:if>
+
+                            <!-- 이전 그룹 페이지 버튼 -->
+                            <c:if test="${maker.prev}">
+                                <li class="page-item"><a class="page-link"
+                                        href="/main/notice-detail/${n.noticeNo}?pageNo=${maker.begin-1}&type=${s.type}&keyword=${s.keyword}">prev</a>
+                                </li>
+                            </c:if>
+
+                            <!-- 페이지 번호 버튼들 -->
+                            <c:forEach var="i" begin="${maker.begin}" end="${maker.end}">
+                                <li data-page-num="${i}" class="page-item">
+                                    <a class="page-link"
+                                        href="/main/notice-detail/${n.noticeNo}?pageNo=${i}&type=${s.type}&keyword=${s.keyword}">${i}</a>
+                                </li>
+                            </c:forEach>
+
+                            <!-- 다음 그룹 페이지 버튼 -->
+                            <c:if test="${maker.next}">
+                                <li class="page-item"><a class="page-link"
+                                        href="/main/notice-detail/${n.noticeNo}?pageNo=${maker.end+1}&type=${s.type}&keyword=${s.keyword}">next</a>
+                                </li>
+                            </c:if>
+
+                            <!-- 다음 페이지 버튼 -->
+                            <c:if test="${maker.page.pageNo != maker.finalPage}">
+                                <li class="page-item"><a class="page-link"
+                                        href="/main/notice-detail/${n.noticeNo}?pageNo=${maker.finalPage}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
+                                </li>
+                            </c:if>
+                        </ul>
+                    </nav>
+
+
+                </div>
+
                 <!-- 전체기간 조회 -->
 
                 <div class="total-date-background">
@@ -158,6 +209,8 @@
                 </div>
 
 
+
+
     </section>
 
 
@@ -177,7 +230,11 @@
                 const noticeNoElement = row.querySelector('.NoticeNo');
                 if (noticeNoElement) {
                     const noticeNo = noticeNoElement.innerText;
-                    const detailUrl = '/main/notice-detail/' + noticeNo;
+                    const pageNo = '${maker.page.pageNo}';
+                    const type = '${s.type}';
+                    const keyword = '${s.keyword}';
+                    const detailUrl = '/main/notice-detail/' + noticeNo + '?pageNo=' + pageNo +
+                        '&type=' + type + '&keyword=' + keyword;
 
                     // detailUrl이 정의되었는지 확인 후 이동합니다.
                     if (detailUrl) {
@@ -192,9 +249,55 @@
             });
         });
 
+        function confirmDelete() {
+            if (confirm("정말로 삭제하시겠습니까?")) {
+                document.getElementById("deleteForm").submit();
+                alert("삭제가 완료되었습니다.");
+            }
+        }
+
+
+        // 사용자가 현재 머물고 있는 페이지 버튼에 active 스타일 부여
+        function appendPageActive() {
+
+            // 현재 서버에서 넘겨준 페이지 번호
+            const currPage = '${maker.page.pageNo}';
+
+            // li 태그들을 전부 확인해서
+            // 현재 페이지 번호와 일치하는 li를 찾은 후 active 클래스 이름 붙이기
+            const $ul = document.querySelector('.pagination');
+            const $liList = [...$ul.children];
+
+            $liList.forEach($li => {
+                if (currPage === $li.dataset.pageNum) {
+                    $li.classList.add('active');
+                }
+            });
+        }
+
+        // 검색조건 셀렉트박스 옵션타입 고정하기
+        function fixSearchOption() {
+            const $select = document.getElementById('search-type');
+            // 셀렉트 박스 내에 있는 option 태그들 전부 가져오기
+            const $options = [...$select.children];
+
+            $options.forEach($opt => {
+                if ($opt.value === '${s.type}') {
+                    // option 태그에 selected를 주면 그 option이 고정됨.
+                    $opt.setAttribute('selected', 'selected');
+                }
+            });
+
+        }
+
+        appendPageActive();
+        fixSearchOption();
     </script>
 
 
 </body>
 
 </html>
+
+
+

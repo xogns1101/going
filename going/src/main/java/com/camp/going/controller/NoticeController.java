@@ -49,19 +49,12 @@ public class NoticeController {
         // 사용자 인증 정보 가져오기.
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         // 사용자가 인증되었고, ADMIN 권한을 가지고 있는지 확인함.
-        if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
-                .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
-            System.out.println("/notice-detail-write: GET");
-
-            // 카테고리 옵션 설정
-            // List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
-            // model.addAttribute("categories", categories);
-
-
+//        if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
+//                .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
+//            System.out.println("/notice-detail-write: GET");
 
             return "notice-detail-write";
-        } else return // "redirect:/main/notice"; -> 어드민 로그인 전까지 주석처리
-        "notice-detail-write";
+//        } else return "redirect:/main/notice"; -> 어드민 로그인 전까지 주석처리
     }
 
 
@@ -78,7 +71,7 @@ public class NoticeController {
     // 글 수정 화면 요청
     @GetMapping("/notice-modify/{nno}")
     public String modifyScreen(@PathVariable("nno") int nno, Model model) {
-        log.info("/notice-modify: GET");
+        log.info("/notice-modify: GET " + nno);
         NoticeDetailResponseDTO dto = service.getDetail(nno);
         model.addAttribute("notice", dto);
         return "notice-modify"; // 수정 폼으로 이동
@@ -89,10 +82,6 @@ public class NoticeController {
     @PostMapping("notice-modify")
     public String modify(NoticeModifyRequestDTO dto, HttpSession session, Model model) {
         log.info("/notice-modify: POST, dto: {}", dto);
-
-         // 카테고리 옵션 설정
-         // List<String> categories = Arrays.asList("ESSENTIAL", "NOTICE", "COMMON");
-         // model.addAttribute("categories", categories);
 
         service.modify(dto, session);
         return "redirect:/main/notice";
@@ -105,19 +94,20 @@ public class NoticeController {
         // 사용자 인증 정보 가져오기.
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         // 사용자가 인증되었고, ADMIN 권한을 가지고 있는지 확인함.
-        if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
-                .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
-            System.out.println("/notice-delete: GET" + nno);
+//        if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
+//                .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
+//            System.out.println("/notice-delete: GET" + nno);
+        log.info("/notice-delete: GET " + nno);
             service.delete(nno);
             return "redirect:/main/notice";
-        } else return "redirect:/main/notice";
+//        } else return "redirect:/main/notice";
     }
 
 
     // 글 상세보기 요청
     @GetMapping("notice-detail/{nno}")
     public String detail(@PathVariable("nno") int nno, @ModelAttribute("s") Search page, Model model) {
-        System.out.println("/notice-detail: GET" + nno);
+        System.out.println("/notice-detail: GET " + nno);
         NoticeDetailResponseDTO dto = service.getDetail(nno);
 
         model.addAttribute("n", dto);
@@ -132,12 +122,25 @@ public class NoticeController {
 
         // 상세보기와 같은 목록 찾기
         model.addAttribute("currentNoticeNo", nno);
-        NoticeDetailResponseDTO dto2 = service.getDetail(nno);
-        model.addAttribute("n", dto2);
 
 
         return ("notice-detail");
     }
+
+    // 페이지 번호와 검색 관련 매개변수를 받아서 공지사항 목록을 가져오는 메서드
+    @GetMapping("/notice-detail")
+    public String detailList(@ModelAttribute("s") Search page, Model model) {
+        // 공지사항 목록을 가져오는 비즈니스 로직 호출
+        List<NoticeListResponseDTO> dtoList = service.getList(page);
+        // 페이지 메이커 생성
+        PageMaker pageMaker = new PageMaker(page, service.getCount(page));
+        // 모델에 공지사항 목록과 페이지 메이커 추가
+        model.addAttribute("nList", dtoList);
+        model.addAttribute("maker", pageMaker);
+        // 뷰로 이동
+        return "notice-detail";
+    }
+
 
 
 }
