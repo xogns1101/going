@@ -72,7 +72,7 @@ public class SnsLoginController {
         snsLoginService.kakaoLogin(params, session);
 
         // 로그인 처리가 모두 완료되면 홈 화면으로 보내줍니다.
-        return "redirect:/jq/kakaopay";
+        return "redirect:/main";
     }
 
     // 네이버 로그인 구현
