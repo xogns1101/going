@@ -46,11 +46,10 @@ header #wrap {
 
 header .logo {
   /* border: red solid 1px; */
-  font-size: 49px;
-  margin: 0 0 0 20px;
-  width: 22%;
+  font-size: 60px;
+  margin: auto 50px;
   color: #fff;
-  flex-grow: 1;
+  flex-grow: 1.5;
   display: flex;
 
 }
@@ -65,7 +64,7 @@ header .logo-content {
   /* border: yellow solid 1px; */
   display: flex;
   flex-grow: 4;
-  /* margin-top: 10px; */
+  margin-top: 30px;
   font-size: 25px;
   width: 64%;
   justify-content: space-around;
@@ -74,8 +73,8 @@ header .logo-content {
 
 header .logo-content a {
   color: black;
-  /* margin-right: 80px;
-  margin-left: 80px; */
+  margin-right: 50px;
+  margin-left: 0px;
   
 }
 
@@ -89,19 +88,52 @@ header .login {
   right: 60px;
   bottom: 10px; */
   margin: auto 0;
-  flex-grow: 1;
-  width: 14%;
-  text-align: center;
+  flex-grow: 0.5;
+  width: 4%;
+  align-items: center;
 }
 
-header .login a {
+header .login p {
   font-size: 24px;
-  display: block;
+  margin-top: 18px;
+  animation: waviy 1s infinite;
+  animation-delay: calc(.1s * var(--i));
 }
+
+@keyframes waviy {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-20px)
+  }
+}
+
+
 
 header .login a:hover {
   color: black;
 }
+
+header .logout {
+  margin: auto 30px auto;
+  flex-flow: 1;
+  width: 5%;
+  text-align: center;
+}
+header .logout a {
+  font-size: 23px;
+}
+
+header .logout a:hover {
+  color: black;
+}
+
+
+
+
+
+
 
 /* 우측 메뉴 */
 header .menu-open {
@@ -199,10 +231,20 @@ section.main-page1 .main-content {
   width: 100%;
   height: 100vh;
   color: #a1a1a1;
-  font-size: 40px;
+  font-size: 60px;
   text-align: center;
   margin-top: 300px;
 }
+
+section.main-page1 .main-content h1 {
+  background: linear-gradient(to right top, #45cf6f, #d42b1b);
+  color: transparent;
+    -webkit-background-clip: text;
+}
+
+
+
+
 
 section.main-page1 .main-img {
   display: flex;
@@ -324,19 +366,21 @@ section.main-page2 .main-content .best-review .review-box .review li:last-child 
 
 section.main-page2 .main-content .ad {
   /* background: red; */
-  margin-bottom: 50px;
+  width: 450px;
+
   height: 700px;
 }
 
 
 section.main-page2 .main-content .ad .ad-box{
   margin: 0 0 0 150px;
+  width: 100%;
 }
 
 
 
 section.main-page2 .main-content .ad .ad-box img{
-  width: 500px;
+  width: 100%;
   height: 200px;
   margin-top: 50px;
 
