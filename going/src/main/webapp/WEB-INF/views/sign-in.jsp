@@ -56,7 +56,7 @@
 
                              <!-- 회원가입 버튼 -->
                              <div class="JoinButton">
-                                 <a href="sign-up2.html" class="Join">회원가입</a>
+                                 <a href="/user/sign-up" class="Join">회원가입</a>
                              </div>
 
                                     <a id="custom-login-btn"
