@@ -16,14 +16,14 @@ public class ReviewRequestDTO {
     private String reviewContent; // 리뷰 내용
     //    private String email; // 리뷰 작성자
     private MultipartFile reviewImage;
-    private String reviewPoint;
+    private String starPoint;
     private LocalDateTime reviewDate;
 
     public Review toEntity(String savePath) {
         return Review.builder()
                 .reviewContent(reviewContent)
                 .reviewImage(savePath)
-                .reviewPoint(reviewPoint)
+                .reviewPoint(starPoint)
                 .reviewDate(reviewDate)
                 .build();
     }
