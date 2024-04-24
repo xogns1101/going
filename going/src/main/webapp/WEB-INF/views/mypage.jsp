@@ -33,7 +33,7 @@
         <div class="mypage-list">
             <div class="mypage-box">
 
-                <c:forEach var="b" items="${nlist}">
+
                 <wrap class="User">
                     <div class="Profile">내 프로필</div>
 
@@ -67,9 +67,9 @@
 
 
                 </wrap>
-            </c:forEach>
 
-            <c:forEach var="b" items="${nCamp}">
+
+
                 <wrap class="camp">
 
                     <div class="Reservation">예약내역</div>
@@ -99,12 +99,12 @@
 
                      <!-- 캠프장 사진  -->
                      <div class="CampImgbox">
-                        <img src="../img/camping-img.jpg" alt="img">
+                        <img src="/assets/img/camping-img.jpg" alt="img">
 
                        </div>
 
                 </wrap>
-                </c:forEach>
+
 
 
 
