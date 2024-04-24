@@ -49,43 +49,40 @@
         </div>
 
 
+        <!--페이징 부분-->
 
-        <nav aria-label="Page navigation example">
-            <ul class="pagination pagination-lg pagination-custom">
-                <c:if test="${maker.page.pageNo != 1}">
-                    <li class="page-item"><a class="page-link"
-                            href="/main/review?pageNo=1&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
-                    </li>
-                </c:if>
-
-                <c:if test="${maker.prev}">
-                    <li class="page-item"><a class="page-link"
-                            href="/main/review?pageNo=${maker.begin-1}&type=${s.type}&keyword=${s.keyword}">prev</a>
-                    </li>
-                </c:if>
-
-                <c:forEach var="i" begin="${maker.begin}" end="${maker.end}">
-                    <li data-page-num="${i}" class="page-item">
-                        <a class="page-link"
-                            href="/main/review?pageNo=${i}&type=${s.type}&keyword=${s.keyword}">${i}</a>
-                    </li>
-                </c:forEach>
-
-                <c:if test="${maker.next}">
-                    <li class="page-item"><a class="page-link"
-                            href="/main/review?pageNo=${maker.end+1}&type=${s.type}&keyword=${s.keyword}">next</a>
-                    </li>
-                </c:if>
-
-                <c:if test="${maker.page.pageNo != maker.finalPage}">
-                    <li class="page-item"><a class="page-link"
-                            href="/main/review?pageNo=${maker.finalPage}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
-                    </li>
-                </c:if>
-            </ul>
-        </nav>
-
-
+        <div class="pageBox">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination pagination-lg pagination-custom">
+                    <c:if test="${marker.page.pageNo != 1}">
+                        <li class="page-item"><a class="page-link"
+                                href="/main/review?pageNo=1&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
+                        </li>
+                    </c:if>
+                    <c:if test="${marker.prev}">
+                        <li class="page-item"><a class="page-link"
+                                href="/main/review?pageNo=${marker.begin-1}&type=${s.type}&keyword=${s.keyword}">prev</a>
+                        </li>
+                    </c:if>
+                    <c:forEach var="i" begin="${marker.begin}" end="${marker.end}">
+                        <li data-page-num="${i}" class="page-item">
+                            <a class="page-link"
+                                href="/main/review?pageNo=${i}&type=${s.type}&keyword=${s.keyword}">${i}</a>
+                        </li>
+                    </c:forEach>
+                    <c:if test="${marker.next}">
+                        <li class="page-item"><a class="page-link"
+                                href="/main/review?pageNo=${marker.end+1}&type=${s.type}&keyword=${s.keyword}">next</a>
+                        </li>
+                    </c:if>
+                    <c:if test="${marker.page.pageNo != marker.finalPage}">
+                        <li class="page-item"><a class="page-link"
+                                href="/main/review?pageNo=${marker.finalPage}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
+                        </li>
+                    </c:if>
+                </ul>
+            </nav>
+        </div>
 
 
 
@@ -156,6 +153,8 @@
 
             }
         });
+
+                
     </script>
 
 
