@@ -38,7 +38,7 @@
 
                         <div class="btn-group">
                             <button type="button" class="more-button"
-                            data-href="/main/reservation-detail?camp_id=${b.campId}">MORE</button>
+                                data-href="/main/reservation-detail?camp_id=${b.campId}">MORE</button>
                         </div>
                     </div>
                 </div>
@@ -46,11 +46,45 @@
         </div>
 
 
+        <!--페이징 부분-->
+
+        <div class="pageBox">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination pagination-lg pagination-custom">
+                    <c:if test="${maker.page.pageNo != 1}">
+                        <li class="page-item"><a class="page-link"
+                                href="/main/reservation?pageNo=1&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
+                        </li>
+                    </c:if>
+                    <c:if test="${maker.prev}">
+                        <li class="page-item"><a class="page-link"
+                                href="/main/reservation?pageNo=${maker.begin-1}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">prev</a>
+                        </li>
+                    </c:if>
+                    <c:forEach var="i" begin="${maker.begin}" end="${maker.end}">
+                        <li data-page-num="${i}" class="page-item">
+                            <a class="page-link"
+                                href="/main/reservation?pageNo=${i}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">${i}</a>
+                        </li>
+                    </c:forEach>
+                    <c:if test="${maker.next}">
+                        <li class="page-item"><a class="page-link"
+                                href="/main/reservation?pageNo=${maker.end+1}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">next</a>
+                        </li>
+                    </c:if>
+                    <c:if test="${maker.page.pageNo != maker.finalPage}">
+                        <li class="page-item"><a class="page-link"
+                                href="/main/reservation?pageNo=${maker.finalPage}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
+                        </li>
+                    </c:if>
+                </ul>
+            </nav>
+        </div>
+
+
     </section>
 
     <script>
-
-
         const $btn = document.querySelector('.camping');
 
         $btn.addEventListener('click', e => {
@@ -62,12 +96,12 @@
             if (e.target.matches('.btn-group *')) {
                 console.log('more 버튼 클릭됨');
 
-                
-            const campId = e.target.closest('.camping-box').dataset.bno;
-            console.log('camp_id: ' + campId);
 
-            // 서버에 요청 보내기
-            location.href='/main/reservation-detail/' + campId;
+                const campId = e.target.closest('.camping-box').dataset.bno;
+                console.log('camp_id: ' + campId);
+
+                // 서버에 요청 보내기
+                location.href = '/main/reservation-detail/' + campId;
 
             }
 
@@ -76,8 +110,28 @@
 
         })
 
+
+        // 사용자가 현재 머물고 있는 페이지 버튼에 active 스타일 부여
+        function appendPageActive() {
+
+            // 현재 서버에서 넘겨준 페이지 번호
+            const currPage = '${maker.page.pageNo}';
+
+            // li 태그들을 전부 확인해서
+            // 현재 페이지 번호와 일치하는 li를 찾은 후 active 클래스 이름 붙이기
+            const $ul = document.querySelector('.pagination');
+            const $liList = [...$ul.children];
+
+            $liList.forEach($li => {
+                if (currPage === $li.dataset.pageNum) {
+                    $li.classList.add('active');
+                }
+            });
+        }
+
+        appendPageActive();
     </script>
-    
+
 
 
 

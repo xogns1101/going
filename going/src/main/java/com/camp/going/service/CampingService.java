@@ -43,9 +43,9 @@ public class CampingService {
     }
 
     // 캠핑장 목록 페이징 작업
-//    public int getCount(Search page) {
-//        return campingMapper.getCount(page);
-//    }
+    public int getCount(Search page) {
+        return campingMapper.getCount(page);
+    }
 
     // 캠핑장 예약 관련 서비스
     public ReservationDetailResponseDTO reservationDetail(int campId) {

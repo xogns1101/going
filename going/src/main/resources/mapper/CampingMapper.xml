@@ -76,5 +76,10 @@
 
     </update>
 
+    <select id="getCount" resultType="int">
+        SELECT COUNT(*)
+        FROM camping
+    </select>
+
 
 </mapper>

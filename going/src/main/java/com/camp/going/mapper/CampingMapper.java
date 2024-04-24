@@ -23,7 +23,7 @@ public interface CampingMapper {
 
     void updateCamping(Camping camping);
 
-  //  int getCount(Search page);
+    int getCount(Search page);
 
 
 
