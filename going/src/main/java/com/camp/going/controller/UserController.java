@@ -99,7 +99,7 @@ public class UserController {
             // 세션으로 로그인 유지
             userService.maintainLoginState(request.getSession(), dto.getEmail());
 
-            return "redirect:(메인 jsp 경로)";
+            return "redirect:/main";
         }
 
         return "redirect:/user/sign-in"; // 로그인 실패 시

@@ -7,10 +7,10 @@
     <insert id="saveReview">
         INSERT INTO review
         (review_content, email, camp_id, review_image,
-        review_point, review_like, review_date)
+        review_point, review_like)
         VALUES
         (#{reviewContent}, #{email}, #{campId},
-        #{reviewImage}, #{reviewPoint}, #{reviewLike}, #{reviewDate})
+        #{reviewImage}, #{reviewPoint}, #{reviewLike})
     </insert>
 
     <select id="findAllReview" resultType="review">

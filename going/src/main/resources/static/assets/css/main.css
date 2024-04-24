@@ -426,8 +426,9 @@ footer .footer-wrap .footer-content {
     margin: auto 0;
 }
 
-footer .footer-wrap .footer-link a:hover {
+footer .footer-wrap .footer-link span:hover {
   color: #FF0080;
+  cursor: pointer;
 }
 
 footer .footer-wrap .footer-copyright {
@@ -458,6 +459,49 @@ footer .footer-logo a {
   right: 50px;
   bottom: 60px;
 } */
+
+
+footer .modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+footer .modal-content {
+  color: black;
+  font-family: '맑은 고딕';
+  line-height: 1.2em;
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+footer .modal-content p {
+  width: 97%;
+}
+
+footer .modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 42px;
+  font-weight: bold;
+}
+
+footer .modal-close:hover,
+footer .modal-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 @media (max-width: 1024px) {
 
