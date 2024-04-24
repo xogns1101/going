@@ -1,8 +1,11 @@
 package com.camp.going.controller;
 
+import com.camp.going.entity.MyPage;
 import com.camp.going.entity.Reservation;
 import com.camp.going.entity.User;
+import com.camp.going.mapper.ReservationMapper;
 import com.camp.going.service.CampingService;
+import com.camp.going.service.MyPageService;
 import com.camp.going.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,30 +22,8 @@ import java.util.List;
 @Slf4j
 public class MyPageController {
 
-    private final CampingService service;
-
-    private final UserService userService;
-
-    @GetMapping("/mypage")
-<<<<<<< HEAD
-    public String myPage(Model model, int campId, String email) {
-
-        User user = userService.getFindUser(email);
-
-        Reservation reservation = service.getReservation(campId);
-
-        log.info("확인 : {}" , reservation.getCampName());
-
-        model.addAttribute("r", reservation);
-
-        return "mypage";
+    private final MyPageService myPageService;
 
 
-=======
-    public String myPage() {
-        log.info("/user/mypage : GET!");
-        return "mypage";
->>>>>>> 6d97ae940af7d601abc489a0e63f31dd79ee14e4
-    }
 
 }

@@ -2,6 +2,8 @@ package com.camp.going.mapper;
 
 import com.camp.going.common.Search;
 import com.camp.going.entity.Camping;
+import com.camp.going.entity.Reservation;
+import com.camp.going.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -24,6 +26,9 @@ public interface CampingMapper {
     void updateCamping(Camping camping);
 
     int getCount(Search page);
+
+
+
 
 
 

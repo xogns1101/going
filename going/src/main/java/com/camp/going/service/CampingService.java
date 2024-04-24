@@ -1,6 +1,7 @@
 package com.camp.going.service;
 
 import com.camp.going.common.Search;
+import com.camp.going.dto.request.ReservationRequestDTO;
 import com.camp.going.dto.response.CampingListResponseDTO;
 import com.camp.going.dto.response.ReservationDetailResponseDTO;
 import com.camp.going.dto.response.ReservationListDTO;
@@ -90,12 +91,6 @@ public class CampingService {
     }
 
 
-    public Reservation getReservation(int campId) {
 
-        Reservation one = reservationMapper.findOne(campId);
-
-        return one;
-
-    }
 }
 

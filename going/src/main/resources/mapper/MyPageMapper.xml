@@ -4,6 +4,8 @@
 
 <mapper namespace="com.camp.going.mapper.MyPageMapper">
 
+
+
     <update id="modifyName">
         UPDATE user
         SET name = #{name}
@@ -22,15 +24,7 @@
         WHERE email = #{email};
     </update>
     
-    <select id="confirmReservation" resultType="mypage">
-        SELECT
-            C.camp_name, C.camp_homepage, C.camp_number,
-            R.reg_date, R.reg_dates
-        FROM reservation R
-        LEFT JOIN camping C
-        ON R.camp_id = C.camp_id
-        WHERE email = #{email}
-    </select>
+
 
 
 </mapper>

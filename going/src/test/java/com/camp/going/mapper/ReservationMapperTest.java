@@ -65,4 +65,16 @@ class ReservationMapperTest {
         assertEquals(1, reservations.size());
     }
 
+    @Test
+    @DisplayName("삭제 확인")
+    void deleteTest() {
+        // given
+        int campId= 2;
+        // when
+        reservationMapper.delete(campId);
+        Reservation reservation = reservationMapper.findOne(campId);
+        // then
+        assertNull(reservation);
+    }
+
 }

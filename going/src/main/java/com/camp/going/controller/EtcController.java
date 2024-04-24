@@ -23,7 +23,6 @@ public class EtcController {
     @Value("${file.upload.root-path}")
     private String rootPath;
 
-    private final CampingService service;
     private final ReviewService reviewService;
 
 

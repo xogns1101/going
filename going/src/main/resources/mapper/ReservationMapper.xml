@@ -68,6 +68,14 @@
 
     </select>
 
+    <delete id="delete">
+
+        DELETE FROM reservation
+        WHERE camp_id = #{campId}
+
+    </delete>
+
+
 
 
 </mapper>
