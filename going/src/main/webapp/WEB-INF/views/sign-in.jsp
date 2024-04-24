@@ -40,17 +40,19 @@
                                 </div>
 
                                 <div class="plzPw">비밀번호를 입력해 주세요.</div>
+
+
                                 <div class="Passwordblank">
                                     <input type="password" id="passwordInput" placeholder="최소 8자" name="password">
                                 </div>
+
 
                                 <!-- 자동로그인 -->
                                 <div class="auto-login">
                                     <input type="checkbox" id="autoLogin" name="autoLogin">
                                     <label for="autoLogin">자동 로그인</label>
                                 </div>
-                                LoginButton
-                                Login
+
                                 <!-- 로그인 버튼 -->
                                 <div class="LoginButton">
                                     <input
