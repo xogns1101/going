@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @Builder
 public class ReviewRequestDTO {
 
+    private int reviewNo;
     private String reviewContent; // 리뷰 내용
     //    private String email; // 리뷰 작성자
     private MultipartFile reviewImage;

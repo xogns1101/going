@@ -32,7 +32,7 @@
                             <!-- <li class="rno">${b.reviewNo}</li> -->
                             <!-- <li class="camp-name">${b.campName}</li>
                             <li class="email">${b.email}</li> -->
-                            <img src="/local${b.reviewImage}" alt="리뷰">
+                            <img src="/review${b.reviewImage}" alt="리뷰">
                             <li class="review-content">${b.reviewContent}</li>
                         </ul>
                         <button class="review-modify">수정</button>
@@ -105,6 +105,11 @@
             fingerbutton.addEventListener('click', function () {
                 if (fingerbutton.textContent === '👍🏻') {
                     fingerbutton.textContent = '👍';
+
+                    fetch('/main/reviews')
+                        .then(res => res.json())
+                        .then(flag => {})
+
                 } else {
                     fingerbutton.textContent = '👍🏻';
                 }

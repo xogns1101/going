@@ -56,7 +56,7 @@
             <div class="best-review">
                 <h1>BEST REVIEW</h1>
                 <div class="review-box">
-                    <img src="/local${r.reviewImage}" alt="베스트리뷰"><br>
+                    <img src="/review${r.reviewImage}" alt="베스트리뷰"><br>
                     <ul class="review">
                         <li class="camp-name">${r.campName}</li>
                         <li class="review-content">${r.reviewContent}</li>
