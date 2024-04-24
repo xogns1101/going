@@ -170,31 +170,28 @@ section .camping-list button.more-button {
 .pageBox ul li {
   display: inline-block;
   margin: 0 5px;
-  /* 숫자와 화살표 사이의 간격 조절 */
   padding: 20px;
 
 }
 
 .pageBox ul li a {
   display: block;
-  padding: 10px 15px;
-  /* 각 숫자와 화살표의 내부 여백 조절 */
+  padding: 10px 10px;
   font-size: 32px;
-  /* 숫자와 화살표의 폰트 크기 조절 */
-  color: #333;
-  /* 숫자와 화살표의 글자 색상 설정 */
+  color: linear-gradient(to right top, #E4FFAA, #4BDB73);
+  
   text-decoration: none;
-  /* 링크 밑줄 제거 */
+  
 }
 
 .pageBox ul li a:hover {
   background-color: #f0f0f0;
-  /* 마우스 호버 시 배경색 변경 */
+ 
 }
 
 .pageBox ul li.active a {
   font-weight: bold;
-  /* 현재 선택된 페이지 번호의 글자 굵게 설정 */
-  color: #007bff;
-  /* 현재 선택된 페이지 번호의 글자 색상 변경 */
+  color: black;
+  background: #E4FFAA;
+  
 }

@@ -23,26 +23,31 @@ public class MyPageController {
 
     private final UserService userService;
 
+//    @GetMapping("/mypage")
+//
+//    public String myPage(Model model, int campId, String email) {
+//
+//        User user = userService.getFindUser(email);
+//
+//        Reservation reservation = service.getReservation(campId);
+//
+//        log.info("확인 : {}", reservation.getCampName());
+//
+//        model.addAttribute("r", reservation);
+//
+//        return "mypage";
+//
+//    }
+
     @GetMapping("/mypage")
-<<<<<<< HEAD
-    public String myPage(Model model, int campId, String email) {
-
-        User user = userService.getFindUser(email);
-
-        Reservation reservation = service.getReservation(campId);
-
-        log.info("확인 : {}" , reservation.getCampName());
-
-        model.addAttribute("r", reservation);
-
-        return "mypage";
-
-
-=======
     public String myPage() {
         log.info("/user/mypage : GET!");
+
+
+
+
         return "mypage";
->>>>>>> 6d97ae940af7d601abc489a0e63f31dd79ee14e4
+
     }
 
 }
