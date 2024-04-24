@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>introduce</title>
+    <title>notice-detail</title>
 
 
     <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
@@ -55,6 +55,12 @@
                 </form>
             </div>
 
+<<<<<<< HEAD
+=======
+                        <button class="list-btn" type="button" onclick="location.href='/main/notice'">목록</button>
+                        <button type="submit" class="submit-button">수정</button>
+                    </div>
+>>>>>>> jhjhjh3
 
         </div>
 

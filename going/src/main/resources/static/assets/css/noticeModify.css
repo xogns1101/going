@@ -1,0 +1,149 @@
+
+
+/* div wrap */
+#wrap.form-container {
+    color: black;
+  }
+  
+  
+  section .title h1 {
+      color: black;
+      margin-top: 250px;
+      font-size: 40px;
+      text-align: center;
+    }
+    
+    section .title h1 span {
+    color: black;
+    font-family: "Yeon Sung", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+    
+    section .notice-list {
+        display: flex;
+        justify-content: space-around;
+        
+        }
+        
+        
+        
+    section .notice-list .notice-box {
+        width: 1200px;
+        height: 700px;
+        background: #E4FFAA;
+        margin-top: 50px;
+        border-radius: 3%;
+            
+        position: relative;
+    }
+
+    .NoticeBoardType {
+        color: black;
+        font-family: Yeon Sung;
+        font-weight: 400;
+        word-wrap: break-word;
+        position: absolute;
+        top: 25px;
+        height: 30px;
+        font-size: 25px;
+        left: 150px;
+    }
+    
+    #wrap.form-container table{
+      width: 900px;
+      margin-left: 13%;
+      margin-top: 5%;
+      background: #F0EEEE;
+    }
+
+    #wrap.form-container thead {
+        width: 900px;
+    }
+
+    #wrap.form-container tr {
+      color: black;
+      font-family: "Yeon Sung", system-ui;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 25px;
+      border: 2px solid black;
+      
+      width: 900px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    #wrap.form-container thead tr th {
+      margin-right: 15px;
+      margin-left: -10px;    
+      width: 100px;
+      font-size: 30px;
+    }
+
+    #wrap.form-container tbody tr td #category {
+      width: 80px;
+      font-size: 25px;
+      font-weight: 400;
+      text-align: center;
+      font-family: "Yeon Sung", system-ui;
+    }
+
+    #wrap.form-container tbody tr td #title {
+      font-family: "Yeon Sung", system-ui;
+      width: 300px;
+      font-size: 20px;
+    }
+
+    #content {
+      font-family: "Yeon Sung", system-ui;
+      font-size: 25px;
+      position: absolute;
+      top: 165px;
+      left: 156px;
+      width: 900px;
+      height: 400px;
+      border-width: 2px;
+      border-color: black;
+      padding: 20px 20px;
+    }
+
+    .buttons {
+        height: 40px;
+        width: 200px;
+        word-wrap: break-word;
+        position: absolute;
+        top: 580px;
+        left: 500px;
+        font-size: 24px;
+        font-family: Yeon Sung;
+        font-weight: 400;
+        display: flex;
+      }
+
+    .list-btn {
+        width: 100%;
+        height: 50px;
+        font-size: 30px;
+        border-radius: 4px;
+        font-family: Yeon Sung;
+        background-color: darkgray;
+        cursor: pointer;
+      }
+
+    .submit-button {
+        width: 100%;
+        height: 50px;
+        font-size: 30px;
+        border-radius: 4px;
+        font-family: Yeon Sung;
+        background-color: #EA9999;
+        cursor: pointer;
+        
+      }
+
+
+
+
