@@ -21,13 +21,19 @@
                 <a href="/main/notice">NOTICE</a>
                 <a href="/main/review">REVIEW</a>
             </div>
-            <div class="login">
-                <a href="/user/sign-in"><p>LOGIN</p></a><br>
-            </div>
-            <div class="logout">
-                <a href="/user/sign-out">LOGOUT</a><br>
-                <a href="/user/mypage">MYPAGE</a>
-            </div>
+
+
+                    <div class="login">
+                        <a href="/user/sign-in"><p>LOGIN</p></a><br>
+                    </div>
+
+
+
+
+                <div class="logout">
+                        <a href="/user/sign-out">LOGOUT</a><br>
+                        <a href="/user/mypage">MYPAGE</a>
+                </div>
 
 
 

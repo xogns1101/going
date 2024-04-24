@@ -85,9 +85,12 @@ public class CampingService {
     }
 
 
+    public Reservation getReservation(int campId) {
 
+        Reservation one = reservationMapper.findOne(campId);
 
+        return one;
 
-
+    }
 }
 

@@ -184,6 +184,12 @@ public class UserService {
     }
 
 
+    public User getFindUser(String email) {
 
+        User user = userMapper.findUser(email);
+
+        return user;
+
+    }
 }
 

@@ -33,51 +33,52 @@
             <h1>NOTICE / <span>공지사항</span></h1>
         </div>
 
-        <!-- <div class="notice-list">
+
+
+         <div class="notice-list">
             <div class="notice-box">
-                <c:forEach var="b" items="${nList}">
+                    <div class="NoticeBoardType"><< ${n.noticeNo}번 공지사항 >></div>
                     <table border="1">
                         <thead>
                             <tr class="column">
-                                <th class="yeon-sung-regular">공지등급</th>
-                                <th class="yeon-sung-regular">글번호</th>
-                                <th class="yeon-sung-regular">제목</th>
-                                <th class="yeon-sung-regular">작성일</th>
-                                <th class="yeon-sung-regular">조회수</th>
+                                <th class="noticeCategory">공지등급</th>
+                                <th class="NoticeNo">글번호</th>
+                                <th class="NoticeTitle">제목</th>
+                                <th class="NoticeDate">작성일</th>
+                                <th class="NoticeCount">조회수</th>
 
                             </tr>
-                            <tr>
-                                <td class="noticeCategory">${b.noticeCategory}</td>
-                                <td class="NoticeNo">${b.noticeNo}</td>
-                                <td class="NoticeTitle">${b.noticeTitle}</td>
-                                <td class="NoticeDate">${b.noticeDate}</td>
-                                <td class="NoticeCount">${b.noticeCount}</td>
+                            <tr class="Item">
+                                <td class="noticeCategory"></td>
+                                <td class="NoticeNo">${n.noticeNo}</td>
+                                <td class="NoticeTitle">${n.noticeTitle}</td>
+                                <td class="NoticeDate">${n.noticeDate}</td>
+                                <td class="NoticeCount">${n.noticeCount}</td>
 
                             </tr>
-                        </thead> -->
+                        </thead>
 
-                        <!-- 내용칸  -->
-                        <!-- <div class="InNoticeContentbox"></div> -->
-                        <!-- <div class="InNoticeContent">${b.noticeContent}</div> -->
-                        <!-- <div class="NoticeBoardType">‘공지사항’ 게시판 글</div>
+                        <tbody>
 
                         <div class="InNoticeContentbox" id="noticeContentBox">
                             <textarea id="editedContent">${b.noticeContent}</textarea>
                         </div>
+
+                        </tbody>
                     </table>
 
-                </c:forEach> -->
+
 
                 <!-- 수정, 삭제 저장 버튼 -->
-                <!-- <div class="buttonContainer">
+                <div class="buttonContainer">
                     <button id="editButton">수정</button>
                     <button id="saveButton">저장</button>
                     <button id="deleteButton">삭제</button>
                 </div>
             </div>
-        </div> -->
+        </div>
 
-        <div id="wrap" class="form-container">
+    <!-- <div id="wrap" class="form-container">
             <form action="/main/notice-detail-write" method="post">
                 <!-- 카테고리 -->
                 <label for="category">카테고리</label>
@@ -99,7 +100,7 @@
                 </div>
             </form>
         </div>
-
+    -->
 
     </section>
 
