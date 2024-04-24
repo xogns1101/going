@@ -45,6 +45,7 @@
 
     <select id="findAllCamping" resultType="camping">
         SELECT * FROM camping
+        LIMIT #{pageStart}, #{amount}
     </select>
 
     <delete id="deleteCamping">
@@ -75,6 +76,11 @@
         WHERE camp_id = #{campId}
 
     </update>
+
+    <select id="getCount" resultType="int">
+        SELECT COUNT(*)
+        FROM camping
+    </select>
 
 
 </mapper>

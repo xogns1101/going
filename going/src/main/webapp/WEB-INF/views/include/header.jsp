@@ -21,19 +21,14 @@
                 <a href="/main/notice">NOTICE</a>
                 <a href="/main/review">REVIEW</a>
             </div>
-
-
-                    <div class="login">
-                        <a href="/user/sign-in"><p>LOGIN</p></a><br>
-                    </div>
-
-
-
-
-                <div class="logout">
-                        <a href="/user/sign-out">LOGOUT</a><br>
-                        <a href="/user/mypage">MYPAGE</a>
-                </div>
+            <div class="login">
+                <a href="/user/sign-in"><p>LOGIN</p></a>
+            </div>
+            <div class="logout">
+                <h1>메롱이 님</h1>
+                <a href="/user/sign-out">LOGOUT</a><br>
+                <a href="/user/mypage">MYPAGE</a>
+            </div>
 
 
 

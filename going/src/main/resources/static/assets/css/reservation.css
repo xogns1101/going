@@ -1,134 +1,200 @@
-
-
 section .title h1 {
-    color: black;
-    margin-top: 250px;
-    font-size: 40px;
-    text-align: center;
-    font-family: "Luckiest Guy", cursive;
+  color: black;
+  margin-top: 250px;
+  font-size: 40px;
+  text-align: center;
+  font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;
-  }
-  
-  section .title h1 span {
+}
+
+section .title h1 span {
   color: black;
   font-family: "Yeon Sung", system-ui;
   font-weight: 400;
   font-style: normal;
-  }
-  
-  
-  
-  section .camping {
-    width: 100%;
+}
+
+
+
+section .camping {
+  width: 100%;
   display: flex;
   justify-content: space-around;
-    flex-wrap: wrap; /* 넘치는 요소들을 다음 줄에 배치 */
-  }
-  
-  section .camping .camping-list {
-    width: 30%;
-    
-  }
-  
-  
-  section .camping-list .camping-box {
-    width: 500px;
-    height: 700px;
-    background: #E4FFAA;
-    margin: 50px auto 100px auto;
-    border-radius: 3%;
-  
-    position: relative;
-  }
-  
-  section .camping-list .camping-box img {
-    width: 465px;
-    height: 465px;
-  
-    position: absolute;
-    top: 18.5px;
-    left: 18.5px;
-    
-    border-radius: 3%;
-  
-  }
-  
-  section .camping-list .camping-box .camping {
-    color: black;
-    font-family: "Yeon Sung", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    width: 465px;
-    
-    
-  }
-  
-  section .camping-list .camping-box .camping li:first-child {
-    font-size: 30px;
-    text-decoration: underline;
-    position: absolute;
-    
-    left: 18.5px;
-    left: 18.5px;
-    bottom: 140px;
-  
-  }
-  
-  section .camping-list .camping-box .camping li:nth-child(2) {
-    font-size: 20px;
-    position: absolute;
-  
-    left: 18.5px;
-    right: 18.5px;
-    bottom: 50px;
-  }
-  section .camping-list .camping-box .camping li:nth-child(3) {
-    font-size: 20px;
-    position: absolute;
-  
-    left: 18.5px;
-    right: 18.5px;
-    bottom: 30px;
-  }
-  section .camping-list .camping-box .camping li:nth-child(4) {
-    font-size: 20px;
-    position: absolute;
-  
-    left: 18.5px;
-    right: 18.5px;
-    bottom: 10px;
-  }
-  
-  
-  
-  section .camping-list .camping-box .camping li:last-child {
-    font-size: 50px;
-    position: absolute;
-  
-    bottom: 120px;
-    right: 30px;
-  }
-  .btn-group {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-  section .camping-list button.more-button {
-    width: 100px;
-    height: 50px;
-    background: #4BDB73;
-    border-color: #4BDB73;
-    border-radius: 10%;
-    font-size: 25px;
-    color: #fff;
-    font-family: "Luckiest Guy", cursive;
-    font-weight: 400;
-    font-style: normal; 
-  
-    position: absolute;
-  
-    bottom: 30px;
-    right: 20px;
-  
-  }
+  flex-wrap: wrap;
+}
+
+section .camping .camping-list {
+  width: 30%;
+
+}
+
+
+section .camping-list .camping-box {
+  width: 500px;
+  height: 700px;
+  background: #E4FFAA;
+  margin: 50px auto 100px auto;
+  border-radius: 3%;
+
+  position: relative;
+}
+
+section .camping-list .camping-box img {
+  width: 465px;
+  height: 465px;
+
+  position: absolute;
+  top: 18.5px;
+  left: 18.5px;
+
+  border-radius: 3%;
+
+}
+
+section .camping-list .camping-box .camping {
+  color: black;
+  font-family: "Yeon Sung", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  width: 465px;
+
+
+}
+
+section .camping-list .camping-box .camping li:first-child {
+  font-size: 30px;
+  text-decoration: underline;
+  position: absolute;
+
+  left: 18.5px;
+  left: 18.5px;
+  bottom: 140px;
+
+}
+
+section .camping-list .camping-box .camping li:nth-child(2) {
+  font-size: 20px;
+  position: absolute;
+
+  left: 18.5px;
+  right: 18.5px;
+  bottom: 50px;
+}
+
+section .camping-list .camping-box .camping li:nth-child(3) {
+  font-size: 20px;
+  position: absolute;
+
+  left: 18.5px;
+  right: 18.5px;
+  bottom: 30px;
+}
+
+section .camping-list .camping-box .camping li:nth-child(4) {
+  font-size: 20px;
+  position: absolute;
+
+  left: 18.5px;
+  right: 18.5px;
+  bottom: 10px;
+}
+
+
+
+section .camping-list .camping-box .camping li:last-child {
+  font-size: 50px;
+  position: absolute;
+
+  bottom: 120px;
+  right: 30px;
+}
+
+.btn-group {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+section .camping-list button.more-button {
+  width: 100px;
+  height: 50px;
+  background: #4BDB73;
+  border-color: #4BDB73;
+  border-radius: 10%;
+  font-size: 25px;
+  color: #fff;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+
+  position: absolute;
+
+  bottom: 30px;
+  right: 20px;
+
+}
+
+
+/* 페이지 영역*/
+
+
+/* 페이지 스타일 */
+/* pagination style */
+
+.pageBox {
+  width: 100%;
+  height: 280px;
+  /* background: violet; */
+  display: flex;
+  justify-content: center;
+  /* 가운데 정렬 */
+
+}
+
+.bottom-section {
+
+  margin-top: 150px;
+  margin-bottom: 150px;
+
+}
+
+
+
+.pageBox ul {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.pageBox ul li {
+  display: inline-block;
+  margin: 0 5px;
+  /* 숫자와 화살표 사이의 간격 조절 */
+  padding: 20px;
+
+}
+
+.pageBox ul li a {
+  display: block;
+  padding: 10px 15px;
+  /* 각 숫자와 화살표의 내부 여백 조절 */
+  font-size: 32px;
+  /* 숫자와 화살표의 폰트 크기 조절 */
+  color: #333;
+  /* 숫자와 화살표의 글자 색상 설정 */
+  text-decoration: none;
+  /* 링크 밑줄 제거 */
+}
+
+.pageBox ul li a:hover {
+  background-color: #f0f0f0;
+  /* 마우스 호버 시 배경색 변경 */
+}
+
+.pageBox ul li.active a {
+  font-weight: bold;
+  /* 현재 선택된 페이지 번호의 글자 굵게 설정 */
+  color: #007bff;
+  /* 현재 선택된 페이지 번호의 글자 색상 변경 */
+}

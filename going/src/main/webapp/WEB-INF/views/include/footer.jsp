@@ -30,7 +30,7 @@
                 </p>
 
 
-                <p class="footer-link"><a href="">이용약관</a> &#124; <a href="">개인정보처리방침</a></p>
+               
 
 
                 <br>
