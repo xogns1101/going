@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>introduce</title>
+    <title>notice-detail</title>
 
 
     <link rel="stylesheet" href="/assets/css/main.css">
