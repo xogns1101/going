@@ -53,10 +53,15 @@ public class CampingService {
         Reservation reservation = reservationMapper.findOne(campId);
         Camping camping = campingMapper.findCamping(campId);
 
+
+
         return new ReservationDetailResponseDTO(reservation, camping);
-
-
     }
+
+
+
+
+
 
     // 예약 현황 리스트 목록
     public List<ReservationListDTO> getReservationList(Camping camping, User user) {
