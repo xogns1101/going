@@ -60,6 +60,9 @@ section .title h1 {
     top: 450px;
     position: absolute;
     text-align: center;
+    font-family: Yeon Sung; 
+    font-weight: 400;
+    font-size: 28px;
 }
 
 .Introtext span {
@@ -68,6 +71,7 @@ section .title h1 {
     font-family: Luckiest Guy;
     font-weight: 400;
     word-wrap: break-word;
+    font-family: Yeon Sung; 
 }
 
 /* 두 번째 span 요소 선택 */

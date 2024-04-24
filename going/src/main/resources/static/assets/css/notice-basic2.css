@@ -295,3 +295,30 @@ section .notice-box .notice-list tr .NoticeTitle {
   background: #333 !important;
   color: #fff !important;
 }
+
+/* 페이지 버튼 영역 */
+nav {
+  display: flex;
+}
+
+
+
+.pagination {
+  display: flex; /* 요소를 가로로 배치합니다. */
+  justify-content: center; /* 요소를 가운데 정렬합니다. */
+  /* 그 외 원하는 스타일을 추가하세요 */
+}
+
+.pagination-custom {
+  display: flex; /* 요소를 가로로 배치합니다. */
+  justify-content: center; /* 요소를 가운데 정렬합니다. */
+  /* 그 외 원하는 스타일을 추가하세요 */
+}
+
+.pagination .page-item {
+  width: 30px;
+  margin-bottom: 10px;
+  position: relative;
+  top: -30px;
+  font-size: 25px;
+}

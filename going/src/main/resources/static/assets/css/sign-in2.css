@@ -2,7 +2,7 @@
 
 section .title h1 {
     color: black;
-    margin-top: 250px;
+    margin-top: 160px;
     font-size: 40px;
     text-align: center;
   }
@@ -24,12 +24,12 @@ section .title h1 {
   
   
   section .signin-list .signin-box {
-    width: 1200px;
-    height: 700px;
+    width: 800px;
+    height: 600px;
     background: #E4FFAA;
     margin-top: 50px;
     border-radius: 3%;
-  
+    margin-bottom: 200px;
     position: relative;
   }
 
@@ -57,10 +57,10 @@ section .title h1 {
   
 
   section .signin-list .Emailblank input {
-    width: 500px; 
+    width: 700px; 
     height: 50px; 
-    left: 367px; 
-    top: 150px; 
+    left: 80px; 
+    top: 120px; 
     position: absolute; 
     font-size: 24px; 
     font-family: Yeon Sung; 
@@ -77,8 +77,8 @@ section .title h1 {
     position: absolute;
     width: 500px;
     height: 30px;
-    left: 330px;
-    top: 70px;
+    left: 45px;
+    top: 40px;
   }
 
 /* 비밀번호 입력 란 */
@@ -95,10 +95,10 @@ section .signin-list .Passwordblank {
   
 
   section .signin-list .Passwordblank input {
-    width: 500px; 
+    width: 700px; 
     height: 50px; 
-    left: 367px; 
-    top: 180px; 
+    left: 80px; 
+    top: 150px; 
     position: absolute; 
     font-size: 24px; 
     font-family: Yeon Sung; 
@@ -115,16 +115,16 @@ section .signin-list .Passwordblank {
     position: absolute;
     width: 500px;
     height: 30px;
-    left: 330px;
-    top: 180px;
+    left: 50px;
+    top: 150px;
   }
 
   /* 자동로그인 */
 
   section .signin-list .auto-login {
     position: absolute;
-    left: 330px;
-    top: 305px;
+    left: 50px;
+    top: 255px;
 }
 
   section .signin-list .auto-login input[type="checkbox"] {
@@ -145,8 +145,8 @@ section .signin-list .Passwordblank {
   .JoinButton {
     width: 350px; 
     height: 50px; 
-    left: 410px; 
-    top: 450px; 
+    left: 245px; 
+    top: 410px; 
     position: absolute; 
     background: #535651; 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
@@ -172,8 +172,8 @@ section .signin-list .Passwordblank {
   .LoginButton {
     width: 350px; 
     height: 50px; 
-    left: 410px; 
-    top: 380px; 
+    left: 245px; 
+    top: 340px; 
     position: absolute; 
     background: black; 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
@@ -198,8 +198,8 @@ section .signin-list .Passwordblank {
   #custom-login-btn {
     position: absolute;
     width: 300px; /* 이미지 너비에 맞게 조절 */
-    left: 275px; /* 회원가입 버튼과 같은 위치로 조정 */
-    top: calc(480px + 51px); /* 회원가입 버튼 아래로 조정 (회원가입 버튼의 top 위치 + 회원가입 버튼의 높이) */
+    left: 100px; /* 회원가입 버튼과 같은 위치로 조정 */
+    top: calc(440px + 51px); /* 회원가입 버튼 아래로 조정 (회원가입 버튼의 top 위치 + 회원가입 버튼의 높이) */
     
   }
 
@@ -221,8 +221,8 @@ section .signin-list .Passwordblank {
   width: 300px;
   border-radius: 10px;
   height:51px;
-  top: 520px;
+  top: 480px;
   position: absolute;
-  left: 585px;
+  left: 430px;
   }
 

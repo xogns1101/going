@@ -38,26 +38,26 @@
                     <div class="Profile">내 프로필</div>
 
                     <div class="Profileblank1">
-                        <div class="UserName">${}</div>
+                        <div class="UserName">${r.userName}</div>
                         <i class="fa-solid fa-user fa-2x"></i>
 
                     </div>
 
                     <div class="Profileblank2">
-                        <div class="PhoneNumber">${}</div>
+                        <div class="PhoneNumber">${r.phoneNumber}</div>
                         <i class="fa-solid fa-phone fa-2x"></i>
 
                     </div>
 
                     <div class="Profileblank3">
-                        <div class="Email">${}</div>
+                        <div class="Email">${r.email}</div>
                         <i class="fa-solid fa-envelope fa-2x"></i>
 
                     </div>
 
                      <!-- 환영박스  -->
                      <div class="Welcomemsgbox">
-                     <div class="Welcomemsg">${}님<br/>♥환영합니다♥</div>
+                     <div class="Welcomemsg">${r.userName}님<br/>♥환영합니다♥</div>
                      </div>
 
                      <!-- 수정버튼  -->
@@ -134,8 +134,8 @@
                     // 이벤트 전파를 중단합니다.
                     event.stopPropagation();
 
-                    // 수정하기버튼 클릭 시 modify-information.html 페이지로 이동합니다.
-                    window.location.href = "modify-information.html";
+                    // 수정하기버튼 클릭 시 modifyinformation.jsp 페이지로 이동합니다.
+                    window.location.href = "modifyinformation.jsp";
                 }
 
                 function handleDetailButtonClick(element) {
