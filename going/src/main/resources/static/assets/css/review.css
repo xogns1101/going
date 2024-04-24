@@ -21,6 +21,7 @@ section .bigBox {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin-top: 40px;
   /* 넘치는 요소들을 다음 줄에 배치 */
 
 }
@@ -35,14 +36,21 @@ section .review-list {
 
 
 section .title h1 {
-  color: black;
-  margin-top: 250px;
-  font-size: 40px;
+  background: linear-gradient(to right top, #E4FFAA, #4BDB73);
+  color: transparent;
+  -webkit-background-clip: text;
+  margin-top: 220px;
+  font-size: 80px;
   text-align: center;
+
 }
 
 section .title h1 span {
   color: black;
+  background: linear-gradient(to right top, #E4FFAA, #4BDB73);
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 80px;
   font-family: "Yeon Sung", system-ui;
   font-weight: 400;
   font-style: normal;
@@ -128,7 +136,7 @@ section .review-list .review-box ul img {
   height: 300px;
 
   position: absolute;
-  top: 30px;
+  top: 23px;
   left: 18.5px;
 
   border-radius: 3%;
@@ -352,15 +360,16 @@ section .review-list .review-box .good-count {
   height: 280px;
   /* background: violet; */
   display: flex;
-  justify-content: center; /* 가운데 정렬 */
-  
+  justify-content: center;
+  /* 가운데 정렬 */
+
 }
 
 .bottom-section {
- 
+
   margin-top: 150px;
   margin-bottom: 150px;
-  
+
 }
 
 
@@ -373,34 +382,36 @@ section .review-list .review-box .good-count {
 
 .pageBox ul li {
   display: inline-block;
-  margin: 0 5px; /* 숫자와 화살표 사이의 간격 조절 */
+  margin: 0 5px;
+  /* 숫자와 화살표 사이의 간격 조절 */
   padding: 20px;
 
 }
 
 .pageBox ul li a {
   display: block;
-  padding: 10px 15px; /* 각 숫자와 화살표의 내부 여백 조절 */
-  font-size: 32px; /* 숫자와 화살표의 폰트 크기 조절 */
-  color: #333; /* 숫자와 화살표의 글자 색상 설정 */
-  text-decoration: none; /* 링크 밑줄 제거 */
+  padding: 10px 15px;
+  /* 각 숫자와 화살표의 내부 여백 조절 */
+  font-size: 32px;
+  /* 숫자와 화살표의 폰트 크기 조절 */
+  background: linear-gradient(to right top, #E4FFAA, #4BDB73);
+  color: transparent;
+  -webkit-background-clip: text;
+  /* 숫자와 화살표의 글자 색상 설정 */
+  text-decoration: none;
+  /* 링크 밑줄 제거 */
 }
 
 .pageBox ul li a:hover {
-  background-color: #f0f0f0; /* 마우스 호버 시 배경색 변경 */
+  background-color: #f0f0f0;
+  /* 마우스 호버 시 배경색 변경 */
 }
 
 .pageBox ul li.active a {
-  font-weight: bold; /* 현재 선택된 페이지 번호의 글자 굵게 설정 */
-  color: #007bff; /* 현재 선택된 페이지 번호의 글자 색상 변경 */
+  font-weight: bold;
+  /* 현재 선택된 페이지 번호의 글자 굵게 설정 */
+  background: linear-gradient(to right top, #E4FFAA, #4BDB73);
+  color: transparent;
+  -webkit-background-clip: text;
+  /* 현재 선택된 페이지 번호의 글자 색상 변경 */
 }
-
-
-
-.pageBox ul li:first-child a::before {
-  content: "<<"; /* 이전 화살표 텍스트 설정 */
-}
-
-.pageBox ul li:last-child a::after {
-  content: ">>"; /* 다음 화살표 텍스트 설정 */
-} 

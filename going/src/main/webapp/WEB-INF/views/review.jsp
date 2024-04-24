@@ -154,7 +154,22 @@
             }
         });
 
-                
+        function appendPageActive() {
+
+            // 현재 서버에서 넘겨준 페이지 번호
+            const currPage = '${maker.page.pageNo}';
+
+            // li 태그들을 전부 확인해서
+            // 현재 페이지 번호와 일치하는 li를 찾은 후 active 클래스 이름 붙이기
+            const $ul = document.querySelector('.pagination');
+            const $liList = [...$ul.children];
+
+            $liList.forEach($li => {
+                if (currPage === $li.dataset.pageNum) {
+                    $li.classList.add('active');
+                }
+            });
+        }
     </script>
 
 
