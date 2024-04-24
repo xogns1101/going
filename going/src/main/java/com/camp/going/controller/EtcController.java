@@ -1,17 +1,18 @@
 package com.camp.going.controller;
 
-import com.camp.going.common.Search;
-import com.camp.going.dto.response.CampingListResponseDTO;
+import com.camp.going.dto.request.ReviewRequestDTO;
+import com.camp.going.dto.response.ReviewResponseDTO;
+import com.camp.going.entity.Review;
 import com.camp.going.service.CampingService;
+import com.camp.going.service.ReviewService;
+import com.camp.going.util.FileUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -19,7 +20,11 @@ import java.util.List;
 @Slf4j
 public class EtcController {
 
+    @Value("${file.upload.root-path}")
+    private String rootPath;
+
     private final CampingService service;
+    private final ReviewService reviewService;
 
 
     // 메인화면 이동하기
@@ -27,6 +32,9 @@ public class EtcController {
     public String main(Model model) {
         log.info("/main: GET");
 
+        ReviewResponseDTO dto = reviewService.bestReview();
+
+        model.addAttribute("r", dto);
 
         return "index";
     }
