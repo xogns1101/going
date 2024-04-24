@@ -47,7 +47,21 @@
                         <th class="NoticeCount">조회수</th>
                     </tr>
                     <tr class="Item">
-                        <td class="noticeCategory"></td>
+                        <td class="noticeCategory">
+                            <c:set var="categoryName" value="" />
+                            <c:choose>
+                                <c:when test="${n.noticeCategory == 'ESSENTIAL'}">
+                                    <c:set var="categoryName" value="필독" />
+                                </c:when>
+                                <c:when test="${n.noticeCategory == 'NOTICE'}">
+                                    <c:set var="categoryName" value="공지" />
+                                </c:when>
+                                <c:when test="${n.noticeCategory == 'COMMON'}">
+                                    <c:set var="categoryName" value="기본" />
+                                </c:when>
+                            </c:choose>
+                            ${categoryName}
+                        </td>
                         <td class="NoticeNo">${n.noticeNo}</td>
                         <td class="NoticeTitle">${n.noticeTitle}</td>
                         <td class="NoticeDate">${n.noticeDate}</td>
@@ -61,6 +75,7 @@
                         </td>
                     </tr>
                 </tbody>
+
             </table>
 
             <div class="buttons">
