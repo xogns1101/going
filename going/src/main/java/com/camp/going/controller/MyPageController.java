@@ -24,6 +24,7 @@ public class MyPageController {
 
     private final MyPageService myPageService;
 
+    }
 
 
 }

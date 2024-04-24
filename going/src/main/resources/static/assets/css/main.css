@@ -330,9 +330,27 @@ section.main-page2 .main-content .best-review .review-box {
   position: relative;
 }
 
+/* 별점 보기*/
+
+section.main-page2 .main-content .best-review .star-rating {
+  margin-top: 600px;
+  display: flex;
+}
+
+section.main-page2 .main-content .best-review .review-box .review-content{
+
+  font-family: "Luckiest Guy", cursive;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 32px;
+  margin-top: 400px;
+
+
+}
+
 section.main-page2 .main-content .best-review .review-box img {
   width: 465px;
-  height: 465px;
+  height: 365px;
 
   position: absolute;
   top: 18.5px;
@@ -351,6 +369,8 @@ section.main-page2 .main-content .best-review .review-box .review {
   
   
 }
+
+
 
 section.main-page2 .main-content .best-review .review-box .review li:first-child {
   font-size: 30px;
