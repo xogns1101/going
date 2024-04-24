@@ -21,10 +21,12 @@ public class EtcController {
 
     private final CampingService service;
 
+
     // 메인화면 이동하기
     @GetMapping("")
     public String main(Model model) {
         log.info("/main: GET");
+
 
         return "index";
     }

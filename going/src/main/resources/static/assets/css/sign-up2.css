@@ -1,315 +1,99 @@
+@import url(./main.css);
 
-
-section .title h1 {
-    color: black;
-    margin-top: 250px;
-    font-size: 40px;
-    text-align: center;
-  }
-  
-  section .title h1 span {
+section.signup-list {
+  width: 100vh;
+  height: 100vh;
   color: black;
+
+  margin: 160px auto 0 auto;
+  
+}
+
+
+section.signup-list .signup-box{
+width: 100%;
+height: 100%;
+}
+
+section.signup-list .signup-box h1 {
+  /* background: red; */
+  text-align: center;
+  margin: 30px auto;
+  font-size: 40px;
+}
+
+
+section.signup-list .signup-box form{
+  width: 90%;
+  height: 70%;
+  padding: 20px;
+
+  background: #E4FFAA;
+  border-radius: 20px;
+
+  display: flex;
   font-family: "Yeon Sung", system-ui;
   font-weight: 400;
   font-style: normal;
-  }
-  
-  
-  
-  section .signup-list {
-  display: flex;
-  justify-content: space-around;
-  
-  }
-  
-  
-  
-  section .signup-list .signup-box {
-    width: 1200px;
-    height: 700px;
-    background: #E4FFAA;
-    margin-top: 50px;
-    border-radius: 3%;
-  
-    position: relative;
-  }
 
-  section .signup-list .signup-box table {
-    width: 900px;
-    margin-left: 13%;
-    margin-top: 5%;
-    background: #F0EEEE;
-    
-  }
-  
-  /* 이메일 입력란 */
-
-  section .signup-list .Emailblank {
-    width: 189px;
-    height: 30px; 
-    left: -35px; 
-    top: -80px;
-    position: absolute; 
-    background: #FFFDFD"
-  }
-
-  
-
-  section .signup-list .Emailblank input {
-    width: 500px; 
-    height: 30px; 
-    left: 367px; 
-    top: 150px; 
-    position: absolute; 
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    border: none;
-  }
-
-  .plzId {
-    color: black;
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    position: absolute;
-    width: 500px;
-    height: 30px;
-    left: 330px;
-    top: 30px;
-  }
-
-/* 비밀번호 입력 란 */
-
-section .signup-list .Passwordblank {
-    width: 189px;
-    height: 30px; 
-    left: -35px; 
-    top: -10px;
-    position: absolute; 
-    background: #FFFDFD"
-  }
-
-  
-
-  section .signup-list .Passwordblank input {
-    width: 500px; 
-    height: 30px; 
-    left: 367px; 
-    top: 180px; 
-    position: absolute; 
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    border: none;
-  }
-
-  .plzPw {
-    color: black;
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    position: absolute;
-    width: 500px;
-    height: 30px;
-    left: 330px;
-    top: 130px;
-  }
-
-  /* 비밀번호 재입력칸 */
-
-  section .signup-list .Passwordblank2 {
-    width: 189px;
-    height: 30px; 
-    left: -35px; 
-    top: 90px;
-    position: absolute; 
-    background: #FFFDFD"
-  }
-
-  
-
-  section .signup-list .Passwordblank2 input {
-    width: 500px; 
-    height: 30px; 
-    left: 367px; 
-    top: 180px; 
-    position: absolute; 
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    border: none;
-  }
-
-  .plzPw2 {
-    color: black;
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    position: absolute;
-    width: 500px;
-    height: 30px;
-    left: 330px;
-    top: 230px;
-  }
-
-
-  /* 이름 입력 칸 */
-
-  section .signup-list .UserNameblank {
-    width: 189px;
-    height: 30px; 
-    left: -35px; 
-    top: 190px;
-    position: absolute; 
-    background: #FFFDFD"
-  }
-
-  
-
-  section .signup-list .UserNameblank input {
-    width: 500px; 
-    height: 30px; 
-    left: 367px; 
-    top: 180px; 
-    position: absolute; 
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    border: none;
-  }
-
-  .plzName {
-    color: black;
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    position: absolute;
-    width: 500px;
-    height: 30px;
-    left: 330px;
-    top: 330px;
-  }
-
-
-  /* 휴대폰 번호 입력칸 */
-
-  section .signup-list .PhoneNumberblank {
-    width: 189px;
-    height: 30px; 
-    left: -35px; 
-    top: 280px;
-    position: absolute; 
-    background: #FFFDFD"
-  }
-
-  
-
-  section .signup-list .PhoneNumberblank input {
-    width: 500px; 
-    height: 30px; 
-    left: 367px; 
-    top: 180px; 
-    position: absolute; 
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    border: none;
-  }
-
-  .plzPhone {
-    color: black;
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    position: absolute;
-    width: 500px;
-    height: 30px;
-    left: 330px;
-    top: 420px;
-  }
-
-
- /* 중복 확인 버튼 */
-
- .IdcheckButton {
-    width: 94px; 
-    height: 37px; 
-    left: 850px; 
-    top: 65px; 
-    position: absolute; 
-    background: #EA9999; 
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-    border: 1px black solid;
- }
-
- .Idcheck {
-    width: auto; 
-    height: 20px; 
-    left: 20px; 
-    top: 8px; 
-    position: absolute; 
-    color: black; 
-    font-size: 20px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    white-space: nowrap; 
-    cursor: pointer;
- }
-  
-/* 인증번호 버튼 */
- .ConfirmButton {
-    width: 130px; 
-    height: 37px; 
-    left: 850px; 
-    top: 455px; 
-    position: absolute; 
-    background: #EA9999; 
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-    border: 1px black solid;
- }
-
- .Confirm {
-    width: auto; 
-    height: 20px; 
-    left: 20px; 
-    top: 8px; 
-    position: absolute; 
-    color: black; 
-    font-size: 20px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    white-space: nowrap; 
-    cursor: pointer;
- }
-
-  .JoinButton {
-    width: 300px; 
-    height: 37px; 
-    left: 450px; 
-    top: 550px; 
-    position: absolute; 
-    background: #535651; 
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-    border: 1px black solid;
-  } 
-
-  .Join {
-    width: auto; 
-    height: 20px; 
-    left: 100px; 
-    top: 3px; 
-    position: absolute; 
-    color: white; 
-    font-size: 32px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    white-space: nowrap; 
-    cursor: pointer;
-  }
+  align-content: center;
+  text-align: left;
+  justify-content: center;
+  margin: 0 auto;
+}
 
 
 
 
+section.signup-list .signup-box form table td p {
+  font-size: 25px;
+  margin: 10px auto;
+}
 
 
+input[type="text"] {
+  width: 700px; 
+  height: 50px; 
+  font-size: 18px;
+  font-family: "Yeon Sung", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  padding-left: 20px;
+  border-radius: 10px;
+  border-style: none;
+}
+
+input[type="password"] {
+  width: 700px; 
+  height: 50px; 
+  font-size: 18px;
+  font-family: "Yeon Sung", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  padding-left: 20px;
+  border-radius: 10px;
+  border-style: none;
+}
+
+
+section.signup-list .signup-box form table td .btn {
+  width: 150px;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 25px;
+  font-family: "Yeon Sung", system-ui;
+  font-weight: 400;
+  font-style: normal;
+
+  background: #4BDB73;
+  border-color: #4BDB73;
+  border-radius: 10px;
+  cursor: pointer;
+}
+section.signup-list .signup-box form table td .btn:hover{
+  color: #fff;
+}
+
+section.signup-list .signup-box form table tr.join-btn {
+  text-align: center;
+}

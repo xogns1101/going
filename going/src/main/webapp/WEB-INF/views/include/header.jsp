@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert Your Title</title>
-
+    <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 
 <body>
@@ -22,9 +22,34 @@
                 <a href="/main/review">REVIEW</a>
             </div>
             <div class="login">
-                <a href="/user/sign-in">LOGIN</a><br>
+                <a href="/user/sign-in"><p>LOGIN</p></a><br>
+            </div>
+            <div class="logout">
+                <a href="/user/sign-out">LOGOUT</a><br>
                 <a href="/user/mypage">MYPAGE</a>
             </div>
+
+
+
+            <!-- 로그인이 되어있으면 로그아웃이랑 마이페이지만 뜰수있도록
+
+                <div class="login">
+                <c:if test="${login == null}">
+                    <a href="/user/sign-in">LOGIN</a><br>
+                </c:if>
+
+
+                <c:if test="${sessionScope.login != null}">
+                    <a href="/user/sign-out">LOGOUT</a><br>
+                    <a href="/user/mypage">MYPAGE</a>
+                </c:if>
+            </div> 
+
+        -->
+
+
+            
+
 
             <p class="menu-open">
                 <span class="lnr lnr-menu"></span>
@@ -41,6 +66,7 @@
                 <li><a href="/main/notice">NOTICE</a></li>
                 <li><a href="/main/review">REVIEW</a></li>
                 <li><a href="/user/sign-in">LOGIN</a></li>
+                <li><a href="/user/sign-out">LOGOUT</a></li>
                 <li><a href="/user/mypage">MYPAGE</a></li>
             </ul>
         </nav>
@@ -61,8 +87,9 @@
                 gnb.classList.remove('open');
             });
         </script>
-
+        
     </header>
+
 
 </body>
 
