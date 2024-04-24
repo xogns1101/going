@@ -38,26 +38,26 @@
                     <div class="Profile">내 프로필</div>
 
                     <div class="Profileblank1">
-                        <div class="UserName">${b.userName}</div>
+                        <div class="UserName">${r.userName}</div>
                         <i class="fa-solid fa-user fa-2x"></i>
 
                     </div>
 
                     <div class="Profileblank2">
-                        <div class="PhoneNumber">${b.phoneNumber}</div>
+                        <div class="PhoneNumber">${r.phoneNumber}</div>
                         <i class="fa-solid fa-phone fa-2x"></i>
 
                     </div>
 
                     <div class="Profileblank3">
-                        <div class="Email">${b.email}</div>
+                        <div class="Email">${r.email}</div>
                         <i class="fa-solid fa-envelope fa-2x"></i>
 
                     </div>
 
                      <!-- 환영박스  -->
                      <div class="Welcomemsgbox">
-                     <div class="Welcomemsg">${b.userName}님<br/>♥환영합니다♥</div>
+                     <div class="Welcomemsg">${r.userName}님<br/>♥환영합니다♥</div>
                      </div>
 
                      <!-- 수정버튼  -->
