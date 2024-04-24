@@ -45,7 +45,7 @@
 
     <select id="findAllCamping" resultType="camping">
         SELECT * FROM camping
-        LIMIT #{pageNo}, #{amount}
+        LIMIT #{pageStart}, #{amount}
     </select>
 
     <delete id="deleteCamping">
