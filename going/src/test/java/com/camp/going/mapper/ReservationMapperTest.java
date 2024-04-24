@@ -60,6 +60,7 @@ class ReservationMapperTest {
 
         // when
         List<Reservation> reservations = reservationMapper.reservationCamping();
+
         // then
         assertEquals(1, reservations.size());
     }

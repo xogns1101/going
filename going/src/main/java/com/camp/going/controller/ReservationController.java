@@ -5,6 +5,7 @@ import com.camp.going.dto.response.CampingListResponseDTO;
 import com.camp.going.dto.response.ReservationDetailResponseDTO;
 import com.camp.going.dto.response.ReservationListDTO;
 import com.camp.going.entity.Camping;
+import com.camp.going.entity.Reservation;
 import com.camp.going.entity.User;
 import com.camp.going.service.CampingService;
 import lombok.RequiredArgsConstructor;
@@ -78,6 +79,10 @@ public class ReservationController {
         return "reservation-admin";
 
     }
+
+
+
+
 
 
 

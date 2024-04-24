@@ -93,7 +93,7 @@
 
                 <!-- 예약 하기 -->
 
-                <form action="/jq/kakaopay" method="get">
+                <form action="/user/mypage" method="get">
 
                     <div class="reserve-box">
                         <div class="check">
