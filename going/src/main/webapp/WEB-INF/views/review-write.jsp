@@ -15,7 +15,7 @@
 
   <form id="reviewForm" action="/main/review-write" method="post" enctype="multipart/form-data">
 
-    <h1>Review⛺ / 등록</h1>
+    <h1>Review⛺ / <span>등록</span></h1>
 
     <div class="star-rating">
       <input type="radio" id="5-stars" name="reviewPoint" value="5" />
@@ -35,7 +35,7 @@
 
     <!-- <input type="text" id="review-title" placeholder="캠핑장 이름을 입력하세요."><br> -->
     <input type="text" id="review-content" name="reviewContent" placeholder="리뷰내용">
-    </div>
+    
 
     <div class="profile">
 

@@ -18,7 +18,8 @@
         FROM review R
         LEFT JOIN camping C
         ON R.camp_id = C.camp_id
-        ORDER BY review_no DESC;
+        ORDER BY review_no DESC
+        LIMIT #{pageStart}, #{amount}
     </select>
 
     <delete id="deleteReview">

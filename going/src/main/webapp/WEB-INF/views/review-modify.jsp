@@ -15,7 +15,7 @@
 
   <form id="reviewForm" action="/main/review-modify" method="post" enctype="multipart/form-data">
 
-    <h1>Review⛺ / 수정</h1>
+    <h1>Review⛺ / <span>수정</span></h1>
 
     <input type="hidden" name="rno" value="${r.reviewNo}">
 
@@ -37,7 +37,7 @@
 
     <!-- <input type="text" id="review-title" placeholder="캠핑장 이름을 입력하세요."><br> -->
     <input type="text" id="review-content" name="reviewContent" placeholder="리뷰내용" value="${r.reviewContent}">
-    </div>
+    
 
     <div class="profile">
 
@@ -46,7 +46,7 @@
       </div>
 
 
-      <input type="file" class="review-image" name="reviewImage" accept="image/*" value="${r.reviewImage}">
+      <input type="file" class="review-image" name="reviewImage" accept="image/*">
     </div>
 
     <div class="two-Btn">
@@ -177,6 +177,19 @@
       }
     });
 
+    document.querySelector('.list-button').addEventListener('click', function (event) {
+      var reviewContent = document.getElementById('review-content').value.trim();
+      var reviewImage = document.querySelector('.review-image').files.length;
+      var reviewPoint = document.querySelector('input[name="reviewPoint"]:checked');
+
+      while (!reviewContent || !reviewImage || !reviewPoint) {
+        alert('모든 항목을 입력해주세요.');
+        event.preventDefault(); // 제출을 막습니다.
+        break;
+      }
+    });
+
+
 
     // 파일 선택 부분
     const $fileInput = document.querySelector('.review-image');
@@ -225,7 +238,7 @@
 
       listButton.addEventListener('click', function () {
         // 원하는 경로로 이동합니다.
-        window.location.href = 'http://localhost:8181/main/review';
+        window.location.href = 'redirect:/main/review';
       });
     }
 

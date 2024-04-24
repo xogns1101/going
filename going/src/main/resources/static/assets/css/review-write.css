@@ -27,6 +27,13 @@ form {
   text-align: right; /* 오른쪽 정렬 */
 }
 
+#reviewForm  h1 span {
+  font-family: "Yeon Sung", system-ui;
+  font-weight: bold;
+  font-style: normal;
+
+}
+
 .star-rating {
   display: flex;
   flex-direction: row-reverse;
@@ -59,18 +66,6 @@ form {
 }
 
 
-.modal-detail {
-  margin-bottom: 20px;
-}
-
-.modal-detail input {
-  width: 100%; /* 전체 폭 사용 */
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
 .profile {
   display: flex;
   align-items: center;
@@ -91,10 +86,14 @@ form {
   margin-top: 320px;
 }
 
+.review-image {
+  margin-top: 320px;
+}
+
 .two-Btn {
     display: flex;
     justify-content: flex-end;
-    
+    margin-top: 20px;
 }
 
 
