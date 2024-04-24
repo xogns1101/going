@@ -134,8 +134,8 @@
                     // 이벤트 전파를 중단합니다.
                     event.stopPropagation();
 
-                    // 수정하기버튼 클릭 시 modify-information.html 페이지로 이동합니다.
-                    window.location.href = "modify-information.html";
+                    // 수정하기버튼 클릭 시 modifyinformation.jsp 페이지로 이동합니다.
+                    window.location.href = "modifyinformation.jsp";
                 }
 
                 function handleDetailButtonClick(element) {
