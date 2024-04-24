@@ -56,11 +56,11 @@
             <div class="best-review">
                 <h1>BEST REVIEW</h1>
                 <div class="review-box">
-                    <img src="/assets/img/camp5.jpg" alt="베스트리뷰"><br>
+                    <img src="/local${r.reviewImage}" alt="베스트리뷰"><br>
                     <ul class="review">
-                        <li class="review-title">홀리데이 캠핑장에 다녀오다!</li>
-                        <li class="review-content">캠핑장이 오랜만인데 너무 너무 좋네요 하하하 또 가고싶어요 분위기도 너무 좋구요 가족끼리 오기 딱인거 같네요!</li>
-                        <li class="review-views">4점</li>
+                        <li class="camp-name">${r.campName}</li>
+                        <li class="review-content">${r.reviewContent}</li>
+                        <li class="review-views">${r.reviewPoint}</li>
                     </ul>
 
                 </div>

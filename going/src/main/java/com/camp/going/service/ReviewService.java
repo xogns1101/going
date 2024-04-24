@@ -6,8 +6,6 @@ import com.camp.going.dto.request.ReviewRequestDTO;
 import com.camp.going.dto.response.ReviewResponseDTO;
 import com.camp.going.entity.Review;
 import com.camp.going.mapper.ReviewMapper;
-import com.camp.going.util.LoginUtils;
-import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -60,7 +58,10 @@ public class ReviewService {
 
     public ReviewResponseDTO getDetail(int rno) {
         return new ReviewResponseDTO(reviewMapper.findOne(rno));
+    }
 
+    public ReviewResponseDTO bestReview() {
+        return new ReviewResponseDTO(reviewMapper.bestReview());
     }
 
 }

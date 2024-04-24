@@ -19,6 +19,8 @@ public interface ReviewMapper {
 
     void likeReview(int reviewNo); // 리뷰 좋아요
 
+    int maxLike();
+
     Review bestReview(); // 베스트 리뷰 (좋아요가 가장 많은 것 -> 좋아요 수가 같을 경우 최신에 작성된 글)
 
     int updateLikeCount(int rno); // 리뷰 좋아요 처리
