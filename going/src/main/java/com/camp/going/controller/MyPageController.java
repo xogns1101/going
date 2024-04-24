@@ -24,7 +24,7 @@ public class MyPageController {
     private final UserService userService;
 
     @GetMapping("/mypage")
-<<<<<<< HEAD
+
     public String myPage(Model model, int campId, String email) {
 
         User user = userService.getFindUser(email);
@@ -38,11 +38,7 @@ public class MyPageController {
         return "mypage";
 
 
-=======
-    public String myPage() {
-        log.info("/user/mypage : GET!");
-        return "mypage";
->>>>>>> 6d97ae940af7d601abc489a0e63f31dd79ee14e4
+
     }
 
 }

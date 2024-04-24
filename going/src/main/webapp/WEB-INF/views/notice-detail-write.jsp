@@ -8,7 +8,7 @@
     <title>introduce</title>
 
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/in-notice-write.css">
+    <link rel="stylesheet" href="/assets/css/noticeModify.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,31 +31,62 @@
 
         <div class="title">
             <h1>NOTICE / <span>공지사항</span></h1>
-        </div>
+         </div>
 
-        <div id="wrap" class="form-container">
-            <form action="/main/notice-detail-write" method="post">
-                <!-- 카테고리 -->
-                <label for="category">카테고리</label>
-                <select id="category" name="noticeCategory" required>
-                    <option value="COMMON">기본</option>
-                    <option value="NOTICE">공지</option>
-                    <option value="ESSENTIAL">필독</option>
-                </select>
-                <!-- 제목 -->
-                <label for="title">제목</label>
-                <input type="text" id="title" name="noticeTitle" required placeholder="제목">
-                <!-- 내용 -->
-                <label for="content">내용</label>
-                <textarea id="content" name="noticeContent" maxlength="1000" required placeholder="내용"></textarea>
-                <!-- 등록 및 목록 -->
-                <div class="buttons">
-                    <button class="list-btn" type="button" onclick="window.location.href='/main/notice'">목록</button>
-                    <button type="submit">등록</button>
+        <div class="notice-list">
+            <div class="notice-box">
+                <div class="NoticeBoardType">
+                    공지사항 작성
+                 </div>
+
+                <div id="wrap" class="form-container">
+                    <form action="/main/notice-detail-write" method="post">
+                        <table>
+                            <thead>
+                                <tr class="column">
+                                    <th>
+                                        <label for="category">카테고리</label>
+                                    </th>
+
+                                    <th>
+                                        <label for="title">제목</label>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+
+                                    <!-- 카테고리 -->
+                                    <td>
+                                        <select id="category" name="noticeCategory" required>
+                                            <option value="COMMON">기본</option>
+                                            <option value="NOTICE">공지</option>
+                                            <option value="ESSENTIAL">필독</option>
+                                        </select>
+                                    </td>
+
+                                    <!-- 제목 -->
+                                    <td>
+                                        <input type="text" id="title" name="noticeTitle" required placeholder="제목">
+                                    </td>
+
+                                    <!-- 내용 -->
+                                    <textarea id="content" name="noticeContent" maxlength="1000" required
+                                        placeholder="내용"></textarea>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- 등록 및 목록 -->
+                        <div class="buttons">
+                            <button class="list-btn" type="button"
+                                onclick="window.location.href='/main/notice'">목록</button>
+                            <button type="submit" class="submit-button">등록</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
-
 
     </section>
 
