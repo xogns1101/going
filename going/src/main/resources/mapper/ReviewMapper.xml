@@ -33,19 +33,6 @@
         WHERE review_no = #{reviewNo}
     </update>
 
-    <update id="likeReview">
-        UPDATE review
-        SET review_count = review_count + 1
-        WHERE review_no = #{reviewNo}
-    </update>
-
-    <update id="cancelLikeReview">
-        UPDATE review
-        SET review_count = review_count - 1
-        WHERE review_no = #{reviewNo}
-        AND review_count > 0;
-    </update>
-
     <select id="bestReview" resultType="review">
         SELECT
         R.review_content, R.review_image, R.review_point,
