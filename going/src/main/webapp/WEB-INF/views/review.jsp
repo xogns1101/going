@@ -36,7 +36,7 @@
                             <li class="review-content">${b.reviewContent}</li>
                         </ul>
                         <button class="review-modify">수정</button>
-                        <button class="review-delete" data-href="/main/review-delete?rno=${b.reviewNo}">삭제</button>                    
+                        <button class="review-delete" data-href="/main/review-delete?rno=${b.reviewNo}">삭제</button>
 
                     </div>
                 </div>
@@ -151,7 +151,7 @@
                 if (currPage === $li.dataset.pageNum) {
                     $li.classList.add('active');
                 }
-            });
+            });g
         }
 
 
