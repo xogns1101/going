@@ -29,7 +29,7 @@ public class NoticeController {
 
     // 목록 조회 요청
     @GetMapping("/notice")
-    public String list(Model model, @ModelAttribute("s")Search page) {
+    public String list(Model model, @ModelAttribute("s") Search page) {
         System.out.println("search = " + page);
         List<NoticeListResponseDTO> dtoList = service.getList(page);
 
@@ -46,15 +46,9 @@ public class NoticeController {
     // 글쓰기 화면 요청
     @GetMapping("notice-detail-write")
     public String write(Model model) {
-        // 사용자 인증 정보 가져오기.
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        // 사용자가 인증되었고, ADMIN 권한을 가지고 있는지 확인함.
-//        if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
-//                .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
-//            System.out.println("/notice-detail-write: GET");
+        System.out.println("/notice-detail-write: GET");
 
-            return "notice-detail-write";
-//        } else return "redirect:/main/notice"; -> 어드민 로그인 전까지 주석처리
+        return "notice-detail-write";
     }
 
 
@@ -71,10 +65,10 @@ public class NoticeController {
     // 글 수정 화면 요청
     @GetMapping("/notice-modify/{nno}")
     public String modifyScreen(@PathVariable("nno") int nno, Model model) {
-        log.info("/notice-modify: GET " + nno);
-        NoticeDetailResponseDTO dto = service.getDetail(nno);
-        model.addAttribute("notice", dto);
-        return "notice-modify"; // 수정 폼으로 이동
+            log.info("/notice-modify: GET " + nno);
+            NoticeDetailResponseDTO dto = service.getDetail(nno);
+            model.addAttribute("notice", dto);
+            return "notice-modify"; // 수정 폼으로 이동
     }
 
 
@@ -93,16 +87,10 @@ public class NoticeController {
     // 글 삭제 요청
     @GetMapping("notice-delete")
     public String delete(int nno) {
-        // 사용자 인증 정보 가져오기.
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        // 사용자가 인증되었고, ADMIN 권한을 가지고 있는지 확인함.
-//        if (auth != null && auth.isAuthenticated() && auth.getAuthorities().stream()
-//                .anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
-//            System.out.println("/notice-delete: GET" + nno);
-        log.info("/notice-delete: GET " + nno);
+            System.out.println("/notice-delete: GET" + nno);
+            log.info("/notice-delete: GET " + nno);
             service.delete(nno);
             return "redirect:/main/notice";
-//        } else return "redirect:/main/notice";
     }
 
 
@@ -142,7 +130,6 @@ public class NoticeController {
         // 뷰로 이동
         return "notice-detail";
     }
-
 
 
 }
