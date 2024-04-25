@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 @Setter
-public class ReservationDetailResponseDTO {
+public class CampingDetailResponseDTO {
 
 
     private int campId; // 캠핑장 고유 번호
@@ -28,10 +28,10 @@ public class ReservationDetailResponseDTO {
     private String regDate; // 최초 캠핑장 예약 날짜
     private String regDates; // 퇴실 캠핑장 예약 날짜
     private String image;
+    private int campPrice;
 
 
-    public ReservationDetailResponseDTO(Reservation reservation
-            , Camping camping) {
+    public CampingDetailResponseDTO(Camping camping, Reservation reservation) {
 
         this.campId = camping.getCampId();
         this.campName = camping.getCampName();
@@ -47,6 +47,6 @@ public class ReservationDetailResponseDTO {
         this.regDate = String.valueOf(reservation.getRegDate());
         this.regDates = String.valueOf(reservation.getRegDates());
         this.image = camping.getCampImage();
-
+        this.campPrice = camping.getCampPrice();
     }
 }

@@ -38,26 +38,26 @@
                     <div class="Profile">내 프로필</div>
 
                     <div class="Profileblank1">
-                        <div class="UserName">${r.userName}</div>
+                        <div class="UserName"></div>
                         <i class="fa-solid fa-user fa-2x"></i>
 
                     </div>
 
                     <div class="Profileblank2">
-                        <div class="PhoneNumber">${r.phoneNumber}</div>
+                        <div class="PhoneNumber"></div>
                         <i class="fa-solid fa-phone fa-2x"></i>
 
                     </div>
 
                     <div class="Profileblank3">
-                        <div class="Email">${r.email}</div>
+                        <div class="Email"></div>
                         <i class="fa-solid fa-envelope fa-2x"></i>
 
                     </div>
 
                      <!-- 환영박스  -->
                      <div class="Welcomemsgbox">
-                     <div class="Welcomemsg">${r.userName}님<br/>♥환영합니다♥</div>
+                     <div class="Welcomemsg">님<br/>♥환영합니다♥</div>
                      </div>
 
                      <!-- 수정버튼  -->
@@ -75,19 +75,19 @@
                     <div class="Reservation">예약내역</div>
 
                     <div class="Reservationblank1">
-                        <div class="CampName">캠핑장명 :  ${}</div>
+                        <div class="CampName">캠핑장명 :  </div>
                         <i class="fa-solid fa-campground fa-2x"></i>
 
                     </div>
 
                     <div class="Reservationblank2">
-                        <div class="CampDate">예약일자 :  ${} ~ ${m.regDates}</div>
+                        <div class="CampDate">예약일자 : </div>
                         <i class="fa-solid fa-calendar-days fa-2x"></i>
 
                     </div>
 
                     <div class="Reservationblank3">
-                        <div class="CampInfo">업체정보 : ${}</div>
+                        <div class="CampInfo">업체정보 : </div>
                         <i class="fa-solid fa-location-dot fa-2x"></i>
 
                     </div>
@@ -99,7 +99,7 @@
 
                      <!-- 캠프장 사진  -->
                      <div class="CampImgbox">
-                        <img src="${m.campImage}" alt="img">
+                        <img src="" alt="img">
 
                        </div>
 

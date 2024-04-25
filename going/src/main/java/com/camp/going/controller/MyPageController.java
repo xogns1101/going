@@ -1,11 +1,13 @@
 package com.camp.going.controller;
 
+import com.camp.going.dto.request.ReservationRequestDTO;
 import com.camp.going.entity.MyPage;
 import com.camp.going.entity.Reservation;
 import com.camp.going.entity.User;
 import com.camp.going.mapper.ReservationMapper;
 import com.camp.going.service.CampingService;
 import com.camp.going.service.MyPageService;
+import com.camp.going.service.ReservationService;
 import com.camp.going.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +26,15 @@ public class MyPageController {
 
     private final MyPageService myPageService;
 
+    private final ReservationService reservationService;
+
+
+    @GetMapping("/mypage")
+    public String showMypage(){
+
+        return "mypage";
+
+    }
 
 
 

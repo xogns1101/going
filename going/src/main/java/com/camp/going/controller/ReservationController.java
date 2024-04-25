@@ -3,13 +3,14 @@ package com.camp.going.controller;
 import com.camp.going.common.PageMaker;
 import com.camp.going.common.Search;
 import com.camp.going.dto.request.ReservationRequestDTO;
+import com.camp.going.dto.response.CampingDetailResponseDTO;
 import com.camp.going.dto.response.CampingListResponseDTO;
-import com.camp.going.dto.response.ReservationDetailResponseDTO;
 import com.camp.going.dto.response.ReservationListDTO;
 import com.camp.going.entity.Camping;
 import com.camp.going.entity.Reservation;
 import com.camp.going.entity.User;
 import com.camp.going.service.CampingService;
+import com.camp.going.service.ReservationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -25,7 +26,7 @@ import java.util.List;
 public class ReservationController {
 
     private final CampingService service;
-
+    private final ReservationService reservationService;
 
 
 
@@ -52,12 +53,13 @@ public class ReservationController {
     @GetMapping("/reservation-detail/{campId}")
     public String reservationDetail(Model model
             , @PathVariable("campId") int campId
+            , Reservation reservation
             ){
 
         System.out.println("캠핑장아이디!!!" + campId);
 
 
-        ReservationDetailResponseDTO dto = service.reservationDetail(campId);
+        CampingDetailResponseDTO dto = service.reservationDetail(campId, reservation);
 
 
         model.addAttribute("r", dto);
@@ -85,6 +87,16 @@ public class ReservationController {
 
     }
 
+    @PostMapping("/reservation-detail/{campId}")
+    public String showMypage(ReservationRequestDTO dto){
+
+        reservationService.getReservation(dto);
+        log.info("확인 : {}", dto.getRegDate());
+        log.info("확인 : {}", dto.getRegDates());
+
+        return "redirect:/user/mypage";
+
+    }
 
 
 

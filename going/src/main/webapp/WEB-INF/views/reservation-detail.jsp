@@ -21,6 +21,7 @@
 
     <section id="reservation-detail">
 
+
         <div class="detail">
 
             <div class="detail-title">
@@ -72,6 +73,7 @@
                 <!-- ------------달력----------- -->
 
 
+
                 <div class="calendar-container">
                     <div class="calendar-header">
                         <button id="prevBtn" class="btn"><span class="lnr lnr-chevron-left"></span> </button>
@@ -94,8 +96,8 @@
 
                 <!-- 예약 하기 -->
 
-                <form action="/jq/kakaopay" method="get">
 
+            <form action="/main/reservation-detail/{campId}" method="post">
                     <div class="reserve-box">
                         <div class="check">
                             <div class="in">입실</div>
@@ -122,9 +124,9 @@
                     </div>
 
                     <button type="submit" class="reserve-button"
-                    data-href="/main/reservation-detail?camp_id=${b.campId}">예약하기</button>
+                    data-href="/main/reservation-detail?${b.campId}">예약하기</button>
 
-                    
+
                 </form>
 
 
@@ -309,7 +311,7 @@
                     console.log('camp_id: ' + campId);
 
                 // 서버에 요청 보내기
-                location.href='/main/reservation-list/' + campId;
+                location.href='/user/mypage';
 
 
                 })

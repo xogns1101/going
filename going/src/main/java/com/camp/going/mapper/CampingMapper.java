@@ -27,7 +27,8 @@ public interface CampingMapper {
 
     int getCount(Search page);
 
-
+    // 상세 조회
+    Camping findOne(int campId);
 
 
 

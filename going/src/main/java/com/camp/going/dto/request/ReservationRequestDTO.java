@@ -13,24 +13,16 @@ import java.time.LocalDate;
 @Builder
 public class ReservationRequestDTO {
 
-    private int campId;
-    private String email;
-    private String campName;
+
     private LocalDate regDate;
     private LocalDate regDates;
-    private int campPirce;
-    private String phoneNumber;
+
 
 
     public Reservation toEntity(){
        return  Reservation.builder()
-                .campId(campId)
-                .email(email)
-                .campName(campName)
                 .regDate(regDate)
                 .regDates(regDates)
-                .price(campPirce)
-                .phoneNumber(phoneNumber)
                 .build();
     }
 

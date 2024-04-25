@@ -16,8 +16,7 @@ public interface ReservationMapper {
 
     List<Reservation> reservationCamping();
 
-    // 상세 조회
-    Reservation findOne(int campId);
+
 
     void delete(int campId);
 

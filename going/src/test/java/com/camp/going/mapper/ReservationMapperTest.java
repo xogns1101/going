@@ -24,17 +24,14 @@ class ReservationMapperTest {
     @DisplayName("예약이 잘 되는지 확인")
     void reservationInsert() {
         // given
-        String regDate = "2024-04-15";
-        String regDates = "2024-04-16";
+        String regDate = "2024-04-25";
+        String regDates = "2024-04-26";
 
         Reservation reservation = Reservation.builder()
-                .campId(3)
-                .campName("하입보이캠핑장")
-                .email("aaa1111@naver.com")
+                .campId(1)
+                .email("aaa2222@naver.com")
                 .regDate(LocalDate.parse(regDate))
                 .regDates(LocalDate.parse(regDates))
-                .price(70000)
-                .phoneNumber("010-1454-5378")
                 .build();
         // when
         reservationMapper.reservationSave(reservation);
@@ -65,16 +62,6 @@ class ReservationMapperTest {
         assertEquals(1, reservations.size());
     }
 
-    @Test
-    @DisplayName("삭제 확인")
-    void deleteTest() {
-        // given
-        int campId= 2;
-        // when
-        reservationMapper.delete(campId);
-        Reservation reservation = reservationMapper.findOne(campId);
-        // then
-        assertNull(reservation);
-    }
+
 
 }
