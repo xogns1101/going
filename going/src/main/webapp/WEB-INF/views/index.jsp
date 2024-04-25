@@ -17,25 +17,54 @@
 <body>
     <%@ include file="include/header.jsp" %>
 
-    
-    
-    
+
+
+
     <section class="main-page1">
-        
+
         <div class="animated-title">
-            <div class="track">
-              <div class="content">&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;회원가입을 하시면 리뷰를 작성하실 수 있으니 많은 가입 부탁드립니다.&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;회원가입을 하시면 리뷰를 작성하실 수 있으니 많은 가입 부탁드립니다&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;</div>
-            </div>
+            <c:if test="${login != null}">
+                <div class="track">
+                    <div class="content">⛺공지&nbsp;&nbsp;&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;&nbsp;&nbsp;회원가입을 하시면 리뷰를 작성하실 수
+                        있으니 많은 가입 부탁드립니다.&nbsp;&nbsp;&nbsp;공지사항 필수로 확인해주세요~&nbsp;&nbsp;⛺공지&nbsp;&nbsp;&nbsp;야가자캠핑에 오신것을
+                        환영합니다!&nbsp;&nbsp;&nbsp;회원가입을 하시면 리뷰를 작성하실 수 있으니 많은 가입 부탁드립니다.&nbsp;&nbsp;&nbsp;공지사항 필수로
+                        확인해주세요~&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;</div>
+                </div>
+            </c:if>
         </div>
+
+        
+
+
 
         <div class="main-content">
             <h1>CAMPING OF THE MONTH</h1>
             <div class="main-img">
+                
                 <img class="campin-img1" src="/assets/img/camp1.jpg" alt="이달의캠핑1">
                 <img class="campin-img2" src="/assets/img/camp2.jpg" alt="이달의캠핑2">
                 <img class="campin-img3" src="/assets/img/camp3.jpg" alt="이달의캠핑3">
+                
             </div>
         </div>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const animatedTitle = document.querySelector('.animated-title');
+                const mainContent = document.querySelector('.main-content'); 
+                const loginStatus = "${login}";
+
+                if (loginStatus === null || loginStatus === "") {
+                    animatedTitle.style.display = "none";
+                } else if(loginStatus !== null) {
+                    mainContent.style.marginTop = "0px";
+                }
+
+            });
+
+
+        </script>
 
     </section>
 
@@ -69,22 +98,22 @@
                         <li class="review-content">${r.reviewContent}</li>
                         <li class="review-views"></li>
                         <li class="star-rating">
-                            <input type="radio" id="5-stars" name="reviewPoint" value="5" readonly/>
+                            <input type="radio" id="5-stars" name="reviewPoint" value="5" readonly />
                             <label for="5-stars" class="star">&#9733;</label>
-                            <input type="radio" id="4-stars" name="reviewPoint" value="4" readonly/>
+                            <input type="radio" id="4-stars" name="reviewPoint" value="4" readonly />
                             <label for="4-stars" class="star">&#9733;</label>
-                            <input type="radio" id="3-stars" name="reviewPoint" value="3" readonly/>
+                            <input type="radio" id="3-stars" name="reviewPoint" value="3" readonly />
                             <label for="3-stars" class="star">&#9733;</label>
-                            <input type="radio" id="2-stars" name="reviewPoint" value="2" readonly/>
+                            <input type="radio" id="2-stars" name="reviewPoint" value="2" readonly />
                             <label for="2-stars" class="star">&#9733;</label>
-                            <input type="radio" id="1-stars" name="reviewPoint" value="1" readonly/>
+                            <input type="radio" id="1-stars" name="reviewPoint" value="1" readonly />
                             <label for="1-star" class="star">&#9733;</label>
-                          </li>
-                      
-                          <input type="hidden" name="starPoint" id="starPoint" value="${r.reviewPoint}">
+                        </li>
+
+                        <input type="hidden" name="starPoint" id="starPoint" value="${r.reviewPoint}">
                     </ul>
 
-                    
+
                 </div>
             </div>
 
@@ -123,10 +152,6 @@
 
         const reviewPoint = '${r.reviewPoint}';
         document.getElementById(reviewPoint + '-stars').click();
-
-
-
-        
     </script>
 
 
