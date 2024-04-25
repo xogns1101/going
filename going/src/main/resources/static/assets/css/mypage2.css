@@ -25,20 +25,20 @@ section .title h1 {
   
   
   section .mypage-list .mypage-box {
-    width: 1200px;
+    width: 1000px;
     height: 700px;
     background: #E4FFAA;
     margin-top: 50px;
     border-radius: 3%;
-  
+    margin-bottom: 40px;
     position: relative;
   }
 
   /* 프로필------------------------------- */
  
  .Profile {
-    left: 240px; 
-    top: 100px; 
+    left: 100px; 
+    top: 60px; 
     position: absolute; 
     color: black; 
     font-size: 24px; 
@@ -52,8 +52,8 @@ section .title h1 {
   .Profileblank1 {
     width: 434px; 
     height: 50px; 
-    left: 240px; 
-    top: 150px; 
+    left: 100px; 
+    top: 100px; 
     position: absolute; 
     background: #FFFDFD;
     border-radius: 10px;
@@ -84,8 +84,8 @@ section .title h1 {
   .Profileblank2 {
     width: 434px; 
     height: 50px; 
-    left: 240px; 
-    top: 210px; 
+    left: 100px; 
+    top: 160px; 
     position: absolute; 
     background: #FFFDFD;
     border-radius: 10px;
@@ -117,8 +117,8 @@ section .title h1 {
   .Profileblank3 {
     width: 434px; 
     height: 50px; 
-    left: 240px; 
-    top: 270px; 
+    left: 100px; 
+    top: 220px; 
     position: absolute; 
     background: #FFFDFD;
     border-radius: 10px;
@@ -177,8 +177,8 @@ section .title h1 {
   .User .Welcomemsgbox {
     width: 246px; 
     height: 158px; 
-    left: 800px; 
-    top: 155px; 
+    left: 650px; 
+    top: 105px; 
     position: absolute; 
     background: white;
     border-radius: 10px;
@@ -202,7 +202,7 @@ section .title h1 {
    /* 예약내역------------------------------- */
 
    .Reservation {
-    left: 240px; 
+    left: 100px; 
     top: 380px; 
     position: absolute; 
     color: black; 
@@ -217,7 +217,7 @@ section .title h1 {
   .Reservationblank1 {
     width: 434px; 
     height: 50px; 
-    left: 240px; 
+    left: 100px; 
     top: 430px; 
     position: absolute; 
     background: #FFFDFD;
@@ -250,7 +250,7 @@ section .title h1 {
   .Reservationblank2 {
     width: 434px; 
     height: 50px; 
-    left: 240px; 
+    left: 100px; 
     top: 490px; 
     position: absolute; 
     background: #FFFDFD;
@@ -282,8 +282,8 @@ section .title h1 {
 
   .Reservationblank3 {
     width: 434px; 
-    height: 70px; 
-    left: 240px; 
+    height: 100px; 
+    left: 100px; 
     top: 550px; 
     position: absolute; 
     background: #FFFDFD;
@@ -316,8 +316,8 @@ section .title h1 {
   .camp .CampImgbox {
     width: 246px; 
     height: 158px; 
-    left: 800px; 
-    top: 445px; 
+    left: 650px; 
+    top: 460px; 
     position: absolute; 
     background: white;
     border-radius: 10px;
