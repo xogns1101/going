@@ -26,12 +26,12 @@ section.signup-list .signup-box h1 {
 section.signup-list .signup-box form{
   width: 90%;
   height: 70%;
-  padding: 20px;
+  padding: 50px;
 
   background: #E4FFAA;
   border-radius: 20px;
 
-  display: flex;
+  /* display: flex; */
   font-family: "Yeon Sung", system-ui;
   font-weight: 400;
   font-style: normal;
@@ -40,6 +40,19 @@ section.signup-list .signup-box form{
   text-align: left;
   justify-content: center;
   margin: 0 auto;
+}
+
+.signup-box table   {
+  /* width: 100px;  */
+}
+
+.signup-box table tr  {
+  /* width: 100px;  */
+}
+
+
+.signup-box table tr td {
+  /* width: 100px;  */
 }
 
 
@@ -52,7 +65,7 @@ section.signup-list .signup-box form table td p {
 
 
 input[type="text"] {
-  width: 700px; 
+  width: 600px; 
   height: 50px; 
   font-size: 18px;
   font-family: "Yeon Sung", system-ui;
@@ -64,7 +77,7 @@ input[type="text"] {
 }
 
 input[type="password"] {
-  width: 700px; 
+  width: 600px; 
   height: 50px; 
   font-size: 18px;
   font-family: "Yeon Sung", system-ui;
@@ -74,6 +87,7 @@ input[type="password"] {
   border-radius: 10px;
   border-style: none;
 }
+
 
 
 section.signup-list .signup-box form table td .btn {
