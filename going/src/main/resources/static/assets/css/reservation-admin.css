@@ -20,17 +20,18 @@ section .camp-list {
 }
 
 section .camp-list .camp-box {
-    width: 1200px;
-    height: 700px;
+    width: 1300px;
+    height: 550px;
     background: #E4FFAA;
     margin-top: 50px;
     border-radius: 3%;
     position: relative;
+    margin-bottom: 40px;
 }
 
 section .camp-list .camp-box table {
-    width: 900px;
-    margin-left: 8%;
+    width: 1200px;
+    margin-left: 4%;
     margin-top: 5%;
     background: #F0EEEE;
 }
@@ -223,3 +224,110 @@ section .camp-list tr th {
     top: -565px;
     cursor: pointer;
 }
+
+
+
+
+
+/* 페이지 버튼 */
+
+.bottom-section {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  
+  .bottom-section nav {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .pagination-custom a {
+    color: #444 !important;
+  }
+  
+  .pagination-custom li.active a,
+  .pagination-custom li:hover a {
+    background: #333 !important;
+    color: #fff !important;
+  }
+  
+  /* 페이지 버튼 영역 */
+  nav {
+    display: flex;
+  }
+  
+  .pagination-custom {
+    width: 600px;
+    display: flex; /* 요소를 가로로 배치합니다. */
+    justify-content: space-around; /* 요소를 가운데 정렬합니다. */
+    /* 그 외 원하는 스타일을 추가하세요 */
+  }
+  
+  .pagination .page-item {
+    width: 30px;
+    margin-bottom: 10px;
+    position: relative;
+    top: -30px;
+    font-size: 25px;
+    left: -170px;
+  }
+  
+
+
+  /* 검색어 조회 */
+/* .search-wrapper {
+  /* position: relative; */
+
+
+  .search-content-background {
+    width: 320px;
+    height: 41px;
+    /* position: absolute; */
+    left: 550px;
+    top: 50px;
+    background: white;
+    border: 1px black solid;
+    position: relative;
+  }
+  
+  .search-content {
+    width: 250px;
+    height: 35px;
+    /* position: absolute; */
+    left: 9px;
+    top: 3px;
+    border: none;
+    outline: none;
+    color: black;
+    font-size: 24px;
+    font-family: Yeon Sung;
+    font-weight: 400;
+    word-wrap: break-word;
+    
+  }
+  
+  .search-click-button {
+    width: 63px;
+    height: 35px;
+    /* position: absolute; */
+    left: 250px;
+    top: 2px;
+    font-family: Yeon Sung;
+    font-size: 20px;
+    background: #9CEE8F;
+    border: 1px black solid;
+    cursor: pointer;
+    
+  }
+  
+  .form-select {
+    width: 100px; 
+    height: 41px;
+    font-size: 20px;
+    font-family: Yeon Sung;
+    font-weight: 400;
+    position: absolute;
+    left: -100px;
+    top: -1px;
+  }
