@@ -7,16 +7,17 @@
     <meta charset="UTF-8">
     <title>sign-up</title>
     <%@ include file="include/static-head.jsp" %>
-   
+ 
 
-
+</head>
 
 <body>
     <!-- header -------------------------------- -->
     <%@ include file="include/header.jsp" %>
 
     <!-- sign-up ---------------------------------->
-  
+
+
 
     <!-- 섹션 -->
     <section class="signup-list">
