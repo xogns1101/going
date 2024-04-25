@@ -414,7 +414,7 @@ section.main-page2 .main-content .best-review .reivew {
 
 section.main-page2 .main-content .best-review .review-box {
   width: 500px;
-  height: 700px;
+  height: 600px;
   background: #fff;
   margin-top: 50px;
   border-radius: 3%;
@@ -425,11 +425,38 @@ section.main-page2 .main-content .best-review .review-box {
 
 /* 별점 보기*/
 
-section.main-page2 .main-content .best-review .star-rating {
-  top: 400px;
-  left: 15px;
-  position: relative;
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  justify-content: flex-end;
+  padding-left: 18px;
+  text-align: center;
+  width: 5em;
 }
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  -webkit-text-fill-color: transparent;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2.3px;
+  -webkit-text-stroke-color: #2b2a29;
+  cursor: pointer;
+}
+
+.star-rating :checked~label {
+  -webkit-text-fill-color: gold;
+}
+
+.star-rating label:hover,
+.star-rating label:hover~label {
+  -webkit-text-fill-color: #fff58c;
+}
+
 
 section.main-page2 .main-content .best-review .review-box .review-content {
   width: 465px;
@@ -450,7 +477,7 @@ section.main-page2 .main-content .best-review .review-box img {
   height: 365px;
 
   position: absolute;
-  top: 18.5px;
+  top: 60px;
   left: 18.5px;
 
   border-radius: 3%;
@@ -490,11 +517,13 @@ section.main-page2 .main-content .best-review .review-box .review li:nth-child(2
 }
 
 section.main-page2 .main-content .best-review .review-box .review li:nth-child(3) {
-  font-size: 50px;
   position: absolute;
-
-  bottom: 120px;
-  right: 30px;
+        bottom: 120px;
+        right: 30px;
+        height: 200px;
+        margin-top: 50px;
+        font-size: 24px;
+        padding-left: 12px;
 }
 
 
@@ -659,4 +688,5 @@ footer .modal-close:focus {
   /* footer .go-top {
     display: none;
   } */
+}
 }
