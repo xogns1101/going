@@ -89,12 +89,14 @@ public class ReservationController {
 
     @PostMapping("/reservation-detail/{campId}")
     public String showMypage(ReservationRequestDTO dto){
+        log.info("/main/reservation-detail/{campId} : Post!!");
 
         reservationService.getReservation(dto);
         log.info("확인 : {}", dto.getRegDate());
         log.info("확인 : {}", dto.getRegDates());
 
-        return "redirect:/user/mypage";
+
+        return "redirect:/main/reservation";
 
     }
 
