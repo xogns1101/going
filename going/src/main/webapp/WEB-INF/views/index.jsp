@@ -25,9 +25,8 @@
         <div class="animated-title">
             <c:if test="${login != null}">
                 <div class="track">
-                    <div class="content">⛺공지&nbsp;&nbsp;&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;&nbsp;&nbsp;회원가입을 하시면 리뷰를 작성하실 수
-                        있으니 많은 가입 부탁드립니다.&nbsp;&nbsp;&nbsp;공지사항 필수로 확인해주세요~&nbsp;&nbsp;⛺공지&nbsp;&nbsp;&nbsp;야가자캠핑에 오신것을
-                        환영합니다!&nbsp;&nbsp;&nbsp;회원가입을 하시면 리뷰를 작성하실 수 있으니 많은 가입 부탁드립니다.&nbsp;&nbsp;&nbsp;공지사항 필수로
+                    <div class="content">⛺공지&nbsp;&nbsp;&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;&nbsp;&nbsp;${login.name}님 캠핑은 어떠셨나요~?&nbsp;&nbsp;&nbsp;공지사항 필수로 확인해주세요~&nbsp;&nbsp;⛺공지&nbsp;&nbsp;&nbsp;야가자캠핑에 오신것을
+                        환영합니다!&nbsp;&nbsp;&nbsp;${login.name}님 캠핑은 어떠셨나요~?&nbsp;&nbsp;&nbsp;공지사항 필수로
                         확인해주세요~&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;</div>
                 </div>
             </c:if>
@@ -39,14 +38,19 @@
 
         <div class="main-content">
             <h1>CAMPING OF THE MONTH</h1>
-            <div class="main-img">
-                <div class="main-img1">
-                    <img class="campin-img1" src="/assets/img/camp5.jpg" alt="이달의캠핑1">
+            <div class="best-camping">
+                <div class="main-img">
+                    <div class="main-img1">
+                        <img class="campin-img1" src="/assets/img/camp5.jpg" alt="이달의캠핑1">
+                    </div>
+                    <div class="main-img2">
+                        <img class="campin-img2" src="/assets/img/camp2.jpg" alt="이달의캠핑2">
+                        <img class="campin-img3" src="/assets/img/camp1.jpg" alt="이달의캠핑3">
+                    </div>
                 </div>
-                <div class="main-img2">
-                    <img class="campin-img2" src="/assets/img/camp2.jpg" alt="이달의캠핑2">
-                    <img class="campin-img3" src="/assets/img/camp1.jpg" alt="이달의캠핑3">
-                </div>
+                
+                <p>캠핑예약 바로가기 <br> <a href="/main/reservation">GO</a> </p>
+                
             </div>
         </div>
 

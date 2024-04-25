@@ -89,7 +89,7 @@ header .logo-content a:hover {
   text-decoration: none;
 }
 
-header .login p{
+header .login p {
   /* border: blue solid 1px; */
   /* position: absolute;
   right: 60px;
@@ -100,7 +100,7 @@ header .login p{
   align-items: center;
 }
 
-header .login  {
+header .login {
   font-size: 28px;
   margin-top: 18px;
   margin-right: 50px;
@@ -269,395 +269,460 @@ header .gnb ul li.active {
 section.main-page1 .animated-title {
   margin-top: 100px;
   color: coral;
-  font-size:40px; 
+  font-size: 40px;
   font-family: "Dongle", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-weight:300; 
-  position: relative; 
+  font-weight: 300;
+  position: relative;
   width: 100%;
-  max-width:100%; 
-  height: auto; 
-  padding:100px 0; 
-  overflow-x: hidden; 
-  overflow-y: hidden; }
+  max-width: 100%;
+  height: auto;
+  padding: 100px 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 
 section.main-page1 .animated-title .track {
-  
-  position: absolute; 
+
+  position: absolute;
   white-space: nowrap;
   will-change: transform;
-  animation: marquee 60s linear infinite; }
+  animation: marquee 60s linear infinite;
+}
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-@media (hover: hover) and (min-width: 700px){
+  from {
+    transform: translateX(0);
+  }
 
-section.main-page1 .animated-title .content {
-  
-  background:wheat;
-  -webkit-transform: translateY(calc(100% - 8rem)); 
-  transform: translateY(calc(100% - 8rem));
+  to {
+    transform: translateX(-50%);
+  }
 }
 
+@media (hover: hover) and (min-width: 700px) {
 
+  section.main-page1 .animated-title .content {
 
+    background: wheat;
+    -webkit-transform: translateY(calc(100% - 8rem));
+    transform: translateY(calc(100% - 8rem));
+  }
 
 
 
 
 
-/* best-camping */
-section.main-page1 .main-content {
-  width: 100%;
-  height: 100vh;
-  color: #a1a1a1;
-  font-size: 40px;
-  text-align: center;
-  margin-top: 180px;
-}
 
-section.main-page1 .main-content h1 {
-  background: linear-gradient(to right top, #45cf6f, #d42b1b);
-  color: transparent;
-  -webkit-background-clip: text;
-  
-}
 
 
+  /* best-camping */
+  section.main-page1 .main-content {
+    width: 100%;
+    height: 100%;
+    font-size: 60px;
+    text-align: center;
+    padding-top: 200px;
+    background-image: url(../img/tree5.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 200px;
+  }
 
+  section.main-page1 .main-content h1 {
+    background: linear-gradient(to right top, #45cf6f, #d42b1b);
+    color: transparent;
+    -webkit-background-clip: text;
 
+  }
 
-section.main-page1 .main-img {
-  width: 70%;
-  height: 80%;
-  display: flex;
-  justify-content: space-around;
-  margin: 70px auto;
-  background: #E4FFAA;
-  border-radius: 20px;
-  align-items: center;
-  justify-content: center;
-}
 
-section.main-page1 .main-img .main-img1 {
-  width: 50%;
-  height: 680px;
-  margin-top: 10px;
-  margin-right: 20px;
-}
 
-section.main-page1 .main-img .main-img1 img {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-}
 
-section.main-page1 .main-img .main-img2 {
- width: 45%;
- height: 600px;
+  section.main-page1 .main-img {
+    width: 70%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    margin: 70px auto;
 
-}
+    align-items: center;
+    justify-content: center;
 
-section.main-page1 .main-img .main-img2 img {
-  width: 100%;
-  height: 300px;
-  margin-bottom: 10px;
-  border-radius: 20px;
-}
+    position: relative;
+    
 
+  }
 
+  .main-content .best-camping p {
+    font-family: "Dongle", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    margin: 0 auto;
+    background: #ffd484;
+    width: 300px;
+    height: 300px;
+    color: #ffffff;
+    border-radius: 50%;
+    border-style: groove;
+    border-color: yellow;
+    text-align: center;
+    align-content: center;
+    padding-top: 25px;
+    text-shadow: 0 0 10px yellow;
+    animation: neon-flicker 1s infinite alternate;
 
 
-/* page2 */
+    position: absolute;
+    top: 70%;
+    left: 51%;
+    transform: translate(-50%, -50%);
 
+    opacity: 0;
+  }
 
-section.main-page2 .main-content {
-  width: 100%;
-  background: #E4FFAA;
-  margin-top: 200px;
-  display: flex;
+  .main-content .best-camping:hover p {
+    transition: 0.5s;
+    opacity: 1;
+  }
 
 
-  padding-top: 160px;
-  padding-bottom: 160px;
 
+  section.main-page1 .main-img .main-img1 {
+    width: 50%;
+    height: 680px;
+    margin-top: 10px;
+    margin-right: 50px;
+    background: #fac562;
+    border-radius: 20px;
+    padding: 21px;
+  }
 
-}
+  section.main-page1 .main-img .main-img1 img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
 
-section.main-page2 .main-content h1 {
-  color: #a1a1a1;
-  text-align: center;
-  font-size: 40px;
+  section.main-page1 .main-img .main-img2 {
+    width: 45%;
+    height: 680px;
+    background: #fac562;
+    border-radius: 20px;
+    padding: 21px;
+    margin-top: 7px;
+  }
 
+  section.main-page1 .main-img .main-img2 img {
+    width: 100%;
+    height: 310px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
 
-}
 
 
 
-section.main-page2 .main-content .weather {
-  margin: 0 100px;
+  /* page2 */
 
-}
 
-section.main-page2 .main-content .tomorrow {
-  width: 500px;
-  height: 600px;
-  margin-top: 50px;
-}
+  section.main-page2 .main-content {
+    width: 100%;
+    background: #E4FFAA;
+    /* margin-top: 200px; */
+    display: flex;
 
-section.main-page2 .main-content .best-review .reivew {
-  display: flex;
-}
 
-section.main-page2 .main-content .best-review .review-box {
-  width: 500px;
-  height: 700px;
-  background: #fff;
-  margin-top: 50px;
-  border-radius: 3%;
+    padding-top: 160px;
+    padding-bottom: 160px;
 
 
-  position: relative;
-}
+  }
 
-/* 별점 보기*/
+  section.main-page2 .main-content h1 {
+    color: #a1a1a1;
+    text-align: center;
+    font-size: 40px;
 
-section.main-page2 .main-content .best-review .star-rating {
-  top: 400px;
-  left: 15px;
-  position: relative;
-}
 
-section.main-page2 .main-content .best-review .review-box .review-content {
-  width: 465px;
-  height: 200px;
-  font-size: 28px;
-  font-family: "Yeon Sung", system-ui;
-  font-weight: 400;
-  font-style: normal;
+  }
 
-  top: 400px;
-  left: 15px;
-  position: relative;
 
-}
 
-section.main-page2 .main-content .best-review .review-box img {
-  width: 465px;
-  height: 365px;
+  section.main-page2 .main-content .weather {
+    margin: 0 100px;
 
-  position: absolute;
-  top: 18.5px;
-  left: 18.5px;
+  }
 
-  border-radius: 3%;
+  section.main-page2 .main-content .tomorrow {
+    width: 500px;
+    height: 600px;
+    margin-top: 50px;
+  }
 
-}
+  section.main-page2 .main-content .best-review .reivew {
+    display: flex;
+  }
 
-section.main-page2 .main-content .best-review .review-box .review {
-  color: black;
-  font-family: "Yeon Sung", system-ui;
-  font-weight: 400;
-  font-style: normal;
-  width: 465px;
+  section.main-page2 .main-content .best-review .review-box {
+    width: 500px;
+    height: 700px;
+    background: #fff;
+    margin-top: 50px;
+    border-radius: 3%;
 
 
-}
+    position: relative;
+  }
 
+  /* 별점 보기*/
 
+  section.main-page2 .main-content .best-review .star-rating {
+    top: 400px;
+    left: 15px;
+    position: relative;
+  }
 
-section.main-page2 .main-content .best-review .review-box .review li:first-child {
-  font-size: 30px;
-  text-decoration: underline;
-  position: absolute;
+  section.main-page2 .main-content .best-review .review-box .review-content {
+    width: 465px;
+    height: 200px;
+    font-size: 28px;
+    font-family: "Yeon Sung", system-ui;
+    font-weight: 400;
+    font-style: normal;
 
-  left: 18.5px;
-  left: 18.5px;
-  bottom: 140px;
+    top: 400px;
+    left: 15px;
+    position: relative;
 
-}
+  }
 
-section.main-page2 .main-content .best-review .review-box .review li:nth-child(2) {
-  font-size: 20px;
-  position: absolute;
+  section.main-page2 .main-content .best-review .review-box img {
+    width: 465px;
+    height: 365px;
 
-  left: 18.5px;
-  right: 18.5px;
-  bottom: 40px;
-}
+    position: absolute;
+    top: 18.5px;
+    left: 18.5px;
 
-section.main-page2 .main-content .best-review .review-box .review li:nth-child(3) {
-  font-size: 50px;
-  position: absolute;
+    border-radius: 3%;
 
-  bottom: 120px;
-  right: 30px;
-}
+  }
 
+  section.main-page2 .main-content .best-review .review-box .review {
+    color: black;
+    font-family: "Yeon Sung", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    width: 465px;
 
 
-section.main-page2 .main-content .ad {
-  /* background: red; */
-  width: 450px;
+  }
 
-  height: 700px;
-}
 
 
-section.main-page2 .main-content .ad .ad-box {
-  margin: 0 0 0 150px;
-  width: 100%;
-}
+  section.main-page2 .main-content .best-review .review-box .review li:first-child {
+    font-size: 30px;
+    text-decoration: underline;
+    position: absolute;
 
+    left: 18.5px;
+    left: 18.5px;
+    bottom: 140px;
 
+  }
 
-section.main-page2 .main-content .ad .ad-box img {
-  width: 100%;
-  height: 200px;
-  margin-top: 50px;
+  section.main-page2 .main-content .best-review .review-box .review li:nth-child(2) {
+    font-size: 20px;
+    position: absolute;
 
+    left: 18.5px;
+    right: 18.5px;
+    bottom: 40px;
+  }
 
-  border-radius: 20px;
+  section.main-page2 .main-content .best-review .review-box .review li:nth-child(3) {
+    font-size: 50px;
+    position: absolute;
 
-}
+    bottom: 120px;
+    right: 30px;
+  }
 
 
 
-/*footer style*/
+  section.main-page2 .main-content .ad {
+    /* background: red; */
+    width: 450px;
 
-#total-footer-wrap {
-  margin-top: 1000px;
-  width: 133%;
-  position: relative;
-  left: -20%;
+    height: 700px;
+  }
 
-}
-
-footer {
-  background: #4BDB73;
-  padding: 20px 0;
-  position: relative;
-  width: 100%;
-  height: 150px;
-  bottom: 0;
-  z-index: 49;
-}
 
-footer .footer-wrap {
-  display: flex;
-  justify-content: center;
-}
+  section.main-page2 .main-content .ad .ad-box {
+    margin: 0 0 0 150px;
+    width: 100%;
+  }
 
-footer .footer-wrap .footer-content {
-  color: black;
-  font-family: "Yeon Sung", system-ui;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 17px;
-  position: absolute;
-  margin: auto 0;
-}
 
-footer .footer-wrap .footer-link span:hover {
-  color: #FF0080;
-  cursor: pointer;
-}
 
-footer .footer-wrap .footer-copyright {
-  font-family: sans-serif;
-  font-size: 0.6em;
-}
+  section.main-page2 .main-content .ad .ad-box img {
+    width: 100%;
+    height: 200px;
+    margin-top: 50px;
 
-footer .footer-wrap .footer-content p {
-  text-align: center;
 
-}
+    border-radius: 20px;
 
-footer .footer-logo {
-  font-size: 30px;
-  position: absolute;
-  right: 100px;
-  margin-top: 80px;
-}
+  }
 
-footer .footer-logo a {
-  color: white;
-}
 
-/* footer .go-top {
-  color: black;
-  font-size: 50px;
-  position: fixed;
-  right: 50px;
-  bottom: 60px;
-} */
 
+  /*footer style*/
 
-footer .modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
+  #total-footer-wrap {
+    margin-top: 1000px;
+    width: 133%;
+    position: relative;
+    left: -20%;
 
-footer .modal-content {
-  color: black;
-  font-family: '맑은 고딕';
-  line-height: 1.2em;
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
+  }
 
-footer .modal-content p {
-  width: 97%;
-  text-align: left;
-}
+  footer {
+    background: #4BDB73;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+    z-index: 49;
+  }
 
-footer .modal-close {
-  color: #aaa;
-  float: right;
-  font-size: 42px;
-  font-weight: bold;
-}
+  footer .footer-wrap {
+    display: flex;
+    justify-content: center;
+  }
 
-footer .modal-close:hover,
-footer .modal-close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
+  footer .footer-wrap .footer-content {
+    color: black;
+    font-family: "Yeon Sung", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17px;
+    position: absolute;
+    margin: auto 0;
+  }
 
+  footer .footer-wrap .footer-link span:hover {
+    color: #FF0080;
+    cursor: pointer;
+  }
 
-@media (max-width: 1024px) {
+  footer .footer-wrap .footer-copyright {
+    font-family: sans-serif;
+    font-size: 0.6em;
+  }
+
+  footer .footer-wrap .footer-content p {
+    text-align: center;
+
+  }
 
   footer .footer-logo {
-    right: 50px;
+    font-size: 30px;
+    position: absolute;
+    right: 100px;
+    margin-top: 80px;
   }
 
-}
-
-@media (max-width: 768px) {
-
-  footer .footer-logo {
-    right: 25px;
+  footer .footer-logo a {
+    color: white;
   }
 
-  footer .footer-logo span {
+  /* 맨위로가기 */
+  .moveTopBtn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 4rem;
+    height: 4rem;
+    background: #ffe70b;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+
+  }
+
+  .moveTopBtn .topBtn {
+    text-align: center;
+    font-size: 22px;
+    padding: 5px;
+  }
+
+
+  footer .modal {
     display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
-  /* footer .go-top {
-    display: none;
-  } */
-}
+  footer .modal-content {
+    color: black;
+    font-family: '맑은 고딕';
+    line-height: 1.2em;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  footer .modal-content p {
+    width: 97%;
+  }
+
+  footer .modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 42px;
+    font-weight: bold;
+  }
+
+  footer .modal-close:hover,
+  footer .modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+  @media (max-width: 1024px) {
+
+    footer .footer-logo {
+      right: 50px;
+    }
+
+  }
+
+  @media (max-width: 768px) {
+
+    footer .footer-logo {
+      right: 25px;
+    }
+
+    footer .footer-logo span {
+      display: none;
+    }
+
+    .moveTopBtn {
+      display: none;
+    }
+  }
