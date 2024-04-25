@@ -2,9 +2,7 @@ package com.camp.going.dto.request;
 
 
 import com.camp.going.entity.Reservation;
-import com.camp.going.entity.User;
 import lombok.*;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDate;
 
@@ -13,12 +11,9 @@ import java.time.LocalDate;
 @Builder
 public class ReservationRequestDTO {
 
-    private int reservationNumber;
-    private int userId;
-    private String campId;
-    private String campName;
-    private String campAddress;
-    private String campHomepage;
+
+
+
     private String campNumber;
     private LocalDate regDate;
     private LocalDate regDates;

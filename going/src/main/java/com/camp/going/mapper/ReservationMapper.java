@@ -1,6 +1,5 @@
 package com.camp.going.mapper;
 
-import com.camp.going.dto.request.ReservationRequestDTO;
 import com.camp.going.entity.Reservation;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,7 +9,7 @@ import java.util.List;
 public interface ReservationMapper {
 
     //
-    void reservationSave(ReservationRequestDTO reservation);
+    void reservationSave(Reservation reservation);
 
     List<Reservation> reservationCamping();
 

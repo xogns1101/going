@@ -163,7 +163,7 @@
                 if (currPage === $li.dataset.pageNum) {
                     $li.classList.add('active');
                 }
-            });g
+            });
         }
 
 

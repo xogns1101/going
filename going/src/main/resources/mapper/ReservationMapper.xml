@@ -19,7 +19,7 @@
         (
           #{reservationNumber}
         , #{userId}
-        , NULL
+        , #{campId}
         , #{regDate}
         , #{regDates}
         )
