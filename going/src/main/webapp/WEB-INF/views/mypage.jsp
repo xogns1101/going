@@ -38,33 +38,33 @@
                     <div class="Profile">내 프로필</div>
 
                     <div class="Profileblank1">
-                        <div class="UserName"></div>
+                        <div class="UserName">홍길동</div>
                         <i class="fa-solid fa-user fa-2x"></i>
 
                     </div>
 
                     <div class="Profileblank2">
-                        <div class="PhoneNumber"></div>
+                        <div class="PhoneNumber">010-1234-1234</div>
                         <i class="fa-solid fa-phone fa-2x"></i>
 
                     </div>
 
                     <div class="Profileblank3">
-                        <div class="Email"></div>
+                        <div class="Email">asdfg123@naver.com</div>
                         <i class="fa-solid fa-envelope fa-2x"></i>
 
                     </div>
 
                      <!-- 환영박스  -->
                      <div class="Welcomemsgbox">
-                     <div class="Welcomemsg">님<br/>♥환영합니다♥</div>
+                     <div class="Welcomemsg">홍길동님<br/>♥환영합니다♥</div>
                      </div>
 
-                     <!-- 수정버튼  -->
+                     <!-- 수정버튼
                      <div class="ModifyButton" onclick="handleModifyButtonClick(this)">
                      <div class="ModifyButtonText" onclick="handleModifyButtonClick(this)">수정하기</div>
                      </div>
-
+                        -->
 
                 </wrap>
 
@@ -75,31 +75,33 @@
                     <div class="Reservation">예약내역</div>
 
                     <div class="Reservationblank1">
-                        <div class="CampName">캠핑장명 :  </div>
+                        <div class="CampName">캠핑장명 : 홀리데이캠핑장</div>
                         <i class="fa-solid fa-campground fa-2x"></i>
 
                     </div>
 
                     <div class="Reservationblank2">
-                        <div class="CampDate">예약일자 : </div>
+                        <div class="CampDate">예약일자 : 2024-01-01 ~ 2024-02-02</div>
                         <i class="fa-solid fa-calendar-days fa-2x"></i>
 
                     </div>
 
                     <div class="Reservationblank3">
-                        <div class="CampInfo">업체정보 : </div>
+                        <div class="CampInfo">업체위치 : 경기도 가평시 가평군 가평동 123 <br>
+                                              홈페이지 : www.naver.com <br>
+                                              전화번호 : 031-123-1234</div>
                         <i class="fa-solid fa-location-dot fa-2x"></i>
 
                     </div>
 
-                    <!-- 상세버튼 -->
+                    <!-- 상세버튼
                     <div class="DetailButton" onclick="handleDetailButtonClick(this)">
                     <div class="DetailButtonText" onclick="handleDetailButtonClick(this)">상세보기</div>
                     </div>
-
+                    -->
                      <!-- 캠프장 사진  -->
                      <div class="CampImgbox">
-                        <img src="" alt="img">
+                        <img src="/assets/img/camping-img.jpg" alt="img">
 
                        </div>
 

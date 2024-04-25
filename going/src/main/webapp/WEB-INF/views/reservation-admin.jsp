@@ -8,7 +8,7 @@
     <title>RESERVATION-관리자</title>
 
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/reservation-admin2.css">
+    <link rel="stylesheet" href="/assets/css/reservation-admin.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,17 +49,70 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="campId">${b.campId}</td>
-                                            <td class="campName">${b.campName}</td>
-                                            <td class="campEmail">${b.email}</td>
-                                            <td class="campregDate">${b.regDate}</td>
-                                            <td class="campregDates">${b.regDates}</td>
-                                            <td class="campPrice">${b.campPrice}</td>
-                                            <td class="phoneNumber">${b.phoneNumber}</td>
+                                             <td class="campId">12345</td>
+                                             <td class="campName">캠프아이디</td>
+                                             <td class="campEmail">asdfgh@gmail.com</td>
+                                             <td class="campregDate">2024-04-25</td>
+                                             <td class="campregDates">2024-04-25</td>
+                                             <td class="campPrice">500000</td>
+                                             <td class="phoneNumber">010-1234-1234</td>
 
                                         </tr>
 
+                                        <tr>
+                                            <td class="campId">12345</td>
+                                            <td class="campName">캠프아이디</td>
+                                            <td class="campEmail">asdfgh@gmail.com</td>
+                                            <td class="campregDate">2024-04-25</td>
+                                            <td class="campregDates">2024-04-25</td>
+                                            <td class="campPrice">500000</td>
+                                            <td class="phoneNumber">010-1234-1234</td>
 
+                                        </tr>
+
+                                        <tr>
+                                             <td class="campId">12345</td>
+                                             <td class="campName">캠프아이디</td>
+                                             <td class="campEmail">asdfgh@gmail.com</td>
+                                             <td class="campregDate">2024-04-25</td>
+                                             <td class="campregDates">2024-04-25</td>
+                                             <td class="campPrice">500000</td>
+                                             <td class="phoneNumber">010-1234-1234</td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td class="campId">12345</td>
+                                            <td class="campName">캠프아이디</td>
+                                            <td class="campEmail">asdfgh@gmail.com</td>
+                                            <td class="campregDate">2024-04-25</td>
+                                            <td class="campregDates">2024-04-25</td>
+                                            <td class="campPrice">500000</td>
+                                            <td class="phoneNumber">010-1234-1234</td>
+
+                                        </tr>
+
+                                        <tr>
+                                             <td class="campId">12345</td>
+                                             <td class="campName">캠프아이디</td>
+                                             <td class="campEmail">asdfgh@gmail.com</td>
+                                             <td class="campregDate">2024-04-25</td>
+                                             <td class="campregDates">2024-04-25</td>
+                                             <td class="campPrice">500000</td>
+                                             <td class="phoneNumber">010-1234-1234</td>
+
+                                        </tr>
+
+                                        <tr>
+                                              <td class="campId">12345</td>
+                                              <td class="campName">캠프아이디</td>
+                                              <td class="campEmail">asdfgh@gmail.com</td>
+                                              <td class="campregDate">2024-04-25</td>
+                                              <td class="campregDates">2024-04-25</td>
+                                              <td class="campPrice">500000</td>
+                                              <td class="phoneNumber">010-1234-1234</td>
+
+                                        </tr>
                                         <!-- 추가 행은 필요에 따라 추가하세요 -->
 
 
@@ -67,35 +120,70 @@
                                 </table>
 
 
-                                <!-- 전체기간 조회 -->
-                                <!-- <div class="total-date-wrapper">
-                                    <div class="total-date-background"></div>
-                                    <input type="checkbox" class="total-date-click-button" onclick="handleTotalDateClick(this)">
-                                    <div class="total-date">전체기간</div>
-                                </div> -->
-
-                                <!-- 제목 조회 -->
-                                <!-- <div class="title-wrapper">
-                                    <div class="only-title-background"></div>
-                                    <input type="checkbox" class="only-title-click-button" onclick="handleOnlyTitleClick(this)">
-                                    <div class="only-title">제목만</div>
-                                </div>
-                                 -->
-
-
                                 <!-- 검색어 조회 -->
-                                <!-- <div class="search-wrapper">
-                                    <div class="search-content-background"></div>
-                                    <input type="text" class="search-content" placeholder="검색어를 입력해 주세요">
-                                    <button class="search-click-button" onclick="handleSearchClick()">검색</button>
-                                </div> -->
 
-                                <!-- 페이지 사이즈 체크 -->
-                                <!-- <div class="page-size-wrapper">
-                                    <div class="page-size-background"></div>
-                                    <div class="page-size">8개씩</div>
-                                    <input type="checkbox" class="page-size-click-button" onclick="handlePageSizeClick(this)">
-                                </div> -->
+                                                <form action="/main/reservation" method="get">
+                                                    <div class="search-content-background">
+                                                        <select class="form-select" name="type" id="search-type">
+                                                            <option value="campId">캠핑장 아이디</option>
+                                                            <option value="campName">캠핑장 이름</option>
+                                                            <option value="userEmail">회원 아이디</option>
+                                                        </select>
+                                                        <input type="text" class="search-content" name="keyword" value="${s.keyword}"
+                                                            placeholder="검색어를 입력해 주세요">
+                                                        <button type="submit" class="search-click-button">검색</button>
+                                                    </div>
+                                                </form>
+
+                                                <!-- ----------------------------------------------------------------------- -->
+                                                <!-- 게시글 목록 하단 영역 -->
+                                                <div class="bottom-section">
+
+                                                    <!-- 페이지 버튼 영역 -->
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="pagination pagination-lg pagination-custom">
+                                                            <c:if test="${maker.page.pageNo != 1}">
+                                                                <li class="page-item"><a class="page-link"
+                                                                        href="/main/reservation-list?pageNo=1&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
+                                                                </li>
+                                                            </c:if>
+
+                                                            <c:if test="${maker.prev}">
+                                                                <li class="page-item"><a class="page-link"
+                                                                        href="/main/reservation-list?pageNo=${maker.begin-1}&type=${s.type}&keyword=${s.keyword}">&lt;</a>
+                                                                </li>
+                                                            </c:if>
+
+                                                            <c:forEach var="i" begin="${maker.begin}" end="${maker.end}">
+                                                                <li data-page-num="${i}" class="page-item">
+                                                                    <a class="page-link"
+                                                                        href="/main/reservation-list?pageNo=${i}&type=${s.type}&keyword=${s.keyword}">${i}</a>
+                                                                </li>
+                                                            </c:forEach>
+
+                                                            <c:if test="${maker.next}">
+                                                                <li class="page-item"><a class="page-link"
+                                                                        href="/main/reservation-list?pageNo=${maker.end+1}&type=${s.type}&keyword=${s.keyword}">&gt;</a>
+                                                                </li>
+                                                            </c:if>
+
+                                                            <c:if test="${maker.page.pageNo != maker.finalPage}">
+                                                                <li class="page-item"><a class="page-link"
+                                                                        href="/main/reservation-list?pageNo=${maker.finalPage}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
+                                                                </li>
+                                                            </c:if>
+                                                        </ul>
+                                                    </nav>
+
+                                                </div>
+
+
+
+                                            </div>
+
+
+                                    </section>
+
 
                             </div>
                         </div>
@@ -109,6 +197,44 @@
 
          <script>
 
+
+
+
+        // 사용자가 현재 머물고 있는 페이지 버튼에 active 스타일 부여
+        function appendPageActive() {
+
+            // 현재 서버에서 넘겨준 페이지 번호
+            const currPage = '${maker.page.pageNo}';
+
+            // li 태그들을 전부 확인해서
+            // 현재 페이지 번호와 일치하는 li를 찾은 후 active 클래스 이름 붙이기
+            const $ul = document.querySelector('.pagination');
+            const $liList = [...$ul.children];
+
+            $liList.forEach($li => {
+                if (currPage === $li.dataset.pageNum) {
+                    $li.classList.add('active');
+                }
+            });
+        }
+
+        // 검색조건 셀렉트박스 옵션타입 고정하기
+        function fixSearchOption() {
+            const $select = document.getElementById('search-type');
+            // 셀렉트 박스 내에 있는 option 태그들 전부 가져오기
+            const $options = [...$select.children];
+
+            $options.forEach($opt => {
+                if ($opt.value === '${s.type}') {
+                    // option 태그에 selected를 주면 그 option이 고정됨.
+                    $opt.setAttribute('selected', 'selected');
+                }
+            });
+
+        }
+
+        appendPageActive();
+        fixSearchOption();
 
 
              </script>
