@@ -39,7 +39,7 @@ public class LoginUtils {
     // 관리자인지 확인해주는 메서드
     public static boolean isAdmin(HttpSession session) {
         LoginUserResponseDTO loginUser = (LoginUserResponseDTO) session.getAttribute(LOGIN_KEY);
-        return loginUser.getAuth().equals("관리자회원");
+        return loginUser.getAuth().equals("ADMIN");
     }
 
     // 자동 로그인 여부 확인
