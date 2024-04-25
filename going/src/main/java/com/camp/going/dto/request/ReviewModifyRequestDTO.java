@@ -21,7 +21,7 @@ public class ReviewModifyRequestDTO {
 
     private MultipartFile reviewImage; // 수정할 이미지
     private String starPoint; // 수정할 별점
-    // 10 (인풋값) / 10 (고정값)
+
     public Review toEntity(String savePath) {
         return Review.builder()
                 .reviewNo(rno)

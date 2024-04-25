@@ -34,14 +34,6 @@ public class ReviewService {
         reviewMapper.deleteReview(rno);
     }
 
-    public int getLike(int rno) {
-        return reviewMapper.updateLikeCount(rno);
-    }
-
-    public int cancelLike(int rno) {
-        return reviewMapper.cancelLikeCount(rno);
-    }
-
     public int getCount(Search page) {
         return reviewMapper.getCount(page);
     }

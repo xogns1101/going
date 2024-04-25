@@ -50,12 +50,12 @@
 
     <select id="bestReview" resultType="review">
         SELECT
-        R.email, R.review_content, R.review_image, R.review_point, R.review_like,
+        R.review_content, R.review_image, R.review_point,
         C.camp_name
         FROM review R
         LEFT JOIN camping C
         ON R.camp_id = C.camp_id
-        ORDER BY review_like DESC, review_date DESC
+        ORDER BY review_date DESC
         LIMIT 1
     </select>
 
