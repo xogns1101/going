@@ -3,8 +3,10 @@ package com.camp.going.util;
 import com.camp.going.dto.response.LoginUserResponseDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.util.WebUtils;
 
+@Slf4j
 // 회원 인증, 인가와 관련된 상수와 메서드를 가진 객체
 public class LoginUtils {
 
