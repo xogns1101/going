@@ -36,11 +36,7 @@
                             <li class="review-content">${b.reviewContent}</li>
                         </ul>
                         <button class="review-modify">수정</button>
-                        <button class="review-delete" data-href="/main/review-delete?rno=${b.reviewNo}">삭제</button>
-                        <div class="good-button">👍🏻</div>
-                        <!-- <div class="good-button">❤️</div> -->
-                        <!-- <button type="button" class="good-button">🤍</button> -->
-                        <!-- <div class="good-count">${b.reviewLike}</div> -->
+                        <button class="review-delete" data-href="/main/review-delete?rno=${b.reviewNo}">삭제</button>                    
 
                     </div>
                 </div>
@@ -97,23 +93,6 @@
 
 
     <script>
-        // 하트를 눌렀을때 좋아요 up!
-        const $goodButton = document.querySelectorAll('.bigBox .good-button');
-
-        $goodButton.forEach(function (fingerbutton) {
-            fingerbutton.addEventListener('click', function () {
-                if (fingerbutton.textContent === '👍🏻') {
-                    fingerbutton.textContent = '👍';
-
-                    fetch('/main/reviews')
-                        .then(res => res.json())
-                        .then(flag => {})
-
-                } else {
-                    fingerbutton.textContent = '👍🏻';
-                }
-            })
-        })
 
 
         // 리뷰 작성 버튼을 눌렀을때 리뷰 등록 페이지로 이동시키기
