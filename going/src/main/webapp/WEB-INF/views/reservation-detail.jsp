@@ -102,17 +102,19 @@
                         <div class="check">
                             <div class="in">입실</div>
 
-                            <div class="reg-date" name="regDate">2024-04-22</div>
-
-                            <div class="between">&nbsp; &nbsp; ~</div>
+                          <div>
+                            <input type="date" class="reg-date" name="regDate">
+                        </div>
+                              <div class="between">&nbsp; &nbsp; ~</div>
                         </div>
 
 
 
                         <div class="check">
                             <div class="out">퇴실</div>
-                            <div class="reg-dates" name="regDates">2024-04-23</div>
-
+                           
+                            <input type="date" class="reg-dates" name="regDates">
+                            
                         </div>
 
 
@@ -309,8 +311,8 @@
                     const campId = e.target.dataset.campId;
                     console.log('camp_id: ' + campId);
 
-                // 서버에 요청 보내기
-                location.href='/user/mypage';
+                    // 서버에 요청 보내기
+                    location.href='/main/reservation';
 
 
                 })
