@@ -6,11 +6,9 @@
 
     <insert id="saveReview">
         INSERT INTO review
-        (review_content, email, camp_id, review_image,
-        review_point, review_like)
+            (review_content, email, camp_id, review_image, review_point)
         VALUES
-        (#{reviewContent}, #{email}, #{campId},
-        #{reviewImage}, #{reviewPoint}, #{reviewLike})
+            (#{reviewContent}, #{email}, #{campId}, #{reviewImage}, #{reviewPoint})
     </insert>
 
     <select id="findAllReview" resultType="review">
@@ -30,8 +28,8 @@
     <update id="modifyReview">
         UPDATE review
         SET review_content = #{reviewContent},
-        review_image = #{reviewImage},
-        review_point = #{reviewPoint}
+            review_image = #{reviewImage},
+            review_point = #{reviewPoint}
         WHERE review_no = #{reviewNo}
     </update>
 
