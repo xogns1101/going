@@ -76,7 +76,6 @@
                           </li>
                       
                           <input type="hidden" name="starPoint" id="starPoint" value="${r.reviewPoint}">
-                        </div>
                     </ul>
 
                     

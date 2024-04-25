@@ -9,8 +9,8 @@ body {
 
 
 form {
-  max-width: 800px; /* 원하는 폭으로 조절 */
-  height: 1100px;
+  max-width: 700px; /* 원하는 폭으로 조절 */
+  height: 900px;
   margin: auto;
   padding: 20px;
   background-color: #4BDB73;
@@ -425,6 +425,8 @@ form {
   border-radius: 4px;
   resize: vertical; /* 수직으로만 크기 조정 가능 */
   text-align: left;
+  display: block; /* 입력란을 블록 요소로 설정하여 줄바꿈이 발생하도록 함 */
+  box-sizing: border-box; /* 폭과 높이에 패딩과 테두리를 포함하도록 설정 */
 }
 
 #review-title {
@@ -444,4 +446,21 @@ form {
 
 .twitter {
   display: none;
+}
+
+textarea {
+  font-size: 28px;
+  font-family: "Yeon Sung", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  padding-left: 20px;
+  
+}
+
+textarea#review-content {
+
+  resize: vertical;
+  white-space: pre-wrap; /* 텍스트 내용이 줄바꿈을 유지하도록 합니다. */
+  overflow-wrap: break-word;
+
 }
