@@ -295,7 +295,7 @@ section .camp-list tr th {
     width: 250px;
     height: 35px;
     /* position: absolute; */
-    left: 9px;
+    left: 19px;
     top: 3px;
     border: none;
     outline: none;
@@ -322,12 +322,12 @@ section .camp-list tr th {
   }
   
   .form-select {
-    width: 100px; 
+    width: 120px; 
     height: 41px;
     font-size: 20px;
     font-family: Yeon Sung;
     font-weight: 400;
     position: absolute;
-    left: -100px;
+    left: -120px;
     top: -1px;
   }
