@@ -27,18 +27,19 @@ justify-content: space-around;
 
 
 section .notice-list .notice-box {
-  width: 1200px;
+  width: 1000px;
   background: #E4FFAA;
   margin-top: 50px;
   border-radius: 3%;
-  
+  height: 550px;
   position: relative;
+  margin-bottom: 40px;
 }
 
 section .notice-list .notice-box table {
   width: 900px;
-  margin-left: 13%;
-  margin-top: 8%;
+  margin-left: 5%;
+  margin-top: 10%;
   background: #F0EEEE;
   
 }
@@ -197,46 +198,57 @@ section .notice-box .notice-list tr .NoticeTitle {
   /* position: relative; */
 
 
-.search-content-background {
-  width: 320px;
-  height: 43px;
-  /* position: absolute; */
-  left: 445px;
-  top: -45px;
-  background: white;
-  border: 1px black solid;
-  position: relative;
-}
-
-.search-content {
-  width: 250px;
-  height: 35px;
-  /* position: absolute; */
-  left: 700px;
-  top: 23px;
-  border: none;
-  outline: none;
-  color: black;
-  font-size: 24px;
-  font-family: Yeon Sung;
-  font-weight: 400;
-  word-wrap: break-word;
+  .search-content-background {
+    width: 320px;
+    height: 41px;
+    /* position: absolute; */
+    left: 445px;
+    top: -45px;
+    background: white;
+    border: 1px black solid;
+    position: relative;
+  }
   
-}
-
-.search-click-button {
-  width: 63px;
-  height: 27px;
-  /* position: absolute; */
-  left: 910px;
-  top: 28px;
-  font-family: Yeon Sung;
-  font-size: 20px;
-  background: #9CEE8F;
-  border: 1px black solid;
-  cursor: pointer;
+  .search-content {
+    width: 250px;
+    height: 35px;
+    /* position: absolute; */
+    left: 700px;
+    top: 23px;
+    border: none;
+    outline: none;
+    color: black;
+    font-size: 24px;
+    font-family: Yeon Sung;
+    font-weight: 400;
+    word-wrap: break-word;
+    
+  }
   
-}
+  .search-click-button {
+    width: 63px;
+    height: 35px;
+    /* position: absolute; */
+    left: 910px;
+    top: 28px;
+    font-family: Yeon Sung;
+    font-size: 20px;
+    background: #9CEE8F;
+    border: 1px black solid;
+    cursor: pointer;
+    
+  }
+  
+  .form-select {
+    width: 100px; 
+    height: 41px;
+    font-size: 20px;
+    font-family: Yeon Sung;
+    font-weight: 400;
+    position: absolute;
+    left: -100px;
+    top: -1px;
+  }
 
 /* 페이지 사이즈 체크 */
 .page-size-wrapper {
@@ -301,17 +313,10 @@ nav {
   display: flex;
 }
 
-
-
-.pagination {
-  display: flex; /* 요소를 가로로 배치합니다. */
-  justify-content: center; /* 요소를 가운데 정렬합니다. */
-  /* 그 외 원하는 스타일을 추가하세요 */
-}
-
 .pagination-custom {
+  width: 600px;
   display: flex; /* 요소를 가로로 배치합니다. */
-  justify-content: center; /* 요소를 가운데 정렬합니다. */
+  justify-content: space-around; /* 요소를 가운데 정렬합니다. */
   /* 그 외 원하는 스타일을 추가하세요 */
 }
 
@@ -321,4 +326,25 @@ nav {
   position: relative;
   top: -30px;
   font-size: 25px;
+}
+
+/* 등록버튼 */
+.add-btn {
+  /* 등록 링크에 적용할 스타일 */
+  color: #45cf6f; /* 텍스트 색상을 파란색으로 */
+  font-weight: bold; /* 텍스트를 굵게 */
+  left: 270px;
+  position: relative;
+  bottom: -50px;
+  border: 3px solid black;
+  top: 40px;
+  padding: 5px;
+  font-size: 30px;
+  border-radius: 10px;
+}
+
+.add-btn:hover {
+  /* 등록 링크에 마우스를 올렸을 때의 스타일 */
+  color: red; /* 텍스트 색상을 빨간색으로 변경 */
+  /* 기타 원하는 스타일 지정 */
 }

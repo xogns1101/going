@@ -10,7 +10,7 @@ import java.util.Date;
 @Builder
 public class User {
 
-    private long id;
+//    private long id;
 
     private String email;
     private String password;

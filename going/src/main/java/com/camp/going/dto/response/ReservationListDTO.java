@@ -21,7 +21,7 @@ public class ReservationListDTO {
     private String campName;
     private String regDate; // 입실
     private String regDates; // 퇴실
-    private int price;
+    private int campPrice;
     private String phoneNumber;
 
 
@@ -33,7 +33,7 @@ public class ReservationListDTO {
         this.campName = camping.getCampName();
         this.regDate = String.valueOf(reservation.getRegDate());
         this.regDates = String.valueOf(reservation.getRegDates());
-        this.price = camping.getCampPrice();
+        this.campPrice = camping.getCampPrice();
         this.phoneNumber = user.getPhoneNumber();
 
     }

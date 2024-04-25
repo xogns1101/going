@@ -25,12 +25,12 @@ section .title h1 {
   
   
   section .intro-list .intro-box {
-    width: 1200px;
+    width: 1000px;
     height: 700px;
     background: #E4FFAA;
     margin-top: 50px;
     border-radius: 3%;
-  
+    margin-bottom: 40px;
     position: relative;
   }
 
@@ -48,16 +48,16 @@ section .title h1 {
 .Introimg {
     width: 851px;
     height: 339px;
-    left: 185px;
-    top: 80px;
+    left: 80px;
+    top: 60px;
     position: absolute;
 }
 
 .Introtext {
     width: 970px;
     height: 216px;
-    left: 150px;
-    top: 450px;
+    left: 30px;
+    top: 430px;
     position: absolute;
     text-align: center;
     font-family: Yeon Sung; 
