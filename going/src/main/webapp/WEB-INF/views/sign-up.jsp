@@ -124,7 +124,7 @@
                 // 패턴과 일치하는 입력값이면 true, 하나라도 어긋난다면 false.
                 $emailInput.style.borderColor = 'red';
                 document.getElementById('emailChk').innerHTML =
-                    '<b style="color: red;">[아이디는 4~14글자의 영문,숫자로 입력하세요!]</b>';
+                    '<b style="color: red;">[이메일 형태로 입력하세요!]</b>';
                 checkResultList[0] = false;
 
             } else {
