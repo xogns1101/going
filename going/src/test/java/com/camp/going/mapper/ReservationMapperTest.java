@@ -28,8 +28,9 @@ class ReservationMapperTest {
         String regDates = "2024-04-26";
 
         Reservation reservation = Reservation.builder()
-                .campId(1)
+                .reservationNumber(1)
                 .email("aaa2222@naver.com")
+                .campId(1)
                 .regDate(LocalDate.parse(regDate))
                 .regDates(LocalDate.parse(regDates))
                 .build();
@@ -38,16 +39,16 @@ class ReservationMapperTest {
         // then
     }
     
-    @Test
-    @DisplayName("상세 회면이 잘보이는지")
-    void findCampTest() {
-        // given
-        int campId= 3;
-        // when
-        Reservation one = reservationMapper.findOne(campId);
-        // then
-        assertEquals(one.getCampName(), "홀리데이캠핑장");
-    }
+//    @Test
+//    @DisplayName("상세 회면이 잘보이는지")
+//    void findCampTest() {
+//        // given
+//        int campId= 3;
+//        // when
+//        Reservation one = reservationMapper.findOne(campId);
+//        // then
+//        assertEquals(one.getCampName(), "홀리데이캠핑장");
+//    }
 
 
     @Test

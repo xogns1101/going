@@ -8,15 +8,19 @@
 
 
         INSERT INTO reservation
-        (camp_id
+        (
+        reservation_number
         , email
+        , camp_id
         , reg_date
         , reg_dates
 
         )
         VALUES
-        (#{campId}
+        (
+        #{reservationNumber}
         , #{email}
+        , #{campId}
         , #{regDate}
         , #{regDates}
 

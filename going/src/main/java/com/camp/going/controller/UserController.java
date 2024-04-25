@@ -63,7 +63,7 @@ public class UserController {
 
         userService.join(dto);
 
-        return "redirect:/main";
+        return "redirect:/user/sign-in";
 
     }
 

@@ -18,7 +18,6 @@ public class ReservationRequestDTO {
     private LocalDate regDates;
 
 
-
     public Reservation toEntity(){
        return  Reservation.builder()
                 .regDate(regDate)
