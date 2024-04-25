@@ -6,8 +6,11 @@ import com.camp.going.dto.request.ReviewModifyRequestDTO;
 import com.camp.going.dto.request.ReviewRequestDTO;
 import com.camp.going.dto.response.ReviewResponseDTO;
 import com.camp.going.entity.Review;
+import com.camp.going.mapper.ReviewMapper;
 import com.camp.going.service.ReviewService;
 import com.camp.going.util.FileUtils;
+import com.camp.going.util.LoginUtils;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -28,6 +31,10 @@ public class ReviewController {
     private String rootPath;
 
     private final ReviewService service;
+
+    private final HttpSession session;
+
+    private final ReviewMapper reviewMapper;
 
     // 리뷰 목록
     @GetMapping("/review")
@@ -68,11 +75,20 @@ public class ReviewController {
 
     // 리뷰 수정 요청
     @GetMapping("/review-modify")
-    public String modify(int rno, Model model) {
+    public String modify(int rno, Model model, HttpSession session, HttpServletRequest request) {
         ReviewResponseDTO dto = service.getDetail(rno);
         model.addAttribute("r", dto);
 
-        return "review-modify";
+        String rno2 = request.getParameter("rno");
+        String writer = reviewMapper.findOne(Integer.parseInt(rno2)).getEmail();
+
+        // 리뷰에 email이 null 값으로 되어있으면 500 에러 남.
+        // review 테이블에 email 값이 들어오도록 해결할 것!
+        if (LoginUtils.isLogin(session)) {
+            if (LoginUtils.isMine(session, writer)) return "review-modify"; // 작성자와 로그인 한 사람이 동일할 때 수정 가능
+        } else return "redirect:/user/sign-in"; // 로그인 자체를 하지 않았을 때 회원가입 페이지로 이동
+
+        return "redirect:/main/review"; // 로그인을 했으나 작성자와 로그인 한 사람이 동일하지 않을 때는 수정 모드 안됨.
     }
 
     @PostMapping("/review-modify")
@@ -88,11 +104,21 @@ public class ReviewController {
 
     // 리뷰 삭제 요청 (/review/delete : GET)
     @GetMapping("/review-delete")
-    public String deleteReview(int rno) {
+    public String deleteReview(int rno, HttpSession session, HttpServletRequest request) {
         System.out.println("/review/delete : GET! " + rno);
-        service.delete(rno);
 
-        return "redirect:/main/review";
+        String rno2 = request.getParameter("rno");
+        String writer = reviewMapper.findOne(Integer.parseInt(rno2)).getEmail();
+
+        if (LoginUtils.isLogin(session)) {
+            if (LoginUtils.isAdmin(session) || LoginUtils.isMine(session, writer)) {
+                service.delete(rno);
+
+                return "redirect:/main/review";
+            }
+        } else return "redirect:/main/review";
+
+        return "redirect:/main";
     }
 
 }

@@ -1,6 +1,7 @@
 package com.camp.going.mapper;
 
 import com.camp.going.common.Search;
+import com.camp.going.entity.Notice;
 import com.camp.going.entity.Review;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -18,6 +19,24 @@ class ReviewMapperTest {
 
     @Autowired
     ReviewMapper reviewMapper;
+
+    @Test
+    @DisplayName("공지사항 200개 작성하기")
+    void ReviewInsertTest() {
+        // given
+        for (int i = 1; i <= 20; i++) {
+            Review review = new Review();
+            review.setReviewContent("공지사항 " + i + "번 내용 테스트");
+            review.setEmail("");
+            review.setCampId(1);
+            review.setReviewImage("");
+            review.setReviewPoint("5");
+            reviewMapper.saveReview(review);
+        }
+        // when
+
+        // then
+    }
 
     @Test
     @DisplayName("리뷰 작성에 성공하기")
