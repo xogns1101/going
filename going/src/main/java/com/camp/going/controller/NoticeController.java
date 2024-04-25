@@ -7,6 +7,7 @@ import com.camp.going.dto.request.NoticeWriteRequestDTO;
 import com.camp.going.dto.response.NoticeDetailResponseDTO;
 import com.camp.going.dto.response.NoticeListResponseDTO;
 import com.camp.going.service.NoticeService;
+import com.camp.going.util.LoginUtils;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,6 +27,7 @@ import java.util.List;
 public class NoticeController {
 
     private final NoticeService service;
+    private final HttpSession session;
 
     // 목록 조회 요청
     @GetMapping("/notice")
@@ -47,7 +49,9 @@ public class NoticeController {
     @GetMapping("notice-detail-write")
     public String write(Model model) {
         System.out.println("/notice-detail-write: GET");
-
+        if (LoginUtils.isLogin(session)) {
+            if (!LoginUtils.isAdmin(session)) return "redirect:/error/403";
+        } else return "redirect:/user/sign-in";
         return "notice-detail-write";
     }
 
@@ -65,10 +69,13 @@ public class NoticeController {
     // 글 수정 화면 요청
     @GetMapping("/notice-modify/{nno}")
     public String modifyScreen(@PathVariable("nno") int nno, Model model) {
-            log.info("/notice-modify: GET " + nno);
-            NoticeDetailResponseDTO dto = service.getDetail(nno);
-            model.addAttribute("notice", dto);
-            return "notice-modify"; // 수정 폼으로 이동
+        if (LoginUtils.isLogin(session)) {
+            if (!LoginUtils.isAdmin(session)) return "redirect:/error/403";
+        } else return "redirect:/user/sign-in";
+        log.info("/notice-modify: GET " + nno);
+        NoticeDetailResponseDTO dto = service.getDetail(nno);
+        model.addAttribute("notice", dto);
+        return "notice-modify"; // 수정 폼으로 이동
     }
 
 
@@ -87,10 +94,13 @@ public class NoticeController {
     // 글 삭제 요청
     @GetMapping("notice-delete")
     public String delete(int nno) {
-            System.out.println("/notice-delete: GET" + nno);
-            log.info("/notice-delete: GET " + nno);
-            service.delete(nno);
-            return "redirect:/main/notice";
+        if (LoginUtils.isLogin(session)) {
+            if (!LoginUtils.isAdmin(session)) return "redirect:/error/403";
+        } else return "redirect:/user/sign-in";
+        System.out.println("/notice-delete: GET" + nno);
+        log.info("/notice-delete: GET " + nno);
+        service.delete(nno);
+        return "redirect:/main/notice";
     }
 
 
