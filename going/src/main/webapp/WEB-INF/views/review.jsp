@@ -7,6 +7,8 @@
     <title>REVIEW</title>
     <%@ include file="include/static-head.jsp" %>
 
+    <link rel="stylesheet" href="/assets/css/review.css">
+
 </head>
 
 <body>
@@ -24,10 +26,8 @@
 
         <div class="bigBox">
             <c:forEach var="b" items="${rList}">
-
-
                 <div class="review-list">
-                    <div class="review-box" data-bno="${b.reviewNo}">
+                    <div class="review-box" name="bno" data-bno="${b.reviewNo}">
                         <ul class="review">
                             <!-- <li class="rno">${b.reviewNo}</li> -->
                             <!-- <li class="camp-name">${b.campName}</li>
@@ -36,8 +36,20 @@
                             <li class="review-content">${b.reviewContent}</li>
                         </ul>
                         <button class="review-modify">수정</button>
-                        <button class="review-delete" data-href="/main/review-delete?rno=${b.reviewNo}">삭제</button>                    
-
+                        <button class="review-delete" data-href="/main/review-delete?rno=${b.reviewNo}">삭제</button>     
+                        <div class="star-rating">
+                            <input type="radio" name="reviewPoint" value="5" readonly/>
+                            <label for="5-stars" class="star">&#9733;</label>
+                            <input type="radio" name="reviewPoint" value="4" readonly/>
+                            <label for="4-stars" class="star">&#9733;</label>
+                            <input type="radio" name="reviewPoint" value="3" readonly/>
+                            <label for="3-stars" class="star">&#9733;</label>
+                            <input type="radio" name="reviewPoint" value="2" readonly/>
+                            <label for="2-stars" class="star">&#9733;</label>
+                            <input type="radio" name="reviewPoint" value="1" readonly/>
+                            <label for="1-stars" class="star">&#9733;</label>         
+                        </div>
+                        <input type="hidden" name="starPoint" id="starPoint" value="${b.reviewPoint}">      
                     </div>
                 </div>
 
@@ -156,6 +168,34 @@
 
 
         appendPageActive();
+
+        // active star point rating
+
+        const $reviewList = [...$btn.children];
+        console.log($reviewList);
+        
+        $reviewList.forEach($review => {
+
+            const $starPoint = $review.firstElementChild.lastElementChild;
+            console.log('각 리뷰 별점: ', $starPoint.value);
+
+            const $starRating = $starPoint.previousElementSibling;
+            const $starLabel = [...$starRating.querySelectorAll('label')].reverse();
+            console.log($starLabel);
+
+            for (let i=0; i<+$starPoint.value; i++) {   
+                $starLabel[i].style.webkitTextFillColor = "gold";
+            }
+
+        });
+
+
+
+        
+
+        
+
+
     </script>
 
 

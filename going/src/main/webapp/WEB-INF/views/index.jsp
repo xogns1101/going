@@ -17,14 +17,15 @@
 <body>
     <%@ include file="include/header.jsp" %>
 
-    
-    
-    
+
+
+
     <section class="main-page1">
-        
+
         <div class="animated-title">
             <div class="track">
-              <div class="content">&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;회원가입을 하시면 리뷰를 작성하실 수 있으니 많은 가입 부탁드립니다.&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;회원가입을 하시면 리뷰를 작성하실 수 있으니 많은 가입 부탁드립니다&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;</div>
+                <div class="content">&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;회원가입을 하시면 리뷰를 작성하실 수 있으니 많은 가입 부탁드립니다.&nbsp;야가자캠핑에
+                    오신것을 환영합니다!&nbsp;회원가입을 하시면 리뷰를 작성하실 수 있으니 많은 가입 부탁드립니다&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;</div>
             </div>
         </div>
 
@@ -69,22 +70,22 @@
                         <li class="review-content">${r.reviewContent}</li>
                         <li class="review-views"></li>
                         <li class="star-rating">
-                            <input type="radio" id="5-stars" name="reviewPoint" value="5" readonly/>
+                            <input type="radio" id="5-stars" name="reviewPoint" value="5" readonly />
                             <label for="5-stars" class="star">&#9733;</label>
-                            <input type="radio" id="4-stars" name="reviewPoint" value="4" readonly/>
+                            <input type="radio" id="4-stars" name="reviewPoint" value="4" readonly />
                             <label for="4-stars" class="star">&#9733;</label>
-                            <input type="radio" id="3-stars" name="reviewPoint" value="3" readonly/>
+                            <input type="radio" id="3-stars" name="reviewPoint" value="3" readonly />
                             <label for="3-stars" class="star">&#9733;</label>
-                            <input type="radio" id="2-stars" name="reviewPoint" value="2" readonly/>
+                            <input type="radio" id="2-stars" name="reviewPoint" value="2" readonly />
                             <label for="2-stars" class="star">&#9733;</label>
-                            <input type="radio" id="1-stars" name="reviewPoint" value="1" readonly/>
-                            <label for="1-star" class="star">&#9733;</label>
-                          </li>
-                      
-                          <input type="hidden" name="starPoint" id="starPoint" value="${r.reviewPoint}">
+                            <input type="radio" id="1-stars" name="reviewPoint" value="1" readonly />
+                            <label for="1-stars" class="star">&#9733;</label>
+                        </li>
+
+                        <input type="hidden" name="starPoint" id="starPoint" value="${r.reviewPoint}">
                     </ul>
 
-                    
+
                 </div>
             </div>
 
@@ -121,12 +122,33 @@
             fjs.parentNode.insertBefore(js, fjs);
         })(document, 'script', 'tomorrow-sdk');
 
+        // 스타포인트값
         const reviewPoint = '${r.reviewPoint}';
         document.getElementById(reviewPoint + '-stars').click();
 
+        // JavaScript 코드
+        document.addEventListener("DOMContentLoaded", function () {
+            // 별 모양 요소들을 가져옵니다.
+            var stars = document.querySelectorAll('.star');
 
+            // 각 별 모양에 이벤트 리스너를 추가합니다.
+            stars.forEach(function (star) {
+                star.addEventListener('mouseover', function () {
+                    // 호버 시 클래스를 추가합니다.
+                    star.classList.add('hovered');
+                });
 
-        
+                star.addEventListener('mouseleave', function () {
+                    // 마우스가 벗어날 때 클래스를 제거합니다.
+                    star.classList.remove('hovered');
+                });
+
+                star.addEventListener('click', function (event) {
+                    // 클릭 이벤트의 기본 동작을 막습니다.
+                    event.preventDefault();
+                });
+            });
+        });
     </script>
 
 
