@@ -113,7 +113,7 @@
                             <input type="radio" id="2-stars" name="reviewPoint" value="2" readonly />
                             <label for="2-stars" class="star">&#9733;</label>
                             <input type="radio" id="1-stars" name="reviewPoint" value="1" readonly />
-                            <label for="1-star" class="star">&#9733;</label>
+                            <label for="1-stars" class="star">&#9733;</label>
                         </li>
 
                         <input type="hidden" name="starPoint" id="starPoint" value="${r.reviewPoint}">
@@ -156,8 +156,33 @@
             fjs.parentNode.insertBefore(js, fjs);
         })(document, 'script', 'tomorrow-sdk');
 
+        // 스타포인트값
         const reviewPoint = '${r.reviewPoint}';
         document.getElementById(reviewPoint + '-stars').click();
+
+        // JavaScript 코드
+        document.addEventListener("DOMContentLoaded", function () {
+            // 별 모양 요소들을 가져옵니다.
+            var stars = document.querySelectorAll('.star');
+
+            // 각 별 모양에 이벤트 리스너를 추가합니다.
+            stars.forEach(function (star) {
+                star.addEventListener('mouseover', function () {
+                    // 호버 시 클래스를 추가합니다.
+                    star.classList.add('hovered');
+                });
+
+                star.addEventListener('mouseleave', function () {
+                    // 마우스가 벗어날 때 클래스를 제거합니다.
+                    star.classList.remove('hovered');
+                });
+
+                star.addEventListener('click', function (event) {
+                    // 클릭 이벤트의 기본 동작을 막습니다.
+                    event.preventDefault();
+                });
+            });
+        });
     </script>
 
 

@@ -1,36 +1,49 @@
 @import url(../css/main.css);
 
 body {
-  
+
   margin: 0;
   padding: 0;
-  background-color: #f7f7f7; /* 배경색 */
+  background-color: #f7f7f7;
+  /* 배경색 */
 }
 
+.review-wrapper {
+  /* background: red; */
+  width: 80%;
+  margin: 200px;
+  padding-left: 350px;
+}
 
 form {
-  max-width: 700px; /* 원하는 폭으로 조절 */
+  max-width: 700px;
+  /* 원하는 폭으로 조절 */
   height: 900px;
-  margin: auto;
   padding: 20px;
   background-color: #4BDB73;
-  border-radius: 8px; /* 테두리 둥글게 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
-  text-align: right; /* 오른쪽 정렬 */
+  border-radius: 8px;
+  /* 테두리 둥글게 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* 그림자 효과 */
+  text-align: right;
+  /* 오른쪽 정렬 */
+  margin: 0 auto;
 }
 
 #reviewForm h1 {
   text-align: center;
   font-size: 60px;
-  color: black; /* 텍스트 색상 */
+  color: black;
+  /* 텍스트 색상 */
   margin-bottom: 20px;
   text-align: center;
   font-weight: bold;
   font-family: "Luckiest Guy", cursive;
-    font-weight: 400;
-    
+  font-weight: 400;
+
 }
-#reviewForm  h1 span {
+
+#reviewForm h1 span {
   font-family: "Yeon Sung", system-ui;
   font-weight: bold;
   font-style: normal;
@@ -40,31 +53,34 @@ form {
 .star-rating {
   display: flex;
   flex-direction: row-reverse;
-  font-size: 2.25rem;
+  font-family: "Yeon Sung", system-ui;
+  font-weight: 400;
+  font-style: normal;
   line-height: 2.5rem;
   justify-content: flex-end;
   padding: 0 0.2em;
   text-align: center;
   width: 5em;
 }
- 
+
 .star-rating input {
   display: none;
 }
- 
+
 .star-rating label {
-  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-fill-color: transparent;
+  /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 2.3px;
   -webkit-text-stroke-color: #2b2a29;
   cursor: pointer;
 }
- 
-.star-rating :checked ~ label {
+
+.star-rating :checked~label {
   -webkit-text-fill-color: gold;
 }
- 
+
 .star-rating label:hover,
-.star-rating label:hover ~ label {
+.star-rating label:hover~label {
   -webkit-text-fill-color: #fff58c;
 }
 
@@ -72,15 +88,19 @@ form {
 .profile {
   display: flex;
   align-items: center;
-  gap: 20px; /* 요소 간격 */
-  margin-top: 40px;
+  gap: 20px;
+  /* 요소 간격 */
+  margin-left: 20px;
+  margin-top: 30px;
 }
 
 .thumbnail-box img {
-  width: 550px;
-  height: 350px;
-  object-fit: cover; /* 이미지를 박스에 맞추기 */
-  border-radius: 4px; /* 테두리 둥글게 */
+  width: 450px;
+  height: 290px;
+  object-fit: cover;
+  /* 이미지를 박스에 맞추기 */
+  border-radius: 4px;
+  /* 테두리 둥글게 */
   display: block;
 }
 
@@ -90,14 +110,16 @@ form {
 }
 
 .review-image {
-  margin-top: 320px;
+  margin-top: 260px
 }
 
 .two-Btn {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  padding-right: 20px;
 }
+
 
 
 .list-button {
@@ -119,6 +141,7 @@ form {
   margin-top: 25px;
   border-radius: 20%;
 }
+
 .list-button svg.btn-layer {
   display: block;
   position: absolute;
@@ -130,6 +153,7 @@ form {
   pointer-events: none;
   fill: var(--background);
 }
+
 .list-button svg.plane {
   z-index: 3;
   position: absolute;
@@ -141,13 +165,15 @@ form {
   transform: translate3d(0, 0, 0);
   perspective: 500px;
 }
-.list-button > ul {
+
+.list-button>ul {
   list-style: none;
   padding: 0 5px 0 0;
   position: relative;
   overflow: hidden;
 }
-.list-button > ul > li {
+
+.list-button>ul>li {
   display: inline-block;
   position: relative;
   z-index: 2;
@@ -155,27 +181,33 @@ form {
   font: 400 16px "Varela Round", sans-serif;
   transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
 }
-.list-button > ul > li:first-child {
+
+.list-button>ul>li:first-child {
   opacity: 1;
 }
-.list-button > ul > li:last-child {
+
+.list-button>ul>li:last-child {
   position: absolute;
   left: 0;
   top: 100%;
   opacity: 0;
 }
+
 .list-button.active svg.plane {
   -webkit-animation: 1.5s orbit alternate linear;
-          animation: 1.5s orbit alternate linear;
+  animation: 1.5s orbit alternate linear;
 }
-.list-button.active > ul > li {
+
+.list-button.active>ul>li {
   transform: translateY(-100%);
   transition: transform 0.3s ease 1.2s, opacity 0.3s ease 1.2s;
 }
-.list-button.active > ul > li:first-child {
+
+.list-button.active>ul>li:first-child {
   opacity: 0;
 }
-.list-button.active > ul > li:last-child {
+
+.list-button.active>ul>li:last-child {
   opacity: 1;
 }
 
@@ -183,34 +215,40 @@ form {
   0% {
     transform: rotate3d(1, 0, 0, 0deg) translateZ(60px) scale3d(1, 1, 1);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
+
   10% {
     z-index: 3;
     transform: rotate3d(1, 0.6, 0, -10deg) translateZ(60px) scale3d(1, 1, 1);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
+
   20% {
     z-index: 3;
     transform: rotate3d(1, 0.6, 0, 30deg) translateZ(60px) scale3d(1, 1, 1);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
+
   30% {
     z-index: 3;
     transform: rotate3d(1, 0.6, 0, 35deg) translateZ(60px) scale3d(1, 1, 1);
   }
+
   40% {
     z-index: 1;
     transform: rotate3d(1, 0.6, 0, 120deg) translateZ(60px) scale3d(0.7, 0.7, 1);
   }
+
   70% {
     z-index: 1;
     transform: rotate3d(1, 0.6, 0, 240deg) translateZ(60px) scale3d(0.7, 0.7, 1);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
+
   100% {
     z-index: 3;
     transform: rotate3d(1, 0, 0, 360deg) translateZ(60px) scale3d(1, 1, 1);
@@ -221,34 +259,40 @@ form {
   0% {
     transform: rotate3d(1, 0, 0, 0deg) translateZ(60px) scale3d(1, 1, 1);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
+
   10% {
     z-index: 3;
     transform: rotate3d(1, 0.6, 0, -10deg) translateZ(60px) scale3d(1, 1, 1);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
+
   20% {
     z-index: 3;
     transform: rotate3d(1, 0.6, 0, 30deg) translateZ(60px) scale3d(1, 1, 1);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
+
   30% {
     z-index: 3;
     transform: rotate3d(1, 0.6, 0, 35deg) translateZ(60px) scale3d(1, 1, 1);
   }
+
   40% {
     z-index: 1;
     transform: rotate3d(1, 0.6, 0, 120deg) translateZ(60px) scale3d(0.7, 0.7, 1);
   }
+
   70% {
     z-index: 1;
     transform: rotate3d(1, 0.6, 0, 240deg) translateZ(60px) scale3d(0.7, 0.7, 1);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
+
   100% {
     z-index: 3;
     transform: rotate3d(1, 0, 0, 360deg) translateZ(60px) scale3d(1, 1, 1);
@@ -274,9 +318,10 @@ form {
   margin-top: 25px;
   border-radius: 20%;
   margin-left: 30px;
-  
-  
+
+
 }
+
 .write-button svg.btn-layer {
   display: block;
   position: absolute;
@@ -288,6 +333,7 @@ form {
   pointer-events: none;
   fill: var(--background);
 }
+
 .write-button svg.plane {
   z-index: 3;
   position: absolute;
@@ -299,13 +345,15 @@ form {
   transform: translate3d(0, 0, 0);
   perspective: 500px;
 }
-.write-button > ul {
+
+.write-button>ul {
   list-style: none;
   padding: 0 5px 0 0;
   position: relative;
   overflow: hidden;
 }
-.write-button > ul > li {
+
+.write-button>ul>li {
   display: inline-block;
   position: relative;
   z-index: 2;
@@ -313,27 +361,33 @@ form {
   font: 400 16px "Varela Round", sans-serif;
   transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
 }
-.write-button > ul > li:first-child {
+
+.write-button>ul>li:first-child {
   opacity: 1;
 }
-.write-button > ul > li:last-child {
+
+.write-button>ul>li:last-child {
   position: absolute;
   left: 0;
   top: 100%;
   opacity: 0;
 }
+
 .write-button.active svg.plane {
   -webkit-animation: 1.5s orbit alternate linear;
-          animation: 1.5s orbit alternate linear;
+  animation: 1.5s orbit alternate linear;
 }
-.write-button.active > ul > li {
+
+.write-button.active>ul>li {
   transform: translateY(-100%);
   transition: transform 0.3s ease 1.2s, opacity 0.3s ease 1.2s;
 }
-.write-button.active > ul > li:first-child {
+
+.write-button.active>ul>li:first-child {
   opacity: 0;
 }
-.write-button.active > ul > li:last-child {
+
+.write-button.active>ul>li:last-child {
   opacity: 1;
 }
 
@@ -341,34 +395,40 @@ form {
   0% {
     transform: rotate3d(1, 0, 0, 0deg) translateZ(60px) scale3d(1, 1, 1);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
+
   10% {
     z-index: 3;
     transform: rotate3d(1, 0.6, 0, -10deg) translateZ(60px) scale3d(1, 1, 1);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
+
   20% {
     z-index: 3;
     transform: rotate3d(1, 0.6, 0, 30deg) translateZ(60px) scale3d(1, 1, 1);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
+
   30% {
     z-index: 3;
     transform: rotate3d(1, 0.6, 0, 35deg) translateZ(60px) scale3d(1, 1, 1);
   }
+
   40% {
     z-index: 1;
     transform: rotate3d(1, 0.6, 0, 120deg) translateZ(60px) scale3d(0.7, 0.7, 1);
   }
+
   70% {
     z-index: 1;
     transform: rotate3d(1, 0.6, 0, 240deg) translateZ(60px) scale3d(0.7, 0.7, 1);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
+
   100% {
     z-index: 3;
     transform: rotate3d(1, 0, 0, 360deg) translateZ(60px) scale3d(1, 1, 1);
@@ -379,34 +439,40 @@ form {
   0% {
     transform: rotate3d(1, 0, 0, 0deg) translateZ(60px) scale3d(1, 1, 1);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
+
   10% {
     z-index: 3;
     transform: rotate3d(1, 0.6, 0, -10deg) translateZ(60px) scale3d(1, 1, 1);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
+
   20% {
     z-index: 3;
     transform: rotate3d(1, 0.6, 0, 30deg) translateZ(60px) scale3d(1, 1, 1);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
+
   30% {
     z-index: 3;
     transform: rotate3d(1, 0.6, 0, 35deg) translateZ(60px) scale3d(1, 1, 1);
   }
+
   40% {
     z-index: 1;
     transform: rotate3d(1, 0.6, 0, 120deg) translateZ(60px) scale3d(0.7, 0.7, 1);
   }
+
   70% {
     z-index: 1;
     transform: rotate3d(1, 0.6, 0, 240deg) translateZ(60px) scale3d(0.7, 0.7, 1);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
+
   100% {
     z-index: 3;
     transform: rotate3d(1, 0, 0, 360deg) translateZ(60px) scale3d(1, 1, 1);
@@ -417,30 +483,33 @@ form {
 
 
 #review-content {
-  width: 100%; 
-  height: 427px; 
+  width: 100%;
+  height: 327px;
   padding: 10px;
   margin: 5px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
-  resize: vertical; /* 수직으로만 크기 조정 가능 */
+  resize: vertical;
+  /* 수직으로만 크기 조정 가능 */
   text-align: left;
-  display: block; /* 입력란을 블록 요소로 설정하여 줄바꿈이 발생하도록 함 */
-  box-sizing: border-box; /* 폭과 높이에 패딩과 테두리를 포함하도록 설정 */
+  display: block;
+  /* 입력란을 블록 요소로 설정하여 줄바꿈이 발생하도록 함 */
+  box-sizing: border-box;
+  /* 폭과 높이에 패딩과 테두리를 포함하도록 설정 */
 }
 
 #review-title {
-  width: 100%; 
+  width: 100%;
   height: 70px;
-  padding: 10px; 
-  margin: 10px 0; 
-  border: 1px solid #ccc; 
-  border-radius: 4px; 
-  font-size: 16px; 
-  box-sizing: border-box; 
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
-.dribbble{
+.dribbble {
   display: none;
 }
 
@@ -454,13 +523,14 @@ textarea {
   font-weight: 400;
   font-style: normal;
   padding-left: 20px;
-  
+
 }
 
 textarea#review-content {
 
   resize: vertical;
-  white-space: pre-wrap; /* 텍스트 내용이 줄바꿈을 유지하도록 합니다. */
+  white-space: pre-wrap;
+  /* 텍스트 내용이 줄바꿈을 유지하도록 합니다. */
   overflow-wrap: break-word;
 
 }
