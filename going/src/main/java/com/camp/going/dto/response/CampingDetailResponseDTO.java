@@ -49,4 +49,8 @@ public class CampingDetailResponseDTO {
         this.image = camping.getCampImage();
         this.campPrice = camping.getCampPrice();
     }
+
+
+
+
 }

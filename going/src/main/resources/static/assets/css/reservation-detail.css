@@ -27,7 +27,7 @@ section .detail .detail-title {
 
 section .detail .detail-content1 {
     display: flex;
-    margin: 40px 0;
+    margin: 50px 0;
    
 }
 
@@ -38,7 +38,7 @@ section .detail .detail-content1 img {
 }
 
 section .detail .detail-content1 .basic-info li {
-    margin-top: 25px;
+    margin-top: 5px;
     margin-left: 50px;
     font-size: 25px;
     /* background: red; */
@@ -52,6 +52,11 @@ section .detail .detail-content1 .basic-info li:first-child {
     font-size: 40px;
     background: #E4FFAA;
     border-radius: 20px;
+}
+
+section .detail .detail-content1 .basic-info .camp-price {
+  font-size: 38px;
+  color: tomato;
 }
 
 section .detail h1 {
@@ -163,6 +168,14 @@ section .detail .reserve-info form button:hover {
     cursor: pointer;
 }
 
+
+
+/* 유저의 관련된 히든 정보 */
+section .detail .reserve-info form .hidden-info {
+  display: none;
+  color: black;
+  /* background: orange; */
+}
 
 
 /* 달력 */
