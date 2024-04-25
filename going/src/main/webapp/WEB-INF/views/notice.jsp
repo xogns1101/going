@@ -32,10 +32,10 @@
 
         <div class="title">
             <h1>NOTICE / <span>공지사항
-                <a href="/main/notice-detail-write" class="add-btn">등록</a>
-            </span></h1>
+                    <a href="/main/notice-detail-write" class="add-btn">등록</a>
+                </span></h1>
             <!-- <c:if test="${login.auth == 'ADMIN'}"> -->
-                <!-- <span><a href="/main/notice-write" class="add-btn">등록</a></span> -->
+            <!-- <span><a href="/main/notice-write" class="add-btn">등록</a></span> -->
             <!-- </c:if> -->
         </div>
 
@@ -83,79 +83,66 @@
                         </c:forEach>
                     </tbody>
                 </table>
+                <!-- 검색어 조회 -->
 
-
-
-                <!-- 전체기간 조회
-
-                <div class="total-date-background">
-                    <input type="checkbox" class="total-date-click-button" onclick="handleTotalDateClick(this)">
-                    <span class="total-date">전체기간</span>
-                </div>
-                -->
-
-                <!-- 제목 조회
-
-                <div class="only-title-background">
-                    <input type="checkbox" class="only-title-click-button" onclick="handleOnlyTitleClick(this)">
-                    <span class="only-title">제목만</span>
-                </div>
-                -->
-
-
-
-            <!-- 검색어 조회 -->
-
-            <div class="search-content-background">
-                <input type="text" class="search-content" placeholder="검색어를 입력해 주세요">
-                <button class="search-click-button" onclick="handleSearchClick()">검색</button>
-            </div>
-
-<!-- ----------------------------------------------------------------------- -->
-        <!-- 게시글 목록 하단 영역 -->
-                    <div class="bottom-section">
-
-                        <!-- 페이지 버튼 영역 -->
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination pagination-lg pagination-custom">
-                                <c:if test="${maker.page.pageNo != 1}">
-                                    <li class="page-item"><a class="page-link"
-                                            href="/main/notice?pageNo=1&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
-                                    </li>
-                                </c:if>
-
-                                <c:if test="${maker.prev}">
-                                    <li class="page-item"><a class="page-link"
-                                            href="/main/notice?pageNo=${maker.begin-1}&type=${s.type}&keyword=${s.keyword}">prev</a>
-                                    </li>
-                                </c:if>
-
-                                <c:forEach var="i" begin="${maker.begin}" end="${maker.end}">
-                                    <li data-page-num="${i}" class="page-item">
-                                        <a class="page-link"
-                                            href="/main/notice?pageNo=${i}&type=${s.type}&keyword=${s.keyword}">${i}</a>
-                                    </li>
-                                </c:forEach>
-
-                                <c:if test="${maker.next}">
-                                    <li class="page-item"><a class="page-link"
-                                            href="/main/notice?pageNo=${maker.end+1}&type=${s.type}&keyword=${s.keyword}">next</a>
-                                    </li>
-                                </c:if>
-
-                                <c:if test="${maker.page.pageNo != maker.finalPage}">
-                                    <li class="page-item"><a class="page-link"
-                                            href="/main/notice?pageNo=${maker.finalPage}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
-                                    </li>
-                                </c:if>
-                            </ul>
-                        </nav>
-
+                <form action="/main/notice" method="get">
+                    <div class="search-content-background">
+                        <select class="form-select" name="type" id="search-type">
+                            <option value="title">제목</option>
+                            <option value="content">내용</option>
+                            <option value="tc">제목+내용</option>
+                        </select>
+                        <input type="text" class="search-content" name="keyword" value="${s.keyword}"
+                            placeholder="검색어를 입력해 주세요">
+                        <button type="submit" class="search-click-button">검색</button>
                     </div>
+                </form>
+
+                <!-- ----------------------------------------------------------------------- -->
+                <!-- 게시글 목록 하단 영역 -->
+                <div class="bottom-section">
+
+                    <!-- 페이지 버튼 영역 -->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination pagination-lg pagination-custom">
+                            <c:if test="${maker.page.pageNo != 1}">
+                                <li class="page-item"><a class="page-link"
+                                        href="/main/notice?pageNo=1&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
+                                </li>
+                            </c:if>
+
+                            <c:if test="${maker.prev}">
+                                <li class="page-item"><a class="page-link"
+                                        href="/main/notice?pageNo=${maker.begin-1}&type=${s.type}&keyword=${s.keyword}">&lt;</a>
+                                </li>
+                            </c:if>
+
+                            <c:forEach var="i" begin="${maker.begin}" end="${maker.end}">
+                                <li data-page-num="${i}" class="page-item">
+                                    <a class="page-link"
+                                        href="/main/notice?pageNo=${i}&type=${s.type}&keyword=${s.keyword}">${i}</a>
+                                </li>
+                            </c:forEach>
+
+                            <c:if test="${maker.next}">
+                                <li class="page-item"><a class="page-link"
+                                        href="/main/notice?pageNo=${maker.end+1}&type=${s.type}&keyword=${s.keyword}">&gt;</a>
+                                </li>
+                            </c:if>
+
+                            <c:if test="${maker.page.pageNo != maker.finalPage}">
+                                <li class="page-item"><a class="page-link"
+                                        href="/main/notice?pageNo=${maker.finalPage}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
+                                </li>
+                            </c:if>
+                        </ul>
+                    </nav>
+
+                </div>
 
 
 
-        </div>
+            </div>
 
 
     </section>
@@ -164,52 +151,10 @@
 
 
 
+    <!-- footer --------------------->
+    <%@ include file="include/footer.jsp" %>
+
     <script>
-        function handlePageSizeClick(checkbox) {
-            // 체크박스가 클릭되었을 때 수행되는 동작을 여기에 추가합니다.
-            if (checkbox.checked) {
-                console.log("체크박스가 선택되었습니다.");
-                // 여기에 필요한 동작을 추가하세요.
-            } else {
-                console.log("체크박스가 선택 해제되었습니다.");
-                // 여기에 필요한 동작을 추가하세요.
-            }
-        }
-
-        function handleTotalDateClick(checkbox) {
-            // 체크박스가 클릭되었을 때 수행되는 동작을 여기에 추가합니다.
-            if (checkbox.checked) {
-                console.log("체크박스가 선택되었습니다.");
-                // 여기에 필요한 동작을 추가하세요.
-            } else {
-                console.log("체크박스가 선택 해제되었습니다.");
-                // 여기에 필요한 동작을 추가하세요.
-            }
-        }
-
-        function handleOnlyTitleClick(checkbox) {
-            // 체크박스가 클릭되었을 때 수행되는 동작을 여기에 추가합니다.
-            if (checkbox.checked) {
-                console.log("체크박스가 선택되었습니다.");
-                // 여기에 필요한 동작을 추가하세요.
-            } else {
-                console.log("체크박스가 선택 해제되었습니다.");
-                // 여기에 필요한 동작을 추가하세요.
-            }
-        }
-
-        function handleSearchClick() {
-            // 검색 버튼을 클릭했을 때 수행되는 동작을 여기에 추가합니다.
-            console.log("검색 버튼이 클릭되었습니다.");
-            // 여기에 검색에 관련된 동작을 추가하세요.
-        }
-
-        function handleClick() {
-            // in-notice.html 페이지로 이동
-            window.location.href = 'in-notice.html';
-
-        }
-
         // 모든 tr 요소를 선택합니다.
         const rows = document.querySelectorAll('tr.notice-click');
 
@@ -234,17 +179,44 @@
                 }
                 // alert('클릭 이벤트 발생: ' + row.innerText); // 예시로 경고창을 띄웁니다.
             });
-
-
         });
 
+        // 사용자가 현재 머물고 있는 페이지 버튼에 active 스타일 부여
+        function appendPageActive() {
 
+            // 현재 서버에서 넘겨준 페이지 번호
+            const currPage = '${maker.page.pageNo}';
 
+            // li 태그들을 전부 확인해서
+            // 현재 페이지 번호와 일치하는 li를 찾은 후 active 클래스 이름 붙이기
+            const $ul = document.querySelector('.pagination');
+            const $liList = [...$ul.children];
 
+            $liList.forEach($li => {
+                if (currPage === $li.dataset.pageNum) {
+                    $li.classList.add('active');
+                }
+            });
+        }
+
+        // 검색조건 셀렉트박스 옵션타입 고정하기
+        function fixSearchOption() {
+            const $select = document.getElementById('search-type');
+            // 셀렉트 박스 내에 있는 option 태그들 전부 가져오기
+            const $options = [...$select.children];
+
+            $options.forEach($opt => {
+                if ($opt.value === '${s.type}') {
+                    // option 태그에 selected를 주면 그 option이 고정됨.
+                    $opt.setAttribute('selected', 'selected');
+                }
+            });
+
+        }
+
+        appendPageActive();
+        fixSearchOption();
     </script>
-
-    <!-- footer --------------------->
-    <%@ include file="include/footer.jsp" %>
 
 </body>
 

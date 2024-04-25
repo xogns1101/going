@@ -78,7 +78,7 @@ public class CampingService {
             dto.setEmail(user.getEmail());
             dto.setCampName(camping.getCampName());
             dto.setRegDate(String.valueOf(reservation.getRegDate()));
-            dto.setPrice(camping.getCampPrice());
+            dto.setCampPrice(camping.getCampPrice());
             dto.setPhoneNumber(user.getPhoneNumber());
 
             dtoList.add(dto);

@@ -33,7 +33,7 @@
 
                         <div class="camp-list">
                             <div class="camp-box">
-                                <c:forEach var="b" items="${rList}">
+
                                 <table border="1">
                                     <thead>
                                         <tr class="column">
@@ -65,7 +65,7 @@
 
                                     </tbody>
                                 </table>
-                                </c:forEach>
+
 
                                 <!-- 전체기간 조회 -->
                                 <!-- <div class="total-date-wrapper">

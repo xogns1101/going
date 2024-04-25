@@ -27,80 +27,92 @@
     <%@ include file="include/header.jsp" %>
 
     <!-- notice-detail ---------------------------------->
-<section>
-    <div class="title">
-        <h1>NOTICE / <span>공지사항</span></h1>
-    </div>
-
-
-
-    <div class="notice-list">
-        <div class="notice-box">
-            <div class="NoticeBoardType"><< ${n.noticeNo}번 공지사항 >></div>
-            <table border="1">
-                <thead>
-                    <tr class="column">
-                        <th class="noticeCategory">공지등급</th>
-                        <th class="NoticeNo">글번호</th>
-                        <th class="NoticeTitle">제목</th>
-                        <th class="NoticeDate">작성일</th>
-                        <th class="NoticeCount">조회수</th>
-                    </tr>
-                    <tr class="Item">
-                        <td class="noticeCategory">
-                            <c:set var="categoryName" value="" />
-                            <c:choose>
-                                <c:when test="${n.noticeCategory == 'ESSENTIAL'}">
-                                    <c:set var="categoryName" value="필독" />
-                                </c:when>
-                                <c:when test="${n.noticeCategory == 'NOTICE'}">
-                                    <c:set var="categoryName" value="공지" />
-                                </c:when>
-                                <c:when test="${n.noticeCategory == 'COMMON'}">
-                                    <c:set var="categoryName" value="기본" />
-                                </c:when>
-                            </c:choose>
-                            ${categoryName}
-                        </td>
-                        <td class="NoticeNo">${n.noticeNo}</td>
-                        <td class="NoticeTitle">${n.noticeTitle}</td>
-                        <td class="NoticeDate">${n.noticeDate}</td>
-                        <td class="NoticeCount">${n.noticeCount}</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="5" class="InNoticeContentbox">
-                            <div class="InNoticeContent">${n.noticeContent}</div>
-                        </td>
-                    </tr>
-                </tbody>
-
-            </table>
-
-            <div class="buttons">
-
-                <button class="list-btn" type="button" onclick="location.href='/main/notice'">
-                    목록
-                </button>
-                <button class="submit-button" type="button" onclick="location.href='/main/notice-modify/${n.noticeNo}'">
-                    수정
-                </button>
-                <form id="deleteForm" action="/main/notice-delete" method="get">
-                    <input type="hidden" name="nno" value="${n.noticeNo}">
-                    <button class="delete-button" type="button" onclick="confirmDelete()">
-                        삭제
-                    </button>
-                </form>
-            </div>
-
+    <section>
+        <div class="title">
+            <h1>NOTICE / <span>공지사항</span></h1>
         </div>
-    </div>
-</section>
 
 
-		 <!-- footer --------------------->
-    		<%@ include file="include/footer.jsp" %>
+
+        <div class="notice-list">
+            <div class="notice-box">
+                <div class="NoticeBoardType">
+                    << ${n.noticeNo}번 공지사항>>
+                </div>
+                <table border="1">
+                    <thead>
+                        <tr class="column">
+                            <th class="noticeCategory">공지등급</th>
+                            <th class="NoticeNo">글번호</th>
+                            <th class="NoticeTitle">제목</th>
+                            <th class="NoticeDate">작성일</th>
+                            <th class="NoticeCount">조회수</th>
+                        </tr>
+                        <tr class="Item">
+                            <td class="noticeCategory">
+                                <c:set var="categoryName" value="" />
+                                <c:choose>
+                                    <c:when test="${n.noticeCategory == 'ESSENTIAL'}">
+                                        <c:set var="categoryName" value="필독" />
+                                    </c:when>
+                                    <c:when test="${n.noticeCategory == 'NOTICE'}">
+                                        <c:set var="categoryName" value="공지" />
+                                    </c:when>
+                                    <c:when test="${n.noticeCategory == 'COMMON'}">
+                                        <c:set var="categoryName" value="기본" />
+                                    </c:when>
+                                </c:choose>
+                                ${categoryName}
+                            </td>
+                            <td class="NoticeNo">${n.noticeNo}</td>
+                            <td class="NoticeTitle">${n.noticeTitle}</td>
+                            <td class="NoticeDate">${n.noticeDate}</td>
+                            <td class="NoticeCount">${n.noticeCount}</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="5" class="InNoticeContentbox">
+                                <div class="InNoticeContent">${n.noticeContent}</div>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+                <div class="buttons">
+
+                    <button class="list-btn" type="button" onclick="location.href='/main/notice'">
+                        목록
+                    </button>
+                    <button class="submit-button" type="button"
+                        onclick="location.href='/main/notice-modify/${n.noticeNo}'">
+                        수정
+                    </button>
+                    <form id="deleteForm" action="/main/notice-delete" method="get">
+                        <input type="hidden" name="nno" value="${n.noticeNo}">
+                        <button class="delete-button" type="button" onclick="confirmDelete()">
+                            삭제
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- footer --------------------->
+    <%@ include file="include/footer.jsp" %>
+
+    <script>
+        function confirmDelete() {
+            if (confirm("정말로 삭제하시겠습니까?")) {
+                document.getElementById("deleteForm").submit();
+                alert("삭제가 완료되었습니다.");
+            }
+        }
+    </script>
 
 </body>
 
