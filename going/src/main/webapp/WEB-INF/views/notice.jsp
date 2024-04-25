@@ -32,21 +32,14 @@
 
         <div class="title">
             <h1>NOTICE / <span>공지사항
+                <c:if test="${login.auth == 'ADMIN'}">
                     <a href="/main/notice-detail-write" class="add-btn">등록</a>
+                </c:if>
                 </span></h1>
-            <!-- <c:if test="${login.auth == 'ADMIN'}"> -->
-            <!-- <span><a href="/main/notice-write" class="add-btn">등록</a></span> -->
-            <!-- </c:if> -->
         </div>
 
         <div class="notice-list">
             <div class="notice-box">
-                <!-- 페이지 사이즈 체크
-                <div class="page-size-background">
-                    <span class="page-size">8개씩</span>
-                    <input type="checkbox" class="page-size-click-button" onclick="handlePageSizeClick(this)">
-                </div>
-                -->
                 <table border="1">
                     <thead>
                         <tr class="column">

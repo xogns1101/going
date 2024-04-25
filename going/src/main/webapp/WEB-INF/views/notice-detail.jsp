@@ -85,6 +85,7 @@
                     <button class="list-btn" type="button" onclick="location.href='/main/notice'">
                         목록
                     </button>
+                    <c:if test="${login.auth == 'ADMIN'}">
                     <button class="submit-button" type="button"
                         onclick="location.href='/main/notice-modify/${n.noticeNo}'">
                         수정
@@ -94,6 +95,7 @@
                         <button class="delete-button" type="button" onclick="confirmDelete()">
                             삭제
                         </button>
+                    </c:if>
                     </form>
                 </div>
 

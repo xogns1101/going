@@ -621,6 +621,7 @@ footer .modal-content {
 
 footer .modal-content p {
   width: 97%;
+  text-align: left;
 }
 
 footer .modal-close {
