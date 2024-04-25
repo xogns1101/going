@@ -28,6 +28,7 @@ public class ReservationDetailResponseDTO {
     private String regDate; // 최초 캠핑장 예약 날짜
     private String regDates; // 퇴실 캠핑장 예약 날짜
     private String image;
+    private String campPrice; // 캠핑장 예약 가격
 
 
     public ReservationDetailResponseDTO(Reservation reservation
@@ -47,6 +48,11 @@ public class ReservationDetailResponseDTO {
         this.regDate = String.valueOf(reservation.getRegDate());
         this.regDates = String.valueOf(reservation.getRegDates());
         this.image = camping.getCampImage();
+        this.campPrice = String.valueOf(camping.getCampPrice());
 
     }
+
+
+
+
 }

@@ -32,7 +32,7 @@
                 <img src="/assets/img/camp1.jpg" alt="캠핑장 사진">
                 <ul class="basic-info">
                     <li>기본정보</li>
-                    <li>가격: <span class="camp-price" name="campPrice">${r.campPrice}</span></li>
+                    <li>가격: <span class="camp-price" name="campPrice">${r.campPrice}</span> 원</li>
                     <li>주소: <span class="camp-address">${r.campAddress}</span></li>
                     <li>전화번호: <span class="camp-number">${r.campNumber}</span></li>
                     <li>홈페이지: <span class="camp-homepage">${r.campHomepage}</span></li>
@@ -114,13 +114,15 @@
                         </div>
 
 
-                        <div style="display: none;" name="email">이메일</div>
-                        <div style="display: none;" name="name">이름</div>
-                        <div style="display: none;" name="phoneNumber">전화번호</div>
                         
-
                     </div>
-
+                    
+                    <div class="hidden-info">
+                        <div name="email">${u.email}이메일</div>
+                        <div name="name">${u.name}이름</div>
+                        <div name="phoneNumber">${u.phoneNumber}전화번호</div>
+                    </div>
+                    
                     <button type="submit" class="reserve-button"
                     data-href="/main/reservation-detail?camp_id=${b.campId}">예약하기</button>
 
@@ -142,9 +144,6 @@
 
         const $regDate = document.querySelector('.reg-date');
         const $regDates = document.querySelector('.reg-dates');
-
-
-
 
 
 

@@ -392,7 +392,7 @@ section.main-page2 .main-content .best-review .review-box .review li:nth-child(2
   bottom: 40px;
 }
 
-section.main-page2 .main-content .best-review .review-box .review li:last-child {
+section.main-page2 .main-content .best-review .review-box .review li:nth-child(3) {
   font-size: 50px;
   position: absolute;
 
