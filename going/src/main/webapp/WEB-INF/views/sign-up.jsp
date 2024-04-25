@@ -10,10 +10,6 @@
    
 
 
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/sign-up2.css">
-
-
 
 
 
