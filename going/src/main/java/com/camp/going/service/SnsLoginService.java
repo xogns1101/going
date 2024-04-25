@@ -54,6 +54,7 @@ public class SnsLoginService {
                             //       .name(dto.getProperties().getNickname())
                             .name(dto.getProperties().getNickname())
                             .email(email)
+                            .phoneNumber("010-7894-7897")
                             .loginMethod(User.LoginMethod.KAKAO)
                             .build(),
                     dto.getProperties().getProfileImage()

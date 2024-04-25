@@ -33,6 +33,8 @@ public class KakaoSignUpRequestDTO {
     @Email
     private String email;
 
+    private String phoneNumber;
+
     // 프로필 사진 파일
     private MultipartFile profileImage;
 
@@ -45,6 +47,7 @@ public class KakaoSignUpRequestDTO {
                 .password(encoder.encode(password))
                 .name(name)
                 .email(email)
+                .phoneNumber(phoneNumber)
                 .profileImage(savePath)
                 .loginMethod(loginMethod)
                 .build();

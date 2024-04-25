@@ -98,6 +98,16 @@
 
 
             <form action="/main/reservation-detail/{campId}" method="post">
+
+                <input type="hidden" name="name" id="name">
+                <input type="hidden" name="phoneNumber" id="phoneNumber">
+                <input type="hidden" name="email" id="email">
+                <input type="hidden" name="campName" id="campName" value="${r.campName}">
+                <input type="hidden" name="campAddress" id="campAddress" value="${r.campAddress}">
+                <input type="hidden" name="campHomepage" id="campHomepage" value="${r.campHomepage}">
+                <input type="hidden" name="campNumber" id="campNumber" value="${r.campNumber}">
+
+
                     <div class="reserve-box">
                         <div class="check">
                             <div class="in">입실</div>

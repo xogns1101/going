@@ -9,7 +9,7 @@
 
         INSERT INTO reservation
         (
-        reservation_number
+          reservation_number
         , user_id
         , camp_id
         , reg_date
@@ -17,9 +17,9 @@
         )
         VALUES
         (
-        #{reservationNumber}
+          #{reservationNumber}
         , #{userId}
-        , #{campId}
+        , NULL
         , #{regDate}
         , #{regDates}
         )

@@ -17,7 +17,7 @@ public class ReservationService {
 
     public void getReservation(ReservationRequestDTO dto) {
 
-        reservationMapper.reservationSave(dto.toEntity());
+        reservationMapper.reservationSave(dto);
 
 
     }
