@@ -21,10 +21,11 @@
 
     <section id="reservation-detail">
 
+
         <div class="detail">
 
             <div class="detail-title">
-                <h1>⛺ ${r.campName}</h1>
+                <h1 name="campName">⛺ ${r.campName}</h1>
                 <hr>
             </div>
 
@@ -32,6 +33,7 @@
                 <img src="/assets/img/camp1.jpg" alt="캠핑장 사진">
                 <ul class="basic-info">
                     <li>기본정보</li>
+                    <li>가격: <span class="camp-price" name="campPrice">${r.campPrice}</span></li>
                     <li>주소: <span class="camp-address">${r.campAddress}</span></li>
                     <li>전화번호: <span class="camp-number">${r.campNumber}</span></li>
                     <li>홈페이지: <span class="camp-homepage">${r.campHomepage}</span></li>
@@ -64,11 +66,12 @@
 
             <hr>
 
-            <div class="reserve-info" data-campId="${r.campId}" data->
+            <div class="reserve-info" data-campId="${r.campId}">
                 <h1>예약하기</h1>
 
 
                 <!-- ------------달력----------- -->
+
 
 
                 <div class="calendar-container">
@@ -93,13 +96,13 @@
 
                 <!-- 예약 하기 -->
 
-                <form action="/user/mypage" method="get">
 
+            <form action="/main/reservation-detail/{campId}" method="post">
                     <div class="reserve-box">
                         <div class="check">
                             <div class="in">입실</div>
 
-                            <div class="reg-date">2024-04-22</div>
+                            <div class="reg-date" name="regDate">2024-04-22</div>
 
                             <div class="between">&nbsp; &nbsp; ~</div>
                         </div>
@@ -108,17 +111,25 @@
 
                         <div class="check">
                             <div class="out">퇴실</div>
-                            <div class="reg-dates">2024-04-23</div>
+                            <div class="reg-dates" name="regDates">2024-04-23</div>
 
                         </div>
 
 
+                        <div style="display: none;" name="email">이메일</div>
+                        <div style="display: none;" name="name">이름</div>
+                        <div style="display: none;" name="phoneNumber">전화번호</div>
+                        
 
                     </div>
 
                     <button type="submit" class="reserve-button"
-                    data-href="/main/reservation-detail?camp_id=${b.campId}">예약하기</button>
+                    data-href="/main/reservation-detail?${b.campId}">예약하기</button>
+
+
                 </form>
+
+
             </div>
         </div>
 
@@ -300,7 +311,7 @@
                     console.log('camp_id: ' + campId);
 
                 // 서버에 요청 보내기
-                location.href='/main/reservation-list/' + campId;
+                location.href='/user/mypage';
 
 
                 })

@@ -10,20 +10,16 @@
         INSERT INTO reservation
         (camp_id
         , email
-        , camp_name
         , reg_date
         , reg_dates
-        , camp_price
-        , phone_number
+
         )
         VALUES
         (#{campId}
         , #{email}
-        , #{campName}
         , #{regDate}
         , #{regDates}
-        , #{price}
-        , #{phoneNumber}
+
         )
 
 
@@ -46,27 +42,15 @@
 
     </select>
 
-    <select id="findOne" resultType="reservation">
 
-        SELECT
-            c.camp_id,
-            c.camp_name,
-            c.camp_address,
-            c.camp_number,
-            c.camp_homepage,
-            c.camp_hot_water,
-            c.camp_wifi,
-            c.camp_firewood,
-            c.camp_mart,
-            c.camp_bed,
-            c.camp_ice_box,
-            r.reg_date,
-            r.reg_dates
-        FROM reservation r
-        LEFT JOIN camping c
-        ON r.camp_id = c.camp_id
 
-    </select>
+    <delete id="delete">
+
+        DELETE FROM reservation
+        WHERE camp_id = #{campId}
+
+    </delete>
+
 
 
 

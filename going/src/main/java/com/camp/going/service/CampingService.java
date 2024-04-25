@@ -1,8 +1,9 @@
 package com.camp.going.service;
 
 import com.camp.going.common.Search;
+import com.camp.going.dto.request.ReservationRequestDTO;
 import com.camp.going.dto.response.CampingListResponseDTO;
-import com.camp.going.dto.response.ReservationDetailResponseDTO;
+import com.camp.going.dto.response.CampingDetailResponseDTO;
 import com.camp.going.dto.response.ReservationListDTO;
 import com.camp.going.entity.Camping;
 import com.camp.going.entity.Reservation;
@@ -48,14 +49,13 @@ public class CampingService {
     }
 
     // 캠핑장 예약 관련 서비스
-    public ReservationDetailResponseDTO reservationDetail(int campId) {
+    public CampingDetailResponseDTO reservationDetail(int campId, Reservation reservation) {
 
-        Reservation reservation = reservationMapper.findOne(campId);
         Camping camping = campingMapper.findCamping(campId);
 
 
 
-        return new ReservationDetailResponseDTO(reservation, camping);
+        return new CampingDetailResponseDTO(camping, reservation);
     }
 
 
@@ -90,12 +90,6 @@ public class CampingService {
     }
 
 
-    public Reservation getReservation(int campId) {
 
-        Reservation one = reservationMapper.findOne(campId);
-
-        return one;
-
-    }
 }
 

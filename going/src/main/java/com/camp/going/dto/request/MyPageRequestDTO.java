@@ -22,8 +22,6 @@ public class MyPageRequestDTO {
     @NotNull
     private String phoneNumber;
 
-    @NotNull
-    private String password;
 
     private String campName;
     private LocalDateTime regDate;
@@ -34,7 +32,6 @@ public class MyPageRequestDTO {
         return MyPage.builder()
                 .name(name)
                 .phoneNumber(phoneNumber)
-                .password(password)
                 .build();
     }
 
