@@ -40,11 +40,13 @@
         <div class="main-content">
             <h1>CAMPING OF THE MONTH</h1>
             <div class="main-img">
-                
-                <img class="campin-img1" src="/assets/img/camp1.jpg" alt="이달의캠핑1">
-                <img class="campin-img2" src="/assets/img/camp2.jpg" alt="이달의캠핑2">
-                <img class="campin-img3" src="/assets/img/camp3.jpg" alt="이달의캠핑3">
-                
+                <div class="main-img1">
+                    <img class="campin-img1" src="/assets/img/camp5.jpg" alt="이달의캠핑1">
+                </div>
+                <div class="main-img2">
+                    <img class="campin-img2" src="/assets/img/camp2.jpg" alt="이달의캠핑2">
+                    <img class="campin-img3" src="/assets/img/camp1.jpg" alt="이달의캠핑3">
+                </div>
             </div>
         </div>
 
