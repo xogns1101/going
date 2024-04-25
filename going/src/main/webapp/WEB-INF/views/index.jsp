@@ -17,10 +17,16 @@
 <body>
     <%@ include file="include/header.jsp" %>
 
-
-
-
+    
+    
+    
     <section class="main-page1">
+        
+        <div class="animated-title">
+            <div class="track">
+              <div class="content">&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;회원가입을 하시면 리뷰를 작성하실 수 있으니 많은 가입 부탁드립니다.&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;회원가입을 하시면 리뷰를 작성하실 수 있으니 많은 가입 부탁드립니다&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;</div>
+            </div>
+        </div>
 
         <div class="main-content">
             <h1>CAMPING OF THE MONTH</h1>
