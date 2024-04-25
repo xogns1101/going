@@ -118,9 +118,9 @@
                     </div>
                     
                     <div class="hidden-info">
-                        <div name="email">${u.email}이메일</div>
-                        <div name="name">${u.name}이름</div>
-                        <div name="phoneNumber">${u.phoneNumber}전화번호</div>
+                        <div name="email">이메일</div>
+                        <div name="name">이름</div>
+                        <div name="phoneNumber">전화번호</div>
                     </div>
                     
                     <button type="submit" class="reserve-button"
