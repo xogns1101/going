@@ -67,12 +67,12 @@
 
                                     <!-- 제목 -->
                                     <td>
-                                        <input type="text" id="title" name="noticeTitle" required placeholder="제목">
+                                        <input type="text" id="title" name="noticeTitle" required placeholder="제목" maxlength="12">
                                     </td>
 
                                     <!-- 내용 -->
                                     <textarea id="content" name="noticeContent" maxlength="1000" required
-                                        placeholder="내용"></textarea>
+                                         placeholder="내용"></textarea>
 
                                 </tr>
                             </tbody>
