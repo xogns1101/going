@@ -84,6 +84,26 @@ section .title h1 {
     text-overflow: ellipsis; /* 너무 길어진 텍스트는 ...으로 표시 */
 }
 
+section .Item .noticeCategory {
+  width: 10%;
+}
+
+section .Item .NoticeNo {
+  width: 10%;
+}
+
+section .Item .NoticeTitle {
+  width: 50%;
+}
+
+section .Item .NoticeDate {
+  width: 20%;
+
+}
+section .Item .NoticeCount {
+  width: 10%;
+}
+
  
 
 

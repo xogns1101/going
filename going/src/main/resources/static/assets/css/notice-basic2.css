@@ -72,6 +72,26 @@ section .notice-list tr:hover {
       pointer-events: none;
   }
 
+  section .notice-click .noticeCategory {
+    width: 10%;
+  }
+  
+  section .notice-click .NoticeNo {
+    width: 10%;
+  }
+
+  section .notice-click .NoticeTitle {
+    width: 50%;
+  }
+
+  section .notice-click .NoticeDate {
+    width: 20%;
+
+  }
+  section .notice-click .NoticeCount {
+    width: 10%;
+  }
+
 /* section .notice-list tr th {
   margin-right: 15px;
   margin-left: -10px;    
