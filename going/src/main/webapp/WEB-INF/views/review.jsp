@@ -40,7 +40,7 @@
                         <div class="good-button">👍🏻</div>
                         <!-- <div class="good-button">❤️</div> -->
                         <!-- <button type="button" class="good-button">🤍</button> -->
-                        <div class="good-count"></div>
+                        <!-- <div class="good-count">${b.reviewLike}</div> -->
 
                     </div>
                 </div>
