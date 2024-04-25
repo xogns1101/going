@@ -109,7 +109,7 @@ section .title h1 {
       font-family: Yeon Sung;
       font-weight: 400;
       word-wrap: break-word;
-      white-space: pre;
+      white-space: pre-line;
       line-height: 1.2em;
       max-height: 320px;
       overflow-y: auto;
