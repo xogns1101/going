@@ -111,7 +111,7 @@ section .title h1 {
       word-wrap: break-word;
       white-space: pre;
       line-height: 1.2em;
-      max-height: 200px;
+      max-height: 320px;
       overflow-y: auto;
   }
 

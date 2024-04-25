@@ -32,7 +32,9 @@
 
         <div class="title">
             <h1>NOTICE / <span>공지사항
+                <c:if test="${login.auth == 'ADMIN'}">
                     <a href="/main/notice-detail-write" class="add-btn">등록</a>
+                </c:if>
                 </span></h1>
             <!-- <c:if test="${login.auth == 'ADMIN'}"> -->
             <!-- <span><a href="/main/notice-write" class="add-btn">등록</a></span> -->
