@@ -68,8 +68,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="name" id="user_name" maxlength="6" required="required"
-                                aria-required="true" placeholder="한글로 최대 6자"></td>
+                        <td><input type="text" name="name" id="user_name" maxlength="5" required="required"
+                                aria-required="true" placeholder="한글로 최대 5자"></td>
                     </tr>
 
                     <tr>
@@ -262,17 +262,20 @@
 
         // 회원가입 버튼 클릭 이벤트
         document.getElementById('signup-btn').onclick = e => {
-
             // 5개의 입력칸이 모두 통과되었을 경우 폼을 서브밋.
             const $form = document.getElementById('signUpForm');
-
             if (checkResultList.includes(false)) {
                 alert('입력란을 다시 확인하세요!');
             } else {
-                $form.submit();
-                alert('회원가입이 완료되었습니다. 다시 로그인해주세요.');
+                // 비밀번호 길이 체크
+                const pwValue = $pwInput.value;
+                if (pwValue.length < 8) {
+                    alert('비밀번호는 최소 8자 이상이어야 합니다.');
+                } else {
+                    $form.submit();
+                    alert('회원가입이 완료되었습니다. 다시 로그인해주세요.');
+                }
             }
-
         }
 
         //  // 회원가입 처리
