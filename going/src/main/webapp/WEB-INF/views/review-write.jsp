@@ -39,7 +39,7 @@
     
       <div class="profile">
         <div class="thumbnail-box">
-          <img src="/assets/img/camp3.jpg" alt="리뷰사진">
+          <img src="/assets/img/no-image.png" alt="리뷰사진">
         </div>
         <input type="file" class="review-image" name="reviewImage" accept="image/*">
       </div>
