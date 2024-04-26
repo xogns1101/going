@@ -439,6 +439,24 @@
     padding-bottom: 160px;
   }
   
+
+  /* 날씨 */
+
+  section.main-page2 .main-content .weather {
+  margin: 0 100px;
+  top: 60px;
+  left: 18.5px;
+  }
+
+  
+  section.main-page2 .main-content .tomorrow {
+    width: 500px;
+    height: 600px;
+    margin-top: 50px;
+  }
+
+
+
   section.main-page2 .main-content .best-review .review-box {
     width: 500px;
     height: 600px;
@@ -497,18 +515,6 @@
 
   }
 
-  section.main-page2 .main-content .weather {
-    margin: 0 100px;
-  
-  position: absolute;
-  top: 60px;
-  left: 18.5px;
-  }
-  section.main-page2 .main-content .tomorrow {
-    width: 500px;
-    height: 600px;
-    margin-top: 50px;
-  }
 
   section.main-page2 .main-content .best-review .reivew {
     display: flex;
