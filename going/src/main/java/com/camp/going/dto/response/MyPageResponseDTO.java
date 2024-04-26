@@ -12,8 +12,11 @@ public class MyPageResponseDTO {
     private int userId;
     private String name;
     private String phoneNumber;
+    private int camId;
     private String email;
     private String campName;
+    private String campAddress;
+    private String campHomepage;
     private LocalDateTime regDate; // 입실
     private LocalDateTime regDates; // 퇴실
     private String campNumber;
@@ -29,6 +32,10 @@ public class MyPageResponseDTO {
         this.regDates = myPage.getRegDates();
         this.campNumber = myPage.getCampNumber();
         this.campImage = myPage.getCampImage();
+        this.campAddress = myPage.getCampAddress();
+        this.campHomepage = myPage.getCampHomepage();
+        this.camId = myPage.getCampId();
+
 
     }
 

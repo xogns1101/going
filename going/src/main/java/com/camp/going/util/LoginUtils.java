@@ -22,6 +22,13 @@ public class LoginUtils {
     }
 
 
+    // 로그인 중인 사용자의 id(int) 뽑기
+    public static long getCurrentLoginMemberId(HttpSession session) {
+
+        LoginUserResponseDTO loginUser = (LoginUserResponseDTO) session.getAttribute(LOGIN_KEY);
+        return loginUser.getId();
+    }
+
     // 로그인 한 사람의 계정명을 반환해 주는 메서드
     public static String getCurrentLoginMemberAccount(HttpSession session) {
         // session.getAttribute의 리턴타입은 Object이기 때문에

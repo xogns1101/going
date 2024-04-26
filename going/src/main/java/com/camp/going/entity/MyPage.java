@@ -19,7 +19,10 @@ public class MyPage {
     private String email;
 
     // 예약 정보
+    private int campId;
     private String campName;
+    private String campAddress;
+    private String campHomepage;
     private LocalDateTime regDate; // 입실
     private LocalDateTime regDates; // 퇴실
     private String campNumber;

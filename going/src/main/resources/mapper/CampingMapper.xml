@@ -108,11 +108,7 @@
             resultType="camping">
 
         SELECT
-            camp_id
-            , camp_name
-            , camp_address
-            , camp_homepage
-            , camp_number
+            *
         FROM
             camping
         WHERE

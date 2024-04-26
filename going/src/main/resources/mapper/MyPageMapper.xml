@@ -9,20 +9,38 @@
     <update id="modifyName">
         UPDATE user
         SET name = #{name}
-        WHERE email = #{email};
+        WHERE email = #{email}
     </update>
 
     <update id="modifyPhoneNumber">
         UPDATE user
         SET phone_number = #{phoneNumber}
-        WHERE email = #{email};
+        WHERE email = #{email}
     </update>
 
     <update id="modifyPassword">
         UPDATE user
         SET password = #{password}
-        WHERE email = #{email};
+        WHERE email = #{email}
     </update>
+
+    <select id="myReservation" resultType="mypage">
+
+        SELECT
+            c.camp_name,
+            c.camp_address,
+            c.camp_homepage,
+            c.camp_number,
+            r.reg_date,
+            r.reg_dates
+        FROM reservation r
+        LEFT JOIN camping c
+        ON r.camp_id = c.camp_id
+        WHERE user_id = #{userId}
+        ORDER BY r.reg_date DESC
+        LIMIT 1
+
+    </select>
     
 
 
