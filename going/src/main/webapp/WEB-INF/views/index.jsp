@@ -18,16 +18,13 @@
     <%@ include file="include/header.jsp" %>
 
 
-
-
     <section class="main-page1">
 
-
-
-
-
-
         <div class="main-content">
+
+
+            <!-- 공지사항  -->
+
             <div class="animated-title">
                 <c:if test="${login != null}">
                     <div class="track">
@@ -38,6 +35,9 @@
                     </div>
                 </c:if>
             </div>
+
+
+            <!-- 베스트 캠핑장  -->
             <h1>CAMPING OF THE MONTH</h1>
             <div class="best-camping">
                 <div class="main-img">
@@ -74,12 +74,64 @@
     </section>
 
 
+    <section class="main-page0">
+
+        <!-- 캠핑 리스트 -->
+
+        <p class="camping-animation">
+
+            <div></div>
+            <div class='highlight'></div>
+            <div></div>
+            <div></div>
+
+        </p>
+
+
+        <script>
+            var divs = document.querySelectorAll("div");
+            divs.forEach(function (elm) {
+                elm.addEventListener("mouseenter", function () {
+                    var panel = document.querySelector(".highlight");
+                    panel.classList.toggle("highlight");
+                    elm.classList.toggle("highlight");
+                });
+            });
+
+            window.addEventListener("keyup", function (e) {
+                var panel = document.querySelector(".highlight");
+                if (
+                    (e.keyCode == 37 || e.keyCode == 38) &&
+                    panel != document.querySelectorAll("div")[0]
+                ) {
+                    panel.previousElementSibling.classList.toggle("highlight");
+                    panel.classList.toggle("highlight");
+                }
+                if (
+                    (e.keyCode == 39 || e.keyCode == 40) &&
+                    panel != document.querySelectorAll("div")[3]
+                ) {
+                    panel.nextElementSibling.classList.toggle("highlight");
+                    panel.classList.toggle("highlight");
+                }
+            });
+
+            window.focus();
+        </script>
+
+    </section>
+
+
+
+
+
+
     <section class="main-page2">
 
         <div class="main-content">
 
+            <!-- 날씨  -->
             <div class="weather">
-                <!-- 날씨  -->
 
                 <h1>WEATHER</h1>
                 <div class="tomorrow" data-location-id="065327" data-language="KO" data-unit-system="METRIC"
@@ -93,10 +145,13 @@
                 </div>
             </div>
 
+
+            <!-- 최신리뷰 확인 -->
+
             <div class="best-review">
-                <h1>BEST REVIEW</h1>
+                <h1>NEW REVIEW</h1>
                 <div class="review-box">
-                    <img src="/review${r.reviewImage}" alt="베스트리뷰"><br>
+                    <img src="/review${r.reviewImage}" alt="최신리뷰" aria-placeholder="등록된 리뷰가 없습니다."><br>
                     <ul class="review">
                         <input type="hidden" name="rno" value="${r.reviewNo}">
                         <li class="camp-name">${r.campName}</li>

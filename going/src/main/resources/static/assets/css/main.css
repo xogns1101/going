@@ -328,8 +328,6 @@ section.main-page1 .animated-title .track {
 
 
 
-
-
   /* best-camping */
 
 
@@ -338,7 +336,7 @@ section.main-page1 .animated-title .track {
     color: transparent;
     -webkit-background-clip: text;
 
-    margin-top: 50px;
+    margin-top: 100px;
 
   }
 
@@ -432,6 +430,130 @@ section.main-page1 .animated-title .track {
     margin-bottom: 10px;
   }
 
+
+
+  /* 캠핑 리스트 */
+
+  section.main-page0 {
+    height: 130vh;
+    background: #e4ffaa8c;
+    text-align: center;
+    padding: 150px 0 200px;
+  }
+
+  section.main-page0:before {
+    content: "tourist attractions";
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 60px;
+    background: linear-gradient(to right top, #fdf01f, #ff2a16);
+    color: transparent;
+    -webkit-background-clip: text;
+    display: block;
+    margin-bottom: 150px;
+    
+  }
+
+  section.main-page0 div {
+    width: 80%;
+    max-width: 250px;
+    height: 70%;
+    /* background: red; */
+    background-size: auto 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 0 1.2rem;
+    filter: grayscale(1) opacity(0.1) contrast(200%);
+    transition: 0.5s;
+    transform: skewY(-10deg);
+    z-index: -1;
+  }
+
+  section.main-page0 .highlight {
+    filter: grayscale(0) opacity(1);
+    transform: scale(1.1);
+    box-shadow: 0 25px 50px black;
+    z-index: 100;
+  }
+
+  /* @media (orientation: portrait) {
+    
+
+    section.main-page0 div {
+      width: 75vw;
+      max-width: 75vw;
+      height: 20vh;
+      display: block;
+      margin: 1rem 0;
+      background-size: 100% auto;
+      background-position: 50% 0%;
+      transform: skewX(-10deg);
+    }
+    section.main-page0 div:nth-child(1) {
+      background-position: 50% 10%;
+    }
+    section.main-page0 div:nth-child(3) {
+      background-position: 50% 20%;
+    }
+    section.main-page0 div:nth-child(4) {
+      background-position: 50% 10%;
+    }
+  } */
+
+  
+
+  section.main-page0 div:nth-child(2) {
+    background-color: red;
+    background-image: url("../img/camp6.jpg");
+  }
+  section.main-page0 div:nth-child(3) {
+    background-color: purple;
+    background-image: url("../img/camp7.jpg");
+  }
+
+  section.main-page0 div:nth-child(4) {
+    background-color: darkorange;
+    background-image: url("../img/camp8.jpg");
+  }
+
+  section.main-page0 div:nth-child(5) {
+    background-color: darkorange;
+    background-image: url("../img/camp10.jpg");
+  }
+
+  /* section.main-page0 div:nth-child(1):after,
+  section.main-page0 div:nth-child(2):after,
+  section.main-page0 div:nth-child(3):after,
+  section.main-page0 div:nth-child(4):after {
+    content: "NAME";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 900;
+    color: white;
+    text-shadow: 3px 3px #555;
+  }
+  section.main-page0 div:nth-child(1):after {
+    content: "LEO";
+  }
+  section.main-page0 div:nth-child(2):after {
+    content: "RAPH";
+  }
+  section.main-page0 div:nth-child(3):after {
+    content: "DON";
+  }
+  section.main-page0 div:nth-child(4):after {
+    content: "MIKE";
+  } */
+
+
+
+  
 
 
 
