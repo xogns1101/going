@@ -1,368 +1,387 @@
-
-
 section .title h1 {
-    color: black;
-    margin-top: 250px;
-    font-size: 40px;
-    text-align: center;
-  }
-  
-  section .title h1 span {
   color: black;
-  font-family: "Yeon Sung", system-ui;
+  margin-top: 250px;
+  font-size: 40px;
+  text-align: center;
+}
+
+section .mypage-list{
+  color: black;
+  font-family: "Dongle", sans-serif;
   font-weight: 400;
   font-style: normal;
-  }
-  
-  
-  
-  section .mypage-list {
+}
+
+
+
+section .mypage-list {
   display: flex;
   justify-content: space-around;
-  
-  }
-  
-  
-  
-  section .mypage-list .mypage-box {
-    width: 1000px;
-    height: 700px;
-    background: #E4FFAA;
-    margin-top: 50px;
-    border-radius: 3%;
-    margin-bottom: 40px;
-    position: relative;
-  }
 
-  /* 프로필------------------------------- */
- 
- .Profile {
-    left: 100px; 
-    top: 60px; 
-    position: absolute; 
-    color: black; 
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    word-wrap: break-word;
-  }
+}
 
-  /* 유저이름 */
 
-  .Profileblank1 {
-    width: 434px; 
-    height: 50px; 
-    left: 100px; 
-    top: 100px; 
-    position: absolute; 
-    background: #FFFDFD;
-    border-radius: 10px;
-  }
 
-  .UserName {
-    left: 68px; 
-    top: 13px; 
-    position: absolute; 
-    color: black; 
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    word-wrap: break-word;
-  }
+section .mypage-list .mypage-box {
+  width: 1000px;
+  height: 700px;
+  background: #E4FFAA;
+  margin-top: 50px;
+  border-radius: 3%;
+  margin-bottom: 40px;
+  position: relative;
+}
 
-  .User .Profileblank1 .fa-user {
-    width: 34px; 
-    height: 33px; 
-    left: 11px; 
-    top: 8px; 
-    position: absolute; 
-    color: black;
-    font-size: 36px;
-  }
+/* 프로필------------------------------- */
 
-  /* 유저 폰번호 */
-  .Profileblank2 {
-    width: 434px; 
-    height: 50px; 
-    left: 100px; 
-    top: 160px; 
-    position: absolute; 
-    background: #FFFDFD;
-    border-radius: 10px;
-  }
+.Profile {
+  left: 100px;
+  top: 60px;
+  position: absolute;
+  color: black;
+  font-size: 24px;
+  font-family: Yeon Sung;
+  font-weight: 400;
+  word-wrap: break-word;
+}
 
-  .PhoneNumber {
-    left: 68px; 
-    top: 13px; 
-    position: absolute; 
-    color: black; 
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    word-wrap: break-word;
-  }
+/* 유저이름 */
 
-  .User .Profileblank2 .fa-phone {
-    width: 34px; 
-    height: 33px; 
-    left: 11px; 
-    top: 8px; 
-    position: absolute; 
-    color: black;
-    font-size: 36px;
-  }
+.Profileblank1 {
+  width: 434px;
+  height: 50px;
+  left: 100px;
+  top: 100px;
+  position: absolute;
+  background: #FFFDFD;
+  border-radius: 10px;
+}
 
-  /* 유저 이메일 */
+.UserName {
+  left: 68px;
+  top: 13px;
+  position: absolute;
+  color: black;
+  font-size: 24px;
+  font-family: Yeon Sung;
+  font-weight: 400;
+  word-wrap: break-word;
+}
 
-  .Profileblank3 {
-    width: 434px; 
-    height: 50px; 
-    left: 100px; 
-    top: 220px; 
-    position: absolute; 
-    background: #FFFDFD;
-    border-radius: 10px;
-  }
+.User .Profileblank1 .fa-user {
+  width: 34px;
+  height: 33px;
+  left: 11px;
+  top: 8px;
+  position: absolute;
+  color: black;
+  font-size: 36px;
+}
 
-  .Email {
-    left: 68px; 
-    top: 13px; 
-    position: absolute; 
-    color: black; 
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    word-wrap: break-word;
-  }
+/* 유저 폰번호 */
+.Profileblank2 {
+  width: 434px;
+  height: 50px;
+  left: 100px;
+  top: 160px;
+  position: absolute;
+  background: #FFFDFD;
+  border-radius: 10px;
+}
 
-  .User .Profileblank3 .fa-envelope {
-    width: 34px; 
-    height: 33px; 
-    left: 11px; 
-    top: 8px; 
-    position: absolute; 
-    color: black;
-    font-size: 36px;
-  }
- /* 수정버튼-------------------------------- */
- .User .ModifyButton {
-    width: 90px;
-    height: 28px;
-    left: 580px;
-    top: 100px;
-    position: absolute;
-    background: #EA9999;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border: 1px black solid;
-    cursor: pointer;
-    border-radius: 10px;
-  }
-  
-  .User .ModifyButtonText {
-    width: 60px;
-    height: 15px;
-    left: 15px;
-    top: 3px;
-    position: absolute;
-    color: black;
-    font-size: 20px;
-    font-family: Yeon Sung;
-    font-weight: 400;
-    word-wrap: break-word;
-    cursor: pointer;
-  }
+.PhoneNumber {
+  left: 68px;
+  top: 13px;
+  position: absolute;
+  color: black;
+  font-size: 24px;
+  font-family: Yeon Sung;
+  font-weight: 400;
+  word-wrap: break-word;
+}
 
-  /* 환영박스 */
+.User .Profileblank2 .fa-phone {
+  width: 34px;
+  height: 33px;
+  left: 11px;
+  top: 8px;
+  position: absolute;
+  color: black;
+  font-size: 36px;
+}
 
-  .User .Welcomemsgbox {
-    width: 246px; 
-    height: 158px; 
-    left: 650px; 
-    top: 105px; 
-    position: absolute; 
-    background: white;
-    border-radius: 10px;
-  }
+/* 유저 이메일 */
 
-  .User .Welcomemsgbox .Welcomemsg{
-    width: 317px; 
-    height: 84px; 
-    left: -30px; 
-    top: 40px; 
-    position: absolute; 
-    text-align: center; 
-    color: black; 
-    font-size: 36px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    word-wrap: break-word;
-  }
+.Profileblank3 {
+  width: 434px;
+  height: 50px;
+  left: 100px;
+  top: 220px;
+  position: absolute;
+  background: #FFFDFD;
+  border-radius: 10px;
+}
 
-  
-   /* 예약내역------------------------------- */
+.Email {
+  left: 68px;
+  top: 13px;
+  position: absolute;
+  color: black;
+  font-size: 24px;
+  font-family: Yeon Sung;
+  font-weight: 400;
+  word-wrap: break-word;
+}
 
-   .Reservation {
-    left: 100px; 
-    top: 380px; 
-    position: absolute; 
-    color: black; 
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    word-wrap: break-word;
-   }
+.User .Profileblank3 .fa-envelope {
+  width: 34px;
+  height: 33px;
+  left: 11px;
+  top: 8px;
+  position: absolute;
+  color: black;
+  font-size: 36px;
+}
 
-   /* 캠핑장명 */
+/* 수정버튼-------------------------------- */
+.User .ModifyButton {
+  width: 90px;
+  height: 28px;
+  left: 580px;
+  top: 100px;
+  position: absolute;
+  background: #EA9999;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px black solid;
+  cursor: pointer;
+  border-radius: 10px;
+}
 
-  .Reservationblank1 {
-    width: 434px; 
-    height: 50px; 
-    left: 100px; 
-    top: 430px; 
-    position: absolute; 
-    background: #FFFDFD;
-    border-radius: 10px;
-  }
+.User .ModifyButtonText {
+  width: 60px;
+  height: 15px;
+  left: 15px;
+  top: 3px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: Yeon Sung;
+  font-weight: 400;
+  word-wrap: break-word;
+  cursor: pointer;
+}
 
-  .CampName {
-    left: 68px; 
-    top: 13px; 
-    position: absolute; 
-    color: black; 
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    word-wrap: break-word;
-  }
+/* 환영박스 */
 
-  .camp .Reservationblank1 .fa-campground {
-    width: 34px; 
-    height: 33px; 
-    left: 11px; 
-    top: 8px; 
-    position: absolute; 
-    color: black;
-    font-size: 36px;
-  }
+.User .Welcomemsgbox {
+  width: 246px;
+  height: 158px;
+  left: 650px;
+  top: 105px;
+  position: absolute;
+  border-radius: 10px;
 
-  /* 예약일자 */
 
-  .Reservationblank2 {
-    width: 434px; 
-    height: 50px; 
-    left: 100px; 
-    top: 490px; 
-    position: absolute; 
-    background: #FFFDFD;
-    border-radius: 10px;
-  }
+}
 
-  .CampDate {
-    left: 68px; 
-    top: 13px; 
-    position: absolute; 
-    color: black; 
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    word-wrap: break-word;
-  }
+.User .Welcomemsgbox .Welcomemsg {
+  width: 317px;
+  height: 84px;
+  left: -30px;
+  top: 40px;
+  position: absolute;
+  text-align: center;
+  color: black;
+  font-size: 36px;
+  font-family: Yeon Sung;
+  font-weight: 400;
+  word-wrap: break-word;
+}
 
-  .camp .Reservationblank2 .fa-calendar-days {
-    width: 34px; 
-    height: 33px; 
-    left: 13px; 
-    top: 8px; 
-    position: absolute; 
-    color: black;
-    font-size: 36px;
-  }
+.User .Welcomemsgbox .Welcomemsg span {
+  font-size: 20px;
+}
 
-  /* 업체정보 */
 
-  .Reservationblank3 {
-    width: 434px; 
-    height: 100px; 
-    left: 100px; 
-    top: 550px; 
-    position: absolute; 
-    background: #FFFDFD;
-    border-radius: 10px;
-  }
 
-  .CampInfo {
-    left: 68px; 
-    top: 13px; 
-    position: absolute; 
-    color: black; 
-    font-size: 24px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    word-wrap: break-word;
-  }
 
-  .camp .Reservationblank3 .fa-location-dot {
-    width: 34px; 
-    height: 33px; 
-    left: 13px; 
-    top: 13px; 
-    position: absolute; 
-    color: black;
-    font-size: 36px;
-  }
 
-  /* 캠프장 사진 */
+/* 예약내역------------------------------- */
 
-  .camp .CampImgbox {
-    width: 246px; 
-    height: 158px; 
-    left: 650px; 
-    top: 460px; 
-    position: absolute; 
-    background: white;
-    border-radius: 10px;
-  }
 
-  .camp .CampImgbox img[alt="img"] {
-    width: 250px; 
-    height: 160px; 
-    left: 0px; 
-    top: 0px; 
-    position: absolute; 
-    text-align: center; 
-    color: black; 
-    font-size: 36px; 
-    font-family: Yeon Sung; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    border-radius: 10px;
-  }
+/* 카카오페이 결제 버튼 */
 
-  /* 상세버튼 */
-  .camp .DetailButton {
-    width: 90px;
-    height: 28px;
-    left: 580px;
-    top: 380px;
-    position: absolute;
-    background: #EA9999;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border: 1px black solid;
-    cursor: pointer;
-    border-radius: 10px;
-  }
-  
-  .camp .DetailButtonText {
-    width: 60px;
-    height: 15px;
-    left: 15px;
-    top: 3px;
-    position: absolute;
-    color: black;
-    font-size: 20px;
-    font-family: Yeon Sung;
-    font-weight: 400;
-    word-wrap: break-word;
-    cursor: pointer;
-  }
-  
+.camp .camp-title img {
+  width: 100px;
+  height: 40px;
+  position: relative;
+  top: 373px;
+  left: 42%;
+
+  cursor: pointer;
+}
+
+.Reservation {
+  left: 100px;
+  top: 380px;
+  position: absolute;
+  color: black;
+  font-size: 24px;
+  font-family: Yeon Sung;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* 캠핑장명 */
+
+.Reservationblank1 {
+  width: 434px;
+  height: 50px;
+  left: 100px;
+  top: 430px;
+  position: absolute;
+  background: #FFFDFD;
+  border-radius: 10px;
+}
+
+.CampName {
+  left: 68px;
+  top: 13px;
+  position: absolute;
+  color: black;
+  font-size: 24px;
+  font-family: Yeon Sung;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.camp .Reservationblank1 .fa-campground {
+  width: 34px;
+  height: 33px;
+  left: 11px;
+  top: 8px;
+  position: absolute;
+  color: black;
+  font-size: 36px;
+}
+
+/* 예약일자 */
+
+.Reservationblank2 {
+  width: 434px;
+  height: 50px;
+  left: 100px;
+  top: 490px;
+  position: absolute;
+  background: #FFFDFD;
+  border-radius: 10px;
+}
+
+.CampDate {
+  left: 68px;
+  top: 13px;
+  position: absolute;
+  color: black;
+  font-size: 24px;
+  font-family: Yeon Sung;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.camp .Reservationblank2 .fa-calendar-days {
+  width: 34px;
+  height: 33px;
+  left: 13px;
+  top: 8px;
+  position: absolute;
+  color: black;
+  font-size: 36px;
+}
+
+/* 업체정보 */
+
+.Reservationblank3 {
+  width: 434px;
+  height: 100px;
+  left: 100px;
+  top: 550px;
+  position: absolute;
+  background: #FFFDFD;
+  border-radius: 10px;
+}
+
+.CampInfo {
+  left: 68px;
+  top: 13px;
+  position: absolute;
+  color: black;
+  font-size: 24px;
+  font-family: Yeon Sung;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.camp .Reservationblank3 .fa-location-dot {
+  width: 34px;
+  height: 33px;
+  left: 13px;
+  top: 13px;
+  position: absolute;
+  color: black;
+  font-size: 36px;
+}
+
+/* 캠프장 사진 */
+
+.camp .CampImgbox {
+  width: 246px;
+  height: 158px;
+  left: 650px;
+  top: 460px;
+  position: absolute;
+  background: white;
+  border-radius: 10px;
+}
+
+.camp .CampImgbox img[alt="img"] {
+  width: 250px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  text-align: center;
+  color: black;
+  font-size: 36px;
+  font-family: Yeon Sung;
+  font-weight: 400;
+  word-wrap: break-word;
+  border-radius: 10px;
+}
+
+/* 상세버튼 */
+.camp .DetailButton {
+  width: 90px;
+  height: 28px;
+  left: 580px;
+  top: 380px;
+  position: absolute;
+  background: #EA9999;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px black solid;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.camp .DetailButtonText {
+  width: 60px;
+  height: 15px;
+  left: 15px;
+  top: 3px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: Yeon Sung;
+  font-weight: 400;
+  word-wrap: break-word;
+  cursor: pointer;
+}
