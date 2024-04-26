@@ -1,10 +1,9 @@
 package com.camp.going.service;
 
 import com.camp.going.common.Search;
-import com.camp.going.dto.request.ReservationRequestDTO;
 import com.camp.going.dto.response.CampingListResponseDTO;
 import com.camp.going.dto.response.CampingDetailResponseDTO;
-import com.camp.going.dto.response.ReservationListDTO;
+import com.camp.going.dto.response.ReservationResponseDTO;
 import com.camp.going.entity.Camping;
 import com.camp.going.entity.Reservation;
 import com.camp.going.entity.User;
@@ -59,26 +58,20 @@ public class CampingService {
     }
 
 
-
-
-
-
     // 예약 현황 리스트 목록
-    public List<ReservationListDTO> getReservationList(Camping camping, User user) {
+    public List<ReservationResponseDTO> getReservationList(Camping camping, User user) {
 
-        List<ReservationListDTO> dtoList = new ArrayList<>();
+        List<ReservationResponseDTO> dtoList = new ArrayList<>();
 
         List<Reservation> reservations = reservationMapper.reservationCamping();
 
         for (Reservation reservation : reservations) {
 
-            ReservationListDTO dto = new ReservationListDTO(reservation, camping, user);
+            ReservationResponseDTO dto = new ReservationResponseDTO(reservation, camping, user);
 
-            dto.setCampId(camping.getCampId());
             dto.setEmail(user.getEmail());
             dto.setCampName(camping.getCampName());
             dto.setRegDate(String.valueOf(reservation.getRegDate()));
-            dto.setCampPrice(camping.getCampPrice());
             dto.setPhoneNumber(user.getPhoneNumber());
 
             dtoList.add(dto);
@@ -87,6 +80,11 @@ public class CampingService {
 
         return dtoList;
 
+    }
+
+
+    public Camping getCampingById(int campId){
+        return  campingMapper.selectCampingById(campId);
     }
 
 

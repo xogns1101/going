@@ -5,7 +5,7 @@ import com.camp.going.common.Search;
 import com.camp.going.dto.request.ReservationRequestDTO;
 import com.camp.going.dto.response.CampingDetailResponseDTO;
 import com.camp.going.dto.response.CampingListResponseDTO;
-import com.camp.going.dto.response.ReservationListDTO;
+import com.camp.going.dto.response.ReservationResponseDTO;
 import com.camp.going.entity.Camping;
 import com.camp.going.entity.Reservation;
 import com.camp.going.entity.User;
@@ -78,7 +78,7 @@ public class ReservationController {
             , Camping camping
             , User user){
 
-        List<ReservationListDTO> reservationList = service.getReservationList(camping, user);
+        List<ReservationResponseDTO> reservationList = service.getReservationList(camping, user);
 
         model.addAttribute("rList", reservationList);
 

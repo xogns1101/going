@@ -23,7 +23,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
         registry
                 .addInterceptor(afterLoginInterceptor) // 어떤 인터셉터를 등록할 것인가
                 // sign-in(로그인), sign-up(회원가입), mypage(마이페이지)
-                .addPathPatterns("/user/sign-in", "/user/sign-up", "/user/mypage"); // 어디서 들어온 요청을 강하게
+                .addPathPatterns("/user/sign-in", "/user/sign-up"); // 어디서 들어온 요청을 강하게
         registry
                 .addInterceptor(noticeInterceptor)
                 //  notice/write(공지작성란)

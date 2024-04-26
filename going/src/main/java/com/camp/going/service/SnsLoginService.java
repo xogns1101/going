@@ -5,6 +5,7 @@ import com.camp.going.dto.request.SignUpRequestDTO;
 import com.camp.going.dto.response.KakaoUserResponseDTO;
 import com.camp.going.dto.response.LoginUserResponseDTO;
 import com.camp.going.dto.response.NaverUserResponseDTO;
+import com.camp.going.entity.Camping;
 import com.camp.going.entity.User;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;

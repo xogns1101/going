@@ -44,4 +44,19 @@
         WHERE session_id = #{sessionId}
     </select>
 
+    <select id="selectUserById" resultType="user">
+
+        SELECT
+            user_id
+            , email
+            , password
+            , phone_number
+            , name
+        FROM
+            user
+        WHERE
+        user_id = #{userId}
+
+    </select>
+
 </mapper>

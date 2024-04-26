@@ -18,22 +18,26 @@
     <%@ include file="include/header.jsp" %>
 
 
-
-
     <section class="main-page1">
 
-        
         <div class="main-content">
+
+
+            <!-- 공지사항  -->
+
             <div class="animated-title">
                 <c:if test="${login != null}">
                     <div class="track">
-                        <div class="content">⛺공지&nbsp;&nbsp;&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;&nbsp;&nbsp;${login.name}님 캠핑은 어떠셨나요~?&nbsp;&nbsp;&nbsp;공지사항 필수로 확인해주세요~&nbsp;&nbsp;⛺공지&nbsp;&nbsp;&nbsp;야가자캠핑에 오신것을
+                        <div class="content">⛺공지&nbsp;&nbsp;&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;&nbsp;&nbsp;${login.name}님 캠핑은
+                            어떠셨나요~?&nbsp;&nbsp;&nbsp;공지사항 필수로 확인해주세요~&nbsp;&nbsp;⛺공지&nbsp;&nbsp;&nbsp;야가자캠핑에 오신것을
                             환영합니다!&nbsp;&nbsp;&nbsp;${login.name}님 캠핑은 어떠셨나요~?&nbsp;&nbsp;&nbsp;공지사항 필수로
                             확인해주세요~&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;</div>
                     </div>
                 </c:if>
             </div>
 
+
+            <!-- 베스트 캠핑장  -->
             <h1>CAMPING OF THE MONTH</h1>
             <div class="best-camping">
                 <div class="main-img">
@@ -45,9 +49,9 @@
                         <img class="campin-img3" src="/assets/img/camp1.jpg" alt="이달의캠핑3">
                     </div>
                 </div>
-                
+
                 <p>캠핑예약 바로가기 <br> <a href="/main/reservation">GO</a> </p>
-                
+
             </div>
         </div>
 
@@ -55,29 +59,79 @@
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 const animatedTitle = document.querySelector('.animated-title');
-                const mainContent = document.querySelector('.main-content'); 
+                const mainContent = document.querySelector('.main-content');
                 const loginStatus = "${login}";
 
                 if (loginStatus === null || loginStatus === "") {
                     animatedTitle.style.display = "none";
-                } else if(loginStatus !== null) {
+                } else if (loginStatus !== null) {
                     mainContent.style.marginTop = "0px";
                 }
 
             });
-
-
         </script>
 
     </section>
+
+
+    <section class="main-page0">
+
+        <!-- 캠핑 리스트 -->
+
+        <p class="camping-animation">
+
+            <div></div>
+            <div class='highlight'></div>
+            <div></div>
+            <div></div>
+
+        </p>
+
+
+        <script>
+            var divs = document.querySelectorAll("div");
+            divs.forEach(function (elm) {
+                elm.addEventListener("mouseenter", function () {
+                    var panel = document.querySelector(".highlight");
+                    panel.classList.toggle("highlight");
+                    elm.classList.toggle("highlight");
+                });
+            });
+
+            window.addEventListener("keyup", function (e) {
+                var panel = document.querySelector(".highlight");
+                if (
+                    (e.keyCode == 37 || e.keyCode == 38) &&
+                    panel != document.querySelectorAll("div")[0]
+                ) {
+                    panel.previousElementSibling.classList.toggle("highlight");
+                    panel.classList.toggle("highlight");
+                }
+                if (
+                    (e.keyCode == 39 || e.keyCode == 40) &&
+                    panel != document.querySelectorAll("div")[3]
+                ) {
+                    panel.nextElementSibling.classList.toggle("highlight");
+                    panel.classList.toggle("highlight");
+                }
+            });
+
+            window.focus();
+        </script>
+
+    </section>
+
+
+
+
 
 
     <section class="main-page2">
 
         <div class="main-content">
 
+            <!-- 날씨  -->
             <div class="weather">
-                <!-- 날씨  -->
 
                 <h1>WEATHER</h1>
                 <div class="tomorrow" data-location-id="065327" data-language="KO" data-unit-system="METRIC"
@@ -91,29 +145,38 @@
                 </div>
             </div>
 
+
+            <!-- 최신리뷰 확인 -->
+
             <div class="best-review">
-                <h1>BEST REVIEW</h1>
+                <h1>NEW REVIEW</h1>
                 <div class="review-box">
-                    <img src="/review${r.reviewImage}" alt="베스트리뷰"><br>
                     <ul class="review">
                         <input type="hidden" name="rno" value="${r.reviewNo}">
-                        <li class="camp-name">${r.campName}</li>
-                        <li class="review-content">${r.reviewContent}</li>
                         <li class="review-views"></li>
-                        <li class="star-rating">
-                            <input type="radio" id="5-stars" name="reviewPoint" value="5" readonly />
-                            <label for="5-stars" class="star">&#9733;</label>
-                            <input type="radio" id="4-stars" name="reviewPoint" value="4" readonly />
-                            <label for="4-stars" class="star">&#9733;</label>
-                            <input type="radio" id="3-stars" name="reviewPoint" value="3" readonly />
-                            <label for="3-stars" class="star">&#9733;</label>
-                            <input type="radio" id="2-stars" name="reviewPoint" value="2" readonly />
-                            <label for="2-stars" class="star">&#9733;</label>
-                            <input type="radio" id="1-stars" name="reviewPoint" value="1" readonly />
-                            <label for="1-stars" class="star">&#9733;</label>
-                        </li>
 
-                        <input type="hidden" name="starPoint" id="starPoint" value="${r.reviewPoint}">
+                        <img src="/review${r.reviewImage}" alt="최신리뷰" aria-placeholder="등록된 리뷰가 없습니다."><br>
+
+                        <div class="review-title">
+                            <li class="camp-name">캠핑장이름</li>
+                            <!-- 별점 시작 -->
+                            <li class="star-rating">
+                                <input type="radio" id="5-stars" name="reviewPoint" value="5" readonly />
+                                <label for="5-stars" class="star">&#9733;</label>
+                                <input type="radio" id="4-stars" name="reviewPoint" value="4" readonly />
+                                <label for="4-stars" class="star">&#9733;</label>
+                                <input type="radio" id="3-stars" name="reviewPoint" value="3" readonly />
+                                <label for="3-stars" class="star">&#9733;</label>
+                                <input type="radio" id="2-stars" name="reviewPoint" value="2" readonly />
+                                <label for="2-stars" class="star">&#9733;</label>
+                                <input type="radio" id="1-stars" name="reviewPoint" value="1" readonly />
+                                <label for="1-stars" class="star">&#9733;</label>
+                            </li>
+                            <input type="hidden" name="starPoint" id="starPoint" value="${r.reviewPoint}">
+                            <!-- 별점 끝 -->
+                        </div>
+
+                        <li class="review-content">${r.reviewContent}</li>
                     </ul>
 
 
@@ -122,10 +185,10 @@
 
             <div class="ad">
                 <div class="ad-box">
-
                     <img src="/assets/img/ad2.jpg" alt="광고1">
                     <img src="/assets/img/ad3.jpg" alt="광고2">
-                    <img src="/assets/img/ad4.jpg" alt="광고3"></div>
+                    <img src="/assets/img/ad4.jpg" alt="광고3">
+                </div>
             </div>
 
 
@@ -136,8 +199,9 @@
     </section>
 
 
-    <!-- 날씨 시작 -->
+
     <script>
+        // 날씨
         (function (d, s, id) {
             if (d.getElementById(id)) {
                 if (window.__TOMORROW__) {
@@ -152,6 +216,27 @@
 
             fjs.parentNode.insertBefore(js, fjs);
         })(document, 'script', 'tomorrow-sdk');
+
+
+
+        // 광고 클릭 이벤트
+        const $ad = document.querySelector('.ad');
+
+        $ad.addEventListener('click', e => {
+
+
+            if (e.target.matches('ad')) {
+                return;
+            }
+
+            if (e.target.matches('img')) {
+
+                window.open("https://campingcore.co.kr/", "_blank");
+            }
+
+
+        })
+
 
         // 스타포인트값
         const reviewPoint = '${r.reviewPoint}';
