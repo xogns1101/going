@@ -1,6 +1,6 @@
 @import url(./common.css);
 
-/* 
+/* 폰트 쓰세염
 
   font-family: "Yeon Sung", system-ui;
     font-weight: 400;
@@ -647,6 +647,7 @@ section.main-page1 .animated-title .track {
 
 
     border-radius: 20px;
+    cursor: pointer;
 
   }
 
