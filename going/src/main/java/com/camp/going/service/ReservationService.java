@@ -25,20 +25,21 @@ public class ReservationService {
     private final CampingService campingService;
 
 
-    public List<ReservationResponseDTO> getReservationList(int userId) {
-
-        Reservation reservation = reservationMapper.selectReservation(userId);
-
-        List<ReservationResponseDTO> reservationResponseDTOList = new ArrayList<>();
-
-
-
-
-
-
-        return null;
-
-    }
+//    public List<ReservationResponseDTO> getReservationList(int userId) {
+//
+//        Reservation reservation = reservationMapper.selectReservation(userId);
+//
+//        List<ReservationResponseDTO> reservationResponseDTOList = new ArrayList<>();
+//
+//
+//
+//        return null;
+//
+//
+//
+//
+//
+//    }
 
 
     public void getReservation(ReservationRequestDTO dto) {

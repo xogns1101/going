@@ -623,6 +623,10 @@ section.main-page1 .animated-title .track {
 
   section.main-page2 .main-content .best-review .review-box .review-title {
     display: flex;
+    color: black;
+    font-family: "Dongle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
 
   section.main-page2 .main-content .best-review .review-box .camp-name {

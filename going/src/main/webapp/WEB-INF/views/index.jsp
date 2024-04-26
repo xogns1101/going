@@ -158,7 +158,7 @@
                         <img src="/review${r.reviewImage}" alt="최신리뷰" aria-placeholder="등록된 리뷰가 없습니다."><br>
 
                         <div class="review-title">
-                            <li class="camp-name">캠핑장이름</li>
+                            <li class="camp-name">${r.campName}</li>
                             <!-- 별점 시작 -->
                             <li class="star-rating">
                                 <input type="radio" id="5-stars" name="reviewPoint" value="5" readonly />
