@@ -13,7 +13,7 @@ public class ReservationRequestDTO {
 
 
 
-
+    private int campId;
     private String campNumber;
     private LocalDate regDate;
     private LocalDate regDates;
@@ -21,6 +21,7 @@ public class ReservationRequestDTO {
 
     public Reservation toEntity(){
        return  Reservation.builder()
+                .campId(campId)
                 .regDate(regDate)
                 .regDates(regDates)
                 .build();

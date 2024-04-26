@@ -11,6 +11,7 @@ import com.camp.going.entity.Reservation;
 import com.camp.going.entity.User;
 import com.camp.going.service.CampingService;
 import com.camp.going.service.ReservationService;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -54,6 +55,7 @@ public class ReservationController {
     public String reservationDetail(Model model
             , @PathVariable("campId") int campId
             , Reservation reservation
+            , Camping camping
             ){
 
         System.out.println("캠핑장아이디!!!" + campId);
@@ -61,6 +63,10 @@ public class ReservationController {
 
         CampingDetailResponseDTO dto = service.reservationDetail(campId, reservation);
 
+        log.info("확인 : {}", dto.getCampName());
+        log.info("확인 : {}", dto.getCampAddress());
+        log.info("확인 : {}", dto.getCampNumber());
+        log.info("확인 : {}", dto.getCampHomepage());
 
         model.addAttribute("r", dto);
 
@@ -88,10 +94,12 @@ public class ReservationController {
     }
 
     @PostMapping("/reservation-detail/{campId}")
-    public String showMypage(ReservationRequestDTO dto){
-        log.info("/main/reservation-detail/{campId} : Post!!");
+    public String showMypage(ReservationRequestDTO dto, HttpSession session, @PathVariable("campId") int campId) {
+        log.info("/main/reservation-detail/{} : Post!!", campId);
 
-        reservationService.getReservation(dto);
+        dto.setCampId(campId);
+
+        reservationService.getReservation(dto, session);
         log.info("확인 : {}", dto.getRegDate());
         log.info("확인 : {}", dto.getRegDates());
 

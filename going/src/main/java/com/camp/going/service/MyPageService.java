@@ -17,5 +17,13 @@ public class MyPageService {
 
     };
 
+    public MyPage myReservation(long id) {
+
+
+        return myPageMapper.myReservation((int) id);
+
+
+    }
+
 
 }

@@ -75,21 +75,21 @@
                     <div class="Reservation">예약내역</div>
 
                     <div class="Reservationblank1">
-                        <div class="CampName">캠핑장명 : ${r.campName}</div>
+                        <div class="CampName">캠핑장명 : ${c.campName}</div>
                         <i class="fa-solid fa-campground fa-2x"></i>
 
                     </div>
 
                     <div class="Reservationblank2">
-                        <div class="CampDate">예약일자 : ${r.regDate} ~ ${r.regDates}</div>
+                        <div class="CampDate">예약일자 : ${c.regDate} ~ ${c.regDates}</div>
                         <i class="fa-solid fa-calendar-days fa-2x"></i>
 
                     </div>
 
                     <div class="Reservationblank3">
-                        <div class="CampInfo">업체위치 : ${r.campAddress}<br>
-                                              홈페이지 : ${r.campHomepage} <br>
-                                              전화번호 : ${r.campNumber}</div>
+                        <div class="CampInfo">업체위치 : ${c.campAddress}<br>
+                                              홈페이지 : ${c.campHomepage} <br>
+                                              전화번호 : ${c.campNumber}</div>
                         <i class="fa-solid fa-location-dot fa-2x"></i>
 
                     </div>

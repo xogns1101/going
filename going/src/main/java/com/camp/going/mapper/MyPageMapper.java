@@ -19,6 +19,8 @@ public interface MyPageMapper {
 
     List<MyPage> confirmReservation(String email); // 예약 내용 확인
 
+    MyPage myReservation(int userId);
+
 
 
 }

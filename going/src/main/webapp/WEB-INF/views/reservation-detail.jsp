@@ -97,7 +97,7 @@
                 <!-- 예약 하기 -->
 
 
-            <form action="/main/reservation-detail/{campId}" method="post">
+            <form action="/main/reservation-detail/${r.campId}" method="post">
 
                 <input type="hidden" name="name" id="name">
                 <input type="hidden" name="phoneNumber" id="phoneNumber">
