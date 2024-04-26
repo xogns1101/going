@@ -40,11 +40,11 @@ public class MyPageController {
         log.info("user_id : {}", user.getUserId());
         log.info("name : {}", user.getName());
 
-        List<ReservationResponseDTO> reservationList = reservationService.getReservationList(user.getUserId());
+//        List<ReservationResponseDTO> reservationList = reservationService.getReservationList(user.getUserId());
 
 
         model.addAttribute("r", dto);
-        model.addAttribute("r", reservationList);
+//        model.addAttribute("r", reservationList);
 
         return "mypage";
 
