@@ -36,9 +36,10 @@
                             <li class="camping-id">${b.campName}</li>
                             <li class="review-content">${b.reviewContent}</li>
                         </ul>
+                        <c:if test="${login.auth == 'ADMIN' || login.email == b.email}">
                             <button class="review-modify" data-href='/main/review-modify?rno=${b.reviewNo}'>수정</button>
                             <button class="review-delete" data-href="/main/review-delete?rno=${b.reviewNo}">삭제</button>
-                       
+                        </c:if>
                         <div class="star-rating">
                             <input type="radio" name="reviewPoint" value="5" readonly />
                             <label for="5-stars" class="star">&#9733;</label>
