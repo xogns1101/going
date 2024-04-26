@@ -14,7 +14,6 @@ public class ReservationRequestDTO {
 
 
     private int campId;
-    private String campNumber;
     private LocalDate regDate;
     private LocalDate regDates;
 
