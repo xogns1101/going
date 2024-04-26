@@ -67,7 +67,7 @@ public class ReviewController {
         String savePath = FileUtils.uploadFile(dto.getReviewImage(), rootPath);
         log.info("save-path : {}", savePath);
 
-        service.register(dto, savePath);
+        service.register(dto, savePath, session);
 
         return "redirect:/main/review";
 

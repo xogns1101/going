@@ -1,7 +1,9 @@
 section .title h1 {
-  color: black;
+  background: linear-gradient(to right top, #E4FFAA, #4BDB73);
+  color: transparent;
+  -webkit-background-clip: text;
   margin-top: 250px;
-  font-size: 40px;
+  font-size: 80px;
   text-align: center;
   font-family: "Luckiest Guy", cursive;
   font-weight: 400;
@@ -9,10 +11,14 @@ section .title h1 {
 }
 
 section .title h1 span {
-  color: black;
+
+  background: linear-gradient(to right top, #E4FFAA, #4BDB73);
+  color: transparent;
+  -webkit-background-clip: text;
   font-family: "Yeon Sung", system-ui;
   font-weight: 400;
   font-style: normal;
+  font-size: 80px;
 }
 
 
