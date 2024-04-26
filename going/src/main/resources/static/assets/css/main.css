@@ -326,6 +326,8 @@ section.main-page1 .animated-title .track {
     transform: translateY(calc(100% - 8rem));
   }
 
+}
+
 
 
   /* best-camping */
@@ -353,10 +355,10 @@ section.main-page1 .animated-title .track {
     align-items: center;
     justify-content: center;
 
-    
-    
+
+
   }
-  
+
   .main-content .best-camping {
     position: relative;
     width: 100%;
@@ -452,7 +454,7 @@ section.main-page1 .animated-title .track {
     -webkit-background-clip: text;
     display: block;
     margin-bottom: 150px;
-    
+
   }
 
   section.main-page0 div {
@@ -502,12 +504,13 @@ section.main-page1 .animated-title .track {
     }
   } */
 
-  
+
 
   section.main-page0 div:nth-child(2) {
     background-color: red;
     background-image: url("../img/camp6.jpg");
   }
+
   section.main-page0 div:nth-child(3) {
     background-color: purple;
     background-image: url("../img/camp7.jpg");
@@ -553,7 +556,7 @@ section.main-page1 .animated-title .track {
 
 
 
-  
+
 
 
 
@@ -589,15 +592,11 @@ section.main-page1 .animated-title .track {
 
 
 
-  section.main-page2 .main-content .best-review .review-box {
-    width: 500px;
-    height: 600px;
-    background: #fff;
-    margin-top: 50px;
-    border-radius: 3%;
 
 
-  }
+
+
+  /* 최신 리뷰 */
 
   section.main-page2 .main-content h1 {
     color: #a1a1a1;
@@ -605,15 +604,73 @@ section.main-page1 .animated-title .track {
     font-size: 40px;
   }
 
+  
+  section.main-page2 .main-content .best-review .review-box {
+    width: 500px;
+    height: 700px;
+    background: #fff;
+    color: black;
+    margin-top: 50px;
+    border-radius: 3%;
+
+    font-family: "Dongle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+
+    position: relative;
+  }
+
+  section.main-page2 .main-content .best-review .review-box .review-title {
+    display: flex;
+  }
+
+  section.main-page2 .main-content .best-review .review-box .camp-name {
+    width: 48%;
+    margin: 25px;
+    font-size: 40px;
+  }
+
+  section.main-page2 .main-content .best-review .review-box img {
+    width: 465px;
+    height: 340px;
+
+    position: relative;
+    top: 18px;
+    left: 18px;
+  }
+
+
+
+  section.main-page2 .main-content .best-review .review-box .review-content {
+    width: 465px;
+    height: 200px;
+    font-size: 36px;
+    margin: 0px auto;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+
+
+    /* 별점 보기*/
+
+
   .star-rating {
     display: flex;
+    width: 38%;
     flex-direction: row-reverse;
     font-size: 2.25rem;
+    text-align: center;
     line-height: 2.5rem;
     justify-content: flex-end;
+    align-items: center;
     padding-left: 18px;
-    text-align: center;
-    width: 5em;
+
+    font-family: "Yeon Sung", system-ui;
+    font-weight: 400;
+    font-style: normal;
   }
 
   .star-rating input {
@@ -625,125 +682,22 @@ section.main-page1 .animated-title .track {
     /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 2.3px;
     -webkit-text-stroke-color: #2b2a29;
-    cursor: pointer;
   }
 
   .star-rating :checked~label {
     -webkit-text-fill-color: gold;
   }
 
-  .star-rating label:hover,
+  /* .star-rating label:hover,
   .star-rating label:hover~label {
     -webkit-text-fill-color: #fff58c;
-  }
-
-
-  section.main-page2 .main-content .best-review .review-box .review-content {
-    width: 465px;
-    height: 200px;
-    font-size: 28px;
-    font-family: "Yeon Sung", system-ui;
-    font-weight: 400;
-    font-style: normal;
-
-  }
-
-
-  section.main-page2 .main-content .best-review .reivew {
-    display: flex;
-  }
-
-  section.main-page2 .main-content .best-review .review-box {
-    width: 500px;
-    height: 700px;
-    background: #fff;
-    margin-top: 50px;
-    border-radius: 3%;
-
-
-    position: relative;
-  }
-
-  /* 별점 보기*/
-
-  section.main-page2 .main-content .best-review .star-rating {
-    top: 400px;
-    left: 15px;
-    position: relative;
-  }
-
-  section.main-page2 .main-content .best-review .review-box .review-content {
-    width: 465px;
-    height: 200px;
-    font-size: 28px;
-    font-family: "Yeon Sung", system-ui;
-    font-weight: 400;
-    font-style: normal;
-
-    top: 400px;
-    left: 15px;
-    position: relative;
-
-  }
-
-  section.main-page2 .main-content .best-review .review-box img {
-    width: 465px;
-    height: 365px;
-
-    position: absolute;
-    top: 18.5px;
-    left: 18.5px;
-  }
-
-  section.main-page2 .main-content .best-review .review-box .review li:nth-child(3) {
-    position: absolute;
-    bottom: 120px;
-    right: 30px;
-    height: 200px;
-    margin-top: 50px;
-    font-size: 24px;
-    padding-left: 12px;
-  }
-
-  section.main-page2 .main-content .best-review .review-box .review {
-    color: black;
-    font-family: "Yeon Sung", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    width: 465px;
-
-
-  }
+  } */
 
 
 
-  section.main-page2 .main-content .best-review .review-box .review li:first-child {
-    font-size: 30px;
-    text-decoration: underline;
-    position: absolute;
+ 
 
-    left: 18.5px;
-    left: 18.5px;
-    bottom: 140px;
-
-  }
-
-  section.main-page2 .main-content .best-review .review-box .review li:nth-child(2) {
-    font-size: 20px;
-    position: absolute;
-
-    left: 18.5px;
-    right: 18.5px;
-    bottom: 40px;
-  }
-
-  section.main-page2 .main-content .best-review .review-box .review li:nth-child(3) {
-    font-size: 50px;
-    position: absolute;
-
-    bottom: 120px;
-    right: 30px;
-  }
+/* 광고 */
 
 
 
@@ -925,4 +879,3 @@ section.main-page1 .animated-title .track {
   /* footer .go-top {
     display: none;
   } */
-}

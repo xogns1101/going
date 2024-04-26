@@ -151,26 +151,32 @@
             <div class="best-review">
                 <h1>NEW REVIEW</h1>
                 <div class="review-box">
-                    <img src="/review${r.reviewImage}" alt="최신리뷰" aria-placeholder="등록된 리뷰가 없습니다."><br>
                     <ul class="review">
                         <input type="hidden" name="rno" value="${r.reviewNo}">
-                        <li class="camp-name">${r.campName}</li>
-                        <li class="review-content">${r.reviewContent}</li>
                         <li class="review-views"></li>
-                        <li class="star-rating">
-                            <input type="radio" id="5-stars" name="reviewPoint" value="5" readonly />
-                            <label for="5-stars" class="star">&#9733;</label>
-                            <input type="radio" id="4-stars" name="reviewPoint" value="4" readonly />
-                            <label for="4-stars" class="star">&#9733;</label>
-                            <input type="radio" id="3-stars" name="reviewPoint" value="3" readonly />
-                            <label for="3-stars" class="star">&#9733;</label>
-                            <input type="radio" id="2-stars" name="reviewPoint" value="2" readonly />
-                            <label for="2-stars" class="star">&#9733;</label>
-                            <input type="radio" id="1-stars" name="reviewPoint" value="1" readonly />
-                            <label for="1-stars" class="star">&#9733;</label>
-                        </li>
 
-                        <input type="hidden" name="starPoint" id="starPoint" value="${r.reviewPoint}">
+                        <img src="/review${r.reviewImage}" alt="최신리뷰" aria-placeholder="등록된 리뷰가 없습니다."><br>
+
+                        <div class="review-title">
+                            <li class="camp-name">캠핑장이름</li>
+                            <!-- 별점 시작 -->
+                            <li class="star-rating">
+                                <input type="radio" id="5-stars" name="reviewPoint" value="5" readonly />
+                                <label for="5-stars" class="star">&#9733;</label>
+                                <input type="radio" id="4-stars" name="reviewPoint" value="4" readonly />
+                                <label for="4-stars" class="star">&#9733;</label>
+                                <input type="radio" id="3-stars" name="reviewPoint" value="3" readonly />
+                                <label for="3-stars" class="star">&#9733;</label>
+                                <input type="radio" id="2-stars" name="reviewPoint" value="2" readonly />
+                                <label for="2-stars" class="star">&#9733;</label>
+                                <input type="radio" id="1-stars" name="reviewPoint" value="1" readonly />
+                                <label for="1-stars" class="star">&#9733;</label>
+                            </li>
+                            <input type="hidden" name="starPoint" id="starPoint" value="${r.reviewPoint}">
+                            <!-- 별점 끝 -->
+                        </div>
+
+                        <li class="review-content">${r.reviewContent}</li>
                     </ul>
 
 
