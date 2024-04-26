@@ -16,6 +16,13 @@
     font-style: normal;
   } */
 
+body {
+  background-image: url(../img/tree5.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 section .bigBox {
   width: 100%;
   display: flex;
@@ -100,6 +107,8 @@ section .review-list .review-box {
   position: relative;
 }
 
+
+
 .review-list .review-box .star-rating {
   display: flex;
   flex-direction: row-reverse;
@@ -135,12 +144,15 @@ section .review-list .review-box .review li:first-child {
 }
 
 section .review-list .review-box .review li:nth-child(2) {
-  font-size: 20px;
   position: absolute;
-
-  top: 80px;
-  right: 18.5px;
+    top: 15px;
+    right: 25px;
+    font-family: "Dongle", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    
 }
+
 
 
 section .review-list .review-box ul img {
@@ -157,14 +169,17 @@ section .review-list .review-box ul img {
 
 
 section .review-list .review-box .review li:last-child {
-  font-size: 30px;
+   font-size: 30px;
     position: absolute;
     width: 440px;
     height: 150px;
     /* background: red; */
-    top: 370px;
+    top: 380px;
     bottom: 5px;
     left: 30px;
+    font-family: "Dongle", sans-serif;
+    font-size: 34px;
+    font-style: normal;
 }
 
 section .review-list .review-box .review-modify {

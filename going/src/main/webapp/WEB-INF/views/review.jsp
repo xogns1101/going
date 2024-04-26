@@ -33,23 +33,25 @@
                             <!-- <li class="camp-name">${b.campName}</li>
                             <li class="email">${b.email}</li> -->
                             <img src="/review${b.reviewImage}" alt="리뷰">
+                            <li class="camping-id">${b.campName}</li>
                             <li class="review-content">${b.reviewContent}</li>
                         </ul>
-                        <button class="review-modify">수정</button>
-                        <button class="review-delete" data-href="/main/review-delete?rno=${b.reviewNo}">삭제</button>     
+                            <button class="review-modify" data-href='/main/review-modify?rno=${b.reviewNo}'>수정</button>
+                            <button class="review-delete" data-href="/main/review-delete?rno=${b.reviewNo}">삭제</button>
+                       
                         <div class="star-rating">
-                            <input type="radio" name="reviewPoint" value="5" readonly/>
+                            <input type="radio" name="reviewPoint" value="5" readonly />
                             <label for="5-stars" class="star">&#9733;</label>
-                            <input type="radio" name="reviewPoint" value="4" readonly/>
+                            <input type="radio" name="reviewPoint" value="4" readonly />
                             <label for="4-stars" class="star">&#9733;</label>
-                            <input type="radio" name="reviewPoint" value="3" readonly/>
+                            <input type="radio" name="reviewPoint" value="3" readonly />
                             <label for="3-stars" class="star">&#9733;</label>
-                            <input type="radio" name="reviewPoint" value="2" readonly/>
+                            <input type="radio" name="reviewPoint" value="2" readonly />
                             <label for="2-stars" class="star">&#9733;</label>
-                            <input type="radio" name="reviewPoint" value="1" readonly/>
-                            <label for="1-stars" class="star">&#9733;</label>         
+                            <input type="radio" name="reviewPoint" value="1" readonly />
+                            <label for="1-stars" class="star">&#9733;</label>
                         </div>
-                        <input type="hidden" name="starPoint" id="starPoint" value="${b.reviewPoint}">      
+                        <input type="hidden" name="starPoint" id="starPoint" value="${b.reviewPoint}">
                     </div>
                 </div>
 
@@ -63,8 +65,7 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination pagination-lg pagination-custom">
                     <c:if test="${marker.page.pageNo != 1}">
-                        <li><a 
-                                href="/main/review?pageNo=1&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
+                        <li><a href="/main/review?pageNo=1&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
                         </li>
                     </c:if>
                     <c:if test="${marker.prev}">
@@ -73,17 +74,15 @@
                     </c:if>
                     <c:forEach var="i" begin="${marker.begin}" end="${marker.end}">
                         <li data-page-num="${i}">
-                            <a
-                                href="/main/review?pageNo=${i}&type=${s.type}&keyword=${s.keyword}">${i}</a>
+                            <a href="/main/review?pageNo=${i}&type=${s.type}&keyword=${s.keyword}">${i}</a>
                         </li>
                     </c:forEach>
                     <c:if test="${marker.next}">
-                        <li><a 
-                                href="/main/review?pageNo=${marker.end+1}&type=${s.type}&keyword=${s.keyword}">next</a>
+                        <li><a href="/main/review?pageNo=${marker.end+1}&type=${s.type}&keyword=${s.keyword}">next</a>
                         </li>
                     </c:if>
                     <c:if test="${marker.page.pageNo != marker.finalPage}">
-                        <li><a 
+                        <li><a
                                 href="/main/review?pageNo=${marker.finalPage}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
                         </li>
                     </c:if>
@@ -105,8 +104,6 @@
 
 
     <script>
-
-
         // 리뷰 작성 버튼을 눌렀을때 리뷰 등록 페이지로 이동시키기
         const writeButton = document.querySelector('.write-button');
 
@@ -118,10 +115,9 @@
             });
         }
 
-        // 리뷰 수정 버튼을 눌렀을때 리뷰 수정 페이지로 이동시키기
 
+        // 리뷰 수정 삭제 진행시키기
 
-        // 삭제 버튼을 눌렀을때 리뷰 삭제 진행시키기
 
 
         const $btn = document.querySelector('.bigBox');
@@ -173,7 +169,7 @@
 
         const $reviewList = [...$btn.children];
         console.log($reviewList);
-        
+
         $reviewList.forEach($review => {
 
             const $starPoint = $review.firstElementChild.lastElementChild;
@@ -183,19 +179,11 @@
             const $starLabel = [...$starRating.querySelectorAll('label')].reverse();
             console.log($starLabel);
 
-            for (let i=0; i<+$starPoint.value; i++) {   
+            for (let i = 0; i < +$starPoint.value; i++) {
                 $starLabel[i].style.webkitTextFillColor = "gold";
             }
 
         });
-
-
-
-        
-
-        
-
-
     </script>
 
 
