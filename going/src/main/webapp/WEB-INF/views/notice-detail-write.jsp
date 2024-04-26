@@ -67,7 +67,7 @@
 
                                     <!-- 제목 -->
                                     <td>
-                                        <input type="text" id="title" name="noticeTitle" required placeholder="제목" maxlength="12">
+                                        <input type="text" id="title" name="noticeTitle" required placeholder="제목" maxlength="20">
                                     </td>
 
                                     <!-- 내용 -->

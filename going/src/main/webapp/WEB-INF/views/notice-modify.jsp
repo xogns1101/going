@@ -73,7 +73,7 @@
 
                            <td>
                               <input type="text" id="title" name="noticeTitle" required placeholder="제목"
-                                 maxlength="12" value="${notice.noticeTitle}">
+                                 maxlength="20" value="${notice.noticeTitle}">
                            </td>
 
                            <textarea id="content" name="noticeContent" maxlength="1000" required
