@@ -5,7 +5,11 @@ import com.camp.going.dto.request.KakaoSignUpRequestDTO;
 import com.camp.going.dto.request.LoginRequestDTO;
 import com.camp.going.dto.request.SignUpRequestDTO;
 import com.camp.going.dto.response.LoginUserResponseDTO;
+import com.camp.going.entity.Camping;
+import com.camp.going.entity.Reservation;
 import com.camp.going.entity.User;
+import com.camp.going.mapper.CampingMapper;
+import com.camp.going.mapper.ReservationMapper;
 import com.camp.going.mapper.UserMapper;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,6 +29,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.WebUtils;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
 
 import static com.camp.going.service.LoginResult.*;
@@ -37,6 +42,8 @@ public class UserService {
 
     private final UserMapper userMapper;
     private final PasswordEncoder encoder;
+    private final CampingMapper campingMapper;
+    private final ReservationMapper reservationMapper;
 
     public LoginResult authenticate(LoginRequestDTO dto,
                                     HttpSession session,
@@ -112,14 +119,23 @@ public class UserService {
 
         // 현재 로그인한 회원의 모든 정보 조회
         User oneUser = userMapper.findUser(email.trim());
+     //   Camping oneCamping = campingMapper.findOneCamping();
+//        Reservation reservation = reservationMapper.findReservation();
 
         // DB 데이터를 보여줄 것만 정제
         LoginUserResponseDTO dto = LoginUserResponseDTO.builder()
+                .id(oneUser.getUserId())
                 .email(oneUser.getEmail())
                 .phoneNumber(oneUser.getPhoneNumber())
                 .name(oneUser.getName())
                 .auth(oneUser.getAuth())
                 .loginMethod(oneUser.getLoginMethod().toString())
+//                .campName(oneCamping.getCampName())
+//                .campAddress(oneCamping.getCampAddress())
+//                .campHomepage(oneCamping.getCampHomepage())
+//                .campNumber(oneCamping.getCampNumber())
+//                .regDate(String.valueOf(reservation.getRegDate()))
+//                .regDates(String.valueOf(reservation.getRegDates()))
                 .build();
 
         // 세션에 로그인한 회원 정보를 저장
@@ -130,6 +146,42 @@ public class UserService {
 
 
     }
+
+
+//    public void userInfo(HttpSession session, String email, int campId, int reservationNumber) {
+//
+//        log.info("이메일: {}", email);
+//
+//        // 현재 로그인한 회원의 모든 정보 조회
+//        User oneUser = userMapper.findUser(email.trim());
+//        Camping oneCamping = campingMapper.findCamping(campId);
+//        Reservation reservation = reservationMapper.findReservation(reservationNumber);
+//
+//        // DB 데이터를 보여줄 것만 정제
+//        LoginUserResponseDTO dto = LoginUserResponseDTO.builder()
+//                .id(oneUser.getUserId())
+//                .email(oneUser.getEmail())
+//                .phoneNumber(oneUser.getPhoneNumber())
+//                .name(oneUser.getName())
+//                .auth(oneUser.getAuth())
+//                .loginMethod(oneUser.getLoginMethod().toString())
+//                .campId(oneCamping.getCampId())
+//                .campName(oneCamping.getCampName())
+//                .campAddress(oneCamping.getCampAddress())
+//                .campHomepage(oneCamping.getCampHomepage())
+//                .campNumber(oneCamping.getCampNumber())
+//                .regDate(String.valueOf(reservation.getRegDate()))
+//                .regDates(String.valueOf(reservation.getRegDates()))
+//                .build();
+//
+//        // 세션에 로그인한 회원 정보를 저장
+//        session.setAttribute(LOGIN_KEY, dto);
+//        // 세션 수명 설정
+//        session.setMaxInactiveInterval(60 * 60); // 1시간
+//
+//
+//
+//    }
 
     public void autoLoginClear(HttpServletRequest request, HttpServletResponse response) {
 
@@ -191,5 +243,10 @@ public class UserService {
         return user;
 
     }
+
+    public User getUserById(int userId){
+        return userMapper.selectUserById(userId);
+    }
+
 }
 

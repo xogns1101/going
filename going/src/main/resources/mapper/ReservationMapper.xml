@@ -27,6 +27,26 @@
 
     </insert>
 
+    <select id="selectReservation" resultType="reservation">
+
+        SELECT
+
+            reservation_number
+            , user_id
+            , camp_id
+            , reg_date
+            , reg_dates
+
+        FROM
+
+            reservation
+
+        ORDER BY
+
+        user_id = #{userId};
+
+    </select>
+
     <select id="reservationCamping" resultType="reservation">
 
         SELECT
@@ -44,6 +64,22 @@
 
     </select>
 
+
+    <select id="findReservation" resultType="reservation"
+            parameterType="map">
+
+        SELECT
+            reservation_number
+            , user_id
+            , camp_id
+            , reg_date
+            , reg_dates
+        FROM
+            reservation
+        WHERE
+            reservation_number = #{reservationNumber}
+
+    </select>
 
 
     <delete id="delete">

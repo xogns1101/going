@@ -11,7 +11,9 @@ import java.time.LocalDateTime;
 @Builder
 public class MyPage {
 
+
     // 회원 정보
+    private int userId;
     private String name;
     private String phoneNumber;
     private String email;

@@ -17,6 +17,8 @@ public interface CampingMapper {
     // 단일 정보 조회
     Camping findCamping(int campId);
 
+    Camping findOneCamping();
+
     // 캠핑 전체 조회
     List<Camping> findAllCamping(Search page);
 
@@ -29,6 +31,8 @@ public interface CampingMapper {
 
     // 상세 조회
     Camping findOne(int campId);
+
+    Camping selectCampingById(int campId);
 
 
 

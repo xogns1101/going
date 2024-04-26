@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode
 public class MyPageResponseDTO {
 
+    private int userId;
     private String name;
     private String phoneNumber;
     private String email;
@@ -19,6 +20,7 @@ public class MyPageResponseDTO {
     private String campImage;
 
     public MyPageResponseDTO(MyPage myPage) {
+        this.userId = myPage.getUserId();
         this.name = myPage.getName();
         this.phoneNumber = myPage.getPhoneNumber();
         this.email = myPage.getEmail();

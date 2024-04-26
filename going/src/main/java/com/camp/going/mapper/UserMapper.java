@@ -29,5 +29,5 @@ public interface UserMapper {
      */
     boolean isDuplicate(@Param("type") String type, @Param("keyword") String keyword);
 
-
+    User selectUserById(int userId);
 }
