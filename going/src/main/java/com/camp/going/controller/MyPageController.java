@@ -35,9 +35,7 @@ public class MyPageController {
 
 
     @GetMapping("/mypage")
-    public String showMypage(Model model, HttpSession session, User user, Reservation reservation){
-
-
+    public String showMypage(Model model, HttpSession session, User user){
 
         LoginUserResponseDTO dto = (LoginUserResponseDTO) session.getAttribute("login");
         user.setUserId((int) dto.getId());
