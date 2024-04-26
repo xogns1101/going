@@ -20,20 +20,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 public class EtcController {
 
-    @Value("${file.upload.root-path}")
-    private String rootPath;
-
     private final ReviewService reviewService;
 
+    @Value("${file.upload.root-path}")
+    private String rootPath;
 
     // 메인화면 이동하기
     @GetMapping("")
     public String main(Model model) {
         log.info("/main: GET");
 
-        ReviewResponseDTO dto = reviewService.bestReview();
+        Review review = reviewService.bestReview();
 
-        model.addAttribute("r", dto);
+        model.addAttribute("r", review);
 
         return "index";
     }

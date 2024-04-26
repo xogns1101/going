@@ -21,12 +21,12 @@ class ReviewMapperTest {
     ReviewMapper reviewMapper;
 
     @Test
-    @DisplayName("공지사항 200개 작성하기")
+    @DisplayName("리뷰 200개 작성하기")
     void ReviewInsertTest() {
         // given
-        for (int i = 1; i <= 20; i++) {
+        for (int i = 1; i <= 200; i++) {
             Review review = new Review();
-            review.setReviewContent("공지사항 " + i + "번 내용 테스트");
+            review.setReviewContent("리뷰 " + i + "번 내용 테스트");
             review.setEmail("");
             review.setCampId(1);
             review.setReviewImage("");
