@@ -22,21 +22,18 @@
 
     <section class="main-page1">
 
-        <div class="animated-title">
-            <c:if test="${login != null}">
-                <div class="track">
-                    <div class="content">⛺공지&nbsp;&nbsp;&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;&nbsp;&nbsp;${login.name}님 캠핑은 어떠셨나요~?&nbsp;&nbsp;&nbsp;공지사항 필수로 확인해주세요~&nbsp;&nbsp;⛺공지&nbsp;&nbsp;&nbsp;야가자캠핑에 오신것을
-                        환영합니다!&nbsp;&nbsp;&nbsp;${login.name}님 캠핑은 어떠셨나요~?&nbsp;&nbsp;&nbsp;공지사항 필수로
-                        확인해주세요~&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;</div>
-                </div>
-            </c:if>
-        </div>
-
         
-
-
-
         <div class="main-content">
+            <div class="animated-title">
+                <c:if test="${login != null}">
+                    <div class="track">
+                        <div class="content">⛺공지&nbsp;&nbsp;&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;&nbsp;&nbsp;${login.name}님 캠핑은 어떠셨나요~?&nbsp;&nbsp;&nbsp;공지사항 필수로 확인해주세요~&nbsp;&nbsp;⛺공지&nbsp;&nbsp;&nbsp;야가자캠핑에 오신것을
+                            환영합니다!&nbsp;&nbsp;&nbsp;${login.name}님 캠핑은 어떠셨나요~?&nbsp;&nbsp;&nbsp;공지사항 필수로
+                            확인해주세요~&nbsp;야가자캠핑에 오신것을 환영합니다!&nbsp;</div>
+                    </div>
+                </c:if>
+            </div>
+
             <h1>CAMPING OF THE MONTH</h1>
             <div class="best-camping">
                 <div class="main-img">

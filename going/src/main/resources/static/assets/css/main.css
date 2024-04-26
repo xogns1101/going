@@ -1,6 +1,6 @@
 @import url(./common.css);
 
-  /* 
+/* 
 
   font-family: "Yeon Sung", system-ui;
     font-weight: 400;
@@ -18,323 +18,327 @@
     
     */
 
-  body {
-    font-size: 15px;
-    color: #fff;
-    font-family: "Luckiest Guy", cursive;
-    font-weight: 400;
-    font-style: normal;
+body {
+  font-size: 15px;
+  color: #fff;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+/* header style */
+
+header {
+  background: #4BDB73;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  z-index: 50;
+}
+
+header #wrap {
+  /* border: black solid 1px; */
+  display: flex;
+  position: relative;
+
+
+}
+
+header .logo {
+  /* border: red solid 1px; */
+  font-size: 60px;
+  margin: auto 50px;
+  color: #fff;
+  flex-grow: 1.5;
+  display: flex;
+
+}
+
+header .logo a {
+  color: white;
+  margin-right: auto;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+header .logo-content {
+  /* border: yellow solid 1px; */
+  display: flex;
+  flex-grow: 4;
+  margin-top: 30px;
+  font-size: 25px;
+  width: 64%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header .logo-content a {
+  color: black;
+  margin-right: 50px;
+  margin-left: 0px;
+
+
+}
+
+header .logo-content a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+header .login p {
+  /* border: blue solid 1px; */
+  /* position: absolute;
+    right: 60px;
+    bottom: 10px; */
+  margin: auto 0;
+  flex-grow: 0.5;
+  width: 4%;
+  align-items: center;
+}
+
+header .login {
+  font-size: 28px;
+  margin-top: 18px;
+  margin-right: 50px;
+  animation: waviy 1s infinite;
+  animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes waviy {
+
+  0%,
+  40%,
+  100% {
+    transform: translateY(0)
   }
 
-
-
-  /* header style */
-
-  header {
-    background: #4BDB73;
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    height: 100px;
-    top: 0;
-    z-index: 50;
+  20% {
+    transform: translateY(-20px)
   }
-
-  header #wrap {
-    /* border: black solid 1px; */
-    display: flex;
-    position: relative;
+}
 
 
-  }
 
+header .login a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+
+
+header .logout {
+  margin: auto 30px;
+  flex-flow: 1;
+  width: 9%;
+  height: 60%;
+  text-align: center;
+  border-color: #fefefe;
+  border-radius: 5px;
+}
+
+header .logout h1 {
+  color: #fff;
+  font-size: 18px;
+  font-family: "Yeon Sung", system-ui;
+  font-weight: 200;
+  font-style: normal;
+
+  text-align: center;
+}
+
+header .logout h1 span {
+  font-weight: 400;
+  font-size: 25px;
+}
+
+header .logout a {
+  font-size: 23px;
+  margin: 2px;
+  text-align: right;
+}
+
+header .logout a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+/* 우측 메뉴 */
+header .menu-open {
+  display: none;
+  font-size: 50px;
+  margin-right: 40px;
+}
+
+header .menu-open:hover {
+  cursor: pointer;
+}
+
+header .gnb {
+  background-color: #81f3a1;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 40px;
+  height: 100vh;
+
+  position: fixed;
+  right: -140%;
+  top: 0;
+
+  display: flex;
+  flex-direction: row-reverse;
+
+  transition: 0.8s;
+}
+
+header .gnb.open {
+  right: 0;
+}
+
+header .gnb .close {
+  color: white;
+  font-size: 50px;
+  margin-left: 50px;
+}
+
+header .gnb .close:hover {
+  cursor: pointer;
+}
+
+header .gnb ul {
+  line-height: 2.6;
+  letter-spacing: 2px;
+  margin-top: 100px;
+}
+
+header .gnb ul li:hover,
+header .gnb ul li.active {
+  color: white;
+}
+
+@media (max-width: 1024px) {
   header .logo {
-    /* border: red solid 1px; */
-    font-size: 60px;
-    margin: auto 50px;
-    color: #fff;
-    flex-grow: 1.5;
-    display: flex;
-
-  }
-
-  header .logo a {
-    color: white;
-    margin-right: auto;
-    font-weight: 100;
-    text-decoration: none;
+    font-size: 36px;
+    margin-top: 10px;
   }
 
   header .logo-content {
-    /* border: yellow solid 1px; */
-    display: flex;
-    flex-grow: 4;
-    margin-top: 30px;
-    font-size: 25px;
-    width: 64%;
-    justify-content: space-around;
-    align-items: center;
+    font-size: 20px;
   }
 
-  header .logo-content a {
-    color: black;
-    margin-right: 50px;
-    margin-left: 0px;
+  header .login a {
+    font-size: 20px;
+  }
+}
 
+@media (max-width: 768px) {
 
+  header .logo {
+    font-size: 36px;
   }
 
-  header .logo-content a:hover {
-    color: #fff;
-    text-decoration: none;
-  }
-
-  header .login p {
-    /* border: blue solid 1px; */
-    /* position: absolute;
-    right: 60px;
-    bottom: 10px; */
-    margin: auto 0;
-    flex-grow: 0.5;
-    width: 4%;
-    align-items: center;
+  header .logo-content {
+    display: none;
   }
 
   header .login {
-    font-size: 28px;
-    margin-top: 18px;
-    margin-right: 50px;
-    animation: waviy 1s infinite;
-    animation-delay: calc(.1s * var(--i));
-  }
-
-  @keyframes waviy {
-
-    0%,
-    40%,
-    100% {
-      transform: translateY(0)
-    }
-
-    20% {
-      transform: translateY(-20px)
-    }
-  }
-
-
-
-  header .login a:hover {
-    color: black;
-    text-decoration: none;
-  }
-
-
-
-  header .logout {
-    margin: auto 30px;
-    flex-flow: 1;
-    width: 9%;
-    height: 60%;
-    text-align: center;
-    border-color: #fefefe;
-    border-radius: 5px;
-  }
-
-  header .logout h1 {
-    color: #fff;
-    font-size: 18px;
-    font-family: "Yeon Sung", system-ui;
-    font-weight: 200;
-    font-style: normal;
-
-    text-align: center;
-  }
-
-  header .logout h1 span {
-    font-weight: 400;
-    font-size: 25px;
-  }
-
-  header .logout a {
-    font-size: 23px;
-    margin: 2px;
-    text-align: right;
-  }
-
-  header .logout a:hover {
-    color: black;
-    text-decoration: none;
-  }
-
-
-
-
-
-
-
-  /* 우측 메뉴 */
-  header .menu-open {
     display: none;
-    font-size: 50px;
-    margin-right: 40px;
   }
 
-  header .menu-open:hover {
-    cursor: pointer;
+  header .menu-open {
+    display: block;
   }
 
-  header .gnb {
-    background-color: #81f3a1;
-    color: black;
-    font-weight: bold;
-    font-size: 20px;
-    padding: 20px 40px;
-    height: 100vh;
+}
 
-    position: fixed;
-    right: -140%;
-    top: 0;
 
-    display: flex;
-    flex-direction: row-reverse;
 
-    transition: 0.8s;
+
+/*  main page style */
+
+
+
+/* 로그인시 상단 공지바 */
+section.main-page1 .main-content {
+  width: 100%;
+  height: 100%;
+  font-size: 60px;
+  text-align: center;
+  background-image: url(../img/tree5.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 200px;
+  padding-top: 100px;
+}
+
+
+section.main-page1 .animated-title {
+  color: #fefefe;
+  font-size: 40px;
+  font-family: "Dongle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: 300;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-top: 90px;
+}
+
+section.main-page1 .animated-title .track {
+
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 60s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
   }
 
-  header .gnb.open {
-    right: 0;
+  to {
+    transform: translateX(-50%);
   }
+}
 
-  header .gnb .close {
-    color: white;
-    font-size: 50px;
-    margin-left: 50px;
+@media (hover: hover) and (min-width: 700px) {
+
+  section.main-page1 .animated-title .content {
+
+    background: #fac562;
+    -webkit-transform: translateY(calc(100% - 8rem));
+    transform: translateY(calc(100% - 8rem));
   }
-
-  header .gnb .close:hover {
-    cursor: pointer;
-  }
-
-  header .gnb ul {
-    line-height: 2.6;
-    letter-spacing: 2px;
-    margin-top: 100px;
-  }
-
-  header .gnb ul li:hover,
-  header .gnb ul li.active {
-    color: white;
-  }
-
-  @media (max-width: 1024px) {
-    header .logo {
-      font-size: 36px;
-      margin-top: 10px;
-    }
-
-    header .logo-content {
-      font-size: 20px;
-    }
-
-    header .login a {
-      font-size: 20px;
-    }
-  }
-
-  @media (max-width: 768px) {
-
-    header .logo {
-      font-size: 36px;
-    }
-
-    header .logo-content {
-      display: none;
-    }
-
-    header .login {
-      display: none;
-    }
-
-    header .menu-open {
-      display: block;
-    }
-
-  }
-
-
-
-
-  /*  main page style */
-
-  section.main-page1 .animated-title {
-    margin-top: 100px;
-    color: coral;
-    font-size: 40px;
-    font-family: "Dongle", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-weight: 300;
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    padding: 100px 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-
-  section.main-page1 .animated-title .track {
-
-    position: absolute;
-    white-space: nowrap;
-    will-change: transform;
-    animation: marquee 60s linear infinite;
-  }
-
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-
-    to {
-      transform: translateX(-50%);
-    }
-  }
-
-  @media (hover: hover) and (min-width: 700px) {
-
-    section.main-page1 .animated-title .content {
-
-      background: wheat;
-      -webkit-transform: translateY(calc(100% - 8rem));
-      transform: translateY(calc(100% - 8rem));
-    }
-
-
-
 
 
 
 
 
   /* best-camping */
-  section.main-page1 .main-content {
-    width: 100%;
-    height: 100%;
-    font-size: 60px;
-    text-align: center;
-    padding-top: 200px;
-    background-image: url(../img/tree5.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    padding-bottom: 200px;
-  }
+
 
   section.main-page1 .main-content h1 {
-    background: linear-gradient(to right top, #45cf6f, #d42b1b);
+    background: linear-gradient(to right top, #fdf01f, #ff2a16);
     color: transparent;
     -webkit-background-clip: text;
+
+    margin-top: 50px;
 
   }
 
@@ -346,26 +350,32 @@
     height: 80%;
     display: flex;
     justify-content: space-around;
-    margin: 70px auto;
+    margin: 0 auto;
 
     align-items: center;
     justify-content: center;
 
-    position: relative;
     
-
+    
+  }
+  
+  .main-content .best-camping {
+    position: relative;
+    width: 100%;
+    margin-top: 80px;
   }
 
   .main-content .best-camping p {
     font-family: "Dongle", sans-serif;
     font-weight: 700;
     font-style: normal;
+    font-size: 70px;
     margin: 0 auto;
-    background: #ffd484;
-    width: 300px;
+    background: #fac56252;
+    width: 500px;
     height: 300px;
     color: #ffffff;
-    border-radius: 50%;
+    border-radius: 20px;
     border-style: groove;
     border-color: yellow;
     text-align: center;
@@ -376,14 +386,14 @@
 
 
     position: absolute;
-    top: 70%;
-    left: 51%;
-    transform: translate(-50%, -50%);
-
+    top: 30%;
+    left: 39%;
     opacity: 0;
+    transform: scale(0.5);
   }
 
   .main-content .best-camping:hover p {
+    transform: scale(1.2);
     transition: 0.5s;
     opacity: 1;
   }
@@ -438,17 +448,17 @@
     padding-top: 160px;
     padding-bottom: 160px;
   }
-  
+
 
   /* 날씨 */
 
   section.main-page2 .main-content .weather {
-  margin: 0 100px;
-  top: 60px;
-  left: 18.5px;
+    margin: 0 100px;
+    top: 60px;
+    left: 18.5px;
   }
 
-  
+
   section.main-page2 .main-content .tomorrow {
     width: 500px;
     height: 600px;
@@ -472,6 +482,7 @@
     text-align: center;
     font-size: 40px;
   }
+
   .star-rating {
     display: flex;
     flex-direction: row-reverse;
@@ -561,14 +572,15 @@
     top: 18.5px;
     left: 18.5px;
   }
+
   section.main-page2 .main-content .best-review .review-box .review li:nth-child(3) {
-  position: absolute;
-        bottom: 120px;
-        right: 30px;
-        height: 200px;
-        margin-top: 50px;
-        font-size: 24px;
-        padding-left: 12px;
+    position: absolute;
+    bottom: 120px;
+    right: 30px;
+    height: 200px;
+    margin-top: 50px;
+    font-size: 24px;
+    padding-left: 12px;
   }
 
   section.main-page2 .main-content .best-review .review-box .review {
@@ -786,9 +798,8 @@
       display: none;
     }
   }
+
   /* footer .go-top {
     display: none;
   } */
 }
-  
-
