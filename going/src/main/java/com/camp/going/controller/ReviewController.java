@@ -75,20 +75,11 @@ public class ReviewController {
 
     // 리뷰 수정 요청
     @GetMapping("/review-modify")
-    public String modify(int rno, Model model, HttpSession session, HttpServletRequest request) {
+    public String modify(int rno, Model model) {
         ReviewResponseDTO dto = service.getDetail(rno);
         model.addAttribute("r", dto);
 
-        String rno2 = request.getParameter("rno");
-        String writer = reviewMapper.findOne(Integer.parseInt(rno2)).getEmail();
-
-        // 리뷰에 email이 null 값으로 되어있으면 500 에러 남.
-        // review 테이블에 email 값이 들어오도록 해결할 것!
-        if (LoginUtils.isLogin(session)) {
-            if (LoginUtils.isMine(session, writer)) return "review-modify"; // 작성자와 로그인 한 사람이 동일할 때 수정 가능
-        } else return "redirect:/user/sign-in"; // 로그인 자체를 하지 않았을 때 회원가입 페이지로 이동
-
-        return "redirect:/main/review"; // 로그인을 했으나 작성자와 로그인 한 사람이 동일하지 않을 때는 수정 모드 안됨.
+        return "review-modify";
     }
 
     @PostMapping("/review-modify")
@@ -104,21 +95,12 @@ public class ReviewController {
 
     // 리뷰 삭제 요청 (/review/delete : GET)
     @GetMapping("/review-delete")
-    public String deleteReview(int rno, HttpSession session, HttpServletRequest request) {
+    public String deleteReview(int rno, HttpSession session) {
         System.out.println("/review/delete : GET! " + rno);
 
-        String rno2 = request.getParameter("rno");
-        String writer = reviewMapper.findOne(Integer.parseInt(rno2)).getEmail();
+        service.delete(rno);
 
-        if (LoginUtils.isLogin(session)) {
-            if (LoginUtils.isAdmin(session) || LoginUtils.isMine(session, writer)) {
-                service.delete(rno);
-
-                return "redirect:/main/review";
-            }
-        } else return "redirect:/main/review";
-
-        return "redirect:/main";
+        return "redirect:/main/review";
     }
 
 }
