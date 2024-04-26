@@ -6,12 +6,15 @@ import com.camp.going.dto.request.ReviewRequestDTO;
 import com.camp.going.dto.response.ReviewResponseDTO;
 import com.camp.going.entity.Review;
 import com.camp.going.mapper.ReviewMapper;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.camp.going.util.LoginUtils.getCurrentLoginMemberAccount;
 
 @Slf4j
 @Service
@@ -38,9 +41,11 @@ public class ReviewService {
         return reviewMapper.getCount(page);
     }
 
-    public void register(ReviewRequestDTO dto, String savePath) {
-        reviewMapper.saveReview(dto.toEntity(savePath));
-//        review.setEmail(LoginUtils.getCurrentLoginMemberAccount(session));
+    public void register(ReviewRequestDTO dto, String savePath, HttpSession session) {
+        Review review = dto.toEntity(savePath);
+        review.setEmail(getCurrentLoginMemberAccount(session));
+
+        reviewMapper.saveReview(review);
     }
 
     public void modify(ReviewModifyRequestDTO dto, String savePath) {
@@ -52,8 +57,8 @@ public class ReviewService {
         return new ReviewResponseDTO(reviewMapper.findOne(rno));
     }
 
-    public ReviewResponseDTO bestReview() {
-        return new ReviewResponseDTO(reviewMapper.bestReview());
+    public Review bestReview() {
+        return reviewMapper.bestReview();
     }
 
 }

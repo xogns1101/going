@@ -25,15 +25,9 @@ public class ReviewResponseDTO {
         this.reviewContent = review.getReviewContent();
         this.reviewImage = review.getReviewImage();
         this.reviewPoint = review.getReviewPoint();
-//        this.email = makeShortEmail(review.getEmail());
+        this.email = review.getEmail();
         this.reviewDate = review.getReviewDate();
         this.campName = review.getCampName();
     }
-
-    private String makeShortEmail(String email) {
-        int idx = email.indexOf("@");
-        return email.substring(0, idx);
-    }
-
 
 }
