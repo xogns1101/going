@@ -24,11 +24,10 @@ public class ReviewInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
         HttpSession session = request.getSession();
-        String uri = request.getRequestURI();
 
-        log.info("uri 확인 : {}", uri);
-        log.info("관리자 : {}", session);
-        log.info("관리자 : {}", isAdmin(session));
+//        log.info("uri 확인 : {}", uri);
+//        log.info("관리자 : {}", session);
+//        log.info("관리자 : {}", isAdmin(session));
 
         // 로그인을 안할 시 작동
         if (!isLogin(session)) {
@@ -38,13 +37,16 @@ public class ReviewInterceptor implements HandlerInterceptor {
             PrintWriter w = response.getWriter();
             String htmlCode = "<script>\n" +
                     "    alert('로그인 시 사용 가능합니다.');\n" +
-                    "    location.href='/main/review';\n" +
+                    "    location.href='/user/sign-in';\n" +
                     "</script>";
             w.write(htmlCode);
             w.flush();
 
+            return false;
         }
 
+        String uri = request.getRequestURI();
+        // log.info("uri 확인 : {}", uri);
         // 삭제 요청인지 확인
         if (uri.contains("delete")) {
 
@@ -58,15 +60,37 @@ public class ReviewInterceptor implements HandlerInterceptor {
             if (!isMine(session, writer)) {
                 response.setContentType("text/html; charset=UTF-8");
                 PrintWriter w = response.getWriter();
-               String htmlCode = "<script>\n" +
+                String htmlCode = "<script>\n" +
                         "    alert('본인이 작성한 게시글만 삭제가 가능합니다.');\n" +
                         "    location.href='/main/review';\n" +
                         "</script>";
                 w.write(htmlCode);
                 w.flush();
+
                 return false;
             }
 
+        } else if (uri.contains("modify")) {
+
+            // 관리자라면 통과
+            if (isAdmin(session)) return true;
+
+            String rno = request.getParameter("rno");
+
+            String writer = reviewMapper.findOne(Integer.parseInt(rno)).getEmail();
+
+            if (!isMine(session, writer)) {
+                response.setContentType("text/html; charset=UTF-8");
+                PrintWriter w = response.getWriter();
+                String htmlCode = "<script>\n" +
+                        "    alert('본인이 작성한 게시글만 수정이 가능합니다.');\n" +
+                        "    location.href='/main/review';\n" +
+                        "</script>";
+                w.write(htmlCode);
+                w.flush();
+
+                return false;
+            }
         }
 
         return true;

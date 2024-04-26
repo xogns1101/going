@@ -30,8 +30,8 @@ public class InterceptorConfig implements WebMvcConfigurer {
                 .addPathPatterns("/main/notice/write");
         registry
                 .addInterceptor(reviewInterceptor)
-//                  review-write(리뷰 작성), review-modify(리뷰 수정)
-                .addPathPatterns("/main/review-write", "/main/review-modify");
+//                  review-write(리뷰 작성), review-modify(리뷰 수정), review-delete(리뷰 삭제)
+                .addPathPatterns("/main/review-write", "/main/review-modify", "/main/review-delete");
         registry
                 .addInterceptor(reservationInterceptor)
                 // reservation(예약하기), reservation-detail(관리자용 예약 현황)
