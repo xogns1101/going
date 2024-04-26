@@ -31,6 +31,12 @@
 
     </select>
 
+    <update id="saveAutoLogin">
+        UPDATE user
+        SET session_id = #{sessionId}, limit_time = #{limitTime}
+        WHERE email = #{email}
+    </update>
+
     <select id="findUserByCookie" resultType="user">
         SELECT
         email, password, phone_number, name, auth, limit_time
