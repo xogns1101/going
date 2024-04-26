@@ -36,6 +36,7 @@
                             <li class="camp-price">${b.campPrice}</li>
                         </ul>
 
+                        <div class="reserve-more">예약? 👇</div>
                         <div class="btn-group">
                             <button type="button" class="more-button"
                                 data-href="/main/reservation-detail?camp_id=${b.campId}">MORE</button>

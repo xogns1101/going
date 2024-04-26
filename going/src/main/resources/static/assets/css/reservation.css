@@ -116,11 +116,34 @@ section .camping-list .camping-box .camping li:last-child {
   right: 30px;
 }
 
+
+section .camping-list .reserve-more {
+  width: 200px;
+  height: 100px;
+  background: #f0f0f0;
+  color: #fff;
+  font-family: "Dongle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+
+  position: relative;
+
+
+}
+
+
+
+
+/* more 버튼 */
+
 .btn-group {
   width: 100%;
   height: 100%;
   position: relative;
 }
+
+
 
 section .camping-list button.more-button {
   width: 100px;
@@ -133,14 +156,20 @@ section .camping-list button.more-button {
   font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;
+  cursor: pointer;
 
-  position: absolute;
-
-  bottom: 30px;
-  right: 20px;
-
+  position: relative;
+  top: 74%;
+  left: 73%;
 }
 
+
+
+
+section .camping-list button.more-button:hover {
+
+  color: #fff;
+}
 
 /* 페이지 영역*/
 
@@ -185,19 +214,19 @@ section .camping-list button.more-button {
   padding: 10px 10px;
   font-size: 32px;
   color: linear-gradient(to right top, #E4FFAA, #4BDB73);
-  
+
   text-decoration: none;
-  
+
 }
 
 .pageBox ul li a:hover {
   background-color: #f0f0f0;
- 
+
 }
 
 .pageBox ul li.active a {
   font-weight: bold;
   color: black;
   background: #E4FFAA;
-  
+
 }
