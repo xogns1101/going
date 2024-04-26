@@ -119,8 +119,6 @@ public class UserService {
 
         // 현재 로그인한 회원의 모든 정보 조회
         User oneUser = userMapper.findUser(email.trim());
-     //   Camping oneCamping = campingMapper.findOneCamping();
-//        Reservation reservation = reservationMapper.findReservation();
 
         // DB 데이터를 보여줄 것만 정제
         LoginUserResponseDTO dto = LoginUserResponseDTO.builder()
@@ -130,12 +128,6 @@ public class UserService {
                 .name(oneUser.getName())
                 .auth(oneUser.getAuth())
                 .loginMethod(oneUser.getLoginMethod().toString())
-//                .campName(oneCamping.getCampName())
-//                .campAddress(oneCamping.getCampAddress())
-//                .campHomepage(oneCamping.getCampHomepage())
-//                .campNumber(oneCamping.getCampNumber())
-//                .regDate(String.valueOf(reservation.getRegDate()))
-//                .regDates(String.valueOf(reservation.getRegDates()))
                 .build();
 
         // 세션에 로그인한 회원 정보를 저장
