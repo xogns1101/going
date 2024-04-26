@@ -177,12 +177,14 @@ section .Item .NoticeCount {
 
     .list-btn {
       width: 28%;
-      height: 50px;
-      font-size: 30px;
-      border-radius: 4px;
-      font-family: Yeon Sung;
-      background-color: darkgray;
-      cursor: pointer;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 4px;
+    font-family: Yeon Sung;
+    background-color: darkgray;
+    cursor: pointer;
+    position: relative;
+    left: 110px;
     }
 
     .submit-button {
@@ -193,7 +195,8 @@ section .Item .NoticeCount {
       font-family: Yeon Sung;
       background-color: gold;
       cursor: pointer;
-      
+      position: relative;
+      left: -105px;
     }
 
     #deleteForm {

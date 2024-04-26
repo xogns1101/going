@@ -262,7 +262,7 @@
 
     document.getElementById('reviewForm').onsubmit = e => {
       e.preventDefault(); // submit 중지
-      const reviewPoint = getReviewPoint();s
+      const reviewPoint = getReviewPoint();
       if (!reviewPoint) {
         console.error("리뷰 포인트를 선택하세요.");
         return;

@@ -7,33 +7,36 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Getter
 @ToString
 @EqualsAndHashCode
 @Setter
-public class ReservationListDTO {
+public class ReservationResponseDTO {
 
 
-    private int campId;
+    private String name;
     private String email;
     private String campName;
     private String regDate; // 입실
     private String regDates; // 퇴실
-    private int campPrice;
+    private String campAddress;
+    private String campHomepage;
+    private String campNumber;
     private String phoneNumber;
 
 
-    public ReservationListDTO(Reservation reservation
+    public ReservationResponseDTO(Reservation reservation
             , Camping camping , User user) {
 
-        this.campId = camping.getCampId();
+        this.name = user.getName();
         this.email = user.getEmail();
         this.campName = camping.getCampName();
         this.regDate = String.valueOf(reservation.getRegDate());
         this.regDates = String.valueOf(reservation.getRegDates());
-        this.campPrice = camping.getCampPrice();
+        this.campAddress = camping.getCampAddress();
+        this.campHomepage = camping.getCampHomepage();
+        this.campNumber = camping.getCampNumber();
         this.phoneNumber = user.getPhoneNumber();
 
     }

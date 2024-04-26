@@ -11,12 +11,13 @@ public interface ReservationMapper {
     //
     void reservationSave(Reservation reservation);
 
+    Reservation selectReservation(int userId);
+
     List<Reservation> reservationCamping();
-
-
 
     void delete(int campId);
 
+    Reservation findReservation(int reservationNumber);
 
 
 
