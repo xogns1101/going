@@ -19,6 +19,6 @@ public interface ReservationMapper {
 
     Reservation findReservation(int reservationNumber);
 
-
+    int count(int userId);
 
 }

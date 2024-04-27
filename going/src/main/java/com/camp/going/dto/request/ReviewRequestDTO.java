@@ -15,7 +15,8 @@ public class ReviewRequestDTO {
 
     private int reviewNo;
     private String reviewContent; // 리뷰 내용
-    private String email; // 리뷰 작성자
+//    private long userId; // 리뷰 작성자
+    private String email;
     private MultipartFile reviewImage;
     private String starPoint;
     private LocalDateTime reviewDate;
@@ -24,6 +25,7 @@ public class ReviewRequestDTO {
         return Review.builder()
                 .reviewContent(reviewContent)
                 .email(email)
+//                .userId(userId)
                 .reviewImage(savePath)
                 .reviewPoint(starPoint)
                 .reviewDate(reviewDate)

@@ -47,76 +47,23 @@
 
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                             <td class="campId">12345</td>
-                                             <td class="campName">캠프아이디</td>
-                                             <td class="campEmail">asdfgh@gmail.com</td>
-                                             <td class="campregDate">2024-04-25</td>
-                                             <td class="campregDates">2024-04-25</td>
-                                             <td class="campPrice">500000</td>
-                                             <td class="phoneNumber">010-1234-1234</td>
-
-                                        </tr>
-
-                                        <tr>
-                                            <td class="campId">12345</td>
-                                            <td class="campName">캠프아이디</td>
-                                            <td class="campEmail">asdfgh@gmail.com</td>
-                                            <td class="campregDate">2024-04-25</td>
-                                            <td class="campregDates">2024-04-25</td>
-                                            <td class="campPrice">500000</td>
-                                            <td class="phoneNumber">010-1234-1234</td>
-
-                                        </tr>
-
-                                        <tr>
-                                             <td class="campId">12345</td>
-                                             <td class="campName">캠프아이디</td>
-                                             <td class="campEmail">asdfgh@gmail.com</td>
-                                             <td class="campregDate">2024-04-25</td>
-                                             <td class="campregDates">2024-04-25</td>
-                                             <td class="campPrice">500000</td>
-                                             <td class="phoneNumber">010-1234-1234</td>
-
-                                        </tr>
-
-                                        <tr>
-                                            <td class="campId">12345</td>
-                                            <td class="campName">캠프아이디</td>
-                                            <td class="campEmail">asdfgh@gmail.com</td>
-                                            <td class="campregDate">2024-04-25</td>
-                                            <td class="campregDates">2024-04-25</td>
-                                            <td class="campPrice">500000</td>
-                                            <td class="phoneNumber">010-1234-1234</td>
-
-                                        </tr>
-
-                                        <tr>
-                                             <td class="campId">12345</td>
-                                             <td class="campName">캠프아이디</td>
-                                             <td class="campEmail">asdfgh@gmail.com</td>
-                                             <td class="campregDate">2024-04-25</td>
-                                             <td class="campregDates">2024-04-25</td>
-                                             <td class="campPrice">500000</td>
-                                             <td class="phoneNumber">010-1234-1234</td>
-
-                                        </tr>
-
-                                        <tr>
-                                              <td class="campId">12345</td>
-                                              <td class="campName">캠프아이디</td>
-                                              <td class="campEmail">asdfgh@gmail.com</td>
-                                              <td class="campregDate">2024-04-25</td>
-                                              <td class="campregDates">2024-04-25</td>
-                                              <td class="campPrice">500000</td>
-                                              <td class="phoneNumber">010-1234-1234</td>
-
-                                        </tr>
-                                        <!-- 추가 행은 필요에 따라 추가하세요 -->
-
-
-                                    </tbody>
+                                    <c:forEach var="b" items="${rList}">
+                                        <tbody>
+                                            <tr>
+                                                <td class="campId">${b.campId}</td>                      
+                                                <td class="campName">${b.campName}</td>
+                                                <td class="campEmail">${b.email}</td>
+                                                <td class="campregDate">${b.regDate}</td>
+                                                <td class="campregDates">${b.regDates}</td>
+                                                <td class="campPrice">${b.campPrice}</td>
+                                                <td class="phoneNumber">${b.phoneNumber}</td>
+                                            </tr>
+                                        
+                                        
+                                        
+                                            <!-- 추가 행은 필요에 따라 추가하세요 -->
+                                        </tbody>
+                                    </c:forEach>
                                 </table>
 
 

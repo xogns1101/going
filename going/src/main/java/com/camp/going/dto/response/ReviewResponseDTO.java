@@ -1,5 +1,6 @@
 package com.camp.going.dto.response;
 
+import com.camp.going.entity.Reservation;
 import com.camp.going.entity.Review;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -16,7 +17,9 @@ public class ReviewResponseDTO {
     private String reviewContent; // 리뷰 내용
     private String reviewImage; // 리뷰 사진
     private String reviewPoint; // 리뷰 별점
-    private String email; // 회원 아이디
+//    private long userId; // 회원 아이디
+    private String email;
+//    private int campId;
     private String campName;
     private LocalDateTime reviewDate; // 리뷰 입력 날짜
 
@@ -25,9 +28,11 @@ public class ReviewResponseDTO {
         this.reviewContent = review.getReviewContent();
         this.reviewImage = review.getReviewImage();
         this.reviewPoint = review.getReviewPoint();
+//        this.userId = review.getUserId();
         this.email = review.getEmail();
-        this.reviewDate = review.getReviewDate();
+//        this.campId = review.getCampId();
         this.campName = review.getCampName();
+        this.reviewDate = review.getReviewDate();
     }
 
 }
