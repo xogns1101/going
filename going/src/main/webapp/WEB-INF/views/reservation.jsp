@@ -29,7 +29,7 @@
                     <div class="camping-box" data-bno="${b.campId}">
                         
                             <div class="img-box">
-                                <img src="/assets/img/camp9.jpg" alt="캠핑"><br></div>
+                                <img src="${b.campImage}" alt="캠핑"><br></div>
                         <ul class="camping">
                             <li class="camp-name">${b.campName}</li>
                             <li class="camp-address">${b.campAddress}</li>

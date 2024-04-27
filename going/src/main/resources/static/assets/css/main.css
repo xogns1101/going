@@ -73,13 +73,13 @@ header .logo-content {
   margin-top: 30px;
   font-size: 25px;
   width: 64%;
-  
+  justify-content: space-around;
   align-items: center;
 }
 
 header .logo-content a {
   color: black;
-  margin-right: 200px;
+  margin-right: 50px;
   margin-left: 0px;
 
 
@@ -174,7 +174,7 @@ header .logout a:hover {
 
 
 header .reservation-admin a {
-  
+
   color: #fff;
   font-size: 25px;
 
@@ -495,6 +495,11 @@ section.main-page0 div {
   transition: 0.5s;
   transform: skewY(-10deg);
   z-index: -1;
+
+  font-family: "Dongle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
 }
 
 section.main-page0 .highlight {
@@ -550,33 +555,37 @@ section.main-page0 div:nth-child(5) {
   background-image: url("../img/camp10.jpg");
 }
 
-/* section.main-page0 div:nth-child(1):after,
-  section.main-page0 div:nth-child(2):after,
-  section.main-page0 div:nth-child(3):after,
-  section.main-page0 div:nth-child(4):after {
-    content: "NAME";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    font-size: 60px;
-    font-weight: 900;
-    color: white;
-    text-shadow: 3px 3px #555;
-  }
-  section.main-page0 div:nth-child(1):after {
-    content: "LEO";
-  }
-  section.main-page0 div:nth-child(2):after {
-    content: "RAPH";
-  }
-  section.main-page0 div:nth-child(3):after {
-    content: "DON";
-  }
-  section.main-page0 div:nth-child(4):after {
-    content: "MIKE";
-  } */
+section.main-page0 div:nth-child(2):after,
+section.main-page0 div:nth-child(3):after,
+section.main-page0 div:nth-child(4):after,
+section.main-page0 div:nth-child(5):after {
+  content: "NAME";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 900;
+  color: white;
+  text-shadow: 3px 3px #555;
+}
+
+section.main-page0 div:nth-child(2):after {
+  content: "호명호수";
+}
+
+section.main-page0 div:nth-child(3):after {
+  content: "쁘띠프랑스";
+}
+
+section.main-page0 div:nth-child(4):after {
+  content: "남이섬";
+}
+
+section.main-page0 div:nth-child(5):after {
+  content: "아침고요수목원";
+}
 
 
 
@@ -744,6 +753,12 @@ section.main-page2 .main-content .ad .ad-box {
   width: 100%;
 }
 
+section.main-page2 .main-content .ad .ad-box h1 {
+  color: #a1a1a1;
+  text-align: center;
+  font-size: 40px;
+}
+
 
 
 section.main-page2 .main-content .ad .ad-box img {
@@ -755,6 +770,10 @@ section.main-page2 .main-content .ad .ad-box img {
   border-radius: 20px;
   cursor: pointer;
 
+}
+
+section.main-page2 .main-content .ad .ad-box img:hover {
+  opacity: 0.5;
 }
 
 
