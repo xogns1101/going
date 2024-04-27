@@ -27,7 +27,7 @@
 
                 <div class="camping-list">
                     <div class="camping-box" data-bno="${b.campId}">
-                        <img src="/assets/img/camp4.jpg" alt="캠핑"><br>
+                        <img src="${b.campImage}" alt="캠핑"><br>
                         <ul class="camping">
                             <li class="camp-name">${b.campName}</li>
                             <li class="camp-address">${b.campAddress}</li>

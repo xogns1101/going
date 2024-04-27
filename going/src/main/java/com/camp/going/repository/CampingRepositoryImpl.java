@@ -40,9 +40,15 @@ public class CampingRepositoryImpl implements CampingRepository {
     private final JdbcTemplate template;
 
     @Override
-    public void updateCampingPrice(int campId, int Price) {
+    public void updateCampingPrice(int campId, int price) {
         String sql = "UPDATE camping SET camp_price=? WHERE camp_id=?";
-        template.update(sql, Price, campId);
+        template.update(sql, price, campId);
+    }
+
+    @Override
+    public void updateCampingImage(int campId, String image) {
+        String sql = "UPDATE camping SET camp_image=? WHERE camp_id=?";
+        template.update(sql, image, campId);
     }
 
 }
