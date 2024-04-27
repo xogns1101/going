@@ -27,7 +27,8 @@
 
                 <div class="camping-list">
                     <div class="camping-box" data-bno="${b.campId}">
-                        <img src="/assets/img/camp4.jpg" alt="캠핑"><br>
+                        
+                            <img src="/assets/img/camp9.jpg" alt="캠핑"><br>
                         <ul class="camping">
                             <li class="camp-name">${b.campName}</li>
                             <li class="camp-address">${b.campAddress}</li>
@@ -36,7 +37,7 @@
                             <li class="camp-price">${b.campPrice}</li>
                         </ul>
 
-                        <div class="reserve-more">예약? 👇</div>
+                       
                         <div class="btn-group">
                             <button type="button" class="more-button"
                                 data-href="/main/reservation-detail?camp_id=${b.campId}">MORE</button>
@@ -106,10 +107,20 @@
 
             }
 
-
-
-
         })
+
+        $btn.addEventListener('onmouse', e => {
+
+            if (e.target.matches('.camping')) {
+                return;
+            }
+
+            if (e.target.matches('img *')) {
+                console.log('마우스 호버됨');
+            }
+        })
+
+
 
 
         // 사용자가 현재 머물고 있는 페이지 버튼에 active 스타일 부여
@@ -131,6 +142,11 @@
         }
 
         appendPageActive();
+
+
+
+       
+        
     </script>
 
 

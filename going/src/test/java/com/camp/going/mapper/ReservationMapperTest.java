@@ -29,7 +29,7 @@ class ReservationMapperTest {
 
         Reservation reservation = Reservation.builder()
                 .reservationNumber(1)
-                .email("aaa2222@naver.com")
+//                .email("aaa2222@naver.com")
                 .campId(1)
                 .regDate(LocalDate.parse(regDate))
                 .regDates(LocalDate.parse(regDates))

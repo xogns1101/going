@@ -2,8 +2,8 @@ section .title h1 {
   background: linear-gradient(to right top, #E4FFAA, #4BDB73);
   color: transparent;
   -webkit-background-clip: text;
-  margin-top: 250px;
-  font-size: 80px;
+  margin-top: 200px;
+  font-size: 60px;
   text-align: center;
   font-family: "Luckiest Guy", cursive;
   font-weight: 400;
@@ -26,12 +26,12 @@ section .title h1 span {
 section .camping {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
 section .camping .camping-list {
-  width: 30%;
+  width: 33%;
 
 }
 
@@ -40,15 +40,19 @@ section .camping-list .camping-box {
   width: 500px;
   height: 700px;
   background: #E4FFAA;
-  margin: 50px auto 100px auto;
+  margin: 80px auto 50px;
   border-radius: 3%;
 
   position: relative;
 }
 
+
+
 section .camping-list .camping-box img {
   width: 465px;
   height: 465px;
+
+  
 
   position: absolute;
   top: 18.5px;
@@ -56,7 +60,15 @@ section .camping-list .camping-box img {
 
   border-radius: 3%;
 
+
 }
+
+section .camping-list .camping-box img:hover {
+  cursor: pointer;
+}
+
+
+
 
 section .camping-list .camping-box .camping {
   color: black;
@@ -85,7 +97,7 @@ section .camping-list .camping-box .camping li:nth-child(2) {
 
   left: 18.5px;
   right: 18.5px;
-  bottom: 50px;
+  bottom: 70px;
 }
 
 section .camping-list .camping-box .camping li:nth-child(3) {
@@ -94,7 +106,7 @@ section .camping-list .camping-box .camping li:nth-child(3) {
 
   left: 18.5px;
   right: 18.5px;
-  bottom: 30px;
+  bottom: 50px;
 }
 
 section .camping-list .camping-box .camping li:nth-child(4) {
@@ -103,7 +115,7 @@ section .camping-list .camping-box .camping li:nth-child(4) {
 
   left: 18.5px;
   right: 18.5px;
-  bottom: 10px;
+  bottom: 30px;
 }
 
 
@@ -159,7 +171,7 @@ section .camping-list button.more-button {
   cursor: pointer;
 
   position: relative;
-  top: 74%;
+  top: 87%;
   left: 73%;
 }
 
