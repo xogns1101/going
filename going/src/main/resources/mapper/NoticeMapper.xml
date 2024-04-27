@@ -17,6 +17,19 @@
         </if>
     </sql>
 
+    <sql id="search2">
+        <if test="type == 'title'">
+            AND notice_title LIKE CONCAT('%', #{keyword}, '%')
+        </if>
+        <if test="type == 'content'">
+            AND notice_content LIKE CONCAT('%', #{keyword}, '%')
+        </if>
+        <if test="type == 'tc'">
+            AND notice_title LIKE CONCAT('%', #{keyword}, '%')
+            OR notice_content LIKE CONCAT('%', #{keyword}, '%')
+        </if>
+    </sql>
+
     <insert id="save">
         INSERT INTO notice (notice_title, notice_content, notice_category)
         VALUES (#{noticeTitle}, #{noticeContent}, #{noticeCategory})
@@ -55,6 +68,49 @@
         SELECT COUNT(*) FROM notice
         <include refid="search"/>
     </select>
+
+    <select id="findEssential" resultType="notice">
+        SELECT * FROM notice
+        WHERE notice_category = 'ESSENTIAL'
+        <include refid="search2"/>
+        ORDER BY notice_no DESC
+        LIMIT #{pageStart}, #{amount}
+    </select>
+
+    <select id="getCountEssential" resultType="int">
+        SELECT COUNT(*) FROM notice
+        WHERE notice_category = 'ESSENTIAL'
+        <include refid="search2"/>
+    </select>
+
+    <select id="findNotice" resultType="notice">
+        SELECT * FROM notice
+        WHERE notice_category = 'NOTICE'
+        <include refid="search2"/>
+        ORDER BY notice_no DESC
+        LIMIT #{pageStart}, #{amount}
+    </select>
+
+    <select id="getCountNotice" resultType="int">
+        SELECT COUNT(*) FROM notice
+        WHERE notice_category = 'NOTICE'
+        <include refid="search2"/>
+    </select>
+
+    <select id="findCommon" resultType="notice">
+        SELECT * FROM notice
+        WHERE notice_category = 'COMMON'
+        <include refid="search2"/>
+        ORDER BY notice_no DESC
+        LIMIT #{pageStart}, #{amount}
+    </select>
+
+    <select id="getCountCommon" resultType="int">
+        SELECT COUNT(*) FROM notice
+        WHERE notice_category = 'COMMON'
+        <include refid="search2"/>
+    </select>
+
 
 
 
