@@ -14,7 +14,7 @@
     <%@ include file="include/header.jsp" %>
 
 
-    <section>
+    <section id="reservation">
 
 
         <div class="title">
@@ -28,7 +28,8 @@
                 <div class="camping-list">
                     <div class="camping-box" data-bno="${b.campId}">
                         
-                            <img src="/assets/img/camp9.jpg" alt="캠핑"><br>
+                            <div class="img-box">
+                                <img src="/assets/img/camp9.jpg" alt="캠핑"><br></div>
                         <ul class="camping">
                             <li class="camp-name">${b.campName}</li>
                             <li class="camp-address">${b.campAddress}</li>
@@ -109,17 +110,7 @@
 
         })
 
-        $btn.addEventListener('onmouse', e => {
-
-            if (e.target.matches('.camping')) {
-                return;
-            }
-
-            if (e.target.matches('img *')) {
-                console.log('마우스 호버됨');
-            }
-        })
-
+     
 
 
 
