@@ -1,16 +1,24 @@
 package com.camp.going.mapper;
 
 import com.camp.going.entity.Camping;
+import com.camp.going.repository.CampingRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 @SpringBootTest
 class CampMapperTest {
 
     @Autowired
     CampingMapper campingMapper;
+
+    @Autowired
+    CampingRepository campingRepository;
 
     // 캠핑장 등록
     @Test
@@ -38,6 +46,20 @@ class CampMapperTest {
             campingMapper.campSave(build);
 
         // then
+    }
+    
+    @Test
+    @DisplayName("캠핑장 146개 가격 붙이기")
+    void campingPrice() {
+        Random random = new Random();
+        List<Integer> prices = Arrays.asList(50000, 55000, 60000, 65000, 70000, 75000, 80000, 85000, 90000, 95000, 100000);
+
+        for (int i = 1; i <= 146; i++) {
+            int randomPrices = prices.get(random.nextInt(prices.size()));
+
+            int randomPrice = prices.get(random.nextInt(prices.size()));
+            campingRepository.updateCampingPrice(i, randomPrice);
+        }
     }
     
     
