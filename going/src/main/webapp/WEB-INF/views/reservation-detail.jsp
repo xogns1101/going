@@ -97,48 +97,49 @@
                 <!-- 예약 하기 -->
 
 
-            <form action="/main/reservation-detail/${r.campId}" method="post">
+                <form action="/main/reservation-detail/${r.campId}" method="post">
 
-                <input type="hidden" name="name" id="name">
-                <input type="hidden" name="phoneNumber" id="phoneNumber">
-                <input type="hidden" name="email" id="email">
-                <input type="hidden" name="campName" id="campName" value="${r.campName}">
-                <input type="hidden" name="campAddress" id="campAddress" value="${r.campAddress}">
-                <input type="hidden" name="campHomepage" id="campHomepage" value="${r.campHomepage}">
-                <input type="hidden" name="campNumber" id="campNumber" value="${r.campNumber}">
+                    <input type="hidden" name="name" id="name">
+                    <input type="hidden" name="phoneNumber" id="phoneNumber">
+                    <input type="hidden" name="email" id="email">
+                    <input type="hidden" name="campName" id="campName" value="${r.campName}">
+                    <input type="hidden" name="campAddress" id="campAddress" value="${r.campAddress}">
+                    <input type="hidden" name="campHomepage" id="campHomepage" value="${r.campHomepage}">
+                    <input type="hidden" name="campNumber" id="campNumber" value="${r.campNumber}">
 
 
                     <div class="reserve-box">
                         <div class="check">
                             <div class="in">입실</div>
 
-                          <div>
-                            <input type="date" class="reg-date" name="regDate">
-                        </div>
-                              <div class="between">&nbsp; &nbsp; ~</div>
+                            <div>
+                                <input type="date" class="reg-date" name="regDate">
+                                
+                            </div>
+                            <div class="between">&nbsp; &nbsp; ~</div>
                         </div>
 
 
 
                         <div class="check">
                             <div class="out">퇴실</div>
-                           
+
                             <input type="date" class="reg-dates" name="regDates">
-                            
+
                         </div>
 
 
-                        
+
                     </div>
-                    
+
                     <div class="hidden-info">
                         <div name="email">이메일</div>
                         <div name="name">이름</div>
                         <div name="phoneNumber">전화번호</div>
                     </div>
-                    
+
                     <button type="submit" class="reserve-button"
-                    data-href="/main/reservation-detail?${b.campId}">예약하기</button>
+                        data-href="/main/reservation-detail?${b.campId}">예약하기</button>
 
 
                 </form>
@@ -226,33 +227,33 @@
             }
 
 
-            // 달력일자선택
+            // // 달력일자선택
 
-            $date.addEventListener('click', e => {
-                const clickedDate = e.target.textContent;
+            // $date.addEventListener('click', e => {
+            //     const clickedDate = e.target.textContent;
 
-                // 클릭된 요소가 날짜인 경우에만 처리
-                if (e.target.classList.contains('date')) {
-                    console.log('클릭한 일자', clickedDate);
+            //     // 클릭된 요소가 날짜인 경우에만 처리
+            //     if (e.target.classList.contains('date')) {
+            //         console.log('클릭한 일자', clickedDate);
 
-                    // 선택한 날짜가 활성화되어 있지 않은 경우
-                    if (!e.target.classList.contains('active')) {
-                        // 현재 선택한 일자를 활성화
-                        e.target.classList.add('active');
-                        activeCount++;
+            //         // 선택한 날짜가 활성화되어 있지 않은 경우
+            //         if (!e.target.classList.contains('active')) {
+            //             // 현재 선택한 일자를 활성화
+            //             e.target.classList.add('active');
+            //             activeCount++;
 
-                        // 활성화된 일자가 2개 이상이면 선택한 일자 초기화
-                        if (activeCount > 2) {
-                            document.querySelectorAll('.date').forEach(date => {
-                                date.classList.remove('active');
-                            });
-                            activeCount = 0;
-                        }
-                    } else {
-                        // 선택한 일자를 비활성화
-                        e.target.classList.remove('active');
-                        activeCount--;
-                    }
+            //             // 활성화된 일자가 2개 이상이면 선택한 일자 초기화
+            //             if (activeCount > 2) {
+            //                 document.querySelectorAll('.date').forEach(date => {
+            //                     date.classList.remove('active');
+            //                 });
+            //                 activeCount = 0;
+            //             }
+            //         } else {
+            //             // 선택한 일자를 비활성화
+            //             e.target.classList.remove('active');
+            //             activeCount--;
+            //         }
 
                     // 입실일 선택
                     if (activeCount === 1) {
@@ -275,7 +276,7 @@
 
                         $regDate.textContent = currentYear + '-' + monthString + '-' + dayString;
 
-                       
+
 
                     }
 
@@ -322,29 +323,34 @@
                     console.log('camp_id: ' + campId);
 
                     // 서버에 요청 보내기
-                    location.href='/main/reservation';
+                    location.href = '/main/reservation';
 
 
                 })
 
+           
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const calendarDates = document.querySelectorAll('.date');
+            const regDateInput = document.getElementById('regDate');
+
+            calendarDates.forEach(dateElement => {
+                dateElement.addEventListener('click', function () {
+                    const clickedDate = dateElement.textContent;
+                    const currentMonthYear = document.getElementById('currentMonth')
+                    .textContent;
+
+                    // 클릭된 날짜를 YYYY-MM-DD 형식으로 만듭니다. 여기서는 단순 예제이므로 클릭한 일자만을 고려합니다.
+                    // 실제로는 선택한 날짜에 대한 년도와 월도 고려해야 할 수 있습니다.
+                    const selectedDate = `${currentMonthYear}-${clickedDate}`;
+
+                    // regDate 입력 필드의 값을 선택한 날짜로 설정합니다.
+                    regDateInput.value = selectedDate;
+
+                    console.log('선택한 날짜:', selectedDate);
+                });
             });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        };
+        });
     </script>
 
 

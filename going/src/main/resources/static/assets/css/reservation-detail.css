@@ -1,9 +1,5 @@
 
 
-
-
-
-
 section#reservation-detail{
     color: black;
     font-family: "Yeon Sung", system-ui;
@@ -100,6 +96,8 @@ section .detail .reserve-info form .reserve-box {
     justify-content: center;
 }
 
+
+
 section .detail .reserve-info form .reserve-box .check {
     display: flex;
     margin: 50px 15px 0 15px;
@@ -149,19 +147,27 @@ section .detail .reserve-info form .reserve-box .check .between {
 }
 
 
+section .detail .reserve-info .reserve-box input[type="date"] {
+  font-family: "Yeon Sung", system-ui;
+  font-size: 28px;
+  font-style: normal;
+  text-align: center;
+}
+
 section .detail .reserve-info form button {
-    width: 200px;
-    height: 50px;
-    background: #4BDB73;
-    align-content: center;
-    border-radius: 20px;
-    border: #fff;
-    font-family: "Yeon Sung", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 20px;
-    margin-top: 100px;
-} 
+  width: 200px;
+  height: 80px;
+  background: #4BDB73;
+  align-content: center;
+  border-radius: 20px;
+  border: #fff;
+  font-family: "Yeon Sung", system-ui;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 36px;
+  margin-top: 80px;
+}
+
 
 section .detail .reserve-info form button:hover {
     color: #fff;
@@ -269,15 +275,15 @@ section .detail .reserve-info form .hidden-info {
     
     position: relative;
   }
-  
+/*   
   .date:hover {
     background-color: #54f381;
     border-radius: 10px;
     color: #fff;
     text-decoration: underline;
-  }
+  } */
  
-  .active::before {
+  /* .active::before {
     position: absolute;
     content: '';
     height: 70px;
@@ -288,7 +294,7 @@ section .detail .reserve-info form .hidden-info {
     border-radius: 10px;
     z-index: -1;
     background: #54f381;
-  }
+  } */
 
 
 
