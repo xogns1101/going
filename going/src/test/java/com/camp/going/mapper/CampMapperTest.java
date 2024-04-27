@@ -49,12 +49,12 @@ class CampMapperTest {
     }
     
     @Test
-    @DisplayName("캠핑장 146개 가격 붙이기")
+    @DisplayName("캠핑장 200개 가격 붙이기")
     void campingPrice() {
         Random random = new Random();
         List<Integer> prices = Arrays.asList(50000, 55000, 60000, 65000, 70000, 75000, 80000, 85000, 90000, 95000, 100000);
 
-        for (int i = 1; i <= 146; i++) {
+        for (int i = 1; i <= 200; i++) {
             int randomPrices = prices.get(random.nextInt(prices.size()));
 
             int randomPrice = prices.get(random.nextInt(prices.size()));
