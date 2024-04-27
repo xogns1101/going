@@ -83,6 +83,12 @@
         <!-- 검색어 조회 -->
 
         <form action="/main/notice-essential" method="get">
+          <div class="category-button-box">
+            <button type="submit" class="category-button"><a href="/main/notice">모두</a></button>
+            <button type="submit" class="category-button" style="border: 2px red solid;"><a href="/main/notice-essential">필독</a></button>
+            <button type="submit" class="category-button"><a href="/main/notice-notice">공지</a></button>
+            <button type="submit" class="category-button"><a href="/main/notice-common">기본</a></button>
+          </div>
           <div class="search-content-background">
             <select class="form-select" name="type" id="search-type">
               <option value="title">제목</option>
@@ -106,25 +112,26 @@
                     href="/main/notice-essential?pageNo=1&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
                 </li>
               </c:if>
-          
+
               <c:if test="${maker.prev}">
                 <li class="page-item"><a class="page-link"
                     href="/main/notice-essential?pageNo=${maker.begin-1}&type=${s.type}&keyword=${s.keyword}">&lt;</a>
                 </li>
               </c:if>
-          
+
               <c:forEach var="i" begin="${maker.begin}" end="${maker.end}">
                 <li data-page-num="${i}" class="page-item">
-                  <a class="page-link" href="/main/notice-essential?pageNo=${i}&type=${s.type}&keyword=${s.keyword}">${i}</a>
+                  <a class="page-link"
+                    href="/main/notice-essential?pageNo=${i}&type=${s.type}&keyword=${s.keyword}">${i}</a>
                 </li>
               </c:forEach>
-          
+
               <c:if test="${maker.next}">
                 <li class="page-item"><a class="page-link"
                     href="/main/notice-essential?pageNo=${maker.end+1}&type=${s.type}&keyword=${s.keyword}">&gt;</a>
                 </li>
               </c:if>
-          
+
               <c:if test="${maker.page.pageNo != maker.finalPage}">
                 <li class="page-item"><a class="page-link"
                     href="/main/notice-essential?pageNo=${maker.finalPage}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
@@ -132,7 +139,7 @@
               </c:if>
             </ul>
           </nav>
-          
+
 
         </div>
 
