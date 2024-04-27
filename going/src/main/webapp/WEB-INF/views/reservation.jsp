@@ -46,6 +46,20 @@
             </c:forEach>
         </div>
 
+        <!-- 검색어 조회 -->
+
+        <form action="/main/reservation" method="get">
+            <div class="search-content-background">
+                <select class="form-select" name="type" id="search-type">
+                    <option value="name">캠핑장 이름</option>
+                    <option value="address">주소</option>
+                </select>
+                <input type="text" class="search-content" name="keyword" value="${s.keyword}"
+                    placeholder="검색어를 입력해 주세요">
+                <button type="submit" class="search-click-button">검색</button>
+            </div>
+        </form>
+
 
         <!--페이징 부분-->
 
@@ -130,6 +144,22 @@
             });
         }
 
+        // 검색조건 셀렉트박스 옵션타입 고정하기
+        function fixSearchOption() {
+            const $select = document.getElementById('search-type');
+            // 셀렉트 박스 내에 있는 option 태그들 전부 가져오기
+            const $options = [...$select.children];
+
+            $options.forEach($opt => {
+                if ($opt.value === '${s.type}') {
+                    // option 태그에 selected를 주면 그 option이 고정됨.
+                    $opt.setAttribute('selected', 'selected');
+                }
+            });
+
+        }
+
+        fixSearchOption();
         appendPageActive();
     </script>
 
