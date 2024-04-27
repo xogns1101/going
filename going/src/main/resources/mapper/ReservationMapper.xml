@@ -48,6 +48,7 @@
     <select id="reservationCamping" resultType="reservation">
 
         SELECT
+            r.camp_id,
             u.email,
             c.camp_name,
             r.reg_date,
@@ -56,9 +57,9 @@
             u.phone_number
         FROM reservation r
         LEFT JOIN user u
-        ON r.email = u.email
+        ON r.user_id = u.user_id
         LEFT JOIN camping c
-        ON r.camp_id = c.camp_id;
+        ON r.camp_id = c.camp_id
 
     </select>
 
@@ -87,7 +88,9 @@
 
     </delete>
 
-
-
+    <select id="count" resultType="int">
+        SELECT COUNT(*) FROM reservation
+        WHERE user_id = #{userId}
+    </select>
 
 </mapper>

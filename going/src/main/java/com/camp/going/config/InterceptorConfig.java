@@ -15,6 +15,8 @@ public class InterceptorConfig implements WebMvcConfigurer {
     private final NoticeInterceptor noticeInterceptor;
     private final ReviewInterceptor reviewInterceptor;
     private final ReservationInterceptor reservationInterceptor;
+    private final ReservationListInterceptor reservationListInterceptor;
+    private final MyPageInterceptor myPageInterceptor;
 
 
     @Override
@@ -34,8 +36,15 @@ public class InterceptorConfig implements WebMvcConfigurer {
                 .addPathPatterns("/main/review-write", "/main/review-modify", "/main/review-delete");
         registry
                 .addInterceptor(reservationInterceptor)
-                // reservation(예약하기), reservation-detail(관리자용 예약 현황)
-                .addPathPatterns("/main/reservation", "/main/reservation-detail");
+                // reservation-detail (예약하기)
+                .addPathPatterns("/main/reservation-detail/*");
+        registry
+                .addInterceptor(reservationListInterceptor)
+                // reservation-detail(관리자용 예약 현황)
+                .addPathPatterns("/main/reservation-list");
+        registry
+                .addInterceptor(myPageInterceptor)
+                .addPathPatterns("/user/mypage");
 
         // 자동 로그인 인터셉터 설정
         registry

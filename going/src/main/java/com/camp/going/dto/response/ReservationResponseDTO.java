@@ -24,6 +24,7 @@ public class ReservationResponseDTO {
     private String campHomepage;
     private String campNumber;
     private String phoneNumber;
+    private int campPrice;
 
 
     public ReservationResponseDTO(Reservation reservation
@@ -39,7 +40,7 @@ public class ReservationResponseDTO {
         this.campHomepage = camping.getCampHomepage();
         this.campNumber = camping.getCampNumber();
         this.phoneNumber = user.getPhoneNumber();
-
+        this.campPrice = camping.getCampPrice();
     }
 }
 

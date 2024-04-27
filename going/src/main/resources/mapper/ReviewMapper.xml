@@ -6,16 +6,20 @@
 
     <insert id="saveReview">
         INSERT INTO review
-            (review_content, email, camp_id, review_image, review_point)
+            (review_content, email, review_image, review_point)
         VALUES
-            (#{reviewContent}, #{email}, #{campId}, #{reviewImage}, #{reviewPoint})
+            (#{reviewContent}, #{email}, #{reviewImage}, #{reviewPoint})
     </insert>
 
     <select id="findAllReview" resultType="review">
-        SELECT R.*, C.camp_name
+        SELECT R.*, U.user_id, A.camp_id, C.camp_name
         FROM review R
-        LEFT JOIN camping C
-        ON R.camp_id = C.camp_id
+        LEFT JOIN user U
+        ON R.email = U.email
+        LEFT JOIN reservation A
+        ON U.user_id = A.user_id
+        LEFT JOIN Camping C
+        ON A.camp_id = C.camp_id
         ORDER BY review_no DESC
         LIMIT #{pageStart}, #{amount}
     </select>
@@ -34,13 +38,15 @@
     </update>
 
     <select id="bestReview" resultType="review">
-        SELECT
-        R.review_content, R.review_image, R.review_point,
-        r.camp_name
+        SELECT R.review_content, R.review_image, R.review_point, C.camp_name
         FROM review R
-        LEFT JOIN camping C
-        ON R.camp_id = C.camp_id
-        ORDER BY review_date DESC
+        LEFT JOIN user U
+        ON R.email = U.email
+        LEFT JOIN reservation A
+        ON U.user_id = A.user_id
+        LEFT JOIN Camping C
+        ON A.camp_id = C.camp_id
+        ORDER BY review_no DESC
         LIMIT 1
     </select>
 

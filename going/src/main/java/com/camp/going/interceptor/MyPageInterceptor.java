@@ -1,6 +1,5 @@
 package com.camp.going.interceptor;
 
-import com.camp.going.mapper.ReservationMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -11,20 +10,17 @@ import org.springframework.web.servlet.HandlerInterceptor;
 
 import java.io.PrintWriter;
 
-import static com.camp.going.util.LoginUtils.*;
+import static com.camp.going.util.LoginUtils.isLogin;
 
 @Configuration
 @Slf4j
 @RequiredArgsConstructor
-public class ReservationInterceptor implements HandlerInterceptor {
-
-    private final ReservationMapper reservationMapper;
+public class MyPageInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
         HttpSession session = request.getSession();
-
 
         // 로그인을 안할 시 작동
         if (!isLogin(session)) {
@@ -41,24 +37,7 @@ public class ReservationInterceptor implements HandlerInterceptor {
 
             return false;
         }
-
-        int userId = (int) getCurrentLoginMemberId(session);
-        // 예약 1개만 가능하게 조건을 걸어둠
-        if (reservationMapper.count(userId) == 1) {
-
-            response.setContentType("text/html; charset=UTF-8");
-            PrintWriter w = response.getWriter();
-            String htmlCode = "<script>\n" +
-                    "    alert('더 이상 예약이 불가능합니다.');\n" +
-                    "    location.href='/main';\n" +
-                    "</script>";
-            w.write(htmlCode);
-            w.flush();
-
-            return false;
-        }
-
         return true;
-    }
 
+    }
 }

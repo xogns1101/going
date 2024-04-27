@@ -51,13 +51,13 @@ public class UserService {
 
         User oneUser = userMapper.findUser(dto.getEmail());
 
-        log.info("이메일 확인 : {}", oneUser.getEmail());
-
         // 회원 가입을 안한 상태
-        if(oneUser == null){
+        if(oneUser == null) {
             System.out.println(dto.getEmail() + "(은)는 없는 아이디!");
             return NO_EMAIL;
         }
+
+        log.info("이메일 확인 : {}", oneUser.getEmail());
 
         // 비밀번호 일치 검사
         String inputPassword = dto.getPassword(); // 사용자 입력 패스워드

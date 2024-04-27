@@ -15,8 +15,9 @@ public class Review {
 
     private int reviewNo; // 리뷰 글 번호
     private String reviewContent; // 리뷰 내용
-    private String email; // 회원 아이디
-    private int campId; // 캠핑장 아이디
+    private String email; // 회원 이메일
+//    private long userId; // 회원 아이디
+//    private int campId; // 캠핑장 아이디
     private String campName; // 캠핑장 이름
     private String reviewImage; // 리뷰 사진 경로
     private String reviewPoint; // 별점
