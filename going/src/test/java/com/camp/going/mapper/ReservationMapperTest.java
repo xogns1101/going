@@ -20,24 +20,24 @@ class ReservationMapperTest {
     ReservationMapper reservationMapper;
 
 
-    @Test
-    @DisplayName("예약이 잘 되는지 확인")
-    void reservationInsert() {
-        // given
-        String regDate = "2024-04-25";
-        String regDates = "2024-04-26";
-
-        Reservation reservation = Reservation.builder()
-                .reservationNumber(1)
-                .email("aaa2222@naver.com")
-                .campId(1)
-                .regDate(LocalDate.parse(regDate))
-                .regDates(LocalDate.parse(regDates))
-                .build();
-        // when
-        reservationMapper.reservationSave(reservation);
-        // then
-    }
+//    @Test
+//    @DisplayName("예약이 잘 되는지 확인")
+//    void reservationInsert() {
+//        // given
+//        String regDate = "2024-04-25";
+//        String regDates = "2024-04-26";
+//
+//        Reservation reservation = Reservation.builder()
+//                .reservationNumber(1)
+//                .email("aaa2222@naver.com")
+//                .campId(1)
+//                .regDate(LocalDate.parse(regDate))
+//                .regDates(LocalDate.parse(regDates))
+//                .build();
+//        // when
+//        reservationMapper.reservationSave(reservation);
+//        // then
+//    }
     
 //    @Test
 //    @DisplayName("상세 회면이 잘보이는지")

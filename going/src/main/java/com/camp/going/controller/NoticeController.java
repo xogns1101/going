@@ -142,4 +142,49 @@ public class NoticeController {
     }
 
 
+
+
+
+    @GetMapping("/notice-essential")
+    public String essentialList(Model model, @ModelAttribute("s") Search page) {
+        System.out.println("search = " + page);
+        List<NoticeListResponseDTO> dtoList = service.getEssential(page);
+
+        PageMaker pageMaker = new PageMaker(page, service.getCountEssential(page));
+
+        model.addAttribute("nList", dtoList);
+        model.addAttribute("maker", pageMaker);
+
+
+        return "notice-essential";
+    }
+
+    @GetMapping("/notice-notice")
+    public String noticeList(Model model, @ModelAttribute("s") Search page) {
+        System.out.println("search = " + page);
+        List<NoticeListResponseDTO> dtoList = service.getNotice(page);
+
+        PageMaker pageMaker = new PageMaker(page, service.getCountNotice(page));
+
+        model.addAttribute("nList", dtoList);
+        model.addAttribute("maker", pageMaker);
+
+
+        return "notice-notice";
+    }
+
+    @GetMapping("/notice-common")
+    public String commonList(Model model, @ModelAttribute("s") Search page) {
+        System.out.println("search = " + page);
+        List<NoticeListResponseDTO> dtoList = service.getCommon(page);
+
+        PageMaker pageMaker = new PageMaker(page, service.getCountCommon(page));
+
+        model.addAttribute("nList", dtoList);
+        model.addAttribute("maker", pageMaker);
+
+
+        return "notice-common";
+    }
+
 }

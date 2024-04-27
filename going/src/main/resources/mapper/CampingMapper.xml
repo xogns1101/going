@@ -4,6 +4,15 @@
 
 <mapper namespace="com.camp.going.mapper.CampingMapper">
 
+    <sql id="search">
+        <if test="type == 'name'">
+            WHERE camp_name LIKE CONCAT('%', #{keyword}, '%')
+        </if>
+        <if test="type == 'address'">
+            WHERE camp_address LIKE CONCAT('%', #{keyword}, '%')
+        </if>
+    </sql>
+
     <insert id="campSave">
     INSERT INTO camping
         (camp_id
@@ -45,6 +54,7 @@
 
     <select id="findAllCamping" resultType="camping">
         SELECT * FROM camping
+        <include refid="search"/>
         LIMIT #{pageStart}, #{amount}
     </select>
 
@@ -102,6 +112,7 @@
     <select id="getCount" resultType="int">
         SELECT COUNT(*)
         FROM camping
+        <include refid="search"/>
     </select>
 
     <select id="selectCampingById" parameterType="int"

@@ -10,17 +10,17 @@ section .title h1 {
 }
 
 section .title h1 span {
-color: black;
-font-family: "Yeon Sung", system-ui;
-font-weight: 400;
-font-style: normal;
+  color: black;
+  font-family: "Yeon Sung", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
 
 
 section .notice-list {
-display: flex;
-justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 
 }
 
@@ -41,7 +41,7 @@ section .notice-list .notice-box table {
   margin-left: 5%;
   margin-top: 10%;
   background: #F0EEEE;
-  
+
 }
 
 table {
@@ -56,7 +56,7 @@ section .notice-list tr {
   font-style: normal;
   font-size: 25px;
   border: 2px solid black;
-  
+
   width: 100px;
   height: 50px;
   text-align: center;
@@ -64,33 +64,36 @@ section .notice-list tr {
 }
 
 section .notice-list tr:hover {
-  background-color: lightgray; /* 호버 시 배경색 변경 */
-  cursor: pointer; /* 호버 시 커서 모양 변경 */
+  background-color: lightgray;
+  /* 호버 시 배경색 변경 */
+  cursor: pointer;
+  /* 호버 시 커서 모양 변경 */
 }
 
-  section .notice-list tr.column {
-      pointer-events: none;
-  }
+section .notice-list tr.column {
+  pointer-events: none;
+}
 
-  section .notice-click .noticeCategory {
-    width: 10%;
-  }
-  
-  section .notice-click .NoticeNo {
-    width: 10%;
-  }
+section .notice-click .noticeCategory {
+  width: 10%;
+}
 
-  section .notice-click .NoticeTitle {
-    width: 50%;
-  }
+section .notice-click .NoticeNo {
+  width: 10%;
+}
 
-  section .notice-click .NoticeDate {
-    width: 20%;
+section .notice-click .NoticeTitle {
+  width: 50%;
+}
 
-  }
-  section .notice-click .NoticeCount {
-    width: 10%;
-  }
+section .notice-click .NoticeDate {
+  width: 20%;
+
+}
+
+section .notice-click .NoticeCount {
+  width: 10%;
+}
 
 /* section .notice-list tr th {
   margin-right: 15px;
@@ -104,21 +107,21 @@ section .notice-box .notice-list tr .noticeCategory {
   margin-right: 5px;
   margin-left: 5px;
   width: 60px;
-  
+
 }
 
 section .notice-box .notice-list tr .NoticeNo {
   margin-right: 5px;
   margin-left: 5px;
   width: 60px;
-  
+
 }
 
 section .notice-box .notice-list tr .NoticeTitle {
   margin-right: 5px;
   margin-left: -15px;
   width: 60px;
-  
+
 }
 
 
@@ -148,7 +151,7 @@ section .notice-box .notice-list tr .NoticeTitle {
   border: 1px black solid;
   cursor: pointer;
   line-height: 43px;
-  
+
 }
 
 .total-date {
@@ -163,7 +166,7 @@ section .notice-box .notice-list tr .NoticeTitle {
   font-weight: 400;
   word-wrap: break-word;
   line-height: 43px;
-  
+
 }
 
 /* 제목 조회 */
@@ -181,7 +184,7 @@ section .notice-box .notice-list tr .NoticeTitle {
   border: 1px black solid;
   position: relative;
   line-height: 43px;
-  
+
 
 }
 
@@ -201,14 +204,14 @@ section .notice-box .notice-list tr .NoticeTitle {
   width: 64px;
   height: 43px;
   /* position: absolute; */
-  
+
   top: 30px;
   color: black;
   font-size: 24px;
   font-family: Yeon Sung;
   font-weight: 400;
   word-wrap: break-word;
-  
+
 }
 
 
@@ -218,57 +221,57 @@ section .notice-box .notice-list tr .NoticeTitle {
   /* position: relative; */
 
 
-  .search-content-background {
-    width: 320px;
-    height: 41px;
-    /* position: absolute; */
-    left: 445px;
-    top: -45px;
-    background: white;
-    border: 1px black solid;
-    position: relative;
-  }
-  
-  .search-content {
-    width: 250px;
-    height: 35px;
-    /* position: absolute; */
-    left: 700px;
-    top: 23px;
-    border: none;
-    outline: none;
-    color: black;
-    font-size: 24px;
-    font-family: Yeon Sung;
-    font-weight: 400;
-    word-wrap: break-word;
-    
-  }
-  
-  .search-click-button {
-    width: 63px;
-    height: 35px;
-    /* position: absolute; */
-    left: 910px;
-    top: 28px;
-    font-family: Yeon Sung;
-    font-size: 20px;
-    background: #9CEE8F;
-    border: 1px black solid;
-    cursor: pointer;
-    
-  }
-  
-  .form-select {
-    width: 100px; 
-    height: 41px;
-    font-size: 20px;
-    font-family: Yeon Sung;
-    font-weight: 400;
-    position: absolute;
-    left: -100px;
-    top: -1px;
-  }
+.search-content-background {
+  width: 320px;
+  height: 41px;
+  /* position: absolute; */
+  left: 445px;
+  top: -45px;
+  background: white;
+  border: 1px black solid;
+  position: relative;
+}
+
+.search-content {
+  width: 250px;
+  height: 35px;
+  /* position: absolute; */
+  left: 700px;
+  top: 23px;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 24px;
+  font-family: Yeon Sung;
+  font-weight: 400;
+  word-wrap: break-word;
+
+}
+
+.search-click-button {
+  width: 63px;
+  height: 35px;
+  /* position: absolute; */
+  left: 910px;
+  top: 28px;
+  font-family: Yeon Sung;
+  font-size: 20px;
+  background: #9CEE8F;
+  border: 1px black solid;
+  cursor: pointer;
+
+}
+
+.form-select {
+  width: 100px;
+  height: 41px;
+  font-size: 20px;
+  font-family: Yeon Sung;
+  font-weight: 400;
+  position: absolute;
+  left: -100px;
+  top: -1px;
+}
 
 /* 페이지 사이즈 체크 */
 .page-size-wrapper {
@@ -335,8 +338,10 @@ nav {
 
 .pagination-custom {
   width: 600px;
-  display: flex; /* 요소를 가로로 배치합니다. */
-  justify-content: space-around; /* 요소를 가운데 정렬합니다. */
+  display: flex;
+  /* 요소를 가로로 배치합니다. */
+  justify-content: space-around;
+  /* 요소를 가운데 정렬합니다. */
   /* 그 외 원하는 스타일을 추가하세요 */
 }
 
@@ -351,8 +356,10 @@ nav {
 /* 등록버튼 */
 .add-btn {
   /* 등록 링크에 적용할 스타일 */
-  color: #45cf6f; /* 텍스트 색상을 파란색으로 */
-  font-weight: bold; /* 텍스트를 굵게 */
+  color: #45cf6f;
+  /* 텍스트 색상을 파란색으로 */
+  font-weight: bold;
+  /* 텍스트를 굵게 */
   left: 270px;
   position: relative;
   bottom: -50px;
@@ -365,6 +372,36 @@ nav {
 
 .add-btn:hover {
   /* 등록 링크에 마우스를 올렸을 때의 스타일 */
-  color: red; /* 텍스트 색상을 빨간색으로 변경 */
+  color: red;
+  /* 텍스트 색상을 빨간색으로 변경 */
   /* 기타 원하는 스타일 지정 */
+}
+
+
+/* 카테고리 버튼 */
+.category-button-box {
+  position: relative;
+  bottom: 10px;
+  left: 50px;
+}
+
+.category-button-box .category-button {
+  font-family: Yeon Sung;
+  font-size: 20px;
+  width: 60px;
+  height: 30px;
+  margin-left: 5px;
+  cursor: pointer;
+  border: 1px black solid;
+  background: #9CEE8F;
+}
+
+.category-button-box .category-button a {
+  display: block;
+  position: relative;
+  right: 8px;
+  bottom: 2px;
+  width: 60px;
+  height: 30px;
+  text-align: center;
 }

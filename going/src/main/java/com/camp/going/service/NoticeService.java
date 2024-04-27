@@ -67,5 +67,47 @@ public class NoticeService {
     }
 
 
+
+    public List<NoticeListResponseDTO> getEssential(Search page) {
+        List<NoticeListResponseDTO> dtoList = new ArrayList<>();
+        List<Notice> noticeList = mapper.findEssential(page);
+        for (Notice notice : noticeList) {
+            NoticeListResponseDTO dto = new NoticeListResponseDTO(notice);
+            dtoList.add(dto);
+        }
+        return dtoList;
+    }
+
+    public int getCountEssential(Search page) {
+        return mapper.getCountEssential(page);
+    }
+
+    public List<NoticeListResponseDTO> getNotice(Search page) {
+        List<NoticeListResponseDTO> dtoList = new ArrayList<>();
+        List<Notice> noticeList = mapper.findNotice(page);
+        for (Notice notice : noticeList) {
+            NoticeListResponseDTO dto = new NoticeListResponseDTO(notice);
+            dtoList.add(dto);
+        }
+        return dtoList;
+    }
+
+    public int getCountNotice(Search page) {
+        return mapper.getCountNotice(page);
+    }
+
+    public List<NoticeListResponseDTO> getCommon(Search page) {
+        List<NoticeListResponseDTO> dtoList = new ArrayList<>();
+        List<Notice> noticeList = mapper.findCommon(page);
+        for (Notice notice : noticeList) {
+            NoticeListResponseDTO dto = new NoticeListResponseDTO(notice);
+            dtoList.add(dto);
+        }
+        return dtoList;
+    }
+
+    public int getCountCommon(Search page) {
+        return mapper.getCountCommon(page);
+    }
 }
 

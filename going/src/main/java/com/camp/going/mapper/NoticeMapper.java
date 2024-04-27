@@ -29,4 +29,11 @@ public interface NoticeMapper {
 
     int getCount(Search page);
 
+    List<Notice> findEssential(Search page);
+    int getCountEssential(Search page);
+    List<Notice> findNotice(Search page);
+    int getCountNotice(Search page);
+    List<Notice> findCommon(Search page);
+    int getCountCommon(Search page);
+
 }
