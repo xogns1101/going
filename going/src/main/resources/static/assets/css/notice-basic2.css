@@ -1,16 +1,29 @@
+body {
+  background-image: url(../img/tree.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+
 section {
   margin-bottom: 110px;
 }
 
 section .title h1 {
-  color: black;
-  margin-top: 250px;
-  font-size: 40px;
+  background: linear-gradient(to right top, #E4FFAA, #4BDB73);
+  color: transparent;
+  -webkit-background-clip: text;
+  margin-top: 220px;
+  font-size: 80px;
   text-align: center;
 }
 
 section .title h1 span {
   color: black;
+  background: linear-gradient(to right top, #E4FFAA, #4BDB73);
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 80px;
   font-family: "Yeon Sung", system-ui;
   font-weight: 400;
   font-style: normal;
@@ -21,6 +34,7 @@ section .title h1 span {
 section .notice-list {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 250px;
 
 }
 
@@ -31,7 +45,7 @@ section .notice-list .notice-box {
   background: #E4FFAA;
   margin-top: 50px;
   border-radius: 3%;
-  height: 550px;
+  height: 600px;
   position: relative;
   margin-bottom: 40px;
 }
@@ -40,7 +54,7 @@ section .notice-list .notice-box table {
   width: 900px;
   margin-left: 5%;
   margin-top: 10%;
-  background: #F0EEEE;
+  background: #fff;
 
 }
 
@@ -283,28 +297,50 @@ section .notice-box .notice-list tr .NoticeTitle {
   height: 35px;
   background: lightgray;
   border: 1px black solid;
-  text-align: center;
-  line-height: 35px;
   position: relative;
-  top: 8%;
-  left: 75%;
 }
 
-.page-size {
-  width: 64px;
-  height: 43px;
+.search-content {
+  width: 250px;
+  height: 35px;
+  /* position: absolute; */
+  left: 700px;
+  top: 23px;
+  border: none;
+  outline: none;
   color: black;
   font-size: 24px;
   font-family: Yeon Sung;
   font-weight: 400;
   word-wrap: break-word;
+
 }
 
-.page-size-click-button {
-  width: 26px;
-  height: 18px;
+.search-click-button {
+  width: 63px;
+  height: 35px;
+  /* position: absolute; */
+  left: 910px;
+  top: 28px;
+  font-family: Yeon Sung;
+  font-size: 20px;
+  background: #9CEE8F;
+  border: 1px black solid;
   cursor: pointer;
+
 }
+
+.form-select {
+  width: 100px;
+  height: 41px;
+  font-size: 20px;
+  font-family: Yeon Sung;
+  font-weight: 400;
+  position: absolute;
+  left: -100px;
+  top: -1px;
+}
+
 
 
 
@@ -322,45 +358,50 @@ section .notice-box .notice-list tr .NoticeTitle {
 }
 
 .pagination-custom a {
-  color: #444 !important;
+  background: linear-gradient(to right top, #E4FFAA, #4BDB73);
+  color: transparent;
+  -webkit-background-clip: text;
+  /* 숫자와 화살표의 글자 색상 설정 */
+  /* text-decoration: none; */
+  width: 30px;
+  height: 30px;
 }
 
 .pagination-custom li.active a,
 .pagination-custom li:hover a {
-  background: #333 !important;
-  color: #fff !important;
+  background: #ffffff;
+  color: #4BDB73 !important;
+  border-radius: 20px;
 }
 
 /* 페이지 버튼 영역 */
+
+
 nav {
-  display: flex;
+  margin-bottom: 300px;
 }
 
 .pagination-custom {
   width: 600px;
   display: flex;
-  /* 요소를 가로로 배치합니다. */
-  justify-content: space-around;
-  /* 요소를 가운데 정렬합니다. */
-  /* 그 외 원하는 스타일을 추가하세요 */
+  justify-content: space-evenly;
+  bottom: 30px;
 }
 
 .pagination .page-item {
   width: 30px;
   margin-bottom: 10px;
   position: relative;
-  top: -30px;
-  font-size: 25px;
+  top: 20px;
+  font-size: 35px;
+  right: 10px;
 }
 
 /* 등록버튼 */
 .add-btn {
-  /* 등록 링크에 적용할 스타일 */
   color: #45cf6f;
-  /* 텍스트 색상을 파란색으로 */
   font-weight: bold;
-  /* 텍스트를 굵게 */
-  left: 270px;
+  left: 170px;
   position: relative;
   bottom: -50px;
   border: 3px solid black;
@@ -368,6 +409,7 @@ nav {
   padding: 5px;
   font-size: 30px;
   border-radius: 10px;
+  background: #fff;
 }
 
 .add-btn:hover {

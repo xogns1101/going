@@ -5,9 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <title>REVIEW</title>
+    <link rel="stylesheet" href="/assets/css/review.css">
     <%@ include file="include/static-head.jsp" %>
 
-    <link rel="stylesheet" href="/assets/css/review.css">
+    
 
 </head>
 
@@ -62,33 +63,35 @@
 
         <!--페이징 부분-->
 
-        <div class="pageBox">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination pagination-lg pagination-custom">
-                    <c:if test="${marker.page.pageNo != 1}">
-                        <li><a href="/main/review?pageNo=1&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
-                        </li>
-                    </c:if>
-                    <c:if test="${marker.prev}">
-                        <li><a href="/main/review?pageNo=${marker.begin-1}&type=${s.type}&keyword=${s.keyword}">prev</a>
-                        </li>
-                    </c:if>
-                    <c:forEach var="i" begin="${marker.begin}" end="${marker.end}">
-                        <li data-page-num="${i}">
-                            <a href="/main/review?pageNo=${i}&type=${s.type}&keyword=${s.keyword}">${i}</a>
-                        </li>
-                    </c:forEach>
-                    <c:if test="${marker.next}">
-                        <li><a href="/main/review?pageNo=${marker.end+1}&type=${s.type}&keyword=${s.keyword}">next</a>
-                        </li>
-                    </c:if>
-                    <c:if test="${marker.page.pageNo != marker.finalPage}">
-                        <li><a
-                                href="/main/review?pageNo=${marker.finalPage}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
-                        </li>
-                    </c:if>
-                </ul>
-            </nav>
+        <div class="review-box">
+            <div class="pageBox">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination pagination-lg pagination-custom">
+                        <c:if test="${marker.page.pageNo != 1}">
+                            <li><a href="/main/review?pageNo=1&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
+                            </li>
+                        </c:if>
+                        <c:if test="${marker.prev}">
+                            <li><a href="/main/review?pageNo=${marker.begin-1}&type=${s.type}&keyword=${s.keyword}">prev</a>
+                            </li>
+                        </c:if>
+                        <c:forEach var="i" begin="${marker.begin}" end="${marker.end}">
+                            <li data-page-num="${i}">
+                                <a href="/main/review?pageNo=${i}&type=${s.type}&keyword=${s.keyword}">${i}</a>
+                            </li>
+                        </c:forEach>
+                        <c:if test="${marker.next}">
+                            <li><a href="/main/review?pageNo=${marker.end+1}&type=${s.type}&keyword=${s.keyword}">next</a>
+                            </li>
+                        </c:if>
+                        <c:if test="${marker.page.pageNo != marker.finalPage}">
+                            <li><a
+                                    href="/main/review?pageNo=${marker.finalPage}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
+                            </li>
+                        </c:if>
+                    </ul>
+                </nav>
+            </div>
         </div>
 
 
@@ -149,16 +152,18 @@
         function appendPageActive() {
 
             // 현재 서버에서 넘겨준 페이지 번호
-            const currPage = '${maker.page.pageNo}';
+            const currPage = '${marker.page.pageNo}';
 
             // li 태그들을 전부 확인해서
             // 현재 페이지 번호와 일치하는 li를 찾은 후 active 클래스 이름 붙이기
             const $ul = document.querySelector('.pagination');
             const $liList = [...$ul.children];
 
+           
             $liList.forEach($li => {
                 if (currPage === $li.dataset.pageNum) {
                     $li.classList.add('active');
+                    console.log('페이지 클릭됨');
                 }
             });
         }
