@@ -124,7 +124,7 @@ public class ReservationController {
         log.info("확인 : {}", dto.getRegDates());
 
 
-        return "redirect:/main/reservation";
+        return "redirect:/user/mypage";
 
     }
 
