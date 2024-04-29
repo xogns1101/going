@@ -14,6 +14,10 @@ public class Reservation {
     private int campId; // 캠핑장 고유 번호
     private LocalDate regDate; // 최초 예약 날짜
     private LocalDate regDates; // 퇴실 예약 날짜
+    private String campName;
+    private String email;
+    private int campPrice;
+    private String phoneNumber;
 
 
 

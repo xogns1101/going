@@ -25,30 +25,29 @@
 
     </insert>
 
-    <select id="selectReservation" resultType="reservation">
+    <select id="findAllReservation" resultType="reservation">
 
         SELECT
-
-            reservation_number
-            , user_id
-            , camp_id
-            , reg_date
-            , reg_dates
-
-        FROM
-
-            reservation
-
-        ORDER BY
-
-        user_id = #{userId};
-
+            r.reservation_number,
+            c.camp_name,
+            u.email,
+            r.reg_date,
+            r.reg_dates,
+            c.camp_price,
+            u.phone_number
+        FROM reservation r
+        LEFT JOIN user u
+        ON r.user_id = u.user_id
+        LEFT JOIN camping c
+        ON r.camp_id = c.camp_id
+        ORDER BY reservation_number DESC
+        LIMIT #{pageStart}, #{amount}
     </select>
 
     <select id="reservationCamping" resultType="reservation">
 
         SELECT
-            r.camp_id,
+            r.reservation_number,
             u.email,
             c.camp_name,
             r.reg_date,
@@ -91,6 +90,10 @@
     <select id="count" resultType="int">
         SELECT COUNT(*) FROM reservation
         WHERE user_id = #{userId}
+    </select>
+
+    <select id="count2" resultType="int">
+        SELECT COUNT(*) FROM reservation
     </select>
 
 </mapper>

@@ -32,12 +32,13 @@
             c.camp_homepage,
             c.camp_number,
             r.reg_date,
-            r.reg_dates
+            r.reg_dates,
+            c.camp_image
         FROM reservation r
         LEFT JOIN camping c
         ON r.camp_id = c.camp_id
         WHERE user_id = #{userId}
-        ORDER BY r.reg_date DESC
+        ORDER BY r.reservation_number DESC
         LIMIT 1
 
     </select>

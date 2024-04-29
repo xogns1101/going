@@ -49,9 +49,7 @@
         SELECT
             user_id
             , email
-            , password
             , phone_number
-            , name
         FROM
             user
         WHERE

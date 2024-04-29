@@ -83,31 +83,17 @@ public class ReservationController {
 
 
     @GetMapping("/reservation-list")
-    public String reservationDetail(Model model,
-                                    HttpSession session
-                                ,Search page){
-
-        LoginUserResponseDTO dto = (LoginUserResponseDTO) session.getAttribute("login");
-
-
-        User user = new User();
-        user.setUserId((int) dto.getId());
-        user.setName(dto.getEmail());
-        log.info("user_id : {}", user.getUserId());
-        log.info("name : {}", user.getEmail());
-
-        System.out.println("search = " + page);
-
-
-
+    public String reservationDetailList(Model model
+                                        , Search page){
 
 //        // 페이징 버튼 알고리즘 적용 -> 사용자가 요청한 페이지 정보, 총 게시물 개수를 전달.
 //        // 페이징 알고리즘 자동 호출.
-        PageMaker pageMaker = new PageMaker(page, service.getCount(page));
-        MyPage myPage = myPageService.myReservation(dto.getId());
+        PageMaker pageMaker = new PageMaker(page, reservationService.getCount2(page));
+
+        List<ReservationResponseDTO> reservationList = reservationService.getReservationList(page);
 
         model.addAttribute("maker", pageMaker);
-        model.addAttribute("m", myPage);
+        model.addAttribute("rList", reservationList);
 
         return "reservation-admin";
 
@@ -124,7 +110,7 @@ public class ReservationController {
         log.info("확인 : {}", dto.getRegDates());
 
 
-        return "redirect:/main/reservation";
+        return "redirect:/user/mypage";
 
     }
 
