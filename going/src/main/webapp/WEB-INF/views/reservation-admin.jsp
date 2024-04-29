@@ -47,20 +47,19 @@
 
                                         </tr>
                                     </thead>
-                                    <c:forEach var="b" items="${rList}">
+                                    <c:forEach var="m" items="${rList}">
                                         <tbody>
                                             <tr>
+                                                
                                                 <td class="campId">${m.campId}</td>                      
                                                 <td class="campName">${m.campName}</td>
                                                 <td class="campEmail">${m.email}</td>
                                                 <td class="campregDate">${m.regDate}</td>
-                                                <td class="campregDates">${b.regDates}</td>
-                                                <td class="campPrice">${b.campPrice}</td>
-                                                <td class="phoneNumber">${b.phoneNumber}</td>
+                                                <td class="campregDates">${m.regDates}</td>
+                                                <td class="campPrice">${m.campPrice}</td>
+                                                <td class="phoneNumber">${m.phoneNumber}</td>
                                             </tr>
-                                        
-                                        
-                                        
+
                                             <!-- 추가 행은 필요에 따라 추가하세요 -->
                                         </tbody>
                                     </c:forEach>
