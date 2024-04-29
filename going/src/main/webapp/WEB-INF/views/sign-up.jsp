@@ -47,7 +47,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="password" maxlength="20" id="password" name="password" maxlength="20"
+                        <td><input type="password" maxlength="20" id="password" name="password" maxlength="25"
                                 required="required" aria-required="true" placeholder="영문과 특수문자를 포함한 최소 8자"></td>
                     </tr>
                     <tr>
@@ -150,7 +150,7 @@
         }
 
         // 패스워드 검사 정규표현식
-        const passwordPattern = /([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/;
+                const passwordPattern = /^(?=.*[a-zA-Z0-9])(?=.*[!@#$%^&*?_~]).{8,}$/;
 
         // 패스워드 입력값 검증
         const $pwInput = document.getElementById('password');
