@@ -153,6 +153,58 @@
     <script>
         window.onload = function () {
 
+
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const currentMonth = document.getElementById('currentMonth');
+            const calendarDates = document.getElementById('calendarDates');
+
+            let today = new Date();
+            let currentMonthIndex = today.getMonth();
+            let currentYear = today.getFullYear();
+            prevBtn.addEventListener('click', showPrevMonth);
+            nextBtn.addEventListener('click', showNextMonth);
+            showCalendar(currentYear, currentMonthIndex);
+
+            function showCalendar(year, monthIndex) {
+                currentMonth.textContent = `\${year}년  \${monthIndex + 1}월`;
+                let firstDayOfMonth = new Date(year, monthIndex, 1).getDay();
+                let lastDayOfMonth = new Date(year, monthIndex + 1, 0).getDate();
+                let lastDayOfPrevMonth = new Date(year, monthIndex, 0).getDate();
+                let dates = "";
+                for (let i = firstDayOfMonth - 1; i >= 0; i--) {
+                    dates += `<div class="date prev-date">\${lastDayOfPrevMonth - i}</div>`;
+                }
+                for (let i = 1; i <= lastDayOfMonth; i++) {
+                    dates += `<div class="date">\${i}</div>`;
+                }
+                calendarDates.innerHTML = dates;
+            }
+
+            function showPrevMonth() {
+                currentMonthIndex--;
+                if (currentMonthIndex < 0) {
+                    currentYear--;
+                    currentMonthIndex = 11;
+                }
+                showCalendar(currentYear, currentMonthIndex);
+                activeCount = 0;
+            }
+
+            function showNextMonth() {
+                currentMonthIndex++;
+                if (currentMonthIndex > 11) {
+                    currentYear++;
+                    currentMonthIndex = 0;
+                }
+                showCalendar(currentYear, currentMonthIndex);
+                activeCount = 0;
+            }
+
+
+
+
+
             // 예약하기 눌렀을때 값 전달하기
             const $reserveBtn = document.querySelector('.reserve-button');
 
@@ -173,7 +225,7 @@
                     location.href = `/main/reservation`;
 
                 } else {
-                    
+
                     alert('예약이 취소되었습니다. \n다시 예약해주세요.');
                     e.preventDefault();
                     return false;
