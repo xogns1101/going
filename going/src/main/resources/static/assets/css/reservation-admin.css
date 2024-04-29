@@ -47,6 +47,10 @@ section .camp-list tr {
     line-height: 50px;
 }
 
+section .camp-list .camp-box td.phoneNumber {
+    font-size: 20px;
+}
+
 section .camp-list thead .column {
     pointer-events: none;
 }
