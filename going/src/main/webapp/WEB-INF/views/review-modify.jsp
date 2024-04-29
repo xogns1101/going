@@ -35,8 +35,8 @@
       </div>
       <input type="hidden" name="starPoint" id="starPoint" value="${r.reviewPoint}">
       <!-- <input type="text" id="review-title" placeholder="캠핑장 이름을 입력하세요."><br> -->
-      <input type="text" id="review-content" name="reviewContent" placeholder="리뷰내용" value="${r.reviewContent}">
-    
+      <!-- <input type="text" id="review-content" name="reviewContent" placeholder="리뷰내용" value="${r.reviewContent}"> -->
+      <textarea id="review-content" name="reviewContent" rows="4" cols="50" placeholder="리뷰내용" maxlength="300">${r.reviewContent}</textarea>
       <div class="profile">
         <div class="thumbnail-box">
           <img src="/review${r.reviewImage}" alt="리뷰사진">
