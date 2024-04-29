@@ -5,6 +5,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
     <title>introduce</title>
 
     <link rel="stylesheet" href="/assets/css/main.css">

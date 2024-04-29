@@ -7,6 +7,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
     <title>RESERVATION-상세보기</title>
 
     <%@ include file="include/static-head.jsp" %>
