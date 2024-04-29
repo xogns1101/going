@@ -96,28 +96,28 @@
                             <ul class="pagination pagination-lg pagination-custom">
                                 <c:if test="${maker.page.pageNo != 1}">
                                     <li><a
-                                            href="/main/reservation?pageNo=1&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
+                                            href="/main/reservation-list?pageNo=1&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
                                     </li>
                                 </c:if>
                                 <c:if test="${maker.prev}">
                                     <li class="prev"><a
-                                            href="/main/reservation?pageNo=${maker.begin-1}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">&lt;</a>
+                                            href="/main/reservation-list?pageNo=${maker.begin-1}&type=${s.type}&keyword=${s.keyword}">&lt;</a>
                                     </li>
                                 </c:if>
                                 <c:forEach var="i" begin="${maker.begin}" end="${maker.end}">
                                     <li data-page-num="${i}">
                                         <a
-                                            href="/main/reservation?pageNo=${i}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">${i}</a>
+                                            href="/main/reservation-list?pageNo=${i}&type=${s.type}&keyword=${s.keyword}">${i}</a>
                                     </li>
                                 </c:forEach>
                                 <c:if test="${maker.next}">
                                     <li class="next"><a
-                                            href="/main/reservation?pageNo=${maker.end+1}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">&gt;</a>
+                                            href="/main/reservation-list?pageNo=${maker.end+1}&type=${s.type}&keyword=${s.keyword}">&gt;</a>
                                     </li>
                                 </c:if>
                                 <c:if test="${maker.page.pageNo != maker.finalPage}">
                                     <li><a
-                                            href="/main/reservation?pageNo=${maker.finalPage}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
+                                            href="/main/reservation-list?pageNo=${maker.finalPage}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
                                     </li>
                                 </c:if>
                             </ul>
