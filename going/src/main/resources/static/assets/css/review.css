@@ -128,6 +128,12 @@ section .review-list .review-box .review {
 
 }
 
+section .review-list .review-box .review .review-content {
+  white-space: pre-line;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 section .review-list .review-box .review li:first-child {
   font-size: 35px;
   text-decoration: underline;

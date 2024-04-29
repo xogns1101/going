@@ -71,10 +71,10 @@
 
                 <!-- 검색어 조회 -->
 
-                <form action="/main/reservation" method="get">
+                <form action="/main/reservation-list" method="get">
                     <div class="search-content-background">
                         <select class="form-select" name="type" id="search-type">
-                            <option value="campId">캠핑장 아이디</option>
+                            <option value="all">모두</option>
                             <option value="campName">캠핑장 이름</option>
                             <option value="userEmail">회원 아이디</option>
                         </select>

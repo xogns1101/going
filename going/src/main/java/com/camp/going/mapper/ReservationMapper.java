@@ -22,4 +22,6 @@ public interface ReservationMapper {
 
     int count(int userId);
 
+    int count2(Search page);
+
 }
