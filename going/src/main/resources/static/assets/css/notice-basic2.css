@@ -45,7 +45,7 @@ section .notice-list .notice-box {
   background: #E4FFAA;
   margin-top: 50px;
   border-radius: 3%;
-  height: 600px;
+  height: 700px;
   position: relative;
   margin-bottom: 40px;
 }
@@ -353,25 +353,48 @@ section .notice-box .notice-list tr .NoticeTitle {
 }
 
 .bottom-section nav {
-  flex: 1;
+  /* flex: 1;
   justify-content: center;
+  top: 10px;
+   */
 }
 
-.pagination-custom a {
+.pagination-custom {
+  width: 60px;
+}
+
+.pagination-custom li {
   background: linear-gradient(to right top, #E4FFAA, #4BDB73);
   color: transparent;
   -webkit-background-clip: text;
+  display: inline-block;
+  margin: 0 10px;
+  padding: 20px;
+  
+
+}
+
+.pagination-custom a {
+  display: block;
+ 
+  color: #4BDB73;
+  -webkit-background-clip: text;
   /* 숫자와 화살표의 글자 색상 설정 */
   /* text-decoration: none; */
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  /* padding-left: 15px; */
+  padding-top: 9px; 
 }
 
 .pagination-custom li.active a,
 .pagination-custom li:hover a {
   background: #ffffff;
   color: #4BDB73 !important;
-  border-radius: 20px;
+  border-radius: 30px;
+  
 }
 
 /* 페이지 버튼 영역 */
@@ -382,7 +405,7 @@ nav {
 }
 
 .pagination-custom {
-  width: 600px;
+  width: 800px;
   display: flex;
   justify-content: space-evenly;
   bottom: 30px;
@@ -394,7 +417,7 @@ nav {
   position: relative;
   top: 20px;
   font-size: 35px;
-  right: 10px;
+  right: 5px;
 }
 
 /* 등록버튼 */

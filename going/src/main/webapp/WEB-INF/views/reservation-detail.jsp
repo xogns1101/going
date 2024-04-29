@@ -114,7 +114,7 @@
 
                             <div>
                                 <input type="date" class="reg-date" name="regDate">
-                                
+
                             </div>
                             <div class="between">&nbsp; &nbsp; ~</div>
                         </div>
@@ -151,47 +151,26 @@
     </section>
 
     <script>
-        const $date = document.querySelector('.calendar-dates')
-
-        let activeCount = 0;
-        let firstClickedDate = ""; // 처음으로 클릭된 요소의 날짜를 저장하는 변수
-        let lastClickedDate = ""; // 마지막으로 클릭된 요소의 날짜를 저장하는 변수
-
-        const $regDate = document.querySelector('.reg-date');
-        const $regDates = document.querySelector('.reg-dates');
-
-
-
-
         window.onload = function () {
+
+
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
             const currentMonth = document.getElementById('currentMonth');
             const calendarDates = document.getElementById('calendarDates');
 
-
             let today = new Date();
             let currentMonthIndex = today.getMonth();
             let currentYear = today.getFullYear();
-
             prevBtn.addEventListener('click', showPrevMonth);
             nextBtn.addEventListener('click', showNextMonth);
-
             showCalendar(currentYear, currentMonthIndex);
 
-
             function showCalendar(year, monthIndex) {
-
                 currentMonth.textContent = `\${year}년  \${monthIndex + 1}월`;
-
-
                 let firstDayOfMonth = new Date(year, monthIndex, 1).getDay();
                 let lastDayOfMonth = new Date(year, monthIndex + 1, 0).getDate();
-
-
                 let lastDayOfPrevMonth = new Date(year, monthIndex, 0).getDate();
-
-
                 let dates = "";
                 for (let i = firstDayOfMonth - 1; i >= 0; i--) {
                     dates += `<div class="date prev-date">\${lastDayOfPrevMonth - i}</div>`;
@@ -199,12 +178,8 @@
                 for (let i = 1; i <= lastDayOfMonth; i++) {
                     dates += `<div class="date">\${i}</div>`;
                 }
-
-
                 calendarDates.innerHTML = dates;
             }
-
-
 
             function showPrevMonth() {
                 currentMonthIndex--;
@@ -227,130 +202,40 @@
             }
 
 
-            // // 달력일자선택
-
-            // $date.addEventListener('click', e => {
-            //     const clickedDate = e.target.textContent;
-
-            //     // 클릭된 요소가 날짜인 경우에만 처리
-            //     if (e.target.classList.contains('date')) {
-            //         console.log('클릭한 일자', clickedDate);
-
-            //         // 선택한 날짜가 활성화되어 있지 않은 경우
-            //         if (!e.target.classList.contains('active')) {
-            //             // 현재 선택한 일자를 활성화
-            //             e.target.classList.add('active');
-            //             activeCount++;
-
-            //             // 활성화된 일자가 2개 이상이면 선택한 일자 초기화
-            //             if (activeCount > 2) {
-            //                 document.querySelectorAll('.date').forEach(date => {
-            //                     date.classList.remove('active');
-            //                 });
-            //                 activeCount = 0;
-            //             }
-            //         } else {
-            //             // 선택한 일자를 비활성화
-            //             e.target.classList.remove('active');
-            //             activeCount--;
-            //         }
-
-                    // 입실일 선택
-                    if (activeCount === 1) {
-                        firstClickedDate = clickedDate;
-                        console.log('입실 날짜:', firstClickedDate);
-
-
-                        // 년도와 월 변수 선언
-                        let dayString = firstClickedDate
-                        let monthString = (currentMonthIndex + 1).toString();
-
-                        // 한 자리 숫자인 경우 앞에 0을 붙임
-                        if (dayString.length === 1) {
-                            dayString = '0' + dayString;
-                        }
-                        if (monthString.length === 1) {
-                            monthString = '0' + monthString;
-                        }
-
-
-                        $regDate.textContent = currentYear + '-' + monthString + '-' + dayString;
 
 
 
-                    }
+            // 예약하기 눌렀을때 값 전달하기
+            const $reserveBtn = document.querySelector('.reserve-button');
 
-                    // 퇴실일 선택
-                    if (activeCount === 2) {
-                        lastClickedDate = clickedDate;
-                        console.log('퇴실 날짜:', lastClickedDate);
+            $reserveBtn.addEventListener('click', e => {
 
-                        // 년도와 월 변수 선언
-                        let dayString = lastClickedDate
-                        let monthString = (currentMonthIndex + 1).toString();
-
-                        // 한 자리 숫자인 경우 앞에 0을 붙임
-                        if (dayString.length === 1) {
-                            dayString = '0' + dayString;
-                        }
-                        if (monthString.length === 1) {
-                            monthString = '0' + monthString;
-                        }
+                const campId = e.target.dataset.campId;
+                console.log('camp_id: ' + campId);
+                const $campName = document.getElementById('campName');
 
 
-                        $regDates.textContent = currentYear + '-' + monthString + '-' + dayString;
 
+                const confirmation = confirm('캠핑장: ' + $campName.value + '\n' + '예약 진행 하시겠습니까?');
 
-                    }
+                if (confirmation) {
+
+                    alert('예약이 완료되었습니다!\n신나는 캠핑 즐기세요!');
+
+                    location.href = `/main/reservation`;
+
+                } else {
+
+                    alert('예약이 취소되었습니다. \n다시 예약해주세요.');
+                    e.preventDefault();
+                    return false;
                 }
 
 
-                // private int campId;
-                // private String email;
-                // private String campName;
-                // private String regDate; // 입실
-                // private String regDates; // 퇴실
-                // private int price;
-                // private String phoneNumber; 
-
-
-                // 예약하기 눌렀을때 값 전달하기
-                const $reserveBtn = document.querySelector('.reserve-button');
-
-                $reserveBtn.addEventListener('click', e => {
-
-                    const campId = e.target.dataset.campId;
-                    console.log('camp_id: ' + campId);
-
-                    // 서버에 요청 보내기
-                    location.href = '/user/mypage';
-
-
-                })
-
-           
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const calendarDates = document.querySelectorAll('.date');
-            const regDateInput = document.getElementById('regDate');
-
-            calendarDates.forEach(dateElement => {
-                dateElement.addEventListener('click', function () {
-                    const clickedDate = dateElement.textContent;
-                    const currentMonthYear = document.getElementById('currentMonth')
-                    .textContent;
-
-                    // 클릭된 날짜를 YYYY-MM-DD 형식으로 만듭니다. 여기서는 단순 예제이므로 클릭한 일자만을 고려합니다.
-                    // 실제로는 선택한 날짜에 대한 년도와 월도 고려해야 할 수 있습니다.
-                    const selectedDate = `${currentMonthYear}-${clickedDate}`;
-
-                    // regDate 입력 필드의 값을 선택한 날짜로 설정합니다.
-                    regDateInput.value = selectedDate;
-
-                    console.log('선택한 날짜:', selectedDate);
-                });
             });
-        });
+
+
+        }
     </script>
 
 
