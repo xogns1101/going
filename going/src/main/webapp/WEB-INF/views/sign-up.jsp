@@ -227,8 +227,8 @@
 
         };
 
-        // 휴대폰 검사 정규표현식
-        const phoneNumberPattern = /^(01[016789]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
+        // 휴대폰 검사 정규표현식 (하이픈을 반드시 포함한 형식)
+        const phoneNumberPattern = /^(01[016789]{1})-[0-9]{3,4}-[0-9]{4}$/;
 
         // 휴대폰 번호 검증
         const $userPhone = document.getElementById('user_phone');
@@ -255,7 +255,6 @@
                     '<b style="color: skyblue;">[사용가능한 휴대번호 입니다.]</b>';
                 checkResultList[4] = true;
             }
-
         };
 
 
