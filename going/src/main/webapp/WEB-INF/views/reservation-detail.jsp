@@ -30,7 +30,7 @@
             </div>
 
             <div class="detail-content1">
-                <img src="/assets/img/camp1.jpg" alt="캠핑장 사진">
+                <img src="${r.image}" alt="캠핑장 사진">
                 <ul class="basic-info">
                     <li>기본정보</li>
                     <li>가격: <span class="camp-price" name="campPrice">${r.campPrice}</span> 원</li>
