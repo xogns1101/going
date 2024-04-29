@@ -34,9 +34,6 @@ public class SignUpRequestDTO {
 
     private User.LoginMethod loginMethod;
 
-
-
-
     // dto -> entity method
 
     public User toEntity(PasswordEncoder encoder) {

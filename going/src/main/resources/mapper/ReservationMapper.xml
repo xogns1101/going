@@ -40,7 +40,7 @@
         ON r.user_id = u.user_id
         LEFT JOIN camping c
         ON r.camp_id = c.camp_id
-        ORDER BY reservation_number DESC
+        ORDER BY reg_date
         LIMIT #{pageStart}, #{amount}
     </select>
 
