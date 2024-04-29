@@ -323,7 +323,7 @@
                     console.log('camp_id: ' + campId);
 
                     // 서버에 요청 보내기
-                    location.href = '/main/reservation';
+                    location.href = '/user/mypage';
 
 
                 })
