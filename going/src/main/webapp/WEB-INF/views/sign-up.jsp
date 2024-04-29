@@ -47,7 +47,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="password" maxlength="20" id="password" name="password" maxlength="20"
+                        <td><input type="password" maxlength="20" id="password" name="password" maxlength="25"
                                 required="required" aria-required="true" placeholder="영문과 특수문자를 포함한 최소 8자"></td>
                     </tr>
                     <tr>
@@ -150,7 +150,7 @@
         }
 
         // 패스워드 검사 정규표현식
-        const passwordPattern = /([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/;
+                const passwordPattern = /^(?=.*[a-zA-Z0-9])(?=.*[!@#$%^&*?_~]).{8,}$/;
 
         // 패스워드 입력값 검증
         const $pwInput = document.getElementById('password');
@@ -227,8 +227,8 @@
 
         };
 
-        // 휴대폰 검사 정규표현식
-        const phoneNumberPattern = /^(01[016789]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
+        // 휴대폰 검사 정규표현식 (하이픈을 반드시 포함한 형식)
+        const phoneNumberPattern = /^(01[016789]{1})-[0-9]{3,4}-[0-9]{4}$/;
 
         // 휴대폰 번호 검증
         const $userPhone = document.getElementById('user_phone');
@@ -255,7 +255,6 @@
                     '<b style="color: skyblue;">[사용가능한 휴대번호 입니다.]</b>';
                 checkResultList[4] = true;
             }
-
         };
 
 
