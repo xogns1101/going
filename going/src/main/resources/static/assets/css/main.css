@@ -691,6 +691,9 @@ section.main-page2 .main-content .best-review .review-box .review-content {
   border-radius: 10px;
   background: #dfdfdf6b;
   padding: 10px;
+  white-space: pre-line;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 
