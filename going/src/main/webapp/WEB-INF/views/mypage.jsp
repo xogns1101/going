@@ -121,7 +121,7 @@
                     -->
                     <!-- 캠프장 사진  -->
                     <div class="CampImgbox">
-                        <img src="/assets/img/camping-img.jpg" alt="img">
+                        <img src="${c.campImage}" alt="img">
 
                     </div>
 

@@ -52,7 +52,7 @@ section#reservation .camping-list .camping-box {
   width: 500px;
   height: 700px;
   background: #E4FFAA;
-  margin: 80px auto 50px;
+  margin: 50px auto 50px;
   border-radius: 3%;
 
   position: relative;
@@ -206,6 +206,56 @@ section#reservation .camping-list button.more-button:hover {
   color: black;
 }
 
+/* 검색어 조회 */
+
+
+section#reservation .search-content-background {
+  margin: 80px 70px 0;
+  text-align: right;
+
+}
+
+/* select */
+section#reservation .search-content-background #search-type {
+  font-family: "Dongle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 29px;
+  width: 130px;
+  border-radius: 10px;
+  text-align: center;
+  border: solid 2px;
+  background: linear-gradient(to right top, #caf965, #ffffff);
+}
+
+
+/* input */
+section#reservation .search-content-background input[type="text"] {
+  width: 400px;
+  height: 50px;
+  font-size: 18px;
+  font-family: "Dongle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding-left: 20px;
+  font-size: 30px;
+  border-style: solid;
+  margin: 0 10px 0;
+}
+
+/* button */
+section#reservation .search-content-background .search-click-button {
+  font-family: "Dongle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  width: 70px;
+  border: solid 2px;
+  border-radius: 10px;
+  background: linear-gradient(to right top, #caf965, #ffffff);
+}
+
+
 
 
 
@@ -215,55 +265,47 @@ section#reservation .camping-list button.more-button:hover {
 /* 페이지 스타일 */
 /* pagination style */
 
-.pageBox {
+section#reservation .pageBox {
   width: 100%;
-  height: 280px;
+  height: 150px;
   /* background: violet; */
   display: flex;
   justify-content: center;
-  /* 가운데 정렬 */
-
-}
-
-.bottom-section#reservation {
-
-  margin-top: 150px;
-  margin-bottom: 150px;
+ 
 
 }
 
 
-
-.pageBox ul {
+section#reservation .pageBox ul {
   display: flex;
   justify-content: space-between;
-  margin-top: 80px;
+  margin-top: 30px;
 }
 
-.pageBox ul li {
+section#reservation .pageBox ul li {
   display: inline-block;
-  margin: 0 10px;
-  /* 숫자와 화살표 사이의 간격 조절 */
-  padding: 20px;
+ 
 }
 
-.pageBox ul li a:hover {
+section#reservation .pageBox ul li a:hover {
   background: #efefef;
   color: #4BDB73;
   border-radius: 20px;
 }
 
-.pageBox ul li.active a {
+section#reservation .pageBox ul li.active a {
   background: #efefef;
   color: #4BDB73;
   border-radius: 20px;
+  border: solid;
+  border-color: #55555521;
 }
 
 
-.pageBox ul li a {
+section#reservation .pageBox ul li a {
   display: block;
   padding: 10px 15px;
-  font-size: 32px;
+  font-size: 25px;
   background: linear-gradient(to right top, #E4FFAA, #4BDB73);
   color: transparent;
   -webkit-background-clip: text;
@@ -272,3 +314,9 @@ section#reservation .camping-list button.more-button:hover {
   z-index: 1;
 
 }
+
+section#reservation .pageBox ul .prev a,
+section#reservation .pageBox ul .next a {
+  font-size: 20px;
+}
+

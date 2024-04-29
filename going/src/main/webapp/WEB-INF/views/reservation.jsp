@@ -18,8 +18,22 @@
 
 
         <div class="title">
-            <h1>RESERVATION / <span>예약</span></h1>
+            <h1 id="reserve-title">RESERVATION / <span>예약</span></h1>
         </div>
+
+        <!-- 검색어 조회 -->
+
+        <form action="/main/reservation" method="get">
+            <div class="search-content-background">
+                <select class="form-select" name="type" id="search-type">
+                    <option value="name">캠핑장 이름</option>
+                    <option value="address">주소</option>
+                </select>
+                <input type="text" class="search-content" name="keyword" value="${s.keyword}"
+                    placeholder="검색어를 입력해 주세요">
+                <button type="submit" class="search-click-button">검색</button>
+            </div>
+        </form>
 
 
         <div class="camping">
@@ -48,19 +62,7 @@
             </c:forEach>
         </div>
 
-        <!-- 검색어 조회 -->
-
-        <form action="/main/reservation" method="get">
-            <div class="search-content-background">
-                <select class="form-select" name="type" id="search-type">
-                    <option value="name">캠핑장 이름</option>
-                    <option value="address">캠핑장 주소</option>
-                </select>
-                <input type="text" class="search-content" name="keyword" value="${s.keyword}"
-                    placeholder="검색어를 입력해 주세요">
-                <button type="submit" class="search-click-button">검색</button>
-            </div>
-        </form>
+        
 
 
         <!--페이징 부분-->
@@ -74,8 +76,8 @@
                         </li>
                     </c:if>
                     <c:if test="${maker.prev}">
-                        <li><a
-                                href="/main/reservation?pageNo=${maker.begin-1}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">prev</a>
+                        <li class="prev"><a
+                                href="/main/reservation?pageNo=${maker.begin-1}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">&lt;</a>
                         </li>
                     </c:if>
                     <c:forEach var="i" begin="${maker.begin}" end="${maker.end}">
@@ -85,8 +87,8 @@
                         </li>
                     </c:forEach>
                     <c:if test="${maker.next}">
-                        <li><a
-                                href="/main/reservation?pageNo=${maker.end+1}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">next</a>
+                        <li class="next"><a
+                                href="/main/reservation?pageNo=${maker.end+1}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">&gt;</a>
                         </li>
                     </c:if>
                     <c:if test="${maker.page.pageNo != maker.finalPage}">
@@ -102,6 +104,16 @@
     </section>
 
     <script>
+
+        const $title = document.getElementById('reserve-title');
+        $title.style.cursor = 'pointer';
+
+        $title.addEventListener('click', e => {
+
+            location.href = '/main/reservation';
+        })
+
+
         const $btn = document.querySelector('.camping');
 
         $btn.addEventListener('click', e => {
