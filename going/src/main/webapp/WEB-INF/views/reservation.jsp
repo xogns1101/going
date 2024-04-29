@@ -54,7 +54,7 @@
             <div class="search-content-background">
                 <select class="form-select" name="type" id="search-type">
                     <option value="name">캠핑장 이름</option>
-                    <option value="address">주소</option>
+                    <option value="address">캠핑장 주소</option>
                 </select>
                 <input type="text" class="search-content" name="keyword" value="${s.keyword}"
                     placeholder="검색어를 입력해 주세요">
