@@ -115,11 +115,12 @@
         <include refid="search"/>
     </select>
 
-    <select id="selectCampingById" parameterType="int"
-            resultType="camping">
+    <select id="selectCampingById" resultType="camping">
 
         SELECT
-            *
+            camp_id
+            , camp_name
+            , camp_price
         FROM
             camping
         WHERE

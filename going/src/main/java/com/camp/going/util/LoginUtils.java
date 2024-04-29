@@ -34,8 +34,6 @@ public class LoginUtils {
         // session.getAttribute의 리턴타입은 Object이기 때문에
         // 자식의 고유 기능과 속성을 사용하기 위해 자식 타입으로 형 변환.
 
-
-
         LoginUserResponseDTO loginUser = (LoginUserResponseDTO) session.getAttribute(LOGIN_KEY);
         return loginUser.getEmail();
     }

@@ -1,5 +1,6 @@
 package com.camp.going.service;
 
+import com.camp.going.common.Search;
 import com.camp.going.dto.request.ReservationRequestDTO;
 import com.camp.going.dto.response.ReservationResponseDTO;
 import com.camp.going.entity.Camping;
@@ -27,22 +28,6 @@ public class ReservationService {
     private final CampingService campingService;
 
 
-//    public List<ReservationResponseDTO> getReservationList(int userId, int campId) {
-//
-//        Reservation reservation = reservationMapper.selectReservation(userId);
-//
-//        List<ReservationResponseDTO> reservationResponseDTOList = new ArrayList<>();
-//
-//
-//
-//        return null;
-//
-//
-//
-//
-//
-//    }
-
 
     public void getReservation(ReservationRequestDTO dto, HttpSession session) {
 
@@ -53,6 +38,25 @@ public class ReservationService {
 
 
     }
+
+    public List<ReservationResponseDTO> getReservationList(Search page) {
+
+        List<ReservationResponseDTO> dtoList = new ArrayList<>();
+
+        List<Reservation> allReservation = reservationMapper.findAllReservation(page);
+        User user = new User();
+        Camping camping = new Camping();
+        for (Reservation reservation : allReservation) {
+
+            ReservationResponseDTO dto = new ReservationResponseDTO(reservation);
+            dtoList.add(dto);
+        }
+
+        return dtoList;
+
+    }
+
+
 
 
 }

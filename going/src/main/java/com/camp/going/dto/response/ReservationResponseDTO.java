@@ -14,7 +14,7 @@ import lombok.ToString;
 @Setter
 public class ReservationResponseDTO {
 
-    private long id;
+
     private int campId;
     private String campName;
     private String email;
@@ -22,7 +22,21 @@ public class ReservationResponseDTO {
     private String regDates; // 퇴실
     private int campPrice;
     private String phoneNumber;
-    private String userId;
+
+
+    public ReservationResponseDTO(Reservation reservation){
+
+        this.campId = reservation.getCampId();
+        this.campName = reservation.getCampName();
+        this.email = reservation.getEmail();
+        this.regDate = String.valueOf(reservation.getRegDate());
+        this.regDates = String.valueOf(reservation.getRegDates());
+        this.campPrice = reservation.getCampPrice();
+        this.phoneNumber = reservation.getPhoneNumber();
+
+
+    }
+
 
 
 
