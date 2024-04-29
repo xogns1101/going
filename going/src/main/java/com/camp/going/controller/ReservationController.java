@@ -103,7 +103,7 @@ public class ReservationController {
 
 //        // 페이징 버튼 알고리즘 적용 -> 사용자가 요청한 페이지 정보, 총 게시물 개수를 전달.
 //        // 페이징 알고리즘 자동 호출.
-        PageMaker pageMaker = new PageMaker(page, service.getCount(page));
+        PageMaker pageMaker = new PageMaker(page, reservationService.getCount2(page));
 
 
         model.addAttribute("maker", pageMaker);

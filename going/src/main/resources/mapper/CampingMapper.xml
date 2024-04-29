@@ -5,6 +5,10 @@
 <mapper namespace="com.camp.going.mapper.CampingMapper">
 
     <sql id="search">
+        <if test="type == 'all'">
+            WHERE camp_name LIKE CONCAT('%', #{keyword}, '%')
+            OR camp_address LIKE CONCAT('%', #{keyword}, '%')
+        </if>
         <if test="type == 'name'">
             WHERE camp_name LIKE CONCAT('%', #{keyword}, '%')
         </if>

@@ -56,7 +56,9 @@ public class ReservationService {
 
     }
 
-
+    public int getCount2(Search page) {
+        return reservationMapper.count2(page);
+    }
 
 
 }
