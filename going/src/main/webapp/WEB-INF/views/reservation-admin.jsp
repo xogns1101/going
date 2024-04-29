@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>RESERVATION-관리자</title>
@@ -11,142 +12,139 @@
     <link rel="stylesheet" href="/assets/css/reservation-admin.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Yeon+Sung&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Yeon+Sung&display=swap" rel="stylesheet">
 
-         <script src="https://kit.fontawesome.com/89a0fea006.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/89a0fea006.js" crossorigin="anonymous"></script>
 
-            <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-     <!-- header -------------------------------- -->
-            <%@ include file="include/header.jsp" %>
+    <!-- header -------------------------------- -->
+    <%@ include file="include/header.jsp" %>
 
-     <!-- reservation-admin ---------------------------------->
-     <section>
-             <div class="title">
-                        <h1>RESERVATION / <span>예약현황</span></h1>
+    <!-- reservation-admin ---------------------------------->
+    <section>
+        <div class="title">
+            <h1>RESERVATION / <span>예약현황</span></h1>
+        </div>
+
+        <div class="camp-list">
+            <div class="camp-box">
+
+                <table border="1">
+                    <thead>
+                        <tr class="column">
+                            <th class="campId">캠핑장 아이디</th>
+                            <th class="campName">캠핑장 이름</th>
+                            <th class="campEmail">회원 아이디</th>
+                            <th class="campregDate">입실</th>
+                            <th class="campregDates">퇴실</th>
+                            <th class="campPrice">가격</th>
+                            <th class="phoneNumber">휴대폰 번호</th>
+
+                        </tr>
+                    </thead>
+                    <c:forEach var="b" items="${rList}">
+                        <tbody>
+                            <tr>
+                                <td class="campId">${m.campId}</td>
+                                <td class="campName">${m.campName}</td>
+                                <td class="campEmail">${m.email}</td>
+                                <td class="campregDate">${m.regDate}</td>
+                                <td class="campregDates">${b.regDates}</td>
+                                <td class="campPrice">${b.campPrice}</td>
+                                <td class="phoneNumber">${b.phoneNumber}</td>
+                            </tr>
+
+
+
+                            <!-- 추가 행은 필요에 따라 추가하세요 -->
+                        </tbody>
+                    </c:forEach>
+                </table>
+
+
+                <!-- 검색어 조회 -->
+
+                <form action="/main/reservation" method="get">
+                    <div class="search-content-background">
+                        <select class="form-select" name="type" id="search-type">
+                            <option value="campId">캠핑장 아이디</option>
+                            <option value="campName">캠핑장 이름</option>
+                            <option value="userEmail">회원 아이디</option>
+                        </select>
+                        <input type="text" class="search-content" name="keyword" value="${s.keyword}"
+                            placeholder="검색어를 입력해 주세요">
+                        <button type="submit" class="search-click-button">검색</button>
                     </div>
-
-                        <div class="camp-list">
-                            <div class="camp-box">
-
-                                <table border="1">
-                                    <thead>
-                                        <tr class="column">
-                                            <th class="campId">캠핑장 아이디</th>
-                                            <th class="campName">캠핑장 이름</th>
-                                            <th class="campEmail">회원 아이디</th>
-                                            <th class="campregDate">입실</th>
-                                            <th class="campregDates">퇴실</th>
-                                            <th class="campPrice">가격</th>
-                                            <th class="phoneNumber">휴대폰 번호</th>
-
-                                        </tr>
-                                    </thead>
-                                    <c:forEach var="b" items="${rList}">
-                                        <tbody>
-                                            <tr>
-                                                <td class="campId">${m.campId}</td>                      
-                                                <td class="campName">${m.campName}</td>
-                                                <td class="campEmail">${m.email}</td>
-                                                <td class="campregDate">${m.regDate}</td>
-                                                <td class="campregDates">${b.regDates}</td>
-                                                <td class="campPrice">${b.campPrice}</td>
-                                                <td class="phoneNumber">${b.phoneNumber}</td>
-                                            </tr>
-                                        
-                                        
-                                        
-                                            <!-- 추가 행은 필요에 따라 추가하세요 -->
-                                        </tbody>
-                                    </c:forEach>
-                                </table>
+                </form>
 
 
-                                <!-- 검색어 조회 -->
+                <!-- ----------------------------------------------------------------------- -->
+                <!-- 게시글 목록 하단 영역 -->
+                <div class="bottom-section">
+        
+                    <!--페이징 부분-->
+        
+                    <div class="pageBox">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination pagination-lg pagination-custom">
+                                <c:if test="${maker.page.pageNo != 1}">
+                                    <li><a
+                                            href="/main/reservation?pageNo=1&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
+                                    </li>
+                                </c:if>
+                                <c:if test="${maker.prev}">
+                                    <li class="prev"><a
+                                            href="/main/reservation?pageNo=${maker.begin-1}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">&lt;</a>
+                                    </li>
+                                </c:if>
+                                <c:forEach var="i" begin="${maker.begin}" end="${maker.end}">
+                                    <li data-page-num="${i}">
+                                        <a
+                                            href="/main/reservation?pageNo=${i}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">${i}</a>
+                                    </li>
+                                </c:forEach>
+                                <c:if test="${maker.next}">
+                                    <li class="next"><a
+                                            href="/main/reservation?pageNo=${maker.end+1}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">&gt;</a>
+                                    </li>
+                                </c:if>
+                                <c:if test="${maker.page.pageNo != maker.finalPage}">
+                                    <li><a
+                                            href="/main/reservation?pageNo=${maker.finalPage}&amount=${s.amount}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
+                                    </li>
+                                </c:if>
+                            </ul>
+                        </nav>
+                    </div>
+        
+        
+        
+                </div>
 
-                                                <form action="/main/reservation" method="get">
-                                                    <div class="search-content-background">
-                                                        <select class="form-select" name="type" id="search-type">
-                                                            <option value="campId">캠핑장 아이디</option>
-                                                            <option value="campName">캠핑장 이름</option>
-                                                            <option value="userEmail">회원 아이디</option>
-                                                        </select>
-                                                        <input type="text" class="search-content" name="keyword" value="${s.keyword}"
-                                                            placeholder="검색어를 입력해 주세요">
-                                                        <button type="submit" class="search-click-button">검색</button>
-                                                    </div>
-                                                </form>
+            </div>
 
-                                                <!-- ----------------------------------------------------------------------- -->
-                                                <!-- 게시글 목록 하단 영역 -->
-                                                <div class="bottom-section">
-
-                                                    <!-- 페이지 버튼 영역 -->
-                                                    <nav aria-label="Page navigation example">
-                                                        <ul class="pagination pagination-lg pagination-custom">
-                                                            <c:if test="${maker.page.pageNo != 1}">
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="/main/reservation-list?pageNo=1&type=${s.type}&keyword=${s.keyword}">&lt;&lt;</a>
-                                                                </li>
-                                                            </c:if>
-
-                                                            <c:if test="${maker.prev}">
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="/main/reservation-list?pageNo=${maker.begin-1}&type=${s.type}&keyword=${s.keyword}">&lt;</a>
-                                                                </li>
-                                                            </c:if>
-
-                                                            <c:forEach var="i" begin="${maker.begin}" end="${maker.end}">
-                                                                <li data-page-num="${i}" class="page-item">
-                                                                    <a class="page-link"
-                                                                        href="/main/reservation-list?pageNo=${i}&type=${s.type}&keyword=${s.keyword}">${i}</a>
-                                                                </li>
-                                                            </c:forEach>
-
-                                                            <c:if test="${maker.next}">
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="/main/reservation-list?pageNo=${maker.end+1}&type=${s.type}&keyword=${s.keyword}">&gt;</a>
-                                                                </li>
-                                                            </c:if>
-
-                                                            <c:if test="${maker.page.pageNo != maker.finalPage}">
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="/main/reservation-list?pageNo=${maker.finalPage}&type=${s.type}&keyword=${s.keyword}">&gt;&gt;</a>
-                                                                </li>
-                                                            </c:if>
-                                                        </ul>
-                                                    </nav>
-
-                                                </div>
-
-
-
-                                            </div>
-
-
-                                    </section>
-
-
-                            </div>
-                        </div>
-
-         </section>
-
-
-         <!-- footer --------------------->
-         <%@ include file="include/footer.jsp" %>
-
-
-         <script>
+        </div>
 
 
 
 
+
+
+    </section>
+
+
+    <!-- footer --------------------->
+    <%@ include file="include/footer.jsp" %>
+
+
+    <script>
         // 사용자가 현재 머물고 있는 페이지 버튼에 active 스타일 부여
         function appendPageActive() {
 
@@ -182,10 +180,9 @@
 
         appendPageActive();
         fixSearchOption();
-
-
-             </script>
+    </script>
 
 
 </body>
+
 </html>

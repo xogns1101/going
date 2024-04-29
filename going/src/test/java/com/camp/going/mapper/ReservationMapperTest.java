@@ -20,7 +20,7 @@ class ReservationMapperTest {
     ReservationMapper reservationMapper;
 
 
-<<<<<<< HEAD
+
 //    @Test
 //    @DisplayName("예약이 잘 되는지 확인")
 //    void reservationInsert() {
@@ -39,7 +39,7 @@ class ReservationMapperTest {
 //        reservationMapper.reservationSave(reservation);
 //        // then
 //    }
-=======
+
     @Test
     @DisplayName("예약이 잘 되는지 확인")
     void reservationInsert() {
@@ -58,7 +58,7 @@ class ReservationMapperTest {
         reservationMapper.reservationSave(reservation);
         // then
     }
->>>>>>> 3c1bfff0dd1b5bd33d9558d5d5088fc0a282efe3
+
     
 //    @Test
 //    @DisplayName("상세 회면이 잘보이는지")
