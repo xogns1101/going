@@ -11,7 +11,7 @@ public interface ReservationMapper {
     //
     void reservationSave(Reservation reservation);
 
-    Reservation selectReservation(int userId);
+    List<Reservation> selectReservation(int userId);
 
     List<Reservation> reservationCamping();
 

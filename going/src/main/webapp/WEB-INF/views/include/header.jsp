@@ -21,15 +21,6 @@
                 <a href="/main/notice">NOTICE</a>
                 <a href="/main/review">REVIEW</a>
             </div>
-            <!-- <div class="login">
-                <a href="/user/sign-in"><p>LOGIN</p></a>
-            </div>
-            <div class="logout">
-                <h1>메롱이 님</h1>
-                <a href="/user/sign-out">LOGOUT</a><br>
-                <a href="/user/mypage">MYPAGE</a>
-            </div> -->
-
 
 
             <!-- 로그인이 되어있으면 로그아웃이랑 마이페이지만 뜰수있도록 -->
@@ -40,14 +31,30 @@
                 </div>
             </c:if>
 
+            <c:if test="${login.auth == 'ADMIN'}">
+
+                 <div class="reservation-admin">
+                    <a href="/main/reservation-list">예약현황</a>
+                 </div>       
+
+            </c:if>
+
+
 
             <c:if test="${login != null}">
-                    <div class="logout">    
+                <div class="logout">    
                     <h1><span>${login.name}</span> &nbsp;님 안녕하세요!</h1>
                     <a href="/user/sign-out">LOGOUT</a><br>
+                    
                     <a href="/user/mypage">MYPAGE</a>
+
+                    
+
                 </div> 
             </c:if>
+
+
+
 
        
 

@@ -59,28 +59,28 @@ public class CampingService {
 
 
     // 예약 현황 리스트 목록
-    public List<ReservationResponseDTO> getReservationList(Camping camping, User user) {
-
-        List<ReservationResponseDTO> dtoList = new ArrayList<>();
-
-        List<Reservation> reservations = reservationMapper.reservationCamping();
-
-        for (Reservation reservation : reservations) {
-
-            ReservationResponseDTO dto = new ReservationResponseDTO(reservation, camping, user);
-
-            dto.setEmail(user.getEmail());
-            dto.setCampName(camping.getCampName());
-            dto.setRegDate(String.valueOf(reservation.getRegDate()));
-            dto.setPhoneNumber(user.getPhoneNumber());
-
-            dtoList.add(dto);
-
-        }
-
-        return dtoList;
-
-    }
+//    public List<ReservationResponseDTO> getReservationList(Camping camping, User user) {
+//
+//        List<ReservationResponseDTO> dtoList = new ArrayList<>();
+//
+//        List<Reservation> reservations = reservationMapper.reservationCamping();
+//
+//        for (Reservation reservation : reservations) {
+//
+//            ReservationResponseDTO dto = new ReservationResponseDTO(reservation, camping, user);
+//
+//            dto.setEmail(user.getEmail());
+//            dto.setCampName(camping.getCampName());
+//            dto.setRegDate(String.valueOf(reservation.getRegDate()));
+//            dto.setPhoneNumber(user.getPhoneNumber());
+//
+//            dtoList.add(dto);
+//
+//        }
+//
+//        return dtoList;
+//
+//    }
 
 
     public Camping getCampingById(int campId){

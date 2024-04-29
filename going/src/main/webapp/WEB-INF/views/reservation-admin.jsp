@@ -50,10 +50,10 @@
                                     <c:forEach var="b" items="${rList}">
                                         <tbody>
                                             <tr>
-                                                <td class="campId">${b.campId}</td>                      
-                                                <td class="campName">${b.campName}</td>
-                                                <td class="campEmail">${b.email}</td>
-                                                <td class="campregDate">${b.regDate}</td>
+                                                <td class="campId">${m.campId}</td>                      
+                                                <td class="campName">${m.campName}</td>
+                                                <td class="campEmail">${m.email}</td>
+                                                <td class="campregDate">${m.regDate}</td>
                                                 <td class="campregDates">${b.regDates}</td>
                                                 <td class="campPrice">${b.campPrice}</td>
                                                 <td class="phoneNumber">${b.phoneNumber}</td>

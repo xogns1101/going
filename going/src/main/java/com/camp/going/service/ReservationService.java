@@ -1,13 +1,19 @@
 package com.camp.going.service;
 
 import com.camp.going.dto.request.ReservationRequestDTO;
+import com.camp.going.dto.response.ReservationResponseDTO;
+import com.camp.going.entity.Camping;
 import com.camp.going.entity.Reservation;
+import com.camp.going.entity.User;
 import com.camp.going.mapper.ReservationMapper;
 import com.camp.going.util.LoginUtils;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -47,4 +53,6 @@ public class ReservationService {
 
 
     }
+
+
 }

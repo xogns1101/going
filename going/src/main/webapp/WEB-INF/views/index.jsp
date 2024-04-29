@@ -76,7 +76,7 @@
 
     <section class="main-page0">
 
-        <!-- 캠핑 리스트 -->
+        <!-- 가평 대표 관광지 리스트 -->
 
         <p class="camping-animation">
 
@@ -185,6 +185,7 @@
 
             <div class="ad">
                 <div class="ad-box">
+                    <h1>shop</h1>
                     <img src="/assets/img/ad2.jpg" alt="광고1">
                     <img src="/assets/img/ad3.jpg" alt="광고2">
                     <img src="/assets/img/ad4.jpg" alt="광고3">
