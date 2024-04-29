@@ -14,7 +14,7 @@
     <%@ include file="include/header.jsp" %>
 
 
-    <section>
+    <section id="reservation">
 
 
         <div class="title">
@@ -27,7 +27,9 @@
 
                 <div class="camping-list">
                     <div class="camping-box" data-bno="${b.campId}">
-                        <img src="${b.campImage}" alt="캠핑"><br>
+                        
+                            <div class="img-box">
+                                <img src="${b.campImage}" alt="캠핑"><br></div>
                         <ul class="camping">
                             <li class="camp-name">${b.campName}</li>
                             <li class="camp-address">${b.campAddress}</li>
@@ -36,7 +38,7 @@
                             <li class="camp-price">${b.campPrice}</li>
                         </ul>
 
-                        <div class="reserve-more">예약? 👇</div>
+                       
                         <div class="btn-group">
                             <button type="button" class="more-button"
                                 data-href="/main/reservation-detail?camp_id=${b.campId}">MORE</button>
@@ -120,10 +122,10 @@
 
             }
 
-
-
-
         })
+
+     
+
 
 
         // 사용자가 현재 머물고 있는 페이지 버튼에 active 스타일 부여
@@ -161,6 +163,11 @@
 
         fixSearchOption();
         appendPageActive();
+
+
+
+       
+        
     </script>
 
 

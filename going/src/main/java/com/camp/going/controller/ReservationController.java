@@ -5,6 +5,7 @@ import com.camp.going.common.Search;
 import com.camp.going.dto.request.ReservationRequestDTO;
 import com.camp.going.dto.response.CampingDetailResponseDTO;
 import com.camp.going.dto.response.CampingListResponseDTO;
+import com.camp.going.dto.response.LoginUserResponseDTO;
 import com.camp.going.dto.response.ReservationResponseDTO;
 import com.camp.going.entity.Camping;
 import com.camp.going.entity.MyPage;
@@ -82,24 +83,31 @@ public class ReservationController {
 
 
     @GetMapping("/reservation-list")
-    public String reservationDetail(Model model
-            , Camping camping
-            , User user, Search page){
+    public String reservationDetail(Model model,
+                                    HttpSession session
+                                ,Search page){
 
-        List<ReservationResponseDTO> reservationList = service.getReservationList(camping, user);
+        LoginUserResponseDTO dto = (LoginUserResponseDTO) session.getAttribute("login");
+
+
+        User user = new User();
+        user.setUserId((int) dto.getId());
+        user.setName(dto.getEmail());
+        log.info("user_id : {}", user.getUserId());
+        log.info("name : {}", user.getEmail());
 
         System.out.println("search = " + page);
-        List<CampingListResponseDTO> dtoList = service.getList(page);
-        MyPage myPage = myPageService.myReservation(user.getUserId());
+
+
+
 
 //        // 페이징 버튼 알고리즘 적용 -> 사용자가 요청한 페이지 정보, 총 게시물 개수를 전달.
 //        // 페이징 알고리즘 자동 호출.
         PageMaker pageMaker = new PageMaker(page, service.getCount(page));
+        MyPage myPage = myPageService.myReservation(dto.getId());
 
-        model.addAttribute("rList", reservationList);
-        model.addAttribute("m", myPage);
         model.addAttribute("maker", pageMaker);
-
+        model.addAttribute("m", myPage);
 
         return "reservation-admin";
 

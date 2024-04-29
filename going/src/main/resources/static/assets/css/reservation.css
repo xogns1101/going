@@ -1,21 +1,33 @@
-section .title h1 {
-  background: linear-gradient(to right top, #E4FFAA, #4BDB73);
+/* section#reservation {
+  background-image: url(../img/background1.jpg);
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} */
+
+
+
+
+
+section#reservation .title h1 {
+  background: linear-gradient(to right top, #E4FFAA, #34da63);
   color: transparent;
   -webkit-background-clip: text;
-  margin-top: 250px;
-  font-size: 80px;
+  margin-top: 200px;
+  font-size: 60px;
   text-align: center;
   font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;
 }
 
-section .title h1 span {
+section#reservation .title h1 span {
 
   background: linear-gradient(to right top, #E4FFAA, #4BDB73);
   color: transparent;
   -webkit-background-clip: text;
-  font-family: "Yeon Sung", system-ui;
+  font-family: "Dongle", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 80px;
@@ -23,42 +35,62 @@ section .title h1 span {
 
 
 
-section .camping {
+section#reservation .camping {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
-section .camping .camping-list {
-  width: 30%;
+section#reservation .camping .camping-list {
+  width: 33%;
 
 }
 
 
-section .camping-list .camping-box {
+section#reservation .camping-list .camping-box {
   width: 500px;
   height: 700px;
   background: #E4FFAA;
-  margin: 50px auto 100px auto;
+  margin: 80px auto 50px;
   border-radius: 3%;
 
   position: relative;
 }
 
-section .camping-list .camping-box img {
+section#reservation .camping-list .camping-box .img-box {
   width: 465px;
   height: 465px;
+  border-radius: 3%;
+  overflow: hidden;
+
 
   position: absolute;
   top: 18.5px;
   left: 18.5px;
+}
 
+section#reservation .camping-list .camping-box img {
+  width: 100%;
+  height: 100%;
+
+  background-size: cover;
   border-radius: 3%;
+  transition: all 0.2s linear;
+  transform: scale(1.0);
+
 
 }
 
-section .camping-list .camping-box .camping {
+section#reservation .camping-list .camping-box img:hover {
+  transform: scale(1.3);
+
+}
+
+
+
+
+section#reservation .camping-list .camping-box .camping {
   color: black;
   font-family: "Yeon Sung", system-ui;
   font-weight: 400;
@@ -68,7 +100,7 @@ section .camping-list .camping-box .camping {
 
 }
 
-section .camping-list .camping-box .camping li:first-child {
+section#reservation .camping-list .camping-box .camping li:first-child {
   font-size: 30px;
   text-decoration: underline;
   position: absolute;
@@ -79,7 +111,16 @@ section .camping-list .camping-box .camping li:first-child {
 
 }
 
-section .camping-list .camping-box .camping li:nth-child(2) {
+section#reservation .camping-list .camping-box .camping li:nth-child(2) {
+  font-size: 20px;
+  position: absolute;
+
+  left: 18.5px;
+  right: 18.5px;
+  bottom: 70px;
+}
+
+section#reservation .camping-list .camping-box .camping li:nth-child(3) {
   font-size: 20px;
   position: absolute;
 
@@ -88,7 +129,7 @@ section .camping-list .camping-box .camping li:nth-child(2) {
   bottom: 50px;
 }
 
-section .camping-list .camping-box .camping li:nth-child(3) {
+section#reservation .camping-list .camping-box .camping li:nth-child(4) {
   font-size: 20px;
   position: absolute;
 
@@ -97,18 +138,9 @@ section .camping-list .camping-box .camping li:nth-child(3) {
   bottom: 30px;
 }
 
-section .camping-list .camping-box .camping li:nth-child(4) {
-  font-size: 20px;
-  position: absolute;
-
-  left: 18.5px;
-  right: 18.5px;
-  bottom: 10px;
-}
 
 
-
-section .camping-list .camping-box .camping li:last-child {
+section#reservation .camping-list .camping-box .camping li:last-child {
   font-size: 50px;
   position: absolute;
 
@@ -117,7 +149,7 @@ section .camping-list .camping-box .camping li:last-child {
 }
 
 
-section .camping-list .reserve-more {
+section#reservation .camping-list .reserve-more {
   width: 200px;
   height: 100px;
   background: #f0f0f0;
@@ -138,14 +170,17 @@ section .camping-list .reserve-more {
 /* more 버튼 */
 
 .btn-group {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 20%;
   position: relative;
+  /* background: red; */
+  left: 46%;
+  top: 75%;
 }
 
 
 
-section .camping-list button.more-button {
+section#reservation .camping-list button.more-button {
   width: 100px;
   height: 50px;
   background: #4BDB73;
@@ -159,17 +194,20 @@ section .camping-list button.more-button {
   cursor: pointer;
 
   position: relative;
-  top: 74%;
-  left: 73%;
+  top: 64%;
+  left: 60%;
 }
 
 
 
 
-section .camping-list button.more-button:hover {
+section#reservation .camping-list button.more-button:hover {
 
-  color: #fff;
+  color: black;
 }
+
+
+
 
 /* 페이지 영역*/
 
@@ -187,7 +225,7 @@ section .camping-list button.more-button:hover {
 
 }
 
-.bottom-section {
+.bottom-section#reservation {
 
   margin-top: 150px;
   margin-bottom: 150px;
@@ -204,29 +242,33 @@ section .camping-list button.more-button:hover {
 
 .pageBox ul li {
   display: inline-block;
-  margin: 0 5px;
+  margin: 0 10px;
+  /* 숫자와 화살표 사이의 간격 조절 */
   padding: 20px;
-
-}
-
-.pageBox ul li a {
-  display: block;
-  padding: 10px 10px;
-  font-size: 32px;
-  color: linear-gradient(to right top, #E4FFAA, #4BDB73);
-
-  text-decoration: none;
-
 }
 
 .pageBox ul li a:hover {
-  background-color: #f0f0f0;
-
+  background: #efefef;
+  color: #4BDB73;
+  border-radius: 20px;
 }
 
 .pageBox ul li.active a {
-  font-weight: bold;
-  color: black;
-  background: #E4FFAA;
+  background: #efefef;
+  color: #4BDB73;
+  border-radius: 20px;
+}
+
+
+.pageBox ul li a {
+  display: block;
+  padding: 10px 15px;
+  font-size: 32px;
+  background: linear-gradient(to right top, #E4FFAA, #4BDB73);
+  color: transparent;
+  -webkit-background-clip: text;
+
+  text-decoration: none;
+  z-index: 1;
 
 }
