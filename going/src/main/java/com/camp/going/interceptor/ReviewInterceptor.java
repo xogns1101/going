@@ -1,5 +1,6 @@
 package com.camp.going.interceptor;
 
+import com.camp.going.mapper.ReservationMapper;
 import com.camp.going.mapper.ReviewMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -19,6 +20,7 @@ import static com.camp.going.util.LoginUtils.*;
 public class ReviewInterceptor implements HandlerInterceptor {
 
     private final ReviewMapper reviewMapper;
+    private final ReservationMapper reservationMapper;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -48,7 +50,24 @@ public class ReviewInterceptor implements HandlerInterceptor {
         String uri = request.getRequestURI();
         // log.info("uri 확인 : {}", uri);
         // 삭제 요청인지 확인
-        if (uri.contains("delete")) {
+        if (uri.contains("write")) {
+
+            int userId = (int) getCurrentLoginMemberId(session);
+
+            if (reservationMapper.count(userId) == 0) {
+                response.setContentType("text/html; charset=UTF-8");
+                PrintWriter w = response.getWriter();
+                String htmlCode = "<script>\n" +
+                        "    alert('예약을 먼저 해주세요.');\n" +
+                        "    location.href='/main/reservation';\n" +
+                        "</script>";
+                w.write(htmlCode);
+                w.flush();
+
+                return false;
+            }
+
+        } else if (uri.contains("delete")) {
 
             // 관리자라면 통과
             if (isAdmin(session)) return true;
