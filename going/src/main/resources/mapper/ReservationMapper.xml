@@ -28,7 +28,7 @@
     <select id="findAllReservation" resultType="reservation">
 
         SELECT
-            c.camp_id,
+            r.reservation_number,
             c.camp_name,
             u.email,
             r.reg_date,
@@ -40,14 +40,14 @@
         ON r.user_id = u.user_id
         LEFT JOIN camping c
         ON r.camp_id = c.camp_id
-        ORDER BY camp_id DESC
+        ORDER BY reservation_number DESC
         LIMIT #{pageStart}, #{amount}
     </select>
 
     <select id="reservationCamping" resultType="reservation">
 
         SELECT
-            r.camp_id,
+            r.reservation_number,
             u.email,
             c.camp_name,
             r.reg_date,

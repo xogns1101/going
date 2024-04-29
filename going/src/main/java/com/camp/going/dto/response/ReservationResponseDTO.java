@@ -15,7 +15,7 @@ import lombok.ToString;
 public class ReservationResponseDTO {
 
 
-    private int campId;
+    private int reservationNumber;
     private String campName;
     private String email;
     private String regDate; // 입실
@@ -26,7 +26,7 @@ public class ReservationResponseDTO {
 
     public ReservationResponseDTO(Reservation reservation){
 
-        this.campId = reservation.getCampId();
+        this.reservationNumber = reservation.getReservationNumber();
         this.campName = reservation.getCampName();
         this.email = reservation.getEmail();
         this.regDate = String.valueOf(reservation.getRegDate());

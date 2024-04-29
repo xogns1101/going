@@ -39,7 +39,7 @@
                 <table border="1">
                     <thead>
                         <tr class="column">
-                            <th class="campId">캠핑장 아이디</th>
+                            <th class="campId">번호</th>
                             <th class="campName">캠핑장 이름</th>
                             <th class="campEmail">회원 아이디</th>
                             <th class="campregDate">입실</th>
@@ -52,7 +52,7 @@
                     <c:forEach var="b" items="${rList}">
                         <tbody>
                             <tr>
-                                <td class="campId">${b.campId}</td>
+                                <td class="campId">${b.reservationNumber}</td>
                                 <td class="campName">${b.campName}</td>
                                 <td class="campEmail">${b.email}</td>
                                 <td class="campregDate">${b.regDate}</td>

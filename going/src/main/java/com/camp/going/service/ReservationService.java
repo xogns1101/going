@@ -44,8 +44,7 @@ public class ReservationService {
         List<ReservationResponseDTO> dtoList = new ArrayList<>();
 
         List<Reservation> allReservation = reservationMapper.findAllReservation(page);
-        User user = new User();
-        Camping camping = new Camping();
+
         for (Reservation reservation : allReservation) {
 
             ReservationResponseDTO dto = new ReservationResponseDTO(reservation);
