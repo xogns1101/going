@@ -52,10 +52,10 @@
                     <c:forEach var="b" items="${rList}">
                         <tbody>
                             <tr>
-                                <td class="campId">${m.campId}</td>
-                                <td class="campName">${m.campName}</td>
-                                <td class="campEmail">${m.email}</td>
-                                <td class="campregDate">${m.regDate}</td>
+                                <td class="campId">${b.campId}</td>
+                                <td class="campName">${b.campName}</td>
+                                <td class="campEmail">${b.email}</td>
+                                <td class="campregDate">${b.regDate}</td>
                                 <td class="campregDates">${b.regDates}</td>
                                 <td class="campPrice">${b.campPrice}</td>
                                 <td class="phoneNumber">${b.phoneNumber}</td>
@@ -82,40 +82,6 @@
                             placeholder="검색어를 입력해 주세요">
                         <button type="submit" class="search-click-button">검색</button>
                     </div>
-
-                        <div class="camp-list">
-                            <div class="camp-box">
-
-                                <table border="1">
-                                    <thead>
-                                        <tr class="column">
-                                            <th class="campId">캠핑장 아이디</th>
-                                            <th class="campName">캠핑장 이름</th>
-                                            <th class="campEmail">회원 아이디</th>
-                                            <th class="campregDate">입실</th>
-                                            <th class="campregDates">퇴실</th>
-                                            <th class="campPrice">가격</th>
-                                            <th class="phoneNumber">휴대폰 번호</th>
-
-                                        </tr>
-                                    </thead>
-                                    <c:forEach var="m" items="${rList}">
-                                        <tbody>
-                                            <tr>
-                                                
-                                                <td class="campId">${m.campId}</td>                      
-                                                <td class="campName">${m.campName}</td>
-                                                <td class="campEmail">${m.email}</td>
-                                                <td class="campregDate">${m.regDate}</td>
-                                                <td class="campregDates">${m.regDates}</td>
-                                                <td class="campPrice">${m.campPrice}</td>
-                                                <td class="phoneNumber">${m.phoneNumber}</td>
-                                            </tr>
-
-                                            <!-- 추가 행은 필요에 따라 추가하세요 -->
-                                        </tbody>
-                                    </c:forEach>
-                                </table>
                 </form>
 
 
