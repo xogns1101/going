@@ -211,7 +211,7 @@ section .detail .reserve-info form .hidden-info {
     background: #fff;
     color: black;
     border: #fff;
-    cursor: pointer;
+    
   }
 
   .calendar-container .calendar-header .btn:hover {
@@ -259,13 +259,13 @@ section .detail .reserve-info form .hidden-info {
     color: #aaa8a8;
   }
 
-  #calendarDates .prev-date:hover {
+  /* #calendarDates .prev-date:hover {
     background: #dbdada;
-  }
+  } */
 
 
   .date {
-    cursor: pointer;
+   
     width: 70px;
     height: 70px;
     padding: 5px;
