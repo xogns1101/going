@@ -1,5 +1,5 @@
 body {
-  background-image: url(../img/tree.jpg);
+  background-image: url(../img/gapung.png);
   background-size: cover;
   background-position: center;
 }
@@ -10,12 +10,7 @@ section {
 }
 
 section .title h1 {
-  background: linear-gradient(to right top, #E4FFAA, #4BDB73);
-  color: transparent;
-  -webkit-background-clip: text;
-  margin-top: 220px;
-  font-size: 80px;
-  text-align: center;
+  
 }
 
 section .title h1 span {
