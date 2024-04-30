@@ -16,7 +16,7 @@
         )
         VALUES
         (
-          #{userId}
+        #{userId}
         , #{campId}
         , #{regDate}
         , #{regDates}
@@ -28,32 +28,32 @@
     <select id="findAllReservation" resultType="reservation">
 
         SELECT
-            r.reservation_number,
-            c.camp_name,
-            u.email,
-            r.reg_date,
-            r.reg_dates,
-            c.camp_price,
-            u.phone_number
+        r.reservation_number,
+        c.camp_name,
+        u.email,
+        r.reg_date,
+        r.reg_dates,
+        c.camp_price,
+        u.phone_number
         FROM reservation r
         LEFT JOIN user u
         ON r.user_id = u.user_id
         LEFT JOIN camping c
         ON r.camp_id = c.camp_id
-        ORDER BY reg_date
+        ORDER BY reservation_number DESC
         LIMIT #{pageStart}, #{amount}
     </select>
 
     <select id="reservationCamping" resultType="reservation">
 
         SELECT
-            r.reservation_number,
-            u.email,
-            c.camp_name,
-            r.reg_date,
-            r.reg_dates,
-            c.camp_price,
-            u.phone_number
+        r.reservation_number,
+        u.email,
+        c.camp_name,
+        r.reg_date,
+        r.reg_dates,
+        c.camp_price,
+        u.phone_number
         FROM reservation r
         LEFT JOIN user u
         ON r.user_id = u.user_id
@@ -67,15 +67,15 @@
             parameterType="map">
 
         SELECT
-            reservation_number
-            , user_id
-            , camp_id
-            , reg_date
-            , reg_dates
+        reservation_number
+        , user_id
+        , camp_id
+        , reg_date
+        , reg_dates
         FROM
-            reservation
+        reservation
         WHERE
-            reservation_number = #{reservationNumber}
+        reservation_number = #{reservationNumber}
 
     </select>
 
