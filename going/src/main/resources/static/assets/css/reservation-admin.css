@@ -1,13 +1,17 @@
 section .title h1 {
-    color: black;
-    margin-top: 250px;
+    background: linear-gradient(to right top, #E4FFAA, #34da63);
+    color: transparent;
+    -webkit-background-clip: text;
+    margin-top: 150px;
     font-size: 40px;
     text-align: center;
 }
 
 section .title h1 span {
-    color: black;
-    font-family: "Yeon Sung", system-ui;
+    background: linear-gradient(to right top, #E4FFAA, #34da63);
+    color: transparent;
+    -webkit-background-clip: text;
+    font-family: "Dongle", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -18,19 +22,18 @@ section .camp-list {
 }
 
 section .camp-list .camp-box {
-    width: 1300px;
-    height: 550px;
+    width: 1500px;
+    height: 530px;
     background: #E4FFAA;
     margin-top: 50px;
     border-radius: 3%;
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 }
 
 section .camp-list .camp-box table {
-    width: 1200px;
-    margin-left: 4%;
-    margin-top: 5%;
+    width: 1400px;
+    margin: 50px auto;
     background: #F0EEEE;
 }
 
@@ -39,7 +42,7 @@ section .camp-list tr {
     font-family: "Yeon Sung", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: 25px;
+    font-size: 22px;
     border: 2px solid black;
     width: 100px;
     height: 50px;
@@ -53,6 +56,7 @@ section .camp-list .camp-box td.phoneNumber {
 
 section .camp-list thead .column {
     pointer-events: none;
+    background: #dddcdc;
 }
 
 /* section .camp-list tr:hover {
@@ -147,109 +151,31 @@ section .camp-list tr th {
 
 
 
-/* 검색어 조회 */
-.search-wrapper {
-    position: relative;
-}
 
-.search-content-background {
-    width: 320px;
-    height: 43px;
-    position: absolute;
-    left: 670px;
-    top: 20px;
-    background: white;
-    border: 1px black solid;
-}
-
-.search-content {
-    width: 250px;
-    height: 35px;
-    position: absolute;
-    left: 700px;
-    top: 23px;
-    border: none;
-    outline: none;
-    color: black;
-    font-size: 24px;
-    font-family: Yeon Sung;
-    font-weight: 400;
-    word-wrap: break-word;
-}
-
-.search-click-button {
-    width: 63px;
-    height: 27px;
-    position: absolute;
-    left: 910px;
-    top: 28px;
-    font-family: Yeon Sung;
-    font-size: 20px;
-    background: #9CEE8F;
-    border: 1px black solid;
-    cursor: pointer;
-}
-
-/* 페이지 사이즈 체크 */
-.page-size-wrapper {
-    position: relative;
-}
-
-.page-size-background {
-    width: 140px;
-    height: 35px;
-    position: absolute;
-    left: 890px;
-    top: -570px;
-    background: white;
-    border: 1px black solid;
-}
-
-.page-size {
-    width: 64px;
-    height: 43px;
-    position: absolute;
-    left: 920px;
-    top: -565px;
-    color: black;
-    font-size: 24px;
-    font-family: Yeon Sung;
-    font-weight: 400;
-    word-wrap: break-word;
-}
-
-.page-size-click-button {
-    width: 26px;
-    height: 18px;
-    position: absolute;
-    left: 980px;
-    top: -565px;
-    cursor: pointer;
-}
 
 
 
 
 /* 검색어 조회 */
 /* .search-wrapper {
-  /* position: relative; */
+   position: relative;  */
 
 
-.search-content-background {
+/* .search-content-background {
     width: 320px;
     height: 41px;
-    /* position: absolute; */
+ position: absolute; 
     left: 550px;
     top: 50px;
     background: white;
     border: 1px black solid;
     position: relative;
-}
+} 
 
 .search-content {
     width: 250px;
     height: 35px;
-    /* position: absolute; */
+    position: absolute; 
     left: 19px;
     top: 3px;
     border: none;
@@ -265,7 +191,7 @@ section .camp-list tr th {
 .search-click-button {
     width: 63px;
     height: 35px;
-    /* position: absolute; */
+     position: absolute; 
     left: 250px;
     top: 2px;
     font-family: Yeon Sung;
@@ -275,7 +201,7 @@ section .camp-list tr th {
     cursor: pointer;
 
 }
-
+/* 
 .form-select {
     width: 120px;
     height: 41px;
@@ -285,7 +211,9 @@ section .camp-list tr th {
     position: absolute;
     left: -120px;
     top: -1px;
-}
+} */
+
+
 
 /* 페이지 영역*/
 
@@ -299,7 +227,9 @@ section .bottom-section .pageBox {
     /* background: violet; */
     display: flex;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 20px;
+    position: absolute;
+    bottom: -45px;
 
 }
 

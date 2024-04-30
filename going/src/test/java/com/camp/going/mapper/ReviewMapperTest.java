@@ -28,7 +28,7 @@ class ReviewMapperTest {
             Review review = new Review();
             review.setReviewContent("리뷰 " + i + "번 내용 테스트");
             review.setEmail("");
-            review.setCampId(1);
+//            review.setCampId(1);
             review.setReviewImage("");
             review.setReviewPoint("5");
             reviewMapper.saveReview(review);
@@ -47,7 +47,7 @@ class ReviewMapperTest {
         Review review = Review.builder()
                 .reviewContent("OO 캠핑장은 어쩌구 저쩌구")
                 .email("CCCC@naver.com")
-                .campId(99)
+//                .campId(99)
                 .reviewPoint("5")
                 .reviewDate(LocalDateTime.now())
                 .build();

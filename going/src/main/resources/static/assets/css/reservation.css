@@ -1,10 +1,10 @@
-/* section#reservation {
-  background-image: url(../img/background1.jpg);
-  
+section#reservation {
+  background-image: url(../img/reservation3.jpg);
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
-} */
+
+
+}
 
 
 
@@ -14,12 +14,14 @@ section#reservation .title h1 {
   background: linear-gradient(to right top, #E4FFAA, #34da63);
   color: transparent;
   -webkit-background-clip: text;
-  margin-top: 200px;
+  padding-top: 180px;
   font-size: 60px;
   text-align: center;
   font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;
+  width: 40%;
+  margin: 0 auto;
 }
 
 section#reservation .title h1 span {
@@ -52,7 +54,7 @@ section#reservation .camping-list .camping-box {
   width: 500px;
   height: 700px;
   background: #E4FFAA;
-  margin: 50px auto 50px;
+  margin: 30px auto 50px;
   border-radius: 3%;
 
   position: relative;
@@ -271,7 +273,7 @@ section#reservation .pageBox {
   /* background: violet; */
   display: flex;
   justify-content: center;
- 
+  margin-top: 50px;
 
 }
 
