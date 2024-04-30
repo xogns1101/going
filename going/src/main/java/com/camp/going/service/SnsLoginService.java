@@ -137,6 +137,37 @@ public class SnsLoginService {
         return accessToken;
     }
 
+    public void kakaoLogout(LoginUserResponseDTO dto, HttpSession session) {
+
+        String requestUri = "https://kapi.kakao.com/v1/user/logout";
+
+        String accessToken = (String) session.getAttribute("access_token");
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Authorization", "Bearer " + accessToken);
+
+        MultiValueMap<String, Object> params = new LinkedMultiValueMap<>();
+        params.add("target_id_type", "user_id");
+        params.add("target_id", dto.getEmail());
+
+        RestTemplate template = new RestTemplate();
+        ResponseEntity<Map> responseEntity = template.exchange(
+                requestUri,
+                HttpMethod.POST,
+                new HttpEntity<>(params, headers),
+                Map.class
+        );
+
+        Map<String, Object> responseJSON = (Map<String, Object>) responseEntity.getBody();
+        log.info("응답 데이터: {}", responseJSON); // 로그아웃하는 사용자의 id
+
+        // 만약 access_token의 값을 DB에 저장한 경우에는, 응답받은 id를 통해서
+        // DB의 access_token의 값을 update를 때려서 null로 만들어 주시면 됩니다.
+
+    }
+
+
+
 
     public void naverLogin(Map<String, String> params, HttpSession session) {
 

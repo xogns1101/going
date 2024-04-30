@@ -202,31 +202,6 @@ public class UserService {
     }
 
 
-    public void kakaoLogout(LoginUserResponseDTO dto, HttpSession session) {
-
-        String requestUri = "https://kapi.kakao.com/v1/user/logout";
-
-        String accessToken = (String) session.getAttribute("access_token");
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Authorization", "Bearer " + accessToken);
-
-        MultiValueMap<String, Object> params = new LinkedMultiValueMap<>();
-        params.add("target_id_type", "user_id");
-        params.add("target_id", dto.getEmail());
-
-        RestTemplate template = new RestTemplate();
-        ResponseEntity<Map> responseEntity = template.exchange(
-                requestUri,
-                HttpMethod.POST,
-                new HttpEntity<>(params, headers),
-                Map.class
-        );
-
-        Map<String, Object> responseJSON = (Map<String, Object>) responseEntity.getBody();
-        log.info("응답 데이터: {}", responseJSON); // 로그아웃하는 사용자의 id
-    }
-
 
     public User getFindUser(String email) {
 
