@@ -51,7 +51,7 @@
                             <li class="camp-address">${b.campAddress}</li>
                             <li class="camp-number">${b.campNumber}</li>
                             <li class="camp-homepage">${b.campHomepage}</li>
-                            <li class="camp-price">${b.campPrice}</li>
+                            <li class="camp-price">${b.campPrice}원</li>
                         </ul>
 
                        

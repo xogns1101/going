@@ -5,6 +5,7 @@ import com.camp.going.dto.request.SignUpRequestDTO;
 import com.camp.going.dto.response.LoginUserResponseDTO;
 import com.camp.going.entity.User;
 import com.camp.going.service.LoginResult;
+import com.camp.going.service.SnsLoginService;
 import com.camp.going.service.UserService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,6 +29,8 @@ import static com.camp.going.util.LoginUtils.isAutoLogin;
 public class UserController {
 
     private final UserService userService;
+
+    private final SnsLoginService snsLoginService;
 
     // 회원가입 처리 서비스
     @GetMapping("/sign-up")
@@ -137,7 +140,7 @@ public class UserController {
         // sns 로그인 상태인지를 확인
         LoginUserResponseDTO dto = (LoginUserResponseDTO) session.getAttribute(LOGIN_KEY);
         if (dto.getLoginMethod().equals("KAKAO")) {
-            userService.kakaoLogout(dto, session);
+            snsLoginService.kakaoLogout(dto, session);
         }
 
         // 세션에서 로그인 정보 기록 삭제
