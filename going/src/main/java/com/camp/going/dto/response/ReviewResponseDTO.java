@@ -2,15 +2,15 @@ package com.camp.going.dto.response;
 
 import com.camp.going.entity.Reservation;
 import com.camp.going.entity.Review;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Getter @Setter @ToString
 @EqualsAndHashCode
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ReviewResponseDTO {
 
     private int reviewNo; // 리뷰 글 번호

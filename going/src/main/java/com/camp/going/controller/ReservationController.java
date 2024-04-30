@@ -5,14 +5,10 @@ import com.camp.going.common.Search;
 import com.camp.going.dto.request.ReservationRequestDTO;
 import com.camp.going.dto.response.CampingDetailResponseDTO;
 import com.camp.going.dto.response.CampingListResponseDTO;
-import com.camp.going.dto.response.LoginUserResponseDTO;
 import com.camp.going.dto.response.ReservationResponseDTO;
 import com.camp.going.entity.Camping;
-import com.camp.going.entity.MyPage;
 import com.camp.going.entity.Reservation;
-import com.camp.going.entity.User;
 import com.camp.going.service.CampingService;
-import com.camp.going.service.MyPageService;
 import com.camp.going.service.ReservationService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -31,9 +27,6 @@ public class ReservationController {
 
     private final CampingService service;
     private final ReservationService reservationService;
-    private final MyPageService myPageService;
-
-
 
     // 캠핑장 목록 보기 요청
     @GetMapping("/reservation")

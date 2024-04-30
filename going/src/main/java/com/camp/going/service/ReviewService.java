@@ -1,13 +1,14 @@
 package com.camp.going.service;
 
 import com.camp.going.common.Search;
+import com.camp.going.dto.request.ReservationRequestDTO;
 import com.camp.going.dto.request.ReviewModifyRequestDTO;
 import com.camp.going.dto.request.ReviewRequestDTO;
 import com.camp.going.dto.response.ReviewResponseDTO;
 import com.camp.going.entity.Reservation;
 import com.camp.going.entity.Review;
-import com.camp.going.mapper.ReservationMapper;
 import com.camp.going.mapper.ReviewMapper;
+import com.camp.going.util.LoginUtils;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

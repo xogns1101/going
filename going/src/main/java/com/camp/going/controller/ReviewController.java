@@ -4,10 +4,15 @@ import com.camp.going.common.PageMaker;
 import com.camp.going.common.Search;
 import com.camp.going.dto.request.ReviewModifyRequestDTO;
 import com.camp.going.dto.request.ReviewRequestDTO;
+import com.camp.going.dto.response.LoginUserResponseDTO;
+import com.camp.going.dto.response.ReservationResponseDTO;
 import com.camp.going.dto.response.ReviewResponseDTO;
 import com.camp.going.entity.Review;
+import com.camp.going.entity.User;
 import com.camp.going.mapper.ReviewMapper;
+import com.camp.going.service.ReservationService;
 import com.camp.going.service.ReviewService;
+import com.camp.going.service.UserService;
 import com.camp.going.util.FileUtils;
 import com.camp.going.util.LoginUtils;
 import jakarta.servlet.http.HttpServletRequest;
@@ -59,7 +64,7 @@ public class ReviewController {
 
     // 리뷰 등록 요청 (/review-write : POST)
     @PostMapping("/review-write")
-    public String reviewWrite(ReviewRequestDTO dto) {
+    public String reviewWrite(ReviewRequestDTO dto, HttpSession session) {
         log.info("/review-write : POST, dto : {}", dto);
 //        log.info("날짜시간 : {}", dto.getReviewDate());
         log.info("file Name : {}", dto.getReviewImage().getOriginalFilename());

@@ -34,6 +34,7 @@
         <label for="1-stars" class="stars">&#9733;</label>
       </div>
       <input type="hidden" name="starPoint" id="starPoint">
+
       <!-- <input type="text" id="review-title" placeholder="캠핑장 이름을 입력하세요."><br> -->
       <!-- <input type="text" id="review-content" name="reviewContent" placeholder="리뷰내용"> -->
       <textarea id="review-content" name="reviewContent" rows="4" cols="50" placeholder="리뷰내용" maxlength="300"></textarea>
