@@ -9,7 +9,7 @@
 
         INSERT INTO reservation
         (
-        user_id
+          user_id
         , camp_id
         , reg_date
         , reg_dates
@@ -28,13 +28,13 @@
     <select id="findAllReservation" resultType="reservation">
 
         SELECT
-            r.reservation_number,
-            c.camp_name,
-            u.email,
-            r.reg_date,
-            r.reg_dates,
-            c.camp_price,
-            u.phone_number
+        r.reservation_number,
+        c.camp_name,
+        u.email,
+        r.reg_date,
+        r.reg_dates,
+        c.camp_price,
+        u.phone_number
         FROM reservation r
         LEFT JOIN user u
         ON r.user_id = u.user_id
@@ -47,13 +47,13 @@
     <select id="reservationCamping" resultType="reservation">
 
         SELECT
-            r.reservation_number,
-            u.email,
-            c.camp_name,
-            r.reg_date,
-            r.reg_dates,
-            c.camp_price,
-            u.phone_number
+        r.reservation_number,
+        u.email,
+        c.camp_name,
+        r.reg_date,
+        r.reg_dates,
+        c.camp_price,
+        u.phone_number
         FROM reservation r
         LEFT JOIN user u
         ON r.user_id = u.user_id
@@ -67,15 +67,15 @@
             parameterType="map">
 
         SELECT
-            reservation_number
-            , user_id
-            , camp_id
-            , reg_date
-            , reg_dates
+          reservation_number
+        , user_id
+        , camp_id
+        , reg_date
+        , reg_dates
         FROM
-            reservation
+        reservation
         WHERE
-            reservation_number = #{reservationNumber}
+        reservation_number = #{reservationNumber}
 
     </select>
 
