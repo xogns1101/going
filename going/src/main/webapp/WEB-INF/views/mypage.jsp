@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>마이페이지</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
 
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/mypage2.css">

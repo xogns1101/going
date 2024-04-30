@@ -6,7 +6,6 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
   <title>Review-Write</title>
   <%@ include file="include/static-head.jsp" %>
 
@@ -75,7 +74,8 @@
       <!-- SVG -->
       <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 100" id="btn-layer" preserveAspectRatio="none">
-          <path d="M133,77.5H7c-3.9,0-7-3.1-7-7v-41c0-3.9,3.1-7,7-7h126c3.9,0,7,3.1,7,7v41C140,74.4,136.9,77.5,133,77.5z">
+          <path
+            d="M133,77.5H7c-3.9,0-7-3.1-7-7v-41c0-3.9,3.1-7,7-7h126c3.9,0,7,3.1,7,7v41C140,74.4,136.9,77.5,133,77.5z">
           </path>
         </symbol>
         <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 26" id="plane" preserveAspectRatio="none">
@@ -220,7 +220,7 @@
         console.log('파일이 선택되지 않았습니다.');
       }
 
-      
+
 
     });
 
@@ -274,9 +274,6 @@
       e.target.submit();
 
     }
-
-
-    
   </script>
 
 
