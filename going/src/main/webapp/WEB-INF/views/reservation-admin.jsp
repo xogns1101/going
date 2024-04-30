@@ -72,7 +72,7 @@
 
                 <!-- 검색어 조회 -->
 
-                <form action="/main/reservation-list" method="get">
+                <!-- <form action="/main/reservation-list" method="get">
                     <div class="search-content-background">
                         <select class="form-select" name="type" id="search-type">
                             <option value="all">모두</option>
@@ -83,7 +83,7 @@
                             placeholder="검색어를 입력해 주세요">
                         <button type="submit" class="search-click-button">검색</button>
                     </div>
-                </form>
+                </form> -->
 
 
                 <!-- ----------------------------------------------------------------------- -->
