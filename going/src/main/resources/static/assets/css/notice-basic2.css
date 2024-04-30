@@ -1,5 +1,5 @@
 body {
-  background-image: url(../img/tree.jpg);
+  background-image: url(../img/notice1.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -13,7 +13,7 @@ section .title h1 {
   background: linear-gradient(to right top, #E4FFAA, #4BDB73);
   color: transparent;
   -webkit-background-clip: text;
-  margin-top: 220px;
+  margin-top: 260px;
   font-size: 80px;
   text-align: center;
 }
@@ -61,6 +61,10 @@ section .notice-list .notice-box table {
 table {
   position: relative;
   top: -60px;
+}
+
+table .notice-box .no-click tr{
+  background: red;
 }
 
 section .notice-list tr {
