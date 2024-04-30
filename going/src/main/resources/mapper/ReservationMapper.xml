@@ -9,14 +9,14 @@
 
         INSERT INTO reservation
         (
-        user_id
+          user_id
         , camp_id
         , reg_date
         , reg_dates
         )
         VALUES
         (
-        #{userId}
+          #{userId}
         , #{campId}
         , #{regDate}
         , #{regDates}
@@ -67,7 +67,7 @@
             parameterType="map">
 
         SELECT
-        reservation_number
+          reservation_number
         , user_id
         , camp_id
         , reg_date
